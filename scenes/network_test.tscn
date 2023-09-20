@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dilwnf4nsnn6g"]
+
+[ext_resource type="Script" path="res://scripts/network_test.gd" id="1_vjkxn"]
+
+[node name="NetworkTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjkxn")
+
+[node name="HostButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 24.0
+text = "Host Game
+"
+
+[node name="JoinButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 87.0
+offset_bottom = 65.0
+text = "Join Game
+"
+
+[node name="ActionButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 20.0
+offset_right = 252.0
+offset_bottom = 51.0
+text = "Action
+"
+
+[node name="Console" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 740.0
+offset_bottom = 340.0
+
+[connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_button_pressed"]

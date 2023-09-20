@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cprmcfl5dcaif"]
+
+[ext_resource type="Script" path="res://scripts/action_system/action_senders/client_action_sender.gd" id="1_eg3iu"]
+
+[node name="client_action_sender" type="Node"]
+script = ExtResource("1_eg3iu")
