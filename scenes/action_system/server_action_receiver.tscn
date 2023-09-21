@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq02bmyt58t6m"]
+
+[ext_resource type="Script" path="res://scripts/action_system/action_senders/server_action_receiver.gd" id="1_yc43a"]
+
+[node name="ServerActionReceiver" type="Node"]
+script = ExtResource("1_yc43a")

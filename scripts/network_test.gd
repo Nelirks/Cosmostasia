@@ -17,4 +17,4 @@ func _display_in_console(message : String) -> void :
 	($Console as RichTextLabel).text += message + "\n"
 
 func _on_action_button_pressed() -> void:
-	ActionManager.add_action(Action.new())
+	ActionManager.query_action(Action.new())
