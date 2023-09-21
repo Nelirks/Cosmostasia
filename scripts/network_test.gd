@@ -10,6 +10,9 @@ func _on_join_button_pressed() -> void:
 func _on_host_button_pressed() -> void:
 	NetworkManager.create_server("8888")
 
+func _on_start_game_button_pressed() -> void:
+	ActionManager.start_game()
+
 func _display_in_console(message : String) -> void :
 	($Console as RichTextLabel).text += message + "\n"
 
