@@ -33,8 +33,7 @@ func _query_action_from_str(action) -> void :
 	query_action(str_to_var(action))
 
 func _apply_action(action : Action) -> void :
-	for effect in action.get_effects() :
-		effect.apply()
+	action.apply()
 
 @rpc("authority", "call_remote", "reliable")
 func _apply_action_from_str(action : String) -> void :
