@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bou6o6m6lxcwd"]
-
-[ext_resource type="Script" path="res://scripts/action_system/effect_appliers/server_effect_applier.gd" id="1_tgwyi"]
-
-[node name="server_effect_applier" type="Node"]
-script = ExtResource("1_tgwyi")
