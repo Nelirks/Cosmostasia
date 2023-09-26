@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/combat_scene.gd" id="1_xpu8n"]
 
-[node name="combat_scene" type="Control"]
+[node name="CombatScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
