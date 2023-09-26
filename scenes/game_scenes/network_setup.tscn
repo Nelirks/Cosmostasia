@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dilwnf4nsnn6g"]
 
-[ext_resource type="Script" path="res://scripts/network_test.gd" id="1_vjkxn"]
+[ext_resource type="Script" path="res://scripts/network_setup.gd" id="1_ehw8i"]
 
 [node name="NetworkTest" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vjkxn")
+script = ExtResource("1_ehw8i")
 
 [node name="HostButton" type="Button" parent="."]
 layout_mode = 0
@@ -20,27 +20,18 @@ text = "Host Game
 
 [node name="JoinButton" type="Button" parent="."]
 layout_mode = 0
-offset_top = 34.0
-offset_right = 87.0
-offset_bottom = 65.0
+offset_left = 155.0
+offset_right = 242.0
+offset_bottom = 31.0
 text = "Join Game
 "
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="SoloButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 17.0
-offset_right = 238.0
-offset_bottom = 48.0
-text = "Start Game"
-
-[node name="ActionButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 21.0
-offset_right = 431.0
-offset_bottom = 52.0
-text = "Action
+offset_left = 323.0
+offset_right = 419.0
+offset_bottom = 31.0
+text = "Solo Game
 "
 
 [node name="Console" type="RichTextLabel" parent="."]
@@ -51,5 +42,4 @@ offset_bottom = 340.0
 
 [connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
-[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="ActionButton" to="." method="_on_action_button_pressed"]
+[connection signal="pressed" from="SoloButton" to="." method="_on_solo_button_pressed"]

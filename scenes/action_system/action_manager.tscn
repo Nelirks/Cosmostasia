@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://scripts/action_system/action_manager.gd" id="1_l7mxw"]
 
-[node name="action_manager" type="Node"]
+[node name="ActionManager" type="Node"]
 script = ExtResource("1_l7mxw")

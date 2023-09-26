@@ -4,19 +4,22 @@ signal send_message(message : String)
 
 var random : RandomNumberGenerator
 
-func start_game() -> void:
+func _init() :
+	random = RandomNumberGenerator.new()
+
+func _ready() -> void:
+	NetworkManager.connection_done.connect(_on_connection_done)
+
+func _on_connection_done() -> void:
 	if multiplayer.is_server() :
 		_init_random_server()
 
 func _init_random_server() -> void :
-	random = RandomNumberGenerator.new()
-	random.randomize()
 	if multiplayer.has_multiplayer_peer() and multiplayer.is_server() :
 		_init_random_client.rpc(random.seed, random.state)
 
 @rpc("authority", "call_remote", "reliable")
 func _init_random_client(seed : int, state : int) -> void :
-	random = RandomNumberGenerator.new()
 	random.seed = seed
 	random.state = state
 
