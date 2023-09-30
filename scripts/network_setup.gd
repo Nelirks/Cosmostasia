@@ -4,7 +4,7 @@ var combat_scene : PackedScene = preload("res://scenes/game_scenes/combat_scene.
 
 func _ready() -> void:
 	NetworkManager.send_message.connect(_display_in_console)
-	ActionManager.send_message.connect(_display_in_console)
+	GameManager.send_message.connect(_display_in_console)
 	NetworkManager.connection_done.connect(_start_game)
 
 func _on_join_button_pressed() -> void:
@@ -28,8 +28,13 @@ func _display_in_console(message : String) -> void :
 	($Console as RichTextLabel).text += message + "\n"
 
 func _on_action_button_pressed() -> void:
-	ActionManager.query_action(DebugAction.new())
-
+	GameManager.query_action(DebugAction.new())
 
 func _on_solo_button_pressed() -> void:
 	_start_game()
+
+func is_multiplayer() -> bool : 
+	return multiplayer and multiplayer.has_multiplayer_peer()
+
+func is_host() -> bool :
+	return !is_multiplayer() or multiplayer.is_server()

@@ -1,5 +1,10 @@
 extends Effect
 class_name DebugEffect
 
+var message : String
+
+func _init(message : String) :
+	self.message = message
+
 func apply() -> void :
-	ActionManager.send_message.emit("Debug Effect Applied")
+	GameManager.send_message.emit(message)

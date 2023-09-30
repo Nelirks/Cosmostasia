@@ -2,5 +2,5 @@ extends Action
 class_name DebugAction
 
 func apply() -> void :
-	DebugEffect.new().apply()
+	DebugEffect.new("Debug Action").apply()
 	RNGDebugEffect.new().apply()

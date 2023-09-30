@@ -64,3 +64,6 @@ func create_server(port : String) -> void :
 @rpc("call_local")
 func _connection_done() -> void :
 	connection_done.emit()
+
+func is_host() -> bool :
+	return !multiplayer or !multiplayer.has_multiplayer_peer() or multiplayer.is_server()

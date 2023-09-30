@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 NetworkManager="*res://scenes/network/network_manager.tscn"
-ActionManager="*res://scenes/action_system/action_manager.tscn"
+GameManager="*res://scenes/game_management/game_manager.tscn"
 
 [editor_plugins]
 
