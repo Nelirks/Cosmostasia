@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://b007r5udiy7ku"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_7ug8r"]
+
+[resource]
+script = ExtResource("1_7ug8r")
+cardName = "Manipulation Archonique"
+cardDescription = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
+cardQuote = ""
+cardCost = 1
+cardType = 0
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])

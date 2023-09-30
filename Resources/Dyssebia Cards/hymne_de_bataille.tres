@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://ykpq31bqbex7"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_8j7or"]
+
+[resource]
+script = ExtResource("1_8j7or")
+cardName = "Hymne de bataille"
+cardDescription = "Octroie 20 d'armure à votre équipe (+ 10 par alliés mort)"
+cardQuote = "Une prestance et une détermination sans faille, tels sont les atouts qui mèneront Dyssebia à la victoire"
+cardCost = 2
+cardType = 0
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])

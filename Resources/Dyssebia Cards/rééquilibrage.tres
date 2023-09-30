@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://d3bpcpchkkdox"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_mcafr"]
+
+[resource]
+script = ExtResource("1_mcafr")
+cardName = "Rééquilibrage"
+cardDescription = "Inflige 15 dégâts à la cible et soigne de 15 pv l'allié avec le moins de pv"
+cardQuote = "Le gant archonique fera pencher la balance en la faveur des héliastes"
+cardCost = 2
+cardType = 0
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
