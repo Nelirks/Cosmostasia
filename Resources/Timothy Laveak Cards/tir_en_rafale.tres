@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://cxluabh43ucx1"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_4ynol"]
+
+[resource]
+script = ExtResource("1_4ynol")
+cardName = "Tir en rafale"
+cardDescription = "Inflige 20 dégats à la cible, les dégâts sont augmentés de 5 pour chaque tir en rafale joué ce tour-ci"
+cardQuote = "Innefficace faces au Dévoreur, ces armes se racheteront peut-être durant la Cosmostasie"
+cardCost = 1
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])

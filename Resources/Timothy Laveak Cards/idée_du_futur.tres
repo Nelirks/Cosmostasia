@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dpjwhb64psb23"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_uoubk"]
+
+[resource]
+script = ExtResource("1_uoubk")
+cardName = "Idée du futur"
+cardDescription = ""
+cardQuote = "\"La prochaine fois je serai prêt\""
+cardCost = 1
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
