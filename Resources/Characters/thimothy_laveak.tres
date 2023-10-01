@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharactersResource" load_steps=2 format=3 uid="uid://c0di50xd7b14v"]
+
+[ext_resource type="Script" path="res://scripts/CharactersResource.gd" id="1_fy5o7"]
+
+[resource]
+script = ExtResource("1_fy5o7")
+characterName = "Timothy Laveak"
+charatcerQuote = ""
