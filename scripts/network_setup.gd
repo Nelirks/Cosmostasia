@@ -27,9 +27,6 @@ func _disable_buttons() :
 func _display_in_console(message : String) -> void :
 	($Console as RichTextLabel).text += message + "\n"
 
-func _on_action_button_pressed() -> void:
-	GameManager.query_action(DebugAction.new())
-
 func _on_solo_button_pressed() -> void:
 	_start_game()
 

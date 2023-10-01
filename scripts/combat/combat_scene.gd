@@ -5,7 +5,7 @@ var selected_card : int
 func _ready() -> void:
 	GameManager.send_message.connect(_on_game_manager_send_message)
 	if (NetworkManager.is_host()) :
-		GameManager.query_action(InitCombatAction.new())
+		GameManager.start_game.rpc()
 
 func _on_game_manager_send_message(message) -> void:
 	($Console as RichTextLabel).text += message + "\n"
@@ -18,9 +18,8 @@ func _target_character(is_ally : bool, index : int) -> void :
 	if selected_card == -1 : 
 		($Console as RichTextLabel).text += "No card selected" + "\n"
 		return
-	var card := CardSelector.new(NetworkManager.is_host(), selected_card)
-	var target := CharacterSelector.new((is_ally and NetworkManager.is_host()) or (!is_ally and !NetworkManager.is_host()), index)
-	GameManager.query_action(PlayCardAction.new(card, target))
+	var target_is_host : bool = (is_ally and NetworkManager.is_host()) or (!is_ally and !NetworkManager.is_host())
+	GameManager.query_card_play(NetworkManager.is_host(), selected_card, target_is_host, index)
 	selected_card = -1
 
 func _input(event: InputEvent) -> void:
