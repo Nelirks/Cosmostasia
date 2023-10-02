@@ -4,6 +4,8 @@ signal send_message(msg : String)
 signal connection_failed()
 signal connection_done()
 
+var is_multiplayer : bool = false
+
 func _ready() -> void : 
 	_connect_signals()
 
@@ -18,6 +20,7 @@ func _disconnect_signals() -> void :
 	multiplayer.connected_to_server.disconnect(_on_server_joined)
 
 func _on_peer_connected(_id : int) -> void :
+	is_multiplayer = true
 	send_message.emit("Peer connected")
 	if multiplayer.is_server() :
 		rpc("_connection_done")
@@ -66,4 +69,4 @@ func _connection_done() -> void :
 	connection_done.emit()
 
 func is_host() -> bool :
-	return !multiplayer or !multiplayer.has_multiplayer_peer() or multiplayer.is_server()
+	return !is_multiplayer or multiplayer.is_server()

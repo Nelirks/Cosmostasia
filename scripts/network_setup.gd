@@ -29,9 +29,3 @@ func _display_in_console(message : String) -> void :
 
 func _on_solo_button_pressed() -> void:
 	_start_game()
-
-func is_multiplayer() -> bool : 
-	return multiplayer and multiplayer.has_multiplayer_peer()
-
-func is_host() -> bool :
-	return !is_multiplayer() or multiplayer.is_server()
