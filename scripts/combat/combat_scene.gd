@@ -5,6 +5,7 @@ var selected_card : int
 func _ready() -> void:
 	GameManager.synced_state.connect(_on_state_synced)
 	GameManager.send_message.connect(_on_game_manager_send_message)
+	GameManager.set_turn.connect(_on_set_turn)
 	GameManager.set_game_state(GameManager.GameState.COMBAT)
 
 func _on_state_synced(state) -> void :
@@ -17,6 +18,11 @@ func _on_state_synced(state) -> void :
 func _on_game_manager_send_message(message) -> void:
 	($Console as RichTextLabel).text += message + "\n"
 
+func _on_set_turn(turn) -> void :
+	($Console as RichTextLabel).text += "PLAYER TURN START\n" if turn else "OPPONENT TURN START\n"
+	if (!NetworkManager.is_multiplayer and !turn) : 
+		query_end_turn()
+
 @rpc("authority", "call_local", "reliable")
 func start_game() :
 	GameManager.player = Player.new(NetworkManager.is_host())
@@ -25,20 +31,34 @@ func start_game() :
 	GameManager.get_player(true).refill_hand()
 	GameManager.get_player(false).shuffle_draw_pile()
 	GameManager.get_player(false).refill_hand()
+	GameManager.set_random_game_turn()
 
 @rpc("any_peer", "call_remote", "reliable")
 func query_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
 	#Apply checks
 	if NetworkManager.is_host() :
-		print("IS HOST")
 		_apply_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
 	else :
-		print("IS CLIENT")
 		query_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
 
 @rpc("authority", "call_local", "reliable")
 func _apply_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
 	GameManager.get_player(card_is_host).play_card(card_index, GameManager.get_player(target_is_host).get_character(target_index))
+
+@rpc("any_peer", "call_remote", "reliable")
+func query_end_turn() -> void :
+	if NetworkManager.is_host() :
+		if !GameManager.turn_is_none() and ((multiplayer.get_remote_sender_id() == 0) == GameManager.is_player_turn()) :
+			_apply_end_turn.rpc()
+		else :
+			push_error("Cannot end turn while not current turn")
+	else :
+		query_end_turn.rpc()
+
+
+@rpc("authority", "call_local", "reliable")
+func _apply_end_turn() :
+	GameManager.next_turn()
 
 func _select_card(index : int) -> void :
 	selected_card = index
@@ -53,6 +73,7 @@ func _target_character(is_ally : bool, index : int) -> void :
 	selected_card = -1
 
 func _input(event: InputEvent) -> void:
+	if !GameManager.is_player_turn() : return
 	if !(event is InputEventKey and event.is_pressed()) : return
 	var key = (event as InputEventKey).keycode
 	match key :
@@ -74,3 +95,5 @@ func _input(event: InputEvent) -> void:
 			_target_character(false, 1)
 		KEY_KP_9 :
 			_target_character(false, 2)
+		KEY_SPACE :
+			query_end_turn()

@@ -8,10 +8,17 @@ enum GameState { NONE, COMBAT }
 var _state : GameState
 var _peer_state : GameState
 
+enum Turn { NONE, HOST, CLIENT }
+var _current_turn : Turn :
+	set(value) :
+		_current_turn = value
+		set_turn.emit(is_player_turn())
+
 var player : Player
 var opponent : Player
 
 signal send_message(message : String)
+signal set_turn(is_player_turn : bool)
 
 func _ready() -> void:
 	NetworkManager.connection_done.connect(_on_network_connection)
@@ -41,6 +48,24 @@ func set_game_state(state : GameState) -> void :
 			synced_state.emit(state)
 	else :
 		synced_state.emit(state)
+
+func set_random_game_turn() -> void :
+	_current_turn = Turn.HOST if rng.randi_range(0, 1) else Turn.CLIENT
+
+func next_turn() -> void :
+	if _current_turn == Turn.NONE : 
+		push_error("CANNOT DO TO NEXT TURN IF CURRENT TURN IS NONE")
+		return
+	elif _current_turn == Turn.HOST :
+		_current_turn = Turn.CLIENT
+	elif _current_turn == Turn.CLIENT : 
+		_current_turn = Turn.HOST
+
+func turn_is_none() -> bool :
+	return _current_turn == Turn.NONE
+
+func is_player_turn() -> bool :
+	return !turn_is_none() and ((_current_turn == Turn.HOST) == player.is_host)
 
 @rpc("any_peer", "call_remote", "reliable")
 func _notify_game_state_change(state : GameState) -> void :
