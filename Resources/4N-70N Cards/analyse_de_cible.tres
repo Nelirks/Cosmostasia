@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://camve644h21rq"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_y1s31"]
+
+[resource]
+script = ExtResource("1_y1s31")
+cardName = "Analyse de cible"
+cardDescription = "Augmente de 5 les dégâts de la prochaine attaque de 4N"
+cardQuote = "Capacité d'analyse et puissance de frappe, le pinnacle de la technologie Sotérienne"
+cardCost = 1
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])

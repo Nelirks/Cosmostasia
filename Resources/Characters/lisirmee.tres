@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharactersResource" load_steps=2 format=3 uid="uid://cbx4earrm7weg"]
+
+[ext_resource type="Script" path="res://scripts/CharactersResource.gd" id="1_2ajlp"]
+
+[resource]
+script = ExtResource("1_2ajlp")
+characterName = "Lisirmee"
+charatcerQuote = ""

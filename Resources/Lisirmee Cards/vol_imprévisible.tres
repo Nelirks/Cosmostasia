@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://d1uboma06p1qy"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_5slc4"]
+
+[resource]
+script = ExtResource("1_5slc4")
+cardName = "Vol imprévisible"
+cardDescription = "Contre la prochaine carte joué par une adversaire et défausse les cartes adjacentes à celle ci."
+cardQuote = "Le coeur d'une Fae n'appartient qu'à elle même"
+cardCost = 2
+cardType = 0
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dj6ghs6cfd1ms"]
+
+[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_o4p6t"]
+
+[resource]
+script = ExtResource("1_o4p6t")
+cardName = "Obus de Lumenyte"
+cardDescription = "Effectue deux attaques infligeant 10 dégâts à la cible"
+cardQuote = "La maîtrise de la lumenyte a fait la gloire de l'empire de Soteria, mais ce fut également la cause de son déclin"
+cardCost = 1
+cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
