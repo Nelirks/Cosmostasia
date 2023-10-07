@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://cwigg8mkbu55t"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_61bma"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_61bma"]
 
 [resource]
 script = ExtResource("1_61bma")
-cardName = "Frappe énergisée"
-cardDescription = "Inflige 30 dégâts à la cible. Si il reste de l'énergie, gagne 20 armure."
-cardQuote = ""
-cardCost = 2
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Frappe énergisée"
+card_description = "Inflige 30 dégâts à la cible. Si il reste de l'énergie, gagne 20 armure."
+card_quote = ""
+card_cost = 2
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

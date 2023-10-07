@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://ct3glu6jegukd"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_gj2ew"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_gj2ew"]
 
 [resource]
 script = ExtResource("1_gj2ew")
-cardName = "Brume"
-cardDescription = "Réduit de 33% l'attaque de la cible pendant 2 tour. \\n Miracle: Empoisonne la cible pour une puissance de 15 pendant 2 tour \\n Préparé: cible tous les adversaires."
-cardQuote = "\"Coucou, je suis cachée\""
-cardCost = 2
-cardType = 0
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Brume"
+card_description = "Réduit de 33% l'attaque de la cible pendant 2 tour. \\n Miracle: Empoisonne la cible pour une puissance de 15 pendant 2 tour \\n Préparé: cible tous les adversaires."
+card_quote = "\"Coucou, je suis cachée\""
+card_cost = 2
+card_type = 0
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

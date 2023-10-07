@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://cx35q3ngbfxgn"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_b0j2e"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_b0j2e"]
 
 [resource]
 script = ExtResource("1_b0j2e")
-cardName = "Déni du juge"
-cardDescription = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
-cardQuote = "\"Le jugement de ce monde nous revient de droit\""
-cardCost = 3
-cardType = 0
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Déni du juge"
+card_description = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
+card_quote = "\"Le jugement de ce monde nous revient de droit\""
+card_cost = 3
+card_type = 0
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

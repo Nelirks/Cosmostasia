@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://diwbqyke6w7"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_poc02"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_poc02"]
 
 [resource]
 script = ExtResource("1_poc02")
-cardName = "Lame féerique"
-cardDescription = "Inflige 35 dégâts à la cible \\n Miracle : Réduit les dégâts de 15 et le coût de 1. \\n Préparé : Augmente les dégâts de 15 et le coût de 1."
-cardQuote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
-cardCost = 2
-cardType = 0
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Lame féerique"
+card_description = "Inflige 35 dégâts à la cible \\n Miracle : Réduit les dégâts de 15 et le coût de 1. \\n Préparé : Augmente les dégâts de 15 et le coût de 1."
+card_quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
+card_cost = 2
+card_type = 0
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

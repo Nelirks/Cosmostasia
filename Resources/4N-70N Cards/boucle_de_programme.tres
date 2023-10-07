@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://csp4b0skrhi5x"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_5bdgk"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_5bdgk"]
 
 [resource]
 script = ExtResource("1_5bdgk")
-cardName = "Boucle de programme"
-cardDescription = "Empèche les changements d'émotions lors de l'utilisation de vos 3 prochaines cartes"
-cardQuote = "\"Mes amis, je me rappellerai toujours de vous\""
-cardCost = 3
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Boucle de programme"
+card_description = "Empèche les changements d'émotions lors de l'utilisation de vos 3 prochaines cartes"
+card_quote = "\"Mes amis, je me rappellerai toujours de vous\""
+card_cost = 3
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dy6mmlkugr216"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_eoh68"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_eoh68"]
 
 [resource]
 script = ExtResource("1_eoh68")
-cardName = "Mécanique Passionelle"
-cardDescription = "Cette carte à un effet changeant en fonction de l'état emotionnel actuelle de 4N-70n \\n Colère: Inflige 20 dégâts à tous les adversaires \\n Joie: Restaure 3 point d'énergie \\n Tristesse: Octroie 25 d'armure à 4N-70N"
-cardQuote = ""
-cardCost = 2
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Mécanique Passionelle"
+card_description = "Cette carte à un effet changeant en fonction de l'état emotionnel actuelle de 4N-70n \\n Colère: Inflige 20 dégâts à tous les adversaires \\n Joie: Restaure 3 point d'énergie \\n Tristesse: Octroie 25 d'armure à 4N-70N"
+card_quote = ""
+card_cost = 2
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

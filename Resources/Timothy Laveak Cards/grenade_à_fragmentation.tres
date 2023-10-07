@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bmuywjsg4n8gh"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_dsq73"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_dsq73"]
 
 [resource]
 script = ExtResource("1_dsq73")
-cardName = "Grenade à fragmentation"
-cardDescription = "Inflige 7 dégâts à tous les ennemis par énergie récupérée ce tour-ci"
-cardQuote = "Les explosifs sont bien souvent la solution à nos problèmes"
-cardCost = 3
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Grenade à fragmentation"
+card_description = "Inflige 7 dégâts à tous les ennemis par énergie récupérée ce tour-ci"
+card_quote = "Les explosifs sont bien souvent la solution à nos problèmes"
+card_cost = 3
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

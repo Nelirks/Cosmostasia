@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bvqoe72f3nhwq"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_prddl"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_prddl"]
 
 [resource]
 script = ExtResource("1_prddl")
-cardName = "Distraction"
-cardDescription = "Mélange la main de l'adversaire. \\n Augmente le coût d'une carte aléatoire de sa main de 1."
-cardQuote = "Lisirmee a toujours préféré les mêlées désorganisées."
-cardCost = 1
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Distraction"
+card_description = "Mélange la main de l'adversaire. \\n Augmente le coût d'une carte aléatoire de sa main de 1."
+card_quote = "Lisirmee a toujours préféré les mêlées désorganisées."
+card_cost = 1
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bd4oj36iy5os5"]
 
-[ext_resource type="Script" path="res://scripts/Cards.gd" id="1_jv0q3"]
+[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_jv0q3"]
 
 [resource]
 script = ExtResource("1_jv0q3")
-cardName = "Surcharge"
-cardDescription = "Vous octroie 20 d'armure, Augmente la recharge de 1 au tour prochain"
-cardQuote = ""
-cardCost = 2
-cardEffect = Array[Resource("res://scripts/effects/effect.gd")]([])
+card_name = "Surcharge"
+card_description = "Vous octroie 20 d'armure, Augmente la recharge de 1 au tour prochain"
+card_quote = ""
+card_cost = 2
+card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
