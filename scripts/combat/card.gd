@@ -1,14 +1,24 @@
 extends Node
 class_name Card
 
+var template : CardInfo
 var card_name : String
 var cost : int
+var description : String
+var quote : String
+var effects
+
 var character : Character
 
-func _init(card_name : String, cost : int, character : Character) :
-	self.card_name = card_name
-	self.cost = cost
+func _init(template : CardInfo, character : Character) :
+	self.template = template
+	card_name = template.card_name
+	cost = template.card_cost
+	description = template.card_description
+	quote = template.card_quote
+	effects = template.card_effect.duplicate(true)
 	self.character = character
 
 func play(target : Character) :
-	DebugEffect.new(card_name + " PLAYED FROM " + character.char_name + " TARGETTING " + target.char_name).apply()
+	for effect in effects :
+		effect.apply(character, target)

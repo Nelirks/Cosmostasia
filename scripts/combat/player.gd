@@ -13,11 +13,17 @@ var _current_energy : int
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
-	for i in range(3) :
-		_characters.append(Character.new(("HOST_" if is_host else "CLIENT_") + "CHAR" + str(i), self))
-	for i in range(30) : 
-		_draw_pile.append(Card.new("CARD" + str(i), 0, _characters[i/10]))
-	
+	_characters.append(Character.new(load("res://Resources/Characters/dyssebia.tres"), self))
+	_characters.append(Character.new(load("res://Resources/Characters/lisirmee.tres"), self))
+	_characters.append(Character.new(load("res://Resources/Characters/thimothy_laveak.tres"), self))
+	for char_index in range(3) :
+		for card_index in range(5) :
+			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[0], _characters[char_index]))
+		for card_index in range(3) :
+			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[1], _characters[char_index]))
+		for card_index in range(2) :
+			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[2], _characters[char_index]))
+			pass
 
 func shuffle_draw_pile() -> void :
 	for cur_index in range (_draw_pile.size()) :

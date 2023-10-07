@@ -1,5 +1,5 @@
 extends Resource
 class_name Effect
 
-func apply() -> void :
+func apply(source : Character, target : Character) -> void :
 	pass
