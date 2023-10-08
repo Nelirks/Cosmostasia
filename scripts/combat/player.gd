@@ -11,7 +11,7 @@ var _discard : Array[Card]
 var max_energy : int = 5
 var current_energy : int = 0 :
 	set(value) :
-		current_energy = clamp(value, energy_regen, max_energy)
+		current_energy = clamp(value, 0, max_energy)
 var energy_regen : int = 3
 
 func _init(is_host : bool) -> void :
@@ -44,8 +44,12 @@ func refill_hand() -> void :
 	for i in range (_hand.size(), 3) :
 		_hand.append(_draw_pile.pop_back())
 
+func can_play_card(index : int) -> bool :
+	return _hand[index].cost <= current_energy
+
 func play_card(index : int, target : Character) -> void :
-	_hand[index].play(target)
+	current_energy -= _hand[index].cost
+	_hand[index].apply_effects(target)
 	_hand.remove_at(index)
 	refill_hand()
 

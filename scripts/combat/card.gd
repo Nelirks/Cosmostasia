@@ -19,6 +19,6 @@ func _init(template : CardInfo, character : Character) :
 	effects = template.card_effect.duplicate(true)
 	self.character = character
 
-func play(target : Character) :
+func apply_effects(target : Character) :
 	for effect in effects :
 		effect.apply(character, target)

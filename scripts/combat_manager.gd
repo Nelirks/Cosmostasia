@@ -21,7 +21,7 @@ func start_game() :
 
 @rpc("any_peer", "call_remote", "reliable")
 func query_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
-	#Apply checks
+	if !GameManager.get_player(card_is_host).can_play_card(card_index) : return
 	if NetworkManager.is_host() :
 		_apply_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
 	else :
