@@ -1,20 +1,11 @@
 extends Node
 
 var rng : RandomNumberGenerator
-
-signal synced_state(state : GameState)
+@onready var combat : CombatManager = $CombatManager
 
 enum GameState { NONE, COMBAT }
 var _state : GameState
 var _peer_state : GameState
-
-enum Turn { NONE, HOST, CLIENT }
-var _current_turn : Turn :
-	set (value) :
-		_current_turn = value
-		if _current_turn != Turn.NONE :
-			get_player(true).on_turn_start(_current_turn == Turn.HOST)
-			get_player(false).on_turn_start(_current_turn == Turn.CLIENT)
 
 var player : Player
 var opponent : Player
@@ -45,35 +36,22 @@ func set_game_state(state : GameState) -> void :
 	if NetworkManager.is_multiplayer :
 		_notify_game_state_change.rpc(state)
 		if _state == _peer_state :
-			synced_state.emit(state)
+			on_state_synced(state)
 	else :
-		synced_state.emit(state)
-
-func set_random_game_turn() -> void :
-	_current_turn = Turn.CLIENT if NetworkManager.is_multiplayer and rng.randi_range(0, 1) else Turn.HOST
-
-func next_turn() -> void :
-	if _current_turn == Turn.NONE : 
-		push_error("CANNOT DO TO NEXT TURN IF CURRENT TURN IS NONE")
-		return
-	elif _current_turn == Turn.HOST :
-		_current_turn = Turn.CLIENT
-		if !NetworkManager.is_multiplayer : 
-			next_turn()
-	elif _current_turn == Turn.CLIENT : 
-		_current_turn = Turn.HOST
-
-func turn_is_none() -> bool :
-	return _current_turn == Turn.NONE
-
-func is_player_turn() -> bool :
-	return !turn_is_none() and ((_current_turn == Turn.HOST) == player.is_host)
+		on_state_synced(state)
 
 @rpc("any_peer", "call_remote", "reliable")
 func _notify_game_state_change(state : GameState) -> void :
 	_peer_state = state
 	if _state == _peer_state :
-		synced_state.emit(state)
+		on_state_synced(state)
+
+func on_state_synced(state : GameState) -> void :
+	match state :
+		GameState.NONE :
+			pass
+		GameState.COMBAT :
+			combat.start_game()
 
 func get_player(is_host : bool) -> Player:
 	if is_host and NetworkManager.is_host() or !is_host and !NetworkManager.is_host() :
