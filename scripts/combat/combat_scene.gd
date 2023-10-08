@@ -18,20 +18,20 @@ func _process(_delta: float) -> void:
 	($Console as RichTextLabel).text = "CURRENT TURN : " + ("PLAYER" if GameManager.is_player_turn() else "OPPONENT") + "\n"
 	($Console as RichTextLabel).text += "| "
 	for i in range(3) :
-		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(false).get_character(i).char_name
+		($Console as RichTextLabel).text += "%30s | " % GameManager.opponent.get_character(i).char_name
 	($Console as RichTextLabel).text += "\n| "
 	for i in range(3) :
-		($Console as RichTextLabel).text += ("%18d / " % GameManager.get_player(false).get_character(i).current_health) + ("%10d | " %GameManager.get_player(false).get_character(i).max_health)
+		($Console as RichTextLabel).text += ("%18d / " % GameManager.opponent.get_character(i).current_health) + ("%10d | " %GameManager.get_player(false).get_character(i).max_health)
 	($Console as RichTextLabel).text += "\n\n| "
 	for i in range(3) :
-		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(true).get_character(i).char_name
+		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_character(i).char_name
 	($Console as RichTextLabel).text += "\n| "
 	for i in range(3) :
-		($Console as RichTextLabel).text += ("%18d / " % GameManager.get_player(true).get_character(i).current_health) + ("%10d | " %GameManager.get_player(false).get_character(i).max_health)
+		($Console as RichTextLabel).text += ("%18d / " % GameManager.player.get_character(i).current_health) + ("%10d | " %GameManager.get_player(false).get_character(i).max_health)
 	($Console as RichTextLabel).text += "\n\n| "
 	for i in range(3) :
-		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(true).get_card_in_hand(i).card_name
-	($Console as RichTextLabel).text += str("\nEnergy : " + str(GameManager.player._current_energy) + " / " + str(GameManager.player._max_energy))
+		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_card_in_hand(i).card_name
+	($Console as RichTextLabel).text += str("\nEnergy : " + str(GameManager.player.current_energy) + " / " + str(GameManager.player._max_energy))
 	($Console as RichTextLabel).text += "\n\n"
 
 @rpc("authority", "call_local", "reliable")
