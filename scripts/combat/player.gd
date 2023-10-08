@@ -1,4 +1,4 @@
-extends Node
+extends RefCounted
 class_name Player
 
 var is_host : bool
@@ -8,8 +8,9 @@ var _hand : Array[Card]
 var _draw_pile : Array[Card]
 var _discard : Array[Card]
 
-var _max_energy : int
-var _current_energy : int
+var _max_energy : int = 5
+var _current_energy : int = 0
+var _energy_regen : int = 3
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
@@ -23,7 +24,6 @@ func _init(is_host : bool) -> void :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[1], _characters[char_index]))
 		for card_index in range(2) :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[2], _characters[char_index]))
-			pass
 
 func shuffle_draw_pile() -> void :
 	for cur_index in range (_draw_pile.size()) :

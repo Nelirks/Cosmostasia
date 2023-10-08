@@ -11,4 +11,5 @@
 script = ExtResource("1_eak7t")
 character_name = "4N-70N"
 character_quote = ""
+max_health = 100
 character_cards = Array[Resource("res://scripts/resources/card_info.gd")]([ExtResource("1_6kq8t"), ExtResource("2_k8p6n"), ExtResource("3_t2fa2"), ExtResource("4_2eyna"), ExtResource("5_h04o8")])

@@ -17,4 +17,8 @@ func _init(template : CharacterInfo, player : Player) :
 	char_name = template.character_name
 	quote = template.character_quote
 	sprite = template.character_sprite
+	
+	max_health = template.max_health
+	current_health = max_health
+	
 	self.player = player

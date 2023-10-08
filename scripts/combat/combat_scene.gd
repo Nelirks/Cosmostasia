@@ -4,7 +4,6 @@ var selected_card : int
 
 func _ready() -> void:
 	GameManager.synced_state.connect(_on_state_synced)
-	GameManager.send_message.connect(_on_game_manager_send_message)
 	GameManager.set_turn.connect(_on_set_turn)
 	GameManager.set_game_state(GameManager.GameState.COMBAT)
 
@@ -15,13 +14,31 @@ func _on_state_synced(state) -> void :
 	if NetworkManager.is_host() :
 		start_game.rpc()
 
-func _on_game_manager_send_message(message) -> void:
-	($Console as RichTextLabel).text += message + "\n"
-
 func _on_set_turn(turn) -> void :
 	($Console as RichTextLabel).text += "PLAYER TURN START\n" if turn else "OPPONENT TURN START\n"
 	if (!NetworkManager.is_multiplayer and !turn) : 
 		query_end_turn()
+
+
+func _process(_delta: float) -> void:
+	if GameManager.player == null : return
+	($Console as RichTextLabel).text = "| "
+	for i in range(3) :
+		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(false).get_character(i).char_name
+	($Console as RichTextLabel).text += "\n| "
+	for i in range(3) :
+		($Console as RichTextLabel).text += ("%18d / " % GameManager.get_player(false).get_character(i).current_health) + ("%10d | " %GameManager.get_player(false).get_character(i).max_health)
+	($Console as RichTextLabel).text += "\n\n| "
+	for i in range(3) :
+		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(true).get_character(i).char_name
+	($Console as RichTextLabel).text += "\n| "
+	for i in range(3) :
+		($Console as RichTextLabel).text += ("%18d / " % GameManager.get_player(true).get_character(i).current_health) + ("%10d | " %GameManager.get_player(false).get_character(i).max_health)
+	($Console as RichTextLabel).text += "\n\n| "
+	for i in range(3) :
+		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(true).get_card_in_hand(i).card_name
+	($Console as RichTextLabel).text += str(GameManager.player._current_energy)
+	($Console as RichTextLabel).text += "\n\n"
 
 @rpc("authority", "call_local", "reliable")
 func start_game() :
@@ -54,7 +71,6 @@ func query_end_turn() -> void :
 			push_error("Cannot end turn while not current turn")
 	else :
 		query_end_turn.rpc()
-
 
 @rpc("authority", "call_local", "reliable")
 func _apply_end_turn() :
