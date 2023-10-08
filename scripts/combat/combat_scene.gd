@@ -22,7 +22,8 @@ func _on_set_turn(turn) -> void :
 
 func _process(_delta: float) -> void:
 	if GameManager.player == null : return
-	($Console as RichTextLabel).text = "| "
+	($Console as RichTextLabel).text = "CURRENT TURN : " + ("PLAYER" if GameManager.is_player_turn() else "OPPONENT") + "\n"
+	($Console as RichTextLabel).text += "| "
 	for i in range(3) :
 		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(false).get_character(i).char_name
 	($Console as RichTextLabel).text += "\n| "
@@ -37,7 +38,7 @@ func _process(_delta: float) -> void:
 	($Console as RichTextLabel).text += "\n\n| "
 	for i in range(3) :
 		($Console as RichTextLabel).text += "%30s | " % GameManager.get_player(true).get_card_in_hand(i).card_name
-	($Console as RichTextLabel).text += str(GameManager.player._current_energy)
+	($Console as RichTextLabel).text += str("\nEnergy : " + str(GameManager.player._current_energy) + " / " + str(GameManager.player._max_energy))
 	($Console as RichTextLabel).text += "\n\n"
 
 @rpc("authority", "call_local", "reliable")
