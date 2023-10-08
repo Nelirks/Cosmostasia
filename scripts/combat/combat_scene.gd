@@ -4,7 +4,6 @@ var selected_card : int
 
 func _ready() -> void:
 	GameManager.synced_state.connect(_on_state_synced)
-	GameManager.set_turn.connect(_on_set_turn)
 	GameManager.set_game_state(GameManager.GameState.COMBAT)
 
 func _on_state_synced(state) -> void :
@@ -13,12 +12,6 @@ func _on_state_synced(state) -> void :
 		return
 	if NetworkManager.is_host() :
 		start_game.rpc()
-
-func _on_set_turn(turn) -> void :
-	($Console as RichTextLabel).text += "PLAYER TURN START\n" if turn else "OPPONENT TURN START\n"
-	if (!NetworkManager.is_multiplayer and !turn) : 
-		query_end_turn()
-
 
 func _process(_delta: float) -> void:
 	if GameManager.player == null : return
