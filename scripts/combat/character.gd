@@ -22,3 +22,6 @@ func _init(template : CharacterInfo, player : Player) :
 	current_health = max_health
 	
 	self.player = player
+
+func on_turn_start(is_active_player : bool) -> void :
+	pass

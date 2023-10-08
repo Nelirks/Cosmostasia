@@ -9,7 +9,12 @@ var _state : GameState
 var _peer_state : GameState
 
 enum Turn { NONE, HOST, CLIENT }
-var _current_turn : Turn
+var _current_turn : Turn :
+	set (value) :
+		_current_turn = value
+		if _current_turn != Turn.NONE :
+			get_player(true).on_turn_start(_current_turn == Turn.HOST)
+			get_player(false).on_turn_start(_current_turn == Turn.CLIENT)
 
 var player : Player
 var opponent : Player
