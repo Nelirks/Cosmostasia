@@ -32,7 +32,6 @@ func _on_network_connection() -> void :
 
 func _init_server_rng() -> void :
 	if NetworkManager.is_multiplayer :
-		rng.randomize()
 		_sync_client_rng.rpc(rng.seed, rng.state)
 
 @rpc("authority", "call_remote", "reliable")
