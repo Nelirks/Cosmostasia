@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=7 format=3 uid="uid://bjcqffc6g6s0p"]
+
+[ext_resource type="Resource" uid="uid://cx35q3ngbfxgn" path="res://resources/game_data/card_data/dyssebia/déni_du_juge.tres" id="1_avrgo"]
+[ext_resource type="Script" path="res://scripts/resources/character_info.gd" id="1_s7pgy"]
+[ext_resource type="Resource" uid="uid://ykpq31bqbex7" path="res://resources/game_data/card_data/dyssebia/hymne_de_bataille.tres" id="2_xut1q"]
+[ext_resource type="Resource" uid="uid://bioohk78calll" path="res://resources/game_data/card_data/dyssebia/manifestation.tres" id="3_56hlj"]
+[ext_resource type="Resource" uid="uid://b007r5udiy7ku" path="res://resources/game_data/card_data/dyssebia/manipulation_archonique.tres" id="4_74q40"]
+[ext_resource type="Resource" uid="uid://d3bpcpchkkdox" path="res://resources/game_data/card_data/dyssebia/rééquilibrage.tres" id="5_tunoo"]
+
+[resource]
+script = ExtResource("1_s7pgy")
+character_name = "Dyssebia"
+character_quote = ""
+max_health = 100
+character_cards = Array[Resource("res://scripts/resources/card_info.gd")]([ExtResource("1_avrgo"), ExtResource("2_xut1q"), ExtResource("3_56hlj"), ExtResource("4_74q40"), ExtResource("5_tunoo")])

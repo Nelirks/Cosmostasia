@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=7 format=3 uid="uid://b5d4civj0vkuu"]
+
+[ext_resource type="Resource" uid="uid://d3kfo5iva4hku" path="res://resources/game_data/card_data/4N-70N/4n5.tres" id="1_6kq8t"]
+[ext_resource type="Script" path="res://scripts/resources/character_info.gd" id="1_eak7t"]
+[ext_resource type="Resource" uid="uid://camve644h21rq" path="res://resources/game_data/card_data/4N-70N/analyse_de_cible.tres" id="2_k8p6n"]
+[ext_resource type="Resource" uid="uid://csp4b0skrhi5x" path="res://resources/game_data/card_data/4N-70N/boucle_de_programme.tres" id="3_t2fa2"]
+[ext_resource type="Resource" uid="uid://dy6mmlkugr216" path="res://resources/game_data/card_data/4N-70N/mécanique_passionelle.tres" id="4_2eyna"]
+[ext_resource type="Resource" uid="uid://dj6ghs6cfd1ms" path="res://resources/game_data/card_data/4N-70N/obus_de_lumenyte.tres" id="5_h04o8"]
+
+[resource]
+script = ExtResource("1_eak7t")
+character_name = "4N-70N"
+character_quote = ""
+max_health = 100
+character_cards = Array[Resource("res://scripts/resources/card_info.gd")]([ExtResource("1_6kq8t"), ExtResource("2_k8p6n"), ExtResource("3_t2fa2"), ExtResource("4_2eyna"), ExtResource("5_h04o8")])

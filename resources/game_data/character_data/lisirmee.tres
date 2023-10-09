@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=7 format=3 uid="uid://cbx4earrm7weg"]
+
+[ext_resource type="Script" path="res://scripts/resources/character_info.gd" id="1_2ajlp"]
+[ext_resource type="Resource" uid="uid://ct3glu6jegukd" path="res://resources/game_data/card_data/lisirmee/brume.tres" id="1_4x8oc"]
+[ext_resource type="Resource" uid="uid://bvqoe72f3nhwq" path="res://resources/game_data/card_data/lisirmee/distraction.tres" id="2_r0e3h"]
+[ext_resource type="Resource" uid="uid://bypbb3w21qms7" path="res://resources/game_data/card_data/lisirmee/farce.tres" id="3_evteh"]
+[ext_resource type="Resource" uid="uid://diwbqyke6w7" path="res://resources/game_data/card_data/lisirmee/lame_féerique.tres" id="4_aoqqa"]
+[ext_resource type="Resource" uid="uid://d1uboma06p1qy" path="res://resources/game_data/card_data/lisirmee/vol_imprévisible.tres" id="5_uvos1"]
+
+[resource]
+script = ExtResource("1_2ajlp")
+character_name = "Lisirmee"
+character_quote = ""
+max_health = 100
+character_cards = Array[Resource("res://scripts/resources/card_info.gd")]([ExtResource("1_4x8oc"), ExtResource("2_r0e3h"), ExtResource("3_evteh"), ExtResource("4_aoqqa"), ExtResource("5_uvos1")])
