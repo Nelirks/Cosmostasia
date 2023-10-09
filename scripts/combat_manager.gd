@@ -17,7 +17,7 @@ func start_game() :
 	GameManager.get_player(true).refill_hand()
 	GameManager.get_player(false).shuffle_draw_pile()
 	GameManager.get_player(false).refill_hand()
-	set_random_game_turn()
+	_set_random_game_turn()
 
 @rpc("any_peer", "call_remote", "reliable")
 func query_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
@@ -26,10 +26,6 @@ func query_card_play(card_is_host : bool, card_index : int, target_is_host : boo
 		_apply_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
 	else :
 		query_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
-
-@rpc("authority", "call_local", "reliable")
-func _apply_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
-	GameManager.get_player(card_is_host).play_card(card_index, GameManager.get_player(target_is_host).get_character(target_index))
 
 @rpc("any_peer", "call_remote", "reliable")
 func query_end_turn() -> void :
@@ -42,20 +38,24 @@ func query_end_turn() -> void :
 		query_end_turn.rpc()
 
 @rpc("authority", "call_local", "reliable")
-func _apply_end_turn() :
-	next_turn()
+func _apply_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
+	GameManager.get_player(card_is_host).play_card(card_index, GameManager.get_player(target_is_host).get_character(target_index))
 
-func set_random_game_turn() -> void :
+@rpc("authority", "call_local", "reliable")
+func _apply_end_turn() :
+	_next_turn()
+
+func _set_random_game_turn() -> void :
 	_current_turn = Turn.CLIENT if NetworkManager.is_multiplayer and GameManager.rng.randi_range(0, 1) else Turn.HOST
 
-func next_turn() -> void :
+func _next_turn() -> void :
 	if _current_turn == Turn.NONE : 
 		push_error("CANNOT DO TO NEXT TURN IF CURRENT TURN IS NONE")
 		return
 	elif _current_turn == Turn.HOST :
 		_current_turn = Turn.CLIENT
 		if !NetworkManager.is_multiplayer : 
-			next_turn()
+			_next_turn()
 	elif _current_turn == Turn.CLIENT : 
 		_current_turn = Turn.HOST
 
