@@ -10,6 +10,7 @@ var _current_turn : Turn :
 			GameManager.get_player(false).on_turn_start(_current_turn == Turn.CLIENT)
 
 var effect_stack : Array[Effect]
+var current_effect : Effect
 var action_queue : Array[Action]
 
 signal effect_stack_emptied()
@@ -78,11 +79,15 @@ func add_effect(effect : Effect, source : Character, target : Character) -> void
 	if effect_stack.size() == 1 :
 		_apply_effect()
 
+func add_effects(effects : Array[Effect], source : Character, target : Character) -> void :
+	for index in range(effects.size()-1, -1, -1) :
+		add_effect(effects[index], source, target)
+
 func _apply_effect() -> void :
-	effect_stack[0].apply()
-	if ! effect_stack[0].is_done :
-		await effect_stack[0].done
-	effect_stack.remove_at(0)
+	current_effect = effect_stack.pop_back()
+	current_effect.apply()
+	if ! current_effect.is_done :
+		await current_effect.done
 	if effect_stack.size() > 0 :
 		_apply_effect()
 	else :
