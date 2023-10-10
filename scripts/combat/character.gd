@@ -25,3 +25,9 @@ func _init(template : CharacterInfo, player : Player) :
 
 func on_turn_start(is_active_player : bool) -> void :
 	pass
+
+func deal_damage(target : Character, amount : int) -> void :
+	target.take_damage(amount)
+
+func take_damage(amount : int) -> void :
+	current_health -= amount

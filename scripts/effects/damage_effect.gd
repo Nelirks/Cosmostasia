@@ -4,5 +4,5 @@ class_name DamageEffect
 @export var damage : int
 
 func apply() -> void :
-	target.current_health -= damage
+	source.deal_damage(target, damage)
 	is_done = true
