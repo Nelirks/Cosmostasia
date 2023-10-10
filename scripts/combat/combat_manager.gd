@@ -6,8 +6,9 @@ var _current_turn : Turn :
 	set (value) :
 		_current_turn = value
 		if _current_turn != Turn.NONE :
-			GameManager.get_player(true).on_turn_start(_current_turn == Turn.HOST)
-			GameManager.get_player(false).on_turn_start(_current_turn == Turn.CLIENT)
+			events.on_turn_start(_current_turn)
+
+@onready var events : CombatEventManager = $CombatEventManager
 
 var effect_stack : Array[Effect]
 var current_effect : Effect
@@ -71,6 +72,12 @@ func turn_is_none() -> bool :
 
 func is_player_turn() -> bool :
 	return !turn_is_none() and ((_current_turn == Turn.HOST) == GameManager.player.is_host)
+
+func get_player_by_turn(active_player : bool) -> Player :
+	if active_player == is_player_turn() :
+		return GameManager.player
+	else :
+		return GameManager.opponent
 
 func add_effect(effect : Effect, source : Character, target : Character) -> void :
 	effect.source = source

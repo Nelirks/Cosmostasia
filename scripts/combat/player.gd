@@ -27,11 +27,6 @@ func _init(is_host : bool) -> void :
 		for card_index in range(2) :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[2], _characters[char_index]))
 
-func on_turn_start(is_active_player : bool) -> void :
-	if is_active_player : 
-		current_energy += energy_regen
-	for character in _characters :
-		character.on_turn_start(is_active_player)
 
 func shuffle_draw_pile() -> void :
 	for cur_index in range (_draw_pile.size()) :
@@ -58,3 +53,10 @@ func get_character(index : int) -> Character :
 
 func get_card_in_hand(index : int) -> Card :
 	return _hand[index]
+
+func on_turn_start(is_active_player : bool) -> void :
+	if is_active_player : 
+		current_energy += energy_regen
+	for character in _characters :
+		if !character.is_dead :
+			character.on_turn_start(is_active_player)
