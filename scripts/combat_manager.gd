@@ -9,6 +9,8 @@ var _current_turn : Turn :
 			GameManager.get_player(true).on_turn_start(_current_turn == Turn.HOST)
 			GameManager.get_player(false).on_turn_start(_current_turn == Turn.CLIENT)
 
+var effect_stack : Array[Effect]
+
 @rpc("authority", "call_local", "reliable")
 func start_game() :
 	GameManager.player = Player.new(NetworkManager.is_host())
@@ -64,3 +66,18 @@ func turn_is_none() -> bool :
 
 func is_player_turn() -> bool :
 	return !turn_is_none() and ((_current_turn == Turn.HOST) == GameManager.player.is_host)
+
+func add_effect(effect : Effect, source : Character, target : Character) -> void :
+	effect.source = source
+	effect.target = target
+	effect_stack.append(effect)
+	if effect_stack.size() == 1 :
+		_apply_effect()
+
+func _apply_effect() -> void :
+	effect_stack[0].apply()
+	if ! effect_stack[0].is_done :
+		await effect_stack[0].done
+	effect_stack.remove_at(0)
+	if effect_stack.size() > 0 :
+		_apply_effect()

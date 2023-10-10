@@ -21,4 +21,4 @@ func _init(template : CardInfo, character : Character) :
 
 func apply_effects(target : Character) :
 	for effect in effects :
-		effect.apply(character, target)
+		GameManager.combat.add_effect(effect, character, target)

@@ -3,5 +3,6 @@ class_name DamageEffect
 
 @export var damage : int
 
-func apply(source : Character, target : Character) -> void :
+func apply() -> void :
 	target.current_health -= damage
+	is_done = true
