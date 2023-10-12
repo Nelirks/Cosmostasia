@@ -54,9 +54,7 @@ func get_character(index : int) -> Character :
 func get_card_in_hand(index : int) -> Card :
 	return _hand[index]
 
-func on_turn_start(is_active_player : bool) -> void :
-	if is_active_player : 
-		current_energy += energy_regen
+func turn_start() -> void :
+	current_energy += energy_regen
 	for character in _characters :
-		if !character.is_dead :
-			character.on_turn_start(is_active_player)
+		character.turn_start()

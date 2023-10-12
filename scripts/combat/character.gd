@@ -25,6 +25,9 @@ func _init(template : CharacterInfo, player : Player) :
 	
 	self.player = player
 
+func start_turn() -> void :
+	pass
+
 func deal_damage(target : Character, amount : int) -> void :
 	target.take_damage(self, amount)
 
@@ -35,11 +38,11 @@ func take_damage(source : Character, amount : int) -> void :
 		is_dead = true
 		GameManager.combat.events.on_character_death(source, self)
 
-func on_turn_start(is_active_player : bool) -> void :
-	pass
-
 func on_damage_dealt(source : Character, target : Character, amount : int) -> void :
 	pass
 
 func on_character_death(source : Character, target : Character) -> void :
+	pass
+
+func on_turn_start(is_active_player : bool) -> void :
 	pass

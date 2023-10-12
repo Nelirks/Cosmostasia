@@ -6,7 +6,7 @@ var _current_turn : Turn :
 	set (value) :
 		_current_turn = value
 		if _current_turn != Turn.NONE :
-			events.on_turn_start(_current_turn)
+			_start_turn()
 
 @onready var events : CombatEventManager = $CombatEventManager
 
@@ -50,7 +50,7 @@ func _apply_card_play(card_is_host : bool, card_index : int, target_is_host : bo
 	_add_action(PlayCardAction.new(card_is_host, card_index, target_is_host, target_index))
 
 @rpc("authority", "call_local", "reliable")
-func _apply_end_turn() :
+func _apply_end_turn() -> void :
 	_add_action(EndTurnAction.new())
 
 func _set_random_game_turn() -> void :
@@ -66,6 +66,10 @@ func next_turn() -> void :
 			next_turn()
 	elif _current_turn == Turn.CLIENT : 
 		_current_turn = Turn.HOST
+
+func _start_turn() -> void :
+	get_player_by_turn(true).start_turn()
+	events.on_turn_start(_current_turn)
 
 func turn_is_none() -> bool :
 	return _current_turn == Turn.NONE
@@ -100,12 +104,12 @@ func _apply_effect() -> void :
 	else :
 		effect_stack_emptied.emit()
 
-func _add_action(action : Action) :
+func _add_action(action : Action) -> void :
 	action_queue.append(action)
 	if action_queue.size() == 1 :
 		_apply_action()
 
-func _apply_action() :
+func _apply_action() -> void :
 	action_queue[0].apply()
 	if !effect_stack.size() == 0 :
 		await effect_stack_emptied
