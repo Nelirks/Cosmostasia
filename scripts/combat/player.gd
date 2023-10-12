@@ -54,7 +54,7 @@ func get_character(index : int) -> Character :
 func get_card_in_hand(index : int) -> Card :
 	return _hand[index]
 
-func turn_start() -> void :
+func start_turn() -> void :
 	current_energy += energy_regen
 	for character in _characters :
-		character.turn_start()
+		character.start_turn()
