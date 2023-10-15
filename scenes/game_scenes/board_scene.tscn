@@ -72,10 +72,17 @@ rotation = 3.14159
 pivot_offset = Vector2(100, 150)
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 1696.0
-offset_top = 590.0
-offset_right = 1886.0
-offset_bottom = 670.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1650.0
+offset_top = 540.0
+offset_right = 1840.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
