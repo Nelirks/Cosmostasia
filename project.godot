@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Cosmostasia"
+run/main_scene="res://scenes/game_scenes/board_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +20,12 @@ config/icon="res://icon.svg"
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 NetworkManager="*res://scenes/network/network_manager.tscn"
 ActionManager="*res://scenes/action_system/action_manager.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 
 [editor_plugins]
 
