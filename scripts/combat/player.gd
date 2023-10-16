@@ -48,13 +48,24 @@ func play_card(index : int, target : Character) -> void :
 	_hand.remove_at(index)
 	refill_hand()
 
+func start_turn() -> void :
+	current_energy += energy_regen
+	for character in _characters :
+		character.start_turn()
+
 func get_character(index : int) -> Character :
 	return _characters[index]
 
 func get_card_in_hand(index : int) -> Card :
 	return _hand[index]
 
-func start_turn() -> void :
-	current_energy += energy_regen
-	for character in _characters :
-		character.start_turn()
+func get_opponent() -> Player :
+	return GameManager.opponent if GameManager.player == self else GameManager.player
+
+func get_characters(include_dead : bool = false) -> Array[Character] :
+	var characters = _characters.duplicate()
+	if !include_dead : 
+		for i in range (characters.size() - 1, -1, -1) :
+			if characters[i].is_dead :
+				characters.remove_at(i)
+	return characters

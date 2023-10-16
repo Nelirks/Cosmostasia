@@ -59,3 +59,14 @@ func on_character_death(source : Character, target : Character) -> void :
 
 func on_turn_start(is_active_player : bool) -> void :
 	pass
+
+func get_allies(include_self : bool = true, include_dead : bool = false) -> Array[Character] :
+	if include_self : 
+		return player.get_characters(include_dead)
+	else :
+		var allies : Array[Character] = player.get_characters(include_dead)
+		allies.remove_at(allies.find(self))
+		return allies
+
+func get_enemies(include_dead : bool = false) -> Array[Character] :
+	return player.get_opponent().get_characters(include_dead)

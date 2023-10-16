@@ -5,3 +5,4 @@ class_name ApplyArmorEffect
 
 func apply() -> void :
 	target.apply_armor(amount)
+	is_done = true
