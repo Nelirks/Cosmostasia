@@ -99,6 +99,7 @@ func _apply_effect() -> void :
 	current_effect.apply()
 	if ! current_effect.is_done :
 		await current_effect.done
+	current_effect = null
 	if effect_stack.size() > 0 :
 		_apply_effect()
 	else :
@@ -111,7 +112,7 @@ func _add_action(action : Action) -> void :
 
 func _apply_action() -> void :
 	action_queue[0].apply()
-	if !effect_stack.size() == 0 :
+	if current_effect != null or effect_stack.size() != 0 :
 		await effect_stack_emptied
 	action_queue.remove_at(0)
 	if action_queue.size() > 0:
