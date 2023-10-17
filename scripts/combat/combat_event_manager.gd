@@ -14,8 +14,8 @@ func on_damage_dealt(source : Character, target : Character, amount : int) -> vo
 	for i in range(3) :
 		GameManager.combat.get_player_by_turn(false).get_character(i).on_damage_dealt(source, target, amount)
 
-func on_character_death(source : Character, target : Character) -> void :
+func on_character_death(target : Character) -> void :
 	for i in range(3) :
-		GameManager.combat.get_player_by_turn(true).get_character(i).on_character_death(source, target)
+		GameManager.combat.get_player_by_turn(true).get_character(i).on_character_death(target)
 	for i in range(3) :
-		GameManager.combat.get_player_by_turn(false).get_character(i).on_character_death(source, target)
+		GameManager.combat.get_player_by_turn(false).get_character(i).on_character_death(target)

@@ -114,8 +114,29 @@ func _apply_action() -> void :
 	action_queue[0].apply()
 	if current_effect != null or effect_stack.size() != 0 :
 		await effect_stack_emptied
+	_check_game_state()
 	action_queue.remove_at(0)
 	if action_queue.size() > 0:
 		_apply_action()
 	else :
 		action_queue_emptied.emit()
+
+func _check_game_state() -> void :
+	_update_character_states()	
+	while (current_effect != null or effect_stack.size() != 0) :
+		await effect_stack_emptied
+		_update_character_states()
+	_check_victory()
+
+func _update_character_states() -> void :
+	for char in get_player_by_turn(true).get_characters() :
+		char.update_is_dead()
+	for char in get_player_by_turn(false).get_characters() :
+		char.update_is_dead()
+
+func _check_victory() -> void :
+	var active_player_lost : bool = get_player_by_turn(true).get_characters().size() == 0
+	var non_active_player_lost : bool = get_player_by_turn(false).get_characters().size() == 0
+	if active_player_lost and non_active_player_lost : print("DRAW")
+	elif active_player_lost : print("ACTIVE PLAYER LOST")
+	elif non_active_player_lost : print("NON ACTIVE PLAYER LOST")

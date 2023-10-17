@@ -44,9 +44,11 @@ func take_damage(source : Character, amount : int) -> void :
 			_armor = 0
 	current_health -= remaining_amount
 	GameManager.combat.events.on_damage_dealt(source, self, remaining_amount)
+
+func update_is_dead() -> void:
 	if current_health <= 0 :
 		is_dead = true
-		GameManager.combat.events.on_character_death(source, self)
+		GameManager.combat.events.on_character_death(self)
 
 func apply_armor(amount : int) -> void :
 	_armor += amount
@@ -54,7 +56,7 @@ func apply_armor(amount : int) -> void :
 func on_damage_dealt(source : Character, target : Character, amount : int) -> void :
 	pass
 
-func on_character_death(source : Character, target : Character) -> void :
+func on_character_death(target : Character) -> void :
 	pass
 
 func on_turn_start(is_active_player : bool) -> void :
