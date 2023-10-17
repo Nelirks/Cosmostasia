@@ -28,7 +28,10 @@ func _init(is_host : bool) -> void :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[2], _characters[char_index]))
 
 
-func shuffle_draw_pile() -> void :
+func shuffle_draw_pile(use_discard : bool = false) -> void :
+	if use_discard :
+		_draw_pile.append_array(_discard)
+		_discard = []
 	for cur_index in range (_draw_pile.size()) :
 		var swap_index = GameManager.rng.randi_range(0, _draw_pile.size() - 1)
 		var temp : Card = _draw_pile[cur_index]
@@ -37,6 +40,8 @@ func shuffle_draw_pile() -> void :
 
 func refill_hand() -> void :
 	for i in range (_hand.size(), 3) :
+		if _draw_pile.size() == 0 :
+			shuffle_draw_pile(true)
 		_hand.append(_draw_pile.pop_back())
 
 func can_play_card(index : int) -> bool :
@@ -45,6 +50,7 @@ func can_play_card(index : int) -> bool :
 func play_card(index : int, target : Character) -> void :
 	current_energy -= _hand[index].cost
 	_hand[index].apply_effects(target)
+	_discard.append(_hand[index])
 	_hand.remove_at(index)
 	refill_hand()
 
