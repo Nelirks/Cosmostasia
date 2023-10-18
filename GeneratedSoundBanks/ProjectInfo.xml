@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="Cosmostasia_WwiseProject" GUID="{AEBAF394-815F-4B1A-8827-E58C5A046887}" Generator="2023.1.0.8256"/>
+	<CacheRoot>../Cosmostasia_WwiseProject/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Windows" GUID="{F71E3050-EF3C-49C2-9B89-D3C3B540B1EA}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{3C1D9F98-DF1B-4E23-B68D-A333760CB866}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{D3D8963B-FC76-2C8E-6DF6-8CC6A996215C}</FileHash>
+</ProjectInfo>

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3050945240	New_Event			\Default Work Unit\New_Event	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1019903012	Rush_2	D:\Godot\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Rush_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rush_2		375724
+
