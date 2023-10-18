@@ -10,11 +10,11 @@ var _current_turn : Turn :
 
 @onready var events : CombatEventManager = $CombatEventManager
 
-var effect_stack : Array[Effect]
+var effect_queue : Array[Effect]
 var current_effect : Effect
 var action_queue : Array[Action]
 
-signal effect_stack_emptied()
+signal effect_queue_emptied()
 signal action_queue_emptied()
 
 @rpc("authority", "call_local", "reliable")
@@ -86,24 +86,35 @@ func get_player_by_turn(active_player : bool) -> Player :
 func add_effect(effect : Effect, source : Character, target : Character) -> void :
 	effect.source = source
 	effect.target = target
-	effect_stack.append(effect)
-	if effect_stack.size() == 1 :
+	effect_queue.push_back(effect)
+	if current_effect == null :
 		_apply_effect()
 
 func add_effects(effects : Array[Effect], source : Character, target : Character) -> void :
-	for index in range(effects.size()-1, -1, -1) :
+	for index in range(0, effects.size()) :
 		add_effect(effects[index], source, target)
 
+func add_effect_immediate(effect : Effect, source : Character, target : Character) -> void :
+	effect.source = source
+	effect.target = target
+	effect_queue.push_front(effect)
+	if current_effect == null :
+		_apply_effect()
+
+func add_effects_immediate(effects : Array[Effect], source : Character, target : Character) -> void :
+	for index in range(effects.size()-1, -1, -1) :
+		add_effect_immediate(effects[index], source, target)
+
 func _apply_effect() -> void :
-	current_effect = effect_stack.pop_back()
+	current_effect = effect_queue.pop_front()
 	current_effect.apply()
 	if ! current_effect.is_done :
 		await current_effect.done
 	current_effect = null
-	if effect_stack.size() > 0 :
+	if effect_queue.size() > 0 :
 		_apply_effect()
 	else :
-		effect_stack_emptied.emit()
+		effect_queue_emptied.emit()
 
 func _add_action(action : Action) -> void :
 	action_queue.append(action)
@@ -112,8 +123,8 @@ func _add_action(action : Action) -> void :
 
 func _apply_action() -> void :
 	action_queue[0].apply()
-	if current_effect != null or effect_stack.size() != 0 :
-		await effect_stack_emptied
+	if current_effect != null or effect_queue.size() != 0 :
+		await effect_queue_emptied
 	_check_game_state()
 	action_queue.remove_at(0)
 	if action_queue.size() > 0:
@@ -123,8 +134,8 @@ func _apply_action() -> void :
 
 func _check_game_state() -> void :
 	_update_character_states()	
-	while (current_effect != null or effect_stack.size() != 0) :
-		await effect_stack_emptied
+	while (current_effect != null or effect_queue.size() != 0) :
+		await effect_queue_emptied
 		_update_character_states()
 	_check_victory()
 

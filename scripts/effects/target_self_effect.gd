@@ -1,13 +1,8 @@
 extends Effect
 class_name TargetSelfEffect
 
-@export var effects : Array[Effect]
+@export var effect : Effect
 
 func apply() -> void :
-	for effect in effects :
-		effect.source = source
-		effect.target = source
-		effect.apply()
-		if !effect.is_done :
-			await effect.done
+	GameManager.combat.add_effect_immediate(effect, source, source)
 	is_done = true

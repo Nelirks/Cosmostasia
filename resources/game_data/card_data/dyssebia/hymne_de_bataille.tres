@@ -5,17 +5,17 @@
 [ext_resource type="Script" path="res://scripts/effects/target_self_effect.gd" id="2_2qibg"]
 [ext_resource type="Script" path="res://scripts/effects/target_team_effect.gd" id="2_omew4"]
 
-[sub_resource type="Resource" id="Resource_gyy8c"]
+[sub_resource type="Resource" id="Resource_xcu55"]
 script = ExtResource("1_shf5f")
 amount = 20
 
-[sub_resource type="Resource" id="Resource_an6qd"]
+[sub_resource type="Resource" id="Resource_x7x2t"]
 script = ExtResource("2_omew4")
-effects = Array[Resource("res://scripts/effects/effect.gd")]([SubResource("Resource_gyy8c")])
+effect = SubResource("Resource_xcu55")
 
 [sub_resource type="Resource" id="Resource_tl6k2"]
 script = ExtResource("2_2qibg")
-effects = Array[Resource("res://scripts/effects/effect.gd")]([SubResource("Resource_an6qd")])
+effect = SubResource("Resource_x7x2t")
 
 [resource]
 script = ExtResource("1_8j7or")
