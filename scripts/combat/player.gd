@@ -18,7 +18,7 @@ func _init(is_host : bool) -> void :
 	self.is_host = is_host
 	_characters.append(Character.new(load("res://resources/game_data/character_data/dyssebia.tres"), self))
 	_characters.append(Character.new(load("res://resources/game_data/character_data/lisirmee.tres"), self))
-	_characters.append(Character.new(load("res://resources/game_data/character_data/thimothy_laveak.tres"), self))
+	_characters.append(Character.new(load("res://resources/game_data/character_data/timothy_laveak.tres"), self))
 	for char_index in range(3) :
 		for card_index in range(5) :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[0], _characters[char_index]))
