@@ -139,8 +139,8 @@ func _apply_action() -> void :
 		action_queue[0].apply()
 		if current_effect != null or effect_queue.size() != 0 :
 			await effect_queue_emptied
-		_check_game_state()
 		action_queue.remove_at(0)
+		_check_game_state()
 	action_queue_emptied.emit()
 
 ## Updates characters is_dead value, then checks if a player wins the game.
@@ -158,8 +158,6 @@ func _update_character_states() -> void :
 		char.update_is_dead()
 
 func _check_victory() -> void :
-	var active_player_lost : bool = get_player_by_turn(true).get_characters().size() == 0
-	var non_active_player_lost : bool = get_player_by_turn(false).get_characters().size() == 0
-	if active_player_lost and non_active_player_lost : print("DRAW")
-	elif active_player_lost : print("ACTIVE PLAYER LOST")
-	elif non_active_player_lost : print("NON ACTIVE PLAYER LOST")
+	if get_player_by_turn(true).get_characters().size() == 0 or get_player_by_turn(false).get_characters().size() == 0 :
+		action_queue = []
+		GameManager.set_game_state(GameManager.GameState.GAME_END)
