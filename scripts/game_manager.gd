@@ -41,17 +41,17 @@ func set_game_state(state : GameState) -> void :
 	if NetworkManager.is_multiplayer :
 		_notify_game_state_change.rpc(state)
 		if _state == _peer_state :
-			on_state_synced(state)
+			_on_state_synced(state)
 	else :
-		on_state_synced(state)
+		_on_state_synced(state)
 
 @rpc("any_peer", "call_remote", "reliable")
 func _notify_game_state_change(state : GameState) -> void :
 	_peer_state = state
 	if _state == _peer_state :
-		on_state_synced(state)
+		_on_state_synced(state)
 
-func on_state_synced(state : GameState) -> void :
+func _on_state_synced(state : GameState) -> void :
 	match state :
 		GameState.NONE :
 			pass
