@@ -1,7 +1,5 @@
 extends Control
 
-var combat_scene : PackedScene = preload("res://scenes/game_scenes/combat_scene.tscn")
-
 func _ready() -> void:
 	NetworkManager.send_message.connect(_display_in_console)
 	GameManager.send_message.connect(_display_in_console)
@@ -17,7 +15,7 @@ func _on_host_button_pressed() -> void:
 
 func _start_game() -> void:
 	_disable_buttons()
-	get_tree().change_scene_to_packed(combat_scene)
+	GameManager.set_game_state(GameManager.GameState.COMBAT)
 
 func _disable_buttons() :
 	($HostButton as Button).disabled = true

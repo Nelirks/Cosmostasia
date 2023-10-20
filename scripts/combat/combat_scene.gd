@@ -2,9 +2,6 @@ extends Control
 
 var selected_card : int
 
-func _ready() -> void:
-	GameManager.set_game_state(GameManager.GameState.COMBAT)
-
 func _process(_delta: float) -> void:
 	if GameManager.player == null : return
 	($Console as RichTextLabel).text = "CURRENT TURN : " + ("PLAYER" if GameManager.combat.is_player_turn() else "OPPONENT") + "\n"

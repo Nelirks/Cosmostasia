@@ -1,7 +1,8 @@
 extends Node
 
 var rng : RandomNumberGenerator
-@onready var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
+var _combat_scene : PackedScene = preload("res://scenes/game_scenes/combat_scene.tscn")
+var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
 @onready var combat : CombatManager = $CombatManager
 
 enum GameState { NONE, COMBAT, GAME_END }
@@ -55,6 +56,7 @@ func on_state_synced(state : GameState) -> void :
 		GameState.NONE :
 			pass
 		GameState.COMBAT :
+			get_tree().change_scene_to_packed(_combat_scene)
 			combat.start_game()
 		GameState.GAME_END : 
 			get_tree().change_scene_to_packed(_end_screen_scene)
