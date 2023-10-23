@@ -40,9 +40,9 @@ func shuffle_draw_pile(use_discard : bool = false) -> void :
 
 func refill_hand() -> void :
 	for i in range (_hand.size(), 3) :
+		_hand.append(_draw_pile.pop_back())
 		if _draw_pile.size() == 0 :
 			shuffle_draw_pile(true)
-		_hand.append(_draw_pile.pop_back())
 
 func can_play_card(index : int) -> bool :
 	return _hand[index].cost <= current_energy
