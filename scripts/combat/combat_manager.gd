@@ -5,9 +5,7 @@ enum Turn { HOST, CLIENT }
 var _current_turn : Turn :
 	set (value) :
 		_current_turn = value
-		_start_turn()
-
-@onready var events : CombatEventManager = $CombatEventManager
+		get_player_by_turn(true).start_turn()
 
 ## Stores pending effects, in queue order. Effects will resolve as soon as the previous one is done resolving.
 var effect_queue : Array[Effect]
@@ -72,10 +70,6 @@ func next_turn() -> void :
 			next_turn()
 	else :
 		_current_turn = Turn.HOST
-
-func _start_turn() -> void :
-	get_player_by_turn(true).start_turn()
-	events.on_turn_start(_current_turn)
 
 func is_player_turn() -> bool :
 	return ((_current_turn == Turn.HOST) == GameManager.player.is_host)
@@ -161,3 +155,9 @@ func _check_victory() -> void :
 	if get_player_by_turn(true).get_characters().size() == 0 or get_player_by_turn(false).get_characters().size() == 0 :
 		action_queue = []
 		GameManager.set_game_state(GameManager.GameState.GAME_END)
+
+func emit_combat_event(event : CombatEvent) -> void :
+	for i in range(3) :
+		GameManager.combat.get_player_by_turn(true).get_character(i).on_combat_event(event)
+	for i in range(3) :
+		GameManager.combat.get_player_by_turn(false).get_character(i).on_combat_event(event)

@@ -58,6 +58,7 @@ func start_turn() -> void :
 	current_energy += energy_regen
 	for character in _characters :
 		character.start_turn()
+	GameManager.combat.emit_combat_event(StartTurnEvent.new(self))
 
 func get_character(index : int) -> Character :
 	return _characters[index]

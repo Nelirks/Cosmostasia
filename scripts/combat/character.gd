@@ -16,6 +16,8 @@ var _armor : int
 
 var is_dead : bool = false
 
+var _statuses : Array[StatusEffect]
+
 func _init(template : CharacterInfo, player : Player) :
 	self.template = template
 	char_name = template.character_name
@@ -29,12 +31,14 @@ func _init(template : CharacterInfo, player : Player) :
 
 func start_turn() -> void :
 	_armor = 0
+	for status in _statuses :
+		status.decay()
 
 func deal_damage(target : Character, amount : int) -> void :
 	target.take_damage(self, amount)
 
 func take_damage(source : Character, amount : int) -> void :
-	var remaining_amount = amount
+	var remaining_amount : int = amount
 	if _armor > 0 :
 		if _armor > remaining_amount :
 			_armor -= remaining_amount
@@ -43,24 +47,43 @@ func take_damage(source : Character, amount : int) -> void :
 			remaining_amount -= _armor
 			_armor = 0
 	current_health -= remaining_amount
-	GameManager.combat.events.on_damage_dealt(source, self, remaining_amount)
+	GameManager.combat.emit_combat_event(DamageDealtEvent.new(source, self, remaining_amount))
 
 func update_is_dead() -> void:
 	if current_health <= 0 :
 		is_dead = true
-		GameManager.combat.events.on_character_death(self)
+		GameManager.combat.emit_combat_event(CharacterDeathEvent.new(self))
 
 func apply_armor(amount : int) -> void :
 	_armor += amount
 
-func on_damage_dealt(source : Character, target : Character, amount : int) -> void :
-	pass
+func apply_status(status : StatusEffect) -> void :
+	var owned_status : StatusEffect = get_status(status.id)
+	if owned_status != null :
+		owned_status.stacks += status.stacks
+	else :
+		_statuses.append(status.duplicate(true))
+		status.owner = self
+		status.on_apply()
 
-func on_character_death(target : Character) -> void :
-	pass
+func remove_status(id : String) -> void :
+	for i in range(_statuses.size()) :
+		if _statuses[i].id == id :
+			_statuses.remove_at(i)
+			_statuses[i].on_remove()
 
-func on_turn_start(is_active_player : bool) -> void :
-	pass
+func has_status(id : String) -> bool :
+	return get_status(id) != null
+
+func get_status(id : String) -> StatusEffect :
+	for status in _statuses :
+		if id == status.id :
+			return status
+	return null
+
+func on_combat_event(event : CombatEvent) -> void :
+	for status in _statuses :
+		status.on_combat_event(event)
 
 func get_allies(include_self : bool = true, include_dead : bool = false) -> Array[Character] :
 	if include_self : 
