@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dar27t4blibx5"]
+
+[ext_resource type="PackedScene" uid="uid://bm6atc6gmel1k" path="res://addons/cosmostasia_editor/scenes/character_selector.tscn" id="1_dis0v"]
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_editor.gd" id="1_srq4s"]
+
+[node name="CharacterEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srq4s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterSelectPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="CharacterSelectConstainer" type="VBoxContainer" parent="HBoxContainer/CharacterSelectPanel"]
+layout_mode = 2
+
+[node name="CharacterSelector" parent="HBoxContainer/CharacterSelectPanel/CharacterSelectConstainer" instance=ExtResource("1_dis0v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="character_selected" from="HBoxContainer/CharacterSelectPanel/CharacterSelectConstainer/CharacterSelector" to="." method="_on_character_selected"]

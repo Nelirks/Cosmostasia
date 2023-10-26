@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm6atc6gmel1k"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_selector.gd" id="1_cw0pi"]
+
+[node name="CharacterSelector" type="MenuBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cw0pi")
+_character_folder = "res://resources/game_data/character_data"
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+title = "Character Select"
+item_count = 4
+item_0/text = "4n-70n"
+item_0/id = 0
+item_1/text = "Dyssebia"
+item_1/id = 1
+item_2/text = "Lisirmee"
+item_2/id = 2
+item_3/text = "TimothyLaveak"
+item_3/id = 3
+
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]

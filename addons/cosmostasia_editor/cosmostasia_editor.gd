@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-const _main_panel : PackedScene = preload("res://addons/card_editor/main_screen.tscn")
+const _main_panel : PackedScene = preload("res://addons/cosmostasia_editor/scenes/main_screen.tscn")
 
 var _main_panel_instance : Control
 
