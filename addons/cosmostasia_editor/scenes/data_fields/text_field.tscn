@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsn6kuvoiecn4"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/data_fields/text_field.gd" id="1_nvjlc"]
+
+[node name="TextField" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 265.0
+offset_bottom = 68.0
+script = ExtResource("1_nvjlc")
+property_name = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2

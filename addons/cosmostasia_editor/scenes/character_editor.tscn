@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dar27t4blibx5"]
+[gd_scene load_steps=4 format=3 uid="uid://dar27t4blibx5"]
 
 [ext_resource type="PackedScene" uid="uid://bm6atc6gmel1k" path="res://addons/cosmostasia_editor/scenes/character_selector.tscn" id="1_dis0v"]
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_editor.gd" id="1_srq4s"]
+[ext_resource type="PackedScene" uid="uid://dsn6kuvoiecn4" path="res://addons/cosmostasia_editor/scenes/data_fields/text_field.tscn" id="3_ihc8q"]
 
 [node name="CharacterEditor" type="Control"]
 layout_mode = 3
@@ -12,23 +13,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_srq4s")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CharacterSelectPanel" type="PanelContainer" parent="HBoxContainer"]
+[node name="FileManagementPanel" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+offset_right = 200.0
+offset_bottom = 648.0
 
-[node name="CharacterSelectConstainer" type="VBoxContainer" parent="HBoxContainer/CharacterSelectPanel"]
+[node name="FileManagementContainer" type="VBoxContainer" parent="FileManagementPanel"]
 layout_mode = 2
 
-[node name="CharacterSelector" parent="HBoxContainer/CharacterSelectPanel/CharacterSelectConstainer" instance=ExtResource("1_dis0v")]
+[node name="CharacterSelector" parent="FileManagementPanel/FileManagementContainer" instance=ExtResource("1_dis0v")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="character_selected" from="HBoxContainer/CharacterSelectPanel/CharacterSelectConstainer/CharacterSelector" to="." method="_on_character_selected"]
+[node name="SaveButton" type="Button" parent="FileManagementPanel/FileManagementContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="EditPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_left = 220.0
+offset_right = 620.0
+offset_bottom = 648.0
+
+[node name="EditContainer" type="VBoxContainer" parent="EditPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NameField" parent="EditPanel/EditContainer" instance=ExtResource("3_ihc8q")]
+layout_mode = 2
+property_name = "character_name"
+
+[connection signal="character_selected" from="FileManagementPanel/FileManagementContainer/CharacterSelector" to="." method="_on_character_selected"]
+[connection signal="pressed" from="FileManagementPanel/FileManagementContainer/SaveButton" to="." method="_on_save_button_pressed"]

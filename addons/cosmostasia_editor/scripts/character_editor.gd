@@ -3,15 +3,14 @@ extends Control
 
 @onready var _character_selector = %CharacterSelector
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_character_selected() -> void:
-	print(_character_selector.character)
+	for field in %EditContainer.find_children("", "DataField", true) :
+		field.set_value(_character_selector.character.get(field.property_name))
+
+func _on_save_button_pressed() -> void:
+	save()
+
+func save() -> void :
+	if _character_selector.character == null : return
+	for field in %EditContainer.find_children("", "DataField", true) :
+		_character_selector.character.set(field.property_name, field.get_value())
