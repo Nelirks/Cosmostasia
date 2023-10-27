@@ -7,7 +7,7 @@ var template : CharacterInfo
 
 var char_name : String
 var quote : String
-var sprite : Sprite2D
+var texture : Texture2D
 
 var max_health : int
 var current_health : int
@@ -22,7 +22,7 @@ func _init(template : CharacterInfo, player : Player) :
 	self.template = template
 	char_name = template.character_name
 	quote = template.character_quote
-	sprite = template.character_sprite
+	texture = template.character_texture
 	
 	max_health = template.max_health
 	current_health = max_health

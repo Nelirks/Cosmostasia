@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://pfkb4f236n2c"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/data_fields/texture_field.gd" id="1_bhv44"]
+
+[node name="TextureField" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 240.0
+offset_bottom = 242.0
+script = ExtResource("1_bhv44")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureDisplay" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 170)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SelectFileButton" type="Button" parent="VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Choose Sprite"
+
+[node name="RemoveFileButton" type="Button" parent="VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Remove Sprite"
+
+[node name="FileDialog" type="FileDialog" parent="VBoxContainer"]
+unique_name_in_owner = true
+title = "Open a File"
+ok_button_text = "Ouvrir"
+file_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/Buttons/SelectFileButton" to="." method="_on_select_file_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/RemoveFileButton" to="." method="_on_remove_file_button_pressed"]
+[connection signal="file_selected" from="VBoxContainer/FileDialog" to="." method="_on_file_selected"]
