@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dau0cu5ul08ok"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/data_fields/int_field.gd" id="1_ol4ks"]
+
+[node name="IntField" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1085.0
+offset_bottom = -580.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ol4ks")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+rounded = true
+allow_greater = true
+allow_lesser = true

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dar27t4blibx5"]
+[gd_scene load_steps=6 format=3 uid="uid://dar27t4blibx5"]
 
 [ext_resource type="PackedScene" uid="uid://bm6atc6gmel1k" path="res://addons/cosmostasia_editor/scenes/character_selector.tscn" id="1_dis0v"]
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_editor.gd" id="1_srq4s"]
 [ext_resource type="PackedScene" uid="uid://dsn6kuvoiecn4" path="res://addons/cosmostasia_editor/scenes/data_fields/text_field.tscn" id="3_ihc8q"]
+[ext_resource type="PackedScene" uid="uid://cfc44iurf687v" path="res://addons/cosmostasia_editor/scenes/data_fields/multiline_text_field.tscn" id="4_6ayta"]
+[ext_resource type="PackedScene" uid="uid://dau0cu5ul08ok" path="res://addons/cosmostasia_editor/scenes/data_fields/int_field.tscn" id="4_suv13"]
 
 [node name="CharacterEditor" type="Control"]
 layout_mode = 3
@@ -44,6 +46,14 @@ layout_mode = 2
 [node name="NameField" parent="EditPanel/EditContainer" instance=ExtResource("3_ihc8q")]
 layout_mode = 2
 property_name = "character_name"
+
+[node name="QuoteField" parent="EditPanel/EditContainer" instance=ExtResource("4_6ayta")]
+layout_mode = 2
+property_name = "character_quote"
+
+[node name="IntField" parent="EditPanel/EditContainer" instance=ExtResource("4_suv13")]
+layout_mode = 2
+property_name = "max_health"
 
 [connection signal="character_selected" from="FileManagementPanel/FileManagementContainer/CharacterSelector" to="." method="_on_character_selected"]
 [connection signal="pressed" from="FileManagementPanel/FileManagementContainer/SaveButton" to="." method="_on_save_button_pressed"]
