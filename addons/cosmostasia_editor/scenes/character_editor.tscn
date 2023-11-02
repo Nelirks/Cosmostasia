@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_srq4s")
 
-[node name="FileManagementPanel" type="PanelContainer" parent="."]
+[node name="FileManagementPanel" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 offset_right = 200.0
@@ -33,7 +33,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Save"
 
-[node name="EditPanel" type="PanelContainer" parent="."]
+[node name="EditPanel" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 offset_left = 220.0
@@ -52,14 +52,14 @@ property_name = "character_name"
 layout_mode = 2
 property_name = "character_quote"
 
-[node name="HPField" parent="EditPanel/EditContainer" instance=ExtResource("4_suv13")]
-layout_mode = 2
-property_name = "max_health"
-
 [node name="TextureField" parent="EditPanel/EditContainer" instance=ExtResource("6_2rlco")]
 layout_mode = 2
 dir_path = "res://resources/sprites/character_sprites"
 property_name = "character_texture"
+
+[node name="HPField" parent="EditPanel/EditContainer" instance=ExtResource("4_suv13")]
+layout_mode = 2
+property_name = "max_health"
 
 [connection signal="character_selected" from="FileManagementPanel/FileManagementContainer/CharacterSelector" to="." method="_on_character_selected"]
 [connection signal="pressed" from="FileManagementPanel/FileManagementContainer/SaveButton" to="." method="_on_save_button_pressed"]
