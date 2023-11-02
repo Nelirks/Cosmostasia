@@ -24,6 +24,6 @@ func _on_item_selected(index: int) -> void:
 func select_file(file_name : String) -> void :
 	_refresh_options()
 	for i in range(_file_names.size()) :
-		print(_file_names[i] + " / " + file_name)
 		if _file_names[i] == file_name :
 			select(i)
+			return
