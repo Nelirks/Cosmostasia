@@ -17,27 +17,56 @@ grow_vertical = 2
 script = ExtResource("1_srq4s")
 
 [node name="FileManagementPanel" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-offset_right = 200.0
-offset_bottom = 648.0
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
 
-[node name="FileManagementContainer" type="VBoxContainer" parent="FileManagementPanel"]
+[node name="FileManagermentContainer" type="HBoxContainer" parent="FileManagementPanel"]
 layout_mode = 2
 
-[node name="CharacterSelector" parent="FileManagementPanel/FileManagementContainer" instance=ExtResource("1_dis0v")]
+[node name="CharacterSelector" parent="FileManagementPanel/FileManagermentContainer" instance=ExtResource("1_dis0v")]
 unique_name_in_owner = true
 layout_mode = 2
+item_count = 5
+popup/item_0/text = "4n-70n"
+popup/item_0/id = 0
+popup/item_1/text = "Dyssebia"
+popup/item_1/id = 1
+popup/item_2/text = "Lisirmee"
+popup/item_2/id = 2
+popup/item_3/text = "Test"
+popup/item_3/id = 3
+popup/item_4/text = "TimothyLaveak"
+popup/item_4/id = 4
 
-[node name="SaveButton" type="Button" parent="FileManagementPanel/FileManagementContainer"]
+[node name="ResourceName" type="Label" parent="FileManagementPanel/FileManagermentContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="FileManagementPanel/FileManagermentContainer"]
+layout_mode = 2
+auto_translate = false
 text = "Save"
 
-[node name="EditPanel" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(400, 0)
+[node name="CreateButton" type="Button" parent="FileManagementPanel/FileManagermentContainer"]
 layout_mode = 2
-offset_left = 220.0
-offset_right = 620.0
+auto_translate = false
+text = "Create New"
+
+[node name="CreatePathSelector" type="FileDialog" parent="FileManagementPanel/FileManagermentContainer/CreateButton"]
+unique_name_in_owner = true
+root_subfolder = "res://resources/game_data/character_data/"
+filters = PackedStringArray("*.tres ; Resources")
+
+[node name="EditPanel" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_top = 48.0
+offset_right = 240.0
 offset_bottom = 648.0
 
 [node name="EditContainer" type="VBoxContainer" parent="EditPanel"]
@@ -61,5 +90,7 @@ property_name = "character_texture"
 layout_mode = 2
 property_name = "max_health"
 
-[connection signal="character_selected" from="FileManagementPanel/FileManagementContainer/CharacterSelector" to="." method="_on_character_selected"]
-[connection signal="pressed" from="FileManagementPanel/FileManagementContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="character_selected" from="FileManagementPanel/FileManagermentContainer/CharacterSelector" to="." method="_on_character_selected"]
+[connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/CreateButton" to="." method="_on_create_button_pressed"]
+[connection signal="file_selected" from="FileManagementPanel/FileManagermentContainer/CreateButton/CreatePathSelector" to="." method="_on_create_path_selected"]
