@@ -30,17 +30,6 @@ layout_mode = 2
 [node name="CharacterSelector" parent="FileManagementPanel/FileManagermentContainer" instance=ExtResource("1_dis0v")]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 5
-popup/item_0/text = "4n-70n"
-popup/item_0/id = 0
-popup/item_1/text = "Dyssebia"
-popup/item_1/id = 1
-popup/item_2/text = "Lisirmee"
-popup/item_2/id = 2
-popup/item_3/text = "Test"
-popup/item_3/id = 3
-popup/item_4/text = "TimothyLaveak"
-popup/item_4/id = 4
 
 [node name="ResourceName" type="Label" parent="FileManagementPanel/FileManagermentContainer"]
 unique_name_in_owner = true
@@ -57,10 +46,10 @@ layout_mode = 2
 auto_translate = false
 text = "Create New"
 
-[node name="CreatePathSelector" type="FileDialog" parent="FileManagementPanel/FileManagermentContainer/CreateButton"]
-unique_name_in_owner = true
-root_subfolder = "res://resources/game_data/character_data/"
-filters = PackedStringArray("*.tres ; Resources")
+[node name="RefreshButton" type="Button" parent="FileManagementPanel/FileManagermentContainer"]
+layout_mode = 2
+auto_translate = false
+text = "Reload"
 
 [node name="EditPanel" type="ScrollContainer" parent="."]
 visible = false
@@ -90,7 +79,12 @@ property_name = "character_texture"
 layout_mode = 2
 property_name = "max_health"
 
+[node name="FileSelector" type="FileDialog" parent="."]
+unique_name_in_owner = true
+root_subfolder = "res://resources/game_data/character_data/"
+filters = PackedStringArray("*.tres ; Resources")
+
 [connection signal="character_selected" from="FileManagementPanel/FileManagermentContainer/CharacterSelector" to="." method="_on_character_selected"]
 [connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/CreateButton" to="." method="_on_create_button_pressed"]
-[connection signal="file_selected" from="FileManagementPanel/FileManagermentContainer/CreateButton/CreatePathSelector" to="." method="_on_create_path_selected"]
+[connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/RefreshButton" to="." method="_on_refresh_button_pressed"]

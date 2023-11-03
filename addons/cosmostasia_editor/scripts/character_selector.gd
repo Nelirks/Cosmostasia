@@ -22,8 +22,11 @@ func _on_item_selected(index: int) -> void:
 	character_selected.emit(load(_character_folder + "/" + _file_names[index]))
 
 func select_file(file_name : String) -> void :
-	_refresh_options()
 	for i in range(_file_names.size()) :
 		if _file_names[i] == file_name :
 			select(i)
 			return
+
+func refresh() -> void :
+	_refresh_options()
+	select(-1)

@@ -6,6 +6,8 @@ var _character : CharacterInfo :
 		_character = value
 		_update_fields()
 
+@onready var _file_selector : FileDialog = %FileSelector
+
 func _ready() -> void:
 	_update_fields()
 
@@ -24,9 +26,16 @@ func _on_save_button_pressed() -> void:
 		_character.set(field.property_name, field.get_value())
 
 func _on_create_button_pressed() -> void :
-	(%CreatePathSelector as FileDialog).popup()
+	_file_selector.file_selected.connect(_on_create_file_selected)
+	_file_selector.popup()
 
-func _on_create_path_selected(path : String) -> void :
+func _on_create_file_selected(path : String) -> void :
 	_character = CharacterInfo.new()
 	ResourceSaver.save(_character, path)
 	%CharacterSelector.select_file(path.get_slice("/", path.get_slice_count("/") - 1))
+	_file_selector.file_selected.disconnect(_on_create_file_selected)
+
+
+func _on_refresh_button_pressed() -> void:
+	%CharacterSelector.refresh()
+	_character = null
