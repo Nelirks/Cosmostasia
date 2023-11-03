@@ -16,7 +16,9 @@ func _on_character_selected(character : CharacterInfo) -> void:
 
 func _update_fields() -> void :
 	($EditPanel as Control).visible = _character != null
+	%ResourceName.text = ""
 	if _character != null :
+		%ResourceName.text = _character.resource_path
 		for field in %EditContainer.find_children("", "DataField", true) :
 			field.set_value(_character.get(field.property_name))
 
