@@ -1,6 +1,8 @@
 @tool
 extends Control
 
+@export_dir var character_folder : String
+
 var _character : CharacterInfo :
 	set(value) :
 		_character = value
@@ -9,6 +11,8 @@ var _character : CharacterInfo :
 @onready var _file_selector : FileDialog = %FileSelector
 
 func _ready() -> void:
+	(%FileSelector as FileDialog).root_subfolder = character_folder
+	%CharacterPicker.target_folder = character_folder
 	_update_fields()
 
 func _on_character_selected(character : CharacterInfo) -> void:
@@ -34,10 +38,11 @@ func _on_create_button_pressed() -> void :
 func _on_create_file_selected(path : String) -> void :
 	_character = CharacterInfo.new()
 	ResourceSaver.save(_character, path)
-	%CharacterSelector.select_file(path.get_slice("/", path.get_slice_count("/") - 1))
+	%CharacterPicker.refresh()
+	%CharacterPicker.select_file(path.get_slice("/", path.get_slice_count("/") - 1))
 	_file_selector.file_selected.disconnect(_on_create_file_selected)
 
 
 func _on_refresh_button_pressed() -> void:
-	%CharacterSelector.refresh()
+	%CharacterPicker.refresh()
 	_character = null
