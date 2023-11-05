@@ -1,19 +1,19 @@
 @tool
 extends Control
-class_name CharacterFields
+class_name DataFieldContainer
 
 @onready var _field_container : Control = %Container
 
-var character : CharacterInfo :
+var resource : Resource :
 	set(value) :
-		character = value
+		resource = value
 		update_fields()
 
 func update_fields() -> void :
-	_field_container.visible = character != null
-	if character != null :
+	_field_container.visible = resource != null
+	if resource != null :
 		for field in find_children("", "DataField", true) :
-			field.set_value(character.get(field.property_name))
+			field.set_value(resource.get(field.property_name))
 
 func _get_field_values() -> Dictionary :
 	var values : Dictionary = {}
@@ -22,7 +22,7 @@ func _get_field_values() -> Dictionary :
 	return values
 
 func _on_save_button_pressed() -> void:
-	if character == null :
+	if resource == null :
 		printerr("Cannot save while character is null")
 	for field in find_children("", "DataField", true) :
-		character.set(field.property_name, field.get_value())
+		resource.set(field.property_name, field.get_value())

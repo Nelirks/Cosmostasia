@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://co66xsdh61y0e"]
 
-[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_fields.gd" id="1_3syvb"]
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/data_fields/data_field_container.gd" id="1_3syvb"]
 [ext_resource type="PackedScene" uid="uid://dsn6kuvoiecn4" path="res://addons/cosmostasia_editor/scenes/data_fields/text_field.tscn" id="1_jag6v"]
 [ext_resource type="PackedScene" uid="uid://cfc44iurf687v" path="res://addons/cosmostasia_editor/scenes/data_fields/multiline_text_field.tscn" id="2_4p0p6"]
 [ext_resource type="PackedScene" uid="uid://pfkb4f236n2c" path="res://addons/cosmostasia_editor/scenes/data_fields/texture_field.tscn" id="3_ovsbs"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_editor.gd" id="1_srq4s"]
 [ext_resource type="PackedScene" uid="uid://cxviehxgev3dp" path="res://addons/cosmostasia_editor/scenes/resource_selector/resource_selector.tscn" id="2_dcgr1"]
-[ext_resource type="PackedScene" uid="uid://co66xsdh61y0e" path="res://addons/cosmostasia_editor/scenes/character_fields.tscn" id="3_7kyho"]
-[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/character_selector.gd" id="3_rgs01"]
+[ext_resource type="PackedScene" uid="uid://co66xsdh61y0e" path="res://addons/cosmostasia_editor/scenes/data_fields/field_containers/character_fields.tscn" id="3_7kyho"]
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/character_file_selector.gd" id="3_t0ybq"]
 [ext_resource type="PackedScene" uid="uid://n3f6wntsonjg" path="res://addons/cosmostasia_editor/scenes/card_editor.tscn" id="5_1nyfh"]
 
 [node name="CharacterEditor" type="Control"]
@@ -23,7 +23,7 @@ anchors_preset = 0
 anchor_right = 0.0
 offset_right = 1152.0
 offset_bottom = 32.0
-script = ExtResource("3_rgs01")
+script = ExtResource("3_t0ybq")
 target_folder = "res://resources/game_data/character_data"
 
 [node name="TabContainer" type="TabContainer" parent="."]

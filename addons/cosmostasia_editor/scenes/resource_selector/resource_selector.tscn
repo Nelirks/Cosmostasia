@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxviehxgev3dp"]
 
-[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/resource_selector.gd" id="1_f27h1"]
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/resource_file_selector.gd" id="1_f27h1"]
 [ext_resource type="PackedScene" uid="uid://bm6atc6gmel1k" path="res://addons/cosmostasia_editor/scenes/resource_selector/resource_picker.tscn" id="1_vknt5"]
 
 [node name="ResourceSelector" type="ScrollContainer"]

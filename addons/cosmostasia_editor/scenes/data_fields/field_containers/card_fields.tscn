@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba7nalsxtwe0g"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/data_fields/data_field_container.gd" id="1_41iui"]
+[ext_resource type="PackedScene" uid="uid://dsn6kuvoiecn4" path="res://addons/cosmostasia_editor/scenes/data_fields/text_field.tscn" id="2_pywuq"]
+[ext_resource type="PackedScene" uid="uid://cfc44iurf687v" path="res://addons/cosmostasia_editor/scenes/data_fields/multiline_text_field.tscn" id="3_0kxxe"]
+[ext_resource type="PackedScene" uid="uid://dau0cu5ul08ok" path="res://addons/cosmostasia_editor/scenes/data_fields/int_field.tscn" id="5_1uuo5"]
+
+[node name="CardFields" type="ScrollContainer"]
+custom_minimum_size = Vector2(400, 600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_41iui")
+
+[node name="Container" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="NameField" parent="Container" instance=ExtResource("2_pywuq")]
+layout_mode = 2
+property_name = "card_name"
+
+[node name="CostField" parent="Container" instance=ExtResource("5_1uuo5")]
+layout_mode = 2
+property_name = "card_cost"
+
+[node name="DescriptionField" parent="Container" instance=ExtResource("3_0kxxe")]
+layout_mode = 2
+property_name = "card_description"
+
+[node name="QuoteField" parent="Container" instance=ExtResource("3_0kxxe")]
+layout_mode = 2
+property_name = "card_quote"
+
+[node name="SaveButton" type="Button" parent="Container"]
+layout_mode = 2
+auto_translate = false
+text = "Save"
+
+[connection signal="pressed" from="Container/SaveButton" to="." method="_on_save_button_pressed"]

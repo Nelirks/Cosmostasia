@@ -1,6 +1,6 @@
 @tool
 extends OptionButton
-class_name ResourcePicker
+class_name ResourceFilePicker
 
 var target_folder : String :
 	set(value) :

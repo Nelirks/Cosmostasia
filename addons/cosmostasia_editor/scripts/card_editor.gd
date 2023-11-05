@@ -2,15 +2,23 @@
 extends Control
 class_name CardEditor
 
-@onready var _card_selector : OptionButton = %CardSelector
+@onready var _card_selector : CardSelector = %CardSelector
+@onready var _card_fields : DataFieldContainer = %CardFields
 
 var character : CharacterInfo :
 	set(value) :
 		character = value
-		_card_selector.clear()
-		if character != null :
-			for card in character.character_cards :
-				_card_selector.add_item(card.card_name)
+		_card_selector.character = character
 
-func _on_create_card_button_pressed() -> void:
-	character.character_cards.append(CardInfo.new())
+var card : CardInfo :
+	set(value) :
+		card = value
+		if _card_fields != null :
+			_card_fields.resource = card
+
+func _ready() -> void:
+	character = null
+	card = null
+
+func _on_card_selected(card : CardInfo) -> void:
+	self.card = card

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bm6atc6gmel1k"]
 
-[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/resource_picker.gd" id="1_7gt56"]
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/resource_file_picker.gd" id="1_7gt56"]
 
 [node name="ResourcePicker" type="OptionButton"]
 anchors_preset = 15

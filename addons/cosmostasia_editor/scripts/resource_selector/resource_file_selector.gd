@@ -1,9 +1,9 @@
 @tool
 extends Control
-class_name ResourceSelector
+class_name ResourceFileSelector
 
 @onready var _file_selector : FileDialog = %FileSelector
-@onready var _resource_picker : ResourcePicker = %ResourcePicker
+@onready var _resource_picker : ResourceFilePicker = %ResourcePicker
 @onready var _resource_path_label : Label = %ResourcePathLabel
 
 @export_dir var target_folder : String

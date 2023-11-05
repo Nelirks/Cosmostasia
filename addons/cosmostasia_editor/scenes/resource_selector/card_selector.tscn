@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://btafxrfoanh5d"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/card_selector.gd" id="1_grble"]
+
+[node name="CardSelector" type="HBoxContainer"]
+offset_right = 368.0
+offset_bottom = 40.0
+script = ExtResource("1_grble")
+
+[node name="CardPicker" type="OptionButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 32)
+layout_mode = 2
+
+[node name="CreateCardButton" type="Button" parent="."]
+layout_mode = 2
+auto_translate = false
+text = "Create Card"
+
+[node name="DeleteCardButton" type="Button" parent="."]
+layout_mode = 2
+auto_translate = false
+text = "Delete Card"
+
+[node name="ReloadSelectorButton" type="Button" parent="."]
+layout_mode = 2
+text = "Reload"
+
+[connection signal="item_selected" from="CardPicker" to="." method="_on_card_picked"]
