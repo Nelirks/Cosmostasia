@@ -14,29 +14,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3syvb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Container" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NameField" parent="VBoxContainer" instance=ExtResource("1_jag6v")]
+[node name="NameField" parent="Container" instance=ExtResource("1_jag6v")]
 layout_mode = 2
 property_name = "character_name"
 
-[node name="QuoteField" parent="VBoxContainer" instance=ExtResource("2_4p0p6")]
+[node name="QuoteField" parent="Container" instance=ExtResource("2_4p0p6")]
 layout_mode = 2
 property_name = "character_quote"
 
-[node name="TextureField" parent="VBoxContainer" instance=ExtResource("3_ovsbs")]
+[node name="TextureField" parent="Container" instance=ExtResource("3_ovsbs")]
 layout_mode = 2
 dir_path = "res://resources/sprites/character_sprites"
 property_name = "character_texture"
 
-[node name="HPField" parent="VBoxContainer" instance=ExtResource("4_4ncws")]
+[node name="HPField" parent="Container" instance=ExtResource("4_4ncws")]
 layout_mode = 2
 property_name = "max_health"
 
-[node name="SaveButton" type="Button" parent="VBoxContainer"]
+[node name="SaveButton" type="Button" parent="Container"]
 layout_mode = 2
 auto_translate = false
 text = "Save"
 
-[connection signal="pressed" from="VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Container/SaveButton" to="." method="_on_save_button_pressed"]

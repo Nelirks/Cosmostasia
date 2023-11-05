@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://n3f6wntsonjg"]
+[gd_scene load_steps=2 format=3 uid="uid://n3f6wntsonjg"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/card_editor.gd" id="1_i0dn1"]
 
 [node name="CardEditor" type="Control"]
 layout_mode = 3
@@ -7,3 +9,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i0dn1")
+
+[node name="CardSelector" type="OptionButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 32)
+layout_mode = 0
+offset_right = 14.0
+offset_bottom = 20.0
+
+[node name="CreateCardButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="CreateCardButton" to="." method="_on_create_card_button_pressed"]

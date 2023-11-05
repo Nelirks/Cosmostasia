@@ -2,10 +2,15 @@
 extends Control
 class_name CharacterFields
 
-signal query_save(data : Dictionary)
+@onready var _field_container : Control = %Container
 
-func update_fields(character : CharacterInfo) -> void :
-	visible = character != null
+var character : CharacterInfo :
+	set(value) :
+		character = value
+		update_fields()
+
+func update_fields() -> void :
+	_field_container.visible = character != null
 	if character != null :
 		for field in find_children("", "DataField", true) :
 			field.set_value(character.get(field.property_name))
@@ -17,4 +22,7 @@ func _get_field_values() -> Dictionary :
 	return values
 
 func _on_save_button_pressed() -> void:
-	query_save.emit(_get_field_values())
+	if character == null :
+		printerr("Cannot save while character is null")
+	for field in find_children("", "DataField", true) :
+		character.set(field.property_name, field.get_value())

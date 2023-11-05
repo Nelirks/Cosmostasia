@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dar27t4blibx5"]
+[gd_scene load_steps=6 format=3 uid="uid://dar27t4blibx5"]
 
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_editor.gd" id="1_srq4s"]
 [ext_resource type="PackedScene" uid="uid://cxviehxgev3dp" path="res://addons/cosmostasia_editor/scenes/resource_selector/resource_selector.tscn" id="2_dcgr1"]
 [ext_resource type="PackedScene" uid="uid://co66xsdh61y0e" path="res://addons/cosmostasia_editor/scenes/character_fields.tscn" id="3_7kyho"]
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/character_selector.gd" id="3_rgs01"]
+[ext_resource type="PackedScene" uid="uid://n3f6wntsonjg" path="res://addons/cosmostasia_editor/scenes/card_editor.tscn" id="5_1nyfh"]
 
 [node name="CharacterEditor" type="Control"]
 layout_mode = 3
@@ -35,5 +36,9 @@ offset_bottom = 596.0
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="CardEditor" parent="TabContainer" instance=ExtResource("5_1nyfh")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
 [connection signal="_resource_selected" from="CharacterSelector" to="." method="_on_character_selected"]
-[connection signal="query_save" from="TabContainer/CharacterFields" to="." method="_on_character_fields_query_save"]
