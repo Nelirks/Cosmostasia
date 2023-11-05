@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://co66xsdh61y0e"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_fields.gd" id="1_3syvb"]
+[ext_resource type="PackedScene" uid="uid://dsn6kuvoiecn4" path="res://addons/cosmostasia_editor/scenes/data_fields/text_field.tscn" id="1_jag6v"]
+[ext_resource type="PackedScene" uid="uid://cfc44iurf687v" path="res://addons/cosmostasia_editor/scenes/data_fields/multiline_text_field.tscn" id="2_4p0p6"]
+[ext_resource type="PackedScene" uid="uid://pfkb4f236n2c" path="res://addons/cosmostasia_editor/scenes/data_fields/texture_field.tscn" id="3_ovsbs"]
+[ext_resource type="PackedScene" uid="uid://dau0cu5ul08ok" path="res://addons/cosmostasia_editor/scenes/data_fields/int_field.tscn" id="4_4ncws"]
+
+[node name="CharacterFields" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3syvb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameField" parent="VBoxContainer" instance=ExtResource("1_jag6v")]
+layout_mode = 2
+property_name = "character_name"
+
+[node name="QuoteField" parent="VBoxContainer" instance=ExtResource("2_4p0p6")]
+layout_mode = 2
+property_name = "character_quote"
+
+[node name="TextureField" parent="VBoxContainer" instance=ExtResource("3_ovsbs")]
+layout_mode = 2
+dir_path = "res://resources/sprites/character_sprites"
+property_name = "character_texture"
+
+[node name="HPField" parent="VBoxContainer" instance=ExtResource("4_4ncws")]
+layout_mode = 2
+property_name = "max_health"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+auto_translate = false
+text = "Save"
+
+[connection signal="pressed" from="VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

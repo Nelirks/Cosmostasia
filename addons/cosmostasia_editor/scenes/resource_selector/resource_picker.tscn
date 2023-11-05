@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm6atc6gmel1k"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/resource_picker.gd" id="1_7gt56"]
+
+[node name="ResourcePicker" type="OptionButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 8
+popup/item_0/text = ".htaccess"
+popup/item_0/id = 0
+popup/item_1/text = "VcRed.msi"
+popup/item_1/id = 1
+popup/item_2/text = "VcRed.cab"
+popup/item_2/id = 2
+popup/item_3/text = "Globdata.ini"
+popup/item_3/id = 3
+popup/item_4/text = "Install.exe"
+popup/item_4/id = 4
+popup/item_5/text = "Install.ini"
+popup/item_5/id = 5
+popup/item_6/text = "Msdia80.dll"
+popup/item_6/id = 6
+popup/item_7/text = "Vcredist.bmp"
+popup/item_7/id = 7
+script = ExtResource("1_7gt56")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

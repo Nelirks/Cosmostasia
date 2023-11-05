@@ -1,48 +1,30 @@
 @tool
 extends Control
+class_name CharacterEditor
 
 @export_dir var character_folder : String
 
 var _character : CharacterInfo :
 	set(value) :
 		_character = value
-		_update_fields()
+		if _character_fields != null : _character_fields.update_fields(_character)
 
-@onready var _file_selector : FileDialog = %FileSelector
+@onready var _character_selector : ResourceSelector = %CharacterSelector
+@onready var _character_fields : CharacterFields = %CharacterFields
 
 func _ready() -> void:
-	(%FileSelector as FileDialog).root_subfolder = character_folder
-	%CharacterPicker.target_folder = character_folder
-	_update_fields()
+	_character_selector.target_folder = character_folder
+	_character_fields.update_fields(_character)
 
-func _on_character_selected(character : CharacterInfo) -> void:
-	_character = character
+func _on_character_selected(character : Resource) -> void:
+	if character != null and not character is CharacterInfo :
+		print("Cannot select non CharacterInfo resources")
+	_character = character as CharacterInfo
+	if _character_fields != null :
+		_character_fields.update_fields(_character)
 
-func _update_fields() -> void :
-	($EditPanel as Control).visible = _character != null
-	%ResourceName.text = ""
-	if _character != null :
-		%ResourceName.text = _character.resource_path
-		for field in %EditContainer.find_children("", "DataField", true) :
-			field.set_value(_character.get(field.property_name))
-
-func _on_save_button_pressed() -> void:
-	if _character == null : return
-	for field in %EditContainer.find_children("", "DataField", true) :
-		_character.set(field.property_name, field.get_value())
-
-func _on_create_button_pressed() -> void :
-	_file_selector.file_selected.connect(_on_create_file_selected)
-	_file_selector.popup()
-
-func _on_create_file_selected(path : String) -> void :
-	_character = CharacterInfo.new()
-	ResourceSaver.save(_character, path)
-	%CharacterPicker.refresh()
-	%CharacterPicker.select_file(path.get_slice("/", path.get_slice_count("/") - 1))
-	_file_selector.file_selected.disconnect(_on_create_file_selected)
-
-
-func _on_refresh_button_pressed() -> void:
-	%CharacterPicker.refresh()
-	_character = null
+func _on_character_fields_query_save(data : Dictionary) -> void:
+	if _character == null :
+		printerr("Cannot save while character is null")
+	for key in data.keys() :
+		_character.set(key, data[key])

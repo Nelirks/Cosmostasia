@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dar27t4blibx5"]
+[gd_scene load_steps=5 format=3 uid="uid://dar27t4blibx5"]
 
-[ext_resource type="PackedScene" uid="uid://bm6atc6gmel1k" path="res://addons/cosmostasia_editor/scenes/resource_picker.tscn" id="1_dis0v"]
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/character_editor.gd" id="1_srq4s"]
-[ext_resource type="PackedScene" uid="uid://dsn6kuvoiecn4" path="res://addons/cosmostasia_editor/scenes/data_fields/text_field.tscn" id="3_ihc8q"]
-[ext_resource type="PackedScene" uid="uid://cfc44iurf687v" path="res://addons/cosmostasia_editor/scenes/data_fields/multiline_text_field.tscn" id="4_6ayta"]
-[ext_resource type="PackedScene" uid="uid://dau0cu5ul08ok" path="res://addons/cosmostasia_editor/scenes/data_fields/int_field.tscn" id="4_suv13"]
-[ext_resource type="PackedScene" uid="uid://pfkb4f236n2c" path="res://addons/cosmostasia_editor/scenes/data_fields/texture_field.tscn" id="6_2rlco"]
+[ext_resource type="PackedScene" uid="uid://cxviehxgev3dp" path="res://addons/cosmostasia_editor/scenes/resource_selector/resource_selector.tscn" id="2_dcgr1"]
+[ext_resource type="PackedScene" uid="uid://co66xsdh61y0e" path="res://addons/cosmostasia_editor/scenes/character_fields.tscn" id="3_7kyho"]
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/resource_selector/character_selector.gd" id="3_rgs01"]
 
 [node name="CharacterEditor" type="Control"]
 layout_mode = 3
@@ -17,88 +15,25 @@ grow_vertical = 2
 script = ExtResource("1_srq4s")
 character_folder = "res://resources/game_data/character_data"
 
-[node name="FileManagementPanel" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 8.0
-grow_horizontal = 2
-
-[node name="FileManagermentContainer" type="HBoxContainer" parent="FileManagementPanel"]
-layout_mode = 2
-
-[node name="CharacterPicker" parent="FileManagementPanel/FileManagermentContainer" instance=ExtResource("1_dis0v")]
+[node name="CharacterSelector" parent="." instance=ExtResource("2_dcgr1")]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 8
-popup/item_0/text = ".htaccess"
-popup/item_1/text = "VcRed.msi"
-popup/item_2/text = "VcRed.cab"
-popup/item_3/text = "Globdata.ini"
-popup/item_4/text = "Install.exe"
-popup/item_4/id = 4
-popup/item_5/text = "Install.ini"
-popup/item_5/id = 5
-popup/item_6/text = "Msdia80.dll"
-popup/item_6/id = 6
-popup/item_7/text = "Vcredist.bmp"
-popup/item_7/id = 7
+anchors_preset = 0
+anchor_right = 0.0
+offset_right = 1152.0
+offset_bottom = 32.0
+script = ExtResource("3_rgs01")
+target_folder = "res://resources/game_data/character_data"
 
-[node name="ResourceName" type="Label" parent="FileManagementPanel/FileManagermentContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(256, 0)
+[node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 2
+offset_top = 36.0
+offset_right = 1152.0
+offset_bottom = 596.0
 
-[node name="SaveButton" type="Button" parent="FileManagementPanel/FileManagermentContainer"]
-layout_mode = 2
-auto_translate = false
-text = "Save"
-
-[node name="CreateButton" type="Button" parent="FileManagementPanel/FileManagermentContainer"]
-layout_mode = 2
-auto_translate = false
-text = "Create New"
-
-[node name="RefreshButton" type="Button" parent="FileManagementPanel/FileManagermentContainer"]
-layout_mode = 2
-auto_translate = false
-text = "Reload"
-
-[node name="EditPanel" type="ScrollContainer" parent="."]
-visible = false
-layout_mode = 2
-offset_top = 48.0
-offset_right = 240.0
-offset_bottom = 648.0
-
-[node name="EditContainer" type="VBoxContainer" parent="EditPanel"]
+[node name="CharacterFields" parent="TabContainer" instance=ExtResource("3_7kyho")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="NameField" parent="EditPanel/EditContainer" instance=ExtResource("3_ihc8q")]
-layout_mode = 2
-property_name = "character_name"
-
-[node name="QuoteField" parent="EditPanel/EditContainer" instance=ExtResource("4_6ayta")]
-layout_mode = 2
-property_name = "character_quote"
-
-[node name="TextureField" parent="EditPanel/EditContainer" instance=ExtResource("6_2rlco")]
-layout_mode = 2
-dir_path = "res://resources/sprites/character_sprites"
-property_name = "character_texture"
-
-[node name="HPField" parent="EditPanel/EditContainer" instance=ExtResource("4_suv13")]
-layout_mode = 2
-property_name = "max_health"
-
-[node name="FileSelector" type="FileDialog" parent="."]
-unique_name_in_owner = true
-root_subfolder = "res://resources/game_data/character_data"
-filters = PackedStringArray("*.tres ; Resources")
-
-[connection signal="character_selected" from="FileManagementPanel/FileManagermentContainer/CharacterPicker" to="." method="_on_character_selected"]
-[connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/CreateButton" to="." method="_on_create_button_pressed"]
-[connection signal="pressed" from="FileManagementPanel/FileManagermentContainer/RefreshButton" to="." method="_on_refresh_button_pressed"]
+[connection signal="_resource_selected" from="CharacterSelector" to="." method="_on_character_selected"]
+[connection signal="query_save" from="TabContainer/CharacterFields" to="." method="_on_character_fields_query_save"]
