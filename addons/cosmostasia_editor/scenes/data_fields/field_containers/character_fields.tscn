@@ -17,6 +17,8 @@ script = ExtResource("1_3syvb")
 [node name="Container" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="NameField" parent="Container" instance=ExtResource("1_jag6v")]
 layout_mode = 2

@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dau0cu5ul08ok" path="res://addons/cosmostasia_editor/scenes/data_fields/int_field.tscn" id="5_1uuo5"]
 
 [node name="CardFields" type="ScrollContainer"]
-custom_minimum_size = Vector2(400, 600)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,8 +15,9 @@ script = ExtResource("1_41iui")
 
 [node name="Container" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 600)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="NameField" parent="Container" instance=ExtResource("2_pywuq")]
 layout_mode = 2

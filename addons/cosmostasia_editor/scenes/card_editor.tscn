@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://n3f6wntsonjg"]
+[gd_scene load_steps=5 format=3 uid="uid://n3f6wntsonjg"]
 
 [ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/card_editor.gd" id="1_i0dn1"]
+[ext_resource type="PackedScene" uid="uid://b861ekfnonvus" path="res://addons/cosmostasia_editor/scenes/card_graph/card_graph_editor.tscn" id="2_2musl"]
 [ext_resource type="PackedScene" uid="uid://ba7nalsxtwe0g" path="res://addons/cosmostasia_editor/scenes/data_fields/field_containers/card_fields.tscn" id="2_aml2q"]
 [ext_resource type="PackedScene" uid="uid://btafxrfoanh5d" path="res://addons/cosmostasia_editor/scenes/resource_selector/card_selector.tscn" id="2_ivv8b"]
 
@@ -13,18 +14,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i0dn1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_bottom = 600.0
-
-[node name="CardSelector" parent="VBoxContainer" instance=ExtResource("2_ivv8b")]
+[node name="CardSelector" parent="." instance=ExtResource("2_ivv8b")]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="CardFields" parent="VBoxContainer" instance=ExtResource("2_aml2q")]
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+
+[node name="CardFields" parent="TabContainer" instance=ExtResource("2_aml2q")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="card_selected" from="VBoxContainer/CardSelector" to="." method="_on_card_selected"]
+[node name="CardGraphEditor" parent="TabContainer" instance=ExtResource("2_2musl")]
+visible = false
+layout_mode = 2
+scroll_offset = Vector2(-46.08, -31)
+
+[connection signal="card_selected" from="CardSelector" to="." method="_on_card_selected"]

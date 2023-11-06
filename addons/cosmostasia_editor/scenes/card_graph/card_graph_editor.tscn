@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b861ekfnonvus"]
+
+[ext_resource type="Script" path="res://addons/cosmostasia_editor/scripts/card_graph/card_graph_editor.gd" id="1_olpwf"]
+
+[node name="CardGraphEditor" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_offset = Vector2(-12, 0)
+script = ExtResource("1_olpwf")
