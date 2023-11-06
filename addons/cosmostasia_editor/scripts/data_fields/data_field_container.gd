@@ -26,3 +26,4 @@ func _on_save_button_pressed() -> void:
 		printerr("Cannot save while character is null")
 	for field in find_children("", "DataField", true) :
 		resource.set(field.property_name, field.get_value())
+	ResourceSaver.save(resource, resource.resource_path)
