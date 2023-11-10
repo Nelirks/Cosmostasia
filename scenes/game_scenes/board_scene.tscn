@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwm4vw566h2mf"]
+
+[ext_resource type="PackedScene" uid="uid://b0fj0gdbuhcyh" path="res://scenes/game_scenes/down_cards.tscn" id="1_7ww35"]
+[ext_resource type="PackedScene" uid="uid://220xu4wjuj34" path="res://scenes/game_scenes/top_cards.tscn" id="2_6tv2a"]
+[ext_resource type="PackedScene" uid="uid://cbuvf4wgi84h3" path="res://scenes/game_scenes/mana_bar.tscn" id="3_ih8mv"]
+[ext_resource type="PackedScene" uid="uid://clrsfr0oad5f4" path="res://scenes/game_scenes/deck.tscn" id="4_orgxr"]
+
+[node name="board_scene" type="Node2D"]
+
+[node name="down_cards" parent="." instance=ExtResource("1_7ww35")]
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 1080.0
+
+[node name="top_cards" parent="." instance=ExtResource("2_6tv2a")]
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 1080.0
+
+[node name="mana_bar" parent="." instance=ExtResource("3_ih8mv")]
+anchors_preset = 9
+anchor_right = 0.0
+offset_left = 1626.0
+offset_top = 1014.0
+offset_right = 1626.0
+offset_bottom = 1014.0
+grow_horizontal = 1
+scale = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="mana_bar"]
+layout_mode = 0
+offset_left = -24.6666
+offset_top = -12.0
+offset_right = 24.3334
+offset_bottom = 14.0
+text = "MANA"
+
+[node name="mana_bar2" parent="." instance=ExtResource("3_ih8mv")]
+anchors_preset = 9
+anchor_right = 0.0
+offset_left = 308.0
+offset_top = 66.9999
+offset_right = 308.0
+offset_bottom = 66.9999
+grow_horizontal = 1
+rotation = 3.14159
+scale = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="mana_bar2"]
+layout_mode = 0
+offset_left = -24.6666
+offset_top = -12.0
+offset_right = 24.3334
+offset_bottom = 14.0
+text = "MANA"
+
+[node name="deck" parent="." instance=ExtResource("4_orgxr")]
+offset_left = 300.0
+offset_top = 750.0
+offset_right = 300.0
+offset_bottom = 750.0
+pivot_offset = Vector2(100, 150)
+
+[node name="deck2" parent="." instance=ExtResource("4_orgxr")]
+offset_left = 1420.0
+offset_top = 50.0
+offset_right = 1420.0
+offset_bottom = 50.0
+rotation = 3.14159
+pivot_offset = Vector2(100, 150)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1650.0
+offset_top = 540.0
+offset_right = 1840.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 191.0
+offset_bottom = 78.0
+text = "Tour Suivant
+"
+horizontal_alignment = 1
+vertical_alignment = 1

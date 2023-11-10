@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0fj0gdbuhcyh"]
+
+[ext_resource type="Texture2D" uid="uid://bc5sfcaqfp0tn" path="res://Sprites/Characters Sprite/Freyja_decor.png" id="1_ujpww"]
+[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="2_b4xpq"]
+
+[node name="down_cards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Down Middle Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(100, 150)
+texture = ExtResource("1_ujpww")
+expand_mode = 1
+
+[node name="Down Left Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -200.0
+offset_right = -150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_ujpww")
+expand_mode = 1
+
+[node name="Down Right Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_ujpww")
+expand_mode = 1
+
+[node name="Top Middle Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -470.0
+offset_right = 75.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(75, 125)
+texture = ExtResource("2_b4xpq")
+expand_mode = 1
+
+[node name="Top Left Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -470.0
+offset_right = -175.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(75, 125)
+texture = ExtResource("2_b4xpq")
+expand_mode = 1
+
+[node name="Top Right Card" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 175.0
+offset_top = -470.0
+offset_right = 325.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(75, 125)
+texture = ExtResource("2_b4xpq")
+expand_mode = 1
