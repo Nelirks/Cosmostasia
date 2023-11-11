@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_b0j2e")
 card_name = "Déni du juge"
-card_description = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
-card_quote = "\"Le jugement de ce monde nous revient de droit\""
-card_cost = 3
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
+quote = "\"Le jugement de ce monde nous revient de droit\""
+cost = 3

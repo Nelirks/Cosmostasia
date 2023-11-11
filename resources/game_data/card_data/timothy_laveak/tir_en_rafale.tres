@@ -1,9 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cxluabh43ucx1"]
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cxluabh43ucx1"]
 
-[sub_resource type="GDScript" id="GDScript_4a01r"]
-script/source = "extends Card
-
-func "
+[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_qjjvk"]
 
 [resource]
-script = SubResource("GDScript_4a01r")
+script = ExtResource("1_qjjvk")
+card_name = "Tir en rafale"
+description = "Inflige 20 dégats à la cible, les dégâts sont augmentés de 5 pour chaque tir en rafale joué ce tour-ci"
+quote = ""
+cost = 1

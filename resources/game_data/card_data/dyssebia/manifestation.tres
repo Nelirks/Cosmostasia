@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_8kbh3")
 card_name = "Manifestation"
-card_description = "Vous octroie 10 d'armure \\n La prochaine attaque à cible unique vous cible forcément"
-card_quote = "Le rôle de Dyssebia est avant tout un sacrifice de soi"
-card_cost = 1
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Vous octroie 10 d'armure \\n La prochaine attaque à cible unique vous cible forcément"
+quote = "Le rôle de Dyssebia est avant tout un sacrifice de soi"
+cost = 1

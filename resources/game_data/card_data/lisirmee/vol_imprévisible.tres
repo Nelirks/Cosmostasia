@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_5slc4")
 card_name = "Vol imprévisible"
-card_description = "Contre la prochaine carte joué par une adversaire et défausse les cartes adjacentes à celle ci."
-card_quote = "Le coeur d'une Fae n'appartient qu'à elle même"
-card_cost = 2
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Contre la prochaine carte joué par une adversaire et défausse les cartes adjacentes à celle ci."
+quote = "Le coeur d'une Fae n'appartient qu'à elle même"
+cost = 2

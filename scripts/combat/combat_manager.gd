@@ -82,32 +82,28 @@ func get_player_by_turn(active_player : bool) -> Player :
 
 ## Adds an effect to the queue, to be resolved after all previous effects did so.
 ## If no effect is currently resolving, starts resolving effects in queue order.
-func add_effect(effect : Effect, source : Character, target : Character) -> void :
-	effect.source = source
-	effect.target = target
+func add_effect(effect : Effect) -> void :
 	effect_queue.push_back(effect)
 	if current_effect == null :
 		_apply_effect()
 
 ## Adds multiple effects to the queue, to be resolved after all previous effects did so.
 ## If no effect is currently resolving, starts resolving effects in queue order.
-func add_effects(effects : Array[Effect], source : Character, target : Character) -> void :
+func add_effects(effects : Array[Effect]) -> void :
 	for index in range(0, effects.size()) :
-		add_effect(effects[index], source, target)
+		add_effect(effects[index])
 
 ## Adds an effect in front of the queue, to be resolved before other effects.
 ## Should only be called by "wrapper" effects, and will lock the game if used while no effect is active.
 ## To call this multiple times, use add_effects_immediate or add the effects in reverse execution order.
-func add_effect_immediate(effect : Effect, source : Character, target : Character) -> void :
-	effect.source = source
-	effect.target = target
+func add_effect_immediate(effect : Effect) -> void :
 	effect_queue.push_front(effect)
 
 ## Adds multiple effects in front of the queue, to be resolved before other effects.
 ## Should only be called by "wrapper" effects, and will lock the game if used while no effect is active.
-func add_effects_immediate(effects : Array[Effect], source : Character, target : Character) -> void :
+func add_effects_immediate(effects : Array[Effect]) -> void :
 	for index in range(effects.size()-1, -1, -1) :
-		add_effect_immediate(effects[index], source, target)
+		add_effect_immediate(effects[index])
 
 ## Applies the first pending effect, and the following ones if any.
 ## Emits effect_queue_emptied when no more effects are pending.

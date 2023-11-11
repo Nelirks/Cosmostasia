@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_gj2ew")
 card_name = "Brume"
-card_description = "Réduit de 33% l'attaque de la cible pendant 2 tour. \\n Miracle: Empoisonne la cible pour une puissance de 15 pendant 2 tour \\n Préparé: cible tous les adversaires."
-card_quote = "\"Coucou, je suis cachée\""
-card_cost = 2
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Réduit de 33% l'attaque de la cible pendant 2 tour. \\n Miracle: Empoisonne la cible pour une puissance de 15 pendant 2 tour \\n Préparé: cible tous les adversaires."
+quote = "\"Coucou, je suis cachée\""
+cost = 2

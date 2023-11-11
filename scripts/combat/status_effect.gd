@@ -1,16 +1,14 @@
-extends Resource
+extends RefCounted
 class_name StatusEffect
 
 var id : String
 var decay_on_turn_start : bool
 var expire_at_zero_stacks : bool
-
-@export var stacks : int :
+var stacks : int :
 	set(value) :
 		stacks = value
 		if stacks == 0 and expire_at_zero_stacks :
 			owner.remove_status(id)
-
 
 var owner : Character
 

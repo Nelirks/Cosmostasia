@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_2c21b")
 card_name = "Farce"
-card_description = "Inflige 15 dégats à la cible \\n Miracle: Energie +1"
-card_quote = "Pas une personne de la cour féérique n'a réussi à échapper aux blagues de mauvais goût de Lisirmée"
-card_cost = 1
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Inflige 15 dégats à la cible \\n Miracle: Energie +1"
+quote = "Pas une personne de la cour féérique n'a réussi à échapper aux blagues de mauvais goût de Lisirmée"
+cost = 1

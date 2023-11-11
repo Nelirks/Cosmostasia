@@ -13,3 +13,6 @@ var character : Character
 
 func apply_effects(target : Character) :
 	pass
+
+func _add_effect(effect : Effect) -> void :
+	GameManager.combat.add_effect(effect)

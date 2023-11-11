@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_poc02")
 card_name = "Lame féerique"
-card_description = "Inflige 35 dégâts à la cible \\n Miracle : Réduit les dégâts de 15 et le coût de 1. \\n Préparé : Augmente les dégâts de 15 et le coût de 1."
-card_quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
-card_cost = 2
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Inflige 35 dégâts à la cible \\n Miracle : Réduit les dégâts de 15 et le coût de 1. \\n Préparé : Augmente les dégâts de 15 et le coût de 1."
+quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
+cost = 2

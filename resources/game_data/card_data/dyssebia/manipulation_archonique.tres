@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_7ug8r")
 card_name = "Manipulation Archonique"
-card_description = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
-card_quote = ""
-card_cost = 1
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
+quote = ""
+cost = 1

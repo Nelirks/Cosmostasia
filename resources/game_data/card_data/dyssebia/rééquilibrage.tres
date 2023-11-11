@@ -5,8 +5,6 @@
 [resource]
 script = ExtResource("1_mcafr")
 card_name = "Rééquilibrage"
-card_description = "Inflige 15 dégâts à la cible et soigne de 15 pv l'allié avec le moins de pv"
-card_quote = "Le gant archonique fera pencher la balance en la faveur des héliastes"
-card_cost = 2
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Inflige 15 dégâts à la cible et soigne de 15 pv l'allié avec le moins de pv"
+quote = "Le gant archonique fera pencher la balance en la faveur des héliastes"
+cost = 2
