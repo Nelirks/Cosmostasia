@@ -1,33 +1,30 @@
-extends RefCounted
+extends Resource
 class_name Character
 
+@export_group("Character Data")
+@export var character_name : String
+@export var character_quote : String
+@export var character_sprite : Sprite2D
+
+@export_group("Gameplay Data")
+@export var max_health : int
+@export var card_pool : Array[Card]
 var player : Player
 
-var template : CharacterInfo
+var deck : Array[Card]
 
-var char_name : String
-var quote : String
-var sprite : Sprite2D
-
-var max_health : int
 var current_health : int
-
 var _armor : int
-
 var is_dead : bool = false
-
 var _statuses : Array[StatusEffect]
 
-func _init(template : CharacterInfo, player : Player) :
-	self.template = template
-	char_name = template.character_name
-	quote = template.character_quote
-	sprite = template.character_sprite
-	
-	max_health = template.max_health
+func setup() :
 	current_health = max_health
-	
-	self.player = player
+	for i in range(card_pool.size()-1) : 
+		deck.append(card_pool[i].duplicate())
+		deck.append(card_pool[i].duplicate())
+	for card in deck :
+		card.character = self
 
 func start_turn() -> void :
 	_armor = 0
@@ -95,3 +92,8 @@ func get_allies(include_self : bool = true, include_dead : bool = false) -> Arra
 
 func get_enemies(include_dead : bool = false) -> Array[Character] :
 	return player.get_opponent().get_characters(include_dead)
+
+func instantiate() -> Character :
+	var copy = self.duplicate(true)
+	copy.setup()
+	return copy

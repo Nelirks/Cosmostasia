@@ -16,16 +16,12 @@ var energy_regen : int = 3
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
-	_characters.append(Character.new(load("res://resources/game_data/character_data/dyssebia.tres"), self))
-	_characters.append(Character.new(load("res://resources/game_data/character_data/lisirmee.tres"), self))
-	_characters.append(Character.new(load("res://resources/game_data/character_data/timothy_laveak.tres"), self))
-	for char_index in range(3) :
-		for card_index in range(5) :
-			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[0], _characters[char_index]))
-		for card_index in range(3) :
-			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[1], _characters[char_index]))
-		for card_index in range(2) :
-			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[2], _characters[char_index]))
+	_characters.append(preload("res://resources/game_data/character_data/dyssebia.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/lisirmee.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/timothy_laveak.tres").instantiate())
+	for character in _characters :
+		character.player = self
+		_draw_pile.append_array(character.deck)
 
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
