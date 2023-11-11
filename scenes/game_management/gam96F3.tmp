@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmamn8mycjp05"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_la5yq"]
+[ext_resource type="Script" path="res://scripts/combat/combat_manager.gd" id="2_o2g70"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_la5yq")
+
+[node name="CombatManager" type="Node" parent="."]
+script = ExtResource("2_o2g70")

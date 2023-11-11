@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="CardInfo" load_steps=8 format=3 uid="uid://ykpq31bqbex7"]
+[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://ykpq31bqbex7"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_8j7or"]
+[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_8j7or"]
 [ext_resource type="Script" path="res://scripts/effects/apply_armor_effect.gd" id="1_shf5f"]
 [ext_resource type="Script" path="res://scripts/effects/target_self_effect.gd" id="2_2qibg"]
 [ext_resource type="Script" path="res://scripts/effects/target_team_effect.gd" id="2_omew4"]

@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dpjwhb64psb23"]
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://dpjwhb64psb23"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_uoubk"]
+[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_uoubk"]
 
 [resource]
 script = ExtResource("1_uoubk")
 card_name = "Idée du futur"
-card_description = ""
-card_quote = "\"La prochaine fois je serai prêt\""
-card_cost = 1
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = ""
+quote = "\"La prochaine fois je serai prêt\""
+cost = 1

@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dj6ghs6cfd1ms"]
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://dj6ghs6cfd1ms"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_o4p6t"]
+[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_o4p6t"]
 
 [resource]
 script = ExtResource("1_o4p6t")
 card_name = "Obus de Lumenyte"
-card_description = "Effectue deux attaques infligeant 10 dégâts à la cible"
-card_quote = "La maîtrise de la lumenyte a fait la gloire de l'empire de Soteria, mais ce fut également la cause de son déclin"
-card_cost = 1
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Effectue deux attaques infligeant 10 dégâts à la cible"
+quote = "La maîtrise de la lumenyte a fait la gloire de l'empire de Soteria, mais ce fut également la cause de son déclin"
+cost = 1
