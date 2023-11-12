@@ -40,15 +40,20 @@ func refill_hand() -> void :
 		if _draw_pile.size() == 0 :
 			shuffle_draw_pile(true)
 
-func can_play_card(index : int) -> bool :
-	return _hand[index].cost <= current_energy
+func can_play_card(card : Card, target : Character) -> bool :
+	if card.cost > current_energy : return false
+	if !card.can_target(target) : return false
+	return true
 
-func play_card(index : int, target : Character) -> void :
-	current_energy -= _hand[index].cost
-	_hand[index].apply_effects(target)
-	_discard.append(_hand[index])
-	_hand.remove_at(index)
-	refill_hand()
+func play_card(card : Card, target : Character) -> void :
+	if !can_play_card(card, target) : return
+	current_energy -= card.cost
+	card.apply_effects(target)
+	var card_index = _hand.find(card)
+	if card_index != -1 :
+		_hand.remove_at(card_index)
+		_discard.append(card)
+		refill_hand()
 
 func start_turn() -> void :
 	current_energy += energy_regen

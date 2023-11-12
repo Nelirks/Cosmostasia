@@ -31,7 +31,10 @@ func start_game() :
 ## Try to play a card. If network is used, the client sends this request to the host.
 @rpc("any_peer", "call_remote", "reliable")
 func query_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
-	if !GameManager.get_player(card_is_host).can_play_card(card_index) : return
+	var card : Card = GameManager.get_player(card_is_host).get_card_in_hand(card_index)
+	var target : Character = GameManager.get_player(target_is_host).get_character(target_index)
+	if !card.character.player.can_play_card(card, target) : return
+	
 	if NetworkManager.is_host() :
 		_apply_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
 	else :
@@ -51,7 +54,9 @@ func query_end_turn() -> void :
 ## Plays a card. This function should ony be called by the host, who sends it to the client.
 @rpc("authority", "call_local", "reliable")
 func _apply_card_play(card_is_host : bool, card_index : int, target_is_host : bool, target_index : int) -> void :
-	_add_action(PlayCardAction.new(card_is_host, card_index, target_is_host, target_index))
+	var card : Card = GameManager.get_player(card_is_host).get_card_in_hand(card_index)
+	var target : Character = GameManager.get_player(target_is_host).get_character(target_index)
+	_add_action(PlayCardAction.new(card, target))
 
 ## Ends the trun. This function should only be called by the host, who sends it to the client.
 @rpc("authority", "call_local", "reliable")
