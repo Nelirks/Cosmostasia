@@ -19,5 +19,5 @@ func on_apply() -> void :
 func on_remove() -> void :
 	print(id + " removed from " + owner.char_name)
 
-func on_combat_event(event : CombatEvent) -> void :
+func on_effect_resolution(effect : Effect) -> void :
 	pass

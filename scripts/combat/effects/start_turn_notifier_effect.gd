@@ -1,5 +1,5 @@
-extends CombatEvent
-class_name StartTurnEvent
+extends Effect
+class_name StartTurnNotifierEvent
 
 var player : Player
 

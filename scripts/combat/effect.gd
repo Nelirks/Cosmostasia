@@ -9,4 +9,4 @@ var is_done : bool = false :
 		done.emit()
 
 func apply() -> void :
-	pass
+	is_done = true

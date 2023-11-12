@@ -14,8 +14,11 @@ var current_effect : Effect
 ## This prevents actions from causing desync when called while an other action resolves.
 var action_queue : Array[Action]
 
+var is_checking_game_state = false
+
 signal effect_queue_emptied()
 signal action_queue_emptied()
+signal game_state_check()
 
 ## Initializes all combat relevant data.
 @rpc("authority", "call_local", "reliable")
@@ -115,6 +118,8 @@ func add_effects_immediate(effects : Array[Effect]) -> void :
 func _apply_effect() -> void :
 	while effect_queue.size() > 0 :
 		current_effect = effect_queue.pop_front()
+		if is_checking_game_state :
+			await game_state_check
 		current_effect.apply()
 		if ! current_effect.is_done :
 			await current_effect.done
@@ -140,25 +145,28 @@ func _apply_action() -> void :
 
 ## Updates characters is_dead value, then checks if a player wins the game.
 func _check_game_state() -> void :
-	_update_character_states()
+	_check_game_state_recursion()
 	while (current_effect != null or effect_queue.size() != 0) :
 		await effect_queue_emptied
-		_update_character_states()
+		_check_game_state_recursion()
 	_check_victory()
 
-func _update_character_states() -> void :
+func _check_game_state_recursion() -> void :
+	is_checking_game_state = true
 	for char in get_player_by_turn(true).get_characters() :
-		char.update_is_dead()
+		char.check_game_state()
 	for char in get_player_by_turn(false).get_characters() :
-		char.update_is_dead()
+		char.check_game_state()
+	is_checking_game_state = false
+	game_state_check.emit()
 
 func _check_victory() -> void :
 	if get_player_by_turn(true).get_characters().size() == 0 or get_player_by_turn(false).get_characters().size() == 0 :
 		action_queue = []
 		GameManager.set_game_state(GameManager.GameState.GAME_END)
 
-func emit_combat_event(event : CombatEvent) -> void :
-	for i in range(3) :
-		GameManager.combat.get_player_by_turn(true).get_character(i).on_combat_event(event)
-	for i in range(3) :
-		GameManager.combat.get_player_by_turn(false).get_character(i).on_combat_event(event)
+func emit_effect_resolution(effect : Effect) -> void :
+	for char in get_player_by_turn(true).get_characters() :
+		char.on_effect_resolution(effect)
+	for char in get_player_by_turn(false).get_characters() :
+		char.on_effect_resolution(effect)

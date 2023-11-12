@@ -1,5 +1,5 @@
-extends CombatEvent
-class_name CharacterDeathEvent
+extends Effect
+class_name CharacterDeathNotifierEffect
 
 var character : Character
 

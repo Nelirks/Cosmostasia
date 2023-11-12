@@ -44,12 +44,11 @@ func take_damage(source : Character, amount : int) -> void :
 			remaining_amount -= _armor
 			_armor = 0
 	current_health -= remaining_amount
-	GameManager.combat.emit_combat_event(DamageDealtEvent.new(source, self, remaining_amount))
 
-func update_is_dead() -> void:
+func check_game_state() -> void:
 	if current_health <= 0 :
 		is_dead = true
-		GameManager.combat.emit_combat_event(CharacterDeathEvent.new(self))
+		GameManager.combat.add_effect(CharacterDeathNotifierEffect.new(self))
 
 func apply_armor(amount : int) -> void :
 	_armor += amount
@@ -74,9 +73,9 @@ func get_status(id : String) -> StatusEffect :
 			return status
 	return null
 
-func on_combat_event(event : CombatEvent) -> void :
+func on_effect_resolution(effect : Effect) -> void :
 	for status in _statuses :
-		status.on_combat_event(event)
+		status.on_effect_resolution(effect)
 
 func get_allies(include_self : bool = true, include_dead : bool = false) -> Array[Character] :
 	if include_self : 
