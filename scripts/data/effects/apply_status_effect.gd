@@ -11,5 +11,5 @@ func _init(status : StatusEffect, source : Character, target : Character) :
 	self.target = target
 
 func apply() -> void :
-	target.apply_status(status)
+	status.apply(target)
 	is_done = true

@@ -54,14 +54,10 @@ func update_is_dead() -> void:
 func apply_armor(amount : int) -> void :
 	_armor += amount
 
-func apply_status(status : StatusEffect) -> void :
-	var owned_status : StatusEffect = get_status(status.id)
-	if owned_status != null :
-		owned_status.stacks += status.stacks
-	else :
-		_statuses.append(status.duplicate(true))
-		status.owner = self
-		status.on_apply()
+func add_status(status : StatusEffect) -> void :
+	_statuses.append(status)
+	status.owner = self
+	status.on_apply()
 
 func remove_status(id : String) -> void :
 	for i in range(_statuses.size()) :
