@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://b007r5udiy7ku"]
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://b007r5udiy7ku"]
 
 [ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_7ug8r"]
 
@@ -8,3 +8,5 @@ card_name = "Manipulation Archonique"
 description = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
 quote = ""
 cost = 1
+targetting = 0
+cardType = 0

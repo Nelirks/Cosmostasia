@@ -8,3 +8,5 @@ card_name = "Hymne de bataille"
 description = "Octroie 20 d'armure à votre équipe (+ 10 par alliés mort)"
 quote = "Une prestance et une détermination sans faille, tels sont les atouts qui mèneront Dyssebia à la victoire"
 cost = 2
+targetting = 0
+cardType = 0

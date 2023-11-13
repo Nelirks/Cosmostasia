@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://diwbqyke6w7"]
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://diwbqyke6w7"]
 
 [ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_poc02"]
 
@@ -8,3 +8,5 @@ card_name = "Lame féerique"
 description = "Inflige 35 dégâts à la cible \\n Miracle : Réduit les dégâts de 15 et le coût de 1. \\n Préparé : Augmente les dégâts de 15 et le coût de 1."
 quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
 cost = 2
+targetting = 0
+cardType = 0

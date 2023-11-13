@@ -8,3 +8,5 @@ card_name = "Grenade à fragmentation"
 description = "Inflige 7 dégâts à tous les ennemis par énergie récupérée ce tour-ci"
 quote = "Les explosifs sont bien souvent la solution à nos problèmes"
 cost = 3
+targetting = 0
+cardType = 0

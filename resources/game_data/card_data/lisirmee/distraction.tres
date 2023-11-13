@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bvqoe72f3nhwq"]
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://bvqoe72f3nhwq"]
 
 [ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_prddl"]
 
@@ -8,3 +8,5 @@ card_name = "Distraction"
 description = "Mélange la main de l'adversaire. \\n Augmente le coût d'une carte aléatoire de sa main de 1."
 quote = "Lisirmee a toujours préféré les mêlées désorganisées."
 cost = 1
+targetting = 0
+cardType = 0

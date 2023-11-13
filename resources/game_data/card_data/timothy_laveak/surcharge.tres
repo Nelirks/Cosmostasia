@@ -8,3 +8,5 @@ card_name = "Surcharge"
 description = "Vous octroie 20 d'armure, Augmente la recharge de 1 au tour prochain"
 quote = ""
 cost = 2
+targetting = 0
+cardType = 0
