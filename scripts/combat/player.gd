@@ -12,7 +12,10 @@ var max_energy : int = 5
 var current_energy : int = 0 :
 	set(value) :
 		current_energy = clamp(value, 0, max_energy)
-var energy_regen : int = 3
+var base_energy_regen : int = 3
+var energy_regen : int
+var last_turn_energy_regen : int
+
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
@@ -26,7 +29,7 @@ func _init(is_host : bool) -> void :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[1], _characters[char_index]))
 		for card_index in range(2) :
 			_draw_pile.append(Card.new(_characters[char_index].template.character_cards[2], _characters[char_index]))
-
+	energy_regen = base_energy_regen
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :
@@ -55,7 +58,9 @@ func play_card(index : int, target : Character) -> void :
 	refill_hand()
 
 func start_turn() -> void :
+	last_turn_energy_regen = energy_regen
 	current_energy += energy_regen
+	energy_regen = base_energy_regen
 	for character in _characters :
 		character.start_turn()
 
