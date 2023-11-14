@@ -20,7 +20,7 @@ var _statuses : Array[StatusEffect]
 
 func setup() :
 	current_health = max_health
-	for i in range(card_pool.size()-1) : 
+	for i in range(card_pool.size()) : 
 		deck.append(card_pool[i].duplicate())
 		deck.append(card_pool[i].duplicate())
 	for card in deck :
@@ -59,10 +59,12 @@ func add_status(status : StatusEffect) -> void :
 	status.on_apply()
 
 func remove_status(id : String) -> void :
-	for i in range(_statuses.size()) :
+	var i = 0
+	while i < _statuses.size() :
 		if _statuses[i].id == id :
 			_statuses[i].on_remove()
 			_statuses.remove_at(i)
+		else : i += 1
 
 
 func has_status(id : String) -> bool :
