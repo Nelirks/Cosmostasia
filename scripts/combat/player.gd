@@ -12,7 +12,10 @@ var max_energy : int = 5
 var current_energy : int = 0 :
 	set(value) :
 		current_energy = clamp(value, 0, max_energy)
-var energy_regen : int = 3
+var base_energy_regen : int = 3
+var energy_regen : int
+var last_turn_energy_regen : int
+
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
@@ -22,7 +25,6 @@ func _init(is_host : bool) -> void :
 	for character in _characters :
 		character.player = self
 		_draw_pile.append_array(character.deck)
-
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :
@@ -56,7 +58,9 @@ func play_card(card : Card, target : Character) -> void :
 		refill_hand()
 
 func start_turn() -> void :
+	last_turn_energy_regen = energy_regen
 	current_energy += energy_regen
+	energy_regen = base_energy_regen
 	for character in _characters :
 		character.start_turn()
 	GameManager.combat.add_effect(StartTurnNotifierEvent.new(self))
