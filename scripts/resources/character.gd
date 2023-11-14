@@ -31,9 +31,6 @@ func start_turn() -> void :
 	for status in _statuses :
 		status.decay()
 
-func deal_damage(target : Character, amount : int) -> void :
-	target.take_damage(self, amount)
-
 func take_damage(source : Character, amount : int) -> void :
 	var remaining_amount : int = amount
 	if _armor > 0 :
@@ -44,6 +41,9 @@ func take_damage(source : Character, amount : int) -> void :
 			remaining_amount -= _armor
 			_armor = 0
 	current_health -= remaining_amount
+
+func heal(amount : int) -> void :
+	current_health = clamp(current_health + amount, current_health, max_health)
 
 func check_game_state() -> void:
 	if current_health <= 0 :
@@ -61,8 +61,9 @@ func add_status(status : StatusEffect) -> void :
 func remove_status(id : String) -> void :
 	for i in range(_statuses.size()) :
 		if _statuses[i].id == id :
-			_statuses.remove_at(i)
 			_statuses[i].on_remove()
+			_statuses.remove_at(i)
+
 
 func has_status(id : String) -> bool :
 	return get_status(id) != null

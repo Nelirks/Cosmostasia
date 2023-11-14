@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://d3bpcpchkkdox"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3bpcpchkkdox"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_mcafr"]
+[ext_resource type="Script" path="res://scripts/data/cards/dyssebia/reequilibrage.gd" id="1_2805b"]
 
 [resource]
-script = ExtResource("1_mcafr")
+script = ExtResource("1_2805b")
+damage = 15
+heal = 15
 card_name = "Rééquilibrage"
 description = "Inflige 15 dégâts à la cible et soigne de 15 pv l'allié avec le moins de pv"
 quote = "Le gant archonique fera pencher la balance en la faveur des héliastes"

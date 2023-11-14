@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ykpq31bqbex7"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ykpq31bqbex7"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_8j7or"]
+[ext_resource type="Script" path="res://scripts/data/cards/dyssebia/hymne_de_bataille.gd" id="1_xvwh3"]
 
 [resource]
-script = ExtResource("1_8j7or")
+script = ExtResource("1_xvwh3")
+base_armor = 20
+bonus_armor = 10
 card_name = "Hymne de bataille"
 description = "Octroie 20 d'armure à votre équipe (+ 10 par alliés mort)"
 quote = "Une prestance et une détermination sans faille, tels sont les atouts qui mèneront Dyssebia à la victoire"
 cost = 2
-targetting = 0
-cardType = 0
+targetting = 2
+cardType = 1

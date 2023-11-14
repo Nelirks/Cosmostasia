@@ -120,6 +120,7 @@ func _apply_effect() -> void :
 		current_effect = effect_queue.pop_front()
 		if is_checking_game_state :
 			await game_state_check
+		emit_effect_resolution(current_effect)
 		current_effect.apply()
 		if ! current_effect.is_done :
 			await current_effect.done
