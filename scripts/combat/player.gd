@@ -22,6 +22,7 @@ func _init(is_host : bool) -> void :
 	_characters.append(preload("res://resources/game_data/character_data/dyssebia.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/lisirmee.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/timothy_laveak.tres").instantiate())
+	energy_regen = base_energy_regen
 	for character in _characters :
 		character.player = self
 		_draw_pile.append_array(character.deck)
