@@ -1,6 +1,6 @@
 extends Control
 
-var selected_card : int
+var selected_card : int = -1
 
 func _process(_delta: float) -> void:
 	if GameManager.player == null : return
@@ -19,7 +19,10 @@ func _process(_delta: float) -> void:
 		($Console as RichTextLabel).text += ("%18d" % GameManager.player.get_character(i).current_health) + (" (%d) /" %GameManager.player.get_character(i)._armor)  + ("%10d" %GameManager.player.get_character(i).max_health) + " | "
 	($Console as RichTextLabel).text += "\n\n| "
 	for i in range(3) :
+		var is_selected : bool = i == selected_card
+		if is_selected : ($Console as RichTextLabel).text += "[b]"
 		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_card_in_hand(i).card_name
+		if is_selected : ($Console as RichTextLabel).text += "[/b]"
 	($Console as RichTextLabel).text += str("\nEnergy : " + str(GameManager.player.current_energy) + " / " + str(GameManager.player.max_energy))
 	($Console as RichTextLabel).text += "\n\n"
 
