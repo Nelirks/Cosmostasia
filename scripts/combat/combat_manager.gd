@@ -154,6 +154,8 @@ func _check_game_state() -> void :
 
 func _check_game_state_recursion() -> void :
 	is_checking_game_state = true
+	get_player_by_turn(true).refill_hand()
+	get_player_by_turn(false).refill_hand()
 	for char in get_player_by_turn(true).get_characters() :
 		char.check_game_state()
 	for char in get_player_by_turn(false).get_characters() :

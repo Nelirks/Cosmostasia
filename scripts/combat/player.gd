@@ -26,6 +26,7 @@ func _init(is_host : bool) -> void :
 	for character in _characters :
 		character.player = self
 		_draw_pile.append_array(character.deck)
+	_hand.resize(3)
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :
@@ -37,11 +38,20 @@ func shuffle_draw_pile(use_discard : bool = false) -> void :
 		_draw_pile[cur_index] = _draw_pile[swap_index]
 		_draw_pile[swap_index] = temp
 
+## Removes empty slots and appends a new card to the player's hand until no slot is empty.
+## Can call shuffle_draw_pile if necessary
 func refill_hand() -> void :
-	for i in range (_hand.size(), 3) :
-		_hand.append(_draw_pile.pop_back())
-		if _draw_pile.size() == 0 :
-			shuffle_draw_pile(true)
+	var iteration : int = 0
+	var index : int = 0
+	while iteration < _hand.size() :
+		if _hand[index] == null : 
+			_hand.remove_at(index)
+			_hand.append(_draw_pile.pop_back())
+			if _draw_pile.size() == 0 :
+				shuffle_draw_pile(true)
+		else :
+			index += 1
+		iteration += 1
 
 func can_play_card(card : Card, target : Character) -> bool :
 	if card.cost > current_energy : return false
@@ -54,9 +64,13 @@ func play_card(card : Card, target : Character) -> void :
 	card.apply_effects(target)
 	var card_index = _hand.find(card)
 	if card_index != -1 :
-		_hand.remove_at(card_index)
+		_hand[card_index] = null
 		_discard.append(card)
-		refill_hand()
+
+func discard_card(index : int) -> void :
+	if index >= _hand.size() or _hand[index] == null : return
+	_discard.append(_hand[index])
+	_hand[index] = null
 
 func start_turn() -> void :
 	last_turn_energy_regen = energy_regen

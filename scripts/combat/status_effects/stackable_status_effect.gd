@@ -6,8 +6,9 @@ var stacks : int :
 		stacks = value
 		_on_stacks_changed()
 
-func _init(id : String, stacks : int) :
+func _init(id : String, type : StatusType, stacks : int) :
 	self.id = id
+	self.type = type
 	self.stacks = stacks
 
 func apply(target : Character) -> void :

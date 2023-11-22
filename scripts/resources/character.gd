@@ -27,7 +27,7 @@ func setup() :
 		card.character = self
 
 func start_turn() -> void :
-	_armor = 0
+	remove_armor()
 	for status in _statuses :
 		status.decay()
 
@@ -53,19 +53,27 @@ func check_game_state() -> void:
 func apply_armor(amount : int) -> void :
 	_armor += amount
 
+func remove_armor() -> void :
+	_armor = 0
+
 func add_status(status : StatusEffect) -> void :
 	_statuses.append(status)
 	status.owner = self
 	status.on_apply()
 
-func remove_status(id : String) -> void :
+func remove_status(status : StatusEffect) -> void :
+	var index = _statuses.find(status)
+	if index != -1 : 
+		_statuses[index].on_remove()
+		_statuses.remove_at(index)
+
+func remove_status_by_id(id : String) -> void :
 	var i = 0
 	while i < _statuses.size() :
 		if _statuses[i].id == id :
 			_statuses[i].on_remove()
 			_statuses.remove_at(i)
 		else : i += 1
-
 
 func has_status(id : String) -> bool :
 	return get_status(id) != null

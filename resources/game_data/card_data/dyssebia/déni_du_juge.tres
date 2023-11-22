@@ -1,12 +1,6 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cx35q3ngbfxgn"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cx35q3ngbfxgn"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_b0j2e"]
+[ext_resource type="Script" path="res://scripts/data/cards/dyssebia/deni_du_juge.gd" id="1_kuugp"]
 
 [resource]
-script = ExtResource("1_b0j2e")
-card_name = "Déni du juge"
-description = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
-quote = "\"Le jugement de ce monde nous revient de droit\""
-cost = 3
-targetting = 0
-cardType = 0
+script = ExtResource("1_kuugp")

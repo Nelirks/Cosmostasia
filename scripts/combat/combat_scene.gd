@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 	for i in range(3) :
 		var is_selected : bool = i == selected_card
 		if is_selected : ($Console as RichTextLabel).text += "[b]"
-		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_card_in_hand(i).card_name
+		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_card_in_hand(i).card_name if GameManager.player.get_card_in_hand(i) != null else "EMPTY"
 		if is_selected : ($Console as RichTextLabel).text += "[/b]"
 	($Console as RichTextLabel).text += str("\nEnergy : " + str(GameManager.player.current_energy) + " / " + str(GameManager.player.max_energy))
 	($Console as RichTextLabel).text += "\n\n"
