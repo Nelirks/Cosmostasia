@@ -23,13 +23,7 @@ signal game_state_check()
 ## Initializes all combat relevant data.
 @rpc("authority", "call_local", "reliable")
 func start_game() :
-	GameManager.player = Player.new(NetworkManager.is_host())
-	GameManager.opponent = Player.new(!NetworkManager.is_host())
-	GameManager.get_player(true).shuffle_draw_pile()
-	GameManager.get_player(true).refill_hand()
-	GameManager.get_player(false).shuffle_draw_pile()
-	GameManager.get_player(false).refill_hand()
-	_set_random_game_turn()
+	_add_action(StartGameAction.new())
 
 ## Try to play a card. If network is used, the client sends this request to the host.
 @rpc("any_peer", "call_remote", "reliable")
@@ -91,9 +85,9 @@ func get_player_by_turn(active_player : bool) -> Player :
 ## Adds an effect to the queue, to be resolved after all previous effects did so.
 ## If no effect is currently resolving, starts resolving effects in queue order.
 func add_effect(effect : Effect) -> void :
+	if action_queue.size() == 0 : printerr("Effect added while action queue is empty")
 	effect_queue.push_back(effect)
-	if current_effect == null :
-		_apply_effect()
+	pass
 
 ## Adds multiple effects to the queue, to be resolved after all previous effects did so.
 ## If no effect is currently resolving, starts resolving effects in queue order.
@@ -138,6 +132,7 @@ func _add_action(action : Action) -> void :
 func _apply_action() -> void :
 	while action_queue.size() > 0 :
 		action_queue[0].apply()
+		_apply_effect()
 		if current_effect != null or effect_queue.size() != 0 :
 			await effect_queue_emptied
 		action_queue.remove_at(0)

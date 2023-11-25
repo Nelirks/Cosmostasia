@@ -26,7 +26,11 @@ func can_target(target : Character) -> bool :
 		Targetting.ALLY :
 			return character.player == target.player
 		Targetting.OPPONENT :
-			return character.player != target.player
+			if character.player == target.player : return false
+			var aggro_level = int(target.has_status("provoke")) - int(target.has_status("stealth"))
+			for potential_target in target.get_allies(false) :
+				if aggro_level < (int(potential_target.has_status("provoke")) - int(potential_target.has_status("stealth"))) : return false
+			return true
 	return false
 
 func _add_effect(effect : Effect) -> void :

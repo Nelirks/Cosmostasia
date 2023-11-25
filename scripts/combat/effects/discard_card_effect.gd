@@ -12,7 +12,6 @@ func _init(pattern : Array[bool], source : Character, target : Player) :
 
 func apply() -> void :
 	for i in range(pattern.size()) :
-		print("DISCARDING")
 		if pattern[i] :
 			target.discard_card(i)
 	is_done = true
