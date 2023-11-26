@@ -1,7 +1,10 @@
 extends Effect
 class_name DamageEffect
 
-@export var damage : int
+var damage : int
+var multiplier : float
+
+enum damage_type { DIRECT, INDIRECT }
 
 func apply() -> void :
 	source.deal_damage(target, damage)

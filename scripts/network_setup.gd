@@ -6,11 +6,11 @@ func _ready() -> void:
 	NetworkManager.connection_done.connect(_start_game)
 
 func _on_join_button_pressed() -> void:
-	NetworkManager.create_client("127.0.0.1", "8888")
+	NetworkManager.create_client(($IPEdit as TextEdit).text, ($PortEdit as TextEdit).text)
 	_disable_buttons()
 
 func _on_host_button_pressed() -> void:
-	NetworkManager.create_server("8888")
+	NetworkManager.create_server(($PortEdit as TextEdit).text)
 	_disable_buttons()
 
 func _start_game() -> void:

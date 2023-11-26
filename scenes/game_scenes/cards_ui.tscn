@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://dj0uhxr2myve4"]
+
+[ext_resource type="Texture2D" uid="uid://v4nfjv18q0mn" path="res://resources/sprites/ui_elements/fond_blanc.png" id="1_0gdoh"]
+[ext_resource type="Texture2D" uid="uid://cckmymeia3otd" path="res://resources/sprites/ui_elements/attaque.png" id="2_evg68"]
+[ext_resource type="Texture2D" uid="uid://8ugrtau7ejbx" path="res://resources/sprites/ui_elements/defense.png" id="3_wunr6"]
+[ext_resource type="Texture2D" uid="uid://b1ecre2vxou5p" path="res://resources/sprites/ui_elements/strategie.png" id="4_svawe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_81gl5"]
+font_size = 55
+font_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="Theme" id="Theme_gxr78"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/italics_font_size = 25
+RichTextLabel/font_sizes/normal_font_size = 30
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Card_Background" type="TextureRect" parent="."]
+offset_right = 200.0
+offset_bottom = 300.0
+texture = ExtResource("1_0gdoh")
+expand_mode = 1
+
+[node name="Attack_Border" type="TextureRect" parent="Card_Background"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+texture = ExtResource("2_evg68")
+expand_mode = 1
+
+[node name="Defense_Border" type="TextureRect" parent="Card_Background"]
+visible = false
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+texture = ExtResource("3_wunr6")
+expand_mode = 1
+
+[node name="Strategy_Border" type="TextureRect" parent="Card_Background"]
+visible = false
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+texture = ExtResource("4_svawe")
+expand_mode = 1
+
+[node name="Card_Title" type="Label" parent="Card_Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -11.0
+offset_top = 4.0
+offset_right = 104.001
+offset_bottom = 83.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+text = "Title"
+label_settings = SubResource("LabelSettings_81gl5")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Card_Cost" type="Label" parent="Card_Background"]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 85.0
+offset_bottom = 125.0
+scale = Vector2(0.2, 0.2)
+text = "2"
+label_settings = SubResource("LabelSettings_81gl5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card_Character" type="Label" parent="Card_Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 185.0
+offset_right = 441.0
+offset_bottom = 264.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+text = "Character"
+label_settings = SubResource("LabelSettings_81gl5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Card_Background"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 210.0
+offset_right = 901.0
+offset_bottom = 385.0
+scale = Vector2(0.2, 0.2)
+theme = SubResource("Theme_gxr78")
+text = "This text here is an exemple of the description of a card.
+I type a lot of shit so we can see how many characters can fit in my rectangle. 
+Raphael if you see this, I hate Godot UI."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Card_Background"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 256.055
+offset_right = 901.0
+offset_bottom = 328.056
+scale = Vector2(0.2, 0.2)
+theme = SubResource("Theme_gxr78")
+bbcode_enabled = true
+text = "[i]\" As a very powerful character in the game, I can also say that I hate Godot very much\"[/i]"
