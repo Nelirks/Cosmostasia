@@ -1,5 +1,5 @@
 extends Effect
-class_name StartTurnNotifierEvent
+class_name StartTurnNotifierEffect
 
 var player : Player
 

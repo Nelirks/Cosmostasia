@@ -9,5 +9,6 @@ func _init(card : Card, target : Character) -> void:
 	_target = target
 
 func apply() -> void :
-	GameManager.combat.add_effect(CardPlayNotifierEffect.new(_card, 0))
+	var card_index = _card.character.player._hand.find(_card)
+	GameManager.combat.add_effect(CardPlayNotifierEffect.new(_card, card_index))
 	_card.character.player.play_card(_card, _target)

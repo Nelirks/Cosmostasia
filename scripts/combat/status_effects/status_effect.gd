@@ -1,7 +1,7 @@
 extends RefCounted
 class_name StatusEffect
 
-enum StatusType { POSITIVE, NEGATIVE, OTHER }
+enum StatusType { POSITIVE, NEGATIVE, SPECIAL }
 
 var id : String
 var type : StatusType

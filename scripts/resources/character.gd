@@ -9,6 +9,7 @@ class_name Character
 @export_group("Gameplay Data")
 @export var max_health : int
 @export var card_pool : Array[Card]
+@export var passive_script : GDScript
 var player : Player
 
 var deck : Array[Card]
@@ -20,6 +21,7 @@ var _statuses : Array[StatusEffect]
 
 func setup() :
 	current_health = max_health
+	if passive_script != null : add_status(passive_script.new())
 	for i in range(card_pool.size()) : 
 		deck.append(card_pool[i].duplicate())
 		deck.append(card_pool[i].duplicate())

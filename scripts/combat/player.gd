@@ -78,7 +78,7 @@ func start_turn() -> void :
 	energy_regen = base_energy_regen
 	for character in _characters :
 		character.start_turn()
-	GameManager.combat.add_effect(StartTurnNotifierEvent.new(self))
+	GameManager.combat.add_effect(StartTurnNotifierEffect.new(self))
 
 func get_character(index : int) -> Character :
 	return _characters[index]
