@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp0ljcg8nycoq"]
+[gd_scene load_steps=5 format=3 uid="uid://dp0ljcg8nycoq"]
 
 [ext_resource type="Texture2D" uid="uid://v4nfjv18q0mn" path="res://resources/sprites/ui_elements/fond_blanc.png" id="1_vnt0d"]
 [ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="2_dd8rw"]
+[ext_resource type="Texture2D" uid="uid://dyyffbwg5dgan" path="res://resources/sprites/character_sprites/Ciol.png" id="3_04quw"]
+[ext_resource type="Texture2D" uid="uid://dxicx472h62cc" path="res://resources/sprites/character_sprites/papisteam.png" id="4_emke7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,12 +25,16 @@ layout_mode = 0
 offset_right = 150.0
 offset_bottom = 250.0
 
-[node name="TextureRect3" type="TextureRect" parent="Background_Container"]
+[node name="Ciol_Sprite" type="TextureRect" parent="Background_Container"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 250.0
+texture = ExtResource("3_04quw")
+expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="Background_Container"]
+[node name="Steam_Sprite" type="TextureRect" parent="Background_Container"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 250.0
+texture = ExtResource("4_emke7")
+expand_mode = 1
