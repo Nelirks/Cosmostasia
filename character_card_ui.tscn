@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp0ljcg8nycoq"]
+
+[ext_resource type="Texture2D" uid="uid://v4nfjv18q0mn" path="res://resources/sprites/ui_elements/fond_blanc.png" id="1_vnt0d"]
+[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="2_dd8rw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background_Container" type="TextureRect" parent="."]
+offset_right = 150.0
+offset_bottom = 250.0
+texture = ExtResource("1_vnt0d")
+expand_mode = 1
+
+[node name="Lisirmee_Sprite" type="TextureRect" parent="Background_Container"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 250.0
+texture = ExtResource("2_dd8rw")
+expand_mode = 1
+
+[node name="Freyja_Sprite" type="TextureRect" parent="Background_Container"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 250.0
+
+[node name="TextureRect3" type="TextureRect" parent="Background_Container"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 250.0
+
+[node name="TextureRect4" type="TextureRect" parent="Background_Container"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 250.0
