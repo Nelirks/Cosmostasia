@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dolaa8arovxp1"]
+
+[ext_resource type="PackedScene" uid="uid://b0fj0gdbuhcyh" path="res://scenes/game_scenes/down_cards.tscn" id="1_0l2qd"]
+
+[node name="final_combat_board" type="Node2D"]
+
+[node name="Player_Board" parent="." instance=ExtResource("1_0l2qd")]
