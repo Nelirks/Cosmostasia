@@ -1,9 +1,5 @@
 extends StatusEffect
 
-func _init():
-	id = "DyssebiaPassive"
-	type = StatusType.SPECIAL
-
 func on_effect_resolution(effect : Effect) -> void :
 	if not effect is DamageEffect : return
 	var damage_effect : DamageEffect = effect as DamageEffect

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://pwebxljbe7jp"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/provoke_status_effect.gd" id="1_ho5l0"]
+
+[resource]
+script = ExtResource("1_ho5l0")
+id = "provoke"
+type = 0

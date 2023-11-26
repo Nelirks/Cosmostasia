@@ -1,8 +1,4 @@
 extends StackableStatusEffect
-class_name ProvokeStatusEffect
-
-func _init(stacks : int) :
-	super("provoke", StatusType.POSITIVE, stacks)
 
 func on_effect_resolution(effect : Effect) -> void :
 	if effect is CardPlayNotifierEffect :

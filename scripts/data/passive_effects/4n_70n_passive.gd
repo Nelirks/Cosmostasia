@@ -3,9 +3,7 @@ extends StatusEffect
 enum Emotion { ANGER, JOY, SADNESS, NONE }
 var emotion : Emotion
 
-func _init():
-	id = "4N70NPassive"
-	type = StatusType.SPECIAL
+func on_apply():
 	emotion = Emotion.NONE
 
 func on_effect_resolution(effect : Effect) -> void :

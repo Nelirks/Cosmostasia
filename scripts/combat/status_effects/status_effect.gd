@@ -1,15 +1,11 @@
-extends RefCounted
+extends Resource
 class_name StatusEffect
 
 enum StatusType { POSITIVE, NEGATIVE, SPECIAL }
 
-var id : String
-var type : StatusType
+@export var id : String
+@export var type : StatusType
 var owner : Character
-
-func _init(id : String, type : StatusType) -> void :
-	self.id = id
-	self.type = type
 	
 func decay() -> void :
 	pass

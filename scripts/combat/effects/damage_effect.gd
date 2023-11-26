@@ -18,5 +18,5 @@ func _init(damage : int, source : Character, target : Character, damage_type : D
 	self.damage_type = damage_type
 
 func apply() -> void :
-	target.take_damage(source, damage)
+	target.take_damage(source, damage * multiplier)
 	is_done = true
