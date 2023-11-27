@@ -13,13 +13,15 @@ var current_energy : int = 0 :
 	set(value) :
 		current_energy = clamp(value, 0, max_energy)
 var base_energy_regen : int = 3
-var energy_regen : int
+var energy_regen : int :
+	set(value) :
+		energy_regen = clamp(value, 0, max_energy)
 var last_turn_energy_regen : int
 
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
-	_characters.append(preload("res://resources/game_data/character_data/dyssebia.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/4N-70N.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/lisirmee.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/timothy_laveak.tres").instantiate())
 	energy_regen = base_energy_regen

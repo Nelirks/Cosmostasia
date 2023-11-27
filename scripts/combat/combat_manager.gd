@@ -135,8 +135,8 @@ func _apply_action() -> void :
 		_apply_effect()
 		if current_effect != null or effect_queue.size() != 0 :
 			await effect_queue_emptied
-		action_queue.remove_at(0)
 		_check_game_state()
+		action_queue.remove_at(0)
 	action_queue_emptied.emit()
 
 ## Updates characters is_dead value, then checks if a player wins the game.

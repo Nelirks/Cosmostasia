@@ -21,3 +21,6 @@ func on_remove() -> void :
 
 func on_effect_resolution(effect : Effect) -> void :
 	pass
+
+func _add_effect(effect : Effect) -> void :
+	GameManager.combat.add_effect(effect)

@@ -16,4 +16,5 @@ func apply(target : Character) -> void :
 		(target.get_status(id) as StackableStatusEffect).stacks += stacks
 
 func _on_stacks_changed() -> void : 
-	pass
+	if stacks <= 0 : 
+		owner.remove_status(self)
