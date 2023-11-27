@@ -4,5 +4,8 @@
 
 [resource]
 script = ExtResource("1_e0fwu")
+anger_damage_mult = 1.2
+joy_energy_regen = 1
+sadness_damage_mult = 0.8
 id = "4n_70n_passive"
 type = 2

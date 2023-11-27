@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://b5d4civj0vkuu"]
 
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_eak7t"]
-[ext_resource type="Resource" uid="uid://d3kfo5iva4hku" path="res://resources/game_data/card_data/4N-70N/4n5.tres" id="1_xcm6r"]
+[ext_resource type="Resource" uid="uid://d3kfo5iva4hku" path="res://resources/game_data/card_data/4N-70N/saute_d_humeur.tres" id="1_xcm6r"]
 [ext_resource type="Resource" uid="uid://camve644h21rq" path="res://resources/game_data/card_data/4N-70N/analyse_de_cible.tres" id="2_rvobt"]
 [ext_resource type="Resource" uid="uid://csp4b0skrhi5x" path="res://resources/game_data/card_data/4N-70N/boucle_de_programme.tres" id="3_tvcuw"]
 [ext_resource type="Resource" uid="uid://dy6mmlkugr216" path="res://resources/game_data/card_data/4N-70N/mécanique_passionelle.tres" id="4_ijyn1"]
 [ext_resource type="Resource" uid="uid://dj6ghs6cfd1ms" path="res://resources/game_data/card_data/4N-70N/obus_de_lumenyte.tres" id="5_72j0b"]
-[ext_resource type="Resource" uid="uid://cag60rwhhges" path="res://resources/game_data/status_effect_data/4n_70n_passive.tres" id="6_t8l1e"]
+[ext_resource type="Resource" uid="uid://cag60rwhhges" path="res://resources/game_data/passive_data/4n_70n_passive.tres" id="6_t8l1e"]
 
 [resource]
 script = ExtResource("1_eak7t")

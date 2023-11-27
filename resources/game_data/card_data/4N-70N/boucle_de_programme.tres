@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://csp4b0skrhi5x"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://csp4b0skrhi5x"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_5bdgk"]
+[ext_resource type="Script" path="res://scripts/data/cards/4n_70n/boucle_de_programme.gd" id="1_trnru"]
 
 [resource]
-script = ExtResource("1_5bdgk")
+script = ExtResource("1_trnru")
+armor = 10
+stacks = 5
 card_name = "Boucle de programme"
 description = "Empèche les changements d'émotions lors de l'utilisation de vos 3 prochaines cartes"
 quote = "\"Mes amis, je me rappellerai toujours de vous\""
 cost = 3
+targetting = 1
+cardType = 1

@@ -1,5 +1,9 @@
 extends StatusEffect
 
+@export var anger_damage_mult : float
+@export var joy_energy_regen : int
+@export var sadness_damage_mult : float
+
 enum Emotion { ANGER, JOY, SADNESS, NONE }
 var emotion : Emotion
 
@@ -10,19 +14,23 @@ func on_effect_resolution(effect : Effect) -> void :
 	match emotion :
 		Emotion.ANGER :
 			if effect is DamageEffect and (effect.source == owner or effect.target == owner) :
-				(effect as DamageEffect).add_damage_multiplier(0.2)
+				(effect as DamageEffect).add_damage_multiplier(anger_damage_mult)
 		Emotion.SADNESS :
 			if effect is DamageEffect and (effect.source == owner or effect.target == owner) :
-				(effect as DamageEffect).add_damage_multiplier(-0.2)
+				(effect as DamageEffect).add_damage_multiplier(sadness_damage_mult)
 		Emotion.JOY :
 			if effect is StartTurnNotifierEffect and (effect as StartTurnNotifierEffect).player == owner.player :
-				owner.player.energy_regen += 1
+				_add_effect(RegenEnergyEffect.new(joy_energy_regen, false, owner, owner.player))
 	if effect is CardPlayNotifierEffect and (effect as CardPlayNotifierEffect).card.character == owner : 
 		set_emotion((effect as CardPlayNotifierEffect).card_position)
 
 func set_emotion(card_position : int) :
+	var energy_regen_modification = 0
+	if owner.has_status("boucle_de_programme") : return
 	if emotion == Emotion.JOY : 
-		owner.player.energy_regen -= 1
+		energy_regen_modification -= joy_energy_regen
 	emotion = card_position
 	if emotion == Emotion.JOY :
-		owner.player.energy_regen += 1
+		energy_regen_modification += joy_energy_regen
+	if energy_regen_modification != 0 :
+		_add_effect(RegenEnergyEffect.new(energy_regen_modification, false, owner, owner.player))

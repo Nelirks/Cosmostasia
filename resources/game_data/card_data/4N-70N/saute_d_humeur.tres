@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3kfo5iva4hku"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/4n_70n/saute_d_humeur.gd" id="1_203jw"]
+
+[resource]
+script = ExtResource("1_203jw")
+damage = 15
+armor = 15
+energy_regen = 1
+card_name = "Saute d'humeur"
+description = "Inflige 15 dégâts à la cible, octroie 15 d'armure à 4N-70N et augmente la recharge de 1 au prochain tour"
+quote = "La joie de la victoire, la tristesse d'une perte et la colère face à sa propre impuissance"
+cost = 3
+targetting = 3
+cardType = 0
