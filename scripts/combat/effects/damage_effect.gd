@@ -20,3 +20,9 @@ func _init(damage : int, source : Character, target : Character, damage_type : D
 func apply() -> void :
 	target.take_damage(source, damage * multiplier)
 	is_done = true
+
+func modify_damage(amount : int) -> void :
+	damage += amount
+
+func add_damage_multiplier(mult : float) -> void :
+	multiplier *= mult
