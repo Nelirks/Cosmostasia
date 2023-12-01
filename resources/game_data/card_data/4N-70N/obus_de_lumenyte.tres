@@ -10,5 +10,5 @@ card_name = "Obus de Luményte"
 description = "Effectue deux attaques infligeant 10 dégâts à la cible"
 quote = "Soteria construisit sa gloire sur la lumènyte, mais ce fut également son déclin"
 cost = 1
-targetting = 3
+targetting = 2
 cardType = 0

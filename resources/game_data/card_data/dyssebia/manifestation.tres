@@ -10,5 +10,5 @@ card_name = "Manifestation"
 description = "Vous octroie 10 d'armure \\n La prochaine attaque à cible unique vous cible forcément"
 quote = "Le rôle de Dyssebia est avant tout un sacrifice de soi"
 cost = 1
-targetting = 2
+targetting = 1
 cardType = 1

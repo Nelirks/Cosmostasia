@@ -11,5 +11,5 @@ card_name = "Saute d'humeur"
 description = "Inflige 15 dégâts à la cible, octroie 15 d'armure à 4N-70N et augmente la recharge de 1 au prochain tour"
 quote = "La joie de la victoire, la tristesse d'une perte et la colère face à sa propre impuissance"
 cost = 3
-targetting = 3
+targetting = 2
 cardType = 0

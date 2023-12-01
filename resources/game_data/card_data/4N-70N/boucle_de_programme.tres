@@ -10,5 +10,5 @@ card_name = "Boucle de programme"
 description = "Empèche les changements d'émotions lors de l'utilisation de vos 3 prochaines cartes"
 quote = "\"Mes amis, je me rappellerai toujours de vous\""
 cost = 3
-targetting = 1
+targetting = 3
 cardType = 1

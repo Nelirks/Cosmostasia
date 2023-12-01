@@ -10,5 +10,5 @@ card_name = "Manipulation Archonique"
 description = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
 quote = ""
 cost = 1
-targetting = 3
+targetting = 2
 cardType = 0

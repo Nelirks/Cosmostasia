@@ -8,5 +8,5 @@ card_name = "Déni du juge"
 description = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
 quote = "\"Le jugement de ce monde nous revient de droit\""
 cost = 3
-targetting = 0
+targetting = 3
 cardType = 0

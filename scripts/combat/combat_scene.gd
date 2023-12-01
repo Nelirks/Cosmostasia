@@ -43,6 +43,8 @@ func _input(event: InputEvent) -> void:
 	if !(event is InputEventKey and event.is_pressed()) : return
 	var key = (event as InputEventKey).keycode
 	match key :
+		KEY_KP_0 :
+			_target_character(true, -1)
 		KEY_KP_1 :
 			_select_card(0)
 		KEY_KP_2 : 

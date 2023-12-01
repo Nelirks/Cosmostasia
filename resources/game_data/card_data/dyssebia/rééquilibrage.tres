@@ -10,5 +10,5 @@ card_name = "Rééquilibrage"
 description = "Inflige 15 dégâts à la cible et soigne de 15 pv l'allié avec le moins de pv"
 quote = "Le gant archonique fera pencher la balance en la faveur des héliastes"
 cost = 2
-targetting = 0
+targetting = 3
 cardType = 0

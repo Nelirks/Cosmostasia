@@ -11,5 +11,5 @@ card_name = "Mécanique Passionelle"
 description = "Cette carte à un effet changeant en fonction de l'état emotionnel actuelle de 4N-70n \\n Colère: Inflige 20 dégâts à tous les adversaires \\n Joie: Restaure 3 point d'énergie \\n Tristesse: Octroie 25 d'armure à 4N-70N"
 quote = "Acharné à sa tache, 4N-70N fera tout ce qui est en son pouvoir pour ramener ceux qui lui était cher"
 cost = 2
-targetting = 0
+targetting = 3
 cardType = 2

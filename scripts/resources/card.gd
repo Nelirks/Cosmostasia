@@ -3,7 +3,7 @@ class_name Card
 
 enum Type {ATTACK, DEFENSE, STRATEGY}
 
-enum Targetting { ANY, SELF, ALLY, OPPONENT }
+enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 
 @export var card_name : String
 @export var description : String
@@ -14,15 +14,18 @@ enum Targetting { ANY, SELF, ALLY, OPPONENT }
 
 var character : Character
 
+enum Position { DRAW_PILE, LEFT_SLOT, MIDDLE_SLOT, RIGHT_SLOT, DISCARD_PILE }
+var position : Position
+
 func apply_effects(target : Character) -> void :
 	pass
 
 func can_target(target : Character) -> bool :
+	if target == null : return targetting == Targetting.NO_TARGET
+	if target.is_dead : return false
 	match targetting :
 		Targetting.ANY :
-			return true
-		Targetting.SELF :
-			return character == target
+			return target != null
 		Targetting.ALLY :
 			return character.player == target.player
 		Targetting.OPPONENT :
