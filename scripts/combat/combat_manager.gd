@@ -14,11 +14,8 @@ var current_effect : Effect
 ## This prevents actions from causing desync when called while an other action resolves.
 var action_queue : Array[Action]
 
-var is_checking_game_state = false
-
 signal effect_queue_emptied()
 signal action_queue_emptied()
-signal game_state_check()
 
 ## Initializes all combat relevant data.
 @rpc("authority", "call_local", "reliable")
@@ -112,8 +109,6 @@ func add_effects_immediate(effects : Array[Effect]) -> void :
 func _apply_effect() -> void :
 	while effect_queue.size() > 0 :
 		current_effect = effect_queue.pop_front()
-		if is_checking_game_state :
-			await game_state_check
 		emit_effect_resolution(current_effect)
 		current_effect.apply()
 		if ! current_effect.is_done :
@@ -136,27 +131,18 @@ func _apply_action() -> void :
 		if current_effect != null or effect_queue.size() != 0 :
 			await effect_queue_emptied
 		_check_game_state()
-		action_queue.remove_at(0)
+		if action_queue.size() > 0 : action_queue.remove_at(0)
 	action_queue_emptied.emit()
 
 ## Updates characters is_dead value, then checks if a player wins the game.
 func _check_game_state() -> void :
-	_check_game_state_recursion()
-	while (current_effect != null or effect_queue.size() != 0) :
-		await effect_queue_emptied
-		_check_game_state_recursion()
-	_check_victory()
-
-func _check_game_state_recursion() -> void :
-	is_checking_game_state = true
-	get_player_by_turn(true).refill_hand()
-	get_player_by_turn(false).refill_hand()
 	for char in get_player_by_turn(true).get_characters() :
 		char.check_game_state()
 	for char in get_player_by_turn(false).get_characters() :
 		char.check_game_state()
-	is_checking_game_state = false
-	game_state_check.emit()
+	get_player_by_turn(true).refill_hand()
+	get_player_by_turn(false).refill_hand()
+	_check_victory()
 
 func _check_victory() -> void :
 	if get_player_by_turn(true).get_characters().size() == 0 or get_player_by_turn(false).get_characters().size() == 0 :

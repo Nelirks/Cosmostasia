@@ -50,7 +50,8 @@ func heal(amount : int) -> void :
 func check_game_state() -> void:
 	if current_health <= 0 :
 		is_dead = true
-		GameManager.combat.add_effect(CharacterDeathNotifierEffect.new(self))
+		player.remove_cards(self)
+			
 
 func apply_armor(amount : int) -> void :
 	_armor += amount

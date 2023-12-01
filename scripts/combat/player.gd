@@ -28,10 +28,13 @@ func _init(is_host : bool) -> void :
 	for character in _characters :
 		character.player = self
 		_draw_pile.append_array(character.deck)
+	for card in _draw_pile : card.position = Card.Position.DRAW_PILE
 	_hand.resize(3)
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :
+		for card in _discard :
+			card.position = Card.Position.DRAW_PILE
 		_draw_pile.append_array(_discard)
 		_discard = []
 	for cur_index in range (_draw_pile.size()) :
@@ -43,6 +46,7 @@ func shuffle_draw_pile(use_discard : bool = false) -> void :
 ## Removes empty slots and appends a new card to the player's hand until no slot is empty.
 ## Can call shuffle_draw_pile if necessary
 func refill_hand() -> void :
+	##Removes empty slots and draw cards to reach hand size
 	var iteration : int = 0
 	var index : int = 0
 	while iteration < _hand.size() :
@@ -54,6 +58,11 @@ func refill_hand() -> void :
 		else :
 			index += 1
 		iteration += 1
+	
+	##Sets cards positions
+	for card_index in range(_hand.size()) :
+		if _hand[card_index] != null :
+			_hand[card_index].position = card_index + 1
 
 func can_play_card(card : Card, target : Character) -> bool :
 	if card.cost > current_energy : return false
@@ -64,15 +73,28 @@ func play_card(card : Card, target : Character) -> void :
 	if !can_play_card(card, target) : return
 	current_energy -= card.cost
 	card.apply_effects(target)
-	var card_index = _hand.find(card)
-	if card_index != -1 :
-		_hand[card_index] = null
-		_discard.append(card)
+	discard_card(_hand.find(card))
 
 func discard_card(index : int) -> void :
-	if index >= _hand.size() or _hand[index] == null : return
+	if index < 0 or index >= _hand.size() or _hand[index] == null : return
+	_hand[index].position = Card.Position.DISCARD_PILE
 	_discard.append(_hand[index])
 	_hand[index] = null
+
+func remove_cards(character : Character) -> void :
+	for card in _hand :
+		if card != null and card.character == character :
+			_hand[_hand.find(card)] = null
+	var search_index = 0
+	while search_index < _discard.size() :
+		if _discard[search_index] != null and _discard[search_index].character == character :
+			_discard.remove_at(search_index)
+		else : search_index += 1
+	search_index = 0
+	while search_index < _draw_pile.size() :
+		if _draw_pile[search_index] != null and _draw_pile[search_index].character == character :
+			_draw_pile.remove_at(search_index)
+		else : search_index += 1
 
 func start_turn() -> void :
 	last_turn_energy_regen = energy_regen
@@ -83,6 +105,7 @@ func start_turn() -> void :
 	GameManager.combat.add_effect(StartTurnNotifierEffect.new(self))
 
 func get_character(index : int) -> Character :
+	if index < 0 or index > _characters.size() : return null
 	return _characters[index]
 
 func get_card_in_hand(index : int) -> Card :
