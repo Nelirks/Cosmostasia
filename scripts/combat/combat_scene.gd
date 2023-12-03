@@ -4,36 +4,35 @@ var selected_card : int = -1
 
 func _process(_delta: float) -> void:
 	if GameManager.player == null : return
-	($Console as RichTextLabel).text = "CURRENT TURN : " + ("PLAYER" if GameManager.combat.is_player_turn() else "OPPONENT") + "\n"
-	($Console as RichTextLabel).text += "| "
-	for i in range(3) :
-		($Console as RichTextLabel).text += "%30s | " % GameManager.opponent.get_character(i).character_name
-	($Console as RichTextLabel).text += "\n| "
-	for i in range(3) :
-		($Console as RichTextLabel).text += ("%18d" % GameManager.opponent.get_character(i).current_health) + ("(%d) /" %GameManager.opponent.get_character(i)._armor) + ("%10d" %GameManager.opponent.get_character(i).max_health) + " | "
-	($Console as RichTextLabel).text += "\n\n| "
-	for i in range(3) :
-		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_character(i).character_name
-	($Console as RichTextLabel).text += "\n| "
-	for i in range(3) :
-		($Console as RichTextLabel).text += ("%18d" % GameManager.player.get_character(i).current_health) + (" (%d) /" %GameManager.player.get_character(i)._armor)  + ("%10d" %GameManager.player.get_character(i).max_health) + " | "
-	($Console as RichTextLabel).text += "\n\n| "
+	var display : String = ""
+	display += "CURRENT TURN : " + ("PLAYER" if GameManager.combat.is_player_turn() else "OPPONENT") + "\n\n"
+	
+	display += "OPPONENT CHARACTERS : \n"
+	for enemy in GameManager.opponent._characters : 
+		display += enemy.character_name + " -- " + str(enemy.current_health) + " (" + str(enemy._armor) + ") / " + str(enemy.max_health) + "\n"
+		for status in enemy._statuses :
+			display += "   " + status.id + "\n"
+	
+	display += "ALLY CHARACTERS : \n"
+	for ally in GameManager.player._characters : 
+		display += ally.character_name + " -- " + str(ally.current_health) + " (" + str(ally._armor) + ") / " + str(ally.max_health) + "\n"
+		for status in ally._statuses :
+			display += "   " + status.id + "\n"
+	
+	display += "HAND : \n"
 	for i in range(3) :
 		var is_selected : bool = i == selected_card
-		if is_selected : ($Console as RichTextLabel).text += "[b]"
-		($Console as RichTextLabel).text += "%30s | " % GameManager.player.get_card_in_hand(i).card_name if GameManager.player.get_card_in_hand(i) != null else "EMPTY"
-		if is_selected : ($Console as RichTextLabel).text += "[/b]"
-	($Console as RichTextLabel).text += str("\nEnergy : " + str(GameManager.player.current_energy) + " / " + str(GameManager.player.max_energy))
-	($Console as RichTextLabel).text += "\n\n"
+		if is_selected : display += "[b]"
+		display += "%30s | " % GameManager.player.get_card_in_hand(i).card_name if GameManager.player.get_card_in_hand(i) != null else "EMPTY"
+		if is_selected : display += "[/b]"
+	display += str("\nEnergy : " + str(GameManager.player.current_energy) + " / " + str(GameManager.player.max_energy))
+	($Console as RichTextLabel).text = display
 
 func _select_card(index : int) -> void :
 	selected_card = index
-	($Console as RichTextLabel).text += "Selected card " + GameManager.get_player(NetworkManager.is_host()).get_card_in_hand(selected_card).card_name + "\n"
 
 func _target_character(is_ally : bool, index : int) -> void :
-	if selected_card == -1 : 
-		($Console as RichTextLabel).text += "No card selected" + "\n"
-		return
+	if selected_card == -1 : return
 	var target_is_host : bool = (is_ally and NetworkManager.is_host()) or (!is_ally and !NetworkManager.is_host())
 	GameManager.combat.query_card_play(NetworkManager.is_host(), selected_card, target_is_host, index)
 	selected_card = -1
