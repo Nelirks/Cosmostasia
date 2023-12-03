@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ct3glu6jegukd"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ct3glu6jegukd"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_gj2ew"]
+[ext_resource type="Script" path="res://scripts/data/cards/lisirmee/brume.gd" id="1_hnrfm"]
 
 [resource]
-script = ExtResource("1_gj2ew")
+script = ExtResource("1_hnrfm")
+poison_duration = 2
+attack_down_duration = 2
 card_name = "Brume"
 description = "Réduit de 33% l'attaque de la cible pendant 2 tour. \\n Miracle: Empoisonne la cible pour une puissance de 15 pendant 2 tour \\n Préparé: cible tous les adversaires."
 quote = "\"Coucou, je suis cachée\""
 cost = 2
-targetting = 0
-cardType = 0
+targetting = 2
+cardType = 2

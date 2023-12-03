@@ -15,7 +15,10 @@ enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 var character : Character
 
 enum Position { DRAW_PILE, LEFT_SLOT, MIDDLE_SLOT, RIGHT_SLOT, DISCARD_PILE }
-var position : Position
+var position : Position :
+	set(value) : 
+		position = value
+		_on_position_set()
 
 func apply_effects(target : Character) -> void :
 	pass
@@ -35,6 +38,9 @@ func can_target(target : Character) -> bool :
 				if aggro_level < (int(potential_target.has_status("provoke")) - int(potential_target.has_status("stealth"))) : return false
 			return true
 	return false
+
+func _on_position_set() -> void :
+	pass
 
 func _add_effect(effect : Effect) -> void :
 	GameManager.combat.add_effect(effect)

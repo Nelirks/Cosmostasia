@@ -18,7 +18,7 @@ func _init(damage : int, source : Character, target : Character, _damage_type : 
 	self._damage_type = _damage_type
 
 func apply() -> void :
-	target.take_damage(source, damage * multiplier)
+	target.take_damage(source, damage * multiplier, _damage_type == DamageType.DIRECT)
 	is_done = true
 
 func add_fixed_damage(amount : int, apply_if_indirect : bool = false) -> void :

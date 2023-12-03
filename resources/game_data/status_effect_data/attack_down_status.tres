@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://be6yq67toc837"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/attack_down_status.gd" id="1_dd215"]
+
+[resource]
+script = ExtResource("1_dd215")
+damage_multiplier = 0.8
+id = "attack_down"
+type = 1

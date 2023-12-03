@@ -33,9 +33,9 @@ func start_turn() -> void :
 	for status in _statuses :
 		status.decay()
 
-func take_damage(source : Character, amount : int) -> void :
+func take_damage(source : Character, amount : int, uses_armor : bool) -> void :
 	var remaining_amount : int = amount
-	if _armor > 0 :
+	if uses_armor and _armor > 0 :
 		if _armor > remaining_amount :
 			_armor -= remaining_amount
 			remaining_amount = 0
