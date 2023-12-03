@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cxluabh43ucx1"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cxluabh43ucx1"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_qjjvk"]
+[ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/tir_en_rafale.gd" id="1_6wtqh"]
 
 [resource]
-script = ExtResource("1_qjjvk")
+script = ExtResource("1_6wtqh")
+damage = 20
+damage_increase = 5
 card_name = "Tir en rafale"
 description = "Inflige 20 dégats à la cible, les dégâts sont augmentés de 5 pour chaque tir en rafale joué ce tour-ci"
 quote = ""
 cost = 1
-targetting = 0
+targetting = 2
 cardType = 0

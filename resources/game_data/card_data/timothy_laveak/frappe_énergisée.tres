@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwigg8mkbu55t"]
 
-[ext_resource type="Script" path="res://scripts/data/cards/frappe_energisee.gd" id="1_lse3c"]
+[ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/frappe_energisee.gd" id="1_lse3c"]
 
 [resource]
 script = ExtResource("1_lse3c")

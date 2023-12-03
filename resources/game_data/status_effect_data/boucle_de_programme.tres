@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://df5uebufqgdiw"]
 
-[ext_resource type="Script" path="res://scripts/data/status_effects/boucle_de_programme.gd" id="1_755ff"]
+[ext_resource type="Script" path="res://scripts/data/status_effects/boucle_de_programme_status.gd" id="1_755ff"]
 
 [resource]
 script = ExtResource("1_755ff")

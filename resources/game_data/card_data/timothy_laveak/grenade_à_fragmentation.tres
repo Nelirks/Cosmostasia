@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://bmuywjsg4n8gh"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bmuywjsg4n8gh"]
 
-[ext_resource type="Script" path="res://scripts/resources/card.gd" id="1_dsq73"]
+[ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/grenade_a_fragmentation.gd" id="1_nelmm"]
 
 [resource]
-script = ExtResource("1_dsq73")
+script = ExtResource("1_nelmm")
+damage = 7
 card_name = "Grenade à fragmentation"
 description = "Inflige 7 dégâts à tous les ennemis par énergie récupérée ce tour-ci"
 quote = "Les explosifs sont bien souvent la solution à nos problèmes"
 cost = 3
-targetting = 0
+targetting = 3
 cardType = 0
