@@ -17,4 +17,4 @@ func apply(target : Character) -> void :
 
 func _on_stacks_changed() -> void : 
 	if stacks <= 0 : 
-		owner.remove_status(self)
+		if owner != null : owner.remove_status(self)
