@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cp2oirdx01tnc"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_o80ys"]
+
+[resource]
+script = ExtResource("1_o80ys")
+id = "feather"
+type = 1

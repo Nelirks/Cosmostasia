@@ -8,5 +8,5 @@ func on_effect_resolution(effect : Effect) -> void :
 		print("REDUCTION APPLIED")
 		damage_effect.add_damage_multiplier(damage_multiplier)
 
-func decay() -> void :
+func end_turn() -> void :
 	stacks -= 1

@@ -4,6 +4,7 @@ class_name CombatManager
 enum Turn { HOST, CLIENT }
 var _current_turn : Turn :
 	set (value) :
+		get_player_by_turn(true).end_turn()
 		_current_turn = value
 		get_player_by_turn(true).start_turn()
 

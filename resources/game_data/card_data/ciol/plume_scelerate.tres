@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://du411fwecu37o"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/ciol/plume_scelerate.gd" id="1_61sws"]
+
+[resource]
+script = ExtResource("1_61sws")
+base_damage = 20
+feather_damage = 10
+card_name = "Plume scélérate"
+description = "Inflige 20 dégâts à la cible, si celle ci est marqué par une plume, les dégâts sont augmenté de 10"
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

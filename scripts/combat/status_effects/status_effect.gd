@@ -7,7 +7,10 @@ enum StatusType { POSITIVE, NEGATIVE, SPECIAL }
 @export var type : StatusType
 var owner : Character
 	
-func decay() -> void :
+func start_turn() -> void :
+	pass
+
+func end_turn() -> void :
 	pass
 
 func apply(target : Character) -> void :

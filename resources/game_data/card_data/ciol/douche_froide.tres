@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ciqrwk2cuwcdm"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/ciol/douche_froide.gd" id="1_51smf"]
+
+[resource]
+script = ExtResource("1_51smf")
+damage = 10
+card_name = "Douche froide"
+description = "Inflige 10 dégâts à la cible et réduit son attaque pendant 1 tour par plume posé"
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

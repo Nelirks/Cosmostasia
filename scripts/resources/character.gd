@@ -31,7 +31,11 @@ func setup() :
 func start_turn() -> void :
 	remove_armor()
 	for status in _statuses :
-		status.decay()
+		status.start_turn()
+
+func end_turn() -> void :
+	for status in _statuses :
+		status.end_turn()
 
 func take_damage(source : Character, amount : int, uses_armor : bool) -> void :
 	var remaining_amount : int = amount

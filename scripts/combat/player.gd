@@ -21,7 +21,7 @@ var last_turn_energy_regen : int
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
-	_characters.append(preload("res://resources/game_data/character_data/4N-70N.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/ciol.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/lisirmee.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/timothy_laveak.tres").instantiate())
 	energy_regen = base_energy_regen
@@ -103,6 +103,10 @@ func start_turn() -> void :
 	for character in _characters :
 		character.start_turn()
 	GameManager.combat.add_effect(StartTurnNotifierEffect.new(self))
+
+func end_turn() -> void :
+	for character in _characters :
+		character.end_turn()
 
 func get_character(index : int) -> Character :
 	if index < 0 or index > _characters.size() : return null

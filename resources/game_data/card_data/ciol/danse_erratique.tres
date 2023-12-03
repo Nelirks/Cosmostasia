@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bg7fwd5q3t7hc"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/ciol/danse_erratique.gd" id="1_70sux"]
+
+[resource]
+script = ExtResource("1_70sux")
+damage = 10
+card_name = "Danse erratique"
+description = "Inflige 10 dégâts à la cible. Si elle n'était pas marquée par une plume, répète cet effet sur une cible aléatoire."
+quote = ""
+cost = 2
+targetting = 2
+cardType = 0
