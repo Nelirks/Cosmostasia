@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://16qcwwrft76s"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/defense_mult_status.gd" id="1_kpeb4"]
+
+[resource]
+script = ExtResource("1_kpeb4")
+damage_received_multiplier = 0.8
+id = "defense_up"
+type = 0

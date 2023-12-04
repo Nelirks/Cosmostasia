@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cm5wub1s4yuau"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/brunhilde/ecrase_crane.gd" id="1_nykhp"]
+
+[resource]
+script = ExtResource("1_nykhp")
+damage = 40
+card_name = "Écrase crâne"
+description = "Inflige 40 de dégâts à une cible."
+quote = ""
+cost = 3
+targetting = 2
+cardType = 0

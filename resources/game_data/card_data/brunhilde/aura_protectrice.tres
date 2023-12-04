@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dg2x2sjf2jk7b"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/brunhilde/aura_protectrice.gd" id="1_mvai1"]
+
+[resource]
+script = ExtResource("1_mvai1")
+regen_reduction = 1
+armor = 20
+card_name = "Aura protectrice"
+description = "Génère 20 d'armure sur un personnage ciblé. Réduit la recharge de l'adversaire de 1"
+quote = ""
+cost = 2
+targetting = 1
+cardType = 1

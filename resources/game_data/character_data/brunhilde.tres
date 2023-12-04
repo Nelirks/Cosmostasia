@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://busv1m7huw2sp"]
+
+[ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_35mvq"]
+[ext_resource type="Resource" uid="uid://dg2x2sjf2jk7b" path="res://resources/game_data/card_data/brunhilde/aura_protectrice.tres" id="1_gbwh0"]
+[ext_resource type="Resource" uid="uid://bksiir404i7n5" path="res://resources/game_data/passive_data/brunhilde_passive.tres" id="1_sw3ve"]
+[ext_resource type="Resource" uid="uid://ddfphl4ipta7k" path="res://resources/game_data/card_data/brunhilde/au_dodo.tres" id="2_akhg5"]
+[ext_resource type="Resource" uid="uid://d0s3ys5hr2t3t" path="res://resources/game_data/card_data/brunhilde/cri_de_guerre.tres" id="3_x5ao6"]
+[ext_resource type="Resource" uid="uid://cm5wub1s4yuau" path="res://resources/game_data/card_data/brunhilde/ecrase_crane.tres" id="4_vvito"]
+[ext_resource type="Resource" uid="uid://cil2s23lcelf" path="res://resources/game_data/card_data/brunhilde/instinct_maternel.tres" id="5_ss8bu"]
+
+[resource]
+script = ExtResource("1_35mvq")
+character_name = "Brunhilde"
+character_quote = ""
+max_health = 100
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_gbwh0"), ExtResource("2_akhg5"), ExtResource("3_x5ao6"), ExtResource("4_vvito"), ExtResource("5_ss8bu")])
+passive = ExtResource("1_sw3ve")

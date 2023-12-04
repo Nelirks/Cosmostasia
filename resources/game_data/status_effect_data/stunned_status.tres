@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://deki1epvhvf2q"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/stunned_status.gd" id="1_py33u"]
+
+[resource]
+script = ExtResource("1_py33u")
+id = "stunned"
+type = 0
