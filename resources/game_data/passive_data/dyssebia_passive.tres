@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_hvkg8")
+damage_received_multiplier = 0.8
 id = "dyssebia_passive"
 type = 2

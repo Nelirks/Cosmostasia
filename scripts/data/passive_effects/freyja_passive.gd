@@ -7,7 +7,7 @@ var active : bool
 var damage_dealt : bool
 
 func on_effect_resolution(effect : Effect) -> void :
-	if effect is CardPlayNotifierEffect :
+	if effect is CardPlayNotifierEffect and effect.card.character == owner :
 		active = false
 		return
 	if not active : return

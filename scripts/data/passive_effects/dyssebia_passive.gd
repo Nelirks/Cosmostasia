@@ -1,5 +1,7 @@
 extends StatusEffect
 
+@export var damage_received_multiplier : float
+
 func on_effect_resolution(effect : Effect) -> void :
 	if not effect is DamageEffect : return
 	var damage_effect : DamageEffect = effect as DamageEffect
@@ -8,4 +10,4 @@ func on_effect_resolution(effect : Effect) -> void :
 	if damage_source.player == owner.player : return
 	for enemy in damage_source.get_allies(false) :
 		if enemy.current_health > damage_source.current_health : return
-	damage_effect.multiplier -= 0.2
+	damage_effect.add_damage_multiplier(damage_received_multiplier)
