@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c5bow1onpjmlg"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/timothy_passive.gd" id="1_i46sd"]
+
+[resource]
+script = ExtResource("1_i46sd")
+energy_gain = 1
+id = "timothy_passive"
+type = 2
