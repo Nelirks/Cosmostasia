@@ -5,6 +5,7 @@ var stacks : int :
 	set(value) :
 		stacks = value
 		_on_stacks_changed()
+		print("Set " + id + " stacks to " + str(stacks))
 
 func set_stacks(stacks : int) -> StackableStatusEffect :
 	self.stacks = stacks

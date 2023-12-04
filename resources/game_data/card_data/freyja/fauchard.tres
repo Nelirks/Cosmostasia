@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b4gaihb8y6qty"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/freyja/fauchard.gd" id="1_gb8vp"]
+
+[resource]
+script = ExtResource("1_gb8vp")
+damage = 10
+card_name = "Fauchard"
+description = "Inflige 10 dégâts à tous les adversaires."
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

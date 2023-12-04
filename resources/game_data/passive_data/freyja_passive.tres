@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c68y1eupku27a"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/freyja_passive.gd" id="1_340bj"]
+
+[resource]
+script = ExtResource("1_340bj")
+damage_multiplier = 1.5
+self_damage = 10
+id = "freyja_passive"
+type = 2
