@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c0h1mf6ha37jo"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/khemael/ascension.gd" id="1_88yna"]
+
+[resource]
+script = ExtResource("1_88yna")
+damage = 80
+armor = 80
+stacks_threshold = 6
+card_name = "Ascension"
+description = "Dépense 6 préjudice pour infliger 80 dégâts à la cible.Dépense 6 faveur pour soigner 80 points de vie de la cible."
+quote = ""
+cost = 3
+targetting = 0
+cardType = 0

@@ -21,8 +21,8 @@ var last_turn_energy_regen : int
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
-	_characters.append(preload("res://resources/game_data/character_data/ciol.tres").instantiate())
-	_characters.append(preload("res://resources/game_data/character_data/4N-70N.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/khemael.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/brunhilde.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/freyja.tres").instantiate())
 	energy_regen = base_energy_regen
 	for character in _characters :
@@ -66,6 +66,7 @@ func refill_hand() -> void :
 
 func can_play_card(card : Card, target : Character) -> bool :
 	if card.cost > current_energy : return false
+	if card.character.has_status("stunned") : return false
 	if !card.can_target(target) : return false
 	return true
 

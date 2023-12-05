@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dm6wt0gdxt35p"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/khemael/purification.gd" id="1_nhc23"]
+
+[resource]
+script = ExtResource("1_nhc23")
+armor = 30
+card_name = "Purification"
+description = "Retire tous les effets négatifs du personnage allié ciblé, puis lui octroie 30 d'armure."
+quote = ""
+cost = 2
+targetting = 1
+cardType = 1

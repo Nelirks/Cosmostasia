@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://derm7inxlbcem"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/khemael/cruaute.gd" id="1_w03jw"]
+
+[resource]
+script = ExtResource("1_w03jw")
+base_damage = 15
+bonus_damage = 10
+card_name = "Cruauté"
+description = "Inflige 15 dégâts au personnage adverse ciblé, augmentés de 10 si la cible a moins de la moitié de sa vie."
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

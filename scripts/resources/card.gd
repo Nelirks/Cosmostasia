@@ -26,17 +26,14 @@ func apply_effects(target : Character) -> void :
 func can_target(target : Character) -> bool :
 	if target == null : return targetting == Targetting.NO_TARGET
 	if target.is_dead : return false
-	match targetting :
-		Targetting.ANY :
-			return target != null
-		Targetting.ALLY :
-			return character.player == target.player
-		Targetting.OPPONENT :
-			if character.player == target.player : return false
-			var aggro_level = int(target.has_status("provoke")) - int(target.has_status("stealth"))
-			for potential_target in target.get_allies(false) :
-				if aggro_level < (int(potential_target.has_status("provoke")) - int(potential_target.has_status("stealth"))) : return false
-			return true
+	
+	if targetting == Targetting.ALLY : return character.player == target.player
+	if targetting == Targetting.ANY and character.player == target.player : return true
+	if (targetting == Targetting.ANY or targetting == Targetting.OPPONENT) and target.player != character.player :
+		var aggro_level = int(target.has_status("provoke")) - int(target.has_status("stealth"))
+		for potential_target in target.get_allies(false) :
+			if aggro_level < (int(potential_target.has_status("provoke")) - int(potential_target.has_status("stealth"))) : return false
+		return true
 	return false
 
 func _on_position_set() -> void :

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bynkjy6ml44xk"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/khemael_passive.gd" id="1_cijyf"]
+
+[resource]
+script = ExtResource("1_cijyf")
+prejudice_multiplier = 1.2
+faveur_multiplier = 0.8
+id = "khemael_passive"
+type = 2

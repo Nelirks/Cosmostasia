@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b21ps7mg66r6y"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/khemael/suppression.gd" id="1_j262x"]
+
+[resource]
+script = ExtResource("1_j262x")
+damage = 30
+card_name = "Suppression"
+description = "Retire tous les effets positifs du personnage adverse ciblé, puis lui inflige 30 dégâts."
+quote = ""
+cost = 2
+targetting = 2
+cardType = 0
