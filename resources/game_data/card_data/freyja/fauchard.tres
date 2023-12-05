@@ -9,5 +9,5 @@ card_name = "Fauchard"
 description = "Inflige 10 dégâts à tous les adversaires."
 quote = ""
 cost = 1
-targetting = 2
+targetting = 3
 cardType = 0
