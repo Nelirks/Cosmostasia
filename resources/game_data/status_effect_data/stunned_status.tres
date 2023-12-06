@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_py33u")
 id = "stunned"
-type = 0
+type = 1

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://4cbsj7uh5qlm"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/lord_reece/abandonne_felon.gd" id="1_ubibg"]
+
+[resource]
+script = ExtResource("1_ubibg")
+card_name = "Abandonne, félon"
+description = "Défausse la carte Miracle adverse"
+quote = ""
+cost = 1
+targetting = 3
+cardType = 2

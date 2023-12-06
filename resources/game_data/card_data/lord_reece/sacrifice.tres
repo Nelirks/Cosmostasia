@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bsfu0s3dnv3x3"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/lord_reece/sacrifice.gd" id="1_2cb0p"]
+
+[resource]
+script = ExtResource("1_2cb0p")
+damage = 7
+attack_down_duration = 1
+card_name = "Sacrifice (?)"
+description = "Réduit l'attaque de la cible pendant 1 tour et lui inflige 7 dégâts pour chaque effet négatif l'affectant."
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

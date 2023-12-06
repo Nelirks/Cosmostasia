@@ -16,6 +16,9 @@ func end_turn() -> void :
 func apply(target : Character) -> void :
 	target.add_status(self)
 
+func on_damage_taken(source : Character, amout : int) -> void :
+	pass
+
 func on_apply() -> void :
 	print(id + " applied to " + owner.character_name)
 

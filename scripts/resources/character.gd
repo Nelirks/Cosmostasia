@@ -47,6 +47,9 @@ func take_damage(source : Character, amount : int, uses_armor : bool) -> void :
 			remaining_amount -= _armor
 			_armor = 0
 	current_health -= remaining_amount
+	if remaining_amount > 0 :
+		for status in _statuses :
+			status.on_damage_taken(source, remaining_amount)
 
 func heal(amount : int) -> void :
 	current_health = clamp(current_health + amount, current_health, max_health)
