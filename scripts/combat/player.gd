@@ -25,8 +25,6 @@ func _init(is_host : bool) -> void :
 	_characters.append(preload("res://resources/game_data/character_data/freyja.tres").instantiate())
 	energy_regen = base_energy_regen
 	_hand.resize(3)
-	
-	print(_draw_pile.size())
 
 func add_character(character : Character) -> void :
 	if _characters.size() >= 3 : 
@@ -137,3 +135,10 @@ func get_characters(include_dead : bool = false) -> Array[Character] :
 			if characters[i].is_dead :
 				characters.remove_at(i)
 	return characters
+	
+func get_all_cards() -> Array[Card]:
+	var cards : Array[Card] = []
+	cards.append_array(_draw_pile)
+	cards.append_array(_hand)
+	cards.append_array(_discard)
+	return cards

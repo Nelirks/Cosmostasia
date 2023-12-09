@@ -1,7 +1,10 @@
 extends Node2D
 class_name CardUI
 
-var card: Card
+var card: Card:
+	set(value):
+		card = value
+		on_position_set()
 var miracle_position: Vector2
 var middle_position: Vector2
 var prepared_position: Vector2
