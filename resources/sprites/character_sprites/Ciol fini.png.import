@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:resources/sprites/character_sprites/Ciol fini.png.import
-uid="uid://vookq0qib21r"
+uid="uid://bvfy0e32h0mo6"
 path="res://.godot/imported/Ciol fini.png-e9527cd7b22796338509d60e9875f899.ctex"
-========
-uid="uid://bc5sfcaqfp0tn"
-path="res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"
->>>>>>>> 7810426 (les dossiers ils sont bien rangés !):resources/sprites/character_sprites/Freyja_decor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:resources/sprites/character_sprites/Ciol fini.png.import
 source_file="res://resources/sprites/character_sprites/Ciol fini.png"
 dest_files=["res://.godot/imported/Ciol fini.png-e9527cd7b22796338509d60e9875f899.ctex"]
-========
-source_file="res://resources/sprites/character_sprites/Freyja_decor.png"
-dest_files=["res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"]
->>>>>>>> 7810426 (les dossiers ils sont bien rangés !):resources/sprites/character_sprites/Freyja_decor.png.import
 
 [params]
 
