@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc5sfcaqfp0tn"
-path="res://.godot/imported/Freyja_decor.png-21d22b3125424f2eeaa730bd9efff652.ctex"
+path="res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters Sprite/Freyja_decor.png"
-dest_files=["res://.godot/imported/Freyja_decor.png-21d22b3125424f2eeaa730bd9efff652.ctex"]
+source_file="res://resources/sprites/character_sprites/Freyja_decor.png"
+dest_files=["res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"]
 
 [params]
 
