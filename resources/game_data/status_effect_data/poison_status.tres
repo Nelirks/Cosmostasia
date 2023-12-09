@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b68cg6crofxy0"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/poison_status.gd" id="1_14hvl"]
+
+[resource]
+script = ExtResource("1_14hvl")
+damage = 15
+id = "poison"
+type = 1

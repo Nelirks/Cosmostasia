@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bypbb3w21qms7"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bypbb3w21qms7"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_2c21b"]
+[ext_resource type="Script" path="res://scripts/data/cards/lisirmee/farce.gd" id="1_pdifk"]
 
 [resource]
-script = ExtResource("1_2c21b")
+script = ExtResource("1_pdifk")
+energy_regen = 1
 card_name = "Farce"
-card_description = "Inflige 15 dégats à la cible \\n Miracle: Energie +1"
-card_quote = "Pas une personne de la cour féérique n'a réussi à échapper aux blagues de mauvais goût de Lisirmée"
-card_cost = 1
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Défausse la main \\n Miracle: Energie +1"
+quote = "Pas une personne de la cour féérique n'a réussi à échapper aux blagues de mauvais goût de Lisirmée"
+cost = 1
+targetting = 3
+cardType = 2

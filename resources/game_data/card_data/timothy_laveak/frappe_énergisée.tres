@@ -1,16 +1,14 @@
-[gd_resource type="Resource" script_class="CardInfo" load_steps=4 format=3 uid="uid://cwigg8mkbu55t"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwigg8mkbu55t"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_61bma"]
-[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="1_jc7ak"]
-
-[sub_resource type="Resource" id="Resource_f7pj7"]
-script = ExtResource("1_jc7ak")
-damage = 30
+[ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/frappe_energisee.gd" id="1_lse3c"]
 
 [resource]
-script = ExtResource("1_61bma")
-card_name = "Frappe énergisée"
-card_description = "Inflige 30 dégâts à la cible. Si il reste de l'énergie, gagne 20 armure."
-card_quote = ""
-card_cost = 2
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([SubResource("Resource_f7pj7")])
+script = ExtResource("1_lse3c")
+damage = 30
+armor = 20
+card_name = "Frappe Énergisée"
+description = "Inflige 30 dégâts à la cible. \\n Si il reste de l'énergie, octroie 20 d'armure à Timothy."
+quote = ""
+cost = 2
+targetting = 2
+cardType = 0

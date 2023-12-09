@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dibqu1nd8n3o4"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/rafale_status.gd" id="1_lgfy0"]
+
+[resource]
+script = ExtResource("1_lgfy0")
+id = "rafale"
+type = 0

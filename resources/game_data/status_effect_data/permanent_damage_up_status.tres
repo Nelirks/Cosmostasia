@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b6nrfwrc1iksi"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/permanent_damage_up_status.gd" id="1_51p2p"]
+
+[resource]
+script = ExtResource("1_51p2p")
+id = "permanent_damage_up"
+type = 2

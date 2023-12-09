@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bomousjw20yi"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/dyssebia_passive.gd" id="1_hvkg8"]
+
+[resource]
+script = ExtResource("1_hvkg8")
+damage_received_multiplier = 0.8
+id = "dyssebia_passive"
+type = 2

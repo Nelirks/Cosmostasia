@@ -23,9 +23,8 @@ GameManager="*res://scenes/game_management/game_manager.tscn"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=3
+window/size/viewport_width=960
+window/size/viewport_height=540
 
 [editor_plugins]
 

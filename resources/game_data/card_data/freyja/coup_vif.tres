@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cbcvyeaabw7q1"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/freyja/coup_vif.gd" id="1_bjpks"]
+
+[resource]
+script = ExtResource("1_bjpks")
+damage = 20
+card_name = "Coup Vif"
+description = "Inflige 20 dégâts à la cible."
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

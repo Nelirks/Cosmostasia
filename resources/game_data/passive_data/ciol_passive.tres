@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dsogtomgjayee"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/ciol_passive.gd" id="1_34cyj"]
+
+[resource]
+script = ExtResource("1_34cyj")
+base_max_feathers = 2
+additional_feather_cd = 2.0
+id = "ciol_passive"
+type = 2

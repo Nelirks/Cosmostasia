@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://x3gputyean5g"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/freyja/préparation.gd" id="1_un5n3"]
+
+[resource]
+script = ExtResource("1_un5n3")
+armor = 20
+card_name = "Préparation"
+description = "Octroie 20 d'armure à Freyja et augmente ses dégâts de 50% au prochain tour."
+quote = ""
+cost = 2
+targetting = 3
+cardType = 2

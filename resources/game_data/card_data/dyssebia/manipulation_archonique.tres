@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://b007r5udiy7ku"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b007r5udiy7ku"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_7ug8r"]
+[ext_resource type="Script" path="res://scripts/data/cards/dyssebia/manipulation_archonique.gd" id="1_52hlp"]
 
 [resource]
-script = ExtResource("1_7ug8r")
+script = ExtResource("1_52hlp")
+base_damage = 15
+bonus_damage = 15
 card_name = "Manipulation Archonique"
-card_description = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
-card_quote = ""
-card_cost = 1
-card_type = 0
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Inflige 15 dégâts à la cible. \\n Les dégâts sont doublés si vous possèdez de l'armure"
+quote = ""
+cost = 1
+targetting = 2
+cardType = 0

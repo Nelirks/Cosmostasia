@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cc513kgid5np2"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/freyja/ralliement.gd" id="1_j4c63"]
+
+[resource]
+script = ExtResource("1_j4c63")
+attack_buff_duration = 2
+card_name = "Ralliement"
+description = "Augmente l’attaque de l’équipe pendant 2 tour"
+quote = ""
+cost = 2
+targetting = 3
+cardType = 2

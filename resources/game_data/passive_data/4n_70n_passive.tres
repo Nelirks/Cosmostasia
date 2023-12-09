@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cag60rwhhges"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/4n_70n_passive.gd" id="1_e0fwu"]
+
+[resource]
+script = ExtResource("1_e0fwu")
+anger_damage_mult = 1.2
+joy_energy_regen = 1
+sadness_damage_mult = 0.8
+id = "4n_70n_passive"
+type = 2

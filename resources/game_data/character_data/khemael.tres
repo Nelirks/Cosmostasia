@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://srtcm21x0th6"]
+
+[ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_1pft6"]
+[ext_resource type="Resource" uid="uid://cd1skh5bc2oq8" path="res://resources/game_data/card_data/khemael/apitoiement.tres" id="1_rlyoh"]
+[ext_resource type="Resource" uid="uid://c0h1mf6ha37jo" path="res://resources/game_data/card_data/khemael/ascension.tres" id="2_o8i62"]
+[ext_resource type="Resource" uid="uid://derm7inxlbcem" path="res://resources/game_data/card_data/khemael/cruauté.tres" id="3_svnou"]
+[ext_resource type="Resource" uid="uid://dm6wt0gdxt35p" path="res://resources/game_data/card_data/khemael/purification.tres" id="4_pcat6"]
+[ext_resource type="Resource" uid="uid://b21ps7mg66r6y" path="res://resources/game_data/card_data/khemael/suppression.tres" id="5_npogt"]
+[ext_resource type="Resource" uid="uid://bynkjy6ml44xk" path="res://resources/game_data/passive_data/khemael_passive.tres" id="6_p2gpn"]
+
+[resource]
+script = ExtResource("1_1pft6")
+character_name = "Khemaël"
+character_quote = ""
+max_health = 100
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_rlyoh"), ExtResource("2_o8i62"), ExtResource("3_svnou"), ExtResource("4_pcat6"), ExtResource("5_npogt")])
+passive = ExtResource("6_p2gpn")

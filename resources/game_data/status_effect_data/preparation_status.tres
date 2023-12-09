@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://djd70t8r8fxpv"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/preparation_status_effect.gd" id="1_afs51"]
+
+[resource]
+script = ExtResource("1_afs51")
+damage_multiplier = 1.5
+id = "prepared"
+type = 0

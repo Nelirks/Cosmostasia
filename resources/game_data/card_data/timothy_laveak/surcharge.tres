@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bd4oj36iy5os5"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bd4oj36iy5os5"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_jv0q3"]
+[ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/surcharge.gd" id="1_hklpy"]
 
 [resource]
-script = ExtResource("1_jv0q3")
+script = ExtResource("1_hklpy")
+armor = 20
+energy_regen = 1
 card_name = "Surcharge"
-card_description = "Vous octroie 20 d'armure, Augmente la recharge de 1 au tour prochain"
-card_quote = ""
-card_cost = 2
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Vous octroie 20 d'armure, Augmente la recharge de 1 au tour prochain"
+quote = ""
+cost = 2
+targetting = 3
+cardType = 1

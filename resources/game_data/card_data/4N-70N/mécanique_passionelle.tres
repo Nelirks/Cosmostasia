@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://dy6mmlkugr216"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dy6mmlkugr216"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_eoh68"]
+[ext_resource type="Script" path="res://scripts/data/cards/4n_70n/mecanique_passionnelle.gd" id="1_i7olt"]
 
 [resource]
-script = ExtResource("1_eoh68")
+script = ExtResource("1_i7olt")
+damage = 20
+energy_gain = 3
+armor = 25
 card_name = "Mécanique Passionelle"
-card_description = "Cette carte à un effet changeant en fonction de l'état emotionnel actuelle de 4N-70n \\n Colère: Inflige 20 dégâts à tous les adversaires \\n Joie: Restaure 3 point d'énergie \\n Tristesse: Octroie 25 d'armure à 4N-70N"
-card_quote = ""
-card_cost = 2
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Cette carte à un effet changeant en fonction de l'état emotionnel actuelle de 4N-70n \\n Colère: Inflige 20 dégâts à tous les adversaires \\n Joie: Restaure 3 point d'énergie \\n Tristesse: Octroie 25 d'armure à 4N-70N"
+quote = "Acharné à sa tache, 4N-70N fera tout ce qui est en son pouvoir pour ramener ceux qui lui était cher"
+cost = 2
+targetting = 3
+cardType = 2

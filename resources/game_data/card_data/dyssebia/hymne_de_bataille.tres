@@ -1,26 +1,14 @@
-[gd_resource type="Resource" script_class="CardInfo" load_steps=8 format=3 uid="uid://ykpq31bqbex7"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ykpq31bqbex7"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_8j7or"]
-[ext_resource type="Script" path="res://scripts/effects/apply_armor_effect.gd" id="1_shf5f"]
-[ext_resource type="Script" path="res://scripts/effects/target_self_effect.gd" id="2_2qibg"]
-[ext_resource type="Script" path="res://scripts/effects/target_team_effect.gd" id="2_omew4"]
-
-[sub_resource type="Resource" id="Resource_xcu55"]
-script = ExtResource("1_shf5f")
-amount = 20
-
-[sub_resource type="Resource" id="Resource_x7x2t"]
-script = ExtResource("2_omew4")
-effect = SubResource("Resource_xcu55")
-
-[sub_resource type="Resource" id="Resource_tl6k2"]
-script = ExtResource("2_2qibg")
-effect = SubResource("Resource_x7x2t")
+[ext_resource type="Script" path="res://scripts/data/cards/dyssebia/hymne_de_bataille.gd" id="1_xvwh3"]
 
 [resource]
-script = ExtResource("1_8j7or")
+script = ExtResource("1_xvwh3")
+base_armor = 20
+bonus_armor = 10
 card_name = "Hymne de bataille"
-card_description = "Octroie 20 d'armure à votre équipe (+ 10 par alliés mort)"
-card_quote = "Une prestance et une détermination sans faille, tels sont les atouts qui mèneront Dyssebia à la victoire"
-card_cost = 2
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([SubResource("Resource_tl6k2")])
+description = "Octroie 20 d'armure à votre équipe (+ 10 par alliés mort)"
+quote = "Une prestance et une détermination sans faille, tels sont les atouts qui mèneront Dyssebia à la victoire"
+cost = 2
+targetting = 3
+cardType = 1

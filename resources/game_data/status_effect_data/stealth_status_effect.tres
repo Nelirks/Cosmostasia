@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cf274w0i425tr"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/provoke_status_effect.gd" id="1_wd4ue"]
+
+[resource]
+script = ExtResource("1_wd4ue")
+id = "stealth"
+type = 0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dqu37x8db75pv"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/lord_reece/attaque_miroir.gd" id="1_bnwqi"]
+
+[resource]
+script = ExtResource("1_bnwqi")
+card_name = "Attaque miroir"
+description = "Inflige des dégâts égaux aux derniers dégâts subis par LR au tour précédent à une cible."
+quote = ""
+cost = 2
+targetting = 2
+cardType = 0

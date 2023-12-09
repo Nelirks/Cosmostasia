@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bxtqbv65hysla"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/lord_reece_passive.gd" id="1_ehlbs"]
+
+[resource]
+script = ExtResource("1_ehlbs")
+heal_amount = 10
+id = "lord_reece_passive"
+type = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://boplhofy06egr"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/ciol/garde_plumeuse.gd" id="1_egrn1"]
+
+[resource]
+script = ExtResource("1_egrn1")
+armor_per_feather = 15
+card_name = "Garde plumeuse"
+description = "Supprime les plumes posés et octroie 15 d'armure à Cïol par plumes supprimées."
+quote = ""
+cost = 2
+targetting = 3
+cardType = 1

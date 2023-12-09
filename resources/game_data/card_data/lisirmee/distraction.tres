@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=2 format=3 uid="uid://bvqoe72f3nhwq"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bvqoe72f3nhwq"]
 
-[ext_resource type="Script" path="res://scripts/resources/card_info.gd" id="1_prddl"]
+[ext_resource type="Script" path="res://scripts/data/cards/lisirmee/distraction.gd" id="1_81q5w"]
 
 [resource]
-script = ExtResource("1_prddl")
+script = ExtResource("1_81q5w")
+energy_regen_reduction = 1
 card_name = "Distraction"
-card_description = "Mélange la main de l'adversaire. \\n Augmente le coût d'une carte aléatoire de sa main de 1."
-card_quote = "Lisirmee a toujours préféré les mêlées désorganisées."
-card_cost = 1
-card_effect = Array[Resource("res://scripts/effects/effect.gd")]([])
+description = "Mélange la main de l'adversaire. \\n Augmente le coût d'une carte aléatoire de sa main de 1."
+quote = "Lisirmee a toujours préféré les mêlées désorganisées."
+cost = 1
+targetting = 3
+cardType = 2

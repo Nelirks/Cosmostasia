@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dj5fq0etkr7w4"]
+
+[ext_resource type="Script" path="res://scripts/data/cards/lord_reece/poison.gd" id="1_8y8tj"]
+
+[resource]
+script = ExtResource("1_8y8tj")
+poison_duration = 3
+card_name = "Poison"
+description = "Inflige 15 de dégâts à chaque fin de tour pendant 3 tours."
+quote = ""
+cost = 3
+targetting = 2
+cardType = 0
