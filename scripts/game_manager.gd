@@ -9,10 +9,14 @@ enum GameState { NONE, COMBAT, GAME_END }
 var _state : GameState
 var _peer_state : GameState
 
-var player : Player
+var player : Player:
+	set(value):
+		player = value
+		player_set.emit()
 var opponent : Player
 
 signal send_message(message : String)
+signal player_set()
 
 func _ready() -> void:
 	NetworkManager.connection_done.connect(_on_network_connection)
