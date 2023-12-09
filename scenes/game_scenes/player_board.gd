@@ -14,16 +14,15 @@ func on_player_set():
 	$"Last Character".character = GameManager.player.get_character(2)
 	
 	
-	for card in GameManager.player._draw_pile :
+	for card in GameManager.player.get_all_cards() :
 		var card_ui : CardUI = preload("res://scenes/game_scenes/cards_ui.tscn").instantiate()
+		add_child(card_ui)
 		card_ui.miracle_position = $"Miracle Card Position".position
 		card_ui.middle_position = $"Middle Card Positon".position
-		card_ui.miracle_position = $"Prepared Card Position".position
+		card_ui.prepared_position = $"Prepared Card Position".position
 		card_ui.card = card
 		cards_display.append(card_ui)
-	
-	print(cards_display.size())
-	print(GameManager.player._draw_pile.size())
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
