@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blbseq742l0cv"
-path="res://.godot/imported/Lisirmee_decor.png-5ff66fe1ddd88daa1e79a9f55ccf80eb.ctex"
+path="res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters Sprite/Lisirmee_decor.png"
-dest_files=["res://.godot/imported/Lisirmee_decor.png-5ff66fe1ddd88daa1e79a9f55ccf80eb.ctex"]
+source_file="res://resources/sprites/character_sprites/Lisirmee_decor.png"
+dest_files=["res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"]
 
 [params]
 
