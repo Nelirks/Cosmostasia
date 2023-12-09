@@ -21,7 +21,7 @@ var last_turn_energy_regen : int
 
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
-	_characters.append(preload("res://resources/game_data/character_data/khemael.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/brunhilde.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/lord_reece.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/freyja.tres").instantiate())
 	energy_regen = base_energy_regen
@@ -30,6 +30,8 @@ func _init(is_host : bool) -> void :
 		_draw_pile.append_array(character.deck)
 	for card in _draw_pile : card.position = Card.Position.DRAW_PILE
 	_hand.resize(3)
+	
+	print(_draw_pile.size())
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :

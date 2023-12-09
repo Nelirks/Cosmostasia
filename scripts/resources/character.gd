@@ -4,7 +4,7 @@ class_name Character
 @export_group("Character Data")
 @export var character_name : String
 @export var character_quote : String
-@export var character_sprite : Sprite2D
+@export var character_sprite : Texture2D
 
 @export_group("Gameplay Data")
 @export var max_health : int
@@ -14,10 +14,16 @@ var player : Player
 
 var deck : Array[Card]
 
-var current_health : int
+var current_health : int:
+	set(value):
+		current_health = value
+		hp_changed.emit()
+
 var _armor : int
 var is_dead : bool = false
 var _statuses : Array[StatusEffect]
+
+signal hp_changed()
 
 func setup() :
 	current_health = max_health

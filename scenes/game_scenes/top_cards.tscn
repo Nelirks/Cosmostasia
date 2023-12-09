@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://220xu4wjuj34"]
 
-[ext_resource type="Texture2D" uid="uid://bc5sfcaqfp0tn" path="res://Sprites/Characters Sprite/Freyja_decor.png" id="1_cwb6o"]
-[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="2_tn4f2"]
+[ext_resource type="Texture2D" uid="uid://bc5sfcaqfp0tn" path="res://resources/sprites/character_sprites/Freyja_decor.png" id="1_cwb6o"]
+[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://resources/sprites/character_sprites/Lisirmee_decor.png" id="2_tn4f2"]
 
 [node name="top_cards" type="Control"]
 layout_mode = 3
