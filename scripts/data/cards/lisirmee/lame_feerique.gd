@@ -18,9 +18,9 @@ func apply_effects(target : Character) -> void :
 
 func _on_position_set() -> void :
 	match position :
-		Position.LEFT_SLOT :
+		Position.PREPARED_SLOT :
 			cost = prepared_cost
-		Position.RIGHT_SLOT :
+		Position.MIRACLE_SLOT :
 			cost = miracle_cost
 		_ :
 			cost = base_cost
