@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://cewp6f4gwvm2a"]
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://cewp6f4gwvm2a"]
 
 [ext_resource type="Resource" uid="uid://dsogtomgjayee" path="res://resources/game_data/passive_data/ciol_passive.tres" id="1_6k0jm"]
 [ext_resource type="Resource" uid="uid://bg7fwd5q3t7hc" path="res://resources/game_data/card_data/ciol/danse_erratique.tres" id="1_c546d"]
@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://boplhofy06egr" path="res://resources/game_data/card_data/ciol/garde_plumeuse.tres" id="3_3375j"]
 [ext_resource type="Resource" uid="uid://b1brdy5mk38mv" path="res://resources/game_data/card_data/ciol/ocean_dechaine.tres" id="4_13xto"]
 [ext_resource type="Resource" uid="uid://du411fwecu37o" path="res://resources/game_data/card_data/ciol/plume_scelerate.tres" id="5_4odeg"]
+[ext_resource type="Texture2D" uid="uid://dyyffbwg5dgan" path="res://resources/sprites/character_sprites/Ciol.png" id="6_k8b3k"]
 
 [resource]
 script = ExtResource("1_oe6yv")
 character_name = "Cïol"
 character_quote = ""
+character_sprite = ExtResource("6_k8b3k")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_c546d"), ExtResource("2_7jwud"), ExtResource("3_3375j"), ExtResource("4_13xto"), ExtResource("5_4odeg")])
 passive = ExtResource("1_6k0jm")

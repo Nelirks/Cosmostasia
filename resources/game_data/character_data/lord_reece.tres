@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://bnbwwa2tu5cah"]
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://bnbwwa2tu5cah"]
 
 [ext_resource type="Resource" uid="uid://bxtqbv65hysla" path="res://resources/game_data/passive_data/lord_reece_passive.tres" id="1_6m68w"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_7g4v4"]
@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://bjv6oeridu6rt" path="res://resources/game_data/card_data/lord_reece/blocus.tres" id="3_1i5ak"]
 [ext_resource type="Resource" uid="uid://dj5fq0etkr7w4" path="res://resources/game_data/card_data/lord_reece/poison.tres" id="4_tgixk"]
 [ext_resource type="Resource" uid="uid://bsfu0s3dnv3x3" path="res://resources/game_data/card_data/lord_reece/sacrifice.tres" id="5_gxqa2"]
+[ext_resource type="Texture2D" uid="uid://dxicx472h62cc" path="res://resources/sprites/character_sprites/papisteam.png" id="6_in1bf"]
 
 [resource]
 script = ExtResource("1_7g4v4")
 character_name = "Lord Reece"
 character_quote = ""
+character_sprite = ExtResource("6_in1bf")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_xwd01"), ExtResource("2_sqh2k"), ExtResource("3_1i5ak"), ExtResource("4_tgixk"), ExtResource("5_gxqa2")])
 passive = ExtResource("1_6m68w")

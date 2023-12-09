@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://fcgmvnqymn0c"]
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://fcgmvnqymn0c"]
 
 [ext_resource type="Resource" uid="uid://b2cicfgrlo03w" path="res://resources/game_data/card_data/freyja/agente_de_l_ombre.tres" id="1_87o5n"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_d8eua"]
@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://x3gputyean5g" path="res://resources/game_data/card_data/freyja/preparation.tres" id="4_5x8eh"]
 [ext_resource type="Resource" uid="uid://cc513kgid5np2" path="res://resources/game_data/card_data/freyja/ralliement.tres" id="5_850g2"]
 [ext_resource type="Resource" uid="uid://c68y1eupku27a" path="res://resources/game_data/passive_data/freyja_passive.tres" id="6_0lmra"]
+[ext_resource type="Texture2D" uid="uid://bc5sfcaqfp0tn" path="res://resources/sprites/character_sprites/Freyja_decor.png" id="6_73rf1"]
 
 [resource]
 script = ExtResource("1_d8eua")
 character_name = "Freyja"
 character_quote = ""
+character_sprite = ExtResource("6_73rf1")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_87o5n"), ExtResource("2_l7kcq"), ExtResource("3_3t61u"), ExtResource("4_5x8eh"), ExtResource("5_850g2")])
 passive = ExtResource("6_0lmra")
