@@ -1,7 +1,7 @@
 extends Node
 
 var rng : RandomNumberGenerator
-var _combat_scene : PackedScene = preload("res://scenes/game_scenes/combat_scene.tscn")
+var _combat_scene : PackedScene = preload("res://scenes/game_scenes/final_combat_board.tscn")
 var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
 @onready var combat : CombatManager = $CombatManager
 
