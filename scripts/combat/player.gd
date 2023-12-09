@@ -30,8 +30,6 @@ func _init(is_host : bool) -> void :
 		_draw_pile.append_array(character.deck)
 	for card in _draw_pile : card.position = Card.Position.DRAW_PILE
 	_hand.resize(3)
-	
-	print(_draw_pile.size())
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :
@@ -128,3 +126,10 @@ func get_characters(include_dead : bool = false) -> Array[Character] :
 			if characters[i].is_dead :
 				characters.remove_at(i)
 	return characters
+	
+func get_all_cards() -> Array[Card]:
+	var cards : Array[Card] = []
+	cards.append_array(_draw_pile)
+	cards.append_array(_hand)
+	cards.append_array(_discard)
+	return cards
