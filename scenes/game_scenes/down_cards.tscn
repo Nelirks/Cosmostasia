@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0fj0gdbuhcyh"]
 
-[ext_resource type="PackedScene" uid="uid://dj0uhxr2myve4" path="res://scenes/game_scenes/cards_ui.tscn" id="1_5anwp"]
+[ext_resource type="Script" path="res://scenes/game_scenes/player_board.gd" id="1_1c4m8"]
 [ext_resource type="PackedScene" uid="uid://dp0ljcg8nycoq" path="res://scenes/game_scenes/character_card_ui.tscn" id="3_g1kt1"]
 
 [node name="Player_Board" type="Control"]
@@ -10,15 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Miracle Card" parent="." instance=ExtResource("1_5anwp")]
-position = Vector2(610, 880)
-
-[node name="Middle Card" parent="." instance=ExtResource("1_5anwp")]
-position = Vector2(860, 880)
-
-[node name="Prepared Card" parent="." instance=ExtResource("1_5anwp")]
-position = Vector2(1110, 880)
+script = ExtResource("1_1c4m8")
 
 [node name="First Character" parent="." instance=ExtResource("3_g1kt1")]
 position = Vector2(635, 610)
@@ -28,3 +20,12 @@ position = Vector2(885, 610)
 
 [node name="Last Character" parent="." instance=ExtResource("3_g1kt1")]
 position = Vector2(1135, 610)
+
+[node name="Miracle Card Position" type="Node2D" parent="."]
+position = Vector2(609, 879)
+
+[node name="Middle Card Positon" type="Node2D" parent="."]
+position = Vector2(860, 880)
+
+[node name="Prepared Card Position" type="Node2D" parent="."]
+position = Vector2(1110, 880)
