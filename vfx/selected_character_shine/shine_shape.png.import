@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:vfx/selected_character_shine/shine_shape.png.import
 uid="uid://bx0pv340dvk53"
 path="res://.godot/imported/shine_shape.png-bd42feda93c776c711754e2d8e187a99.ctex"
+========
+uid="uid://blbseq742l0cv"
+path="res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"
+>>>>>>>> a78b4a9 (les dossiers ils sont bien rangés !):resources/sprites/character_sprites/Lisirmee_decor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:vfx/selected_character_shine/shine_shape.png.import
 source_file="res://vfx/selected_character_shine/shine_shape.png"
 dest_files=["res://.godot/imported/shine_shape.png-bd42feda93c776c711754e2d8e187a99.ctex"]
+========
+source_file="res://resources/sprites/character_sprites/Lisirmee_decor.png"
+dest_files=["res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"]
+>>>>>>>> a78b4a9 (les dossiers ils sont bien rangés !):resources/sprites/character_sprites/Lisirmee_decor.png.import
 
 [params]
 

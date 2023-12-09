@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:resources/sprites/card_sprites/attaque.png.import
 uid="uid://b3ak2dps8pjmp"
 path="res://.godot/imported/attaque.png-2807e08ca06cdb0904e3cc245b70ef48.ctex"
+========
+uid="uid://bc5sfcaqfp0tn"
+path="res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"
+>>>>>>>> a78b4a9 (les dossiers ils sont bien rangés !):resources/sprites/character_sprites/Freyja_decor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:resources/sprites/card_sprites/attaque.png.import
 source_file="res://resources/sprites/card_sprites/attaque.png"
 dest_files=["res://.godot/imported/attaque.png-2807e08ca06cdb0904e3cc245b70ef48.ctex"]
+========
+source_file="res://resources/sprites/character_sprites/Freyja_decor.png"
+dest_files=["res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"]
+>>>>>>>> a78b4a9 (les dossiers ils sont bien rangés !):resources/sprites/character_sprites/Freyja_decor.png.import
 
 [params]
 
