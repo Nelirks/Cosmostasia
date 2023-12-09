@@ -7,6 +7,5 @@ func apply_effects(target : Character) -> void :
 
 func can_target(target : Character) -> bool :
 	if !character.has_status("lord_reece_passive") or character.get_status("lord_reece_passive").damage_source == null :
-		print(character.has_status("lord_reece_passive") + character.get_status("lord_reece_passive").damage_source)
 		return false
 	return super.can_target(target)

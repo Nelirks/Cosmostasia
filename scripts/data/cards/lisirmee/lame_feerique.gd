@@ -9,9 +9,9 @@ extends Card
 
 func apply_effects(target : Character) -> void :
 	match position :
-		Position.LEFT_SLOT :
+		Position.PREPARED_SLOT :
 			_add_effect(DamageEffect.new(prepared_damage, character, target))
-		Position.RIGHT_SLOT :
+		Position.MIRACLE_SLOT :
 			_add_effect(DamageEffect.new(miracle_damage, character, target))
 		_ :
 			_add_effect(DamageEffect.new(base_damage, character, target))

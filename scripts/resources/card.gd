@@ -14,7 +14,7 @@ enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 
 var character : Character
 
-enum Position { DRAW_PILE, LEFT_SLOT, MIDDLE_SLOT, RIGHT_SLOT, DISCARD_PILE }
+enum Position { DRAW_PILE, PREPARED_SLOT, MIDDLE_SLOT, MIRACLE_SLOT, DISCARD_PILE }
 var position : Position :
 	set(value) : 
 		position = value

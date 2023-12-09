@@ -22,7 +22,7 @@ var last_turn_energy_regen : int
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
 	_characters.append(preload("res://resources/game_data/character_data/khemael.tres").instantiate())
-	_characters.append(preload("res://resources/game_data/character_data/brunhilde.tres").instantiate())
+	_characters.append(preload("res://resources/game_data/character_data/lord_reece.tres").instantiate())
 	_characters.append(preload("res://resources/game_data/character_data/freyja.tres").instantiate())
 	energy_regen = base_energy_regen
 	for character in _characters :
