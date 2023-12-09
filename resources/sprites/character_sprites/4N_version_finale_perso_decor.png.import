@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bytjuqn7fs3vf"
-path="res://.godot/imported/4N_version_finale_perso_decor.png-32f54cd2371570b2bfbdbed8da078870.ctex"
+path="res://.godot/imported/4N_version_finale_perso_decor.png-fc8e05a205db0b136c77ab8814de5411.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/combat/4N_version_finale_perso_decor.png"
-dest_files=["res://.godot/imported/4N_version_finale_perso_decor.png-32f54cd2371570b2bfbdbed8da078870.ctex"]
+source_file="res://resources/sprites/character_sprites/4N_version_finale_perso_decor.png"
+dest_files=["res://.godot/imported/4N_version_finale_perso_decor.png-fc8e05a205db0b136c77ab8814de5411.ctex"]
 
 [params]
 
