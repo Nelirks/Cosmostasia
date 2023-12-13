@@ -33,8 +33,8 @@ func _select_card(index : int) -> void :
 
 func _target_character(is_ally : bool, index : int) -> void :
 	if selected_card == -1 : return
-	var target_is_host : bool = (is_ally and NetworkManager.is_host()) or (!is_ally and !NetworkManager.is_host())
-	GameManager.combat.query_card_play(NetworkManager.is_host(), selected_card, target_is_host, index)
+	var target_is_host : bool = (is_ally and NetworkManager.is_host) or (!is_ally and !NetworkManager.is_host)
+	GameManager.combat.query_card_play(NetworkManager.is_host, selected_card, target_is_host, index)
 	selected_card = -1
 
 func _input(event: InputEvent) -> void:

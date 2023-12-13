@@ -30,7 +30,7 @@ func query_card_play(card_is_host : bool, card_index : int, target_is_host : boo
 	var target : Character = GameManager.get_player(target_is_host).get_character(target_index)
 	if !card.character.player.can_play_card(card, target) : return
 	
-	if NetworkManager.is_host() :
+	if NetworkManager.is_host :
 		_apply_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
 	else :
 		query_card_play.rpc(card_is_host, card_index, target_is_host, target_index)
@@ -38,7 +38,7 @@ func query_card_play(card_is_host : bool, card_index : int, target_is_host : boo
 ## Try to end the turn. If network is used, the client sends this request to the host.
 @rpc("any_peer", "call_remote", "reliable")
 func query_end_turn() -> void :
-	if NetworkManager.is_host() :
+	if NetworkManager.is_host :
 		if ((multiplayer.get_remote_sender_id() == 0) == is_player_turn()) :
 			_apply_end_turn.rpc()
 		else :

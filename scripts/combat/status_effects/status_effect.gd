@@ -20,10 +20,10 @@ func on_damage_taken(source : Character, amout : int) -> void :
 	pass
 
 func on_apply() -> void :
-	print(id + " applied to " + owner.character_name)
+	pass
 
 func on_remove() -> void :
-	print(id + " removed from " + owner.character_name)
+	pass
 
 func on_effect_resolution(effect : Effect) -> void :
 	pass

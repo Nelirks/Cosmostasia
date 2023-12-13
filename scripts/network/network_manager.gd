@@ -5,6 +5,9 @@ signal connection_failed()
 signal connection_done()
 
 var is_multiplayer : bool = false
+var is_host : 
+	get : return !is_multiplayer or multiplayer.is_server()
+		
 
 func _ready() -> void : 
 	_connect_signals()
@@ -67,6 +70,3 @@ func create_server(port : String) -> void :
 @rpc("call_local")
 func _connection_done() -> void :
 	connection_done.emit()
-
-func is_host() -> bool :
-	return !is_multiplayer or multiplayer.is_server()

@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://7us7wtfyl5lk"]
+
+[ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
+[ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
+[ext_resource type="Resource" uid="uid://busv1m7huw2sp" path="res://resources/game_data/character_data/brunhilde.tres" id="3_8yflf"]
+[ext_resource type="Resource" uid="uid://cewp6f4gwvm2a" path="res://resources/game_data/character_data/ciol.tres" id="4_h7vl3"]
+[ext_resource type="Resource" uid="uid://bjcqffc6g6s0p" path="res://resources/game_data/character_data/dyssebia.tres" id="5_and1r"]
+[ext_resource type="Resource" uid="uid://fcgmvnqymn0c" path="res://resources/game_data/character_data/freyja.tres" id="6_vktb4"]
+[ext_resource type="Resource" uid="uid://srtcm21x0th6" path="res://resources/game_data/character_data/khemael.tres" id="7_souub"]
+[ext_resource type="Resource" uid="uid://cbx4earrm7weg" path="res://resources/game_data/character_data/lisirmee.tres" id="8_uyypb"]
+[ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
+[ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
+
+[node name="DraftScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3n8hg")
+character_pool = Array[Resource("res://scripts/resources/character.gd")]([ExtResource("2_3aehv"), ExtResource("3_8yflf"), ExtResource("4_h7vl3"), ExtResource("5_and1r"), ExtResource("6_vktb4"), ExtResource("7_souub"), ExtResource("8_uyypb"), ExtResource("9_nmjhl"), ExtResource("10_c3o3b")])
+
+[node name="OpponentDraft" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Pick0" type="Label" parent="OpponentDraft"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Pick1" type="Label" parent="OpponentDraft"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Pick2" type="Label" parent="OpponentDraft"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="PlayerChoices" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 284)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Choice0" type="Button" parent="PlayerChoices"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Choice1" type="Button" parent="PlayerChoices"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Choice2" type="Button" parent="PlayerChoices"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="PlayerDraft" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Pick0" type="Label" parent="PlayerDraft"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Pick1" type="Label" parent="PlayerDraft"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[node name="Pick2" type="Label" parent="PlayerDraft"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+
+[connection signal="pressed" from="PlayerChoices/Choice0" to="." method="on_button_pressed" binds= [0]]
+[connection signal="pressed" from="PlayerChoices/Choice1" to="." method="on_button_pressed" binds= [1]]
+[connection signal="pressed" from="PlayerChoices/Choice2" to="." method="on_button_pressed" binds= [2]]

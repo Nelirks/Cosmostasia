@@ -1,11 +1,12 @@
 extends Node
 
 var rng : RandomNumberGenerator
+var _draft_scene : PackedScene = preload("res://scenes/draft_phase/draft_scene.tscn")
 var _combat_scene : PackedScene = preload("res://scenes/game_scenes/combat_scene.tscn")
 var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
 @onready var combat : CombatManager = $CombatManager
 
-enum GameState { NONE, COMBAT, GAME_END }
+enum GameState { NONE, DRAFT, COMBAT, GAME_END }
 var _state : GameState
 var _peer_state : GameState
 
@@ -21,10 +22,9 @@ func _init() :
 	rng = RandomNumberGenerator.new()
 
 func _on_network_connection() -> void :
-	if (NetworkManager.is_host()) :
-		_init_server_rng()
+	pass
 
-func _init_server_rng() -> void :
+func sync_rng() -> void :
 	if NetworkManager.is_multiplayer :
 		_sync_client_rng.rpc(rng.seed, rng.state)
 
@@ -55,14 +55,22 @@ func _on_state_synced(state : GameState) -> void :
 	match state :
 		GameState.NONE :
 			pass
+		GameState.DRAFT :
+			if NetworkManager.is_host :
+				sync_rng()
+			player = Player.new(NetworkManager.is_host)
+			opponent = Player.new(not NetworkManager.is_host)
+			get_tree().change_scene_to_packed(_draft_scene)
 		GameState.COMBAT :
 			get_tree().change_scene_to_packed(_combat_scene)
-			combat.start_game()
+			if NetworkManager.is_host : 
+				sync_rng()
+				combat.start_game.rpc()
 		GameState.GAME_END : 
 			get_tree().change_scene_to_packed(_end_screen_scene)
 
 func get_player(is_host : bool) -> Player:
-	if is_host and NetworkManager.is_host() or !is_host and !NetworkManager.is_host() :
+	if is_host and NetworkManager.is_host or !is_host and !NetworkManager.is_host :
 		return player
 	else : 
 		return opponent

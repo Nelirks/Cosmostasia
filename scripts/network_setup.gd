@@ -15,7 +15,7 @@ func _on_host_button_pressed() -> void:
 
 func _start_game() -> void:
 	_disable_buttons()
-	GameManager.set_game_state(GameManager.GameState.COMBAT)
+	GameManager.set_game_state(GameManager.GameState.DRAFT)
 
 func _disable_buttons() :
 	($HostButton as Button).disabled = true
