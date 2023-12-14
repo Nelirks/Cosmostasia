@@ -1,25 +1,65 @@
 extends Node
 
 @export var character_pool : Array[Character]
+@export_range(0.0, 1.0, 0.05) var reduced_pick_chance : float
 
 var host_choice : int = -1
 var client_choice : int = -1
 
 var cur_choices : Array[int]
 
+var host_picks : Array[int]
+var client_picks : Array[int]
+
 func _ready():
 	if NetworkManager.is_host :
 		pick_character_choices()
 
+func merge_arrays(array1 : Array[int], array2 : Array[int]) -> Array[int] :
+	var result : Array[int] = []
+	result.append_array(array1)
+	for val in array2 :
+		if result.find(val) == -1 : result.append(val)
+	return result
+
+## Gets an array containing the weight of each character to be picked
+## Each value indicates the weight to draw the character at the same index in character_pool
+func generate_weight_repartition(is_host : bool) -> Array[float] :
+	var weights : Array[float]
+	for i in range(character_pool.size()) : 
+		weights.append(1.0)
+	for previous_pick in host_picks if is_host else client_picks :
+		weights[previous_pick] = 0.0
+	for opponent_pick in client_picks if is_host else host_picks :
+		if weights[opponent_pick] >= 0.01 : weights[opponent_pick] = reduced_pick_chance
+	return weights
+
+func get_random_character(excluded_chars : Array[int], reduced_chance_chars : Array[int]) -> int :
+	var total_weight = 0
+	for char_index in range(character_pool.size()) :
+		if excluded_chars.find(char_index) != -1 : continue
+		elif reduced_chance_chars.find(char_index) != -1 : total_weight += reduced_pick_chance
+		else : total_weight += 1
+	var random_value : float = GameManager.rng.randf_range(0.0, total_weight)
+	
+	for char_index in range(character_pool.size()) :
+		if excluded_chars.find(char_index) != -1 : continue
+		elif reduced_chance_chars.find(char_index) != -1 : random_value -= reduced_pick_chance
+		else : random_value -= 1
+		if random_value <= 0.0 :
+			return char_index
+	return 0
+
 func pick_character_choices() -> void :
-	var host_choices : Array[int]
-	var client_choices : Array[int]
+	var host_draft : Array[int]
+	var client_draft : Array[int]
 	
 	for i in range(3) :
-		host_choices.append(GameManager.rng.randi_range(0, character_pool.size() - 1))
-		client_choices.append(GameManager.rng.randi_range(0, character_pool.size() - 1))
-	set_choices(host_choices[0], host_choices[1], host_choices[2])
-	set_choices.rpc(client_choices[0], client_choices[1], client_choices[2])
+		host_draft.append(get_random_character(merge_arrays(host_picks, host_draft), merge_arrays(client_picks, client_draft)))
+		client_draft.append(get_random_character(merge_arrays(client_picks, client_draft), merge_arrays(host_picks, host_draft)))
+	
+	set_choices(host_draft[0], host_draft[1], host_draft[2])
+	set_choices.rpc(client_draft[0], client_draft[1], client_draft[2])
 
 @rpc("authority", "call_remote")
 func set_choices(char_index_0 : int, char_index_1 : int, char_index_2 : int) -> void :
@@ -43,6 +83,8 @@ func notify_choice(char_index : int) -> void :
 
 @rpc("authority", "call_local")
 func apply_choices(host_char : int, client_char : int) -> void :
+	host_picks.append(host_char)
+	client_picks.append(client_char)
 	GameManager.get_player(true).add_character(character_pool[host_char].instantiate())
 	GameManager.get_player(false).add_character(character_pool[client_char].instantiate())
 	update_picks()
