@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://eol4pewfnn2i"]
+
+[ext_resource type="PackedScene" uid="uid://bj3fus3i1mg2v" path="res://resources/3d_asset/Cosmostasia_Arena1.glb" id="1_vacrf"]
+[ext_resource type="PackedScene" uid="uid://d28025g3hs2au" path="res://scenes/3d_environment/fire.tscn" id="2_ym8s6"]
+
+[node name="Cosmostasia_Arena1" instance=ExtResource("1_vacrf")]
+
+[node name="Fire" parent="BrasierENE" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierWNW" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierESE" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierWSW" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierNNE" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierNNW" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierSSE" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+
+[node name="Fire" parent="BrasierSSW" index="0" instance=ExtResource("2_ym8s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
