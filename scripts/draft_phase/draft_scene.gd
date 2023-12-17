@@ -59,7 +59,10 @@ func pick_character_choices() -> void :
 		client_draft.append(get_random_character(merge_arrays(client_picks, client_draft), merge_arrays(host_picks, host_draft)))
 	
 	set_choices(host_draft[0], host_draft[1], host_draft[2])
-	set_choices.rpc(client_draft[0], client_draft[1], client_draft[2])
+	if NetworkManager.is_multiplayer : 
+		set_choices.rpc(client_draft[0], client_draft[1], client_draft[2])
+	else : 
+		client_choice = client_draft[GameManager.rng.randi_range(0, client_draft.size() - 1)]
 
 @rpc("authority", "call_remote")
 func set_choices(char_index_0 : int, char_index_1 : int, char_index_2 : int) -> void :
@@ -76,10 +79,11 @@ func notify_choice(char_index : int) -> void :
 		client_choice = char_index
 	if host_choice != -1 and client_choice != -1 :
 		apply_choices.rpc(host_choice, client_choice)
-		pick_character_choices()
 		
 		host_choice = -1
 		client_choice = -1
+		
+		pick_character_choices()
 
 @rpc("authority", "call_local")
 func apply_choices(host_char : int, client_char : int) -> void :
