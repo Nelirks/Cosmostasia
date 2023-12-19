@@ -10,19 +10,17 @@ var character : Character :
 			$CardAmountEditors.get_child(i).card = character.card_pool[i]
 		for i in range(3) :
 			$PresetSelector.get_child(i).text = character.deck_presets[i].preset_name if character.deck_presets.size() > 0 else "PLACEHOLDER"
-		on_preset_selected(0)
+		preset_index = 0
 
-func on_preset_selected(preset_index : int) -> void :
-	if character.deck_presets.size() == 0 :
-		for card_amount_editor in $CardAmountEditors.get_children() :
-			card_amount_editor.amount = 2
-	else :
-		for card_index in range(character.card_pool.size()) :
-			$CardAmountEditors.get_child(card_index).amount = character.deck_presets[preset_index].content[card_index]
+var preset_index : int :
+	set(value) : 
+		preset_index = value
+		if character.deck_presets.size() == 0 :
+			for card_amount_editor in $CardAmountEditors.get_children() :
+				card_amount_editor.amount = 2
+		else :
+			for card_index in range(character.card_pool.size()) :
+				$CardAmountEditors.get_child(card_index).amount = character.deck_presets[preset_index].content[card_index]
 
-func apply() -> void :
-	var deck : Array[Card] = []
-	for card_index in range(character.card_pool.size()) :
-		for card_count in range($CardAmountEditors.get_child(card_index).amount) :
-			deck.append(character.card_pool[card_index].duplicate())
-	character.deck = deck
+func on_preset_selected(index : int) -> void :
+	preset_index = index
