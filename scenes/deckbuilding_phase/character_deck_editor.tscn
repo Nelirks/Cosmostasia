@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://behcgj7gjoojk"]
+
+[ext_resource type="Script" path="res://scripts/deckbuilding_phase/character_deck_editor.gd" id="1_48mtf"]
+[ext_resource type="PackedScene" uid="uid://cdpbwdjv7ascr" path="res://scenes/deckbuilding_phase/card_amount_editor.tscn" id="2_i1asd"]
+
+[node name="CharacterDeckEditor" type="HBoxContainer"]
+custom_minimum_size = Vector2(1536, 256)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48mtf")
+
+[node name="CharacterName" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardAmountEditors" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Editor0" parent="CardAmountEditors" instance=ExtResource("2_i1asd")]
+layout_mode = 2
+
+[node name="Editor1" parent="CardAmountEditors" instance=ExtResource("2_i1asd")]
+layout_mode = 2
+
+[node name="Editor2" parent="CardAmountEditors" instance=ExtResource("2_i1asd")]
+layout_mode = 2
+
+[node name="Editor3" parent="CardAmountEditors" instance=ExtResource("2_i1asd")]
+layout_mode = 2
+
+[node name="Editor4" parent="CardAmountEditors" instance=ExtResource("2_i1asd")]
+layout_mode = 2
+
+[node name="PresetSelector" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Preset0" type="Button" parent="PresetSelector"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+
+[node name="Preset1" type="Button" parent="PresetSelector"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+
+[node name="Preset2" type="Button" parent="PresetSelector"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+
+[connection signal="pressed" from="PresetSelector/Preset0" to="." method="on_preset_selected" binds= [0]]
+[connection signal="pressed" from="PresetSelector/Preset1" to="." method="on_preset_selected" binds= [1]]
+[connection signal="pressed" from="PresetSelector/Preset2" to="." method="on_preset_selected" binds= [2]]

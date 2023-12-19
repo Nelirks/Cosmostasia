@@ -18,7 +18,6 @@ var energy_regen : int :
 		energy_regen = clamp(value, 0, max_energy)
 var last_turn_energy_regen : int
 
-
 func _init(is_host : bool) -> void :
 	self.is_host = is_host
 	energy_regen = base_energy_regen
@@ -30,10 +29,13 @@ func add_character(character : Character) -> void :
 		return
 	_characters.append(character)
 	character.player = self
-	for card in character.deck :
-		card.position = Card.Position.DRAW_PILE
-	_draw_pile.append_array(character.deck)
 
+func start_combat() -> void :
+	for character in _characters :
+		_draw_pile.append_array(character.deck)
+	for card in _draw_pile :
+		card.position = Card.Position.DRAW_PILE
+	shuffle_draw_pile()
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :

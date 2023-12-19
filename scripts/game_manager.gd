@@ -2,11 +2,12 @@ extends Node
 
 var rng : RandomNumberGenerator
 var _draft_scene : PackedScene = preload("res://scenes/draft_phase/draft_scene.tscn")
+var _deckbuilding_scene : PackedScene = preload("res://scenes/deckbuilding_phase/deckbuilding_scene.tscn")
 var _combat_scene : PackedScene = preload("res://scenes/game_scenes/combat_scene.tscn")
 var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
 @onready var combat : CombatManager = $CombatManager
 
-enum GameState { NONE, DRAFT, COMBAT, GAME_END }
+enum GameState { NONE, DRAFT, DECKBUILDING, COMBAT, GAME_END }
 var _state : GameState
 var _peer_state : GameState
 
@@ -61,6 +62,10 @@ func _on_state_synced(state : GameState) -> void :
 			player = Player.new(NetworkManager.is_host)
 			opponent = Player.new(not NetworkManager.is_host)
 			get_tree().change_scene_to_packed(_draft_scene)
+		GameState.DECKBUILDING : 
+			if NetworkManager.is_host :
+				sync_rng()
+			get_tree().change_scene_to_packed(_deckbuilding_scene)
 		GameState.COMBAT :
 			get_tree().change_scene_to_packed(_combat_scene)
 			if NetworkManager.is_host : 

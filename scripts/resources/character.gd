@@ -10,9 +10,14 @@ class_name Character
 @export var max_health : int
 @export var card_pool : Array[Card]
 @export var passive : StatusEffect
+@export var deck_presets : Array[DeckPreset]
 var player : Player
 
-var deck : Array[Card]
+var deck : Array[Card] : 
+	set(value) : 
+		deck = value
+		for card in deck :
+			card.character = self
 
 var current_health : int
 var _armor : int
@@ -22,11 +27,6 @@ var _statuses : Array[StatusEffect]
 func setup() :
 	current_health = max_health
 	if passive != null : add_status(passive)
-	for i in range(card_pool.size()) : 
-		deck.append(card_pool[i].duplicate())
-		deck.append(card_pool[i].duplicate())
-	for card in deck :
-		card.character = self
 
 func start_turn() -> void :
 	remove_armor()

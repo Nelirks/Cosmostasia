@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://docw4fm5h17v3"]
+
+[ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
+[ext_resource type="PackedScene" uid="uid://behcgj7gjoojk" path="res://scenes/deckbuilding_phase/character_deck_editor.tscn" id="2_mdepv"]
+
+[node name="DeckbuildingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dd58v")
+
+[node name="CharacterDeckEditors" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Editor0" parent="CharacterDeckEditors" instance=ExtResource("2_mdepv")]
+layout_mode = 2
+
+[node name="Editor1" parent="CharacterDeckEditors" instance=ExtResource("2_mdepv")]
+layout_mode = 2
+
+[node name="Editor2" parent="CharacterDeckEditors" instance=ExtResource("2_mdepv")]
+layout_mode = 2
+
+[node name="ApplyButton" type="Button" parent="."]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Valider"
+
+[connection signal="pressed" from="ApplyButton" to="." method="_on_apply"]

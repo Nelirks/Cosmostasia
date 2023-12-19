@@ -93,7 +93,7 @@ func apply_choices(host_char : int, client_char : int) -> void :
 	GameManager.get_player(false).add_character(character_pool[client_char].instantiate())
 	update_picks()
 	if GameManager.player.get_characters().size() == 3 :
-		GameManager.set_game_state(GameManager.GameState.COMBAT)
+		GameManager.set_game_state(GameManager.GameState.DECKBUILDING)
 
 func update_picks() -> void :
 	for i in range(3) :
