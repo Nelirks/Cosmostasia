@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://fcgmvnqymn0c"]
+[gd_resource type="Resource" script_class="Character" load_steps=12 format=3 uid="uid://fcgmvnqymn0c"]
 
 [ext_resource type="Resource" uid="uid://b2cicfgrlo03w" path="res://resources/game_data/card_data/freyja/agente_de_l_ombre.tres" id="1_87o5n"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_d8eua"]
@@ -7,6 +7,22 @@
 [ext_resource type="Resource" uid="uid://x3gputyean5g" path="res://resources/game_data/card_data/freyja/preparation.tres" id="4_5x8eh"]
 [ext_resource type="Resource" uid="uid://cc513kgid5np2" path="res://resources/game_data/card_data/freyja/ralliement.tres" id="5_850g2"]
 [ext_resource type="Resource" uid="uid://c68y1eupku27a" path="res://resources/game_data/passive_data/freyja_passive.tres" id="6_0lmra"]
+[ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_70no3"]
+
+[sub_resource type="Resource" id="Resource_gc6io"]
+script = ExtResource("6_70no3")
+preset_name = "Assassinat discret"
+content = Array[int]([2, 4, 0, 0, 4])
+
+[sub_resource type="Resource" id="Resource_aqh55"]
+script = ExtResource("6_70no3")
+preset_name = "Travail d'équipe"
+content = Array[int]([3, 0, 4, 0, 3])
+
+[sub_resource type="Resource" id="Resource_a4crw"]
+script = ExtResource("6_70no3")
+preset_name = "Coup fatal"
+content = Array[int]([0, 3, 2, 3, 2])
 
 [resource]
 script = ExtResource("1_d8eua")
@@ -15,3 +31,4 @@ character_quote = ""
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_87o5n"), ExtResource("2_l7kcq"), ExtResource("3_3t61u"), ExtResource("4_5x8eh"), ExtResource("5_850g2")])
 passive = ExtResource("6_0lmra")
+deck_presets = Array[ExtResource("6_70no3")]([SubResource("Resource_gc6io"), SubResource("Resource_aqh55"), SubResource("Resource_a4crw")])

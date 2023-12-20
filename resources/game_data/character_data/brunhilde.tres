@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://busv1m7huw2sp"]
+[gd_resource type="Resource" script_class="Character" load_steps=12 format=3 uid="uid://busv1m7huw2sp"]
 
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_35mvq"]
 [ext_resource type="Resource" uid="uid://dg2x2sjf2jk7b" path="res://resources/game_data/card_data/brunhilde/aura_protectrice.tres" id="1_gbwh0"]
@@ -7,11 +7,28 @@
 [ext_resource type="Resource" uid="uid://d0s3ys5hr2t3t" path="res://resources/game_data/card_data/brunhilde/cri_de_guerre.tres" id="3_x5ao6"]
 [ext_resource type="Resource" uid="uid://cm5wub1s4yuau" path="res://resources/game_data/card_data/brunhilde/ecrase_crane.tres" id="4_vvito"]
 [ext_resource type="Resource" uid="uid://cil2s23lcelf" path="res://resources/game_data/card_data/brunhilde/instinct_maternel.tres" id="5_ss8bu"]
+[ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_jfo4l"]
+
+[sub_resource type="Resource" id="Resource_8ilnb"]
+script = ExtResource("6_jfo4l")
+preset_name = "Rage ursine"
+content = Array[int]([3, 0, 0, 3, 4])
+
+[sub_resource type="Resource" id="Resource_odttm"]
+script = ExtResource("6_jfo4l")
+preset_name = "Fourrure blindée"
+content = Array[int]([2, 3, 3, 0, 2])
+
+[sub_resource type="Resource" id="Resource_perfy"]
+script = ExtResource("6_jfo4l")
+preset_name = "Calme trompeur"
+content = Array[int]([0, 4, 3, 3, 0])
 
 [resource]
 script = ExtResource("1_35mvq")
 character_name = "Brunhilde"
 character_quote = ""
 max_health = 100
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_gbwh0"), ExtResource("2_akhg5"), ExtResource("3_x5ao6"), ExtResource("4_vvito"), ExtResource("5_ss8bu")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("2_akhg5"), ExtResource("1_gbwh0"), ExtResource("3_x5ao6"), ExtResource("4_vvito"), ExtResource("5_ss8bu")])
 passive = ExtResource("1_sw3ve")
+deck_presets = Array[ExtResource("6_jfo4l")]([SubResource("Resource_8ilnb"), SubResource("Resource_odttm"), SubResource("Resource_perfy")])
