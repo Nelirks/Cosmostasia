@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=2 format=3 uid="uid://co0fkt8tskm3n"]
+
+[ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -43,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
-[node name="Button" type="Button" parent="Top Menu"]
+[node name="StartButton" type="Button" parent="Top Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,4 +59,8 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
+action_mode = 0
 text = "JOUER"
+script = ExtResource("1_ooml6")
+
+[connection signal="pressed" from="Top Menu/StartButton" to="Top Menu/StartButton" method="_on_pressed"]
