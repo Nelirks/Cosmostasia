@@ -11,7 +11,10 @@ var cur_choices : Array[int]
 var host_picks : Array[int]
 var client_picks : Array[int]
 
+@onready var choice_displays : Array[ChoiceDisplay] = []
+
 func _ready():
+	choice_displays.append_array(%PlayerChoices.get_children())
 	if NetworkManager.is_host :
 		pick_character_choices()
 
@@ -58,18 +61,18 @@ func pick_character_choices() -> void :
 		host_draft.append(get_random_character(merge_arrays(host_picks, host_draft), merge_arrays(client_picks, client_draft)))
 		client_draft.append(get_random_character(merge_arrays(client_picks, client_draft), merge_arrays(host_picks, host_draft)))
 	
-	set_choices(host_draft[0], host_draft[1], host_draft[2])
+	set_choices(host_draft)
 	if NetworkManager.is_multiplayer : 
-		set_choices.rpc(client_draft[0], client_draft[1], client_draft[2])
+		set_choices.rpc(client_draft)
 	else : 
 		client_choice = client_draft[GameManager.rng.randi_range(0, client_draft.size() - 1)]
 
 @rpc("authority", "call_remote")
-func set_choices(char_index_0 : int, char_index_1 : int, char_index_2 : int) -> void :
-	cur_choices = [char_index_0, char_index_1, char_index_2]
-	($PlayerChoices/Choice0 as Button).text = character_pool[char_index_0].character_name
-	($PlayerChoices/Choice1 as Button).text = character_pool[char_index_1].character_name
-	($PlayerChoices/Choice2 as Button).text = character_pool[char_index_2].character_name
+func set_choices(char_indexes : Array) -> void :
+	cur_choices = []
+	cur_choices.append_array(char_indexes)
+	for i in range(char_indexes.size()) :
+		choice_displays[i].character = character_pool[char_indexes[i]]
 
 @rpc("any_peer", "call_remote")
 func notify_choice(char_index : int) -> void :
@@ -97,13 +100,13 @@ func apply_choices(host_char : int, client_char : int) -> void :
 
 func update_picks() -> void :
 	for i in range(3) :
-		if i < GameManager.opponent.get_characters().size() and $OpponentDraft.get_child(i).text == "" :
-			$OpponentDraft.get_child(i).text = GameManager.opponent.get_character(i).character_name
-		if i < GameManager.player.get_characters().size() and $PlayerDraft.get_child(i).text == "" :
-			$PlayerDraft.get_child(i).text = GameManager.player.get_character(i).character_name
+		if i < GameManager.opponent.get_characters().size() and %OpponentDraft.get_child(i).text == "" :
+			%OpponentDraft.get_child(i).text = GameManager.opponent.get_character(i).character_name
+		if i < GameManager.player.get_characters().size() and %PlayerDraft.get_child(i).text == "" :
+			%PlayerDraft.get_child(i).text = GameManager.player.get_character(i).character_name
 
-func on_button_pressed(button_index : int) -> void :
-	var char_index = cur_choices[button_index]
+func _on_draft_choice_selected(choice_index : int) -> void :
+	var char_index = cur_choices[choice_index]
 	if NetworkManager.is_host : 
 		notify_choice(char_index)
 	else :
