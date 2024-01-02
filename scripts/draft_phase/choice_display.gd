@@ -22,5 +22,5 @@ var is_selected : bool :
 func _on_gui_input(event):
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click != null :
-		if mouse_click.button_index == MOUSE_BUTTON_LEFT :
+		if mouse_click.button_index == MOUSE_BUTTON_LEFT and mouse_click.pressed :
 			is_selected = true
