@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
 [ext_resource type="PackedScene" uid="uid://pj3okss4lgka" path="res://scenes/draft_phase/choice_display.tscn" id="11_lwxsh"]
-[ext_resource type="PackedScene" uid="uid://b5hbrvyu5d4m3" path="res://scenes/draft_phase/pick_display.tscn" id="11_sfima"]
+[ext_resource type="PackedScene" uid="uid://dllcbvixqay6" path="res://scenes/draft_phase/pick_display.tscn" id="11_sfima"]
 
 [node name="DraftScene" type="Control"]
 layout_mode = 3
