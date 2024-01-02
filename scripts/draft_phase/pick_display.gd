@@ -1,11 +1,10 @@
 extends Node
+class_name PickDisplay
 
+var character : Character :
+	set(value) : 
+		character = value
+		if character != null :
+			(%CharacterSprite as TextureRect).texture = character.character_texture
+			(%CharacterName as Label).text = character.character_name
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -12,9 +12,13 @@ var host_picks : Array[int]
 var client_picks : Array[int]
 
 @onready var choice_displays : Array[ChoiceDisplay] = []
+@onready var opponent_picks : Array[PickDisplay] = []
+@onready var player_picks : Array[PickDisplay] = []
 
 func _ready():
 	choice_displays.append_array(%PlayerChoices.get_children())
+	opponent_picks.append_array(%OpponentDraft.get_children())
+	player_picks.append_array(%PlayerDraft.get_children())
 	if NetworkManager.is_host :
 		pick_character_choices()
 
@@ -100,10 +104,10 @@ func apply_choices(host_char : int, client_char : int) -> void :
 
 func update_picks() -> void :
 	for i in range(3) :
-		if i < GameManager.opponent.get_characters().size() and %OpponentDraft.get_child(i).text == "" :
-			%OpponentDraft.get_child(i).text = GameManager.opponent.get_character(i).character_name
-		if i < GameManager.player.get_characters().size() and %PlayerDraft.get_child(i).text == "" :
-			%PlayerDraft.get_child(i).text = GameManager.player.get_character(i).character_name
+		if i < GameManager.opponent.get_characters().size() :
+			opponent_picks[i].character = GameManager.opponent.get_character(i)
+		if i < GameManager.player.get_characters().size() :
+			player_picks[i].character = GameManager.player.get_character(i)
 
 func _on_draft_choice_selected(choice_index : int) -> void :
 	var char_index = cur_choices[choice_index]

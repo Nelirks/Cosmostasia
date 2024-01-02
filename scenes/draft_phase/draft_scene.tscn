@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=13 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
 [ext_resource type="PackedScene" uid="uid://pj3okss4lgka" path="res://scenes/draft_phase/choice_display.tscn" id="11_lwxsh"]
+[ext_resource type="PackedScene" uid="uid://b5hbrvyu5d4m3" path="res://scenes/draft_phase/pick_display.tscn" id="11_sfima"]
 
 [node name="DraftScene" type="Control"]
 layout_mode = 3
@@ -37,18 +38,16 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 216)
 layout_mode = 2
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Pick0" type="Label" parent="VBoxContainer/OpponentDraft"]
-custom_minimum_size = Vector2(256, 128)
+[node name="OpponentPick" parent="VBoxContainer/OpponentDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
 
-[node name="Pick1" type="Label" parent="VBoxContainer/OpponentDraft"]
-custom_minimum_size = Vector2(256, 128)
+[node name="OpponentPick2" parent="VBoxContainer/OpponentDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
 
-[node name="Pick2" type="Label" parent="VBoxContainer/OpponentDraft"]
-custom_minimum_size = Vector2(256, 128)
+[node name="OpponentPick3" parent="VBoxContainer/OpponentDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
 
 [node name="PlayerChoices" type="HBoxContainer" parent="VBoxContainer"]
@@ -70,18 +69,16 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 216)
 layout_mode = 2
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Pick0" type="Label" parent="VBoxContainer/PlayerDraft"]
-custom_minimum_size = Vector2(256, 128)
+[node name="PlayerPick" parent="VBoxContainer/PlayerDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
 
-[node name="Pick1" type="Label" parent="VBoxContainer/PlayerDraft"]
-custom_minimum_size = Vector2(256, 128)
+[node name="PlayerPick2" parent="VBoxContainer/PlayerDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
 
-[node name="Pick2" type="Label" parent="VBoxContainer/PlayerDraft"]
-custom_minimum_size = Vector2(256, 128)
+[node name="PlayerPick3" parent="VBoxContainer/PlayerDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
 
 [connection signal="selected" from="VBoxContainer/PlayerChoices/DraftChoice" to="." method="_on_draft_choice_selected" binds= [0]]

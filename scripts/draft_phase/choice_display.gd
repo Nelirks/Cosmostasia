@@ -15,9 +15,6 @@ var is_selected : bool :
 		if character == null : return
 		is_selected = value
 		if is_selected : selected.emit()
-		print(character.character_name + " SELECTED")
-
-
 
 func _on_gui_input(event):
 	var mouse_click = event as InputEventMouseButton
