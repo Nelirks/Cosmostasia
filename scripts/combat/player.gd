@@ -1,6 +1,8 @@
 extends RefCounted
 class_name Player
 
+signal energy_updated(energy:int)
+
 var is_host : bool
 
 var _characters : Array[Character]
@@ -12,6 +14,7 @@ var max_energy : int = 5
 var current_energy : int = 0 :
 	set(value) :
 		current_energy = clamp(value, 0, max_energy)
+		energy_updated.emit(current_energy)
 var base_energy_regen : int = 3
 var energy_regen : int :
 	set(value) :
