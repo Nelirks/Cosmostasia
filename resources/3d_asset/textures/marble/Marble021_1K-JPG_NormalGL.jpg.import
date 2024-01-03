@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tj8kxoynqo7"
-path="res://.godot/imported/Voronoi01.png-fd695aabae4c15cc0f9ce7cfbc421795.ctex"
+uid="uid://btaqsa1pjv0s6"
+path="res://.godot/imported/Marble021_1K-JPG_NormalGL.jpg-430d88d5dfad4ffdb4b5b09880d87f15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/3d_asset/Voronoi01.png"
-dest_files=["res://.godot/imported/Voronoi01.png-fd695aabae4c15cc0f9ce7cfbc421795.ctex"]
+source_file="res://resources/3d_asset/textures/marble/Marble021_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/Marble021_1K-JPG_NormalGL.jpg-430d88d5dfad4ffdb4b5b09880d87f15.ctex"]
 
 [params]
 

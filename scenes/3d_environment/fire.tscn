@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://d28025g3hs2au"]
 
-[ext_resource type="Shader" uid="uid://inwd3bod07lg" path="res://resources/3d_asset/fireshader.tres" id="1_55rom"]
-[ext_resource type="Texture2D" uid="uid://5wag5wt7lhsw" path="res://resources/3d_asset/Voronoi01.png" id="2_5oqts"]
-[ext_resource type="Texture2D" uid="uid://d1wvnvwc8ebgc" path="res://resources/3d_asset/Flame01.png" id="3_kcpse"]
-[ext_resource type="Texture2D" uid="uid://cwrnv06k3cygw" path="res://resources/3d_asset/Flame02.png" id="4_vwcqh"]
+[ext_resource type="Shader" uid="uid://inwd3bod07lg" path="res://resources/3d_asset/particle/fireshader.tres" id="1_55rom"]
+[ext_resource type="Texture2D" path="res://resources/3d_asset/Voronoi01.png" id="2_5oqts"]
+[ext_resource type="Texture2D" uid="uid://d1wvnvwc8ebgc" path="res://resources/3d_asset/particle/Flame01.png" id="3_kcpse"]
+[ext_resource type="Texture2D" uid="uid://cwrnv06k3cygw" path="res://resources/3d_asset/particle/Flame02.png" id="4_vwcqh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_orj75"]
 render_priority = 0

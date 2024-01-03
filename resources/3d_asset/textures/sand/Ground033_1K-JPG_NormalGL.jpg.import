@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://whbaf0j7lnyi"
-path="res://.godot/imported/Flare00.PNG-4e3cabf139a0fa30fa0eea9de956a161.ctex"
+uid="uid://bkhlkceypxyct"
+path="res://.godot/imported/Ground033_1K-JPG_NormalGL.jpg-6fc049b6ab245522208546dfd1f79024.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/3d_asset/Flare00.PNG"
-dest_files=["res://.godot/imported/Flare00.PNG-4e3cabf139a0fa30fa0eea9de956a161.ctex"]
+source_file="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/Ground033_1K-JPG_NormalGL.jpg-6fc049b6ab245522208546dfd1f79024.ctex"]
 
 [params]
 

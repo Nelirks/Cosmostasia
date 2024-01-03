@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrnv06k3cygw"
-path.s3tc="res://.godot/imported/Flame02.png-bbe0be338ba134bdce50b771dfe55f64.s3tc.ctex"
+uid="uid://brh4udk37hwlf"
+path.s3tc="res://.godot/imported/Marble021_1K-JPG_NormalDX.jpg-84bdfba2c01ab671ce369911a7d7b7f8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://resources/3d_asset/Flame02.png"
-dest_files=["res://.godot/imported/Flame02.png-bbe0be338ba134bdce50b771dfe55f64.s3tc.ctex"]
+source_file="res://resources/3d_asset/textures/marble/Marble021_1K-JPG_NormalDX.jpg"
+dest_files=["res://.godot/imported/Marble021_1K-JPG_NormalDX.jpg-84bdfba2c01ab671ce369911a7d7b7f8.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://resources/3d_asset/textures/marble/Marble021_1K-JPG_NormalDX.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

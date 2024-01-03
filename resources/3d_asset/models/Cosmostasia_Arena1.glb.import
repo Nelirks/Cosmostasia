@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bj3fus3i1mg2v"
-path="res://.godot/imported/Cosmostasia_Arena1.glb-4e5f3382c9bd5180fda3d154faaf3b66.scn"
+path="res://.godot/imported/Cosmostasia_Arena1.glb-a38d96138295fac655a360b4d2f14880.scn"
 
 [deps]
 
-source_file="res://resources/3d_asset/Cosmostasia_Arena1.glb"
-dest_files=["res://.godot/imported/Cosmostasia_Arena1.glb-4e5f3382c9bd5180fda3d154faaf3b66.scn"]
+source_file="res://resources/3d_asset/models/Cosmostasia_Arena1.glb"
+dest_files=["res://.godot/imported/Cosmostasia_Arena1.glb-a38d96138295fac655a360b4d2f14880.scn"]
 
 [params]
 

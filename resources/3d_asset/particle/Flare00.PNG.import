@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tj8kxoynqo7"
-path="res://.godot/imported/Voronoi01.png-fd695aabae4c15cc0f9ce7cfbc421795.ctex"
+uid="uid://whbaf0j7lnyi"
+path="res://.godot/imported/Flare00.PNG-702e28282c48f545397bc102390d1a77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/3d_asset/Voronoi01.png"
-dest_files=["res://.godot/imported/Voronoi01.png-fd695aabae4c15cc0f9ce7cfbc421795.ctex"]
+source_file="res://resources/3d_asset/particle/Flare00.PNG"
+dest_files=["res://.godot/imported/Flare00.PNG-702e28282c48f545397bc102390d1a77.ctex"]
 
 [params]
 
