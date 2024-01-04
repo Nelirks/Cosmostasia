@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://co0fkt8tskm3n"]
+
+[ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
+[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
+[ext_resource type="Texture2D" uid="uid://boeq83tppfbj6" path="res://icons/[TEMPORARY] Settings Icon.png" id="3_j1cti"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = -950.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="Top Menu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 130.0
+
+[node name="ColorRect" type="ColorRect" parent="Top Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="StartButton" type="Button" parent="Top Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -29.0
+offset_right = 75.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ovrrf")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "JOUER"
+script = ExtResource("1_ooml6")
+
+[node name="SettingsButton" type="Button" parent="Top Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -36.0
+offset_right = -98.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 33
+icon = ExtResource("3_j1cti")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Top Menu/StartButton" to="Top Menu/StartButton" method="_on_pressed"]
