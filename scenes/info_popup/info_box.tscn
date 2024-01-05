@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ccb7ibyqs8les"]
+
+[node name="InfoBox" type="RichTextLabel"]
+fit_content = true
+autowrap_mode = 2
