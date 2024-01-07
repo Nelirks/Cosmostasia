@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=12 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -10,8 +10,7 @@
 [ext_resource type="Resource" uid="uid://cbx4earrm7weg" path="res://resources/game_data/character_data/lisirmee.tres" id="8_uyypb"]
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
-[ext_resource type="PackedScene" uid="uid://pj3okss4lgka" path="res://scenes/draft_phase/choice_display.tscn" id="11_lwxsh"]
-[ext_resource type="PackedScene" uid="uid://dllcbvixqay6" path="res://scenes/draft_phase/pick_display.tscn" id="11_sfima"]
+[ext_resource type="PackedScene" uid="uid://pj3okss4lgka" path="res://scenes/draft_phase/draft_character_display.tscn" id="11_sfima"]
 
 [node name="DraftScene" type="Control"]
 layout_mode = 3
@@ -24,63 +23,125 @@ script = ExtResource("1_3n8hg")
 character_pool = Array[Resource("res://scripts/resources/character.gd")]([ExtResource("2_3aehv"), ExtResource("3_8yflf"), ExtResource("4_h7vl3"), ExtResource("5_and1r"), ExtResource("6_vktb4"), ExtResource("7_souub"), ExtResource("8_uyypb"), ExtResource("9_nmjhl"), ExtResource("10_c3o3b")])
 reduced_pick_chance = 0.25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="OpponentDraft" type="HBoxContainer" parent="VBoxContainer"]
+[node name="OpponentDraft" type="Control" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 216)
 layout_mode = 2
-theme_override_constants/separation = 128
-alignment = 1
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 216.0
 
-[node name="OpponentPick" parent="VBoxContainer/OpponentDraft" instance=ExtResource("11_sfima")]
+[node name="OpponentPick" parent="OpponentDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 622.5
+offset_right = 1122.5
+offset_bottom = 850.0
+scale = Vector2(0.25, 0.25)
 
-[node name="OpponentPick2" parent="VBoxContainer/OpponentDraft" instance=ExtResource("11_sfima")]
+[node name="OpponentPick2" parent="OpponentDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 898.0
+offset_right = 1398.0
+offset_bottom = 850.0
+scale = Vector2(0.25, 0.25)
 
-[node name="OpponentPick3" parent="VBoxContainer/OpponentDraft" instance=ExtResource("11_sfima")]
+[node name="OpponentPick3" parent="OpponentDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1147.5
+offset_right = 1647.5
+offset_bottom = 850.0
+scale = Vector2(0.25, 0.25)
 
-[node name="PlayerChoices" type="HBoxContainer" parent="VBoxContainer"]
+[node name="PlayerChoices" type="Control" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 648)
 layout_mode = 2
-alignment = 1
+anchors_preset = 0
+offset_top = 220.0
+offset_right = 1920.0
+offset_bottom = 868.0
 
-[node name="DraftChoice" parent="VBoxContainer/PlayerChoices" instance=ExtResource("11_lwxsh")]
+[node name="DraftChoice" parent="PlayerChoices" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 335.0
+offset_top = 107.0
+offset_right = 835.0
+offset_bottom = 957.0
+scale = Vector2(0.5, 0.5)
 
-[node name="DraftChoice2" parent="VBoxContainer/PlayerChoices" instance=ExtResource("11_lwxsh")]
+[node name="DraftChoice2" parent="PlayerChoices" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 835.0
+offset_top = 107.0
+offset_right = 1335.0
+offset_bottom = 957.0
+scale = Vector2(0.5, 0.5)
 
-[node name="DraftChoice3" parent="VBoxContainer/PlayerChoices" instance=ExtResource("11_lwxsh")]
+[node name="DraftChoice3" parent="PlayerChoices" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1335.0
+offset_top = 107.0
+offset_right = 1835.0
+offset_bottom = 957.0
+scale = Vector2(0.5, 0.5)
 
-[node name="PlayerDraft" type="HBoxContainer" parent="VBoxContainer"]
+[node name="PlayerDraft" type="Control" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 216)
 layout_mode = 2
-theme_override_constants/separation = 128
-alignment = 1
+anchors_preset = 0
+offset_top = 864.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="PlayerPick" parent="VBoxContainer/PlayerDraft" instance=ExtResource("11_sfima")]
+[node name="PlayerPick" parent="PlayerDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 622.5
+offset_right = 1122.5
+offset_bottom = 850.0
+scale = Vector2(0.25, 0.25)
 
-[node name="PlayerPick2" parent="VBoxContainer/PlayerDraft" instance=ExtResource("11_sfima")]
+[node name="PlayerPick2" parent="PlayerDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 898.0
+offset_right = 1398.0
+offset_bottom = 850.0
+scale = Vector2(0.25, 0.25)
 
-[node name="PlayerPick3" parent="VBoxContainer/PlayerDraft" instance=ExtResource("11_sfima")]
+[node name="PlayerPick3" parent="PlayerDraft" instance=ExtResource("11_sfima")]
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1147.5
+offset_right = 1647.5
+offset_bottom = 850.0
+scale = Vector2(0.25, 0.25)
 
-[connection signal="selected" from="VBoxContainer/PlayerChoices/DraftChoice" to="." method="_on_draft_choice_selected" binds= [0]]
-[connection signal="selected" from="VBoxContainer/PlayerChoices/DraftChoice2" to="." method="_on_draft_choice_selected" binds= [1]]
-[connection signal="selected" from="VBoxContainer/PlayerChoices/DraftChoice3" to="." method="_on_draft_choice_selected" binds= [2]]
+[connection signal="selected" from="PlayerChoices/DraftChoice" to="." method="_on_draft_choice_selected" binds= [0]]
+[connection signal="selected" from="PlayerChoices/DraftChoice2" to="." method="_on_draft_choice_selected" binds= [1]]
+[connection signal="selected" from="PlayerChoices/DraftChoice3" to="." method="_on_draft_choice_selected" binds= [2]]

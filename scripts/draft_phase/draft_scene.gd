@@ -11,9 +11,9 @@ var cur_choices : Array[int]
 var host_picks : Array[int]
 var client_picks : Array[int]
 
-@onready var choice_displays : Array[ChoiceDisplay] = []
-@onready var opponent_picks : Array[PickDisplay] = []
-@onready var player_picks : Array[PickDisplay] = []
+@onready var choice_displays : Array[DraftCharacterDisplay] = []
+@onready var opponent_picks : Array[DraftCharacterDisplay] = []
+@onready var player_picks : Array[DraftCharacterDisplay] = []
 
 func _ready():
 	choice_displays.append_array(%PlayerChoices.get_children())
