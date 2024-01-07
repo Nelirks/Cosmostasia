@@ -35,7 +35,9 @@ camera_attributes = SubResource("CameraAttributesPractical_kvrus")
 
 [node name="PlayerBar" parent="." instance=ExtResource("3_sdmy6")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.2, 10, 3)
+visible = false
 is_player = true
 
 [node name="EnemyBar" parent="." instance=ExtResource("3_sdmy6")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.2, 10, 3)
+visible = false
