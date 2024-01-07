@@ -6,14 +6,14 @@
 [ext_resource type="Resource" uid="uid://csp4b0skrhi5x" path="res://resources/game_data/card_data/4N-70N/boucle_de_programme.tres" id="3_tvcuw"]
 [ext_resource type="Resource" uid="uid://dy6mmlkugr216" path="res://resources/game_data/card_data/4N-70N/mécanique_passionelle.tres" id="4_ijyn1"]
 [ext_resource type="Resource" uid="uid://dj6ghs6cfd1ms" path="res://resources/game_data/card_data/4N-70N/obus_de_lumenyte.tres" id="5_72j0b"]
-[ext_resource type="Texture2D" uid="uid://bytjuqn7fs3vf" path="res://resources/sprites/character_sprites/4N_version_finale_perso_decor.png" id="6_0el2p"]
+[ext_resource type="Texture2D" path="res://resources/sprites/character_sprites/4N_version_finale_perso_decor.png" id="6_4onms"]
 [ext_resource type="Resource" uid="uid://cag60rwhhges" path="res://resources/game_data/passive_data/4n_70n_passive.tres" id="6_t8l1e"]
 
 [resource]
 script = ExtResource("1_eak7t")
 character_name = "4N-70N"
 character_quote = ""
-character_sprite = ExtResource("6_0el2p")
+character_sprite = ExtResource("6_4onms")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_xcm6r"), ExtResource("2_rvobt"), ExtResource("3_tvcuw"), ExtResource("4_ijyn1"), ExtResource("5_72j0b")])
 passive = ExtResource("6_t8l1e")

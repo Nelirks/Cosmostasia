@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bioohk78calll" path="res://resources/game_data/card_data/dyssebia/manifestation.tres" id="3_ydeaw"]
 [ext_resource type="Resource" uid="uid://b007r5udiy7ku" path="res://resources/game_data/card_data/dyssebia/manipulation_archonique.tres" id="4_kelwr"]
 [ext_resource type="Resource" uid="uid://d3bpcpchkkdox" path="res://resources/game_data/card_data/dyssebia/rééquilibrage.tres" id="5_lputi"]
-[ext_resource type="Resource" uid="uid://bomousjw20yi" path="res://resources/game_data/status_effect_data/dyssebia_passive.tres" id="6_3m1u1"]
+[ext_resource type="Resource" uid="uid://bomousjw20yi" path="res://resources/game_data/passive_data/dyssebia_passive.tres" id="6_3m1u1"]
 
 [resource]
 script = ExtResource("1_s7pgy")
