@@ -20,6 +20,7 @@ RichTextLabel/font_sizes/normal_font_size = 30
 script = ExtResource("1_ekfth")
 
 [node name="Card_Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
 offset_right = 200.0
 offset_bottom = 300.0
 texture = ExtResource("1_0gdoh")
@@ -49,6 +50,7 @@ texture = ExtResource("4_svawe")
 expand_mode = 1
 
 [node name="Card_Title" type="Label" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -66,6 +68,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Card_Cost" type="Label" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 1
 offset_left = 10.0
 offset_right = 85.0
@@ -77,6 +80,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Card_Character" type="Label" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -92,7 +96,8 @@ label_settings = SubResource("LabelSettings_81gl5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Card_Background"]
+[node name="CardDescription" type="RichTextLabel" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 11.0
 offset_top = 210.0
@@ -100,11 +105,10 @@ offset_right = 901.0
 offset_bottom = 385.0
 scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_gxr78")
-text = "This text here is an exemple of the description of a card.
-I type a lot of shit so we can see how many characters can fit in my rectangle. 
-Raphael if you see this, I hate Godot UI."
+text = "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Card_Background"]
+[node name="CardFlavorText" type="RichTextLabel" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 11.0
 offset_top = 256.055
@@ -113,4 +117,7 @@ offset_bottom = 328.056
 scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_gxr78")
 bbcode_enabled = true
-text = "[i]\" As a very powerful character in the game, I can also say that I hate Godot very much\"[/i]"
+text = "[i]\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"[/i]"
+
+[connection signal="mouse_entered" from="Card_Background" to="." method="_on_card_background_mouse_entered"]
+[connection signal="mouse_exited" from="Card_Background" to="." method="_on_card_background_mouse_exited"]
