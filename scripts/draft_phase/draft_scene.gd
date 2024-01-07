@@ -77,6 +77,7 @@ func set_choices(char_indexes : Array) -> void :
 	cur_choices.append_array(char_indexes)
 	for i in range(char_indexes.size()) :
 		choice_displays[i].character = character_pool[char_indexes[i]]
+		choice_displays[i].selectable = true
 
 @rpc("any_peer", "call_remote")
 func notify_choice(char_index : int) -> void :
@@ -111,6 +112,9 @@ func update_picks() -> void :
 
 func _on_draft_choice_selected(choice_index : int) -> void :
 	var char_index = cur_choices[choice_index]
+	for i in range(3) :
+		if choice_index != i :
+			%PlayerChoices.get_child(i).is_selected = false
 	if NetworkManager.is_host : 
 		notify_choice(char_index)
 	else :

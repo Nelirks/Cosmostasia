@@ -1,6 +1,8 @@
 extends Control
 class_name DraftCharacterDisplay
 
+@export var selection_material: Material
+
 signal selected()
 
 var info_popup_scene = preload("res://scenes/info_popup/info_popup.tscn")
@@ -19,6 +21,8 @@ var character : Character :
 
 var hovered : bool = false
 
+var selectable : bool = false
+
 func _ready():
 	visible = false
 
@@ -26,9 +30,13 @@ var is_selected : bool :
 	set(value) : 
 		if character == null : return
 		is_selected = value
-		if is_selected : selected.emit()
+		if is_selected : 
+			%CharacterSprite.material = selection_material
+			selected.emit()
+		else : %CharacterSprite.material = null
 
 func _on_gui_input(event):
+	if !selectable : return
 	var mouse_click = event as InputEventMouseButton
 	if mouse_click != null :
 		if mouse_click.button_index == MOUSE_BUTTON_LEFT and mouse_click.pressed :
