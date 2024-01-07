@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
-[ext_resource type="Texture2D" uid="uid://boeq83tppfbj6" path="res://icons/[TEMPORARY] Settings Icon.png" id="3_j1cti"]
+[ext_resource type="Texture2D" uid="uid://b4msf3bo5m3pu" path="res://resources/sprites/ui_elements/cog.png" id="3_3icy8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -80,7 +80,7 @@ offset_bottom = 36.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 33
-icon = ExtResource("3_j1cti")
+icon = ExtResource("3_3icy8")
 flat = true
 icon_alignment = 1
 
