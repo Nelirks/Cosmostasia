@@ -42,7 +42,7 @@ texture = ExtResource("1_xtt2l")
 source = 2
 
 [sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_cvgqp"]
-default_input_values = [0, Vector4(0, 0, 0, 0), 1, Vector4(0.2, 0.2, 0.2, 0.2), 2, Vector4(0, 0, 0, 0)]
+default_input_values = [0, Vector4(0, 0, 0, 0), 1, Vector4(1, 1, 1, 1), 2, Vector4(0, 0, 0, 0)]
 op_type = 3
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_40tql"]
