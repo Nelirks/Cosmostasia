@@ -26,7 +26,7 @@ script = ExtResource("1_3n8hg")
 character_pool = Array[Resource("res://scripts/resources/character.gd")]([ExtResource("2_3aehv"), ExtResource("3_8yflf"), ExtResource("4_h7vl3"), ExtResource("5_and1r"), ExtResource("6_vktb4"), ExtResource("7_souub"), ExtResource("8_uyypb"), ExtResource("9_nmjhl"), ExtResource("10_c3o3b")])
 reduced_pick_chance = 0.25
 selected_character_fx = ExtResource("11_v7haa")
-popup_scene = ExtResource("12_e0qrm")
+info_popup_scene = ExtResource("12_e0qrm")
 
 [node name="Board" type="Node3D" parent="."]
 
@@ -75,5 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 visible = false
 
 [node name="Camera3D" type="Camera3D" parent="Board"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 current = true

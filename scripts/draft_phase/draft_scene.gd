@@ -16,7 +16,13 @@ var client_picks : Array[int]
 @onready var player_picks : Array[CharacterCard3D] = []
 
 @export var selected_character_fx : Material
-@export var popup_scene : PackedScene
+@export var info_popup_scene : PackedScene
+var info_popup : InfoPopup :
+	set(value) :
+		if info_popup != null : info_popup.queue_free()
+		info_popup = value
+		if info_popup != null :
+			add_child(info_popup)
 
 func _ready():
 	choice_displays.append_array(%PlayerChoices.get_children())
@@ -120,11 +126,13 @@ func display_choices() -> void :
 	for i in range(cur_choices.size()) :
 		choice_displays[i].character = character_pool[cur_choices[i]]
 		choice_displays[i].set_overlay(null)
+	info_popup = null
 
 func display_picks() -> void :
 	for i in range(GameManager.player.get_characters().size()) :
 		player_picks[i].character = GameManager.player.get_character(i)
 		opponent_picks[i].character = GameManager.opponent.get_character(i)
+	info_popup = null
 
 func _on_draft_choice_selected(choice_index : int) -> void :
 	var char_index = cur_choices[choice_index]
@@ -134,8 +142,11 @@ func _on_draft_choice_selected(choice_index : int) -> void :
 	else :
 		notify_choice.rpc(char_index)
 
-func _on_card_mouse_entered(character : CharacterCard3D) -> void :
-	pass
-	
+func _on_card_mouse_entered(card : CharacterCard3D) -> void :
+	if !card.visible : return
+	info_popup = info_popup_scene.instantiate()
+	info_popup.set_content([card.character.character_name, card.character.passive.description if card.character.passive != null else "PASSIVE UNIMPLEMENTED"])
+	info_popup.set_target_rect(card.get_rect(%Camera3D))
+
 func _on_card_mouse_exited(character : CharacterCard3D) -> void :
-	pass
+	info_popup = null
