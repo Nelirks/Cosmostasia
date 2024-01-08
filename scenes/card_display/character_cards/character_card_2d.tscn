@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://pj3okss4lgka"]
 
-[ext_resource type="Script" path="res://scripts/draft_phase/draft_character_display.gd" id="1_fpn21"]
-[ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="2_k5vxs"]
-[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="2_u7nfb"]
-[ext_resource type="Texture2D" uid="uid://cphxp0lqogk01" path="res://Sprites/ui_icons/draft_hp.png" id="3_ngrvh"]
+[ext_resource type="Script" path="res://scripts/card_display/character_cards/character_card_2d.gd" id="1_vqeiy"]
+[ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="2_lfokt"]
+[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="3_lukj7"]
+[ext_resource type="Texture2D" uid="uid://cphxp0lqogk01" path="res://Sprites/ui_icons/draft_hp.png" id="4_sq6vd"]
 
-[node name="ChoiceDisplay" type="Control"]
+[node name="CharacterCard2D" type="Control"]
 custom_minimum_size = Vector2(500, 850)
 layout_mode = 3
 anchors_preset = 15
@@ -17,8 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_fpn21")
-selection_material = ExtResource("2_k5vxs")
+script = ExtResource("1_vqeiy")
+selection_material = ExtResource("2_lfokt")
 
 [node name="CharacterSprite" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_u7nfb")
+texture = ExtResource("3_lukj7")
 expand_mode = 1
 stretch_mode = 5
 
@@ -46,7 +46,7 @@ self_modulate = Color(0.588235, 0, 0, 1)
 show_behind_parent = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
-texture = ExtResource("3_ngrvh")
+texture = ExtResource("4_sq6vd")
 expand_mode = 1
 stretch_mode = 5
 
