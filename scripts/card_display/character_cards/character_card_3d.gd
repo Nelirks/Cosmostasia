@@ -7,6 +7,9 @@ signal mouse_clicked()
 
 @onready var card_2d : CharacterCard2D = %CharacterCard2D
 
+@export var rotation_angle : float
+@export var rotation_speed : float
+
 var hovered : bool = false
 
 var character : Character :
@@ -33,13 +36,14 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 	var motion_event = event as InputEventMouseMotion
 
 func _physics_process(delta):
+	if rotation_angle < 0.0001 or rotation_speed < 0.0001 : return
 	var rect_on_screen : Rect2 = get_rect(get_tree().root.get_camera_3d())
-	var relative_mouse_position = 2.0 * (get_tree().root.get_mouse_position() - get_rect(get_tree().root.get_camera_3d()).get_center()) / rect_on_screen.size
+	var relative_mouse_position = (get_tree().root.get_mouse_position() - get_rect(get_tree().root.get_camera_3d()).get_center())
 	var current_rotation : Quaternion = Quaternion(%CardDisplay.transform.basis)
 	var target_rotation : Quaternion
 	if hovered :
-		target_rotation = Quaternion(Vector3(relative_mouse_position.y, relative_mouse_position.x, 0).normalized(), -50)
-	%CardDisplay.transform.basis = Basis(current_rotation.slerp(target_rotation, 0.2))
+		target_rotation = Quaternion(Vector3(relative_mouse_position.y, relative_mouse_position.x, 0).normalized(), -rotation_angle)
+	%CardDisplay.transform.basis = Basis(current_rotation.slerp(target_rotation, rotation_speed))
 
 func set_overlay(material : Material) -> void :
 	card_2d.set_overlay(material)
