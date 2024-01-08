@@ -7,16 +7,19 @@
 viewport_path = NodePath("FrontViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5yaya"]
-size = Vector3(5, 8.5, 1)
+size = Vector3(5, 8.5, 0.2)
 
 [node name="CharacterCard3D" type="Node3D"]
 script = ExtResource("1_rvkly")
 
-[node name="FrontSide" type="Sprite3D" parent="."]
+[node name="CardDisplay" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="FrontSide" type="Sprite3D" parent="CardDisplay"]
 unique_name_in_owner = true
 texture = SubResource("ViewportTexture_agnpc")
 
-[node name="BackSide" type="Sprite3D" parent="."]
+[node name="BackSide" type="Sprite3D" parent="CardDisplay"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 
