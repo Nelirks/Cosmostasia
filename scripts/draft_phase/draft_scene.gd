@@ -11,16 +11,31 @@ var cur_choices : Array[int]
 var host_picks : Array[int]
 var client_picks : Array[int]
 
-@onready var choice_displays : Array[DraftCharacterDisplay] = []
-@onready var opponent_picks : Array[DraftCharacterDisplay] = []
-@onready var player_picks : Array[DraftCharacterDisplay] = []
+@onready var choice_displays : Array[CharacterCard3D] = []
+@onready var opponent_picks : Array[CharacterCard3D] = []
+@onready var player_picks : Array[CharacterCard3D] = []
+
+@export var selected_character_fx : Material
+@export var popup_scene : PackedScene
 
 func _ready():
 	choice_displays.append_array(%PlayerChoices.get_children())
 	opponent_picks.append_array(%OpponentDraft.get_children())
 	player_picks.append_array(%PlayerDraft.get_children())
+	connect_signals()
 	if NetworkManager.is_host :
 		pick_character_choices()
+
+func connect_signals() -> void :
+	for i in range(3) :
+		choice_displays[i].mouse_clicked.connect(_on_draft_choice_selected.bind(i))
+	var cards : Array[CharacterCard3D] = []
+	cards.append_array(choice_displays)
+	cards.append_array(opponent_picks)
+	cards.append_array(player_picks)
+	for card in cards :
+		card.mouse_entered.connect(_on_card_mouse_entered.bind(card))
+		card.mouse_exited.connect(_on_card_mouse_exited.bind(card))
 
 func merge_arrays(array1 : Array[int], array2 : Array[int]) -> Array[int] :
 	var result : Array[int] = []
@@ -75,9 +90,7 @@ func pick_character_choices() -> void :
 func set_choices(char_indexes : Array) -> void :
 	cur_choices = []
 	cur_choices.append_array(char_indexes)
-	for i in range(char_indexes.size()) :
-		choice_displays[i].character = character_pool[char_indexes[i]]
-		choice_displays[i].selectable = true
+	display_choices()
 
 @rpc("any_peer", "call_remote")
 func notify_choice(char_index : int) -> void :
@@ -99,23 +112,30 @@ func apply_choices(host_char : int, client_char : int) -> void :
 	client_picks.append(client_char)
 	GameManager.get_player(true).add_character(character_pool[host_char].instantiate())
 	GameManager.get_player(false).add_character(character_pool[client_char].instantiate())
-	update_picks()
+	display_picks()
 	if GameManager.player.get_characters().size() == 3 :
 		GameManager.set_game_state(GameManager.GameState.DECKBUILDING)
 
-func update_picks() -> void :
-	for i in range(3) :
-		if i < GameManager.opponent.get_characters().size() :
-			opponent_picks[i].character = GameManager.opponent.get_character(i)
-		if i < GameManager.player.get_characters().size() :
-			player_picks[i].character = GameManager.player.get_character(i)
+func display_choices() -> void :
+	for i in range(cur_choices.size()) :
+		choice_displays[i].character = character_pool[cur_choices[i]]
+		choice_displays[i].set_overlay(null)
+
+func display_picks() -> void :
+	for i in range(GameManager.player.get_characters().size()) :
+		player_picks[i].character = GameManager.player.get_character(i)
+		opponent_picks[i].character = GameManager.opponent.get_character(i)
 
 func _on_draft_choice_selected(choice_index : int) -> void :
 	var char_index = cur_choices[choice_index]
-	for i in range(3) :
-		if choice_index != i :
-			%PlayerChoices.get_child(i).is_selected = false
+	choice_displays[choice_index].set_overlay(selected_character_fx)
 	if NetworkManager.is_host : 
 		notify_choice(char_index)
 	else :
 		notify_choice.rpc(char_index)
+
+func _on_card_mouse_entered(character : CharacterCard3D) -> void :
+	pass
+	
+func _on_card_mouse_exited(character : CharacterCard3D) -> void :
+	pass

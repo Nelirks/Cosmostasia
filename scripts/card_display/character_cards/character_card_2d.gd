@@ -1,58 +1,15 @@
 extends Control
-class_name DraftCharacterDisplay
-
-@export var selection_material: Material
-
-signal selected()
-
-var info_popup_scene = preload("res://scenes/info_popup/info_popup.tscn")
-var info_popup : InfoPopup = null
+class_name CharacterCard2D
 
 var character : Character :
 	set(value) :
 		character = value
-		if character == null :
-			visible = false
-		else :
-			visible = true
+		visible = character != null
+		if character != null :
 			(%CharacterSprite as TextureRect).texture = character.character_texture
 			(%CharacterName as Label).text = character.character_name
 			(%CharacterMaxHealth as Label).text = str(character.max_health)
 
-var hovered : bool = false
-
-var selectable : bool = false
-
-func _ready():
-	visible = false
-
-var is_selected : bool :
-	set(value) : 
-		if character == null : return
-		is_selected = value
-		if is_selected : 
-			%CharacterSprite.material = selection_material
-			selected.emit()
-		else : %CharacterSprite.material = null
-
-func _on_gui_input(event):
-	if !selectable : return
-	var mouse_click = event as InputEventMouseButton
-	if mouse_click != null :
-		if mouse_click.button_index == MOUSE_BUTTON_LEFT and mouse_click.pressed :
-			is_selected = true
-
-func _on_mouse_entered():
-	if info_popup != null : info_popup.queue_free()
-	if character == null : return
-	info_popup = info_popup_scene.instantiate()
-	get_tree().root.add_child(info_popup)
-	info_popup.set_content([character.character_quote, character.passive.description if character.passive != null else "PASSIVE UNIMPLEMENTED"])
-	info_popup.set_target_rect((%CharacterSprite as Control).get_global_rect())
-
-func _on_mouse_exited():
-	if info_popup != null : info_popup.queue_free()
-	info_popup = null
-
-func _exit_tree():
-	if info_popup != null : info_popup.queue_free()
+func set_overlay(material : Material) -> void :
+	%FXOverlay.material = material
+	%FXOverlay.visible = material != null

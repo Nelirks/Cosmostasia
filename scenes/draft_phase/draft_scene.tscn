@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=14 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -10,7 +10,9 @@
 [ext_resource type="Resource" uid="uid://cbx4earrm7weg" path="res://resources/game_data/character_data/lisirmee.tres" id="8_uyypb"]
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
-[ext_resource type="PackedScene" uid="uid://pj3okss4lgka" path="res://scenes/draft_phase/draft_character_display.tscn" id="11_sfima"]
+[ext_resource type="PackedScene" uid="uid://c2nvantogdhxk" path="res://scenes/card_display/character_cards/character_card_3d.tscn" id="11_e4pc0"]
+[ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="11_v7haa"]
+[ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
 
 [node name="DraftScene" type="Control"]
 layout_mode = 3
@@ -19,129 +21,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_3n8hg")
 character_pool = Array[Resource("res://scripts/resources/character.gd")]([ExtResource("2_3aehv"), ExtResource("3_8yflf"), ExtResource("4_h7vl3"), ExtResource("5_and1r"), ExtResource("6_vktb4"), ExtResource("7_souub"), ExtResource("8_uyypb"), ExtResource("9_nmjhl"), ExtResource("10_c3o3b")])
 reduced_pick_chance = 0.25
+selected_character_fx = ExtResource("11_v7haa")
+popup_scene = ExtResource("12_e0qrm")
 
-[node name="OpponentDraft" type="Control" parent="."]
+[node name="Board" type="Node3D" parent="."]
+
+[node name="OpponentDraft" type="Node3D" parent="Board"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 216)
-layout_mode = 2
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 216.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
-[node name="OpponentPick" parent="OpponentDraft" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 622.5
-offset_right = 1122.5
-offset_bottom = 850.0
-scale = Vector2(0.25, 0.25)
+[node name="Pick1" parent="Board/OpponentDraft" instance=ExtResource("11_e4pc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+visible = false
 
-[node name="OpponentPick2" parent="OpponentDraft" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 898.0
-offset_right = 1398.0
-offset_bottom = 850.0
-scale = Vector2(0.25, 0.25)
+[node name="Pick2" parent="Board/OpponentDraft" instance=ExtResource("11_e4pc0")]
+visible = false
 
-[node name="OpponentPick3" parent="OpponentDraft" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1147.5
-offset_right = 1647.5
-offset_bottom = 850.0
-scale = Vector2(0.25, 0.25)
+[node name="Pick3" parent="Board/OpponentDraft" instance=ExtResource("11_e4pc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+visible = false
 
-[node name="PlayerChoices" type="Control" parent="."]
+[node name="PlayerChoices" type="Node3D" parent="Board"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 648)
-layout_mode = 2
-anchors_preset = 0
-offset_top = 220.0
-offset_right = 1920.0
-offset_bottom = 868.0
 
-[node name="DraftChoice" parent="PlayerChoices" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 335.0
-offset_top = 107.0
-offset_right = 835.0
-offset_bottom = 957.0
-scale = Vector2(0.5, 0.5)
+[node name="Choice1" parent="Board/PlayerChoices" instance=ExtResource("11_e4pc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+visible = false
 
-[node name="DraftChoice2" parent="PlayerChoices" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 835.0
-offset_top = 107.0
-offset_right = 1335.0
-offset_bottom = 957.0
-scale = Vector2(0.5, 0.5)
+[node name="Choice2" parent="Board/PlayerChoices" instance=ExtResource("11_e4pc0")]
+visible = false
 
-[node name="DraftChoice3" parent="PlayerChoices" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1335.0
-offset_top = 107.0
-offset_right = 1835.0
-offset_bottom = 957.0
-scale = Vector2(0.5, 0.5)
+[node name="Choice3" parent="Board/PlayerChoices" instance=ExtResource("11_e4pc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+visible = false
 
-[node name="PlayerDraft" type="Control" parent="."]
+[node name="PlayerDraft" type="Node3D" parent="Board"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 216)
-layout_mode = 2
-anchors_preset = 0
-offset_top = 864.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="PlayerPick" parent="PlayerDraft" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 622.5
-offset_right = 1122.5
-offset_bottom = 850.0
-scale = Vector2(0.25, 0.25)
+[node name="Pick1" parent="Board/PlayerDraft" instance=ExtResource("11_e4pc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+visible = false
 
-[node name="PlayerPick2" parent="PlayerDraft" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 898.0
-offset_right = 1398.0
-offset_bottom = 850.0
-scale = Vector2(0.25, 0.25)
+[node name="Pick2" parent="Board/PlayerDraft" instance=ExtResource("11_e4pc0")]
+visible = false
 
-[node name="PlayerPick3" parent="PlayerDraft" instance=ExtResource("11_sfima")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 1147.5
-offset_right = 1647.5
-offset_bottom = 850.0
-scale = Vector2(0.25, 0.25)
+[node name="Pick3" parent="Board/PlayerDraft" instance=ExtResource("11_e4pc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+visible = false
 
-[connection signal="selected" from="PlayerChoices/DraftChoice" to="." method="_on_draft_choice_selected" binds= [0]]
-[connection signal="selected" from="PlayerChoices/DraftChoice2" to="." method="_on_draft_choice_selected" binds= [1]]
-[connection signal="selected" from="PlayerChoices/DraftChoice3" to="." method="_on_draft_choice_selected" binds= [2]]
+[node name="Camera3D" type="Camera3D" parent="Board"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+current = true
