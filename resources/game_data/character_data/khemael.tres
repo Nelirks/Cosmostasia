@@ -27,7 +27,7 @@ content = Array[int]([3, 3, 2, 2, 0])
 [resource]
 script = ExtResource("1_1pft6")
 character_name = "Khemaël"
-character_quote = ""
+character_quote = "Une guerrière du fin fond de la galaxie. Khemaël peut alterner entre un jeu offensif ou soutien."
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_rlyoh"), ExtResource("2_o8i62"), ExtResource("3_svnou"), ExtResource("4_pcat6"), ExtResource("5_npogt")])
 passive = ExtResource("6_p2gpn")

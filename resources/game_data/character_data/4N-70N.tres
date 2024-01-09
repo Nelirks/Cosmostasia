@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=12 format=3 uid="uid://b5d4civj0vkuu"]
+[gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://b5d4civj0vkuu"]
 
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_eak7t"]
 [ext_resource type="Resource" uid="uid://d3kfo5iva4hku" path="res://resources/game_data/card_data/4N-70N/saute_d_humeur.tres" id="1_xcm6r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dj6ghs6cfd1ms" path="res://resources/game_data/card_data/4N-70N/obus_de_lumenyte.tres" id="5_72j0b"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_71a43"]
 [ext_resource type="Resource" uid="uid://cag60rwhhges" path="res://resources/game_data/passive_data/4n_70n_passive.tres" id="6_t8l1e"]
+[ext_resource type="Texture2D" uid="uid://864h634c7qmp" path="res://resources/sprites/character_sprites/4N.png" id="6_vb5te"]
 
 [sub_resource type="Resource" id="Resource_75j5c"]
 script = ExtResource("6_71a43")
@@ -27,7 +28,8 @@ content = Array[int]([3, 0, 0, 5, 2])
 [resource]
 script = ExtResource("1_eak7t")
 character_name = "4N-70N"
-character_quote = ""
+character_quote = "Une IA ayant découvert la sentience. 4N-70N change de mode émotionnel pour s'apporter divers bonus."
+character_texture = ExtResource("6_vb5te")
 max_health = 90
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("2_rvobt"), ExtResource("3_tvcuw"), ExtResource("4_ijyn1"), ExtResource("5_72j0b"), ExtResource("1_xcm6r")])
 passive = ExtResource("6_t8l1e")

@@ -6,8 +6,8 @@
 [ext_resource type="Resource" uid="uid://bypbb3w21qms7" path="res://resources/game_data/card_data/lisirmee/farce.tres" id="3_evteh"]
 [ext_resource type="Resource" uid="uid://diwbqyke6w7" path="res://resources/game_data/card_data/lisirmee/lame_féerique.tres" id="4_aoqqa"]
 [ext_resource type="Resource" uid="uid://d1uboma06p1qy" path="res://resources/game_data/card_data/lisirmee/vol_imprévisible.tres" id="5_uvos1"]
+[ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="6_57mh1"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_k4vo1"]
-[ext_resource type="Texture2D" uid="uid://blbseq742l0cv" path="res://Sprites/Characters Sprite/Lisirmee_decor.png" id="6_xrurd"]
 
 [sub_resource type="Resource" id="Resource_w3gip"]
 script = ExtResource("6_k4vo1")
@@ -27,8 +27,8 @@ content = Array[int]([3, 4, 0, 0, 3])
 [resource]
 script = ExtResource("1_2ajlp")
 character_name = "Lisirmee"
-character_quote = ""
-character_texture = ExtResource("6_xrurd")
+character_quote = "Une fae belliqueuse. Lisirmee joue avec la position de sa main afin d'améliorer ses cartes et d'handicaper le jeu de l'adversaire."
+character_texture = ExtResource("6_57mh1")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_4x8oc"), ExtResource("2_r0e3h"), ExtResource("3_evteh"), ExtResource("4_aoqqa"), ExtResource("5_uvos1")])
 deck_presets = Array[ExtResource("6_k4vo1")]([SubResource("Resource_w3gip"), SubResource("Resource_kcrqo"), SubResource("Resource_fb3e6")])
