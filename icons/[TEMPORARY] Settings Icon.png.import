@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkip5oi153tu7"
-path="res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"
+uid="uid://boeq83tppfbj6"
+path="res://.godot/imported/[TEMPORARY] Settings Icon.png-e1fbfb43ccddb5c5fb2425241e42f742.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character_sprites/brrr.png"
-dest_files=["res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"]
+source_file="res://icons/[TEMPORARY] Settings Icon.png"
+dest_files=["res://.godot/imported/[TEMPORARY] Settings Icon.png-e1fbfb43ccddb5c5fb2425241e42f742.ctex"]
 
 [params]
 

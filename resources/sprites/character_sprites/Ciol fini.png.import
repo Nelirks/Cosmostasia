@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkip5oi153tu7"
-path="res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"
+uid="uid://vookq0qib21r"
+path="res://.godot/imported/Ciol fini.png-e9527cd7b22796338509d60e9875f899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character_sprites/brrr.png"
-dest_files=["res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"]
+source_file="res://resources/sprites/character_sprites/Ciol fini.png"
+dest_files=["res://.godot/imported/Ciol fini.png-e9527cd7b22796338509d60e9875f899.ctex"]
 
 [params]
 

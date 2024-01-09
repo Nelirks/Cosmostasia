@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blbseq742l0cv"
-path="res://.godot/imported/Lisirmee_decor.png-5ff66fe1ddd88daa1e79a9f55ccf80eb.ctex"
+uid="uid://sk65ctu0g3hm"
+path="res://.godot/imported/Timothy.png-2e4d53255f4004ca846333b8ca03d658.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters Sprite/Lisirmee_decor.png"
-dest_files=["res://.godot/imported/Lisirmee_decor.png-5ff66fe1ddd88daa1e79a9f55ccf80eb.ctex"]
+source_file="res://resources/sprites/character_sprites/Timothy.png"
+dest_files=["res://.godot/imported/Timothy.png-2e4d53255f4004ca846333b8ca03d658.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkip5oi153tu7"
-path="res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"
+uid="uid://b7mptmps6l3n7"
+path="res://.godot/imported/Freyja.png-72bf0fd928fa2611cedc485283264c44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character_sprites/brrr.png"
-dest_files=["res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"]
+source_file="res://resources/sprites/character_sprites/Freyja.png"
+dest_files=["res://.godot/imported/Freyja.png-72bf0fd928fa2611cedc485283264c44.ctex"]
 
 [params]
 

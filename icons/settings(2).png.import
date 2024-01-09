@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkip5oi153tu7"
-path="res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"
+uid="uid://c2pfsmnr38x5l"
+path="res://.godot/imported/settings(2).png-13c082a585e72195330ef13a51bab43e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character_sprites/brrr.png"
-dest_files=["res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"]
+source_file="res://icons/settings(2).png"
+dest_files=["res://.godot/imported/settings(2).png-13c082a585e72195330ef13a51bab43e.ctex"]
 
 [params]
 
