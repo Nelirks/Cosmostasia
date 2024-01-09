@@ -28,7 +28,7 @@ content = Array[int]([0, 2, 4, 0, 4])
 [resource]
 script = ExtResource("6_t5gfy")
 character_name = "Timothy Laveak"
-character_quote = "Un mercenaire spatial. Timothy augmente sa recharge d'énergie gràce à la luménite et effectue de puissantes attaques."
+character_quote = "Un mercenaire spatial. Timothy augmente sa recharge d'énergie grâce à la luménite et effectue de puissantes attaques."
 character_texture = ExtResource("6_slina")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_r0pxp"), ExtResource("2_45gn5"), ExtResource("3_ytdt5"), ExtResource("4_b2cxx"), ExtResource("5_nnd6c")])
