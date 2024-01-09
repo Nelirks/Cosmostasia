@@ -145,7 +145,7 @@ func _on_draft_choice_selected(choice_index : int) -> void :
 func _on_card_mouse_entered(card : CharacterCard3D) -> void :
 	if !card.visible : return
 	info_popup = info_popup_scene.instantiate()
-	info_popup.set_content([card.character.character_name, card.character.passive.description if card.character.passive != null else "PASSIVE UNIMPLEMENTED"])
+	info_popup.set_content([card.character.character_quote, card.character.passive.description if card.character.passive != null else "PASSIVE UNIMPLEMENTED"])
 	info_popup.set_target_rect(card.get_rect(%Camera3D))
 
 func _on_card_mouse_exited(character : CharacterCard3D) -> void :

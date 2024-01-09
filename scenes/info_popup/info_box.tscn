@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://ccb7ibyqs8les"]
+[gd_scene load_steps=2 format=3 uid="uid://ccb7ibyqs8les"]
 
-[node name="InfoBox" type="RichTextLabel"]
+[ext_resource type="Script" path="res://scripts/info_popup/info_box.gd" id="1_u1s45"]
+
+[node name="InfoBox" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_u1s45")
+
+[node name="Label" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
 fit_content = true
-autowrap_mode = 2

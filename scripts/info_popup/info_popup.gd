@@ -6,9 +6,9 @@ var info_box_scene : PackedScene = preload("res://scenes/info_popup/info_box.tsc
 func set_content(messages : Array[String]) -> void :
 	visible = true
 	for message in messages : 
-		var info_box = info_box_scene.instantiate()
-		info_box.text = message
-		%InfoContainer.add_child(info_box)
+		var info_box : InfoBox = info_box_scene.instantiate()
+		info_box.set_text(message)
+		add_child(info_box)
 
 func set_target_rect(target_rect : Rect2) -> void :
 	var rect : Rect2 = get_global_rect()
