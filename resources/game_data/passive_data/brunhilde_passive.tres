@@ -9,3 +9,4 @@ damage_dealt_multiplier = 1.4
 damage_received_multiplier = 0.6
 id = "brunhilde_passive"
 type = 2
+description = "En dessous de 30 points de vie, réduit les dégâts subis de 40% et augmente les dégâts infligés de 40%."

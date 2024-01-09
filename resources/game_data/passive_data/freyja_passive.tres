@@ -8,3 +8,4 @@ damage_multiplier = 1.5
 self_damage = 10
 id = "freyja_passive"
 type = 2
+description = "Si la première carte jouée par Freyja à chaque tour est une attaque, ses dégâts sont augmentés de 50% mais elle s'inflige 10 dégâts."

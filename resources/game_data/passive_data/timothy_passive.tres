@@ -7,3 +7,4 @@ script = ExtResource("1_i46sd")
 energy_gain = 1
 id = "timothy_passive"
 type = 2
+description = "Une fois par tour, lorsque Timothy joue une carte préparée, augmente la recharge de 1 au prochain tour."

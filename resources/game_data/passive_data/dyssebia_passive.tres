@@ -7,3 +7,4 @@ script = ExtResource("1_hvkg8")
 damage_received_multiplier = 0.8
 id = "dyssebia_passive"
 type = 2
+description = "Réduit les dégâts subis provenant de l'ennemi avec le plus de points de vie de 20%."

@@ -8,3 +8,4 @@ base_max_feathers = 2
 additional_feather_cd = 2.0
 id = "ciol_passive"
 type = 2
+description = "Lorsque Cïol inflige des dégâts à un adversaire, il lui pose une plume. Jusqu'à 2 plumes peuvent être posées, et cette limite augmente tous les 2 tours."
