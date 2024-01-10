@@ -32,8 +32,8 @@ func update_card_infos():
 
 
 func _on_card_background_mouse_entered():
-	%Card_Background.set_position(0,100)
+	%Card_Background.set_position(Vector2(0,100))
 
 
 func _on_card_background_mouse_exited():
-	%Card_Background.set_position(0,0)
+	%Card_Background.set_position(Vector2(0,0))
