@@ -1,25 +1,34 @@
 extends Node3D
-class_name CharacterCard3D
+class_name Card3D
 
 signal mouse_entered()
 signal mouse_exited()
 signal mouse_clicked()
-
-@onready var card_2d : CharacterCard2D = %CharacterCard2D
 
 @export var rotation_angle : float
 @export var rotation_speed : float
 
 var hovered : bool = false
 
-var character : Character :
-	set(value) : 
-		character = value
-		card_2d.character = value
-		visible = character != null
+var _front_side : Control :
+	set(value) :
+		if _front_side != null : _front_side.queue_free()
+		_front_side = value
+		if _front_side != null : 
+			%FrontViewport.add_child(value)
+			_front_side.position = Vector2(0,0)
+		
+var _back_side : Control :
+	set(value) :
+		if _back_side != null : _back_side.queue_free()
+		_back_side = value
+		if _back_side != null : 
+			%BackViewport.add_child(value)
+			_back_side.position = Vector2(0,0)
 
 func _ready():
-	character = null
+	_front_side = null
+	_back_side = null
 
 func _on_mouse_entered():
 	hovered = true
@@ -44,9 +53,6 @@ func _physics_process(delta):
 	if hovered :
 		target_rotation = Quaternion(Vector3(relative_mouse_position.y, relative_mouse_position.x, 0).normalized(), -rotation_angle)
 	%CardDisplay.transform.basis = Basis(current_rotation.slerp(target_rotation, rotation_speed))
-
-func set_overlay(material : Material) -> void :
-	card_2d.set_overlay(material)
 
 func get_rect(camera : Camera3D) -> Rect2 :
 	var center_pos : Vector3 = %FrontSide.global_position
