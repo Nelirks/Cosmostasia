@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:resources/sprites/ui_elements/cog.png.import
 uid="uid://b4msf3bo5m3pu"
 path="res://.godot/imported/cog.png-13e6b60a3256c8f7ceb73661e5e77faa.ctex"
+========
+uid="uid://b7na1iiv0hx80"
+path="res://.godot/imported/attaque.png-2807e08ca06cdb0904e3cc245b70ef48.ctex"
+>>>>>>>> b1d69ea579e14ff05626c1a4444a4abdf52bea88:resources/sprites/card_sprites/attaque.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:resources/sprites/ui_elements/cog.png.import
 source_file="res://resources/sprites/ui_elements/cog.png"
 dest_files=["res://.godot/imported/cog.png-13e6b60a3256c8f7ceb73661e5e77faa.ctex"]
+========
+source_file="res://resources/sprites/card_sprites/attaque.png"
+dest_files=["res://.godot/imported/attaque.png-2807e08ca06cdb0904e3cc245b70ef48.ctex"]
+>>>>>>>> b1d69ea579e14ff05626c1a4444a4abdf52bea88:resources/sprites/card_sprites/attaque.png.import
 
 [params]
 
