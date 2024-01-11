@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:resources/sprites/character_sprites/brrr.png.import
-uid="uid://bkip5oi153tu7"
+uid="uid://p00v4cch765"
 path="res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"
-========
-uid="uid://blbseq742l0cv"
-path="res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"
->>>>>>>> b1d69ea579e14ff05626c1a4444a4abdf52bea88:resources/sprites/character_sprites/Lisirmee_decor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:resources/sprites/character_sprites/brrr.png.import
 source_file="res://resources/sprites/character_sprites/brrr.png"
 dest_files=["res://.godot/imported/brrr.png-12e4b781e71ffabe20c5b982885a7974.ctex"]
-========
-source_file="res://resources/sprites/character_sprites/Lisirmee_decor.png"
-dest_files=["res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"]
->>>>>>>> b1d69ea579e14ff05626c1a4444a4abdf52bea88:resources/sprites/character_sprites/Lisirmee_decor.png.import
 
 [params]
 

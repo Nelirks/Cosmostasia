@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:resources/sprites/character_sprites/Dissebya.png.import
-uid="uid://djqhj644d6yo"
+uid="uid://bxmbju3y5ti3x"
 path="res://.godot/imported/Dissebya.png-a15487de9db5058a2d0001763dbe2514.ctex"
-========
-uid="uid://bc5sfcaqfp0tn"
-path="res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"
->>>>>>>> b1d69ea579e14ff05626c1a4444a4abdf52bea88:resources/sprites/character_sprites/Freyja_decor.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:resources/sprites/character_sprites/Dissebya.png.import
 source_file="res://resources/sprites/character_sprites/Dissebya.png"
 dest_files=["res://.godot/imported/Dissebya.png-a15487de9db5058a2d0001763dbe2514.ctex"]
-========
-source_file="res://resources/sprites/character_sprites/Freyja_decor.png"
-dest_files=["res://.godot/imported/Freyja_decor.png-6528ac0359d0e7c18a3c31b06b735313.ctex"]
->>>>>>>> b1d69ea579e14ff05626c1a4444a4abdf52bea88:resources/sprites/character_sprites/Freyja_decor.png.import
 
 [params]
 
