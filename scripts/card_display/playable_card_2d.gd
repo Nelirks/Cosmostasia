@@ -1,11 +1,12 @@
-extends Node2D
-class_name CardUI
+extends Control
+class_name PlayableCard2D
 
 var card: Card:
 	set(value):
 		card = value
-		on_position_set()
-		update_card_infos()
+		if card != null : 
+			on_position_set()
+			update_card_infos()
 var miracle_position: Vector2
 var middle_position: Vector2
 var prepared_position: Vector2
@@ -29,11 +30,3 @@ func update_card_infos():
 	(%Card_Character as Label).text = str(card.character)
 	(%CardDescription as RichTextLabel).text = card.description
 	(%CardFlavorText as RichTextLabel).text = card.quote
-
-
-func _on_card_background_mouse_entered():
-	%Card_Background.set_position(Vector2(0,100))
-
-
-func _on_card_background_mouse_exited():
-	%Card_Background.set_position(Vector2(0,0))

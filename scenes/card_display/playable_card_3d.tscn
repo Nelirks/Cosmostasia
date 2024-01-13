@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://k0oglaj047sl"]
+
+[ext_resource type="PackedScene" path="res://scenes/card_display/card_3d.tscn" id="1_5i2ox"]
+[ext_resource type="PackedScene" uid="uid://dj0uhxr2myve4" path="res://scenes/card_display/playable_card_2d.tscn" id="2_e1tc7"]
+[ext_resource type="Script" path="res://scripts/card_display/playable_card_3d.gd" id="2_f6glg"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vbknn"]
+viewport_path = NodePath("FrontViewport")
+
+[node name="Card3D" instance=ExtResource("1_5i2ox")]
+script = ExtResource("2_f6glg")
+
+[node name="FrontSide" parent="CardDisplay" index="0"]
+texture = SubResource("ViewportTexture_vbknn")
+
+[node name="FrontViewport" parent="." index="1"]
+size = Vector2i(500, 750)
+
+[node name="PlayableCard2D" parent="FrontViewport" index="0" instance=ExtResource("2_e1tc7")]
+scale = Vector2(2.5, 2.5)
