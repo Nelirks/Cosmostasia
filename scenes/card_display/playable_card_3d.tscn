@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://k0oglaj047sl"]
+[gd_scene load_steps=6 format=3 uid="uid://k0oglaj047sl"]
 
 [ext_resource type="PackedScene" path="res://scenes/card_display/card_3d.tscn" id="1_5i2ox"]
 [ext_resource type="PackedScene" uid="uid://dj0uhxr2myve4" path="res://scenes/card_display/playable_card_2d.tscn" id="2_e1tc7"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vbknn"]
 viewport_path = NodePath("FrontViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qoh7a"]
+size = Vector3(5, 7.5, 0.2)
 
 [node name="Card3D" instance=ExtResource("1_5i2ox")]
 script = ExtResource("2_f6glg")
@@ -18,3 +21,6 @@ size = Vector2i(500, 750)
 
 [node name="PlayableCard2D" parent="FrontViewport" index="0" instance=ExtResource("2_e1tc7")]
 scale = Vector2(2.5, 2.5)
+
+[node name="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_qoh7a")
