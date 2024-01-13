@@ -11,7 +11,7 @@ var middle_position: Vector2
 var prepared_position: Vector2
 
 func on_position_set():
-	match card.position:
+	match card.Position:
 		Card.Position.DRAW_PILE: 
 			visible = false
 		Card.Position.PREPARED_SLOT:
