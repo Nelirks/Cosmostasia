@@ -22,7 +22,7 @@ var info_popup : InfoPopup :
 		if info_popup != null : info_popup.queue_free()
 		info_popup = value
 		if info_popup != null :
-			add_child(info_popup)
+			%ForegroundLayer.add_child(info_popup)
 
 func _ready():
 	player_choices.append_array(%PlayerChoices.get_children())
