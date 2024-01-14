@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://rnkp1iknor16"]
+[gd_scene load_steps=4 format=3 uid="uid://dedijqnpjre4k"]
 
-[ext_resource type="PackedScene" path="res://scenes/card_display/card_3d.tscn" id="1_j8fo4"]
+[ext_resource type="PackedScene" uid="uid://c2nvantogdhxk" path="res://scenes/card_display/card_3d.tscn" id="1_j8fo4"]
 [ext_resource type="Script" path="res://scripts/card_display/character_card_3d.gd" id="2_scxjr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_52mie"]
