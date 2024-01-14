@@ -23,6 +23,7 @@ script = ExtResource("1_phwa5")
 
 [node name="Card_Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
+layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
 texture = ExtResource("2_8yoe2")
