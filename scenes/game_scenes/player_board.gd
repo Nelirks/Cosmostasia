@@ -15,7 +15,7 @@ func on_player_set():
 	
 	
 	for card in GameManager.player.get_all_cards() :
-		var card_ui : PlayableCard2D = preload("res://scenes/card_display/playable_card_2d.tscn").instantiate()
+		var card_ui : PlayableCard3D = preload("res://scenes/card_display/playable_card_3d.tscn").instantiate()
 		add_child(card_ui)
 		card_ui.miracle_position = $"Miracle Card Position".position
 		card_ui.middle_position = $"Middle Card Positon".position
