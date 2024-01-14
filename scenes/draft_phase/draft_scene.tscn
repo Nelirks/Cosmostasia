@@ -72,9 +72,56 @@ current = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48764")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BackgroundLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerDraftLabel" type="Label" parent="BackgroundLayer"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 75.0
+offset_right = 311.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 40
+text = "Équipe alliée"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChoicesLabel" type="Label" parent="BackgroundLayer"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 75.0
+offset_right = 1160.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 40
+text = "Choisissez votre personnage"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="OpponentDraftLabel" type="Label" parent="BackgroundLayer"]
+layout_mode = 0
+offset_left = 1581.0
+offset_top = 75.0
+offset_right = 1881.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 40
+text = "Équipe adverse"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ForegroundLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
