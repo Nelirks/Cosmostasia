@@ -15,3 +15,20 @@ var card :
 		_back_side.scale = Vector2(0.5, 0.5)
 	get :
 		return _front_side.card if _front_side != null else null
+
+var miracle_position: Vector3
+var middle_position: Vector3
+var prepared_position: Vector3
+
+func on_position_set():
+	match card.Position:
+		Card.Position.DRAW_PILE: 
+			visible = false
+		Card.Position.PREPARED_SLOT:
+			position = prepared_position
+		Card.Position.MIDDLE_SLOT:
+			position = middle_position
+		Card.Position.MIRACLE_SLOT:
+			position = miracle_position
+		Card.Position.DISCARD_PILE:
+			visible = false
