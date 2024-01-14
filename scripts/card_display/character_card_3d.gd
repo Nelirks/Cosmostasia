@@ -7,9 +7,13 @@ var character :
 	set(value) : 
 		if _front_side == null : _front_side = card_2d_scene.instantiate()
 		_front_side.character = value
+		visible = character != null
 	get :
 		return _front_side.character if _front_side != null else null
 
 func set_overlay(material : Material) :
 	if _front_side == null : return
 	_front_side.set_overlay(material)
+
+func _ready():
+	visible = character != null
