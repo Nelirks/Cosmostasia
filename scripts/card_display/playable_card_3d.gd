@@ -9,6 +9,3 @@ var card :
 		_front_side.card = value
 	get :
 		return _front_side.character if _front_side != null else null
-
-func _ready():
-	card = preload("res://resources/game_data/card_data/4N-70N/saute_d_humeur.tres")
