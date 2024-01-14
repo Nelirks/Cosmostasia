@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clrsfr0oad5f4"]
 
-[ext_resource type="Texture2D" uid="uid://b7na1iiv0hx80" path="res://Sprites/Cards Sprites/attaque.png" id="1_31sqc"]
+[ext_resource type="Texture2D" uid="uid://b7na1iiv0hx80" path="res://resources/sprites/card_sprites/attaque.png" id="1_31sqc"]
 
 [node name="deck" type="Control"]
 layout_mode = 3

@@ -132,3 +132,10 @@ func get_characters(include_dead : bool = false) -> Array[Character] :
 			if characters[i].is_dead :
 				characters.remove_at(i)
 	return characters
+	
+func get_all_cards() -> Array[Card]:
+	var cards : Array[Card] = []
+	cards.append_array(_draw_pile)
+	cards.append_array(_hand)
+	cards.append_array(_discard)
+	return cards

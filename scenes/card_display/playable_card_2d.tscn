@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj0uhxr2myve4"]
+[gd_scene load_steps=8 format=3 uid="uid://dj0uhxr2myve4"]
 
-[ext_resource type="Texture2D" uid="uid://v4nfjv18q0mn" path="res://resources/sprites/ui_elements/fond_blanc.png" id="1_0gdoh"]
-[ext_resource type="Texture2D" uid="uid://cckmymeia3otd" path="res://resources/sprites/ui_elements/attaque.png" id="2_evg68"]
-[ext_resource type="Texture2D" uid="uid://8ugrtau7ejbx" path="res://resources/sprites/ui_elements/defense.png" id="3_wunr6"]
-[ext_resource type="Texture2D" uid="uid://b1ecre2vxou5p" path="res://resources/sprites/ui_elements/strategie.png" id="4_svawe"]
+[ext_resource type="Script" path="res://scripts/card_display/playable_card_2d.gd" id="1_phwa5"]
+[ext_resource type="Texture2D" uid="uid://v4nfjv18q0mn" path="res://resources/sprites/ui_elements/fond_blanc.png" id="2_8yoe2"]
+[ext_resource type="Texture2D" uid="uid://cckmymeia3otd" path="res://resources/sprites/ui_elements/attaque.png" id="3_bqapw"]
+[ext_resource type="Texture2D" uid="uid://8ugrtau7ejbx" path="res://resources/sprites/ui_elements/defense.png" id="4_5nkw8"]
+[ext_resource type="Texture2D" uid="uid://b1ecre2vxou5p" path="res://resources/sprites/ui_elements/strategie.png" id="5_dqg8d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_81gl5"]
 font_size = 55
@@ -15,19 +16,24 @@ RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/font_sizes/italics_font_size = 25
 RichTextLabel/font_sizes/normal_font_size = 30
 
-[node name="Node2D" type="Node2D"]
+[node name="PlayableCard2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_phwa5")
 
 [node name="Card_Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
-texture = ExtResource("1_0gdoh")
+texture = ExtResource("2_8yoe2")
 expand_mode = 1
 
 [node name="Attack_Border" type="TextureRect" parent="Card_Background"]
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
-texture = ExtResource("2_evg68")
+texture = ExtResource("3_bqapw")
 expand_mode = 1
 
 [node name="Defense_Border" type="TextureRect" parent="Card_Background"]
@@ -35,7 +41,7 @@ visible = false
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
-texture = ExtResource("3_wunr6")
+texture = ExtResource("4_5nkw8")
 expand_mode = 1
 
 [node name="Strategy_Border" type="TextureRect" parent="Card_Background"]
@@ -43,10 +49,11 @@ visible = false
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
-texture = ExtResource("4_svawe")
+texture = ExtResource("5_dqg8d")
 expand_mode = 1
 
 [node name="Card_Title" type="Label" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -64,6 +71,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Card_Cost" type="Label" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 1
 offset_left = 10.0
 offset_right = 85.0
@@ -75,6 +83,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Card_Character" type="Label" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -90,7 +99,8 @@ label_settings = SubResource("LabelSettings_81gl5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Card_Background"]
+[node name="CardDescription" type="RichTextLabel" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 11.0
 offset_top = 210.0
@@ -98,11 +108,10 @@ offset_right = 901.0
 offset_bottom = 385.0
 scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_gxr78")
-text = "This text here is an exemple of the description of a card.
-I type a lot of shit so we can see how many characters can fit in my rectangle. 
-Raphael if you see this, I hate Godot UI."
+text = "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Card_Background"]
+[node name="CardFlavorText" type="RichTextLabel" parent="Card_Background"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 11.0
 offset_top = 256.055
@@ -111,4 +120,4 @@ offset_bottom = 328.056
 scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_gxr78")
 bbcode_enabled = true
-text = "[i]\" As a very powerful character in the game, I can also say that I hate Godot very much\"[/i]"
+text = "[i]\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"[/i]"

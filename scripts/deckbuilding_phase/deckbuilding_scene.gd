@@ -24,6 +24,8 @@ func _on_apply():
 func notify_preset_choice(presets : Array) -> void : 
 	if multiplayer.get_remote_sender_id() == 0 :
 		host_presets = presets
+		if !NetworkManager.is_multiplayer :
+			client_presets = [0, 0, 0]
 	else :
 		client_presets = presets
 	if host_presets.size() > 0 and client_presets.size() > 0 :
