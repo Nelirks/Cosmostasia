@@ -3,13 +3,7 @@
 [ext_resource type="Script" path="res://scenes/game_scenes/player_board.gd" id="1_1c4m8"]
 [ext_resource type="PackedScene" uid="uid://dp0ljcg8nycoq" path="res://scenes/game_scenes/character_card_ui.tscn" id="3_g1kt1"]
 
-[node name="Player_Board" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Player_Board" type="Node2D"]
 script = ExtResource("1_1c4m8")
 
 [node name="First Character" parent="." instance=ExtResource("3_g1kt1")]

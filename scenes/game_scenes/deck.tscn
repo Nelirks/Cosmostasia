@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://clrsfr0oad5f4"]
-
-[ext_resource type="Texture2D" uid="uid://b7na1iiv0hx80" path="res://resources/sprites/card_sprites/attaque.png" id="1_31sqc"]
+[gd_scene format=3 uid="uid://clrsfr0oad5f4"]
 
 [node name="deck" type="Control"]
 layout_mode = 3
@@ -14,5 +12,4 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 300.0
-texture = ExtResource("1_31sqc")
 expand_mode = 1

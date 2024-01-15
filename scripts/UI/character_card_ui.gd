@@ -13,6 +13,6 @@ func update_health():
 	(%Life_Text as Label).text = str(character.current_health)
 
 func update_sprite():
-	(%Character_Sprite as TextureRect).texture = character.character_sprite
+	(%Character_Sprite as TextureRect).texture = character.character_texture
 
 

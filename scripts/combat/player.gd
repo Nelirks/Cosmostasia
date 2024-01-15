@@ -139,6 +139,7 @@ func get_characters(include_dead : bool = false) -> Array[Character] :
 func get_all_cards() -> Array[Card]:
 	var cards : Array[Card] = []
 	cards.append_array(_draw_pile)
-	cards.append_array(_hand)
+	for card in _hand :
+		if card != null : cards.append(card)
 	cards.append_array(_discard)
 	return cards
