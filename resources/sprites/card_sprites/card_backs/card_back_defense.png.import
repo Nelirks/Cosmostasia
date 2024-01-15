@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxmbju3y5ti3x"
-path="res://.godot/imported/Dissebya.png-a15487de9db5058a2d0001763dbe2514.ctex"
+uid="uid://ly4ss0avyrcv"
+path="res://.godot/imported/card_back_defense.png-585fb5974308b89c0e4682c71368e50b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character_sprites/Dissebya.png"
-dest_files=["res://.godot/imported/Dissebya.png-a15487de9db5058a2d0001763dbe2514.ctex"]
+source_file="res://resources/sprites/card_sprites/card_backs/card_back_defense.png"
+dest_files=["res://.godot/imported/card_back_defense.png-585fb5974308b89c0e4682c71368e50b.ctex"]
 
 [params]
 

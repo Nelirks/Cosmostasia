@@ -17,6 +17,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 250.0
+texture = ExtResource("3_0uauf")
 expand_mode = 1
 
 [node name="Life_Background" type="ColorRect" parent="Background_Container"]

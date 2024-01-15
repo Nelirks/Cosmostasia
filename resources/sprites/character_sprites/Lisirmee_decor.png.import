@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxmbju3y5ti3x"
-path="res://.godot/imported/Dissebya.png-a15487de9db5058a2d0001763dbe2514.ctex"
+uid="uid://b0205tt3pasbu"
+path="res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character_sprites/Dissebya.png"
-dest_files=["res://.godot/imported/Dissebya.png-a15487de9db5058a2d0001763dbe2514.ctex"]
+source_file="res://resources/sprites/character_sprites/Lisirmee_decor.png"
+dest_files=["res://.godot/imported/Lisirmee_decor.png-815ec6aa0b593e381595ff2b2cb7153f.ctex"]
 
 [params]
 
