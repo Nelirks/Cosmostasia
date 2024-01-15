@@ -7,6 +7,7 @@ var host_choice : int = -1
 var client_choice : int = -1
 
 var cur_choices : Array[int]
+var selected_choice : int
 
 var host_picks : Array[int]
 var client_picks : Array[int]
@@ -24,6 +25,8 @@ var info_popup : InfoPopup :
 		if info_popup != null :
 			%ForegroundLayer.add_child(info_popup)
 
+var waiting_for_opponent : bool = false
+
 func _ready():
 	player_choices.append_array(%PlayerChoices.get_children())
 	opponent_picks.append_array(%OpponentDraft.get_children())
@@ -34,7 +37,7 @@ func _ready():
 
 func connect_signals() -> void :
 	for i in range(3) :
-		player_choices[i].mouse_clicked.connect(_on_draft_choice_selected.bind(i))
+		player_choices[i].mouse_clicked.connect(_on_choice_selected.bind(i))
 	var cards : Array[CharacterCard3D] = []
 	cards.append_array(player_choices)
 	cards.append_array(opponent_picks)
@@ -94,6 +97,8 @@ func pick_character_choices() -> void :
 
 @rpc("authority", "call_remote")
 func set_choices(char_indexes : Array) -> void :
+	selected_choice = -1
+	waiting_for_opponent = false
 	cur_choices = []
 	cur_choices.append_array(char_indexes)
 	display_choices()
@@ -134,15 +139,23 @@ func display_picks() -> void :
 		opponent_picks[i].character = GameManager.opponent.get_character(i)
 	info_popup = null
 
-func _on_draft_choice_selected(choice_index : int) -> void :
-	var char_index = cur_choices[choice_index]
+func _on_choice_selected(choice_index : int) -> void :
+	if waiting_for_opponent : return
+	selected_choice = choice_index
+	%SubmitButton.disabled = false
 	for i in range(player_choices.size()) :
 		if i != choice_index : player_choices[i].set_overlay(null)
 	player_choices[choice_index].set_overlay(selected_character_fx)
+
+func _on_choice_submitted() -> void : 
+	if selected_choice == -1 : return
+	waiting_for_opponent = true
+	%SubmitButton.disabled = true
 	if NetworkManager.is_host : 
-		notify_choice(char_index)
+		notify_choice(cur_choices[selected_choice])
 	else :
-		notify_choice.rpc(char_index)
+		notify_choice.rpc(cur_choices[selected_choice])
+	selected_choice = -1
 
 func _on_card_mouse_entered(card : CharacterCard3D) -> void :
 	if card.character == null : return
