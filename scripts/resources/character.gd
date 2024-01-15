@@ -15,10 +15,16 @@ var player : Player
 
 var deck : Array[Card]
 
-var current_health : int
+var current_health : int:
+	set(value):
+		current_health = value
+		hp_changed.emit()
+
 var _armor : int
 var is_dead : bool = false
 var _statuses : Array[StatusEffect]
+
+signal hp_changed()
 
 func setup() :
 	current_health = max_health

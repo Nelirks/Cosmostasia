@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bytjuqn7fs3vf"
-path="res://.godot/imported/4N_version_finale_perso_decor.png-32f54cd2371570b2bfbdbed8da078870.ctex"
+uid="uid://bkhlkceypxyct"
+path="res://.godot/imported/Ground033_1K-JPG_NormalGL.jpg-6fc049b6ab245522208546dfd1f79024.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/combat/4N_version_finale_perso_decor.png"
-dest_files=["res://.godot/imported/4N_version_finale_perso_decor.png-32f54cd2371570b2bfbdbed8da078870.ctex"]
+source_file="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/Ground033_1K-JPG_NormalGL.jpg-6fc049b6ab245522208546dfd1f79024.ctex"]
 
 [params]
 
