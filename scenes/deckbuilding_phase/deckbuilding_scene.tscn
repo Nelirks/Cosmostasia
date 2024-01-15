@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://h4s54ikk4al3"]
+[gd_scene load_steps=6 format=3 uid="uid://h4s54ikk4al3"]
 
 [ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
-[ext_resource type="PackedScene" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
+[ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_pls58"]
+[ext_resource type="PackedScene" uid="uid://bk6wi08lvjkh0" path="res://scenes/deckbuilding_phase/character_selector.tscn" id="4_foq0m"]
 
 [sub_resource type="Environment" id="Environment_gmyqr"]
 background_mode = 3
@@ -19,19 +20,19 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 7.75, 0)
 unique_name_in_owner = true
 
 [node name="Card1" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -5.5, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -15, -5.5, 0)
 
 [node name="Card2" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -5.5, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -7.5, -5.5, 0)
 
 [node name="Card3" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -5.5, 0)
 
 [node name="Card4" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -5.5, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.5, -5.5, 0)
 
 [node name="Card5" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5.5, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 15, -5.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
@@ -57,27 +58,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.231373, 0.231373, 0.231373, 1)
 
-[node name="PlayerCharacterSelector" type="VBoxContainer" parent="Background"]
-unique_name_in_owner = true
-layout_mode = 1
-offset_right = 76.0
-offset_bottom = 233.0
-
-[node name="Character1" type="Button" parent="Background/PlayerCharacterSelector"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="Character2" type="Button" parent="Background/PlayerCharacterSelector"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="Character3" type="Button" parent="Background/PlayerCharacterSelector"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-
 [node name="PresetSelector" type="VBoxContainer" parent="Background"]
 unique_name_in_owner = true
 layout_mode = 0
@@ -96,31 +76,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 
 [node name="Preset3" type="Button" parent="Background/PresetSelector"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="OpponentCharacterSelector" type="VBoxContainer" parent="Background"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -250.0
-offset_bottom = 233.0
-grow_horizontal = 0
-
-[node name="Character1" type="Button" parent="Background/OpponentCharacterSelector"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="Character2" type="Button" parent="Background/OpponentCharacterSelector"]
-custom_minimum_size = Vector2(250, 75)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-
-[node name="Character3" type="Button" parent="Background/OpponentCharacterSelector"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -188,10 +143,61 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Jouer"
 
-[connection signal="pressed" from="Background/PlayerCharacterSelector/Character1" to="." method="on_ally_character_selected" binds= [0]]
-[connection signal="pressed" from="Background/PlayerCharacterSelector/Character2" to="." method="on_ally_character_selected" binds= [1]]
-[connection signal="pressed" from="Background/PlayerCharacterSelector/Character3" to="." method="on_ally_character_selected" binds= [2]]
+[node name="CharacterSelectors" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerCharacterSelector" type="VBoxContainer" parent="Background/CharacterSelectors"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -200.0
+offset_right = 300.0
+offset_bottom = 316.0
+theme_override_constants/separation = 8
+
+[node name="CharacterSelector" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+
+[node name="CharacterSelector2" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+
+[node name="CharacterSelector3" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+
+[node name="OpponentCharacterSelector" type="VBoxContainer" parent="Background/CharacterSelectors"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1620.0
+offset_right = 2120.0
+offset_bottom = 316.0
+theme_override_constants/separation = 8
+
+[node name="CharacterSelector" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+flipped = true
+
+[node name="CharacterSelector2" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+flipped = true
+
+[node name="CharacterSelector3" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+flipped = true
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="pressed" from="Background/PresetSelector/Preset1" to="." method="on_preset_selected" binds= [0]]
 [connection signal="pressed" from="Background/PresetSelector/Preset2" to="." method="on_preset_selected" binds= [1]]
 [connection signal="pressed" from="Background/PresetSelector/Preset3" to="." method="on_preset_selected" binds= [2]]
 [connection signal="pressed" from="Background/PlayButton" to="." method="_on_apply"]
+[connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector" to="." method="on_ally_character_selected" binds= [0]]
+[connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector2" to="." method="on_ally_character_selected" binds= [1]]
+[connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector3" to="." method="on_ally_character_selected" binds= [2]]
+[connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector" to="." method="on_opponent_character_hovered" binds= [0]]
+[connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector" to="." method="close_info_popup"]
+[connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector2" to="." method="on_opponent_character_hovered" binds= [1]]
+[connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector2" to="." method="close_info_popup"]
+[connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector3" to="." method="on_opponent_character_hovered" binds= [2]]
+[connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector3" to="." method="close_info_popup"]

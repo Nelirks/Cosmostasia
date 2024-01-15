@@ -3,15 +3,30 @@ extends Node
 var host_presets : Array = []
 var client_presets : Array = []
 
+var info_popup_scene : PackedScene = preload("res://scenes/info_popup/info_popup.tscn")
+var info_popup : InfoPopup :
+	set(value) :
+		if info_popup != null :
+			info_popup.queue_free()
+		info_popup = value
+		if info_popup != null :
+			%Foreground.add_child(info_popup)
+
+var player_character_selectors : Array[CharacterSelector]
+var opponent_character_selectors : Array[CharacterSelector]
+var preset_selectors : Array[Button]
+var character_display : CharacterCard3D
+var card_displays : Array[PlayableCard3D]
+var card_amount_displays : Array[Label]
 
 var selected_character_index : int :
 	set(value) : 
 		selected_character_index = value
-		$CharacterDisplay.character = selected_character
+		character_display.character = selected_character
 		for i in range(3) : 
-			%PresetSelector.get_child(i).text = selected_character.deck_presets[i].preset_name
+			preset_selectors[i].text = selected_character.deck_presets[i].preset_name
 		for i in range(5) : 
-			$CardArea.get_child(i).card = selected_character.card_pool[i]
+			card_displays[i].card = selected_character.card_pool[i]
 		update_card_counts()
 
 var selected_character : Character :
@@ -52,13 +67,29 @@ func _on_apply() -> void:
 		notify_preset_choice.rpc(selected_presets)
 
 func _ready():
+	player_character_selectors.append_array(%PlayerCharacterSelector.get_children())
+	opponent_character_selectors.append_array(%OpponentCharacterSelector.get_children())
+	preset_selectors.append_array(%PresetSelector.get_children())
+	character_display = %CharacterDisplay
+	card_displays.append_array(%CardArea.get_children())
+	card_amount_displays.append_array(%CardCounts.get_children())
+	
 	selected_character_index = 0
 	for i in range(3) :
-		%PlayerCharacterSelector.get_child(i).text = GameManager.player.get_character(i).character_name
-		%OpponentCharacterSelector.get_child(i).text = GameManager.opponent.get_character(i).character_name
+		player_character_selectors[i].set_text(GameManager.player.get_character(i).character_name)
+		opponent_character_selectors[i].set_text(GameManager.opponent.get_character(i).character_name)
 
 func on_ally_character_selected(char_index : int) -> void :
 	selected_character_index = char_index
+
+func on_opponent_character_hovered(char_index : int) -> void :
+	info_popup = info_popup_scene.instantiate()
+	info_popup.set_content([GameManager.opponent.get_character(char_index).character_quote])
+	info_popup.set_target_rect(opponent_character_selectors[char_index].get_global_rect())
+	print(opponent_character_selectors[char_index].get_global_rect())
+
+func close_info_popup() -> void :
+	info_popup = null
 
 func on_preset_selected(preset_index : int) -> void :
 	selected_presets[selected_character_index] = preset_index
@@ -66,4 +97,4 @@ func on_preset_selected(preset_index : int) -> void :
 
 func update_card_counts() -> void :
 	for i in range(5) : 
-		%CardCounts.get_child(i).text = str(selected_character.deck_presets[selected_presets[selected_character_index]].content[i])
+		card_amount_displays[i].text = str(selected_character.deck_presets[selected_presets[selected_character_index]].content[i])

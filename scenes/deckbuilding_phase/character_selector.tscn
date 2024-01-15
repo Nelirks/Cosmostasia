@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk6wi08lvjkh0"]
+
+[ext_resource type="Script" path="res://scripts/deckbuilding_phase/character_selector.gd" id="1_7qpjm"]
+[ext_resource type="Texture2D" uid="uid://nwamacmjhg40" path="res://resources/sprites/ui_elements/character_selector.png" id="2_1t7mt"]
+
+[node name="CharacterSelector" type="Control"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7qpjm")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1t7mt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="CharacterName" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Lord Reece"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
