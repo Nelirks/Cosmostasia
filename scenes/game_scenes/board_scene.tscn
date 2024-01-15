@@ -1,18 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwm4vw566h2mf"]
+[gd_scene load_steps=5 format=3 uid="uid://bwm4vw566h2mf"]
 
-[ext_resource type="PackedScene" uid="uid://b0fj0gdbuhcyh" path="res://scenes/game_scenes/down_cards.tscn" id="1_7ww35"]
 [ext_resource type="PackedScene" uid="uid://220xu4wjuj34" path="res://scenes/game_scenes/top_cards.tscn" id="2_6tv2a"]
 [ext_resource type="PackedScene" uid="uid://cbuvf4wgi84h3" path="res://scenes/game_scenes/mana_bar.tscn" id="3_ih8mv"]
 [ext_resource type="PackedScene" uid="uid://clrsfr0oad5f4" path="res://scenes/game_scenes/deck.tscn" id="4_orgxr"]
 [ext_resource type="PackedScene" uid="uid://bdk4y6k8373jy" path="res://scenes/3d_environment/energy_bar.tscn" id="5_fv1w4"]
 
 [node name="board_scene" type="Node2D"]
-
-[node name="down_cards" parent="." instance=ExtResource("1_7ww35")]
-offset_left = 960.0
-offset_top = 1080.0
-offset_right = 960.0
-offset_bottom = 1080.0
 
 [node name="top_cards" parent="." instance=ExtResource("2_6tv2a")]
 offset_left = 960.0
