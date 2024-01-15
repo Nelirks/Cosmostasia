@@ -35,6 +35,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.5, -5.5, 0)
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 15, -5.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -188,6 +189,18 @@ flipped = true
 [node name="Foreground" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
+[connection signal="mouse_entered" from="CharacterDisplay" to="." method="on_character_card_hovered"]
+[connection signal="mouse_exited" from="CharacterDisplay" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card1" to="." method="on_playable_card_hovered" binds= [0]]
+[connection signal="mouse_exited" from="CardArea/Card1" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card2" to="." method="on_playable_card_hovered" binds= [1]]
+[connection signal="mouse_exited" from="CardArea/Card2" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card3" to="." method="on_playable_card_hovered" binds= [2]]
+[connection signal="mouse_exited" from="CardArea/Card3" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card4" to="." method="on_playable_card_hovered" binds= [3]]
+[connection signal="mouse_exited" from="CardArea/Card4" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card5" to="." method="on_playable_card_hovered" binds= [4]]
+[connection signal="mouse_exited" from="CardArea/Card5" to="." method="close_info_popup"]
 [connection signal="pressed" from="Background/PresetSelector/Preset1" to="." method="on_preset_selected" binds= [0]]
 [connection signal="pressed" from="Background/PresetSelector/Preset2" to="." method="on_preset_selected" binds= [1]]
 [connection signal="pressed" from="Background/PresetSelector/Preset3" to="." method="on_preset_selected" binds= [2]]
