@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{793819DA-BBAB-48C8-976A-A0CC85927DD5}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{793819DA-BBAB-48C8-976A-A0CC85927DD5}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="New_Event" ID="{F2AF59F1-56FF-47CE-AD63-AA07D72E7F6B}">
+					<ChildrenList>
+						<Action Name="" ID="{55FC368B-00F3-4616-B416-DAF0213FDAC7}" ShortID="768036310">
+							<ReferenceList>
+								<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+									<ObjectRef Name="Rush_2" ID="{A11A03E0-8E6F-44C6-B3E5-A90E98BBE9C4}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
