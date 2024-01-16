@@ -1,6 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
-	3050945240	New_Event			\Default Work Unit\New_Event	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	1019903012	Rush_2	D:\Godot\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Rush_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rush_2		375724
+	540993415	Start_Music			\Default Work Unit\Music\Start_Music	
+	659043495	Card_Use			\Default Work Unit\Cards\Card_Use	
+	731380034	End_Turn			\Default Work Unit\Global\End_Turn	
+	814543256	Button_Click			\Default Work Unit\UI\Button_Click	
+	1593864692	Defeat			\Default Work Unit\Global\Defeat	
+	1660258124	Start_Main_Ambiance			\Default Work Unit\Music\Start_Main_Ambiance	
+	1701177942	Button_Hover			\Default Work Unit\UI\Button_Hover	
+	2145643165	Card_Buff			\Default Work Unit\Cards\Card_Buff	
+	2716678721	Victory			\Default Work Unit\Global\Victory	
+	3020609900	Take_Damage			\Default Work Unit\Global\Take_Damage	
+	3760597508	Card_Debuff			\Default Work Unit\Cards\Card_Debuff	
+	3790030967	Start_Turn			\Default Work Unit\Global\Start_Turn	
+	4136169396	Card_Draw			\Default Work Unit\Cards\Card_Draw	
 

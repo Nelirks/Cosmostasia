@@ -3,17 +3,35 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{793819DA-BBAB-48C8-976A-A0CC85927DD5}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="New_Event" ID="{F2AF59F1-56FF-47CE-AD63-AA07D72E7F6B}">
+				<Folder Name="Cards" ID="{44827B9F-BD12-46EA-AEDF-4B2C19C04020}" ShortID="492584585">
 					<ChildrenList>
-						<Action Name="" ID="{55FC368B-00F3-4616-B416-DAF0213FDAC7}" ShortID="768036310">
-							<ReferenceList>
-								<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
-									<ObjectRef Name="Rush_2" ID="{A11A03E0-8E6F-44C6-B3E5-A90E98BBE9C4}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Card_Draw" ID="{20CB179B-C49E-4597-A3E7-5E84B53E9B21}"/>
+						<Event Name="Card_Use" ID="{BB4C738F-A164-4061-94A4-BC52455E4158}"/>
+						<Event Name="Card_Buff" ID="{CE442781-DE48-470A-8435-9AA6F4F1FDBC}"/>
+						<Event Name="Card_Debuff" ID="{B5235C39-D94E-411A-B90C-5BFD3DB7BA91}"/>
 					</ChildrenList>
-				</Event>
+				</Folder>
+				<Folder Name="Global" ID="{6F5B7FF8-4765-4A39-9924-C37FA815B083}" ShortID="812698388">
+					<ChildrenList>
+						<Event Name="End_Turn" ID="{9483B18D-838B-4C98-ACF5-6F333DA3AA31}"/>
+						<Event Name="Start_Turn" ID="{C5635B51-43A3-4C8F-8EF2-F51CDE443E08}"/>
+						<Event Name="Victory" ID="{70545BF4-EC4B-4BBD-8BDE-23B6BC791F92}"/>
+						<Event Name="Defeat" ID="{1973323C-E5EF-4538-BC14-5D6A56252D0D}"/>
+						<Event Name="Take_Damage" ID="{E6B9377B-4DE7-4F96-9611-F3A2CF84984E}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{19105B67-46CC-4114-B2AC-4CEFFEA84011}" ShortID="598857785">
+					<ChildrenList>
+						<Event Name="Button_Hover" ID="{3B73DB2A-A190-4B08-8887-DED22EC21BF4}"/>
+						<Event Name="Button_Click" ID="{B31AA076-4E84-4486-9917-EE4673D55E2E}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{B120F952-019C-4B03-82DE-AEA4E14C037E}" ShortID="704726580">
+					<ChildrenList>
+						<Event Name="Start_Main_Ambiance" ID="{B1AD1EBD-1028-4C2F-861A-BC3E8E9ADF51}"/>
+						<Event Name="Start_Music" ID="{DAC6ED5D-5500-49F6-9816-3AF8095D210D}"/>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Soundbank" ID="{1560C09C-50EF-4188-A8EC-BE69C6CC464F}">
 					<ObjectInclusionList>
-						<ObjectRef Name="New_Event" ID="{F2AF59F1-56FF-47CE-AD63-AA07D72E7F6B}" WorkUnitID="{793819DA-BBAB-48C8-976A-A0CC85927DD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{793819DA-BBAB-48C8-976A-A0CC85927DD5}" WorkUnitID="{793819DA-BBAB-48C8-976A-A0CC85927DD5}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

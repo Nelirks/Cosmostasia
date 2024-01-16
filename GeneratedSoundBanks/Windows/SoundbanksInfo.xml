@@ -150,23 +150,25 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{5E027E2E-391C-1470-EBBA-268E5233130F}">
+		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{2CC05ED6-5DC6-27F7-DCE2-7EB8CFFDA678}">
 			<ShortName>Soundbank</ShortName>
 			<Path>Soundbank.bnk</Path>
-			<Media>
-				<File Id="1019903012" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Rush_2.wav</ShortName>
-					<CachePath>SFX/Rush_2_818F3B66.wem</CachePath>
-				</File>
-			</Media>
 			<Events>
-				<Event Id="3050945240" Name="New_Event">
-					<MediaRefs>
-						<MediaRef Id="1019903012"/>
-					</MediaRefs>
-				</Event>
+				<Event Id="814543256" Name="Button_Click"/>
+				<Event Id="1701177942" Name="Button_Hover"/>
+				<Event Id="2145643165" Name="Card_Buff"/>
+				<Event Id="3760597508" Name="Card_Debuff"/>
+				<Event Id="4136169396" Name="Card_Draw"/>
+				<Event Id="659043495" Name="Card_Use"/>
+				<Event Id="1593864692" Name="Defeat"/>
+				<Event Id="731380034" Name="End_Turn"/>
+				<Event Id="1660258124" Name="Start_Main_Ambiance"/>
+				<Event Id="540993415" Name="Start_Music"/>
+				<Event Id="3790030967" Name="Start_Turn"/>
+				<Event Id="3020609900" Name="Take_Damage"/>
+				<Event Id="2716678721" Name="Victory"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{67BC30EA-EA00-F4B3-90C1-87C58B76D4BD}</FileHash>
+	<FileHash>{94F5C7C4-9A0D-165E-43EA-AC9A443D7032}</FileHash>
 </SoundBanksInfo>
