@@ -9,4 +9,4 @@ description = "Retire tous les buffs et debuffs, chaque joueur défausse ses car
 quote = "\"Le jugement de ce monde nous revient de droit\""
 cost = 3
 targetting = 3
-cardType = 0
+cardType = 2
