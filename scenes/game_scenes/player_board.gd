@@ -1,6 +1,6 @@
-extends Control
+extends Node3D
 
-var cards_display: Array[PlayableCard2D] = []
+var cards_display: Array[PlayableCard3D] = []
 
 func _ready():
 	if GameManager.player != null:
