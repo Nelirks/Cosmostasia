@@ -11,6 +11,7 @@ enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 @export var cost : int
 @export var targetting : Targetting
 @export var cardType : Type
+@export var card_texture : Texture
 
 var character : Character
 
