@@ -84,17 +84,17 @@ func on_ally_character_selected(char_index : int) -> void :
 
 func on_opponent_character_hovered(char_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
-	info_popup.set_content([GameManager.opponent.get_character(char_index).character_quote])
+	info_popup.add_string(GameManager.opponent.get_character(char_index).character_quote)
 	info_popup.set_target_rect(opponent_character_selectors[char_index].get_global_rect())
 
 func on_character_card_hovered() -> void :
 	info_popup = info_popup_scene.instantiate()
-	info_popup.set_content([character_display.character.character_quote])
+	info_popup.add_string(character_display.character.character_quote)
 	info_popup.set_target_rect(character_display.get_rect(%Camera3D))
 
 func on_playable_card_hovered(card_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
-	info_popup.set_content([card_displays[card_index].card.card_name])
+	info_popup.add_string(card_displays[card_index].card.card_name)
 	info_popup.set_target_rect(card_displays[card_index].get_rect(%Camera3D))
 
 func close_info_popup() -> void :

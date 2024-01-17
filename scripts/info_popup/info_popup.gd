@@ -1,16 +1,38 @@
 extends Control
 class_name InfoPopup
 
-var info_box_scene : PackedScene = preload("res://scenes/info_popup/info_box.tscn")
+var infobox_scene : PackedScene = preload("res://scenes/info_popup/info_box.tscn")
 
+var info_content : Array[String]
 
-
-func set_content(messages : Array[String]) -> void :
+func add_string(message : String) -> void :
+	if info_content.find(message) != -1 : return
+	
 	visible = true
-	for message in messages : 
-		var info_box : InfoBox = info_box_scene.instantiate()
-		info_box.set_text(message)
-		add_child(info_box)
+	
+	var info_box : InfoBox = infobox_scene.instantiate()
+	info_box.set_text(message)
+	add_child(info_box)
+	info_content.append(message)
+	develop_infobox(get_child_count() - 1)
+
+func develop_infobox(index : int) -> void :
+	for keyword in extract(info_content[index], "!K!") :
+		add_string(DescriptionContainer.keyword_descriptions.get(keyword.to_lower(), keyword + " keyword not found"))
+	for status in extract(info_content[index], "!S!") : 
+		add_string(DescriptionContainer.status_descriptions.get(status.to_lower(), status + " status not found"))
+	remove_tags(index)
+
+func extract(str : String, separator : String) -> PackedStringArray :
+	var splitted_str : PackedStringArray = str.split(separator)
+	for i in range(splitted_str.size()-1, -1, -2) : 
+		splitted_str.remove_at(i)
+	return splitted_str
+
+func remove_tags(index : int) -> void :
+	info_content[index] = "".join(info_content[index].split("!K!"))
+	info_content[index] = "".join(info_content[index].split("!S!"))
+	get_child(index).set_text(info_content[index])
 
 func set_target_rect(target_rect : Rect2) -> void :
 	var rect : Rect2 = get_global_rect()

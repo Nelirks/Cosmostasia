@@ -8,6 +8,7 @@ var status_descriptions : Dictionary
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init_status_descriptions()
+	init_keyword_descriptions()
 
 func init_status_descriptions() -> void :
 	var status_dir = DirAccess.open(status_dir_path)
@@ -21,3 +22,9 @@ func init_status_descriptions() -> void :
 			file_name = status_dir.get_next()
 	else:
 		printerr("An error occurred when trying to access the path.")
+
+func init_keyword_descriptions() -> void :
+	for key in keyword_descriptions :
+		if key != key.to_lower() :
+			keyword_descriptions[key.to_lower()] = keyword_descriptions[key]
+			keyword_descriptions.erase(key)
