@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 NetworkManager="*res://scenes/network/network_manager.tscn"
 GameManager="*res://scenes/game_management/game_manager.tscn"
+InfoContentGenerator="*res://scenes/info_popup/info_content_generator.tscn"
 
 [display]
 

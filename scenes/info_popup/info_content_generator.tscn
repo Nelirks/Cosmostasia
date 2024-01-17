@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1v70ijwjx3ku"]
+
+[ext_resource type="Script" path="res://scripts/info_popup/info_content_generator.gd" id="1_8tp67"]
+
+[node name="info_content_generator" type="Node"]
+script = ExtResource("1_8tp67")
+status_dir_path = "res://resources/game_data/status_effect_data"
+keyword_descriptions = {
+"Miracle": "S'active si la carte est à gauche dans la main",
+"Préparé": "S'active si la carte est à droite dans la main"
+}

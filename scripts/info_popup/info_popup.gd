@@ -3,6 +3,8 @@ class_name InfoPopup
 
 var info_box_scene : PackedScene = preload("res://scenes/info_popup/info_box.tscn")
 
+
+
 func set_content(messages : Array[String]) -> void :
 	visible = true
 	for message in messages : 
@@ -18,3 +20,13 @@ func set_target_rect(target_rect : Rect2) -> void :
 		global_position.x = target_rect.end.x
 	else : 
 		global_position.x = target_rect.position.x - rect.size.x
+
+func develop() -> void :
+	if get_child_count() == 0 : return
+	var index : int = 0
+	while index < get_child_count() :
+		develop_string(get_child(index).text, index)
+		index += 1
+
+func develop_string(str : String, position : int = 0) -> void :
+	pass
