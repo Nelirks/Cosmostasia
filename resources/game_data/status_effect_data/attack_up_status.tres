@@ -7,3 +7,5 @@ script = ExtResource("1_dge5i")
 damage_multiplier = 1.2
 id = "attack_up"
 type = 0
+display_name = "Attaque Augmentée"
+description = "Augmente les dégâts infligés de 20%"

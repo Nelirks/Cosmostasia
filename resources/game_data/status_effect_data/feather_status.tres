@@ -6,3 +6,5 @@
 script = ExtResource("1_o80ys")
 id = "feather"
 type = 1
+display_name = "Plume"
+description = "Renforce les cartes de Cïol."

@@ -6,3 +6,5 @@
 script = ExtResource("1_wd4ue")
 id = "stealth"
 type = 0
+display_name = "Discrétion"
+description = "Empêche les adversaires d'attaquer ce personnage"

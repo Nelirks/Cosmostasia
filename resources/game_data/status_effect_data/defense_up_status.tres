@@ -7,3 +7,5 @@ script = ExtResource("1_kpeb4")
 damage_received_multiplier = 0.8
 id = "defense_up"
 type = 0
+display_name = "Défense Augmentée"
+description = "Réduit les dégâts subis de 20%"
