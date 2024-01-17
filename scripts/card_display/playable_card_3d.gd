@@ -13,6 +13,7 @@ var card :
 		_back_side = TextureRect.new()
 		_back_side.texture = card_backs[card.cardType]
 		_back_side.scale = Vector2(0.5, 0.5)
+	
 	get :
 		return _front_side.card if _front_side != null else null
 
