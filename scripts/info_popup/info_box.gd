@@ -1,5 +1,8 @@
 extends Node
 class_name InfoBox
 
-func set_text(text : String) -> void :
-	%Label.text = text
+var text : String :
+	set(value) : 
+		%Label.text = value
+	get :
+		return %Label.text
