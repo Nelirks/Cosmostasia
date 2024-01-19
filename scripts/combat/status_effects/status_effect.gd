@@ -5,7 +5,7 @@ enum StatusType { POSITIVE, NEGATIVE, SPECIAL }
 
 @export var id : String
 @export var type : StatusType
-@export var display_name : String
+@export var display_names : Array[String]
 @export var description : String
 var owner : Character
 	

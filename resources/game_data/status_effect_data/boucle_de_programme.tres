@@ -7,3 +7,5 @@ script = ExtResource("1_755ff")
 armor = 5
 id = "boucle_de_programme"
 type = 0
+display_names = Array[String](["Boucle de programme"])
+description = "Jouer des cartes n'altère pas l'émotion de 4N-70N et lui confère 5 armure"

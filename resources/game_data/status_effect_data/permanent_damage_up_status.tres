@@ -6,5 +6,5 @@
 script = ExtResource("1_51p2p")
 id = "permanent_damage_up"
 type = 2
-display_name = "Cible Analysée"
+display_names = Array[String](["Analyse de cible"])
 description = "Augmente définitivement les dégâts infligés."

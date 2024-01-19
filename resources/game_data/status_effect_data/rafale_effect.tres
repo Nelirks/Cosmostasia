@@ -6,3 +6,5 @@
 script = ExtResource("1_lgfy0")
 id = "rafale"
 type = 0
+display_names = Array[String](["Rafale"])
+description = ""

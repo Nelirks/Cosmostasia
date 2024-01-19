@@ -18,7 +18,8 @@ func init_status_descriptions() -> void :
 		while file_name != "":
 			if not status_dir.current_is_dir():
 				var status : StatusEffect = load(status_dir_path + "/" + file_name)
-				status_descriptions[status.display_name.to_lower()] = status.description
+				for display_name in status.display_names :
+					status_descriptions[display_name.to_lower()] = status.description
 			file_name = status_dir.get_next()
 	else:
 		printerr("An error occurred when trying to access the path.")

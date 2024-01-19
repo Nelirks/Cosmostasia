@@ -7,5 +7,5 @@ script = ExtResource("1_dd215")
 damage_multiplier = 0.8
 id = "attack_down"
 type = 1
-display_name = "Attaque Réduite"
+display_names = Array[String](["Affaiblit", "Affaibli"])
 description = "Réduit les dégâts infligés de 20%"

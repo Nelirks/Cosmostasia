@@ -6,5 +6,5 @@
 script = ExtResource("1_wd4ue")
 id = "stealth"
 type = 0
-display_name = "Discrétion"
+display_names = Array[String](["Discrétion", "Discret", "Discrète"])
 description = "Empêche les adversaires d'attaquer ce personnage"

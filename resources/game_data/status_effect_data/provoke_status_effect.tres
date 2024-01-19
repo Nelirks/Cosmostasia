@@ -6,5 +6,5 @@
 script = ExtResource("1_ho5l0")
 id = "provoke"
 type = 0
-display_name = "Provocation"
+display_names = Array[String](["Provoque"])
 description = "Force les adversaires à attaquer ce personnage"

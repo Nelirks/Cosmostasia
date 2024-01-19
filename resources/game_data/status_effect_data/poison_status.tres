@@ -7,5 +7,5 @@ script = ExtResource("1_14hvl")
 damage = 15
 id = "poison"
 type = 1
-display_name = "Poison"
+display_names = Array[String](["Poison", "Empoisonne"])
 description = "Inflige 15 dégâts au début du tour"

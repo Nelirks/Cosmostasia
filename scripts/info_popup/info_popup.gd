@@ -15,7 +15,6 @@ func add_string(message : String) -> void :
 	info_box.text = developped_message
 	add_child(info_box)
 	develop_string(message)
-	print(get_child_count())
 
 func develop_string(message : String) -> void :
 	for keyword in extract(message, "!K!") :
