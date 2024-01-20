@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlatformInfo>
-	<Platform Name="Windows" BasePlatform="Windows" Generator="2023.1.0.8256"/>
+	<Platform Name="Windows" BasePlatform="Windows" Generator="2023.1.0.8367"/>
 	<RootPaths>
 		<ProjectRoot>../../Cosmostasia_WwiseProject</ProjectRoot>
 		<SourceFilesRoot>../../Cosmostasia_WwiseProject/.cache/Windows</SourceFilesRoot>
@@ -28,5 +28,5 @@
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{642FE0C0-48BD-A9E0-54B8-E4CCDBFCF890}</FileHash>
+	<FileHash>{950283E9-B433-ACEE-4EFE-653B241C5C03}</FileHash>
 </PlatformInfo>
