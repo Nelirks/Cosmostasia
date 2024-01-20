@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_bnwqi")
 card_name = "Attaque miroir"
-description = "Inflige des dégâts égaux aux derniers dégâts subis par LR au tour précédent à une cible."
+description = "Inflige des dégâts égaux aux derniers dégâts subis par Lord Reece au tour précédent à une cible."
 quote = ""
 cost = 2
 targetting = 2

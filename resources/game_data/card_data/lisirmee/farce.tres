@@ -6,7 +6,7 @@
 script = ExtResource("1_pdifk")
 energy_regen = 1
 card_name = "Farce"
-description = "Défausse la main \\n Miracle: Energie +1"
+description = "Défausse la main \\n !K!Miracle!K! : Rend 1 d'énergie"
 quote = "Pas une personne de la cour féérique n'a réussi à échapper aux blagues de mauvais goût de Lisirmée"
 cost = 1
 targetting = 3

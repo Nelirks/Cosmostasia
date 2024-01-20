@@ -6,7 +6,7 @@
 script = ExtResource("1_8y8tj")
 poison_duration = 3
 card_name = "Poison"
-description = "Inflige 15 de dégâts à chaque fin de tour pendant 3 tours."
+description = "!S!Empoisonne!S! la cible pendant 3 tours"
 quote = ""
 cost = 3
 targetting = 2

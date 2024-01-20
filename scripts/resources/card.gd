@@ -6,8 +6,8 @@ enum Type {ATTACK, DEFENSE, STRATEGY}
 enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 
 @export var card_name : String
-@export var description : String
-@export var quote : String
+@export_multiline var description : String
+@export_multiline var quote : String
 @export var cost : int
 @export var targetting : Targetting
 @export var cardType : Type

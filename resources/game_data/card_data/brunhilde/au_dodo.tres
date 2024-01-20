@@ -6,7 +6,7 @@
 script = ExtResource("1_pp7um")
 damage = 20
 card_name = "Au dodo"
-description = "Inflige 20 de dégâts vers le cible ayant le moins de points de vie. La cible de la carte ne peut pas jouer de carte au prochain tour"
+description = "Inflige 20 de dégâts à la cible ayant le moins de points de vie et l'!S!étourdit!S!"
 quote = ""
 cost = 2
 targetting = 3

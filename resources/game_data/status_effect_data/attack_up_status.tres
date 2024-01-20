@@ -8,4 +8,5 @@ damage_multiplier = 1.2
 id = "attack_up"
 type = 0
 display_names = Array[String](["Renforce", "Renforcé"])
-description = "Augmente les dégâts infligés de 20%"
+description = "!S!Renforcé!S!
+Augmente les dégâts infligés de 20%"

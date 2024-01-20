@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_kuugp")
 card_name = "Déni du juge"
-description = "Retire tous les buffs et debuffs, chaque joueur défausse ses cartes."
+description = "Retire tous les effets positifs et négatifs de tous les personnages\\nChaque joueur défausse ses cartes."
 quote = "\"Le jugement de ce monde nous revient de droit\""
 cost = 3
 targetting = 3

@@ -8,4 +8,5 @@ damage_multiplier = 0.8
 id = "attack_down"
 type = 1
 display_names = Array[String](["Affaiblit", "Affaibli"])
-description = "Réduit les dégâts infligés de 20%"
+description = "!S!Affaibli!S!
+Réduit les dégâts infligés de 20%"

@@ -8,4 +8,5 @@ damage = 15
 id = "poison"
 type = 1
 display_names = Array[String](["Poison", "Empoisonne"])
-description = "Inflige 15 dégâts au début du tour"
+description = "!S!Poison!S!
+Inflige 15 dégâts au début du tour"

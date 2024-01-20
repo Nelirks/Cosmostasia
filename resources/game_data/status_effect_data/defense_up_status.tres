@@ -8,4 +8,5 @@ damage_received_multiplier = 0.8
 id = "defense_up"
 type = 0
 display_names = Array[String](["Fortifié", "Fortifie"])
-description = "Réduit les dégâts subis de 20%"
+description = "!S!Fortifié!S!
+Réduit les dégâts subis de 20%"

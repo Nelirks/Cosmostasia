@@ -7,5 +7,6 @@ script = ExtResource("1_afs51")
 damage_multiplier = 1.5
 id = "prepared"
 type = 0
-display_names = Array[String](["Préparé", "Prépare", "Préparée"])
-description = "Augmente les dégâts de 50% après un tour"
+display_names = Array[String](["Préparation"])
+description = "!S!Préparation!S!
+Augmente les dégâts de 50% après un tour"
