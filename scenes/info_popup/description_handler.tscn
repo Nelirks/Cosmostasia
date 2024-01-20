@@ -1,13 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://112q00pykeyo"]
 
-[ext_resource type="Script" path="res://scripts/info_popup/description_data.gd" id="1_rhrgp"]
+[ext_resource type="Script" path="res://scripts/info_popup/description_handler.gd" id="1_3t4nu"]
 
 [node name="DescriptionContainer" type="Node"]
-script = ExtResource("1_rhrgp")
+script = ExtResource("1_3t4nu")
 status_dir_path = "res://resources/game_data/status_effect_data"
 keyword_descriptions = {
-"Miracle": "S'active si la carte est à gauche dans la main",
-"Préparé": "S'active si la carte est à droite dans la main"
+"Miracle": "!K!Miracle!K!
+S'active si la carte est à gauche dans la main",
+"Préparé": "!K!Préparé!K!
+S'active si la carte est à droite dans la main"
 }
 status_color = Color(0.929412, 0.666667, 0.0470588, 1)
 keyword_color = Color(0, 0.25098, 1, 1)
