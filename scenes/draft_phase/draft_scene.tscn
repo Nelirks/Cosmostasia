@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://cbx4earrm7weg" path="res://resources/game_data/character_data/lisirmee.tres" id="8_uyypb"]
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
-[ext_resource type="PackedScene" uid="uid://rnkp1iknor16" path="res://scenes/card_display/character_card_3d.tscn" id="11_e4pc0"]
+[ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="11_e4pc0"]
 [ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="11_v7haa"]
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
 
