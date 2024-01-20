@@ -1,47 +1,216 @@
-[gd_scene load_steps=3 format=3 uid="uid://docw4fm5h17v3"]
+[gd_scene load_steps=6 format=3 uid="uid://h4s54ikk4al3"]
 
 [ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
-[ext_resource type="PackedScene" uid="uid://behcgj7gjoojk" path="res://scenes/deckbuilding_phase/character_deck_editor.tscn" id="2_mdepv"]
+[ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
+[ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_pls58"]
+[ext_resource type="PackedScene" uid="uid://bk6wi08lvjkh0" path="res://scenes/deckbuilding_phase/character_selector.tscn" id="4_foq0m"]
 
-[node name="DeckbuildingScene" type="Control"]
+[sub_resource type="Environment" id="Environment_gmyqr"]
+background_mode = 3
+background_color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[node name="DeckbuildingScene" type="Node3D"]
+script = ExtResource("1_dd58v")
+
+[node name="CharacterDisplay" parent="." instance=ExtResource("2_pls58")]
+unique_name_in_owner = true
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 7.75, 0)
+
+[node name="CardArea" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Card1" parent="CardArea" instance=ExtResource("1_npbdc")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -15, -5.5, 0)
+
+[node name="Card2" parent="CardArea" instance=ExtResource("1_npbdc")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -7.5, -5.5, 0)
+
+[node name="Card3" parent="CardArea" instance=ExtResource("1_npbdc")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -5.5, 0)
+
+[node name="Card4" parent="CardArea" instance=ExtResource("1_npbdc")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.5, -5.5, 0)
+
+[node name="Card5" parent="CardArea" instance=ExtResource("1_npbdc")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 15, -5.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gmyqr")
+
+[node name="Background" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dd58v")
+mouse_filter = 1
 
-[node name="CharacterDeckEditors" type="VBoxContainer" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="PresetSelector" type="VBoxContainer" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1100.0
+offset_right = 1350.0
+offset_bottom = 233.0
+
+[node name="Preset1" type="Button" parent="Background/PresetSelector"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Preset2" type="Button" parent="Background/PresetSelector"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Preset3" type="Button" parent="Background/PresetSelector"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="CardCounts" type="HBoxContainer" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 900.0
+offset_right = 1920.0
+offset_bottom = 960.0
 alignment = 1
 
-[node name="Editor0" parent="CharacterDeckEditors" instance=ExtResource("2_mdepv")]
+[node name="CardCount1" type="Label" parent="Background/CardCounts"]
+custom_minimum_size = Vector2(260, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Editor1" parent="CharacterDeckEditors" instance=ExtResource("2_mdepv")]
+[node name="CardCount2" type="Label" parent="Background/CardCounts"]
+custom_minimum_size = Vector2(260, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Editor2" parent="CharacterDeckEditors" instance=ExtResource("2_mdepv")]
+[node name="CardCount3" type="Label" parent="Background/CardCounts"]
+custom_minimum_size = Vector2(260, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ApplyButton" type="Button" parent="."]
-custom_minimum_size = Vector2(256, 128)
+[node name="CardCount4" type="Label" parent="Background/CardCounts"]
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardCount5" type="Label" parent="Background/CardCounts"]
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Background"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -128.0
-grow_horizontal = 0
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+grow_horizontal = 2
 grow_vertical = 0
-text = "Valider"
+theme_override_font_sizes/font_size = 30
+text = "Jouer"
 
-[connection signal="pressed" from="ApplyButton" to="." method="_on_apply"]
+[node name="CharacterSelectors" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerCharacterSelector" type="VBoxContainer" parent="Background/CharacterSelectors"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -200.0
+offset_right = 300.0
+offset_bottom = 316.0
+theme_override_constants/separation = 8
+
+[node name="CharacterSelector" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+
+[node name="CharacterSelector2" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+
+[node name="CharacterSelector3" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+
+[node name="OpponentCharacterSelector" type="VBoxContainer" parent="Background/CharacterSelectors"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1620.0
+offset_right = 2120.0
+offset_bottom = 316.0
+theme_override_constants/separation = 8
+
+[node name="CharacterSelector" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+flipped = true
+
+[node name="CharacterSelector2" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+flipped = true
+
+[node name="CharacterSelector3" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
+layout_mode = 2
+flipped = true
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="mouse_entered" from="CharacterDisplay" to="." method="on_character_card_hovered"]
+[connection signal="mouse_exited" from="CharacterDisplay" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card1" to="." method="on_playable_card_hovered" binds= [0]]
+[connection signal="mouse_exited" from="CardArea/Card1" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card2" to="." method="on_playable_card_hovered" binds= [1]]
+[connection signal="mouse_exited" from="CardArea/Card2" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card3" to="." method="on_playable_card_hovered" binds= [2]]
+[connection signal="mouse_exited" from="CardArea/Card3" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card4" to="." method="on_playable_card_hovered" binds= [3]]
+[connection signal="mouse_exited" from="CardArea/Card4" to="." method="close_info_popup"]
+[connection signal="mouse_entered" from="CardArea/Card5" to="." method="on_playable_card_hovered" binds= [4]]
+[connection signal="mouse_exited" from="CardArea/Card5" to="." method="close_info_popup"]
+[connection signal="pressed" from="Background/PresetSelector/Preset1" to="." method="on_preset_selected" binds= [0]]
+[connection signal="pressed" from="Background/PresetSelector/Preset2" to="." method="on_preset_selected" binds= [1]]
+[connection signal="pressed" from="Background/PresetSelector/Preset3" to="." method="on_preset_selected" binds= [2]]
+[connection signal="pressed" from="Background/PlayButton" to="." method="_on_apply"]
+[connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector" to="." method="on_ally_character_selected" binds= [0]]
+[connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector2" to="." method="on_ally_character_selected" binds= [1]]
+[connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector3" to="." method="on_ally_character_selected" binds= [2]]
+[connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector" to="." method="on_opponent_character_hovered" binds= [0]]
+[connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector" to="." method="close_info_popup"]
+[connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector2" to="." method="on_opponent_character_hovered" binds= [1]]
+[connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector2" to="." method="close_info_popup"]
+[connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector3" to="." method="on_opponent_character_hovered" binds= [2]]
+[connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector3" to="." method="close_info_popup"]

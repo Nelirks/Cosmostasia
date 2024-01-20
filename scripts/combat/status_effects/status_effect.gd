@@ -5,7 +5,8 @@ enum StatusType { POSITIVE, NEGATIVE, SPECIAL }
 
 @export var id : String
 @export var type : StatusType
-@export var description : String
+@export var display_names : Array[String]
+@export_multiline var description : String
 var owner : Character
 	
 func start_turn() -> void :

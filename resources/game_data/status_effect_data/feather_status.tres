@@ -6,3 +6,6 @@
 script = ExtResource("1_o80ys")
 id = "feather"
 type = 1
+display_names = Array[String](["Plume", "Plumes"])
+description = "!S!Plume!S!
+Renforce les cartes de Cïol"

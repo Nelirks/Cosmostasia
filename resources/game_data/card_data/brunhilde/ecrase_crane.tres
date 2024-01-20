@@ -6,7 +6,7 @@
 script = ExtResource("1_nykhp")
 damage = 40
 card_name = "Écrase crâne"
-description = "Inflige 40 de dégâts à une cible."
+description = "Inflige 40 de dégâts à une cible"
 quote = ""
 cost = 3
 targetting = 2

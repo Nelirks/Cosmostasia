@@ -7,7 +7,8 @@ script = ExtResource("1_w03jw")
 base_damage = 15
 bonus_damage = 10
 card_name = "Cruauté"
-description = "Inflige 15 dégâts au personnage adverse ciblé, augmentés de 10 si la cible a moins de la moitié de sa vie."
+description = "Inflige 15 dégâts au personnage adverse ciblé
+En inflige 10 supplémentaires si la cible a moins de la moitié de sa vie."
 quote = ""
 cost = 1
 targetting = 2

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_004cp")
 card_name = "Blocus"
-description = "Applique Étourdi au dernier personnage ayant infligé des dégâts à Lord Reece au tour précédent."
+description = "!S!Étourdit!S! le dernier personnage ayant infligé des dégâts à Lord Reece au tour précédent."
 quote = ""
 cost = 2
 targetting = 3

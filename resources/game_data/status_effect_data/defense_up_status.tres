@@ -7,3 +7,6 @@ script = ExtResource("1_kpeb4")
 damage_received_multiplier = 0.8
 id = "defense_up"
 type = 0
+display_names = Array[String](["Fortifié", "Fortifie"])
+description = "!S!Fortifié!S!
+Réduit les dégâts subis de 20%"

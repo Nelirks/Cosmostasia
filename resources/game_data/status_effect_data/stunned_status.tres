@@ -6,3 +6,6 @@
 script = ExtResource("1_py33u")
 id = "stunned"
 type = 1
+display_names = Array[String](["Étourdit", "Étourdi"])
+description = "!S!Étourdi!S!
+Empêche ce personnage de jouer des cartes"
