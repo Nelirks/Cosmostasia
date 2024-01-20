@@ -7,7 +7,8 @@ script = ExtResource("1_sa38l")
 first_hit_damage = 10
 feather_damage = 10
 card_name = "Océan Déchainé"
-description = "Inflige 10 dégâts à la cible, puis inflige 10 dégâts par !S!plume!S! portée à tous les porteurs de plumes.Supprime les plumes"
+description = "Inflige 10 dégâts à la cible, puis inflige 10 dégâts par !S!plume!S! portée à tous les porteurs de plumes.
+Supprime les plumes"
 quote = ""
 cost = 3
 targetting = 2

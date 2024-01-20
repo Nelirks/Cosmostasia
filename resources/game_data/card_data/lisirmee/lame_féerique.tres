@@ -11,7 +11,9 @@ miracle_damage = 20
 base_damage = 35
 prepared_damage = 50
 card_name = "Lame féerique"
-description = "Inflige 35 dégâts à la cible \\n !K!Miracle!K! : Réduit les dégâts de 15 et le coût de 1. \\n !K!Préparé!K! : Augmente les dégâts de 15 et le coût de 1."
+description = "Inflige 35 dégâts à la cible
+!K!Miracle!K! : Réduit les dégâts de 15 et le coût de 1
+!K!Préparé!K! : Augmente les dégâts de 15 et le coût de 1"
 quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
 cost = 2
 targetting = 2

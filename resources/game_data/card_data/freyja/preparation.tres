@@ -6,7 +6,7 @@
 script = ExtResource("1_un5n3")
 armor = 20
 card_name = "Préparation"
-description = "Octroie 20 d'armure et !Préparée! à Freyja"
+description = "Octroie 20 d'armure et !Préparation! à Freyja"
 quote = ""
 cost = 2
 targetting = 3

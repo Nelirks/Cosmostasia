@@ -7,7 +7,8 @@ script = ExtResource("1_xvwh3")
 base_armor = 20
 bonus_armor = 10
 card_name = "Hymne de bataille"
-description = "Octroie 20 d'armure à votre équipe, augmentée de 10 par alliés mort)"
+description = "Octroie 20 d'armure à votre équipe
+Pour chaque allié mort, en octroie 10 supplémentaire"
 quote = "Une prestance et une détermination sans faille, tels sont les atouts qui mèneront Dyssebia à la victoire"
 cost = 2
 targetting = 3

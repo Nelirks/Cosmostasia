@@ -8,7 +8,9 @@ damage = 20
 energy_gain = 3
 armor = 25
 card_name = "Mécanique Passionelle"
-description = "Colère: Inflige 20 dégâts à tous les adversaires \\n Joie: Restaure 3 point d'énergie \\n Tristesse: Octroie 25 d'armure à 4N-70N"
+description = "Colère: Inflige 20 dégâts à tous les adversaires
+Joie: Restaure 3 point d'énergie
+Tristesse: Octroie 25 d'armure à 4N-70N"
 quote = "Acharné à sa tache, 4N-70N fera tout ce qui est en son pouvoir pour ramener ceux qui lui était cher"
 cost = 2
 targetting = 3

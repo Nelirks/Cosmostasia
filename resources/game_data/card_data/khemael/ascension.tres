@@ -8,7 +8,8 @@ damage = 80
 armor = 80
 stacks_threshold = 6
 card_name = "Ascension"
-description = "Dépense 6 !S!Préjudice!S! pour infliger 80 dégâts à la cible.Dépense 6 !S!Faveur!S! pour soigner 80 points de vie de la cible."
+description = "Dépense 6 !S!Préjudice!S! pour infliger 80 dégâts à la cible.
+Dépense 6 !S!Faveur!S! pour soigner 80 points de vie de la cible."
 quote = ""
 cost = 3
 targetting = 0

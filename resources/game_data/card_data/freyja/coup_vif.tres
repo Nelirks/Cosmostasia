@@ -6,7 +6,7 @@
 script = ExtResource("1_bjpks")
 damage = 20
 card_name = "Coup Vif"
-description = "Inflige 20 dégâts à la cible."
+description = "Inflige 20 dégâts à la cible"
 quote = ""
 cost = 1
 targetting = 2

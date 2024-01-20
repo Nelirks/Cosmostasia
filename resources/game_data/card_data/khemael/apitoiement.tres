@@ -7,7 +7,8 @@ script = ExtResource("1_k4bpc")
 base_armor = 15
 bonus_armor = 10
 card_name = "Apitoiement"
-description = "Octroie 15 d'armure au personnage allié ciblé, augmentée de 10 si la cible a moins de la moitié de sa vie."
+description = "Octroie 15 d'armure au personnage allié ciblé
+En octroie 10 supplémentaire si la cible a moins de la moitié de sa vie."
 quote = ""
 cost = 1
 targetting = 1
