@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://bnbwwa2tu5cah"]
 
+[ext_resource type="Resource" uid="uid://4cbsj7uh5qlm" path="res://resources/game_data/card_data/lord_reece/abandonne_felon.tres" id="1_5yqgu"]
 [ext_resource type="Resource" uid="uid://bxtqbv65hysla" path="res://resources/game_data/passive_data/lord_reece_passive.tres" id="1_6m68w"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_7g4v4"]
-[ext_resource type="Resource" uid="uid://4cbsj7uh5qlm" path="res://resources/game_data/card_data/lord_reece/abandonne_felon.tres" id="1_xwd01"]
-[ext_resource type="Resource" uid="uid://dqu37x8db75pv" path="res://resources/game_data/card_data/lord_reece/attaque_miroir.tres" id="2_sqh2k"]
-[ext_resource type="Resource" uid="uid://bjv6oeridu6rt" path="res://resources/game_data/card_data/lord_reece/blocus.tres" id="3_1i5ak"]
-[ext_resource type="Resource" uid="uid://dj5fq0etkr7w4" path="res://resources/game_data/card_data/lord_reece/poison.tres" id="4_tgixk"]
-[ext_resource type="Resource" uid="uid://bsfu0s3dnv3x3" path="res://resources/game_data/card_data/lord_reece/sacrifice.tres" id="5_gxqa2"]
+[ext_resource type="Resource" uid="uid://dqu37x8db75pv" path="res://resources/game_data/card_data/lord_reece/attaque_miroir.tres" id="2_7fj0j"]
+[ext_resource type="Resource" uid="uid://bjv6oeridu6rt" path="res://resources/game_data/card_data/lord_reece/blocus.tres" id="3_narkt"]
+[ext_resource type="Resource" uid="uid://dj5fq0etkr7w4" path="res://resources/game_data/card_data/lord_reece/poison.tres" id="4_g7nkg"]
+[ext_resource type="Resource" uid="uid://bsfu0s3dnv3x3" path="res://resources/game_data/card_data/lord_reece/sacrifice.tres" id="5_akbfs"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_27y8s"]
 [ext_resource type="Texture2D" uid="uid://b2a5uorhsjuxl" path="res://resources/sprites/character_sprites/Lord Reece.png" id="6_v1qef"]
 
@@ -31,6 +31,6 @@ character_name = "Lord Reece"
 character_quote = "Un ancien général possédant des prothèses steam. Lord Reece peut renvoyer les dégâts et saboter le jeu de l'adversaire."
 character_texture = ExtResource("6_v1qef")
 max_health = 100
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_xwd01"), ExtResource("2_sqh2k"), ExtResource("3_1i5ak"), ExtResource("4_tgixk"), ExtResource("5_gxqa2")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_5yqgu"), ExtResource("2_7fj0j"), ExtResource("3_narkt"), ExtResource("4_g7nkg"), ExtResource("5_akbfs")])
 passive = ExtResource("1_6m68w")
 deck_presets = Array[ExtResource("6_27y8s")]([SubResource("Resource_l8hfa"), SubResource("Resource_njkyh"), SubResource("Resource_v2p7p")])

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://b5d4civj0vkuu"]
 
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_eak7t"]
-[ext_resource type="Resource" uid="uid://d3kfo5iva4hku" path="res://resources/game_data/card_data/4N-70N/saute_d_humeur.tres" id="1_xcm6r"]
-[ext_resource type="Resource" uid="uid://camve644h21rq" path="res://resources/game_data/card_data/4N-70N/analyse_de_cible.tres" id="2_rvobt"]
-[ext_resource type="Resource" uid="uid://csp4b0skrhi5x" path="res://resources/game_data/card_data/4N-70N/boucle_de_programme.tres" id="3_tvcuw"]
-[ext_resource type="Resource" uid="uid://dy6mmlkugr216" path="res://resources/game_data/card_data/4N-70N/mécanique_passionelle.tres" id="4_ijyn1"]
-[ext_resource type="Resource" uid="uid://dj6ghs6cfd1ms" path="res://resources/game_data/card_data/4N-70N/obus_de_lumenyte.tres" id="5_72j0b"]
+[ext_resource type="Resource" uid="uid://camve644h21rq" path="res://resources/game_data/card_data/4N-70N/analyse_de_cible.tres" id="1_mwodj"]
+[ext_resource type="Resource" uid="uid://csp4b0skrhi5x" path="res://resources/game_data/card_data/4N-70N/boucle_de_programme.tres" id="2_b0784"]
+[ext_resource type="Resource" uid="uid://dy6mmlkugr216" path="res://resources/game_data/card_data/4N-70N/mécanique_passionelle.tres" id="3_d6doj"]
+[ext_resource type="Resource" uid="uid://dj6ghs6cfd1ms" path="res://resources/game_data/card_data/4N-70N/obus_de_lumenyte.tres" id="4_0y51f"]
+[ext_resource type="Resource" uid="uid://d3kfo5iva4hku" path="res://resources/game_data/card_data/4N-70N/saute_d_humeur.tres" id="5_ms3ck"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_71a43"]
 [ext_resource type="Resource" uid="uid://cag60rwhhges" path="res://resources/game_data/passive_data/4n_70n_passive.tres" id="6_t8l1e"]
 [ext_resource type="Texture2D" uid="uid://crgh1hyrq4mp3" path="res://resources/sprites/character_sprites/4N.png" id="6_vb5te"]
@@ -31,6 +31,6 @@ character_name = "4N-70N"
 character_quote = "Une IA ayant découvert la sentience. 4N-70N change de mode émotionnel pour s'apporter divers bonus."
 character_texture = ExtResource("6_vb5te")
 max_health = 90
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("2_rvobt"), ExtResource("3_tvcuw"), ExtResource("4_ijyn1"), ExtResource("5_72j0b"), ExtResource("1_xcm6r")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_mwodj"), ExtResource("2_b0784"), ExtResource("3_d6doj"), ExtResource("4_0y51f"), ExtResource("5_ms3ck")])
 passive = ExtResource("6_t8l1e")
 deck_presets = Array[ExtResource("6_71a43")]([SubResource("Resource_75j5c"), SubResource("Resource_e70a0"), SubResource("Resource_1njp3")])

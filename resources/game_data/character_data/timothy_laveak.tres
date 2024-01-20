@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://c0di50xd7b14v"]
 
-[ext_resource type="Resource" uid="uid://cwigg8mkbu55t" path="res://resources/game_data/card_data/timothy_laveak/frappe_énergisée.tres" id="1_r0pxp"]
-[ext_resource type="Resource" uid="uid://bmuywjsg4n8gh" path="res://resources/game_data/card_data/timothy_laveak/grenade_à_fragmentation.tres" id="2_45gn5"]
-[ext_resource type="Resource" uid="uid://dpjwhb64psb23" path="res://resources/game_data/card_data/timothy_laveak/idée_du_futur.tres" id="3_ytdt5"]
-[ext_resource type="Resource" uid="uid://bd4oj36iy5os5" path="res://resources/game_data/card_data/timothy_laveak/surcharge.tres" id="4_b2cxx"]
-[ext_resource type="Resource" uid="uid://cxluabh43ucx1" path="res://resources/game_data/card_data/timothy_laveak/tir_en_rafale.tres" id="5_nnd6c"]
+[ext_resource type="Resource" uid="uid://cwigg8mkbu55t" path="res://resources/game_data/card_data/timothy_laveak/frappe_énergisée.tres" id="1_d1kil"]
+[ext_resource type="Resource" uid="uid://bmuywjsg4n8gh" path="res://resources/game_data/card_data/timothy_laveak/grenade_à_fragmentation.tres" id="2_cvqhl"]
+[ext_resource type="Resource" uid="uid://dpjwhb64psb23" path="res://resources/game_data/card_data/timothy_laveak/idée_du_futur.tres" id="3_wbihc"]
+[ext_resource type="Resource" uid="uid://bd4oj36iy5os5" path="res://resources/game_data/card_data/timothy_laveak/surcharge.tres" id="4_uqvgx"]
+[ext_resource type="Resource" uid="uid://cxluabh43ucx1" path="res://resources/game_data/card_data/timothy_laveak/tir_en_rafale.tres" id="5_idwft"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_0xnxu"]
 [ext_resource type="Resource" uid="uid://c5bow1onpjmlg" path="res://resources/game_data/passive_data/timothy_passive.tres" id="6_34xse"]
 [ext_resource type="Texture2D" uid="uid://sk65ctu0g3hm" path="res://resources/sprites/character_sprites/Timothy.png" id="6_slina"]
@@ -31,6 +31,6 @@ character_name = "Timothy Laveak"
 character_quote = "Un mercenaire spatial. Timothy augmente sa recharge d'énergie grâce à la luménite et effectue de puissantes attaques."
 character_texture = ExtResource("6_slina")
 max_health = 100
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_r0pxp"), ExtResource("2_45gn5"), ExtResource("3_ytdt5"), ExtResource("4_b2cxx"), ExtResource("5_nnd6c")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_d1kil"), ExtResource("2_cvqhl"), ExtResource("3_wbihc"), ExtResource("4_uqvgx"), ExtResource("5_idwft")])
 passive = ExtResource("6_34xse")
 deck_presets = Array[ExtResource("6_0xnxu")]([SubResource("Resource_w0hk1"), SubResource("Resource_5eogu"), SubResource("Resource_klr12")])

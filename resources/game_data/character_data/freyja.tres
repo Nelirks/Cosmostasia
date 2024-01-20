@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://fcgmvnqymn0c"]
 
-[ext_resource type="Resource" uid="uid://b2cicfgrlo03w" path="res://resources/game_data/card_data/freyja/agente_de_l_ombre.tres" id="1_87o5n"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_d8eua"]
-[ext_resource type="Resource" uid="uid://cbcvyeaabw7q1" path="res://resources/game_data/card_data/freyja/coup_vif.tres" id="2_l7kcq"]
-[ext_resource type="Resource" uid="uid://b4gaihb8y6qty" path="res://resources/game_data/card_data/freyja/fauchard.tres" id="3_3t61u"]
-[ext_resource type="Resource" uid="uid://x3gputyean5g" path="res://resources/game_data/card_data/freyja/preparation.tres" id="4_5x8eh"]
-[ext_resource type="Resource" uid="uid://cc513kgid5np2" path="res://resources/game_data/card_data/freyja/ralliement.tres" id="5_850g2"]
+[ext_resource type="Resource" uid="uid://b2cicfgrlo03w" path="res://resources/game_data/card_data/freyja/agente_de_l_ombre.tres" id="1_jpkgf"]
+[ext_resource type="Resource" uid="uid://cbcvyeaabw7q1" path="res://resources/game_data/card_data/freyja/coup_vif.tres" id="2_cocuf"]
+[ext_resource type="Resource" uid="uid://b4gaihb8y6qty" path="res://resources/game_data/card_data/freyja/fauchard.tres" id="3_rrtnj"]
+[ext_resource type="Resource" uid="uid://x3gputyean5g" path="res://resources/game_data/card_data/freyja/preparation.tres" id="4_u6yif"]
+[ext_resource type="Resource" uid="uid://cc513kgid5np2" path="res://resources/game_data/card_data/freyja/ralliement.tres" id="5_bsmh3"]
 [ext_resource type="Resource" uid="uid://c68y1eupku27a" path="res://resources/game_data/passive_data/freyja_passive.tres" id="6_0lmra"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_70no3"]
 [ext_resource type="Texture2D" uid="uid://b7mptmps6l3n7" path="res://resources/sprites/character_sprites/Freyja.png" id="6_678yb"]
@@ -31,6 +31,6 @@ character_name = "Freyja"
 character_quote = "Unique survivante de son clan. Freyja permet des attaques rapide afin de prendre le dessus dès le début du jeu."
 character_texture = ExtResource("6_678yb")
 max_health = 100
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_87o5n"), ExtResource("2_l7kcq"), ExtResource("3_3t61u"), ExtResource("4_5x8eh"), ExtResource("5_850g2")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_jpkgf"), ExtResource("2_cocuf"), ExtResource("3_rrtnj"), ExtResource("4_u6yif"), ExtResource("5_bsmh3")])
 passive = ExtResource("6_0lmra")
 deck_presets = Array[ExtResource("6_70no3")]([SubResource("Resource_gc6io"), SubResource("Resource_aqh55"), SubResource("Resource_a4crw")])

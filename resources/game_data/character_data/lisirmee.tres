@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Character" load_steps=12 format=3 uid="uid://cbx4earrm7weg"]
 
+[ext_resource type="Resource" uid="uid://ct3glu6jegukd" path="res://resources/game_data/card_data/lisirmee/brume.tres" id="1_00fgf"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_2ajlp"]
-[ext_resource type="Resource" uid="uid://ct3glu6jegukd" path="res://resources/game_data/card_data/lisirmee/brume.tres" id="1_4x8oc"]
-[ext_resource type="Resource" uid="uid://bvqoe72f3nhwq" path="res://resources/game_data/card_data/lisirmee/distraction.tres" id="2_r0e3h"]
-[ext_resource type="Resource" uid="uid://bypbb3w21qms7" path="res://resources/game_data/card_data/lisirmee/farce.tres" id="3_evteh"]
-[ext_resource type="Resource" uid="uid://diwbqyke6w7" path="res://resources/game_data/card_data/lisirmee/lame_féerique.tres" id="4_aoqqa"]
-[ext_resource type="Resource" uid="uid://d1uboma06p1qy" path="res://resources/game_data/card_data/lisirmee/vol_imprévisible.tres" id="5_uvos1"]
+[ext_resource type="Resource" uid="uid://bvqoe72f3nhwq" path="res://resources/game_data/card_data/lisirmee/distraction.tres" id="2_py4dw"]
+[ext_resource type="Resource" uid="uid://bypbb3w21qms7" path="res://resources/game_data/card_data/lisirmee/farce.tres" id="3_qjwpv"]
+[ext_resource type="Resource" uid="uid://diwbqyke6w7" path="res://resources/game_data/card_data/lisirmee/lame_féerique.tres" id="4_hjw2i"]
+[ext_resource type="Resource" uid="uid://d1uboma06p1qy" path="res://resources/game_data/card_data/lisirmee/vol_imprévisible.tres" id="5_x7p4l"]
 [ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="6_57mh1"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_k4vo1"]
 
@@ -30,5 +30,5 @@ character_name = "Lisirmee"
 character_quote = "Une fae belliqueuse. Lisirmee joue avec la position de sa main afin d'améliorer ses cartes et d'handicaper le jeu de l'adversaire."
 character_texture = ExtResource("6_57mh1")
 max_health = 100
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_4x8oc"), ExtResource("2_r0e3h"), ExtResource("3_evteh"), ExtResource("4_aoqqa"), ExtResource("5_uvos1")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_00fgf"), ExtResource("2_py4dw"), ExtResource("3_qjwpv"), ExtResource("4_hjw2i"), ExtResource("5_x7p4l")])
 deck_presets = Array[ExtResource("6_k4vo1")]([SubResource("Resource_w3gip"), SubResource("Resource_kcrqo"), SubResource("Resource_fb3e6")])

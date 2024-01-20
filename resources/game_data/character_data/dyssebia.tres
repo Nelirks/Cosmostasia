@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://bjcqffc6g6s0p"]
 
-[ext_resource type="Resource" uid="uid://cx35q3ngbfxgn" path="res://resources/game_data/card_data/dyssebia/déni_du_juge.tres" id="1_o4qjn"]
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_s7pgy"]
-[ext_resource type="Resource" uid="uid://ykpq31bqbex7" path="res://resources/game_data/card_data/dyssebia/hymne_de_bataille.tres" id="2_auphl"]
-[ext_resource type="Resource" uid="uid://bioohk78calll" path="res://resources/game_data/card_data/dyssebia/manifestation.tres" id="3_ydeaw"]
-[ext_resource type="Resource" uid="uid://b007r5udiy7ku" path="res://resources/game_data/card_data/dyssebia/manipulation_archonique.tres" id="4_kelwr"]
-[ext_resource type="Resource" uid="uid://d3bpcpchkkdox" path="res://resources/game_data/card_data/dyssebia/rééquilibrage.tres" id="5_lputi"]
+[ext_resource type="Resource" uid="uid://cx35q3ngbfxgn" path="res://resources/game_data/card_data/dyssebia/déni_du_juge.tres" id="1_u7u4g"]
+[ext_resource type="Resource" uid="uid://ykpq31bqbex7" path="res://resources/game_data/card_data/dyssebia/hymne_de_bataille.tres" id="2_hutsc"]
+[ext_resource type="Resource" uid="uid://bioohk78calll" path="res://resources/game_data/card_data/dyssebia/manifestation.tres" id="3_fvqaj"]
+[ext_resource type="Resource" uid="uid://b007r5udiy7ku" path="res://resources/game_data/card_data/dyssebia/manipulation_archonique.tres" id="4_u54mj"]
+[ext_resource type="Resource" uid="uid://d3bpcpchkkdox" path="res://resources/game_data/card_data/dyssebia/rééquilibrage.tres" id="5_plye7"]
 [ext_resource type="Resource" uid="uid://bomousjw20yi" path="res://resources/game_data/passive_data/dyssebia_passive.tres" id="6_3m1u1"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_8hqve"]
 [ext_resource type="Texture2D" uid="uid://bxmbju3y5ti3x" path="res://resources/sprites/character_sprites/Dissebya.png" id="6_whgyw"]
@@ -31,6 +31,6 @@ character_name = "Dyssebia"
 character_quote = "Dyssebia est un chef rebelle de Ceteras. Iel manipule la puissance de l'arène pour protéger ses alliés."
 character_texture = ExtResource("6_whgyw")
 max_health = 110
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_o4qjn"), ExtResource("2_auphl"), ExtResource("3_ydeaw"), ExtResource("4_kelwr"), ExtResource("5_lputi")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_u7u4g"), ExtResource("2_hutsc"), ExtResource("3_fvqaj"), ExtResource("4_u54mj"), ExtResource("5_plye7")])
 passive = ExtResource("6_3m1u1")
 deck_presets = Array[ExtResource("6_8hqve")]([SubResource("Resource_w5cja"), SubResource("Resource_2jtyn"), SubResource("Resource_4ca23")])
