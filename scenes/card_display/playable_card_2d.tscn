@@ -108,6 +108,7 @@ offset_right = 901.0
 offset_bottom = 385.0
 scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_gxr78")
+bbcode_enabled = true
 text = "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
 
 [node name="CardFlavorText" type="RichTextLabel" parent="Card_Background"]

@@ -28,5 +28,5 @@ func update_card_infos():
 	(%Card_Title as Label).text = card.card_name
 	(%Card_Cost as Label).text = str(card.cost)
 	(%Card_Character as Label).text = str(card.character)
-	(%CardDescription as RichTextLabel).text = card.description
+	(%CardDescription as RichTextLabel).text = DescriptionHandler.develop_tags(card.description)
 	(%CardFlavorText as RichTextLabel).text = card.quote
