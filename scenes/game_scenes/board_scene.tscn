@@ -1,17 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwm4vw566h2mf"]
 
-[ext_resource type="PackedScene" uid="uid://b0fj0gdbuhcyh" path="res://scenes/game_scenes/down_cards.tscn" id="1_7ww35"]
 [ext_resource type="PackedScene" uid="uid://220xu4wjuj34" path="res://scenes/game_scenes/top_cards.tscn" id="2_6tv2a"]
 [ext_resource type="PackedScene" uid="uid://cbuvf4wgi84h3" path="res://scenes/game_scenes/mana_bar.tscn" id="3_ih8mv"]
 [ext_resource type="PackedScene" uid="uid://clrsfr0oad5f4" path="res://scenes/game_scenes/deck.tscn" id="4_orgxr"]
+[ext_resource type="PackedScene" uid="uid://bdk4y6k8373jy" path="res://scenes/3d_environment/energy_bar.tscn" id="5_fv1w4"]
 
 [node name="board_scene" type="Node2D"]
-
-[node name="down_cards" parent="." instance=ExtResource("1_7ww35")]
-offset_left = 960.0
-offset_top = 1080.0
-offset_right = 960.0
-offset_bottom = 1080.0
 
 [node name="top_cards" parent="." instance=ExtResource("2_6tv2a")]
 offset_left = 960.0
@@ -92,3 +86,43 @@ text = "Tour Suivant
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlayerBar" type="SubViewportContainer" parent="."]
+offset_left = 1284.0
+offset_top = 770.0
+offset_right = 1954.0
+offset_bottom = 1282.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="SubViewport" type="SubViewport" parent="PlayerBar"]
+transparent_bg = true
+handle_input_locally = false
+debug_draw = 1
+size = Vector2i(670, 512)
+render_target_update_mode = 4
+
+[node name="EnergyBar" parent="PlayerBar/SubViewport" instance=ExtResource("5_fv1w4")]
+
+[node name="Camera3D" type="Camera3D" parent="PlayerBar/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
+
+[node name="EnemyBar" type="SubViewportContainer" parent="."]
+offset_left = -40.0
+offset_top = -197.0
+offset_right = 630.0
+offset_bottom = 315.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="EnemyBar"]
+transparent_bg = true
+handle_input_locally = false
+debug_draw = 1
+size = Vector2i(670, 512)
+render_target_update_mode = 4
+
+[node name="EnergyBar" parent="EnemyBar/SubViewport" instance=ExtResource("5_fv1w4")]
+
+[node name="Camera3D" type="Camera3D" parent="EnemyBar/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)

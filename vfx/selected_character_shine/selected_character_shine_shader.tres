@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=17 format=3 uid="uid://c23wmvy6qaf4s"]
 
-[ext_resource type="Texture2D" uid="uid://di6mfnipvrkk5" path="res://vfx/selected_character_shine/shine_shape.png" id="1_xtt2l"]
+[ext_resource type="Texture2D" uid="uid://ds7jh15tnlpxm" path="res://vfx/selected_character_shine/shine_shape.png" id="1_xtt2l"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_q66nb"]
 default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]

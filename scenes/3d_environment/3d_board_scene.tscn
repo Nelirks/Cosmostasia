@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr8a6crxdqvbe"]
+
+[ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_ln1s5"]
+[ext_resource type="PackedScene" uid="uid://bwm4vw566h2mf" path="res://scenes/game_scenes/board_scene.tscn" id="1_ygq62"]
+[ext_resource type="PackedScene" uid="uid://bdk4y6k8373jy" path="res://scenes/3d_environment/energy_bar.tscn" id="3_sdmy6"]
+
+[sub_resource type="Environment" id="Environment_b6jo1"]
+glow_levels/6 = 0.13
+glow_levels/7 = 0.25
+glow_intensity = 0.1
+glow_blend_mode = 0
+glow_hdr_threshold = 0.5
+glow_hdr_scale = 1.5
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_kvrus"]
+
+[node name="3dBoardScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+fov = 40.0
+
+[node name="board_scene" parent="Camera3D" instance=ExtResource("1_ygq62")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999994, 1.54107e-10, -0.00352556, 0.00352556, -4.37111e-08, 0.999994, 0, -1, -4.37114e-08, 0, 31.024, 0)
+light_energy = 0.75
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b6jo1")
+camera_attributes = SubResource("CameraAttributesPractical_kvrus")
+
+[node name="Cosmostasia_Arena1" parent="." instance=ExtResource("1_ln1s5")]
+
+[node name="PlayerBar" parent="." instance=ExtResource("3_sdmy6")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.2, 10, 3)
+visible = false
+is_player = true
+
+[node name="EnemyBar" parent="." instance=ExtResource("3_sdmy6")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.2, 10, 3)
+visible = false
