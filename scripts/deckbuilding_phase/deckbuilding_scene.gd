@@ -94,7 +94,7 @@ func on_character_card_hovered() -> void :
 
 func on_playable_card_hovered(card_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
-	info_popup.add_string(card_displays[card_index].card.card_name)
+	info_popup.develop_string(card_displays[card_index].card.description)
 	info_popup.set_target_rect(card_displays[card_index].get_rect(%Camera3D))
 
 func close_info_popup() -> void :

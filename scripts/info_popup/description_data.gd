@@ -5,6 +5,9 @@ extends Node
 var status_descriptions : Dictionary
 @export var keyword_descriptions : Dictionary
 
+@export_color_no_alpha var status_color : Color
+@export_color_no_alpha var keyword_color : Color
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init_status_descriptions()
