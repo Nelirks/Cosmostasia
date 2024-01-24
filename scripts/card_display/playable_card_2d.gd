@@ -5,28 +5,25 @@ var card: Card:
 	set(value):
 		card = value
 		if card != null : 
-			on_position_set()
 			update_card_infos()
-var miracle_position: Vector2
-var middle_position: Vector2
-var prepared_position: Vector2
-
-func on_position_set():
-	match card.Position:
-		Card.Position.DRAW_PILE: 
-			visible = false
-		Card.Position.PREPARED_SLOT:
-			position = prepared_position
-		Card.Position.MIDDLE_SLOT:
-			position = middle_position
-		Card.Position.MIRACLE_SLOT:
-			position = miracle_position
-		Card.Position.DISCARD_PILE:
-			visible = false
 
 func update_card_infos():
 	(%Card_Title as Label).text = card.card_name
 	(%Card_Cost as Label).text = str(card.cost)
-	(%Card_Character as Label).text = str(card.character)
+	(%Card_Character as Label).text = card.character.character_name
 	(%CardDescription as RichTextLabel).text = DescriptionHandler.develop_tags(card.description)
 	(%CardFlavorText as RichTextLabel).text = card.quote
+	
+	match card.cardType:
+		card.Type.ATTACK:
+			%Attack_Border.visible = true
+			%Defense_Border.visible = false
+			%Strategy_Border.visible = false
+		card.Type.DEFENSE:
+			%Attack_Border.visible = false
+			%Defense_Border.visible = true
+			%Strategy_Border.visible = false
+		card.Type.STRATEGY:
+			%Attack_Border.visible = false
+			%Defense_Border.visible = false
+			%Strategy_Border.visible = true
