@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0fj0gdbuhcyh"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/player_board.gd" id="1_1c4m8"]
-[ext_resource type="PackedScene" uid="uid://rnkp1iknor16" path="res://scenes/card_display/character_card_3d.tscn" id="3_io1aj"]
+[ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="3_io1aj"]
 [ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="3_khq4n"]
 
 [node name="Player_Board" type="Node3D"]
