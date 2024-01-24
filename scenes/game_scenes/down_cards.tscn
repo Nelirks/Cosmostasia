@@ -1,56 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0fj0gdbuhcyh"]
+[gd_scene load_steps=3 format=3 uid="uid://b0fj0gdbuhcyh"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/player_board.gd" id="1_1c4m8"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="3_io1aj"]
-[ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="3_khq4n"]
 
 [node name="Player_Board" type="Node3D"]
 script = ExtResource("1_1c4m8")
 
-[node name="First Character" parent="." instance=ExtResource("3_io1aj")]
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="PlayerCharacters" type="Node3D" parent="Characters"]
+
+[node name="PlayerCharacter1" parent="Characters/PlayerCharacters" instance=ExtResource("3_io1aj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, -5, 0)
 
-[node name="Middle Character" parent="." instance=ExtResource("3_io1aj")]
+[node name="PlayerCharacter2" parent="Characters/PlayerCharacters" instance=ExtResource("3_io1aj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="Last Character" parent="." instance=ExtResource("3_io1aj")]
+[node name="PlayerCharacter3" parent="Characters/PlayerCharacters" instance=ExtResource("3_io1aj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -5, 0)
 
-[node name="Miracle Card" parent="." instance=ExtResource("3_khq4n")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, -15, 0)
+[node name="OpponentCharacters" type="Node3D" parent="Characters"]
 
-[node name="Middle Card" parent="." instance=ExtResource("3_khq4n")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
-
-[node name="Prepared Card" parent="." instance=ExtResource("3_khq4n")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -15, 0)
-
-[node name="Opponent First Character" parent="." instance=ExtResource("3_io1aj")]
+[node name="OpponentCharacter1" parent="Characters/OpponentCharacters" instance=ExtResource("3_io1aj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 5, 0)
 
-[node name="Opponent Middle Character" parent="." instance=ExtResource("3_io1aj")]
+[node name="OpponentCharacter2" parent="Characters/OpponentCharacters" instance=ExtResource("3_io1aj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
-[node name="Opponent Third Character" parent="." instance=ExtResource("3_io1aj")]
+[node name="OpponentCharacter3" parent="Characters/OpponentCharacters" instance=ExtResource("3_io1aj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 5, 0)
 
-[node name="Opponent Miracle Card" parent="." instance=ExtResource("3_khq4n")]
-unique_name_in_owner = true
-transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, 8.5, 15, 0)
+[node name="CardPositions" type="Node3D" parent="."]
 
-[node name="Opponent Middle Card" parent="." instance=ExtResource("3_khq4n")]
-unique_name_in_owner = true
-transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, 0, 15, 0)
+[node name="AllyCardPositions" type="Node3D" parent="CardPositions"]
 
-[node name="Opponent Prepared Card" parent="." instance=ExtResource("3_khq4n")]
+[node name="AllyDeck" type="Marker3D" parent="CardPositions/AllyCardPositions"]
 unique_name_in_owner = true
-transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, -8.5, 15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -15, 0)
+
+[node name="AllyCard1" type="Marker3D" parent="CardPositions/AllyCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -15, 0)
+
+[node name="AllyCard2" type="Marker3D" parent="CardPositions/AllyCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+
+[node name="AllyCard3" type="Marker3D" parent="CardPositions/AllyCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, -15, 0)
+
+[node name="OpponentCardPositions" type="Node3D" parent="CardPositions"]
+
+[node name="OpponentDeck" type="Marker3D" parent="CardPositions/OpponentCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 15, 0)
+
+[node name="OpponentCard1" type="Marker3D" parent="CardPositions/OpponentCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 15, 0)
+
+[node name="OpponentCard2" type="Marker3D" parent="CardPositions/OpponentCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+
+[node name="OpponentCard3" type="Marker3D" parent="CardPositions/OpponentCardPositions"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 15, 0)

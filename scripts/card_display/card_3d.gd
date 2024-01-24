@@ -10,25 +10,9 @@ signal mouse_clicked()
 
 var hovered : bool = false
 
-var _front_side : Control :
-	set(value) :
-		if _front_side != null : _front_side.queue_free()
-		_front_side = value
-		if _front_side != null : 
-			%FrontViewport.add_child(value)
-			_front_side.position = Vector2(0,0)
-		
-var _back_side : Control :
-	set(value) :
-		if _back_side != null : _back_side.queue_free()
-		_back_side = value
-		if _back_side != null : 
-			%BackViewport.add_child(value)
-			_back_side.position = Vector2(0,0)
+@onready var _front_side : Control = %FrontViewport.get_child(0) if %FrontViewport.get_child_count() > 0 else null
 
-func _ready():
-	_front_side = null
-	_back_side = null
+@onready var _back_side : Control = %BackViewport.get_child(0) if %BackViewport.get_child_count() > 0 else null
 
 func _on_mouse_entered():
 	hovered = true

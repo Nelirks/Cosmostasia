@@ -5,6 +5,8 @@ enum Type {ATTACK, DEFENSE, STRATEGY}
 
 enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 
+signal position_set()
+
 @export var card_name : String
 @export_multiline var description : String
 @export_multiline var quote : String
@@ -20,6 +22,7 @@ var position : Position :
 	set(value) : 
 		position = value
 		_on_position_set()
+		position_set.emit()
 
 func apply_effects(target : Character) -> void :
 	pass
