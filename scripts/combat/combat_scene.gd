@@ -1,32 +1,6 @@
-extends Control
+extends Node3D
 
 var selected_card : int = -1
-
-func _process(_delta: float) -> void:
-	if GameManager.player == null : return
-	var display : String = ""
-	display += "CURRENT TURN : " + ("PLAYER" if GameManager.combat.is_player_turn() else "OPPONENT") + "\n\n"
-	
-	display += "OPPONENT CHARACTERS : \n"
-	for enemy in GameManager.opponent._characters : 
-		display += enemy.character_name + " -- " + str(enemy.current_health) + " (" + str(enemy._armor) + ") / " + str(enemy.max_health) + "\n"
-		for status in enemy._statuses :
-			display += "   " + status.id + "\n"
-	
-	display += "ALLY CHARACTERS : \n"
-	for ally in GameManager.player._characters : 
-		display += ally.character_name + " -- " + str(ally.current_health) + " (" + str(ally._armor) + ") / " + str(ally.max_health) + "\n"
-		for status in ally._statuses :
-			display += "   " + status.id + "\n"
-	
-	display += "HAND : \n"
-	for i in range(3) :
-		var is_selected : bool = i == selected_card
-		if is_selected : display += "[b]"
-		display += "%30s | " % GameManager.player.get_card_in_hand(i).card_name if GameManager.player.get_card_in_hand(i) != null else "EMPTY"
-		if is_selected : display += "[/b]"
-	display += str("\nEnergy : " + str(GameManager.player.current_energy) + " / " + str(GameManager.player.max_energy))
-	($Console as RichTextLabel).text = display
 
 func _select_card(index : int) -> void :
 	selected_card = index

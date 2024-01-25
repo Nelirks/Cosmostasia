@@ -2,6 +2,8 @@ extends RefCounted
 class_name Player
 
 signal energy_updated(energy:int)
+signal card_moved(card : Card)
+signal card_discarded(card : Card)
 
 var is_host : bool
 
@@ -72,6 +74,7 @@ func refill_hand() -> void :
 	for card_index in range(_hand.size()) :
 		if _hand[card_index] != null :
 			_hand[card_index].position = card_index + 1
+			card_moved.emit(_hand[card_index])
 
 func can_play_card(card : Card, target : Character) -> bool :
 	if card.cost > current_energy : return false
@@ -89,6 +92,7 @@ func discard_card(index : int) -> void :
 	if index < 0 or index >= _hand.size() or _hand[index] == null : return
 	_hand[index].position = Card.Position.DISCARD_PILE
 	_discard.append(_hand[index])
+	card_discarded.emit(_hand[index])
 	_hand[index] = null
 
 func remove_cards(character : Character) -> void :

@@ -8,6 +8,8 @@ signal mouse_clicked()
 @export var rotation_angle : float
 @export var rotation_speed : float
 
+
+
 var hovered : bool = false
 
 @onready var _front_side : Control = %FrontViewport.get_child(0) if %FrontViewport.get_child_count() > 0 else null
