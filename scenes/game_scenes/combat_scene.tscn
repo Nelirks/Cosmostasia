@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdby3tlko6pkc"]
-
-[ext_resource type="Script" path="res://scripts/combat/combat_scene.gd" id="1_oawd1"]
-[ext_resource type="PackedScene" uid="uid://dr8a6crxdqvbe" path="res://scenes/3d_environment/3d_board_scene.tscn" id="2_u8ffg"]
-
-[node name="CombatScene" type="Node3D"]
-script = ExtResource("1_oawd1")
-
-[node name="3dBoardScene" parent="." instance=ExtResource("2_u8ffg")]

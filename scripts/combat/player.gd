@@ -4,6 +4,7 @@ class_name Player
 signal energy_updated(energy:int)
 signal card_moved(card : Card)
 signal card_discarded(card : Card)
+signal deck_ready()
 
 var is_host : bool
 
@@ -41,6 +42,7 @@ func start_combat() -> void :
 	for card in _draw_pile :
 		card.position = Card.Position.DRAW_PILE
 	shuffle_draw_pile()
+	deck_ready.emit()
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :

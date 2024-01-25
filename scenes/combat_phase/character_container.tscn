@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dypqama8wixgp"]
+
+[ext_resource type="Script" path="res://scripts/combat/character_container.gd" id="1_vbnqj"]
+[ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_dm1yn"]
+
+[node name="CharacterContainer" type="Node3D"]
+script = ExtResource("1_vbnqj")
+
+[node name="PlayerCharacters" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+
+[node name="PlayerCharacter1" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+
+[node name="PlayerCharacter2" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
+
+[node name="PlayerCharacter3" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+
+[node name="OpponentCharacters" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="OpponentCharacter1" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+
+[node name="OpponentCharacter2" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
+
+[node name="OpponentCharacter3" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
