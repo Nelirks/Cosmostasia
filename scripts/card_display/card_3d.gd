@@ -8,6 +8,8 @@ signal mouse_clicked()
 @export var rotation_angle : float
 @export var rotation_speed : float
 
+@export var flip_rotation_duration : float
+
 @export var rotates_on_hover : bool = true
 
 var hovered : bool = false
@@ -15,8 +17,6 @@ var hovered : bool = false
 @onready var _front_side : Control = %FrontViewport.get_child(0) if %FrontViewport.get_child_count() > 0 else null
 
 @onready var _back_side : Control = %BackViewport.get_child(0) if %BackViewport.get_child_count() > 0 else null
-
-var flipped : bool
 
 func _on_mouse_entered():
 	hovered = true
@@ -48,7 +48,9 @@ func get_rect(camera : Camera3D) -> Rect2 :
 	var end_pos : Vector2 = camera.unproject_position(center_pos + 0.5 * Vector3(card_size.x, -card_size.y, 0))
 	return Rect2(begin_pos, end_pos - begin_pos)
 
-func flip(flipped : bool, immediate : bool) -> void :
-	if flipped : 
-		rotation = Vector3(0, PI, 0)
-	else : rotation = Vector3(0, 0, 0)
+func flip(flipped : bool = true, immediate : bool = false) -> void :
+	if immediate :
+		rotation = Vector3(0, PI if flipped else 0, 0)
+	else :
+		var tween = create_tween()
+		tween.tween_property(self, "rotation", Vector3(0, PI if flipped else 0, 0), flip_rotation_duration)

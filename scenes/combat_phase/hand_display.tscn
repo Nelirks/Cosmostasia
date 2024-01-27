@@ -4,6 +4,7 @@
 
 [node name="hand_display" type="Node3D"]
 script = ExtResource("1_iq6b1")
+card_move_speed = 0.5
 
 [node name="DrawPile" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 0)

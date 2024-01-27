@@ -4,6 +4,7 @@ class_name Player
 signal energy_updated(energy:int)
 signal card_created(card : Card)
 signal card_destroyed(card : Card)
+signal draw_pile_top_updated()
 
 var is_host : bool
 
@@ -54,6 +55,7 @@ func shuffle_draw_pile(use_discard : bool = false) -> void :
 		var temp : Card = _draw_pile[cur_index]
 		_draw_pile[cur_index] = _draw_pile[swap_index]
 		_draw_pile[swap_index] = temp
+	draw_pile_top_updated.emit()
 
 ## Removes empty slots and appends a new card to the player's hand until no slot is empty.
 ## Can call shuffle_draw_pile if necessary
@@ -67,6 +69,7 @@ func refill_hand() -> void :
 			_hand.append(_draw_pile.pop_back())
 			if _draw_pile.size() == 0 :
 				shuffle_draw_pile(true)
+			else : draw_pile_top_updated.emit()
 		else :
 			index += 1
 		iteration += 1
@@ -149,3 +152,7 @@ func get_all_cards() -> Array[Card]:
 		if card != null : cards.append(card)
 	cards.append_array(_discard)
 	return cards
+
+func get_draw_pile_top_card() -> Card :
+	if _draw_pile.size() == 0 : return null
+	return _draw_pile.back()
