@@ -2,9 +2,8 @@ extends RefCounted
 class_name Player
 
 signal energy_updated(energy:int)
-signal card_moved(card : Card)
-signal card_discarded(card : Card)
-signal deck_ready()
+signal card_created(card : Card)
+signal card_destroyed(card : Card)
 
 var is_host : bool
 
@@ -41,8 +40,8 @@ func start_combat() -> void :
 		_draw_pile.append_array(character.deck)
 	for card in _draw_pile :
 		card.position = Card.Position.DRAW_PILE
+		card_created.emit(card)
 	shuffle_draw_pile()
-	deck_ready.emit()
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
 	if use_discard :
@@ -76,7 +75,6 @@ func refill_hand() -> void :
 	for card_index in range(_hand.size()) :
 		if _hand[card_index] != null :
 			_hand[card_index].position = card_index + 1
-			card_moved.emit(_hand[card_index])
 
 func can_play_card(card : Card, target : Character) -> bool :
 	if card.cost > current_energy : return false
@@ -94,21 +92,23 @@ func discard_card(index : int) -> void :
 	if index < 0 or index >= _hand.size() or _hand[index] == null : return
 	_hand[index].position = Card.Position.DISCARD_PILE
 	_discard.append(_hand[index])
-	card_discarded.emit(_hand[index])
 	_hand[index] = null
 
 func remove_cards(character : Character) -> void :
 	for card in _hand :
 		if card != null and card.character == character :
 			_hand[_hand.find(card)] = null
+			card_destroyed.emit(card)
 	var search_index = 0
 	while search_index < _discard.size() :
 		if _discard[search_index] != null and _discard[search_index].character == character :
+			card_destroyed.emit(_discard[search_index])
 			_discard.remove_at(search_index)
 		else : search_index += 1
 	search_index = 0
 	while search_index < _draw_pile.size() :
 		if _draw_pile[search_index] != null and _draw_pile[search_index].character == character :
+			card_destroyed.emit(_draw_pile[search_index])
 			_draw_pile.remove_at(search_index)
 		else : search_index += 1
 

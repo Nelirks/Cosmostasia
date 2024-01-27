@@ -24,10 +24,12 @@ fov = 40.0
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
 [node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
+unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -6.5, 0)
 is_player = true
 
 [node name="OpponentHand" parent="." instance=ExtResource("3_0g7ao")]
+unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 6.5, 0)
 
 [node name="ArenaBackground" type="TextureRect" parent="."]

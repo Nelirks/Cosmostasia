@@ -23,6 +23,11 @@ var position : Position :
 		position = value
 		position_changed.emit()
 		_on_position_set()
+		
+var is_in_hand : bool :
+	get :
+		return position == Position.PREPARED_SLOT or position == Position.MIDDLE_SLOT or position == Position.MIRACLE_SLOT
+
 
 func apply_effects(target : Character) -> void :
 	pass
