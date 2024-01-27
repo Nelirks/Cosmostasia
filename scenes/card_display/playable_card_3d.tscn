@@ -27,13 +27,20 @@ texture = SubResource("ViewportTexture_vbknn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
 texture = SubResource("ViewportTexture_iesh2")
 
+[node name="FrontViewport" parent="." index="1"]
+size = Vector2i(500, 750)
+
 [node name="PlayableCard2D" parent="FrontViewport" index="0" instance=ExtResource("6_ch5my")]
 offset_right = 500.0
 offset_bottom = 850.0
 
+[node name="BackViewport" parent="." index="2"]
+size = Vector2i(500, 750)
+
 [node name="TextureRect" type="TextureRect" parent="BackViewport" index="0"]
 offset_right = 500.0
 offset_bottom = 850.0
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape3D" parent="Area3D" index="0"]
 shape = SubResource("BoxShape3D_qoh7a")
