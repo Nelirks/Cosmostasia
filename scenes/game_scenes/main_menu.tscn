@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=5 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
+[ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
 [ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="3_3icy8"]
 
 [node name="Control" type="Control"]
@@ -14,24 +15,13 @@ grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1920.0
-offset_top = -950.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ColorRect" type="ColorRect" parent="Background"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.215686, 0.215686, 0.215686, 1)
+texture = ExtResource("1_uw676")
+expand_mode = 1
 
 [node name="Top Menu" type="TextureRect" parent="."]
 layout_mode = 0
