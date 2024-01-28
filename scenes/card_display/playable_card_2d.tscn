@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj0uhxr2myve4"]
+[gd_scene load_steps=12 format=3 uid="uid://dj0uhxr2myve4"]
 
 [ext_resource type="Script" path="res://scripts/card_display/playable_card_2d.gd" id="1_phwa5"]
-[ext_resource type="Texture2D" uid="uid://v4nfjv18q0mn" path="res://resources/sprites/ui_elements/fond_blanc.png" id="2_8yoe2"]
-[ext_resource type="Texture2D" uid="uid://cckmymeia3otd" path="res://resources/sprites/ui_elements/attaque.png" id="3_bqapw"]
-[ext_resource type="Texture2D" uid="uid://8ugrtau7ejbx" path="res://resources/sprites/ui_elements/defense.png" id="4_5nkw8"]
-[ext_resource type="Texture2D" uid="uid://b1ecre2vxou5p" path="res://resources/sprites/ui_elements/strategie.png" id="5_dqg8d"]
+[ext_resource type="Texture2D" uid="uid://luineddffjx0" path="res://resources/sprites/card_sprites/card_borders/attack_card_border.png" id="2_dqbaq"]
+[ext_resource type="Texture2D" uid="uid://bl03nomp665uc" path="res://resources/sprites/card_sprites/card_borders/defense_card_border.png" id="3_xpd05"]
+[ext_resource type="Texture2D" uid="uid://dypnsvk1x5d1d" path="res://resources/sprites/card_sprites/card_borders/strategy_card_border.png" id="4_nk6xh"]
 [ext_resource type="FontFile" uid="uid://c6gy4tkexxuqy" path="res://fonts/Open Sans/OpenSans-VariableFont_wdth,wght.ttf" id="6_2nynj"]
 [ext_resource type="FontFile" uid="uid://dj0rl3dqy62ns" path="res://fonts/Open Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf" id="7_uency"]
 
@@ -17,12 +16,6 @@ font_color = Color(0, 0, 0, 1)
 font_size = 170
 font_color = Color(0, 0, 0, 1)
 shadow_size = 0
-
-[sub_resource type="Theme" id="Theme_fsumw"]
-default_font = ExtResource("6_2nynj")
-default_font_size = 16
-/colors/black = Color(0, 0, 0, 1)
-/font_sizes/aaa = 16
 
 [sub_resource type="Theme" id="Theme_ipnwo"]
 default_font = ExtResource("7_uency")
@@ -43,68 +36,43 @@ RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 [node name="PlayableCard2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 850.0
 script = ExtResource("1_phwa5")
+borders = Array[Texture]([ExtResource("2_dqbaq"), ExtResource("3_xpd05"), ExtResource("4_nk6xh")])
 
-[node name="Card_Background" type="TextureRect" parent="."]
+[node name="CardSprite" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 850.0
-texture = ExtResource("2_8yoe2")
 expand_mode = 1
 
-[node name="Attack_Border" type="TextureRect" parent="Card_Background"]
+[node name="CardBorders" type="TextureRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_bqapw")
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 850.0
+texture = ExtResource("2_dqbaq")
 expand_mode = 1
 
-[node name="Defense_Border" type="TextureRect" parent="Card_Background"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_5nkw8")
-expand_mode = 1
-
-[node name="Strategy_Border" type="TextureRect" parent="Card_Background"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_dqg8d")
-expand_mode = 1
-
-[node name="Card_Title" type="Label" parent="Card_Background"]
+[node name="CardName" type="Label" parent="CardBorders"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -30.5
-offset_top = 10.0
-offset_right = 30.5
-offset_bottom = 55.0
+offset_left = -165.0
+offset_top = 20.0
+offset_right = 165.0
+offset_bottom = 65.0
 grow_horizontal = 2
 text = "Title"
 label_settings = SubResource("LabelSettings_ne35r")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Card_Cost" type="Label" parent="Card_Background"]
+[node name="CardCost" type="Label" parent="CardBorders"]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 34.0
@@ -117,24 +85,7 @@ label_settings = SubResource("LabelSettings_81gl5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardDescription" type="RichTextLabel" parent="Card_Background"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = 85.0
-offset_right = 180.0
-offset_bottom = 260.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_fsumw")
-text = "ghfghfghfghf"
-
-[node name="CardFlavorText" type="RichTextLabel" parent="Card_Background"]
+[node name="CardFlavorText" type="RichTextLabel" parent="CardBorders"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -143,16 +94,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -211.0
-offset_top = -120.0
+offset_top = -95.0
 offset_right = 205.0
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_ipnwo")
 bbcode_enabled = true
-text = "[i]\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"[/i]"
+text = "[i]\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"[/i]"
 
-[node name="Card_Character" type="Label" parent="Card_Background"]
+[node name="CardCharacter" type="Label" parent="CardBorders"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -160,10 +111,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.5
-offset_top = 30.0
-offset_right = 38.5
-offset_bottom = 56.0
+offset_left = -175.0
+offset_top = 94.0
+offset_right = 175.0
+offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Character"
@@ -171,7 +122,8 @@ label_settings = SubResource("LabelSettings_pq1cm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Card_Background"]
+[node name="CardDescription" type="RichTextLabel" parent="CardBorders"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -179,10 +131,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -225.0
-offset_top = 116.0
+offset_top = 190.0
 offset_right = 225.0
-offset_bottom = 252.0
+offset_bottom = 326.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_e0b4j")
+bbcode_enabled = true
 text = "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"

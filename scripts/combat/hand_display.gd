@@ -23,6 +23,13 @@ var selected_card : PlayableCard3D = null :
 		if selected_card != null : 
 			card_selected.emit(selected_card.card)
 
+var hovered_card : PlayableCard3D = null :
+	set(value) :
+		$CardZoomTimer.stop()
+		hovered_card = value
+		if hovered_card != null :
+			$CardZoomTimer.start()
+
 func _ready():
 	for card in player.get_all_cards() : 
 		_instantiate_card(card)
@@ -54,10 +61,14 @@ func _on_card_clicked(card_display : PlayableCard3D) -> void :
 	selected_card = card_display
 
 func _on_card_mouse_entered(card_display : PlayableCard3D) -> void : 
-	pass
-	
+	hovered_card = card_display
+
 func _on_card_mouse_exited(card_display : PlayableCard3D) -> void : 
-	pass
+	if card_display.card.is_in_hand :
+		var tween = create_tween()
+		tween.tween_property(card_display, "position", Vector3(card_display.position.x, 0, 0), 0.5)
+		tween.parallel().tween_property(card_display, "scale", Vector3(1, 1, 1), 0.5)
+	hovered_card = null
 
 func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool = false) -> void :
 	card_display.rotates_on_hover = card_display.card.is_in_hand
@@ -74,3 +85,9 @@ func _draw_pile_top_updated() -> void :
 
 func deselect_card() -> void :
 	selected_card = null
+
+func _on_card_zoom_timer_timeout():
+	if hovered_card.card.is_in_hand :
+		var tween = create_tween()
+		tween.tween_property(hovered_card, "position", Vector3(hovered_card.position.x, 5.5, 0.5), 0.5)
+		tween.parallel().tween_property(hovered_card, "scale", Vector3(2, 2, 2), 0.5)

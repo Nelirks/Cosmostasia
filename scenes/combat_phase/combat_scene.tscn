@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 fov = 40.0
 
 [node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
 
 [node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
 unique_name_in_owner = true
