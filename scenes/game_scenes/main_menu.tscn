@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=6 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
-[ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="3_3icy8"]
+[ext_resource type="Texture2D" uid="uid://wkrj77x1klld" path="res://resources/sprites/main_menu/bouton_menu_simon.png" id="2_h12ev"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
+font = ExtResource("1_ovrrf")
+font_size = 80
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ooml6")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -23,55 +28,43 @@ grow_vertical = 2
 texture = ExtResource("1_uw676")
 expand_mode = 1
 
-[node name="Top Menu" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 130.0
-
-[node name="ColorRect" type="ColorRect" parent="Top Menu"]
+[node name="TextureButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -230.0
+offset_right = 300.0
+offset_bottom = -29.9988
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+grow_vertical = 0
+pivot_offset = Vector2(301, 114)
+texture_normal = ExtResource("2_h12ev")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="StartButton" type="Button" parent="Top Menu"]
+[node name="Label" type="Label" parent="TextureButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -29.0
-offset_right = 75.0
-offset_bottom = 31.0
+offset_left = -78.5
+offset_top = -39.5
+offset_right = 78.5
+offset_bottom = 39.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_ovrrf")
-theme_override_font_sizes/font_size = 60
-action_mode = 0
-text = "JOUER"
-script = ExtResource("1_ooml6")
+text = "Jouer"
+label_settings = SubResource("LabelSettings_gbn1r")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="SettingsButton" type="Button" parent="Top Menu"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -36.0
-offset_right = -98.0
-offset_bottom = 36.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 33
-icon = ExtResource("3_3icy8")
-flat = true
-icon_alignment = 1
-
-[connection signal="pressed" from="Top Menu/StartButton" to="Top Menu/StartButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
