@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd8i3la7g5fr3"
-path="res://.godot/imported/danse ératique.png-edc621ab18ed40fb647c8853160254d2.ctex"
+uid="uid://cgw7vv4ewwuyx"
+path="res://.godot/imported/danse érrattique.png-86cb277880cf8056ff415a4323720f27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/card_sprites/ciol/danse ératique.png"
-dest_files=["res://.godot/imported/danse ératique.png-edc621ab18ed40fb647c8853160254d2.ctex"]
+source_file="res://resources/sprites/card_sprites/ciol/danse érrattique.png"
+dest_files=["res://.godot/imported/danse érrattique.png-86cb277880cf8056ff415a4323720f27.ctex"]
 
 [params]
 
