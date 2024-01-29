@@ -8,10 +8,10 @@ anchors_preset = 0
 
 [node name="PlayerBar" type="SubViewportContainer" parent="."]
 layout_mode = 0
-offset_left = 1284.0
-offset_top = 770.0
-offset_right = 1954.0
-offset_bottom = 1282.0
+offset_left = 1184.0
+offset_top = 695.0
+offset_right = 1854.0
+offset_bottom = 1207.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
@@ -31,10 +31,10 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 
 
 [node name="EnemyBar" type="SubViewportContainer" parent="."]
 layout_mode = 0
-offset_left = -40.0
-offset_top = -197.0
-offset_right = 630.0
-offset_bottom = 315.0
+offset_left = 60.0
+offset_top = -122.0
+offset_right = 730.0
+offset_bottom = 390.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
