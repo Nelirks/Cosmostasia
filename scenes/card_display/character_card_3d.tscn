@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dedijqnpjre4k"]
+[gd_scene load_steps=6 format=3 uid="uid://dedijqnpjre4k"]
 
 [ext_resource type="PackedScene" uid="uid://c2nvantogdhxk" path="res://scenes/card_display/card_3d.tscn" id="1_j8fo4"]
 [ext_resource type="Script" path="res://scripts/card_display/character_card_3d.gd" id="2_scxjr"]
@@ -7,11 +7,17 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_52mie"]
 viewport_path = NodePath("FrontViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_l2cdp"]
+viewport_path = NodePath("BackViewport")
+
 [node name="CharacterCard3D" instance=ExtResource("1_j8fo4")]
 script = ExtResource("2_scxjr")
 
 [node name="FrontSide" parent="CardDisplay" index="0"]
 texture = SubResource("ViewportTexture_52mie")
+
+[node name="BackSide" parent="CardDisplay" index="1"]
+texture = SubResource("ViewportTexture_l2cdp")
 
 [node name="CharacterCard2D" parent="FrontViewport" index="0" instance=ExtResource("3_mqo25")]
 offset_right = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://k0oglaj047sl"]
+[gd_scene load_steps=10 format=3 uid="uid://k0oglaj047sl"]
 
 [ext_resource type="PackedScene" uid="uid://c2nvantogdhxk" path="res://scenes/card_display/card_3d.tscn" id="1_5i2ox"]
 [ext_resource type="Script" path="res://scripts/card_display/playable_card_3d.gd" id="2_f6glg"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dg45exlko2n30" path="res://resources/sprites/card_sprites/card_backs/card_back_strategy.png" id="5_67rnw"]
 [ext_resource type="PackedScene" uid="uid://dj0uhxr2myve4" path="res://scenes/card_display/playable_card_2d.tscn" id="6_ch5my"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p4s4y"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dnx3m"]
 viewport_path = NodePath("FrontViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8j6qx"]
+viewport_path = NodePath("BackViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qoh7a"]
 size = Vector3(5, 7.5, 0.2)
@@ -17,8 +20,11 @@ size = Vector3(5, 7.5, 0.2)
 script = ExtResource("2_f6glg")
 card_backs = Array[Texture]([ExtResource("3_sou4i"), ExtResource("4_6k0uw"), ExtResource("5_67rnw")])
 
-[node name="FrontSide" parent="CardDisplay/RotationParent" index="0"]
-texture = SubResource("ViewportTexture_p4s4y")
+[node name="FrontSide" parent="CardDisplay" index="0"]
+texture = SubResource("ViewportTexture_dnx3m")
+
+[node name="BackSide" parent="CardDisplay" index="1"]
+texture = SubResource("ViewportTexture_8j6qx")
 
 [node name="FrontViewport" parent="." index="1"]
 size = Vector2i(500, 750)
