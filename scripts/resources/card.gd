@@ -5,10 +5,16 @@ enum Type {ATTACK, DEFENSE, STRATEGY}
 
 enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 
+signal position_changed()
+signal cost_updated()
+
 @export var card_name : String
 @export_multiline var description : String
 @export_multiline var quote : String
-@export var cost : int
+@export var cost : int :
+	set(value) : 
+		cost = value
+		cost_updated.emit()
 @export var targetting : Targetting
 @export var cardType : Type
 @export var card_texture : Texture
@@ -19,7 +25,13 @@ enum Position { DRAW_PILE, PREPARED_SLOT, MIDDLE_SLOT, MIRACLE_SLOT, DISCARD_PIL
 var position : Position :
 	set(value) : 
 		position = value
+		position_changed.emit()
 		_on_position_set()
+		
+var is_in_hand : bool :
+	get :
+		return position == Position.PREPARED_SLOT or position == Position.MIDDLE_SLOT or position == Position.MIRACLE_SLOT
+
 
 func apply_effects(target : Character) -> void :
 	pass
