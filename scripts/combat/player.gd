@@ -2,6 +2,9 @@ extends RefCounted
 class_name Player
 
 signal energy_updated(energy:int)
+signal card_created(card : Card)
+signal card_destroyed(card : Card)
+signal draw_pile_top_updated()
 
 var is_host : bool
 
@@ -38,6 +41,7 @@ func start_combat() -> void :
 		_draw_pile.append_array(character.deck)
 	for card in _draw_pile :
 		card.position = Card.Position.DRAW_PILE
+		card_created.emit(card)
 	shuffle_draw_pile()
 
 func shuffle_draw_pile(use_discard : bool = false) -> void :
@@ -51,6 +55,7 @@ func shuffle_draw_pile(use_discard : bool = false) -> void :
 		var temp : Card = _draw_pile[cur_index]
 		_draw_pile[cur_index] = _draw_pile[swap_index]
 		_draw_pile[swap_index] = temp
+	draw_pile_top_updated.emit()
 
 ## Removes empty slots and appends a new card to the player's hand until no slot is empty.
 ## Can call shuffle_draw_pile if necessary
@@ -64,6 +69,7 @@ func refill_hand() -> void :
 			_hand.append(_draw_pile.pop_back())
 			if _draw_pile.size() == 0 :
 				shuffle_draw_pile(true)
+			else : draw_pile_top_updated.emit()
 		else :
 			index += 1
 		iteration += 1
@@ -95,14 +101,17 @@ func remove_cards(character : Character) -> void :
 	for card in _hand :
 		if card != null and card.character == character :
 			_hand[_hand.find(card)] = null
+			card_destroyed.emit(card)
 	var search_index = 0
 	while search_index < _discard.size() :
 		if _discard[search_index] != null and _discard[search_index].character == character :
+			card_destroyed.emit(_discard[search_index])
 			_discard.remove_at(search_index)
 		else : search_index += 1
 	search_index = 0
 	while search_index < _draw_pile.size() :
 		if _draw_pile[search_index] != null and _draw_pile[search_index].character == character :
+			card_destroyed.emit(_draw_pile[search_index])
 			_draw_pile.remove_at(search_index)
 		else : search_index += 1
 
@@ -143,3 +152,7 @@ func get_all_cards() -> Array[Card]:
 		if card != null : cards.append(card)
 	cards.append_array(_discard)
 	return cards
+
+func get_draw_pile_top_card() -> Card :
+	if _draw_pile.size() == 0 : return null
+	return _draw_pile.back()

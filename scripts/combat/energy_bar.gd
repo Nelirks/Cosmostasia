@@ -33,15 +33,8 @@ func _energy_switch(mesh_to_switch:int, state:bool):
 func _ready():
 	energy_bar = [b1,b2,b3,b4,b5] 
 	if is_player:
-		pass
-		#GameManager.player.energy_updated.connect(change_energy)
+		change_energy(GameManager.player.current_energy)
+		GameManager.player.energy_updated.connect(change_energy)
 	else:
-		pass
-		#GameManager.opponnent.energy_updated.connect(change_energy)
-	await get_tree().create_timer(5).timeout
-	#GameManager.player.current_energy = 5
-	change_energy(5)
-	
-	
-
-
+		change_energy(GameManager.opponent.current_energy)
+		GameManager.opponent.energy_updated.connect(change_energy)

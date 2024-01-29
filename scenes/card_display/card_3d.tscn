@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2nvantogdhxk"]
+[gd_scene load_steps=5 format=3 uid="uid://c2nvantogdhxk"]
 
 [ext_resource type="Script" path="res://scripts/card_display/card_3d.gd" id="1_y1a0m"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_agnpc"]
 viewport_path = NodePath("FrontViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ajdle"]
+viewport_path = NodePath("BackViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5yaya"]
 size = Vector3(5, 8.5, 0.2)
@@ -12,6 +15,7 @@ size = Vector3(5, 8.5, 0.2)
 script = ExtResource("1_y1a0m")
 rotation_angle = 50.0
 rotation_speed = 0.1
+flip_rotation_duration = 0.5
 
 [node name="CardDisplay" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -23,6 +27,7 @@ texture = SubResource("ViewportTexture_agnpc")
 [node name="BackSide" type="Sprite3D" parent="CardDisplay"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+texture = SubResource("ViewportTexture_ajdle")
 
 [node name="FrontViewport" type="SubViewport" parent="."]
 unique_name_in_owner = true

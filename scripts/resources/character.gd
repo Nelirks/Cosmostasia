@@ -27,6 +27,8 @@ var _statuses : Array[StatusEffect]
 signal hp_changed()
 
 func setup() :
+	for card in card_pool :
+		card.character = self
 	current_health = max_health
 	if passive != null : add_status(passive)
 
@@ -120,6 +122,6 @@ func get_enemies(include_dead : bool = false) -> Array[Character] :
 	return player.get_opponent().get_characters(include_dead)
 
 func instantiate() -> Character :
-	var copy = self.duplicate(true)
+	var copy : Character = self.duplicate(true)
 	copy.setup()
 	return copy
