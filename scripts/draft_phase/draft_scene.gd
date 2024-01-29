@@ -162,7 +162,7 @@ func _on_card_mouse_entered(card : CharacterCard3D) -> void :
 	info_popup = info_popup_scene.instantiate()
 	info_popup.add_string(card.character.character_quote)
 	info_popup.add_string(card.character.passive.description if card.character.passive != null else "PASSIVE UNIMPLEMENTED")
-	info_popup.set_target_rect(card.get_rect(%Camera3D))
+	info_popup.set_target_rect(card.get_rect())
 
 func _on_card_mouse_exited(character : CharacterCard3D) -> void :
 	info_popup = null

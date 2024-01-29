@@ -90,12 +90,12 @@ func on_opponent_character_hovered(char_index : int) -> void :
 func on_character_card_hovered() -> void :
 	info_popup = info_popup_scene.instantiate()
 	info_popup.add_string(character_display.character.character_quote)
-	info_popup.set_target_rect(character_display.get_rect(%Camera3D))
+	info_popup.set_target_rect(character_display.get_rect())
 
 func on_playable_card_hovered(card_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
 	info_popup.add_string(card_displays[card_index].card.description, false)
-	info_popup.set_target_rect(card_displays[card_index].get_rect(%Camera3D))
+	info_popup.set_target_rect(card_displays[card_index].get_rect())
 
 func close_info_popup() -> void :
 	info_popup = null

@@ -16,6 +16,7 @@ var info_popup : InfoPopup :
 	set(value) :
 		if info_popup != null : info_popup.queue_free()
 		info_popup = value
+		if info_popup != null : $InfoPopupContainer.add_child(info_popup)
 
 var player : Player :
 	get:
@@ -118,6 +119,5 @@ func deselect_card() -> void :
 func _display_info_popup():
 	info_popup = preload("res://scenes/info_popup/info_popup.tscn").instantiate()
 	info_popup.add_string(hovered_card.card.description, false)
-	$InfoPopupContainer.add_child(info_popup)
-	info_popup.set_target_rect(hovered_card.get_rect(get_viewport().get_camera_3d()))
+	info_popup.set_target_rect(hovered_card.get_rect())
 	print(info_popup.position)

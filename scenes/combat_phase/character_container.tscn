@@ -29,3 +29,5 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
 [node name="OpponentCharacter3" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5.5, 0, 0)
+
+[node name="InfoPopupContainer" type="CanvasLayer" parent="."]
