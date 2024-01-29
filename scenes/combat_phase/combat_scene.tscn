@@ -17,6 +17,7 @@ script = ExtResource("1_t5omj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+current = true
 fov = 40.0
 
 [node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
@@ -70,8 +71,6 @@ grow_vertical = 2
 text = "Fin du tour"
 
 [connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
-[connection signal="request_info_popup" from="PlayerHand" to="." method="_on_request_info_popup"]
-[connection signal="request_info_popup" from="OpponentHand" to="." method="_on_request_info_popup"]
 [connection signal="clicked" from="CanvasLayer/TargetlessPlayArea" to="." method="_on_targetless_play_area_clicked"]
 [connection signal="gui_input" from="CanvasLayer/TargetlessPlayArea" to="CanvasLayer/TargetlessPlayArea" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]

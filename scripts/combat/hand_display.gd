@@ -2,7 +2,6 @@ extends Node
 class_name HandDisplay
 
 signal card_selected(card : Card)
-signal request_info_popup(info_popup : InfoPopup, card : Card3D)
 
 @export var is_player : bool
 
@@ -119,4 +118,6 @@ func deselect_card() -> void :
 func _display_info_popup():
 	info_popup = preload("res://scenes/info_popup/info_popup.tscn").instantiate()
 	info_popup.add_string(hovered_card.card.description, false)
-	request_info_popup.emit(info_popup, hovered_card)
+	$InfoPopupContainer.add_child(info_popup)
+	info_popup.set_target_rect(hovered_card.get_rect(get_viewport().get_camera_3d()))
+	print(info_popup.position)
