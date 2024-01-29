@@ -18,6 +18,8 @@ var hovered : bool = false
 
 @onready var _back_side : Control = %BackViewport.get_child(0) if %BackViewport.get_child_count() > 0 else null
 
+var tween : Tween
+
 func _on_mouse_entered():
 	hovered = true
 	mouse_entered.emit()
@@ -43,7 +45,7 @@ func _physics_process(delta):
 
 func get_rect(camera : Camera3D) -> Rect2 :
 	var center_pos : Vector3 = %FrontSide.global_position
-	var card_size : Vector2 = %FrontSide.get_item_rect().size * %FrontSide.pixel_size * Vector2(scale.x, scale.y)
+	var card_size : Vector2 = %FrontSide.get_item_rect().size * %FrontSide.pixel_size * Vector2(global_transform.basis.get_scale().x, global_transform.basis.get_scale().y)
 	var begin_pos : Vector2 = camera.unproject_position(center_pos - 0.5 * Vector3(card_size.x, -card_size.y, 0))
 	var end_pos : Vector2 = camera.unproject_position(center_pos + 0.5 * Vector3(card_size.x, -card_size.y, 0))
 	return Rect2(begin_pos, end_pos - begin_pos)
@@ -52,5 +54,5 @@ func flip(flipped : bool = true, immediate : bool = false) -> void :
 	if immediate :
 		rotation = Vector3(0, PI if flipped else 0, 0)
 	else :
-		var tween = create_tween()
-		tween.tween_property(self, "rotation", Vector3(0, PI if flipped else 0, 0), flip_rotation_duration)
+		var rotation_tween = create_tween()
+		rotation_tween.tween_property(self, "rotation", Vector3(0, PI if flipped else 0, 0), flip_rotation_duration)
