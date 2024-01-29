@@ -6,7 +6,10 @@ signal request_info_popup(info_popup : InfoPopup, card : Card3D)
 
 @export var is_player : bool
 
-@export var card_move_speed : float
+@export var card_move_duration : float
+@export var card_zoom_in_delay : float
+@export var card_zoom_in_duration : float
+@export var card_zoom_out_duration : float
 
 @onready var card_positions : Array[Marker3D] = [$DrawPile, $PreparedCard, $MiddleCard, $MiracleCard, $DrawPile]
 
@@ -71,9 +74,9 @@ func _on_card_mouse_entered(card_display : PlayableCard3D) -> void :
 	hovered_card = card_display
 	if card_display.tween : card_display.tween.kill()
 	card_display.tween = create_tween()
-	card_display.tween.tween_interval(0.5)
-	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 5.5, 0.5), 0.5)
-	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3(2, 2, 2), 0.5)
+	card_display.tween.tween_interval(card_zoom_in_delay)
+	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 5.5, 0.5), card_zoom_in_duration)
+	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3(2, 2, 2), card_zoom_in_duration)
 	if is_player : card_display.tween.tween_callback(_display_info_popup)
 
 func _on_card_mouse_exited(card_display : PlayableCard3D) -> void : 
@@ -81,8 +84,8 @@ func _on_card_mouse_exited(card_display : PlayableCard3D) -> void :
 	info_popup = null
 	if card_display.tween : card_display.tween.kill()
 	card_display.tween = create_tween()
-	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 0, 0), 0.5)
-	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3.ONE, 0.5)
+	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 0, 0), card_zoom_out_duration)
+	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3.ONE, card_zoom_out_duration)
 	hovered_card = null
 
 func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool = false) -> void :
@@ -98,14 +101,14 @@ func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool =
 		if card_display.tween : 
 			card_display.tween.kill()
 		card_display.tween = create_tween()
-		card_display.tween.tween_property(card_display, "position", card_positions[card_display.card.position].position, card_move_speed)
-		card_display.tween.parallel().tween_property(card_display, "scale", card_positions[card_display.card.position].scale, card_move_speed)
+		card_display.tween.tween_property(card_display, "position", card_positions[card_display.card.position].position, card_move_duration)
+		card_display.tween.parallel().tween_property(card_display, "scale", card_positions[card_display.card.position].scale, card_move_duration)
 		card_display.tween.tween_callback(_connect_mouse_signals.bind(card_display) if card_display.card.is_in_hand else _disconnect_mouse_signals.bind(card_display))
 	
 	card_display.visible = card_display.card.is_in_hand or card_display.card == player.get_draw_pile_top_card()
 	
 	if is_player :
-		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_speed)
+		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_duration)
 
 func _draw_pile_top_updated() -> void : 
 	cards[player.get_draw_pile_top_card()].visible = true
