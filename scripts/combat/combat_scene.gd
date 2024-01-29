@@ -13,6 +13,7 @@ func _on_targetless_play_area_clicked() -> void :
 	if player_hand.selected_card == null : return
 	if player_hand.selected_card.card.targetting != Card.Targetting.NO_TARGET : return
 	GameManager.combat.query_card_play(NetworkManager.is_host, player_hand.selected_card.card.position - 1, true, -1)
+	player_hand.deselect_card()
 
 func _unhandled_input(event):
 	var mouse_event = event as InputEventMouseButton
