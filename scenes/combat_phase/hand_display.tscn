@@ -7,7 +7,7 @@ script = ExtResource("1_iq6b1")
 card_move_duration = 0.5
 card_zoom_in_delay = 0.5
 card_zoom_in_duration = 0.375
-card_zoom_out_duration = 0.25
+card_zoom_out_duration = 0.375
 
 [node name="DrawPile" type="Marker3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -18, 3.5, 0)
