@@ -5,6 +5,7 @@ class_name PlayableCard2D
 
 var card: Card:
 	set(value):
+		if card != null : disconnect_signals()
 		card = value
 		if card != null : 
 			update_card_infos()
@@ -12,6 +13,9 @@ var card: Card:
 
 func connect_signals() -> void :
 	card.cost_updated.connect(update_cost)
+
+func disconnect_signals() -> void :
+	card.cost_updated.disconnect(update_cost)
 
 func update_cost() -> void : 
 	%CardCost.text = str(card.cost)
