@@ -10,20 +10,20 @@ script = ExtResource("1_vbnqj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="PlayerCharacter1" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="PlayerCharacter2" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
 
 [node name="PlayerCharacter3" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="OpponentCharacters" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="OpponentCharacter1" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="OpponentCharacter2" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
 
 [node name="OpponentCharacter3" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
