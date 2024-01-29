@@ -5,13 +5,16 @@
 [node name="CombatUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="PlayerBar" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_left = 1184.0
-offset_top = 695.0
-offset_right = 1854.0
-offset_bottom = 1207.0
+layout_mode = 1
+offset_left = 100.0
+offset_top = -75.0
+offset_right = 770.0
+offset_bottom = 437.0
+scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
@@ -30,11 +33,19 @@ is_player = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
 
 [node name="EnemyBar" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_left = 60.0
-offset_top = -122.0
-offset_right = 730.0
-offset_bottom = 390.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -636.0
+offset_top = -334.6
+offset_right = 34.0
+offset_bottom = 177.4
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
