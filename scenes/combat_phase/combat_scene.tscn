@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdby3tlko6pkc"]
+[gd_scene load_steps=8 format=3 uid="uid://bdby3tlko6pkc"]
 
 [ext_resource type="Script" path="res://scripts/combat/combat_scene.gd" id="1_t5omj"]
 [ext_resource type="PackedScene" uid="uid://3uv7ywrnc8jk" path="res://scenes/combat_phase/hand_display.tscn" id="3_0g7ao"]
-[ext_resource type="PackedScene" uid="uid://bwm4vw566h2mf" path="res://scenes/combat_phase/combat_ui.tscn" id="3_l1tto"]
 [ext_resource type="PackedScene" uid="uid://dypqama8wixgp" path="res://scenes/combat_phase/character_container.tscn" id="4_m72q4"]
 [ext_resource type="PackedScene" uid="uid://dr8a6crxdqvbe" path="res://scenes/3d_environment/3d_board_scene.tscn" id="4_vhcko"]
 [ext_resource type="Script" path="res://scripts/mouse_click_area.gd" id="6_kni6t"]
@@ -47,8 +46,6 @@ size = Vector2i(1920, 1080)
 environment = SubResource("Environment_bfeis")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CombatUI" parent="CanvasLayer" instance=ExtResource("3_l1tto")]
 
 [node name="TargetlessPlayArea" type="Control" parent="CanvasLayer"]
 layout_mode = 3

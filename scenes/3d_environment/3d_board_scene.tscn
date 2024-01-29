@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=5 format=3 uid="uid://dr8a6crxdqvbe"]
 
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_ln1s5"]
+[ext_resource type="PackedScene" uid="uid://bdk4y6k8373jy" path="res://scenes/3d_environment/energy_bar.tscn" id="2_k37cc"]
 
 [sub_resource type="Environment" id="Environment_b6jo1"]
 glow_levels/6 = 0.13
@@ -28,3 +29,10 @@ environment = SubResource("Environment_b6jo1")
 camera_attributes = SubResource("CameraAttributesPractical_kvrus")
 
 [node name="CosmostasiaArena" parent="." instance=ExtResource("1_ln1s5")]
+
+[node name="EnergyBar" parent="." instance=ExtResource("2_k37cc")]
+transform = Transform3D(0.8, 0, 0, 0, 0.792019, 0.112721, 0, -0.112721, 0.792019, 6.151, 4, 4.491)
+is_player = true
+
+[node name="EnemyBar" parent="." instance=ExtResource("2_k37cc")]
+transform = Transform3D(0.8, 0, 0, 0, 0.792019, -0.112721, 0, 0.112721, 0.792019, -6.151, 4, -4.491)
