@@ -1,9 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bg7fwd5q3t7hc"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/ciol/danse_erratique.gd" id="1_70sux"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x8ymk"]
-load_path = "res://.godot/imported/danse érrattique.png-b1082b94e3d951a824dae13bbb9b5880.ctex"
+[ext_resource type="Texture2D" uid="uid://cgw7vv4ewwuyx" path="res://resources/sprites/card_sprites/ciol/danse érrattique.png" id="1_alex6"]
 
 [resource]
 script = ExtResource("1_70sux")
@@ -15,4 +13,4 @@ quote = ""
 cost = 2
 targetting = 2
 cardType = 0
-card_texture = SubResource("CompressedTexture2D_x8ymk")
+card_texture = ExtResource("1_alex6")
