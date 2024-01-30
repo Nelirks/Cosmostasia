@@ -29,6 +29,15 @@ var selected_character_index : int :
 			card_displays[i].card = selected_character.card_pool[i]
 		update_card_counts()
 
+@export var card_zoom_position_offset : Vector3
+@export var card_zoom_scale : Vector3
+@export var card_zoom_in_delay : float
+@export var card_zoom_in_duration : float
+@export var card_zoom_out_duration : float
+var card_base_positions : Array[Vector3]
+var card_base_scales : Array[Vector3]
+var card_tweens : Array[Tween]
+
 var selected_character : Character :
 	set(value) :
 		printerr("Cannot directly set character")
@@ -78,6 +87,12 @@ func _ready():
 	for i in range(3) :
 		player_character_selectors[i].set_text(GameManager.player.get_character(i).character_name)
 		opponent_character_selectors[i].set_text(GameManager.opponent.get_character(i).character_name)
+	for i in range(5) :
+		card_base_positions.append(card_displays[i].position)
+		card_base_scales.append(card_displays[i].scale)
+		card_tweens.append(null)
+		card_displays[i].mouse_entered.connect(on_playable_card_mouse_entered.bind(i))
+		card_displays[i].mouse_exited.connect(on_playable_card_mouse_exited.bind(i))
 
 func on_ally_character_selected(char_index : int) -> void :
 	selected_character_index = char_index
@@ -92,7 +107,22 @@ func on_character_card_hovered() -> void :
 	info_popup.add_string(character_display.character.character_quote)
 	info_popup.set_target_rect(character_display.get_rect())
 
-func on_playable_card_hovered(card_index : int) -> void :
+func on_playable_card_mouse_entered(card_index : int) -> void :
+	if card_tweens[card_index] != null : card_tweens[card_index].kill()
+	card_tweens[card_index] = create_tween()
+	card_tweens[card_index].tween_interval(card_zoom_in_delay)
+	card_tweens[card_index].tween_property(card_displays[card_index], "position", card_base_positions[card_index] + card_zoom_position_offset, card_zoom_in_duration)
+	card_tweens[card_index].parallel().tween_property(card_displays[card_index], "scale", card_zoom_scale, card_zoom_in_duration)
+	card_tweens[card_index].tween_callback(display_card_info_popup.bind(card_index))
+
+func on_playable_card_mouse_exited(card_index : int) -> void :
+	close_info_popup()
+	if card_tweens[card_index] != null : card_tweens[card_index].kill()
+	card_tweens[card_index] = create_tween()
+	card_tweens[card_index].tween_property(card_displays[card_index], "position", card_base_positions[card_index], card_zoom_in_duration)
+	card_tweens[card_index].parallel().tween_property(card_displays[card_index], "scale", card_base_scales[card_index], card_zoom_in_duration)
+
+func display_card_info_popup(card_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
 	info_popup.add_string(card_displays[card_index].card.description, false)
 	info_popup.set_target_rect(card_displays[card_index].get_rect())

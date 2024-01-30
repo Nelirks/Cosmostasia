@@ -11,6 +11,11 @@ background_color = Color(0.109804, 0.109804, 0.109804, 1)
 
 [node name="DeckbuildingScene" type="Node3D"]
 script = ExtResource("1_dd58v")
+card_zoom_position_offset = Vector3(0, 0, 1)
+card_zoom_scale = Vector3(2, 2, 2)
+card_zoom_in_delay = 0.5
+card_zoom_in_duration = 0.375
+card_zoom_out_duration = 0.375
 
 [node name="CharacterDisplay" parent="." instance=ExtResource("2_pls58")]
 unique_name_in_owner = true
@@ -191,16 +196,6 @@ unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="CharacterDisplay" to="." method="on_character_card_hovered"]
 [connection signal="mouse_exited" from="CharacterDisplay" to="." method="close_info_popup"]
-[connection signal="mouse_entered" from="CardArea/Card1" to="." method="on_playable_card_hovered" binds= [0]]
-[connection signal="mouse_exited" from="CardArea/Card1" to="." method="close_info_popup"]
-[connection signal="mouse_entered" from="CardArea/Card2" to="." method="on_playable_card_hovered" binds= [1]]
-[connection signal="mouse_exited" from="CardArea/Card2" to="." method="close_info_popup"]
-[connection signal="mouse_entered" from="CardArea/Card3" to="." method="on_playable_card_hovered" binds= [2]]
-[connection signal="mouse_exited" from="CardArea/Card3" to="." method="close_info_popup"]
-[connection signal="mouse_entered" from="CardArea/Card4" to="." method="on_playable_card_hovered" binds= [3]]
-[connection signal="mouse_exited" from="CardArea/Card4" to="." method="close_info_popup"]
-[connection signal="mouse_entered" from="CardArea/Card5" to="." method="on_playable_card_hovered" binds= [4]]
-[connection signal="mouse_exited" from="CardArea/Card5" to="." method="close_info_popup"]
 [connection signal="pressed" from="Background/PresetSelector/Preset1" to="." method="on_preset_selected" binds= [0]]
 [connection signal="pressed" from="Background/PresetSelector/Preset2" to="." method="on_preset_selected" binds= [1]]
 [connection signal="pressed" from="Background/PresetSelector/Preset3" to="." method="on_preset_selected" binds= [2]]
