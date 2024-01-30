@@ -121,4 +121,3 @@ func _display_info_popup():
 	info_popup = preload("res://scenes/info_popup/info_popup.tscn").instantiate()
 	info_popup.add_string(hovered_card.card.description, false)
 	info_popup.set_target_rect(hovered_card.get_rect())
-	print(info_popup.position)
