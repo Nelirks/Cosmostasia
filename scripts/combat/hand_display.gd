@@ -111,6 +111,7 @@ func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool =
 		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_duration)
 
 func _draw_pile_top_updated() -> void : 
+	if !player.get_draw_pile_top_card() : return
 	cards[player.get_draw_pile_top_card()].visible = true
 
 func deselect_card() -> void :
