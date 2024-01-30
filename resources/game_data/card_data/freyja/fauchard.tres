@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b4gaihb8y6qty"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b4gaihb8y6qty"]
 
+[ext_resource type="Texture2D" uid="uid://dtadfwpnk2cl1" path="res://resources/sprites/card_sprites/freyja/Fauchard 2.png" id="1_avgma"]
 [ext_resource type="Script" path="res://scripts/data/cards/freyja/fauchard.gd" id="1_gb8vp"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = ""
 cost = 1
 targetting = 3
 cardType = 0
+card_texture = ExtResource("1_avgma")
