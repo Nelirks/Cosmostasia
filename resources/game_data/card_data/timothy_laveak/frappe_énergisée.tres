@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwigg8mkbu55t"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwigg8mkbu55t"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/frappe_energisee.gd" id="1_lse3c"]
+[ext_resource type="Texture2D" uid="uid://b2g8o4hxqnjtr" path="res://resources/sprites/card_sprites/Tim/Frappeenergise.png" id="1_s5gys"]
 
 [resource]
 script = ExtResource("1_lse3c")
@@ -13,3 +14,4 @@ quote = ""
 cost = 2
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_s5gys")
