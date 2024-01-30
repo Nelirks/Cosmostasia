@@ -12,6 +12,7 @@ viewport_path = NodePath("BackViewport")
 
 [node name="CharacterCard3D" instance=ExtResource("1_j8fo4")]
 script = ExtResource("2_scxjr")
+display_current_hp = true
 
 [node name="FrontSide" parent="CardDisplay" index="0"]
 texture = SubResource("ViewportTexture_52mie")
