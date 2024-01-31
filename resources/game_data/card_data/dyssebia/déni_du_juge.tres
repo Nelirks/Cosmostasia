@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cx35q3ngbfxgn"]
 
-[ext_resource type="Texture2D" uid="uid://bedk3ie2506u1" path="res://resources/sprites/card_sprites/dyssebia/Denidujuge_2.png" id="1_jnsvo"]
+[ext_resource type="Texture2D" uid="uid://dsyol7ma61cdj" path="res://resources/sprites/card_sprites/dyssebia/Denidujuge_2.png" id="1_jnsvo"]
 [ext_resource type="Script" path="res://scripts/data/cards/dyssebia/deni_du_juge.gd" id="1_kuugp"]
 
 [resource]
