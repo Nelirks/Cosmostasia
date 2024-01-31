@@ -1,20 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://eol4pewfnn2i"]
+[gd_scene load_steps=18 format=3 uid="uid://eol4pewfnn2i"]
 
 [ext_resource type="PackedScene" uid="uid://bj3fus3i1mg2v" path="res://resources/3d_asset/models/Cosmostasia_Arena1.glb" id="1_vacrf"]
-[ext_resource type="Texture2D" uid="uid://cqbxa3oyqws3e" path="res://resources/3d_asset/textures/marble/Marble021_1K-JPG_Color.jpg" id="2_2lkp5"]
 [ext_resource type="PackedScene" uid="uid://d28025g3hs2au" path="res://scenes/3d_environment/fire.tscn" id="2_ym8s6"]
-[ext_resource type="Texture2D" uid="uid://brh4udk37hwlf" path="res://resources/3d_asset/textures/marble/Marble021_1K-JPG_NormalDX.jpg" id="3_kvqf4"]
 [ext_resource type="Texture2D" uid="uid://c8gu2xcwjkdvd" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_Color.jpg" id="3_n055x"]
-[ext_resource type="Texture2D" uid="uid://rj5lj77cacro" path="res://resources/3d_asset/textures/marble/Marble021_1K-JPG_Roughness.jpg" id="4_eafn6"]
+[ext_resource type="Material" uid="uid://f7e3kev8ia41" path="res://resources/3d_asset/materials/Marble.tres" id="3_nsj8x"]
 [ext_resource type="Texture2D" uid="uid://cumhe6c8tlgj8" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_NormalDX.jpg" id="4_jun5n"]
 [ext_resource type="Texture2D" uid="uid://der6cld3xvbha" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_Roughness.jpg" id="5_011jo"]
 [ext_resource type="Texture2D" uid="uid://dxt3vt5y7nk1m" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_AmbientOcclusion.jpg" id="6_w37fj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37rkg"]
-albedo_texture = ExtResource("2_2lkp5")
-roughness_texture = ExtResource("4_eafn6")
-normal_enabled = true
-normal_texture = ExtResource("3_kvqf4")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ut3v3"]
 
@@ -81,11 +73,28 @@ shader_parameter/tex_frg_4 = ExtResource("5_011jo")
 shader_parameter/tex_frg_5 = ExtResource("6_w37fj")
 shader_parameter/tex_frg_3 = ExtResource("4_jun5n")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s1peg"]
+load_path = "res://.godot/imported/Marble021_1K-JPG_Color.jpg-439007c3376e2d766e980ada17a283d6.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8wewn"]
+load_path = "res://.godot/imported/Marble021_1K-JPG_NormalDX.jpg-84bdfba2c01ab671ce369911a7d7b7f8.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fsbu3"]
+load_path = "res://.godot/imported/Marble021_1K-JPG_Roughness.jpg-739265b5c946bb9a556059bea62d0220.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01os8"]
+albedo_color = Color(0.407843, 0.407843, 0.407843, 1)
+albedo_texture = SubResource("CompressedTexture2D_s1peg")
+roughness_texture = SubResource("CompressedTexture2D_fsbu3")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_8wewn")
+
 [node name="Cosmostasia_Arena1" instance=ExtResource("1_vacrf")]
 
 [node name="MainArena" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_37rkg")
+surface_material_override/0 = ExtResource("3_nsj8x")
 surface_material_override/1 = SubResource("ShaderMaterial_gm065")
+surface_material_override/2 = SubResource("StandardMaterial3D_01os8")
 
 [node name="Fire" parent="BrasierENE" index="0" instance=ExtResource("2_ym8s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
@@ -97,16 +106,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
 
 [node name="Fire" parent="BrasierWSW" index="0" instance=ExtResource("2_ym8s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
-
-[node name="Fire" parent="BrasierNNE" index="0" instance=ExtResource("2_ym8s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
-
-[node name="Fire" parent="BrasierNNW" index="0" instance=ExtResource("2_ym8s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
-
-[node name="Fire" parent="BrasierSSE" index="0" instance=ExtResource("2_ym8s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
-
-[node name="Fire" parent="BrasierSSW" index="0" instance=ExtResource("2_ym8s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
