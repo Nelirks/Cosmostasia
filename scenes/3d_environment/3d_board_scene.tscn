@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=6 format=3 uid="uid://dr8a6crxdqvbe"]
 
 [ext_resource type="PackedScene" uid="uid://g85ec7i0xv75" path="res://scenes/3d_environment/Cosmostasia_Arena_Test_Triangulate.glb" id="1_f7dao"]
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_ln1s5"]
@@ -36,7 +36,7 @@ adjustment_contrast = 1.23
 [node name="3dBoardScene" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.491591, 11.5703, 0.0629888)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0265618, 11.5703, 0.0629888)
 fov = 70.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -46,13 +46,13 @@ camera_attributes = SubResource("CameraAttributesPractical_kvrus")
 [node name="Cosmostasia_Arena_Test_Triangulate" parent="." instance=ExtResource("1_f7dao")]
 
 [node name="CosmostasiaArena" parent="." instance=ExtResource("1_ln1s5")]
+
 [node name="EnergyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(0.8, 0, 0, 0, 0.792019, 0.112721, 0, -0.112721, 0.792019, 6.151, 4, 4.491)
+transform = Transform3D(0.7, 0, 0, 0, 0.693017, 0.0986309, 0, -0.0986309, 0.693017, 6.151, 3.54, 4.381)
 is_player = true
 
 [node name="EnemyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(0.8, 0, 0, 0, 0.792019, -0.112721, 0, 0.112721, 0.792019, -6.151, 4, -4.491)
-visible = false
+transform = Transform3D(0.7, 0, 0, 0, 0.693017, -0.0986309, 0, 0.0986309, 0.693017, -6.151, 3.54, -4.381)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42432, 4.16006, 1.26361)
@@ -72,14 +72,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8238, -0.0294576, -0.02158
 light_color = Color(0.752941, 0.494118, 0.0235294, 1)
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="OmniLight3D"]
-transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.84057e-08, 0.104617, -0.992695, -0.0601077, 7.56428, -0.723481, -1.24788)
+transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.81877e-08, 0.104617, -0.992695, -0.0601077, 7.56428, 2.45424, -1.36406)
+light_color = Color(0.901961, 0.776471, 0.901961, 1)
 light_energy = 0.279
-shadow_enabled = true
 shadow_bias = 1.0
 shadow_normal_bias = 0.0
 shadow_blur = 1.06
 distance_fade_enabled = true
-omni_range = 7.471
+omni_range = 10.33
 omni_attenuation = 0.233257
 omni_shadow_mode = 0
 
