@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c3ecd5weeq6jw"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_7kndh"]
+
+[resource]
+script = ExtResource("1_7kndh")
+id = "4n_joy"
+type = 2
+display_names = Array[String](["Joie"])
+description = "!S!Joie!S!
+Augmente la recharge de 1"

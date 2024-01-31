@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bcse20kxf0p4g"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_ji7ua"]
+
+[resource]
+script = ExtResource("1_ji7ua")
+id = "faveur"
+type = 2
+display_names = Array[String](["Faveur"])
+description = "!S!Faveur!S!
+Réduit de 20% les dégâts subis par les alliés de Khemaël"
