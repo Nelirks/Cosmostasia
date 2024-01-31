@@ -1,18 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://d28025g3hs2au"]
+[gd_scene load_steps=13 format=3 uid="uid://bmonvk0jrw3s4"]
 
-[ext_resource type="Shader" uid="uid://inwd3bod07lg" path="res://resources/3d_asset/particle/fireshader.tres" id="1_55rom"]
-[ext_resource type="Texture2D" uid="uid://c3tj8kxoynqo7" path="res://resources/3d_asset/Voronoi01.png" id="2_5oqts"]
-[ext_resource type="Texture2D" uid="uid://d1wvnvwc8ebgc" path="res://resources/3d_asset/particle/Flame01.png" id="3_kcpse"]
-[ext_resource type="Texture2D" uid="uid://cwrnv06k3cygw" path="res://resources/3d_asset/particle/Flame02.png" id="4_vwcqh"]
+[ext_resource type="Shader" uid="uid://inwd3bod07lg" path="res://resources/3d_asset/particle/fireshader.tres" id="1_is8l8"]
+[ext_resource type="Texture2D" uid="uid://c3tj8kxoynqo7" path="res://resources/3d_asset/Voronoi01.png" id="2_e7uvq"]
+[ext_resource type="Texture2D" uid="uid://d1wvnvwc8ebgc" path="res://resources/3d_asset/particle/Flame01.png" id="3_tvwv0"]
+[ext_resource type="Texture2D" uid="uid://cwrnv06k3cygw" path="res://resources/3d_asset/particle/Flame02.png" id="4_wu3nj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_orj75"]
 render_priority = 0
-shader = ExtResource("1_55rom")
+shader = ExtResource("1_is8l8")
 shader_parameter/DissolveTilling = Vector2(0.25, 0.2)
 shader_parameter/DissolveSpeed = Vector2(0, 1)
 shader_parameter/DissolveAmount = 0.448
-shader_parameter/MainTex = ExtResource("3_kcpse")
-shader_parameter/DissolvedTex = ExtResource("2_5oqts")
+shader_parameter/MainTex = ExtResource("3_tvwv0")
+shader_parameter/DissolvedTex = ExtResource("2_e7uvq")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ctydv"]
 gravity = Vector3(0, 0, 0)
@@ -24,12 +24,12 @@ color = Color(3, 3, 3, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n2st2"]
 render_priority = 0
-shader = ExtResource("1_55rom")
+shader = ExtResource("1_is8l8")
 shader_parameter/DissolveTilling = Vector2(0, 0)
 shader_parameter/DissolveSpeed = Vector2(0, 0)
 shader_parameter/DissolveAmount = 0.0
-shader_parameter/MainTex = ExtResource("4_vwcqh")
-shader_parameter/DissolvedTex = ExtResource("2_5oqts")
+shader_parameter/MainTex = ExtResource("4_wu3nj")
+shader_parameter/DissolvedTex = ExtResource("2_e7uvq")
 
 [sub_resource type="Curve" id="Curve_31052"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.203947, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
