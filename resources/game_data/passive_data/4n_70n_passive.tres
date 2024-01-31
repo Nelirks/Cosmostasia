@@ -9,3 +9,7 @@ joy_energy_regen = 1
 sadness_damage_mult = 0.8
 id = "4n_70n_passive"
 type = 2
+display_names = Array[String]([])
+description = "Lorsqu'il joue la carte de gauche, 4N passe en état !S!Joie!S!
+Lorsqu'il joue la carte du milieu, 4N passe en état !S!Tristesse!S!
+Lorsqu'il joue la carte de droite, 4N passe en état !S!Colère!S!"

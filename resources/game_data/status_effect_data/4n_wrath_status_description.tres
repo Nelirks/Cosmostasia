@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://2yvdskam5tc"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_qvlfk"]
+
+[resource]
+script = ExtResource("1_qvlfk")
+id = "4n_wrath"
+type = 2
+display_names = Array[String](["Colère"])
+description = "!S!Colère!S!
+Augmente les dégâts subis et infligés de 20%"

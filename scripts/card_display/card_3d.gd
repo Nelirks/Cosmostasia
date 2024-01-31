@@ -33,15 +33,16 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 
 func _physics_process(delta):
 	if rotation_angle < 0.0001 or rotation_speed < 0.0001 or !rotates_on_hover : return
-	var rect_on_screen : Rect2 = get_rect(get_tree().root.get_camera_3d())
-	var relative_mouse_position = (get_tree().root.get_mouse_position() - get_rect(get_tree().root.get_camera_3d()).get_center())
+	var rect_on_screen : Rect2 = get_rect()
+	var relative_mouse_position = (get_tree().root.get_mouse_position() - get_rect().get_center())
 	var current_rotation : Quaternion = Quaternion(%CardDisplay.transform.basis)
 	var target_rotation : Quaternion
 	if hovered :
 		target_rotation = Quaternion(Vector3(relative_mouse_position.y, relative_mouse_position.x, 0).normalized(), -rotation_angle)
 	%CardDisplay.transform.basis = Basis(current_rotation.slerp(target_rotation, rotation_speed))
 
-func get_rect(camera : Camera3D) -> Rect2 :
+func get_rect() -> Rect2 :
+	var camera = get_viewport().get_camera_3d()
 	var center_pos : Vector3 = %FrontSide.global_position
 	var card_size : Vector2 = %FrontSide.get_item_rect().size * %FrontSide.pixel_size * Vector2(global_transform.basis.get_scale().x, global_transform.basis.get_scale().y)
 	var begin_pos : Vector2 = camera.unproject_position(center_pos - 0.5 * Vector3(card_size.x, -card_size.y, 0))

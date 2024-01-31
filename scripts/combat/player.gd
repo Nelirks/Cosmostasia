@@ -114,6 +114,7 @@ func remove_cards(character : Character) -> void :
 			card_destroyed.emit(_draw_pile[search_index])
 			_draw_pile.remove_at(search_index)
 		else : search_index += 1
+	draw_pile_top_updated.emit()
 
 func start_turn() -> void :
 	last_turn_energy_regen = energy_regen

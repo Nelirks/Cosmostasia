@@ -28,8 +28,102 @@
 				</Folder>
 				<Folder Name="Music" ID="{B120F952-019C-4B03-82DE-AEA4E14C037E}" ShortID="704726580">
 					<ChildrenList>
-						<Event Name="Start_Main_Ambiance" ID="{B1AD1EBD-1028-4C2F-861A-BC3E8E9ADF51}"/>
-						<Event Name="Start_Music" ID="{DAC6ED5D-5500-49F6-9816-3AF8095D210D}"/>
+						<Event Name="Start_Music" ID="{DAC6ED5D-5500-49F6-9816-3AF8095D210D}">
+							<ChildrenList>
+								<Action Name="" ID="{E577D693-1FA2-4F31-B169-3CCF0B9DAB83}" ShortID="691259364">
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="OST" ID="{B54407A8-B73B-49E1-8962-E3C709687D4D}" WorkUnitID="{6A87E89E-31E4-45E4-9879-DC3AC6D226DC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Start_CombatMusic" ID="{AE5D3971-E4D0-415C-9B71-50C1075A3825}">
+							<ChildrenList>
+								<Action Name="" ID="{FAAF9605-5322-45CF-BCB2-A889B0BC3499}" ShortID="948672188">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="Phase01" ID="{D03A5800-8F9E-4283-9195-5D30F2D3067A}" WorkUnitID="{BF304180-428F-4310-90B6-E5AB9774ED65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Switch_Phase02" ID="{C4C88ACB-E354-4401-A621-858C376D92EC}">
+							<ChildrenList>
+								<Action Name="" ID="{F55842E9-6DDD-4B2E-9AAA-5E53DE2DA5C0}" ShortID="113650932">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="Phase02" ID="{B5FB2B3C-F3DE-4BEE-A06F-D0B28F05C97D}" WorkUnitID="{BF304180-428F-4310-90B6-E5AB9774ED65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Switch_Phase03" ID="{3A15A6E7-5E71-4489-BF79-A62EB10EFE42}">
+							<ChildrenList>
+								<Action Name="" ID="{C17C9472-198D-4166-B4EC-087714A6EA74}" ShortID="524616674">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="Phase03" ID="{C6449296-2B67-4B43-BCF0-5949BB794919}" WorkUnitID="{BF304180-428F-4310-90B6-E5AB9774ED65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="End_CombatMusic" ID="{937CC7CE-A922-4761-AEAB-08FF38EDD8A8}">
+							<ChildrenList>
+								<Action Name="" ID="{9E1E1D28-4F32-4EC8-86EA-D75D51EDFF23}" ShortID="360908986">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="Phase04" ID="{E608250A-D43C-4F47-9601-80B7A02C69E0}" WorkUnitID="{BF304180-428F-4310-90B6-E5AB9774ED65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Start_MainMenuMusic" ID="{9E9D5B24-4259-4576-BA0B-454FBB53C49E}">
+							<ChildrenList>
+								<Action Name="" ID="{C8CB82EF-478A-49D4-AC22-EC27E86F6272}" ShortID="403921438">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="MainMenu" ID="{1499F10C-200D-4C25-B1F9-3E18770A277F}" WorkUnitID="{BF304180-428F-4310-90B6-E5AB9774ED65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Music" ID="{96E4B2E0-5AA0-4C34-821F-B62289469F5B}">
+							<ChildrenList>
+								<Action Name="" ID="{6EF9EEEE-13B4-4DDC-83F7-DD7C73ED769C}" ShortID="137038456">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="OST" ID="{B54407A8-B73B-49E1-8962-E3C709687D4D}" WorkUnitID="{6A87E89E-31E4-45E4-9879-DC3AC6D226DC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

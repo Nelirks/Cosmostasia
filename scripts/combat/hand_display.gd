@@ -2,7 +2,6 @@ extends Node
 class_name HandDisplay
 
 signal card_selected(card : Card)
-signal request_info_popup(info_popup : InfoPopup, card : Card3D)
 
 @export var is_player : bool
 
@@ -17,6 +16,7 @@ var info_popup : InfoPopup :
 	set(value) :
 		if info_popup != null : info_popup.queue_free()
 		info_popup = value
+		if info_popup != null : $InfoPopupContainer.add_child(info_popup)
 
 var player : Player :
 	get:
@@ -111,6 +111,7 @@ func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool =
 		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_duration)
 
 func _draw_pile_top_updated() -> void : 
+	if !player.get_draw_pile_top_card() : return
 	cards[player.get_draw_pile_top_card()].visible = true
 
 func deselect_card() -> void :
@@ -119,4 +120,4 @@ func deselect_card() -> void :
 func _display_info_popup():
 	info_popup = preload("res://scenes/info_popup/info_popup.tscn").instantiate()
 	info_popup.add_string(hovered_card.card.description, false)
-	request_info_popup.emit(info_popup, hovered_card)
+	info_popup.set_target_rect(hovered_card.get_rect())

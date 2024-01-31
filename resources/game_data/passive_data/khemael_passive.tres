@@ -8,4 +8,5 @@ prejudice_multiplier = 1.2
 faveur_multiplier = 0.8
 id = "khemael_passive"
 type = 2
-description = "Khemaël gagne un préjudice lorsqu'elle cible un adversaire, et une faveur quand elle cible un allié."
+display_names = Array[String]([])
+description = "Khemaël gagne un !S!Préjudice!S! lorsqu'elle cible un adversaire, et une !S!Faveur!S! quand elle cible un allié."

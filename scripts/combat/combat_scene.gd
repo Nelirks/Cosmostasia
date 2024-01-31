@@ -23,7 +23,3 @@ func _unhandled_input(event):
 
 func _on_end_turn_button_pressed():
 	GameManager.combat.query_end_turn()
-
-func _on_request_info_popup(info_popup : InfoPopup, card : Card3D):
-	$CanvasLayer.add_child(info_popup)
-	info_popup.set_target_rect(card.get_rect($Camera3D))

@@ -12,7 +12,7 @@ func on_damage_taken(source : Character, amount : int) -> void :
 	
 
 func on_effect_resolution(effect : Effect) -> void :
-	if effect is StartTurnNotifierEffect and effect.player == owner.player :
+	if effect is StartTurnNotifierEffect and effect.player == owner.player and damage_source == null :
 		_add_effect(HealEffect.new(heal_amount, owner, owner))
 	if effect is StartTurnNotifierEffect and effect.player != owner.player : 
 		damage_taken = 0

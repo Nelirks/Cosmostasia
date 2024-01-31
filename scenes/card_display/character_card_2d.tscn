@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/card_display/character_card_2d.gd" id="1_ng47k"]
 [ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="2_5ykcr"]
-[ext_resource type="Texture2D" uid="uid://cphxp0lqogk01" path="res://Sprites/ui_icons/draft_hp.png" id="4_sq6vd"]
+[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="3_80rd7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cmb2i"]
 
@@ -41,16 +41,40 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="HealthBackground" type="TextureRect" parent="BottomInfo"]
-self_modulate = Color(0.588235, 0, 0, 1)
-show_behind_parent = true
-custom_minimum_size = Vector2(0, 96)
+[node name="CharacterName" type="Label" parent="BottomInfo"]
+unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("4_sq6vd")
-expand_mode = 1
-stretch_mode = 5
+theme_override_font_sizes/font_size = 40
+text = "LISIRMEE"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
 
-[node name="CharacterMaxHealth" type="Label" parent="BottomInfo/HealthBackground"]
+[node name="HealthBackground" type="TextureRect" parent="BottomInfo"]
+unique_name_in_owner = true
+self_modulate = Color(0.427451, 0, 0, 1)
+show_behind_parent = true
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+texture = ExtResource("3_80rd7")
+
+[node name="HealthBar" type="TextureRect" parent="BottomInfo/HealthBackground"]
+unique_name_in_owner = true
+self_modulate = Color(0.839216, 0, 0, 1)
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 50.0
+texture = ExtResource("3_80rd7")
+
+[node name="ArmorBar" type="TextureRect" parent="BottomInfo/HealthBackground"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0.788235, 0.788235, 1)
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 50.0
+texture = ExtResource("3_80rd7")
+
+[node name="HealthLabel" type="Label" parent="BottomInfo/HealthBackground"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -62,15 +86,6 @@ theme_override_font_sizes/font_size = 30
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CharacterName" type="Label" parent="BottomInfo"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "LISIRMEE"
-horizontal_alignment = 1
-vertical_alignment = 1
-text_overrun_behavior = 3
 
 [node name="FXOverlay" type="TextureRect" parent="."]
 unique_name_in_owner = true
