@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3bpcpchkkdox"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d3bpcpchkkdox"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/dyssebia/reequilibrage.gd" id="1_2805b"]
+[ext_resource type="Texture2D" uid="uid://b1ryn155iprpo" path="res://resources/sprites/card_sprites/dyssebia/Rééquilibrage.png" id="1_tioiq"]
 
 [resource]
 script = ExtResource("1_2805b")
@@ -12,3 +13,4 @@ quote = "Le gant archonique fera pencher la balance en la faveur des héliastes"
 cost = 2
 targetting = 3
 cardType = 0
+card_texture = ExtResource("1_tioiq")

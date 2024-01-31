@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cc513kgid5np2"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cc513kgid5np2"]
 
+[ext_resource type="Texture2D" uid="uid://b3htd1djagqge" path="res://resources/sprites/card_sprites/freyja/Ralliement 4.png" id="1_6newb"]
 [ext_resource type="Script" path="res://scripts/data/cards/freyja/ralliement.gd" id="1_j4c63"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = ""
 cost = 2
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_6newb")

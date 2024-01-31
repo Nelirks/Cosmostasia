@@ -29,6 +29,6 @@ script = ExtResource("1_1pft6")
 character_name = "Khemaël"
 character_quote = "Une guerrière du fin fond de la galaxie. Khemaël peut alterner entre un jeu offensif ou soutien."
 max_health = 100
-card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_fmk1a"), ExtResource("2_76x4n"), ExtResource("3_3s4hl"), ExtResource("4_7ebbu"), ExtResource("5_ji2pp")])
+card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_fmk1a"), ExtResource("3_3s4hl"), ExtResource("4_7ebbu"), ExtResource("5_ji2pp"), ExtResource("2_76x4n")])
 passive = ExtResource("6_p2gpn")
 deck_presets = Array[ExtResource("6_bbe6k")]([SubResource("Resource_sa78h"), SubResource("Resource_827in"), SubResource("Resource_iiw8k")])

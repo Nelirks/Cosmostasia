@@ -11,6 +11,10 @@ class_name Character
 @export var card_pool : Array[Card]
 @export var passive : StatusEffect
 @export var deck_presets : Array[DeckPreset]
+
+signal hp_changed()
+signal armor_changed()
+
 var player : Player
 
 var deck : Array[Card]
@@ -20,13 +24,16 @@ var current_health : int:
 		current_health = value
 		hp_changed.emit()
 
-var _armor : int
+var _armor : int :
+	set(value) :
+		_armor = value
+		armor_changed.emit()
 var is_dead : bool = false
 var _statuses : Array[StatusEffect]
 
-signal hp_changed()
-
 func setup() :
+	for card in card_pool :
+		card.character = self
 	current_health = max_health
 	if passive != null : add_status(passive)
 
@@ -120,6 +127,6 @@ func get_enemies(include_dead : bool = false) -> Array[Character] :
 	return player.get_opponent().get_characters(include_dead)
 
 func instantiate() -> Character :
-	var copy = self.duplicate(true)
+	var copy : Character = self.duplicate(true)
 	copy.setup()
 	return copy

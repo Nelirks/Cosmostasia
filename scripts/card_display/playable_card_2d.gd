@@ -1,32 +1,44 @@
 extends Control
 class_name PlayableCard2D
 
+@export var borders : Array[Texture]
+
 var card: Card:
 	set(value):
+		if card != null : disconnect_signals()
 		card = value
 		if card != null : 
-			on_position_set()
 			update_card_infos()
-var miracle_position: Vector2
-var middle_position: Vector2
-var prepared_position: Vector2
+			connect_signals()
 
-func on_position_set():
-	match card.Position:
-		Card.Position.DRAW_PILE: 
-			visible = false
-		Card.Position.PREPARED_SLOT:
-			position = prepared_position
-		Card.Position.MIDDLE_SLOT:
-			position = middle_position
-		Card.Position.MIRACLE_SLOT:
-			position = miracle_position
-		Card.Position.DISCARD_PILE:
-			visible = false
+func connect_signals() -> void :
+	card.cost_updated.connect(update_cost)
+
+func disconnect_signals() -> void :
+	card.cost_updated.disconnect(update_cost)
+
+func update_cost() -> void : 
+	%CardCost.text = str(card.cost)
+
+func update_name() -> void :
+	%CardName.text = card.card_name
+
+func update_borders() -> void :
+	%CardBorders.texture = borders[card.cardType]
+
+func update_flavor_text() -> void :
+	%CardFlavorText.text = "[i]" + card.quote + "[/i]"
+
+func update_description() -> void :
+	%CardDescription.text = DescriptionHandler.develop_tags(card.description)
+
+func update_texture() -> void :
+	%CardSprite.texture = card.card_texture
 
 func update_card_infos():
-	(%Card_Title as Label).text = card.card_name
-	(%Card_Cost as Label).text = str(card.cost)
-	(%Card_Character as Label).text = str(card.character)
-	(%CardDescription as RichTextLabel).text = DescriptionHandler.develop_tags(card.description)
-	(%CardFlavorText as RichTextLabel).text = card.quote
+	update_cost()
+	update_name()
+	update_borders()
+	update_flavor_text()
+	update_description()
+	update_texture()

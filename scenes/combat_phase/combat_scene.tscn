@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdby3tlko6pkc"]
+
+[ext_resource type="Script" path="res://scripts/combat/combat_scene.gd" id="1_t5omj"]
+[ext_resource type="PackedScene" uid="uid://3uv7ywrnc8jk" path="res://scenes/combat_phase/hand_display.tscn" id="3_0g7ao"]
+[ext_resource type="PackedScene" uid="uid://dypqama8wixgp" path="res://scenes/combat_phase/character_container.tscn" id="4_m72q4"]
+[ext_resource type="PackedScene" uid="uid://dr8a6crxdqvbe" path="res://scenes/3d_environment/3d_board_scene.tscn" id="4_vhcko"]
+[ext_resource type="Script" path="res://scripts/mouse_click_area.gd" id="6_kni6t"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mkcl4"]
+viewport_path = NodePath("ArenaBackground/SubViewport")
+
+[sub_resource type="Environment" id="Environment_bfeis"]
+background_mode = 3
+
+[node name="CombatScene" type="Node3D"]
+script = ExtResource("1_t5omj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+current = true
+fov = 40.0
+
+[node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
+
+[node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -6.5, 0)
+is_player = true
+
+[node name="OpponentHand" parent="." instance=ExtResource("3_0g7ao")]
+unique_name_in_owner = true
+transform = Transform3D(-0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 0, 6.5, 0)
+
+[node name="ArenaBackground" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ViewportTexture_mkcl4")
+
+[node name="SubViewport" type="SubViewport" parent="ArenaBackground"]
+own_world_3d = true
+size = Vector2i(1920, 1080)
+
+[node name="3dBoardScene" parent="ArenaBackground/SubViewport" instance=ExtResource("4_vhcko")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bfeis")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TargetlessPlayArea" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 800.0
+mouse_filter = 1
+script = ExtResource("6_kni6t")
+
+[node name="EndTurnButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -37.5
+offset_right = -70.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Fin du tour"
+
+[connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
+[connection signal="clicked" from="CanvasLayer/TargetlessPlayArea" to="." method="_on_targetless_play_area_clicked"]
+[connection signal="gui_input" from="CanvasLayer/TargetlessPlayArea" to="CanvasLayer/TargetlessPlayArea" method="_on_gui_input"]
+[connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]

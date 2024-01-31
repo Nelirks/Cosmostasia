@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bmuywjsg4n8gh"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bmuywjsg4n8gh"]
 
+[ext_resource type="Texture2D" uid="uid://buqydoujxo53f" path="res://resources/sprites/card_sprites/Tim/Grenade.png" id="1_cn42r"]
 [ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/grenade_a_fragmentation.gd" id="1_nelmm"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = "Les explosifs sont bien souvent la solution à nos problèmes"
 cost = 3
 targetting = 3
 cardType = 0
+card_texture = ExtResource("1_cn42r")

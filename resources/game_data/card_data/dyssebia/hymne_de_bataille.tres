@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ykpq31bqbex7"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ykpq31bqbex7"]
 
+[ext_resource type="Texture2D" uid="uid://car7vre1adw64" path="res://resources/sprites/card_sprites/dyssebia/Hymne.png" id="1_l7xoq"]
 [ext_resource type="Script" path="res://scripts/data/cards/dyssebia/hymne_de_bataille.gd" id="1_xvwh3"]
 
 [resource]
@@ -13,3 +14,4 @@ quote = "Une prestance et une détermination sans faille, tels sont les atouts q
 cost = 2
 targetting = 3
 cardType = 1
+card_texture = ExtResource("1_l7xoq")

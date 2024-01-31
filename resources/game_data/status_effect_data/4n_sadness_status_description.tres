@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cijad0losrakd"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_swkee"]
+
+[resource]
+script = ExtResource("1_swkee")
+id = "4n_sadness"
+type = 2
+display_names = Array[String](["Tristesse"])
+description = "!S!Tristesse!S!
+Réduit les dégâts subis et infligés de 20%"

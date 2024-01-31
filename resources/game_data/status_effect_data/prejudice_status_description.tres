@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://coe66pq3qvbj6"]
+
+[ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_1p8au"]
+
+[resource]
+script = ExtResource("1_1p8au")
+id = "prejudice"
+type = 2
+display_names = Array[String](["Préjudice"])
+description = "!S!Préjudice!S!
+Inflige 20% de dégâts supplémentaires"

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BF304180-428F-4310-90B6-E5AB9774ED65}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{BF304180-428F-4310-90B6-E5AB9774ED65}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BF304180-428F-4310-90B6-E5AB9774ED65}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="MusicState" ID="{3D1EF166-6FF7-4B8F-AEB6-F06EC3D44583}">
+					<ChildrenList>
+						<State Name="None" ID="{F51103CF-8CAE-4E26-8C35-9BFAD4A48B29}"/>
+						<State Name="Phase02" ID="{B5FB2B3C-F3DE-4BEE-A06F-D0B28F05C97D}"/>
+						<State Name="Phase01" ID="{D03A5800-8F9E-4283-9195-5D30F2D3067A}"/>
+						<State Name="Phase03" ID="{C6449296-2B67-4B43-BCF0-5949BB794919}"/>
+						<State Name="Phase04" ID="{E608250A-D43C-4F47-9601-80B7A02C69E0}"/>
+						<State Name="MainMenu" ID="{1499F10C-200D-4C25-B1F9-3E18770A277F}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
