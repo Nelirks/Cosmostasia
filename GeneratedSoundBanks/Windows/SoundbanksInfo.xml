@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{80AA3125-B4C7-2DBE-1BF1-31EE7B72A930}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F52A4063-4B49-9013-3B3C-BCCA55C2F9D1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,6 +21,18 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="1021618141" Name="MusicState">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1169953706" Name="Phase04"/>
+						<State Id="1169953708" Name="Phase02"/>
+						<State Id="1169953709" Name="Phase03"/>
+						<State Id="1169953711" Name="Phase01"/>
+						<State Id="3604647259" Name="MainMenu"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
 					<Properties>
@@ -150,9 +162,43 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{2CC05ED6-5DC6-27F7-DCE2-7EB8CFFDA678}">
+		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{7D9D1FAB-1FB5-95BE-0FBB-7ACB3C987841}">
 			<ShortName>Soundbank</ShortName>
 			<Path>Soundbank.bnk</Path>
+			<Media>
+				<File Id="1542609" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat_1.1_115bpm_4-4_L30M_P6M.wav</ShortName>
+					<CachePath>SFX/Combat_1.1_115bpm_4-4_L30M_P6M_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="85081764" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cosmostasia_Combat_Phase03_B.wav</ShortName>
+					<CachePath>SFX/Cosmostasia_Combat_Phase03_B_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="262915043" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat_1.2_115bpm_4-4_L16M_P0.wav</ShortName>
+					<CachePath>SFX/Combat_1.2_115bpm_4-4_L16M_P0_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="328152302" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cosmostasia_Combat_Phase02.wav</ShortName>
+					<CachePath>SFX/Cosmostasia_Combat_Phase02_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="348053191" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Combat_2.2_115bpm_4-4_L34M_P0.wav</ShortName>
+					<CachePath>SFX/Combat_2.2_115bpm_4-4_L34M_P0_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="641674808" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cosmostasia_Combat_Phase03_C.wav</ShortName>
+					<CachePath>SFX/Cosmostasia_Combat_Phase03_C_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="712586612" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cosmostasia_MainMenu.wav</ShortName>
+					<CachePath>SFX/Cosmostasia_MainMenu_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="738309539" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cosmostasia_Combat_Phase04.wav</ShortName>
+					<CachePath>SFX/Cosmostasia_Combat_Phase04_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
 				<Event Id="814543256" Name="Button_Click"/>
 				<Event Id="1701177942" Name="Button_Hover"/>
@@ -161,14 +207,87 @@
 				<Event Id="4136169396" Name="Card_Draw"/>
 				<Event Id="659043495" Name="Card_Use"/>
 				<Event Id="1593864692" Name="Defeat"/>
+				<Event Id="878153172" Name="End_CombatMusic">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="1169953706" Name="Phase04"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="731380034" Name="End_Turn"/>
-				<Event Id="1660258124" Name="Start_Main_Ambiance"/>
-				<Event Id="540993415" Name="Start_Music"/>
+				<Event Id="5298891" Name="Start_CombatMusic">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="1169953711" Name="Phase01"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2387187289" Name="Start_MainMenuMusic">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="3604647259" Name="MainMenu"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="540993415" Name="Start_Music">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="1169953708"/>
+							<MediaRefs>
+								<MediaRef Id="328152302"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="1169953709"/>
+							<MediaRefs>
+								<MediaRef Id="85081764"/>
+								<MediaRef Id="348053191"/>
+								<MediaRef Id="641674808"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="1169953706"/>
+							<MediaRefs>
+								<MediaRef Id="738309539"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="1169953711"/>
+							<MediaRefs>
+								<MediaRef Id="1542609"/>
+								<MediaRef Id="262915043"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="3604647259"/>
+							<MediaRefs>
+								<MediaRef Id="712586612"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3790030967" Name="Start_Turn"/>
+				<Event Id="2837384057" Name="Stop_Music"/>
+				<Event Id="1342751927" Name="Switch_Phase02">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="1169953708" Name="Phase02"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1342751926" Name="Switch_Phase03">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="1169953709" Name="Phase03"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="3020609900" Name="Take_Damage"/>
 				<Event Id="2716678721" Name="Victory"/>
 			</Events>
+			<StateGroups>
+				<StateGroup Id="1021618141" Name="MusicState">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1169953706" Name="Phase04"/>
+						<State Id="1169953708" Name="Phase02"/>
+						<State Id="1169953709" Name="Phase03"/>
+						<State Id="1169953711" Name="Phase01"/>
+						<State Id="3604647259" Name="MainMenu"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{94F5C7C4-9A0D-165E-43EA-AC9A443D7032}</FileHash>
+	<FileHash>{1BFBD954-E9E4-9904-04A8-60A99AC33627}</FileHash>
 </SoundBanksInfo>

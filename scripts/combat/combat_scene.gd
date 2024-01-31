@@ -3,6 +3,9 @@ extends Node3D
 @onready var player_hand : HandDisplay = %PlayerHand
 @onready var opponent_hand : HandDisplay = %OpponentHand
 
+func _ready():
+	AudioManager.post_event(AK.EVENTS.START_COMBATMUSIC)
+
 func _on_character_clicked(is_host : bool, index : int) -> void :
 	if player_hand.selected_card == null : return
 	if player_hand.selected_card.card.targetting == Card.Targetting.NO_TARGET : return

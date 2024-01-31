@@ -2,39 +2,72 @@ class_name AK
 
 class EVENTS:
 
-	const CARD_DEBUFF = 3760597508
-	const START_MUSIC = 540993415
-	const START_MAIN_AMBIANCE = 1660258124
-	const BUTTON_HOVER = 1701177942
-	const CARD_BUFF = 2145643165
+	const START_TURN = 3790030967
 	const DEFEAT = 1593864692
+	const CARD_DEBUFF = 3760597508
+	const TAKE_DAMAGE = 3020609900
+	const BUTTON_CLICK = 814543256
 	const CARD_DRAW = 4136169396
 	const END_TURN = 731380034
-	const TAKE_DAMAGE = 3020609900
+	const END_COMBATMUSIC = 878153172
+	const BUTTON_HOVER = 1701177942
+	const START_MAINMENUMUSIC = 2387187289
 	const CARD_USE = 659043495
-	const BUTTON_CLICK = 814543256
-	const START_TURN = 3790030967
+	const SWITCH_PHASE02 = 1342751927
+	const CARD_BUFF = 2145643165
 	const VICTORY = 2716678721
+	const START_COMBATMUSIC = 5298891
+	const START_MUSIC = 540993415
+	const SWITCH_PHASE03 = 1342751926
+	const STOP_MUSIC = 2837384057
 
 	const _dict = {
-		"Card_Debuff": CARD_DEBUFF,
-		"Start_Music": START_MUSIC,
-		"Start_Main_Ambiance": START_MAIN_AMBIANCE,
-		"Button_Hover": BUTTON_HOVER,
-		"Card_Buff": CARD_BUFF,
+		"Start_Turn": START_TURN,
 		"Defeat": DEFEAT,
+		"Card_Debuff": CARD_DEBUFF,
+		"Take_Damage": TAKE_DAMAGE,
+		"Button_Click": BUTTON_CLICK,
 		"Card_Draw": CARD_DRAW,
 		"End_Turn": END_TURN,
-		"Take_Damage": TAKE_DAMAGE,
+		"End_CombatMusic": END_COMBATMUSIC,
+		"Button_Hover": BUTTON_HOVER,
+		"Start_MainMenuMusic": START_MAINMENUMUSIC,
 		"Card_Use": CARD_USE,
-		"Button_Click": BUTTON_CLICK,
-		"Start_Turn": START_TURN,
-		"Victory": VICTORY
+		"Switch_Phase02": SWITCH_PHASE02,
+		"Card_Buff": CARD_BUFF,
+		"Victory": VICTORY,
+		"Start_CombatMusic": START_COMBATMUSIC,
+		"Start_Music": START_MUSIC,
+		"Switch_Phase03": SWITCH_PHASE03,
+		"Stop_Music": STOP_MUSIC
 	}
 
 class STATES:
 
-	const _dict = {}
+	class MUSICSTATE:
+		const GROUP = 1021618141
+
+		class STATE:
+			const PHASE01 = 1169953711
+			const PHASE04 = 1169953706
+			const MAINMENU = 3604647259
+			const NONE = 748895195
+			const PHASE02 = 1169953708
+			const PHASE03 = 1169953709
+
+	const _dict = {
+		"MusicState": {
+			"GROUP": 1021618141,
+			"STATE": {
+				"Phase01": 1169953711,
+				"Phase04": 1169953706,
+				"MainMenu": 3604647259,
+				"None": 748895195,
+				"Phase02": 1169953708,
+				"Phase03": 1169953709
+			}
+		}
+	}
 
 class SWITCHES:
 

@@ -75,7 +75,6 @@ func check_game_state() -> void:
 	if current_health <= 0 :
 		is_dead = true
 		player.remove_cards(self)
-			
 
 func apply_armor(amount : int) -> void :
 	_armor += amount
