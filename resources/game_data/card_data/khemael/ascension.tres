@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_88yna")
 damage = 80
-armor = 80
+heal = 80
 stacks_threshold = 6
 card_name = "Ascension"
 description = "Dépense 6 !S!Préjudice!S! pour infliger 80 dégâts à la cible.
