@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bd4oj36iy5os5"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bd4oj36iy5os5"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/surcharge.gd" id="1_hklpy"]
+[ext_resource type="Texture2D" uid="uid://dd1r5s5sy2bfs" path="res://resources/sprites/card_sprites/Tim/Surcharge 3.png" id="1_jjw08"]
 
 [resource]
 script = ExtResource("1_hklpy")
@@ -13,3 +14,4 @@ quote = ""
 cost = 2
 targetting = 3
 cardType = 1
+card_texture = ExtResource("1_jjw08")

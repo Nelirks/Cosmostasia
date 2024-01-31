@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dpjwhb64psb23"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpjwhb64psb23"]
 
+[ext_resource type="Texture2D" uid="uid://b82g1kf3ohmqg" path="res://resources/sprites/card_sprites/Tim/Ideedufutur 3.png" id="1_3jw6j"]
 [ext_resource type="Script" path="res://scripts/data/cards/timothy_laveak/idee_du_futur.gd" id="1_yk1wc"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = "\"La prochaine fois je serai prêt\""
 cost = 1
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_3jw6j")

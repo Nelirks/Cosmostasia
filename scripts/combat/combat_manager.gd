@@ -137,10 +137,14 @@ func _apply_action() -> void :
 
 ## Updates characters is_dead value, then checks if a player wins the game.
 func _check_game_state() -> void :
+	var previous_min_team_size : int = mini(get_player_by_turn(true).get_characters().size(), get_player_by_turn(false).get_characters().size())
 	for char in get_player_by_turn(true).get_characters() :
 		char.check_game_state()
 	for char in get_player_by_turn(false).get_characters() :
 		char.check_game_state()
+	var min_team_size : int = mini(get_player_by_turn(true).get_characters().size(), get_player_by_turn(false).get_characters().size())
+	if min_team_size < previous_min_team_size :
+		AudioManager.post_event([AK.EVENTS.END_COMBATMUSIC, AK.EVENTS.SWITCH_PHASE03, AK.EVENTS.SWITCH_PHASE02][min_team_size])
 	get_player_by_turn(true).refill_hand()
 	get_player_by_turn(false).refill_hand()
 	_check_victory()

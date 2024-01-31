@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b007r5udiy7ku"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b007r5udiy7ku"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/dyssebia/manipulation_archonique.gd" id="1_52hlp"]
+[ext_resource type="Texture2D" uid="uid://uur0dnpdcglb" path="res://resources/sprites/card_sprites/dyssebia/Manipulation 2.png" id="1_lqdgl"]
 
 [resource]
 script = ExtResource("1_52hlp")
@@ -13,3 +14,4 @@ quote = ""
 cost = 1
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_lqdgl")

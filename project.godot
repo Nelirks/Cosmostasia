@@ -21,6 +21,7 @@ WwiseRuntimeManager="res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 GameManager="*res://scenes/game_management/game_manager.tscn"
 NetworkManager="*res://scenes/network/network_manager.tscn"
 DescriptionHandler="*res://scenes/info_popup/description_handler.tscn"
+AudioManager="*res://scenes/audio/audio_manager.tscn"
 
 [display]
 
@@ -34,7 +35,6 @@ enabled=PackedStringArray("res://addons/Wwise/plugin.cfg")
 
 [wwise]
 
-common_user_settings/base_path="res://GeneratedSoundBanks"
 common_user_settings/startup_language="English(US)"
 common_user_settings/load_init_bank_at_startup=false
 common_user_settings/use_soundbank_names=true
@@ -86,3 +86,4 @@ ios_advanced_settings/audio_session_mode=0
 android_advanced_settings/audio_API=3
 android_advanced_settings/round_frame_size_to_hw_size=true
 linux_advanced_settings/audio_API=3
+common_user_settings/base_path="res://GeneratedSoundBanks"

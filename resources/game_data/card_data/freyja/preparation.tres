@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://x3gputyean5g"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://x3gputyean5g"]
 
+[ext_resource type="Texture2D" uid="uid://boj8068uxqdl7" path="res://resources/sprites/card_sprites/freyja/Préparation_.png" id="1_emctc"]
 [ext_resource type="Script" path="res://scripts/data/cards/freyja/préparation.gd" id="1_un5n3"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = ""
 cost = 2
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_emctc")

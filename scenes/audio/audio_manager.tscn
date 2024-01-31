@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyaaqlujke66"]
+
+[ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="1_g6awc"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_g6awc")
+
+[node name="InitBankLoader" type="AkBank" parent="."]
+bank = {
+"id": 1355168291,
+"name": "Init"
+}
+load_on = 1
+unload_on = 3
+
+[node name="MainBankLoader" type="AkBank" parent="."]
+bank = {
+"id": 1661994096,
+"name": "Soundbank"
+}
+load_on = 1
+unload_on = 3
+
+[node name="AkListener2D" type="AkListener2D" parent="."]

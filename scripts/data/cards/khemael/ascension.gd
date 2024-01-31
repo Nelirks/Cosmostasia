@@ -1,7 +1,7 @@
 extends Card
 
 @export var damage : int
-@export var armor : int
+@export var heal : int
 @export var stacks_threshold : int
 
 func apply_effects(target : Character) -> void :
@@ -10,7 +10,7 @@ func apply_effects(target : Character) -> void :
 	if target.player != character.player : 
 		_add_effect(DamageEffect.new(damage, character, target))
 	else : 
-		_add_effect(ApplyArmorEffect.new(armor, character, target))
+		_add_effect(HealEffect.new(heal, character, target))
 
 func can_target(target : Character) -> bool :
 	if character.has_status("khemael_passive") and character.get_status("khemael_passive").prejudice_stacks >= stacks_threshold :
