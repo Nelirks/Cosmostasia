@@ -1,56 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=5 format=3 uid="uid://dr8a6crxdqvbe"]
 
+[ext_resource type="PackedScene" uid="uid://g85ec7i0xv75" path="res://scenes/3d_environment/Cosmostasia_Arena_Test_Triangulate.glb" id="1_f7dao"]
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_ln1s5"]
 
 [sub_resource type="Environment" id="Environment_b6jo1"]
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 1.05
+ssao_intensity = 2.68
+ssao_horizon = 0.0
+ssil_enabled = true
+ssil_radius = 2.32
+ssil_intensity = 6.5
+ssil_sharpness = 1.0
+ssil_normal_rejection = 0.67
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 1.99
+glow_enabled = true
+glow_levels/1 = 4.0
+glow_levels/2 = 1.0
 glow_levels/6 = 0.13
 glow_levels/7 = 0.25
 glow_intensity = 0.1
+glow_bloom = 0.1
 glow_blend_mode = 0
 glow_hdr_threshold = 0.5
-glow_hdr_scale = 1.5
+glow_hdr_scale = 1.55
+adjustment_enabled = true
+adjustment_contrast = 1.23
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_kvrus"]
 
 [node name="3dBoardScene" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.6322, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.491591, 11.5703, 0.0629888)
 fov = 70.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b6jo1")
 camera_attributes = SubResource("CameraAttributesPractical_kvrus")
 
+[node name="Cosmostasia_Arena_Test_Triangulate" parent="." instance=ExtResource("1_f7dao")]
+
 [node name="CosmostasiaArena" parent="." instance=ExtResource("1_ln1s5")]
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42432, 4.16006, 1.26361)
+light_color = Color(0.752941, 0.494118, 0.0235294, 1)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00633097, -0.0309558, -2.53498)
+light_color = Color(0.752941, 0.494118, 0.0235294, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8075, -0.0408025, -2.52078)
+light_color = Color(0.752941, 0.494118, 0.0235294, 1)
 distance_fade_begin = 2.5
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="OmniLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8238, -0.0294576, -0.0215808)
+light_color = Color(0.752941, 0.494118, 0.0235294, 1)
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="OmniLight3D"]
-transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -3.90433e-10, 0.104617, -0.992695, -0.0601077, 7.56428, -2.58558, -1.24788)
-light_energy = 0.133
+transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.84057e-08, 0.104617, -0.992695, -0.0601077, 7.56428, -0.723481, -1.24788)
+light_energy = 0.279
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_normal_bias = 0.0
 shadow_blur = 1.06
 distance_fade_enabled = true
-omni_range = 34.131
+omni_range = 7.471
 omni_attenuation = 0.233257
 omni_shadow_mode = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="OmniLight3D"]
-transform = Transform3D(-0.44679, -0.851526, 0.274378, 0.10902, 0.252584, 0.961414, -0.887972, 0.459462, -0.0200187, 7.41621, -1.97471, -1.27662)
+transform = Transform3D(-0.44679, -0.851525, 0.274378, 0.10902, 0.252584, 0.961414, -0.887972, 0.459463, -0.0200186, 7.41621, -1.97471, -1.27662)
 light_color = Color(0.317647, 0, 0.635294, 1)
 light_energy = 0.229
 light_indirect_energy = 0.0
