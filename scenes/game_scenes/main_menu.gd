@@ -1,8 +1,13 @@
-extends Button
+extends Control
 
-func _ready():
-	AudioManager.post_event(AK.EVENTS.START_MUSIC)
-	AudioManager.post_event(AK.EVENTS.START_MAINMENUMUSIC)
+func _on_host_button_pressed():
+	NetworkManager.create_server((%PortEdit as TextEdit).text)
 
-func _on_pressed():
-	get_tree().change_scene_to_file("res://scenes/game_scenes/network_setup.tscn")
+func _on_join_button_pressed():
+	NetworkManager.create_client((%IPEdit as TextEdit).text, (%PortEdit as TextEdit).text)
+
+func _on_settings_button_pressed():
+	%SettingsBackground.set_position(Vector2(0,0))
+
+func _on_button_pressed():
+	%SettingsBackground.set_position(Vector2(-2000,0))
