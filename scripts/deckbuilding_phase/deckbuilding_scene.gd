@@ -1,5 +1,7 @@
 extends Node
 
+@export var unselected_card_material : Material
+
 var host_presets : Array = []
 var client_presets : Array = []
 
@@ -136,4 +138,6 @@ func on_preset_selected(preset_index : int) -> void :
 
 func update_card_counts() -> void :
 	for i in range(5) : 
-		card_amount_displays[i].text = str(selected_character.deck_presets[selected_presets[selected_character_index]].content[i])
+		var amount = selected_character.deck_presets[selected_presets[selected_character_index]].content[i]
+		card_displays[i].set_overlay(unselected_card_material if amount == 0 else null)
+		card_amount_displays[i].text = str(amount)

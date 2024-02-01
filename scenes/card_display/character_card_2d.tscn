@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://pj3okss4lgka"]
+[gd_scene load_steps=7 format=3 uid="uid://pj3okss4lgka"]
 
 [ext_resource type="Script" path="res://scripts/card_display/character_card_2d.gd" id="1_ng47k"]
+[ext_resource type="Material" uid="uid://c2p3hm62digx0" path="res://vfx/gray_filter/gray_filter_material.tres" id="2_1i6vt"]
 [ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="2_5ykcr"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="3_d3qix"]
 [ext_resource type="PackedScene" path="res://scenes/card_display/health_bar.tscn" id="4_tthbh"]
@@ -20,6 +21,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ng47k")
+death_material = ExtResource("2_1i6vt")
 
 [node name="CharacterSprite" type="TextureRect" parent="."]
 unique_name_in_owner = true
