@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://112q00pykeyo"]
+[gd_scene load_steps=19 format=3 uid="uid://112q00pykeyo"]
 
 [ext_resource type="Script" path="res://scripts/info_popup/description_handler.gd" id="1_3t4nu"]
+[ext_resource type="Resource" uid="uid://c3ecd5weeq6jw" path="res://resources/game_data/status_effect_data/4n_joy_status_description.tres" id="2_7u0mn"]
+[ext_resource type="Resource" uid="uid://cijad0losrakd" path="res://resources/game_data/status_effect_data/4n_sadness_status_description.tres" id="3_fssko"]
+[ext_resource type="Resource" uid="uid://2yvdskam5tc" path="res://resources/game_data/status_effect_data/4n_wrath_status_description.tres" id="4_81oy6"]
+[ext_resource type="Resource" uid="uid://be6yq67toc837" path="res://resources/game_data/status_effect_data/attack_down_status.tres" id="5_jo4si"]
+[ext_resource type="Resource" uid="uid://c7re4abtbr14h" path="res://resources/game_data/status_effect_data/attack_up_status.tres" id="6_ucoud"]
+[ext_resource type="Resource" uid="uid://df5uebufqgdiw" path="res://resources/game_data/status_effect_data/boucle_de_programme.tres" id="7_ndg7m"]
+[ext_resource type="Resource" uid="uid://16qcwwrft76s" path="res://resources/game_data/status_effect_data/defense_up_status.tres" id="8_kx58q"]
+[ext_resource type="Resource" uid="uid://bcse20kxf0p4g" path="res://resources/game_data/status_effect_data/faveur_status_description.tres" id="9_d6t2k"]
+[ext_resource type="Resource" uid="uid://cp2oirdx01tnc" path="res://resources/game_data/status_effect_data/feather_status.tres" id="10_dn08l"]
+[ext_resource type="Resource" uid="uid://b6nrfwrc1iksi" path="res://resources/game_data/status_effect_data/permanent_damage_up_status.tres" id="11_svdmt"]
+[ext_resource type="Resource" uid="uid://b68cg6crofxy0" path="res://resources/game_data/status_effect_data/poison_status.tres" id="12_ihmxp"]
+[ext_resource type="Resource" uid="uid://coe66pq3qvbj6" path="res://resources/game_data/status_effect_data/prejudice_status_description.tres" id="13_morim"]
+[ext_resource type="Resource" uid="uid://djd70t8r8fxpv" path="res://resources/game_data/status_effect_data/preparation_status.tres" id="14_4f5jk"]
+[ext_resource type="Resource" uid="uid://pwebxljbe7jp" path="res://resources/game_data/status_effect_data/provoke_status_effect.tres" id="15_kh021"]
+[ext_resource type="Resource" uid="uid://dibqu1nd8n3o4" path="res://resources/game_data/status_effect_data/rafale_effect.tres" id="16_xios7"]
+[ext_resource type="Resource" uid="uid://cf274w0i425tr" path="res://resources/game_data/status_effect_data/stealth_status_effect.tres" id="17_iolwy"]
+[ext_resource type="Resource" uid="uid://deki1epvhvf2q" path="res://resources/game_data/status_effect_data/stunned_status.tres" id="18_3nf2k"]
 
 [node name="DescriptionContainer" type="Node"]
 script = ExtResource("1_3t4nu")
-status_dir_path = "res://resources/game_data/status_effect_data"
+statuses = Array[Resource("res://scripts/combat/status_effects/status_effect.gd")]([ExtResource("2_7u0mn"), ExtResource("3_fssko"), ExtResource("4_81oy6"), ExtResource("5_jo4si"), ExtResource("6_ucoud"), ExtResource("7_ndg7m"), ExtResource("8_kx58q"), ExtResource("9_d6t2k"), ExtResource("10_dn08l"), ExtResource("11_svdmt"), ExtResource("12_ihmxp"), ExtResource("13_morim"), ExtResource("14_4f5jk"), ExtResource("15_kh021"), ExtResource("16_xios7"), ExtResource("17_iolwy"), ExtResource("18_3nf2k")])
 keyword_descriptions = {
 "Miracle": "!K!Miracle!K!
 S'active si la carte est à gauche dans la main",

@@ -1,6 +1,6 @@
 extends Node
 
-@export_dir var status_dir_path : String
+@export var statuses : Array[StatusEffect]
 
 var status_descriptions : Dictionary
 @export_multiline var keyword_descriptions : Dictionary
@@ -14,18 +14,9 @@ func _ready():
 	init_keyword_descriptions()
 
 func init_status_descriptions() -> void :
-	var status_dir = DirAccess.open(status_dir_path)
-	if status_dir:
-		status_dir.list_dir_begin()
-		var file_name = status_dir.get_next()
-		while file_name != "":
-			if not status_dir.current_is_dir():
-				var status : StatusEffect = load(status_dir_path + "/" + file_name)
-				for display_name in status.display_names :
-					status_descriptions[display_name.to_lower()] = status.description
-			file_name = status_dir.get_next()
-	else:
-		printerr("An error occurred when trying to access the path.")
+	for status in statuses :
+		for display_name in status.display_names :
+			status_descriptions[display_name.to_lower()] = status.description
 
 func init_keyword_descriptions() -> void :
 	for key in keyword_descriptions.keys() :
