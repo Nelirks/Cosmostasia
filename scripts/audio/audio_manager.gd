@@ -4,7 +4,8 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Wwise.register_game_obj(self, "AudioManager")
-
+	post_event(AK.EVENTS.START_MUSIC)
+	post_event(AK.EVENTS.START_MAINMENUMUSIC)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func post_event(id) -> void :
