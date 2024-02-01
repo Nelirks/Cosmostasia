@@ -71,6 +71,8 @@ grow_vertical = 2
 text = "Fin du tour"
 
 [connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
+[connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
 [connection signal="clicked" from="CanvasLayer/TargetlessPlayArea" to="." method="_on_targetless_play_area_clicked"]
 [connection signal="gui_input" from="CanvasLayer/TargetlessPlayArea" to="CanvasLayer/TargetlessPlayArea" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EndTurnButton" to="PlayerHand" method="deselect_card"]
