@@ -1,6 +1,7 @@
 extends Control
 class_name CharacterCard2D
 
+@export var death_material : Material
 @export var display_current_hp : bool = true :
 	set(value) : 
 		display_current_hp = value
@@ -29,15 +30,13 @@ func disconnect_signals() -> void :
 	character.armor_changed.disconnect(on_character_hp_changed)
 
 func set_overlay(material : Material) -> void :
+	if %FXOverlay.material == death_material : return
 	%FXOverlay.material = material
 	%FXOverlay.visible = material != null
 
 func on_character_hp_changed() -> void :
 	if display_current_hp :
-		%HealthBar.size.x = %HealthBackground.size.x * clampf(float(character.current_health)/float(character.max_health), 0.0, 1.0)
-		%HealthLabel.text = str(character.current_health) + " / " + str(character.max_health) + (" (" + str(character._armor) + ")" if character._armor > 0 else "")
-		%ArmorBar.visible = character._armor > 0
-		%ArmorBar.size.x = %HealthBackground.size.x * clampf(float(character._armor)/float(character.max_health), 0.0, 1.0)
+		%HealthBar.display_full(maxi(character.current_health, 0), character.max_health, character._armor)
+		set_overlay(death_material if character.current_health <= 0 else null)
 	else : 
-		%ArmorBar.visible = false
-		%HealthLabel.text = str(character.max_health)
+		%HealthBar.display_max_health(character.max_health)

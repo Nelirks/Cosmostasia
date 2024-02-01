@@ -26,3 +26,4 @@ func _unhandled_input(event):
 
 func _on_end_turn_button_pressed():
 	GameManager.combat.query_end_turn()
+

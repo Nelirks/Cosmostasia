@@ -4,6 +4,9 @@ class_name CharacterContainer
 @onready var player_characters : Array[CharacterCard3D]
 @onready var opponent_characters : Array[CharacterCard3D]
 
+@export var player_character_targetable_material : Material
+@export var opponent_character_targetable_material : Material
+
 var info_popup : InfoPopup :
 	set(value) :
 		if info_popup != null : info_popup.queue_free()
@@ -39,3 +42,17 @@ func _on_character_mouse_entered(character_display : CharacterCard3D) -> void :
 	
 func _on_character_mouse_exited(character_display : CharacterCard3D) -> void :
 	info_popup = null
+
+func on_card_selected(card : Card) -> void :
+	for player_character in player_characters :
+		if card != null and (card.can_target(player_character.character) or card.targetting == Card.Targetting.NO_TARGET and card.character == player_character.character) :
+			player_character.set_overlay(player_character_targetable_material)
+		else :
+			player_character.set_overlay(null)
+			
+	for opponent_character in opponent_characters :
+		if card != null and card.can_target(opponent_character.character) :
+			opponent_character.set_overlay(opponent_character_targetable_material)
+		else :
+			opponent_character.set_overlay(null)
+

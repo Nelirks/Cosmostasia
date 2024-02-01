@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=7 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
-[ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="3_3icy8"]
+[ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
+[ext_resource type="Texture2D" uid="uid://wkrj77x1klld" path="res://resources/sprites/main_menu/bouton_menu_simon.png" id="2_h12ev"]
+[ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="5_k7rl3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
+font = ExtResource("1_ovrrf")
+font_size = 65
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,77 +17,199 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ooml6")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uw676")
+expand_mode = 1
+
+[node name="HostButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1920.0
-offset_top = -950.0
-grow_horizontal = 0
+offset_left = 350.0
+offset_top = -180.0
+offset_right = 850.0
+offset_bottom = -30.0
 grow_vertical = 0
+pivot_offset = Vector2(256, 81)
+texture_normal = ExtResource("2_h12ev")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.215686, 0.215686, 0.215686, 1)
-
-[node name="Top Menu" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 130.0
-
-[node name="ColorRect" type="ColorRect" parent="Top Menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0980392, 0.0980392, 0.0980392, 1)
-
-[node name="StartButton" type="Button" parent="Top Menu"]
+[node name="Label" type="Label" parent="HostButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -29.0
-offset_right = 75.0
-offset_bottom = 31.0
+offset_left = -78.5
+offset_top = -39.5
+offset_right = 78.5
+offset_bottom = 39.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_ovrrf")
-theme_override_font_sizes/font_size = 60
-action_mode = 0
-text = "JOUER"
-script = ExtResource("1_ooml6")
+text = "Host"
+label_settings = SubResource("LabelSettings_gbn1r")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="SettingsButton" type="Button" parent="Top Menu"]
+[node name="JoinButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -36.0
-offset_right = -98.0
-offset_bottom = 36.0
+anchor_bottom = 1.0
+offset_left = -850.0
+offset_top = -180.0
+offset_right = -350.0
+offset_bottom = -30.0
 grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 33
-icon = ExtResource("3_3icy8")
-flat = true
-icon_alignment = 1
+grow_vertical = 0
+pivot_offset = Vector2(255, 81)
+texture_normal = ExtResource("2_h12ev")
+ignore_texture_size = true
+stretch_mode = 0
 
-[connection signal="pressed" from="Top Menu/StartButton" to="Top Menu/StartButton" method="_on_pressed"]
+[node name="Label" type="Label" parent="JoinButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = -39.5
+offset_right = 78.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Join"
+label_settings = SubResource("LabelSettings_gbn1r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 30.0
+offset_right = -56.0
+offset_bottom = 94.0
+grow_horizontal = 0
+pivot_offset = Vector2(31, 32)
+texture_normal = ExtResource("5_k7rl3")
+
+[node name="SettingsBackground" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1978.0
+offset_right = -1978.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.384314, 0.384314, 1)
+
+[node name="ServerIPSetting" type="HSplitContainer" parent="SettingsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 3
+
+[node name="Label" type="Label" parent="SettingsBackground/ServerIPSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Server IP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IPEdit" type="TextEdit" parent="SettingsBackground/ServerIPSetting"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "127.0.0.1"
+placeholder_text = "IP ADRESS"
+
+[node name="ServerPortSetting" type="HSplitContainer" parent="SettingsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 28.505
+offset_right = 250.0
+offset_bottom = 98.505
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 3
+
+[node name="Label" type="Label" parent="SettingsBackground/ServerPortSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Server Port"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PortEdit" type="TextEdit" parent="SettingsBackground/ServerPortSetting"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "31400"
+placeholder_text = "PORT"
+
+[node name="Button" type="Button" parent="SettingsBackground"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 350.0
+offset_bottom = 200.0
+
+[node name="Label" type="Label" parent="SettingsBackground/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 53
+text = "Retour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="HostButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="HostButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="mouse_entered" from="JoinButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="JoinButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsBackground/Button" to="." method="_on_button_pressed"]

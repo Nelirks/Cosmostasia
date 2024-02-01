@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3uv7ywrnc8jk"]
+[gd_scene load_steps=3 format=3 uid="uid://3uv7ywrnc8jk"]
 
 [ext_resource type="Script" path="res://scripts/combat/hand_display.gd" id="1_iq6b1"]
+[ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="2_haeg4"]
 
 [node name="hand_display" type="Node3D"]
 script = ExtResource("1_iq6b1")
@@ -8,6 +9,7 @@ card_move_duration = 0.5
 card_zoom_in_delay = 0.5
 card_zoom_in_duration = 0.375
 card_zoom_out_duration = 0.375
+selected_card_overlay_material = ExtResource("2_haeg4")
 
 [node name="DrawPile" type="Marker3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -18, 3.5, 0)
