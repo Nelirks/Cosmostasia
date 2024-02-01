@@ -21,28 +21,31 @@ card_zoom_out_duration = 0.375
 unique_name_in_owner = true
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 7.75, 0)
 display_current_hp = false
+rotation_angle = 50.0
 
 [node name="CardArea" type="Node3D" parent="."]
 unique_name_in_owner = true
 
 [node name="Card1" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -15, -5.5, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16, -5.5, 0)
 
 [node name="Card2" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -7.5, -5.5, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8, -5.5, 0)
 
 [node name="Card3" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -5.5, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -5.5, 0)
 
 [node name="Card4" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.5, -5.5, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, -5.5, 0)
 
 [node name="Card5" parent="CardArea" instance=ExtResource("1_npbdc")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 15, -5.5, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 16, -5.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+projection = 1
+size = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gmyqr")
@@ -90,13 +93,13 @@ theme_override_font_sizes/font_size = 30
 [node name="CardCounts" type="HBoxContainer" parent="Background"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_top = 900.0
+offset_top = 930.0
 offset_right = 1920.0
-offset_bottom = 960.0
+offset_bottom = 990.0
 alignment = 1
 
 [node name="CardCount1" type="Label" parent="Background/CardCounts"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -104,7 +107,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardCount2" type="Label" parent="Background/CardCounts"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -112,7 +115,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardCount3" type="Label" parent="Background/CardCounts"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -120,7 +123,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardCount4" type="Label" parent="Background/CardCounts"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -128,7 +131,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardCount5" type="Label" parent="Background/CardCounts"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "0"

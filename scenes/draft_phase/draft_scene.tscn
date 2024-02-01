@@ -76,7 +76,9 @@ display_current_hp = false
 [node name="Camera3D" type="Camera3D" parent="Board"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+projection = 1
 current = true
+size = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48764")

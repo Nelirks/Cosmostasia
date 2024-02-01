@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://37pqr2vuomlp"]
+
+[ext_resource type="FontFile" uid="uid://c6gy4tkexxuqy" path="res://fonts/Open Sans/OpenSans-VariableFont_wdth,wght.ttf" id="1_6kiu1"]
+[ext_resource type="FontFile" uid="uid://bq8144ihwsf2d" path="res://fonts/Open Sans/static/OpenSans-Bold.ttf" id="1_rnspd"]
+[ext_resource type="FontFile" uid="uid://g3l4e06bpr8r" path="res://fonts/Open Sans/static/OpenSans-BoldItalic.ttf" id="2_rhdj4"]
+[ext_resource type="FontFile" uid="uid://b7h3kr5ruc5ba" path="res://fonts/Open Sans/static/OpenSans-Italic.ttf" id="3_xjvvh"]
+
+[resource]
+default_base_scale = 1.0
+default_font = ExtResource("1_6kiu1")
+default_font_size = 20
+/colors/Black = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_6kiu1")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/fonts/bold_font = ExtResource("1_rnspd")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_rhdj4")
+RichTextLabel/fonts/italics_font = ExtResource("3_xjvvh")
+RichTextLabel/fonts/normal_font = ExtResource("1_6kiu1")

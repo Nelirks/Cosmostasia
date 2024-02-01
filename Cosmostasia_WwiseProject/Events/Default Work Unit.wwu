@@ -126,6 +126,43 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Draft" ID="{F4BF1BF5-F04A-4978-9EC5-41E41EDA8C54}" ShortID="225658707">
+					<ChildrenList>
+						<Event Name="Draft_Hover_Card" ID="{2C186BF7-85D6-41BA-9F46-6DC8A07A99BD}">
+							<ChildrenList>
+								<Action Name="" ID="{33C5FB33-98E4-4477-8BD9-8EF55AD0172A}" ShortID="18334114">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_SURVOL_1" ID="{B43F7960-3DFE-461C-9D95-6B99AB0160C2}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Draft_Click_Card" ID="{FD51B657-FEAB-45BD-A8A2-05B3C39BDD85}">
+							<ChildrenList>
+								<Action Name="" ID="{E1501A4E-CE60-4E12-8A8D-F781ED1914D8}" ShortID="958201735">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_SELECTION_1" ID="{CE4FB008-2561-4B80-A423-9B1552A01E54}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Draft_Validate_Button" ID="{E365D3A4-5184-415B-ACA0-016076716ED2}">
+							<ChildrenList>
+								<Action Name="" ID="{488570E4-1441-4EC3-A122-98057E7B3E9E}" ShortID="154484173">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_VALIDATION_1" ID="{6C1DF043-339E-4C00-A51A-965868D8263E}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

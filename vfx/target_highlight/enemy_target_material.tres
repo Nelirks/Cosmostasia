@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://4bihdc3epp6j"]
+
+[ext_resource type="Shader" uid="uid://cudt01drrbgt8" path="res://vfx/target_highlight/target_highlight_shader.tres" id="1_i6fop"]
+
+[resource]
+shader = ExtResource("1_i6fop")
+shader_parameter/BorderColor = Color(1, 0.584314, 0, 1)
+shader_parameter/ShineColor = Color(1, 0, 0, 1)
+shader_parameter/FrontTrailLength = 0.05
+shader_parameter/TimeFactor = 0.5
+shader_parameter/TextureSize = Vector2(500, 850)
+shader_parameter/BackTrailLength = 0.2
+shader_parameter/LineWidth = 10.0
+shader_parameter/OutFade = 0.05
+shader_parameter/InFade = 0.0

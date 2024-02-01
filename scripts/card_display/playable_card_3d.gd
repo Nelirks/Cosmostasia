@@ -11,3 +11,6 @@ var card : Card :
 	
 	get :
 		return _front_side.card if _front_side != null else null
+
+func set_overlay(overlay_material : Material) -> void :
+	_front_side.set_overlay(overlay_material)

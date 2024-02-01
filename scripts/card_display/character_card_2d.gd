@@ -34,10 +34,6 @@ func set_overlay(material : Material) -> void :
 
 func on_character_hp_changed() -> void :
 	if display_current_hp :
-		%HealthBar.size.x = %HealthBackground.size.x * clampf(float(character.current_health)/float(character.max_health), 0.0, 1.0)
-		%HealthLabel.text = str(character.current_health) + " / " + str(character.max_health) + (" (" + str(character._armor) + ")" if character._armor > 0 else "")
-		%ArmorBar.visible = character._armor > 0
-		%ArmorBar.size.x = %HealthBackground.size.x * clampf(float(character._armor)/float(character.max_health), 0.0, 1.0)
+		%HealthBar.display_full(character.current_health, character.max_health, character._armor)
 	else : 
-		%ArmorBar.visible = false
-		%HealthLabel.text = str(character.max_health)
+		%HealthBar.display_max_health(character.max_health)

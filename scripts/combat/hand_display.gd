@@ -12,6 +12,8 @@ signal card_selected(card : Card)
 
 @onready var card_positions : Array[Marker3D] = [$DrawPile, $PreparedCard, $MiddleCard, $MiracleCard, $DrawPile]
 
+@export var selected_card_overlay_material : Material
+
 var info_popup : InfoPopup :
 	set(value) :
 		if info_popup != null : info_popup.queue_free()
@@ -28,9 +30,13 @@ var cards : Dictionary
 
 var selected_card : PlayableCard3D = null :
 	set(value) : 
+		if selected_card != null :
+			selected_card.set_overlay(null)
 		selected_card = value
 		if selected_card != null : 
+			selected_card.set_overlay(selected_card_overlay_material)
 			card_selected.emit(selected_card.card)
+		card_selected.emit(selected_card.card if selected_card != null else null)
 
 var hovered_card : PlayableCard3D = null
 

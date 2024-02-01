@@ -42,3 +42,7 @@ func update_card_infos():
 	update_flavor_text()
 	update_description()
 	update_texture()
+
+func set_overlay(overlay_material : Material) -> void :
+	%Overlay.visible = overlay_material != null
+	%Overlay.material = overlay_material
