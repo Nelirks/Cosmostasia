@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=11 format=3 uid="uid://dr8a6crxdqvbe"]
 
 [ext_resource type="PackedScene" uid="uid://g85ec7i0xv75" path="res://scenes/3d_environment/Cosmostasia_Arena_Test_Triangulate.glb" id="1_f7dao"]
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_ln1s5"]
 [ext_resource type="PackedScene" uid="uid://bdk4y6k8373jy" path="res://scenes/3d_environment/energy_bar.tscn" id="2_k37cc"]
 [ext_resource type="Texture2D" uid="uid://whbaf0j7lnyi" path="res://resources/3d_asset/particle/Flare00.PNG" id="4_oqe55"]
+[ext_resource type="Script" path="res://scenes/3d_environment/Dust1.gd" id="5_aj1y7"]
 
 [sub_resource type="Environment" id="Environment_b6jo1"]
-ssr_enabled = true
-ssao_enabled = true
 ssao_radius = 1.05
 ssao_intensity = 2.68
 ssao_horizon = 0.0
@@ -16,7 +15,6 @@ ssil_radius = 2.32
 ssil_intensity = 6.5
 ssil_sharpness = 1.0
 ssil_normal_rejection = 0.67
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_bounce_feedback = 1.99
 glow_enabled = true
@@ -135,11 +133,68 @@ interior = true
 enable_shadows = true
 mesh_lod_threshold = 0.0
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="Dust1" type="GPUParticles3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0.661797, -0.748458, 0.0428429, 0.746895, 0.663182, 0.0483519, -0.064602, 0, 0.997911, -5.15158, 3.07103, 4.06707)
-visible = false
+emitting = false
 amount = 3
 lifetime = 3.0
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_0xt3a")
 draw_pass_1 = SubResource("QuadMesh_a8eda")
+script = ExtResource("5_aj1y7")
+
+[node name="Dust2" type="GPUParticles3D" parent="Dust1"]
+unique_name_in_owner = true
+transform = Transform3D(-0.685353, -0.56563, 0.458651, -0.472303, 0.824658, 0.31125, -0.554282, -0.00330657, -0.832326, 9.41853, -10.3897, -6.95669)
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0xt3a")
+draw_pass_1 = SubResource("QuadMesh_a8eda")
+
+[node name="Dust3" type="GPUParticles3D" parent="Dust1"]
+unique_name_in_owner = true
+transform = Transform3D(0.661798, -0.74846, 0.0428432, 0.746897, 0.663184, 0.048352, -0.0646023, -6.70552e-08, 0.997912, 6.61888, -7.36962, -8.49179)
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0xt3a")
+draw_pass_1 = SubResource("QuadMesh_a8eda")
+
+[node name="Dust4" type="GPUParticles3D" parent="Dust1"]
+transform = Transform3D(0.661799, -0.748461, 0.0428433, 0.746897, 0.663185, 0.048352, -0.0646023, -8.56817e-08, 0.997913, -1.54162, 2.17273, -7.51443)
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0xt3a")
+draw_pass_1 = SubResource("QuadMesh_a8eda")
+
+[node name="Dust5" type="GPUParticles3D" parent="Dust1"]
+transform = Transform3D(0.6618, -0.748462, 0.0428434, 0.746898, 0.663186, 0.0483521, -0.0646025, -1.04308e-07, 0.997914, 8.51576, -9.60478, -0.954108)
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0xt3a")
+draw_pass_1 = SubResource("QuadMesh_a8eda")
+
+[node name="Dust6" type="GPUParticles3D" parent="Dust1"]
+transform = Transform3D(0.661798, -0.74846, 0.0428432, 0.746897, 0.663184, 0.048352, -0.0646022, -6.33299e-08, 0.997912, 0.989653, -0.466163, -9.62041)
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_0xt3a")
+draw_pass_1 = SubResource("QuadMesh_a8eda")
+
+[node name="Timer" type="Timer" parent="Dust1/Dust6"]
