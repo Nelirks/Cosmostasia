@@ -114,6 +114,97 @@ grow_horizontal = 0
 pivot_offset = Vector2(31, 32)
 texture_normal = ExtResource("5_k7rl3")
 
+[node name="SettingsBackground" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1978.0
+offset_right = -1978.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.384314, 0.384314, 1)
+
+[node name="ServerIPSetting" type="HSplitContainer" parent="SettingsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 3
+
+[node name="Label" type="Label" parent="SettingsBackground/ServerIPSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Server IP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IPEdit" type="TextEdit" parent="SettingsBackground/ServerIPSetting"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "127.0.0.1"
+placeholder_text = "IP ADRESS"
+
+[node name="ServerPortSetting" type="HSplitContainer" parent="SettingsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 28.505
+offset_right = 250.0
+offset_bottom = 98.505
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 3
+
+[node name="Label" type="Label" parent="SettingsBackground/ServerPortSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Server Port"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PortEdit" type="TextEdit" parent="SettingsBackground/ServerPortSetting"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "31400"
+placeholder_text = "PORT"
+
+[node name="Button" type="Button" parent="SettingsBackground"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 350.0
+offset_bottom = 200.0
+
+[node name="Label" type="Label" parent="SettingsBackground/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 53
+text = "Retour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="mouse_entered" from="HostButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="HostButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
@@ -121,3 +212,4 @@ texture_normal = ExtResource("5_k7rl3")
 [connection signal="mouse_exited" from="JoinButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsBackground/Button" to="." method="_on_button_pressed"]
