@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=12 format=3 uid="uid://srtcm21x0th6"]
+[gd_resource type="Resource" script_class="Character" load_steps=13 format=3 uid="uid://srtcm21x0th6"]
 
 [ext_resource type="Script" path="res://scripts/resources/character.gd" id="1_1pft6"]
 [ext_resource type="Resource" uid="uid://cd1skh5bc2oq8" path="res://resources/game_data/card_data/khemael/apitoiement.tres" id="1_fmk1a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://derm7inxlbcem" path="res://resources/game_data/card_data/khemael/cruauté.tres" id="3_3s4hl"]
 [ext_resource type="Resource" uid="uid://dm6wt0gdxt35p" path="res://resources/game_data/card_data/khemael/purification.tres" id="4_7ebbu"]
 [ext_resource type="Resource" uid="uid://b21ps7mg66r6y" path="res://resources/game_data/card_data/khemael/suppression.tres" id="5_ji2pp"]
+[ext_resource type="Texture2D" uid="uid://dkwsul6f53jvl" path="res://resources/sprites/character_sprites/khemael.png" id="6_6mto1"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_bbe6k"]
 [ext_resource type="Resource" uid="uid://bynkjy6ml44xk" path="res://resources/game_data/passive_data/khemael_passive.tres" id="6_p2gpn"]
 
@@ -28,6 +29,7 @@ content = Array[int]([3, 3, 2, 2, 0])
 script = ExtResource("1_1pft6")
 character_name = "Khemaël"
 character_quote = "Une guerrière du fin fond de la galaxie. Khemaël peut alterner entre un jeu offensif ou soutien."
+character_texture = ExtResource("6_6mto1")
 max_health = 100
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_fmk1a"), ExtResource("3_3s4hl"), ExtResource("4_7ebbu"), ExtResource("5_ji2pp"), ExtResource("2_76x4n")])
 passive = ExtResource("6_p2gpn")
