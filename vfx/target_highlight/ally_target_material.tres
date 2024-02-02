@@ -4,8 +4,8 @@
 
 [resource]
 shader = ExtResource("1_60rxg")
-shader_parameter/BorderColor = Color(0, 0.584314, 0, 1)
-shader_parameter/ShineColor = Color(0.243137, 1, 0.32549, 1)
+shader_parameter/BorderColor = Color(0.235294, 0.435294, 0.941176, 1)
+shader_parameter/ShineColor = Color(0.501961, 0.917647, 0.992157, 1)
 shader_parameter/FrontTrailLength = 0.05
 shader_parameter/TimeFactor = 0.5
 shader_parameter/TextureSize = Vector2(500, 850)
