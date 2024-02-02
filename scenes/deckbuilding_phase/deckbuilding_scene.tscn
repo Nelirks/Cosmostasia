@@ -16,8 +16,8 @@ unselected_card_material = ExtResource("2_g08xs")
 card_zoom_position_offset = Vector3(0, 0, 1)
 card_zoom_scale = Vector3(2, 2, 2)
 card_zoom_in_delay = 0.5
-card_zoom_in_duration = 0.375
-card_zoom_out_duration = 0.375
+card_zoom_in_duration = 0.25
+card_zoom_out_duration = 0.25
 
 [node name="CharacterDisplay" parent="." instance=ExtResource("2_pls58")]
 unique_name_in_owner = true

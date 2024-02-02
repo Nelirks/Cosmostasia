@@ -121,8 +121,8 @@ func on_playable_card_mouse_exited(card_index : int) -> void :
 	close_info_popup()
 	if card_tweens[card_index] != null : card_tweens[card_index].kill()
 	card_tweens[card_index] = create_tween()
-	card_tweens[card_index].tween_property(card_displays[card_index], "position", card_base_positions[card_index], card_zoom_in_duration)
-	card_tweens[card_index].parallel().tween_property(card_displays[card_index], "scale", card_base_scales[card_index], card_zoom_in_duration)
+	card_tweens[card_index].tween_property(card_displays[card_index], "position", card_base_positions[card_index], card_zoom_out_duration)
+	card_tweens[card_index].parallel().tween_property(card_displays[card_index], "scale", card_base_scales[card_index], card_zoom_out_duration)
 
 func display_card_info_popup(card_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
