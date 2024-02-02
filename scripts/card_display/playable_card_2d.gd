@@ -26,6 +26,9 @@ func update_name() -> void :
 func update_borders() -> void :
 	%CardBorders.texture = borders[card.cardType]
 
+func update_character_name() -> void :
+	%CardCharacter.text = card.character.character_name
+
 func update_flavor_text() -> void :
 	%CardFlavorText.text = "[i]" + card.quote + "[/i]"
 
@@ -38,6 +41,7 @@ func update_texture() -> void :
 func update_card_infos():
 	update_cost()
 	update_name()
+	update_character_name()
 	update_borders()
 	update_flavor_text()
 	update_description()
