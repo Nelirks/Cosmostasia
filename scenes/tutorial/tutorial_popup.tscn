@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg221f2bri6vr"]
+
+[ext_resource type="Texture2D" uid="uid://dpe4atv5f0mab" path="res://resources/sprites/ui_elements/tutorial_box_9slice.png" id="1_vtf3b"]
+[ext_resource type="Script" path="res://scenes/tutorial/tutorial_popup.gd" id="2_qudw2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfy20"]
+texture = ExtResource("1_vtf3b")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="Tutorial Popup" type="PanelContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(252, 0)
+offset_right = 252.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jfy20")
+script = ExtResource("2_qudw2")
+
+[node name="TextTutoriel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+fit_content = true
+scroll_active = false

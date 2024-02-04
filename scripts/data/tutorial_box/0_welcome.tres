@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://8waec6y42h6b"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_8em0g"]
+
+[resource]
+script = ExtResource("1_8em0g")
+tutorial_name = "0_welcome"
+text = "Bienvenue dans Cosmostasia"

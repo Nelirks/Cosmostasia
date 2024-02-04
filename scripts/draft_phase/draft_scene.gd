@@ -32,6 +32,9 @@ func _ready():
 	opponent_picks.append_array(%OpponentDraft.get_children())
 	player_picks.append_array(%PlayerDraft.get_children())
 	connect_signals()
+	var screen_middle:Vector2 = Vector2($BackgroundLayer/TextureRect.size.x/2,
+	$BackgroundLayer/TextureRect.size.y/2)
+	TutorialGlobal.trigger_tutorial("0_welcome",self,screen_middle)
 	if NetworkManager.is_host :
 		pick_character_choices()
 
