@@ -81,7 +81,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.693017, 0.0986309, 0, -0.0986309, 0.6930
 is_player = true
 
 [node name="EnemyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(0.7, 0, 0, 0, 0.693017, -0.0986309, 0, 0.0986309, 0.693017, -6.151, 3.54, -4.381)
+transform = Transform3D(-0.7, -8.62259e-09, -6.05855e-08, 0, 0.693017, -0.0986309, 6.11959e-08, -0.0986309, -0.693017, -6.151, 3.54, -4.381)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42432, 4.16006, 1.26361)
