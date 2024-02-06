@@ -2,13 +2,14 @@ extends Control
 
 func _ready():
 	NetworkManager.connection_done.connect(_start_game)
-	_start_game()
 
 func _on_host_button_pressed():
-	NetworkManager.create_server((%PortEdit as TextEdit).text)
+	if OS.has_feature("solo") : _start_game()
+	else : NetworkManager.create_server((%PortEdit as TextEdit).text)
 
 func _on_join_button_pressed():
-	NetworkManager.create_client((%IPEdit as TextEdit).text, (%PortEdit as TextEdit).text)
+	if OS.has_feature("solo") : _start_game()
+	else : NetworkManager.create_client((%IPEdit as TextEdit).text, (%PortEdit as TextEdit).text)
 
 func _on_settings_button_pressed():
 	%SettingsBackground.set_position(Vector2(0,0))
