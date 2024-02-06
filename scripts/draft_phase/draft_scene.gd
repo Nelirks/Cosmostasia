@@ -146,6 +146,7 @@ func _on_choice_selected(choice_index : int) -> void :
 	for i in range(player_choices.size()) :
 		if i != choice_index : player_choices[i].set_overlay(null)
 	player_choices[choice_index].set_overlay(selected_character_fx)
+	AudioManager.post_event(AK.EVENTS.DRAFT_CLICK_CARD)
 
 func _on_choice_submitted() -> void : 
 	if selected_choice == -1 : return
@@ -156,6 +157,7 @@ func _on_choice_submitted() -> void :
 	else :
 		notify_choice.rpc(cur_choices[selected_choice])
 	selected_choice = -1
+	AudioManager.post_event(AK.EVENTS.DRAFT_VALIDATE_BUTTON)
 
 func _on_card_mouse_entered(card : CharacterCard3D) -> void :
 	if card.character == null : return
@@ -163,6 +165,7 @@ func _on_card_mouse_entered(card : CharacterCard3D) -> void :
 	info_popup.add_string(card.character.character_quote)
 	info_popup.add_string(card.character.passive.description if card.character.passive != null else "PASSIVE UNIMPLEMENTED")
 	info_popup.set_target_rect(card.get_rect())
+	AudioManager.post_event(AK.EVENTS.DRAFT_HOVER_CARD)
 
 func _on_card_mouse_exited(character : CharacterCard3D) -> void :
 	info_popup = null

@@ -162,7 +162,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{7D9D1FAB-1FB5-95BE-0FBB-7ACB3C987841}">
+		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{69385BE5-F5E6-05A6-6303-691FD633CCEA}">
 			<ShortName>Soundbank</ShortName>
 			<Path>Soundbank.bnk</Path>
 			<Media>
@@ -173,6 +173,10 @@
 				<File Id="85081764" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cosmostasia_Combat_Phase03_B.wav</ShortName>
 					<CachePath>SFX/Cosmostasia_Combat_Phase03_B_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="94078221" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>COSMOSTASIA_SELECTION_1.wav</ShortName>
+					<CachePath>SFX/COSMOSTASIA_SELECTION_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="262915043" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Combat_1.2_115bpm_4-4_L16M_P0.wav</ShortName>
@@ -186,6 +190,10 @@
 					<ShortName>Combat_2.2_115bpm_4-4_L34M_P0.wav</ShortName>
 					<CachePath>SFX/Combat_2.2_115bpm_4-4_L34M_P0_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="365544818" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>COSMOSTASIA_VALIDATION_1.wav</ShortName>
+					<CachePath>SFX/COSMOSTASIA_VALIDATION_1_818F3B66.wem</CachePath>
+				</File>
 				<File Id="641674808" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cosmostasia_Combat_Phase03_C.wav</ShortName>
 					<CachePath>SFX/Cosmostasia_Combat_Phase03_C_FBC78EF0.wem</CachePath>
@@ -193,6 +201,10 @@
 				<File Id="712586612" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cosmostasia_MainMenu.wav</ShortName>
 					<CachePath>SFX/Cosmostasia_MainMenu_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="716968653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>COSMOSTASIA_SURVOL_1.wav</ShortName>
+					<CachePath>SFX/COSMOSTASIA_SURVOL_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="738309539" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cosmostasia_Combat_Phase04.wav</ShortName>
@@ -207,6 +219,21 @@
 				<Event Id="4136169396" Name="Card_Draw"/>
 				<Event Id="659043495" Name="Card_Use"/>
 				<Event Id="1593864692" Name="Defeat"/>
+				<Event Id="3103125184" Name="Draft_Click_Card">
+					<MediaRefs>
+						<MediaRef Id="94078221"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1258815674" Name="Draft_Hover_Card">
+					<MediaRefs>
+						<MediaRef Id="716968653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3560549638" Name="Draft_Validate_Button">
+					<MediaRefs>
+						<MediaRef Id="365544818"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="878153172" Name="End_CombatMusic">
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1021618141" Id="1169953706" Name="Phase04"/>
@@ -289,5 +316,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1BFBD954-E9E4-9904-04A8-60A99AC33627}</FileHash>
+	<FileHash>{65071015-DB8F-CE40-C32E-1521ACB71C69}</FileHash>
 </SoundBanksInfo>
