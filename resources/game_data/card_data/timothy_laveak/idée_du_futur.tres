@@ -7,7 +7,7 @@
 script = ExtResource("1_yk1wc")
 energy_regen = 1
 card_name = "Idée du futur"
-description = ""
+description = "Révèle une carte aléatoire de la main de l'adversaire et augmente la recharge de 1 au tour prochain"
 quote = "\"La prochaine fois je serai prêt\""
 cost = 1
 targetting = 3

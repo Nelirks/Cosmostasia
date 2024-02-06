@@ -8,7 +8,7 @@ var card : Card :
 		_front_side.card = value
 		_back_side.texture = card_backs[card.cardType]
 		_back_side.scale = Vector2(0.5, 0.5)
-	
+		card.revealed_applied.connect(flip.bind(false, 0.5))
 	get :
 		return _front_side.card if _front_side != null else null
 
