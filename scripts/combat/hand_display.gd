@@ -84,6 +84,8 @@ func _on_card_mouse_entered(card_display : PlayableCard3D) -> void :
 	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 5.5, 0.5), card_zoom_in_duration)
 	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3(2, 2, 2), card_zoom_in_duration)
 	if is_player : card_display.tween.tween_callback(_display_info_popup)
+	if !is_player and card_display.card.revealed :
+		card_display.tween.parallel().tween_method(card_display.set_z_rotation, card_display.rotation.z, PI, card_zoom_in_duration)
 
 func _on_card_mouse_exited(card_display : PlayableCard3D) -> void : 
 	if hovered_card == null : return
@@ -92,6 +94,8 @@ func _on_card_mouse_exited(card_display : PlayableCard3D) -> void :
 	card_display.tween = create_tween()
 	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 0, 0), card_zoom_out_duration)
 	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3.ONE, card_zoom_out_duration)
+	if !is_player and card_display.card.revealed :
+		card_display.tween.parallel().tween_method(card_display.set_z_rotation, card_display.rotation.z, 0, card_zoom_in_duration)
 	hovered_card = null
 
 func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool = false) -> void :

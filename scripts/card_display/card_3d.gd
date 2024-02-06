@@ -56,3 +56,6 @@ func flip(flipped : bool = true, duration : float = 0.0) -> void :
 	else :
 		var rotation_tween = create_tween()
 		rotation_tween.tween_property(self, "rotation", Vector3(rotation.x, PI if flipped else 0, rotation.z), duration)
+
+func set_z_rotation(z_rotation : float) -> void :
+	rotation = Vector3(rotation.x, rotation.x, z_rotation)
