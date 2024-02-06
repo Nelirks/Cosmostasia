@@ -38,7 +38,6 @@ var selected_character_index : int :
 @export var card_zoom_out_duration : float
 var card_base_positions : Array[Vector3]
 var card_base_scales : Array[Vector3]
-var card_tweens : Array[Tween]
 
 var selected_character : Character :
 	set(value) :
@@ -92,7 +91,6 @@ func _ready():
 	for i in range(5) :
 		card_base_positions.append(card_displays[i].position)
 		card_base_scales.append(card_displays[i].scale)
-		card_tweens.append(null)
 		card_displays[i].mouse_entered.connect(on_playable_card_mouse_entered.bind(i))
 		card_displays[i].mouse_exited.connect(on_playable_card_mouse_exited.bind(i))
 
@@ -110,19 +108,19 @@ func on_character_card_hovered() -> void :
 	info_popup.set_target_rect(character_display.get_rect())
 
 func on_playable_card_mouse_entered(card_index : int) -> void :
-	if card_tweens[card_index] != null : card_tweens[card_index].kill()
-	card_tweens[card_index] = create_tween()
-	card_tweens[card_index].tween_interval(card_zoom_in_delay)
-	card_tweens[card_index].tween_property(card_displays[card_index], "position", card_base_positions[card_index] + card_zoom_position_offset, card_zoom_in_duration)
-	card_tweens[card_index].parallel().tween_property(card_displays[card_index], "scale", card_zoom_scale, card_zoom_in_duration)
-	card_tweens[card_index].tween_callback(display_card_info_popup.bind(card_index))
+	if card_displays[card_index].tween != null : card_displays[card_index].tween.kill()
+	card_displays[card_index].tween = create_tween()
+	card_displays[card_index].tween.tween_interval(card_zoom_in_delay)
+	card_displays[card_index].tween.tween_property(card_displays[card_index], "position", card_base_positions[card_index] + card_zoom_position_offset, card_zoom_in_duration)
+	card_displays[card_index].tween.parallel().tween_property(card_displays[card_index], "scale", card_zoom_scale, card_zoom_in_duration)
+	card_displays[card_index].tween.tween_callback(display_card_info_popup.bind(card_index))
 
 func on_playable_card_mouse_exited(card_index : int) -> void :
 	close_info_popup()
-	if card_tweens[card_index] != null : card_tweens[card_index].kill()
-	card_tweens[card_index] = create_tween()
-	card_tweens[card_index].tween_property(card_displays[card_index], "position", card_base_positions[card_index], card_zoom_out_duration)
-	card_tweens[card_index].parallel().tween_property(card_displays[card_index], "scale", card_base_scales[card_index], card_zoom_out_duration)
+	if card_displays[card_index].tween != null : card_displays[card_index].tween.kill()
+	card_displays[card_index].tween = create_tween()
+	card_displays[card_index].tween.tween_property(card_displays[card_index], "position", card_base_positions[card_index], card_zoom_out_duration)
+	card_displays[card_index].tween.parallel().tween_property(card_displays[card_index], "scale", card_base_scales[card_index], card_zoom_out_duration)
 
 func display_card_info_popup(card_index : int) -> void :
 	info_popup = info_popup_scene.instantiate()
