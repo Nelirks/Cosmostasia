@@ -6,8 +6,7 @@
 script = ExtResource("1_x3pp4")
 stealth_stacks = 1
 card_name = "Vol imprévisible"
-description = "Contre la prochaine carte joué par l'adversaire
-Défausse les cartes adjacentes à Vol Imprévisible."
+description = "Octroie Furtivité à Lisirmee. Défausse les cartes adjacentes."
 quote = "Le coeur d'une Fae n'appartient qu'à elle même"
 cost = 2
 targetting = 3

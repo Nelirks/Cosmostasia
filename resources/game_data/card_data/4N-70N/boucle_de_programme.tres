@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_trnru")
 armor = 10
-stacks = 5
+stacks = 3
 card_name = "Boucle de programme"
 description = "Octroie 10 d'armure et 3 effets !S!Boucle de programme!S! à 4N-70N"
 quote = "\"Mes amis, je me rappellerai toujours de vous\""
