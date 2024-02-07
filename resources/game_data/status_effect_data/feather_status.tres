@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cp2oirdx01tnc"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cp2oirdx01tnc"]
 
+[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_bkfvn"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_o80ys"]
 
 [resource]
@@ -9,3 +10,4 @@ type = 1
 display_names = Array[String](["Plume", "Plumes"])
 description = "!S!Plume!S!
 Renforce les cartes de Cïol"
+icon = ExtResource("1_bkfvn")

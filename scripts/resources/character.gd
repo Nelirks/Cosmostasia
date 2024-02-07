@@ -14,6 +14,8 @@ class_name Character
 
 signal hp_changed()
 signal armor_changed()
+signal status_added(status : StatusEffect)
+signal status_removed(status : StatusEffect)
 
 var player : Player
 
@@ -85,12 +87,14 @@ func remove_armor() -> void :
 func add_status(status : StatusEffect) -> void :
 	_statuses.append(status)
 	status.owner = self
+	status_added.emit(status)
 	status.on_apply()
 
 func remove_status(status : StatusEffect) -> void :
 	var index = _statuses.find(status)
 	if index != -1 : 
 		_statuses[index].on_remove()
+		status_removed.emit(_statuses[index])
 		_statuses.remove_at(index)
 
 func remove_status_by_id(id : String) -> void :
@@ -98,6 +102,7 @@ func remove_status_by_id(id : String) -> void :
 	while i < _statuses.size() :
 		if _statuses[i].id == id :
 			_statuses[i].on_remove()
+			status_removed.emit(_statuses[i])
 			_statuses.remove_at(i)
 		else : i += 1
 

@@ -3,7 +3,7 @@ class_name CharacterCard3D
 
 var card_2d_scene = preload("res://scenes/card_display/character_card_2d.tscn")
 
-@export var display_current_hp : bool
+@export var is_combat_display : bool
 
 var character : Character : 
 	set(value) : 
@@ -19,4 +19,4 @@ func set_overlay(material : Material) :
 
 func _ready():
 	visible = character != null
-	_front_side.display_current_hp = display_current_hp
+	_front_side.is_combat_display = is_combat_display

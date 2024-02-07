@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://16qcwwrft76s"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://16qcwwrft76s"]
 
+[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_30s6c"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/defense_mult_status.gd" id="1_kpeb4"]
 
 [resource]
@@ -10,3 +11,4 @@ type = 0
 display_names = Array[String](["Fortifié", "Fortifie"])
 description = "!S!Fortifié!S!
 Réduit les dégâts subis de 20%"
+icon = ExtResource("1_30s6c")

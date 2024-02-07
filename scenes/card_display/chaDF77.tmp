@@ -74,9 +74,9 @@ texture = SubResource("CanvasTexture_cmb2i")
 [node name="StatusEffectDisplays" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 440.0
+offset_left = 480.0
 offset_top = 20.0
-offset_right = 500.0
+offset_right = 520.0
 offset_bottom = 830.0
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

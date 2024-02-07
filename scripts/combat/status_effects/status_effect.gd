@@ -1,12 +1,15 @@
 extends Resource
 class_name StatusEffect
 
+signal status_updated()
+
 enum StatusType { POSITIVE, NEGATIVE, SPECIAL }
 
 @export var id : String
 @export var type : StatusType
 @export var display_names : Array[String]
 @export_multiline var description : String
+@export var icon : Texture
 var owner : Character
 	
 func start_turn() -> void :
@@ -32,3 +35,6 @@ func on_effect_resolution(effect : Effect) -> void :
 
 func _add_effect(effect : Effect) -> void :
 	GameManager.combat.add_effect(effect)
+
+func get_texture() -> Texture :
+	return icon

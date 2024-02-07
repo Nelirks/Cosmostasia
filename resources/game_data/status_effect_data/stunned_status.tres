@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://deki1epvhvf2q"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://deki1epvhvf2q"]
 
+[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_dvx5a"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/stunned_status.gd" id="1_py33u"]
 
 [resource]
@@ -9,3 +10,4 @@ type = 1
 display_names = Array[String](["Étourdit", "Étourdi"])
 description = "!S!Étourdi!S!
 Empêche ce personnage de jouer des cartes"
+icon = ExtResource("1_dvx5a")
