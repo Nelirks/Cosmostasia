@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://rje12j6vq2ff"]
+
+[ext_resource type="Script" path="res://scripts/data/passive_effects/lisirmee_passive.gd" id="1_5aqj8"]
+
+[resource]
+script = ExtResource("1_5aqj8")
+damage = 10
+id = "lisirmee_passive"
+type = 2
+display_names = Array[String]([])
+description = "Après avoir joué une carte à chaque emplacement de sa main, inflige 10 dégâts à tous les ennemis."
