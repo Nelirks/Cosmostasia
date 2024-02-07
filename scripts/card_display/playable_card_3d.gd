@@ -5,6 +5,8 @@ class_name PlayableCard3D
 
 var card : Card :  
 	set(value) : 
+		if _front_side.card != null and _front_side.card.revealed_applied.is_connected(flip) :
+			_front_side.card.revealed_applied.disconnect(flip)
 		_front_side.card = value
 		_back_side.texture = card_backs[card.cardType]
 		_back_side.scale = Vector2(0.5, 0.5)
