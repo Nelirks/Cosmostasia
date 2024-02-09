@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bjv6oeridu6rt"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bjv6oeridu6rt"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/lord_reece/blocus.gd" id="1_004cp"]
+[ext_resource type="Texture2D" uid="uid://ckv18c7snpx86" path="res://resources/sprites/card_sprites/lord reece/carte blocus.png" id="1_hqifn"]
 
 [resource]
 script = ExtResource("1_004cp")
@@ -12,3 +13,4 @@ quote = ""
 cost = 2
 targetting = 2
 cardType = 2
+card_texture = ExtResource("1_hqifn")

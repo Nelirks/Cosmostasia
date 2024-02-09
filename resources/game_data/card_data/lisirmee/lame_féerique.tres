@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://diwbqyke6w7"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://diwbqyke6w7"]
 
+[ext_resource type="Texture2D" uid="uid://dkad5bq8dko8j" path="res://resources/sprites/card_sprites/Lisirmee/lame féerique int.png" id="1_3lt1l"]
 [ext_resource type="Script" path="res://scripts/data/cards/lisirmee/lame_feerique.gd" id="1_5em43"]
 
 [resource]
@@ -18,3 +19,4 @@ quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la v
 cost = 2
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_3lt1l")

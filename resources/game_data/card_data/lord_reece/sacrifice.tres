@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bsfu0s3dnv3x3"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bsfu0s3dnv3x3"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/lord_reece/sacrifice.gd" id="1_2cb0p"]
+[ext_resource type="Texture2D" uid="uid://bbauv2k1h44r7" path="res://resources/sprites/card_sprites/lord reece/faible.png" id="1_nacqb"]
 
 [resource]
 script = ExtResource("1_2cb0p")
@@ -12,3 +13,4 @@ quote = ""
 cost = 1
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_nacqb")

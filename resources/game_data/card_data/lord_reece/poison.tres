@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dj5fq0etkr7w4"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dj5fq0etkr7w4"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/lord_reece/poison.gd" id="1_8y8tj"]
+[ext_resource type="Texture2D" uid="uid://dt5kq6cfj5q7s" path="res://resources/sprites/card_sprites/lord reece/empoisennement.png" id="1_plg0t"]
 
 [resource]
 script = ExtResource("1_8y8tj")
@@ -11,3 +12,4 @@ quote = ""
 cost = 3
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_plg0t")

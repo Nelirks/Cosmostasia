@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://boplhofy06egr"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://boplhofy06egr"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/ciol/garde_plumeuse.gd" id="1_egrn1"]
+[ext_resource type="Texture2D" uid="uid://1bq3lxty45oh" path="res://resources/sprites/card_sprites/ciol/Garde plumeuse.png" id="1_x7ddt"]
 
 [resource]
 script = ExtResource("1_egrn1")
@@ -11,3 +12,4 @@ quote = ""
 cost = 2
 targetting = 3
 cardType = 1
+card_texture = ExtResource("1_x7ddt")
