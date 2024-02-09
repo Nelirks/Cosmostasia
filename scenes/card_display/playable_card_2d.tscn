@@ -77,7 +77,7 @@ offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_7klli")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 28
 text = "Character"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -94,7 +94,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("6_7klli")
 bbcode_enabled = true
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 "
 fit_content = true
 
@@ -105,7 +105,7 @@ theme = ExtResource("6_7klli")
 theme_override_font_sizes/normal_font_size = 16
 theme_override_font_sizes/italics_font_size = 16
 bbcode_enabled = true
-text = "[i]\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"[/i]"
+text = "[i]\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"[/i]"
 fit_content = true
 
 [node name="Overlay" type="TextureRect" parent="."]
