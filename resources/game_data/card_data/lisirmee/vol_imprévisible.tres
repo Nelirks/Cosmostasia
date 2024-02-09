@@ -8,6 +8,6 @@ stealth_stacks = 1
 card_name = "Vol imprévisible"
 description = "Octroie Furtivité à Lisirmee. Défausse les cartes adjacentes."
 quote = "Le coeur d'une Fae n'appartient qu'à elle même"
-cost = 2
+cost = 1
 targetting = 3
 cardType = 2

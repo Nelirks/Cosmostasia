@@ -4,9 +4,11 @@
 
 [resource]
 script = ExtResource("1_004cp")
+attack_down_duration = 2
 card_name = "Blocus"
-description = "!S!Étourdit!S! le dernier personnage ayant infligé des dégâts à Lord Reece au tour précédent."
+description = "!S!Affaiblit!S! la cible pendant 2 tours.
+L'!S!Étourdit!S! si Lord Reece a subi des dégâts au tour précédent."
 quote = ""
 cost = 2
-targetting = 3
+targetting = 2
 cardType = 2
