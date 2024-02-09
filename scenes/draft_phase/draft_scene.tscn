@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=19 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="11_e4pc0"]
 [ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="11_v7haa"]
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
+[ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/fond menu.png" id="14_tno1k"]
+[ext_resource type="Texture2D" uid="uid://cbgk1dfxbghqh" path="res://Sprites/ui_icons/UI draft smoke.png" id="15_1he6s"]
+[ext_resource type="Texture2D" uid="uid://duy7wb6j6ywg5" path="res://Sprites/ui_icons/UI draft barre rouge.png" id="16_lshbp"]
+[ext_resource type="Texture2D" uid="uid://cuim3yanukfq6" path="res://Sprites/ui_icons/UI draft barre violet 2.png" id="17_40nrv"]
 
 [sub_resource type="Environment" id="Environment_48764"]
 background_mode = 3
@@ -82,6 +86,22 @@ size = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48764")
+
+[node name="FondMenu" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("14_tno1k")
+
+[node name="UiDraftSmoke" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("15_1he6s")
+
+[node name="UiDraftBarreRouge" type="Sprite2D" parent="."]
+position = Vector2(1570, 544)
+texture = ExtResource("16_lshbp")
+
+[node name="UiDraftBarreViolet2" type="Sprite2D" parent="."]
+position = Vector2(350, 544)
+texture = ExtResource("17_40nrv")
 
 [node name="BackgroundLayer" type="Control" parent="."]
 layout_mode = 3
