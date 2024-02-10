@@ -14,8 +14,9 @@ var card : Card :
 	get :
 		return _front_side.card if _front_side != null else null
 
-func set_overlay(overlay_material : Material) -> void :
-	_front_side.set_overlay(overlay_material)
+var overlay : OverlayVFX :
+	set(value) :
+		_front_side.overlay = value
 
 func use_text_color(use : bool) -> void :
 	_front_side.use_text_color(use)

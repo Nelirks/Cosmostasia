@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="11_e4pc0"]
-[ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="11_v7haa"]
+[ext_resource type="PackedScene" uid="uid://dndrh64lp266q" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="11_gi04u"]
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
 [ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/fond menu.png" id="14_tno1k"]
 [ext_resource type="Texture2D" uid="uid://cbgk1dfxbghqh" path="res://Sprites/ui_icons/UI draft smoke.png" id="15_1he6s"]
@@ -26,7 +26,7 @@ background_mode = 3
 script = ExtResource("1_3n8hg")
 character_pool = Array[Resource("res://scripts/resources/character.gd")]([ExtResource("2_3aehv"), ExtResource("3_8yflf"), ExtResource("4_h7vl3"), ExtResource("5_and1r"), ExtResource("6_vktb4"), ExtResource("7_souub"), ExtResource("8_uyypb"), ExtResource("9_nmjhl"), ExtResource("10_c3o3b")])
 reduced_pick_chance = 0.25
-selected_character_fx = ExtResource("11_v7haa")
+selected_character_fx = ExtResource("11_gi04u")
 info_popup_scene = ExtResource("12_e0qrm")
 
 [node name="Board" type="Node3D" parent="."]

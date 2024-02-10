@@ -33,7 +33,6 @@ var revealed : bool = false :
 	set(value) :
 		revealed = value
 		if revealed :
-			print("CARD REVEALED")
 			revealed_applied.emit()
 			if !position_changed.is_connected(_reset_reveal) :
 				position_changed.connect(_reset_reveal)

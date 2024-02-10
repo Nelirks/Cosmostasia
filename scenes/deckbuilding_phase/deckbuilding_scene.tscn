@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
 [ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
-[ext_resource type="Material" uid="uid://c2p3hm62digx0" path="res://vfx/gray_filter/gray_filter_material.tres" id="2_g08xs"]
+[ext_resource type="PackedScene" uid="uid://de5liyxp8abgh" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_fonv4"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_pls58"]
 [ext_resource type="PackedScene" uid="uid://bk6wi08lvjkh0" path="res://scenes/deckbuilding_phase/character_selector.tscn" id="4_foq0m"]
 
@@ -12,7 +12,7 @@ background_color = Color(0.109804, 0.109804, 0.109804, 1)
 
 [node name="DeckbuildingScene" type="Node3D"]
 script = ExtResource("1_dd58v")
-unselected_card_material = ExtResource("2_g08xs")
+unselected_card_fx = ExtResource("2_fonv4")
 card_zoom_position_offset = Vector3(0, 0, 1)
 card_zoom_scale = Vector3(2, 2, 2)
 card_zoom_in_delay = 0.5

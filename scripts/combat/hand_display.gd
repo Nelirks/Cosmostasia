@@ -12,7 +12,7 @@ signal card_selected(card : Card)
 
 @onready var card_positions : Array[Marker3D] = [$DrawPile, $PreparedCard, $MiddleCard, $MiracleCard, $DrawPile]
 
-@export var selected_card_overlay_material : Material
+@export var selected_card_fx : PackedScene
 
 var info_popup : InfoPopup :
 	set(value) :
@@ -31,10 +31,10 @@ var cards : Dictionary
 var selected_card : PlayableCard3D = null :
 	set(value) : 
 		if selected_card != null :
-			selected_card.set_overlay(null)
+			selected_card.overlay = null
 		selected_card = value
 		if selected_card != null : 
-			selected_card.set_overlay(selected_card_overlay_material)
+			selected_card.overlay = selected_card_fx.instantiate()
 			card_selected.emit(selected_card.card)
 		card_selected.emit(selected_card.card if selected_card != null else null)
 

@@ -1,12 +1,22 @@
 extends Control
 class_name CharacterCard2D
 
-@export var death_material : Material
+@export var death_fx : PackedScene
 @export var is_combat_display : bool = true :
 	set(value) : 
 		is_combat_display = value
 		if character != null : 
 			on_character_hp_changed()
+
+var overlay : OverlayVFX :
+	set(value) :
+		if overlay != null : overlay.queue_free()
+		overlay = value
+		if overlay != null :
+			add_child(overlay)
+			overlay.size = size
+			overlay.position = Vector2.ZERO
+
 
 var character : Character :
 	set(value) :
@@ -35,15 +45,10 @@ func disconnect_signals() -> void :
 	character.status_added.disconnect(_on_status_added)
 	character.status_removed.disconnect(_on_status_removed)
 
-func set_overlay(material : Material) -> void :
-	if %FXOverlay.material == death_material : return
-	%FXOverlay.material = material
-	%FXOverlay.visible = material != null
-
 func on_character_hp_changed() -> void :
 	if is_combat_display :
 		%HealthBar.display_full(maxi(character.current_health, 0), character.max_health, character._armor)
-		set_overlay(death_material if character.current_health <= 0 else null)
+		if character.current_health <= 0 : overlay = death_fx.instantiate()
 	else : 
 		%HealthBar.display_max_health(character.max_health)
 

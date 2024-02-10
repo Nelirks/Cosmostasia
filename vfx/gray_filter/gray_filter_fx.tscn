@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://de5liyxp8abgh"]
+
+[ext_resource type="Shader" uid="uid://cam55e5be0f6e" path="res://vfx/gray_filter/gray_filter_shader.tres" id="1_f1ylv"]
+[ext_resource type="Script" path="res://scripts/vfx/overlay_vfx.gd" id="2_x3vbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7etj"]
+shader = ExtResource("1_f1ylv")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4w06k"]
+
+[node name="grey_filter" type="TextureRect"]
+material = SubResource("ShaderMaterial_t7etj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_4w06k")
+script = ExtResource("2_x3vbl")
