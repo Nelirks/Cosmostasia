@@ -8,15 +8,9 @@ class_name CharacterCard2D
 		if character != null : 
 			on_character_hp_changed()
 
-var overlay : OverlayVFX :
-	set(value) :
-		if overlay != null : overlay.queue_free()
-		overlay = value
-		if overlay != null :
-			add_child(overlay)
-			overlay.size = size
-			overlay.position = Vector2.ZERO
+var _overlay : OverlayVFX
 
+var _overlay_source
 
 var character : Character :
 	set(value) :
@@ -37,6 +31,7 @@ func connect_signals() -> void :
 	character.armor_changed.connect(on_character_hp_changed)
 	character.status_added.connect(_on_status_added)
 	character.status_removed.connect(_on_status_removed)
+	character.overlay_request.connect(play_overlay.bind(self))
 	on_character_hp_changed()
 
 func disconnect_signals() -> void :
@@ -44,11 +39,12 @@ func disconnect_signals() -> void :
 	character.armor_changed.disconnect(on_character_hp_changed)
 	character.status_added.disconnect(_on_status_added)
 	character.status_removed.disconnect(_on_status_removed)
+	character.overlay_request.disconnect(play_overlay.bind(self))
 
 func on_character_hp_changed() -> void :
 	if is_combat_display :
 		%HealthBar.display_full(maxi(character.current_health, 0), character.max_health, character._armor)
-		if character.current_health <= 0 : overlay = death_fx.instantiate()
+		if character.current_health <= 0 : play_overlay(death_fx.instantiate(), self)
 	else : 
 		%HealthBar.display_max_health(character.max_health)
 
@@ -74,3 +70,19 @@ func _on_status_removed(status : StatusEffect) -> void :
 		status_displays[status].queue_free()
 	status.status_updated.disconnect(_on_status_updated)
 	status_displays.erase(status)
+
+func play_overlay(overlay : OverlayVFX, source) -> void :
+	if _overlay != null : 
+		_overlay.queue_free()
+	_overlay = overlay
+	_overlay_source = source
+	add_child(_overlay)
+	_overlay.size = size
+	_overlay.position = Vector2.ZERO
+
+func stop_overlay(source) -> void :
+	if _overlay_source != source or _overlay == null : return
+	_overlay.queue_free()
+	_overlay = null
+	_overlay_source = null
+	

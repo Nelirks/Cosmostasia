@@ -16,6 +16,8 @@ signal hp_changed()
 signal armor_changed()
 signal status_added(status : StatusEffect)
 signal status_removed(status : StatusEffect)
+signal overlay_request(overlay : OverlayVFX)
+signal vfx_request()
 
 var player : Player
 
@@ -134,3 +136,8 @@ func instantiate() -> Character :
 	var copy : Character = self.duplicate(true)
 	copy.setup()
 	return copy
+
+
+
+func play_overlay(overlay : OverlayVFX) -> void :
+	overlay_request.emit(overlay)

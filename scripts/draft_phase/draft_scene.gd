@@ -130,7 +130,7 @@ func apply_choices(host_char : int, client_char : int) -> void :
 func display_choices() -> void :
 	for i in range(cur_choices.size()) :
 		player_choices[i].character = character_pool[cur_choices[i]]
-		player_choices[i].overlay = null
+		player_choices[i].stop_overlay(self)
 	info_popup = null
 
 func display_picks() -> void :
@@ -144,8 +144,8 @@ func _on_choice_selected(choice_index : int) -> void :
 	selected_choice = choice_index
 	%SubmitButton.disabled = false
 	for i in range(player_choices.size()) :
-		if i != choice_index : player_choices[i].overlay = null
-	player_choices[choice_index].overlay = selected_character_fx.instantiate()
+		if i != choice_index : player_choices[i].stop_overlay(self)
+	player_choices[choice_index].play_overlay(selected_character_fx.instantiate(), self)
 	AudioManager.post_event(AK.EVENTS.DRAFT_CLICK_CARD)
 
 func _on_choice_submitted() -> void : 

@@ -13,9 +13,12 @@ var character : Character :
 	get :
 		return _front_side.character if _front_side != null else null
 
-var overlay : OverlayVFX :
-	set(value) :
-		_front_side.overlay = value
+func play_overlay(overlay : OverlayVFX, source) -> void :
+	_front_side.play_overlay(overlay, source)
+
+func stop_overlay(source) -> void :
+	_front_side.stop_overlay(source)
+
 
 func _ready():
 	visible = character != null

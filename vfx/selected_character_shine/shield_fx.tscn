@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kg8ft"]
 shader = ExtResource("1_eojsi")
 shader_parameter/ShineModulate = Color(0.67451, 0.305882, 0.776471, 1)
-shader_parameter/ElapsedTime = 0.41
+shader_parameter/ElapsedTime = 0.0
 shader_parameter/ShineSpeed = 2.0
 shader_parameter/InactiveRatio = null
 shader_parameter/ShineIntensity = 0.8
