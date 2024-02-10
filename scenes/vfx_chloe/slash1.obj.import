@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyokwehn1mik5"
+path="res://.godot/imported/slash1.obj-d99f1ad65e3c2109820bfd8e6b2166a9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/slash1.obj-d99f1ad65e3c2109820bfd8e6b2166a9.mesh"]
+
+source_file="res://scenes/vfx_chloe/slash1.obj"
+dest_files=["res://.godot/imported/slash1.obj-d99f1ad65e3c2109820bfd8e6b2166a9.mesh", "res://.godot/imported/slash1.obj-d99f1ad65e3c2109820bfd8e6b2166a9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
