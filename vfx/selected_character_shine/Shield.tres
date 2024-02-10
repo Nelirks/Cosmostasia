@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bjdf1x6r6nidf"]
+
+[ext_resource type="Shader" uid="uid://btpylfsoyxy4" path="res://vfx/selected_character_shine/shield_effect.tres" id="1_w8wv0"]
+[ext_resource type="Texture2D" uid="uid://ds7jh15tnlpxm" path="res://vfx/selected_character_shine/shine_shape.png" id="2_3tosm"]
+
+[resource]
+shader = ExtResource("1_w8wv0")
+shader_parameter/ColorParameter = Color(0.67451, 0.305882, 0.776471, 1)
+shader_parameter/ShineSpeed = 2.0
+shader_parameter/InactiveRatio = 0.0
+shader_parameter/ShineIntensity = 0.8
+shader_parameter/Texture2DParameter = ExtResource("2_3tosm")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=20 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="11_e4pc0"]
 [ext_resource type="Material" uid="uid://ujj1r4prfw20" path="res://vfx/selected_character_shine/selected_character_shine_material.tres" id="11_v7haa"]
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
+[ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/fond menu.png" id="14_tno1k"]
+[ext_resource type="Texture2D" uid="uid://cbgk1dfxbghqh" path="res://Sprites/ui_icons/UI draft smoke.png" id="15_1he6s"]
+[ext_resource type="Texture2D" uid="uid://duy7wb6j6ywg5" path="res://Sprites/ui_icons/UI draft barre rouge.png" id="16_lshbp"]
+[ext_resource type="Texture2D" uid="uid://cuim3yanukfq6" path="res://Sprites/ui_icons/UI draft barre violet 2.png" id="17_40nrv"]
+[ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="18_h2vva"]
 
 [sub_resource type="Environment" id="Environment_48764"]
 background_mode = 3
@@ -32,30 +37,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
 
 [node name="Pick1" parent="Board/OpponentDraft" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 6, 0)
-display_current_hp = false
 
 [node name="Pick2" parent="Board/OpponentDraft" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 0)
-display_current_hp = false
 
 [node name="Pick3" parent="Board/OpponentDraft" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -10, 0)
-display_current_hp = false
 
 [node name="PlayerChoices" type="Node3D" parent="Board"]
 unique_name_in_owner = true
 
 [node name="Choice1" parent="Board/PlayerChoices" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0, 0)
-display_current_hp = false
 
 [node name="Choice2" parent="Board/PlayerChoices" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-display_current_hp = false
 
 [node name="Choice3" parent="Board/PlayerChoices" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0, 0)
-display_current_hp = false
 
 [node name="PlayerDraft" type="Node3D" parent="Board"]
 unique_name_in_owner = true
@@ -63,15 +62,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
 
 [node name="Pick1" parent="Board/PlayerDraft" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 6, 0)
-display_current_hp = false
 
 [node name="Pick2" parent="Board/PlayerDraft" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 0)
-display_current_hp = false
 
 [node name="Pick3" parent="Board/PlayerDraft" instance=ExtResource("11_e4pc0")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -10, 0)
-display_current_hp = false
 
 [node name="Camera3D" type="Camera3D" parent="Board"]
 unique_name_in_owner = true
@@ -82,6 +78,22 @@ size = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_48764")
+
+[node name="FondMenu" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("14_tno1k")
+
+[node name="UiDraftSmoke" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("15_1he6s")
+
+[node name="UiDraftBarreRouge" type="Sprite2D" parent="."]
+position = Vector2(1570, 544)
+texture = ExtResource("16_lshbp")
+
+[node name="UiDraftBarreViolet2" type="Sprite2D" parent="."]
+position = Vector2(350, 544)
+texture = ExtResource("17_40nrv")
 
 [node name="BackgroundLayer" type="Control" parent="."]
 layout_mode = 3
@@ -102,10 +114,12 @@ grow_vertical = 2
 
 [node name="PlayerDraftLabel" type="Label" parent="BackgroundLayer"]
 layout_mode = 0
-offset_left = 61.0
+offset_left = 15.0
 offset_top = 75.0
-offset_right = 311.0
+offset_right = 315.0
 offset_bottom = 175.0
+theme = ExtResource("18_h2vva")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Équipe alliée"
 horizontal_alignment = 1
@@ -117,6 +131,8 @@ offset_left = 760.0
 offset_top = 75.0
 offset_right = 1160.0
 offset_bottom = 249.0
+theme = ExtResource("18_h2vva")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Choisissez votre personnage"
 horizontal_alignment = 1
@@ -125,10 +141,12 @@ autowrap_mode = 3
 
 [node name="OpponentDraftLabel" type="Label" parent="BackgroundLayer"]
 layout_mode = 0
-offset_left = 1581.0
+offset_left = 1605.0
 offset_top = 75.0
-offset_right = 1881.0
+offset_right = 1905.0
 offset_bottom = 175.0
+theme = ExtResource("18_h2vva")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "Équipe adverse"
 horizontal_alignment = 1

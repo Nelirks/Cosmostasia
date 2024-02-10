@@ -50,3 +50,9 @@ func update_card_infos():
 func set_overlay(overlay_material : Material) -> void :
 	%Overlay.visible = overlay_material != null
 	%Overlay.material = overlay_material
+
+func use_text_color(use : bool) -> void :
+	if use : 
+		%CardDescription.text = DescriptionHandler.develop_tags(card.description)
+	else :
+		%CardDescription.text = card.description.replace("!S!", "").replace("!K!", "")

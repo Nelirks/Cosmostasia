@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dqu37x8db75pv"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dqu37x8db75pv"]
 
+[ext_resource type="Texture2D" uid="uid://cri4cdcrhhlco" path="res://resources/sprites/card_sprites/lord reece/attaque miroir.png" id="1_8065f"]
 [ext_resource type="Script" path="res://scripts/data/cards/lord_reece/attaque_miroir.gd" id="1_bnwqi"]
 
 [resource]
@@ -13,3 +14,4 @@ quote = ""
 cost = 2
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_8065f")

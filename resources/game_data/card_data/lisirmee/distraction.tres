@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bvqoe72f3nhwq"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bvqoe72f3nhwq"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/lisirmee/distraction.gd" id="1_81q5w"]
+[ext_resource type="Texture2D" uid="uid://c8flhoq28mb2a" path="res://resources/sprites/card_sprites/Lisirmee/distraction int.png" id="1_kigh4"]
 
 [resource]
 script = ExtResource("1_81q5w")
@@ -12,3 +13,4 @@ quote = "Lisirmee a toujours préféré les mêlées désorganisées."
 cost = 1
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_kigh4")

@@ -16,3 +16,6 @@ var card : Card :
 
 func set_overlay(overlay_material : Material) -> void :
 	_front_side.set_overlay(overlay_material)
+
+func use_text_color(use : bool) -> void :
+	_front_side.use_text_color(use)
