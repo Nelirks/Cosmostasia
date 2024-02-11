@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bj3fus3i1mg2v"
+uid="uid://emghds38qvyh"
 path="res://.godot/imported/Cosmostasia_Arena1.glb-a38d96138295fac655a360b4d2f14880.scn"
 
 [deps]
@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/Cosmostasia_Arena1.glb-a38d96138295fac655a360
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
