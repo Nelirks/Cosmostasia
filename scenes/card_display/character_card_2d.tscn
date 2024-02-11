@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://pj3okss4lgka"]
+[gd_scene load_steps=11 format=3 uid="uid://pj3okss4lgka"]
 
 [ext_resource type="Script" path="res://scripts/card_display/character_card_2d.gd" id="1_ng47k"]
 [ext_resource type="Material" uid="uid://c2p3hm62digx0" path="res://vfx/gray_filter/gray_filter_material.tres" id="2_1i6vt"]
 [ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="2_5ykcr"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="3_d3qix"]
-[ext_resource type="PackedScene" path="res://scenes/card_display/health_bar.tscn" id="4_tthbh"]
+[ext_resource type="PackedScene" uid="uid://dxk15ixtypw0n" path="res://scenes/card_display/health_bar.tscn" id="4_tthbh"]
+[ext_resource type="Texture2D" uid="uid://0auv1yf56unj" path="res://Sprites/ui_icons/angle popup.png" id="6_c6u63"]
+[ext_resource type="Texture2D" uid="uid://bwccl0v846lop" path="res://Sprites/ui_icons/border3 popup.png" id="7_7gclk"]
+[ext_resource type="Texture2D" uid="uid://unsaj4yknwrd" path="res://Sprites/ui_icons/border1 popup.png" id="8_6kfux"]
+[ext_resource type="Texture2D" uid="uid://c1wlmxglgkvhp" path="res://Sprites/ui_icons/border2 popup.png" id="9_rm2v0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cmb2i"]
 
@@ -78,6 +82,91 @@ offset_left = 440.0
 offset_top = 20.0
 offset_right = 500.0
 offset_bottom = 830.0
+
+[node name="Cadre" type="Node2D" parent="."]
+
+[node name="AnglePopup" type="Sprite2D" parent="Cadre"]
+position = Vector2(446, 0)
+texture = ExtResource("6_c6u63")
+
+[node name="Border3Popup" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(-264, 0)
+texture = ExtResource("7_7gclk")
+
+[node name="Border3Popup2" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(-130, 0)
+rotation = -3.14159
+texture = ExtResource("7_7gclk")
+
+[node name="AnglePopup2" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(-390, 0)
+rotation = -3.14159
+texture = ExtResource("6_c6u63")
+
+[node name="AnglePopup" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(0, 846)
+texture = ExtResource("6_c6u63")
+
+[node name="Border3Popup" type="Sprite2D" parent="Cadre/AnglePopup/AnglePopup"]
+position = Vector2(-264, 0)
+texture = ExtResource("7_7gclk")
+
+[node name="Border3Popup2" type="Sprite2D" parent="Cadre/AnglePopup/AnglePopup"]
+position = Vector2(-130, 0)
+rotation = -3.14159
+texture = ExtResource("7_7gclk")
+
+[node name="AnglePopup2" type="Sprite2D" parent="Cadre/AnglePopup/AnglePopup"]
+position = Vector2(-390, 0)
+rotation = -3.14159
+texture = ExtResource("6_c6u63")
+
+[node name="AnglePopup3" type="Sprite2D" parent="Cadre"]
+position = Vector2(0, 56)
+rotation = -1.57079
+texture = ExtResource("6_c6u63")
+
+[node name="AnglePopup4" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-730, 0.00162152)
+rotation = 3.14159
+texture = ExtResource("6_c6u63")
+
+[node name="Border1Popup" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-169, 0.000375394)
+texture = ExtResource("8_6kfux")
+
+[node name="Border2Popup2" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-365, 0.000810762)
+rotation = 3.14159
+texture = ExtResource("9_rm2v0")
+
+[node name="Border1Popup2" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-563, -0.998749)
+rotation = 3.14159
+texture = ExtResource("8_6kfux")
+
+[node name="AnglePopup3" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-1.99884, 501)
+texture = ExtResource("6_c6u63")
+
+[node name="AnglePopup4" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-730, 0.00162152)
+rotation = 3.14159
+texture = ExtResource("6_c6u63")
+
+[node name="Border1Popup" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-169, 0.000375394)
+texture = ExtResource("8_6kfux")
+
+[node name="Border2Popup2" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-365, 0.000810762)
+rotation = 3.14159
+texture = ExtResource("9_rm2v0")
+
+[node name="Border1Popup2" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-563, -0.998749)
+rotation = 3.14159
+texture = ExtResource("8_6kfux")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
