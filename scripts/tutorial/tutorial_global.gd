@@ -12,7 +12,8 @@ func _ready():
 func play_tutorial(tutorial:tutorial_data,scene:Node, pos:Vector2):
 	var back = t_background.instantiate()
 	back.init(tutorial,pos)
-	get_tree().get_root().add_child(back)
+	scene.get_node("Foreground").add_child(back)
+	#get_tree().get_root().add_child(back)
 
 func trigger_tutorial(tutorial_id:String,scene:Node, pos:Vector2):
 	for data in tutorial_datas:

@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dad6qss0fn3p6"]
+[gd_scene load_steps=2 format=3 uid="uid://dad6qss0fn3p6"]
 
 [ext_resource type="Script" path="res://scenes/tutorial/tutorial_background.gd" id="1_76q70"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_t2x81"]
 
 [node name="tutorial_background" type="Control"]
 layout_mode = 3
@@ -12,16 +10,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_76q70")
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 4.755
-anchor_bottom = 3.869
-offset_right = -9121.6
-offset_bottom = -4170.52
-scale = Vector2(240.229, 134.791)
-button_mask = 7
-icon = SubResource("ImageTexture_t2x81")
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

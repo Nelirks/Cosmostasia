@@ -70,6 +70,8 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Fin du tour"
 
+[node name="Foreground" type="CanvasLayer" parent="."]
+
 [connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
 [connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
 [connection signal="clicked" from="CanvasLayer/TargetlessPlayArea" to="." method="_on_targetless_play_area_clicked"]

@@ -23,7 +23,7 @@ var info_popup : InfoPopup :
 		if info_popup != null : info_popup.queue_free()
 		info_popup = value
 		if info_popup != null :
-			%ForegroundLayer.add_child(info_popup)
+			%Foreground.add_child(info_popup)
 
 var waiting_for_opponent : bool = false
 
@@ -32,9 +32,12 @@ func _ready():
 	opponent_picks.append_array(%OpponentDraft.get_children())
 	player_picks.append_array(%PlayerDraft.get_children())
 	connect_signals()
+	
+	#tutorial trigger
 	var screen_middle:Vector2 = Vector2($BackgroundLayer/TextureRect.size.x/2,
 	$BackgroundLayer/TextureRect.size.y/2)
 	TutorialGlobal.trigger_tutorial("0_welcome",self,screen_middle)
+	
 	if NetworkManager.is_host :
 		pick_character_choices()
 

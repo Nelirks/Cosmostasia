@@ -6,7 +6,8 @@ func init(data:tutorial_data, pos:Vector2):
 	var popup = t_popup.instantiate()
 	popup.init(data.text,pos)
 	add_child(popup)
+	
+	
+	popup.position.x = pos.x - popup.size.x/2
+	popup.position.y = pos.y - popup.size.y/2
 
-
-func _on_button_pressed():
-	self.queue_free()
