@@ -100,7 +100,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.693017, 0.0986309, 0, -0.0986309, 0.6930
 is_player = true
 
 [node name="EnemyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(0.7, 0, 0, 0, 0.693017, -0.0986309, 0, 0.0986309, 0.693017, -6.151, 3.54, -4.381)
+transform = Transform3D(-0.7, -8.62259e-09, -6.05855e-08, 0, 0.693017, -0.0986309, 6.11959e-08, -0.0986309, -0.693017, -6.151, 3.54, -4.381)
 
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("dusts")]
 script = ExtResource("4_6wkjx")
