@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bj3fus3i1mg2v" path="res://resources/3d_asset/models/Cosmostasia_Arena1.glb" id="1_vacrf"]
 [ext_resource type="PackedScene" uid="uid://d28025g3hs2au" path="res://scenes/3d_environment/fire.tscn" id="2_ym8s6"]
 [ext_resource type="Texture2D" uid="uid://c8gu2xcwjkdvd" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_Color.jpg" id="3_n055x"]
-[ext_resource type="Material" uid="uid://f7e3kev8ia41" path="res://resources/3d_asset/materials/Marble.tres" id="3_nsj8x"]
+[ext_resource type="Material" uid="uid://dykyugkqg57ar" path="res://resources/3d_asset/materials/Marble.tres" id="3_nsj8x"]
 [ext_resource type="Texture2D" uid="uid://cumhe6c8tlgj8" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_NormalDX.jpg" id="4_jun5n"]
 [ext_resource type="Texture2D" uid="uid://der6cld3xvbha" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_Roughness.jpg" id="5_011jo"]
 [ext_resource type="Texture2D" uid="uid://dxt3vt5y7nk1m" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_AmbientOcclusion.jpg" id="6_w37fj"]
