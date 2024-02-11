@@ -13,7 +13,7 @@ var character : Character :
 	get :
 		return _front_side.character if _front_side != null else null
 
-func play_overlay(overlay : OverlayVFX, source) -> void :
+func play_overlay(overlay : PackedScene, source) -> void :
 	_front_side.play_overlay(overlay, source)
 
 func stop_overlay(source) -> void :

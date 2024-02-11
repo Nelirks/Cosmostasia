@@ -9,7 +9,6 @@ class_name CharacterCard2D
 			on_character_hp_changed()
 
 var _overlay : OverlayVFX
-
 var _overlay_source
 
 var character : Character :
@@ -44,7 +43,7 @@ func disconnect_signals() -> void :
 func on_character_hp_changed() -> void :
 	if is_combat_display :
 		%HealthBar.display_full(maxi(character.current_health, 0), character.max_health, character._armor)
-		if character.current_health <= 0 : play_overlay(death_fx.instantiate(), self)
+		if character.current_health <= 0 : play_overlay(death_fx, self)
 	else : 
 		%HealthBar.display_max_health(character.max_health)
 
@@ -71,10 +70,10 @@ func _on_status_removed(status : StatusEffect) -> void :
 	status.status_updated.disconnect(_on_status_updated)
 	status_displays.erase(status)
 
-func play_overlay(overlay : OverlayVFX, source) -> void :
+func play_overlay(overlay : PackedScene, source) -> void :
 	if _overlay != null : 
 		_overlay.queue_free()
-	_overlay = overlay
+	_overlay = overlay.instantiate()
 	_overlay_source = source
 	add_child(_overlay)
 	_overlay.size = size

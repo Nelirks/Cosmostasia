@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bg630as0akep4"]
 
-[ext_resource type="Script" path="res://scenes/vfx_chloe/vfx slash.gd" id="1_lipyt"]
+[ext_resource type="Script" path="res://scripts/vfx/combat_vfx.gd" id="1_1pi5g"]
 [ext_resource type="ArrayMesh" uid="uid://dyokwehn1mik5" path="res://scenes/vfx_chloe/slash1.obj" id="2_1t71v"]
 [ext_resource type="Shader" uid="uid://motap2owosjo" path="res://scenes/vfx_chloe/vfx slash.tres" id="2_nqgjs"]
 
@@ -38,18 +38,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:play")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_ym31t"]
 resource_name = "Slash"
@@ -79,17 +67,19 @@ tracks/1/keys = {
 "update": 0,
 "values": [-0.065, 0.1, 0.406]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:play")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.29),
+"times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fcbcn"]
@@ -98,15 +88,17 @@ _data = {
 "Slash": SubResource("Animation_ym31t")
 }
 
-[node name="vfx slash" type="Node3D"]
-script = ExtResource("1_lipyt")
+[node name="vfx slash" type="Node3D" node_paths=PackedStringArray("animator")]
+script = ExtResource("1_1pi5g")
+animator = NodePath("Animator")
+animation_name = "Slash"
 
 [node name="Slash1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112072, 0, -0.37299)
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 1, 0)
 mesh = ExtResource("2_1t71v")
 surface_material_override/0 = SubResource("ShaderMaterial_0gt78")
 
-[node name="SlashAnim" type="AnimationPlayer" parent="."]
+[node name="Animator" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fcbcn")
 }

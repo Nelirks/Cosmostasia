@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://drirtmvoqeth4"]
 
-[ext_resource type="Shader" uid="uid://c23wmvy6qaf4s" path="res://vfx/selected_character_shine/shine_shader.tres" id="1_eojsi"]
+[ext_resource type="Shader" path="res://vfx/selected_character_shine/shine_shader.tres" id="1_eojsi"]
 [ext_resource type="Texture2D" uid="uid://ds7jh15tnlpxm" path="res://vfx/selected_character_shine/shine_shape.png" id="2_tfyvd"]
 [ext_resource type="Script" path="res://scripts/vfx/animated_overlay_vfx.gd" id="3_t0vlp"]
 

@@ -145,7 +145,7 @@ func _on_choice_selected(choice_index : int) -> void :
 	%SubmitButton.disabled = false
 	for i in range(player_choices.size()) :
 		if i != choice_index : player_choices[i].stop_overlay(self)
-	player_choices[choice_index].play_overlay(selected_character_fx.instantiate(), self)
+	player_choices[choice_index].play_overlay(selected_character_fx, self)
 	AudioManager.post_event(AK.EVENTS.DRAFT_CLICK_CARD)
 
 func _on_choice_submitted() -> void : 

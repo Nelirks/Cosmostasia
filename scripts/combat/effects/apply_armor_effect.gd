@@ -12,5 +12,5 @@ func _init(amount : int, source : Character, target : Character) :
 
 func apply() -> void :
 	target.apply_armor(amount)
-	target.play_overlay(preload("res://vfx/selected_character_shine/shield_fx.tscn").instantiate())
+	target.play_overlay(preload("res://vfx/selected_character_shine/shield_fx.tscn"))
 	is_done = true

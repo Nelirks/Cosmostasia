@@ -2,6 +2,7 @@ extends Node
 class_name HandDisplay
 
 signal card_selected(card : Card)
+signal request_vfx(vfx : CombatVFX, source : Character, target : Character)
 
 @export var is_player : bool
 
@@ -131,3 +132,6 @@ func _display_info_popup():
 	info_popup = preload("res://scenes/info_popup/info_popup.tscn").instantiate()
 	info_popup.add_string(hovered_card.card.description, false)
 	info_popup.set_target_rect(hovered_card.get_rect())
+
+func on_card_vfx_request(vfx : CombatVFX, source : Character, target : Character) -> void :
+	request_vfx.emit(vfx, source, target)

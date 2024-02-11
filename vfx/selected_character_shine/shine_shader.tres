@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=20 format=3 uid="uid://c23wmvy6qaf4s"]
+[gd_resource type="VisualShader" load_steps=20 format=3 uid="uid://bmmgehp8dxbel"]
 
 [ext_resource type="Texture2D" uid="uid://ds7jh15tnlpxm" path="res://vfx/selected_character_shine/shine_shape.png" id="1_xtt2l"]
 
@@ -163,7 +163,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-935.339, -270.984)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(680, 140)

@@ -27,3 +27,8 @@ func _unhandled_input(event):
 func _on_end_turn_button_pressed():
 	GameManager.combat.query_end_turn()
 
+func play_vfx(vfx_scene : PackedScene, source : Vector3, target : Vector3) -> void :
+	var vfx : CombatVFX = vfx_scene.instantiate()
+	add_child(vfx)
+	vfx.set_context(source, target)
+	print("VFX PLAYED")

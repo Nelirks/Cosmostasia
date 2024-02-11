@@ -20,9 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 current = true
 fov = 40.0
 
-[node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
-
 [node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -6.5, 0)
@@ -31,6 +28,9 @@ is_player = true
 [node name="OpponentHand" parent="." instance=ExtResource("3_0g7ao")]
 unique_name_in_owner = true
 transform = Transform3D(-0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 0, 6.5, 0)
+
+[node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
 
 [node name="ArenaBackground" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -42,6 +42,7 @@ own_world_3d = true
 size = Vector2i(1920, 1080)
 
 [node name="3dBoardScene" parent="ArenaBackground/SubViewport" instance=ExtResource("4_vhcko")]
+unique_name_in_owner = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bfeis")
@@ -70,8 +71,9 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Fin du tour"
 
-[connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
 [connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
+[connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
+[connection signal="request_vfx" from="CharacterContainer" to="." method="play_vfx"]
 [connection signal="clicked" from="CanvasLayer/TargetlessPlayArea" to="." method="_on_targetless_play_area_clicked"]
 [connection signal="gui_input" from="CanvasLayer/TargetlessPlayArea" to="CanvasLayer/TargetlessPlayArea" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
