@@ -41,6 +41,9 @@ var selected_card : PlayableCard3D = null :
 
 var hovered_card : PlayableCard3D = null
 
+var last_played_card : PlayableCard3D
+@export var played_card_visibility_duration : float
+
 func _ready():
 	for card in player.get_all_cards() : 
 		_instantiate_card(card)
@@ -56,6 +59,7 @@ func _instantiate_card(card : Card) :
 	if !is_player : 
 		card_display.flip(true, 0.0)
 	card_display.card.position_changed.connect(_on_card_position_changed.bind(card_display))
+	card_display.card.card_played.connect(_on_card_played.bind(card_display))
 	_on_card_position_changed(card_display, true)
 
 func _destroy_card(card : Card) :
@@ -100,6 +104,8 @@ func _on_card_mouse_exited(card_display : PlayableCard3D) -> void :
 	hovered_card = null
 
 func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool = false) -> void :
+	if card_display == last_played_card : return
+	
 	card_display.rotates_on_hover = card_display.card.is_in_hand
 	
 	if immediate : 
@@ -114,12 +120,30 @@ func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool =
 		card_display.tween = create_tween()
 		card_display.tween.tween_property(card_display, "position", card_positions[card_display.card.position].position, card_move_duration)
 		card_display.tween.parallel().tween_property(card_display, "scale", card_positions[card_display.card.position].scale, card_move_duration)
-		card_display.tween.tween_callback(_connect_mouse_signals.bind(card_display) if card_display.card.is_in_hand else _disconnect_mouse_signals.bind(card_display))
-	
-	card_display.visible = card_display.card.is_in_hand or card_display.card == player.get_draw_pile_top_card()
+		if card_display.card.is_in_hand : card_display.tween.tween_callback(_connect_mouse_signals.bind(card_display))
+	if card_display.card.is_in_hand : card_display.visible = true
+	if card_display.card.position == Card.Position.DRAW_PILE : card_display.card == player.get_draw_pile_top_card()
 	
 	if is_player :
 		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_duration)
+
+func _on_card_played(card_display : PlayableCard3D) -> void :
+	if card_display.tween : 
+		card_display.tween.kill()
+	if last_played_card != null : last_played_card.visible = false
+	last_played_card = card_display
+	_disconnect_mouse_signals(card_display)
+	if !is_player : card_display.set_z_rotation(PI)
+	card_display.tween = create_tween()
+	card_display.tween.tween_property(card_display, "position", $PlayedCard.position, card_move_duration)
+	card_display.tween.parallel().tween_property(card_display, "scale", $PlayedCard.scale, card_move_duration)
+	card_display.tween.tween_interval(played_card_visibility_duration)
+	card_display.tween.tween_callback(hide_card.bind(card_display))
+	card_display.flip(false, card_move_duration)
+
+
+func hide_card(card_display : PlayableCard3D) -> void :
+	card_display.visible = false
 
 func _draw_pile_top_updated() -> void : 
 	if !player.get_draw_pile_top_card() : return

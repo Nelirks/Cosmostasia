@@ -31,4 +31,3 @@ func play_vfx(vfx_scene : PackedScene, source : Vector3, target : Vector3) -> vo
 	var vfx : CombatVFX = vfx_scene.instantiate()
 	add_child(vfx)
 	vfx.set_context(source, target)
-	print("VFX PLAYED")

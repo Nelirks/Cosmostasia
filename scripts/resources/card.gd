@@ -8,6 +8,7 @@ enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 signal position_changed()
 signal cost_updated()
 signal revealed_applied()
+signal card_played()
 
 @export var card_name : String
 @export_multiline var description : String
