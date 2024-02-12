@@ -35,8 +35,6 @@ var revealed : bool = false :
 		revealed = value
 		if revealed :
 			revealed_applied.emit()
-			if !position_changed.is_connected(_reset_reveal) :
-				position_changed.connect(_reset_reveal)
 
 var is_in_hand : bool :
 	get :
@@ -60,12 +58,8 @@ func can_target(target : Character) -> bool :
 	return false
 
 func _on_position_set() -> void :
-	pass
+	if position == Position.DISCARD_PILE or position == Position.DRAW_PILE :
+		revealed = false
 
 func _add_effect(effect : Effect) -> void :
 	GameManager.combat.add_effect(effect)
-
-func _reset_reveal() :
-	if position == Position.DISCARD_PILE or position == Position.DRAW_PILE :
-		revealed = false
-		revealed_applied.disconnect(_reset_reveal)

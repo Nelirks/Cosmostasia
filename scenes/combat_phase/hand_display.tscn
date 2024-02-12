@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3uv7ywrnc8jk"]
 
 [ext_resource type="Script" path="res://scripts/combat/hand_display.gd" id="1_iq6b1"]
-[ext_resource type="PackedScene" uid="uid://dch2grk7xnqg8" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="2_8aok0"]
+[ext_resource type="PackedScene" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="2_8aok0"]
 
 [node name="hand_display" type="Node3D"]
 script = ExtResource("1_iq6b1")
