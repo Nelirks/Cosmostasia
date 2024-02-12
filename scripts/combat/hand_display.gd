@@ -61,6 +61,7 @@ func _register_card(card : Card) -> void :
 		_update_card_position(card, true)
 
 func _destroy_card(card : Card) :
+	if last_played_card == card : last_played_card = null
 	if cards[card] != null : _destroy_card_display(card)
 	cards.erase(card)
 
@@ -68,7 +69,6 @@ func _display_card_count() -> void :
 	var card_count = 0
 	for key in cards.keys() :
 		if cards[key] != null : card_count += 1
-	print("DESTROYED CARD, " + str(card_count) + " REMAINING")
 
 func _create_card_display(card : Card) -> void :
 	cards[card] = preload("res://scenes/card_display/playable_card_3d.tscn").instantiate()
@@ -122,7 +122,6 @@ func _on_card_mouse_exited(card_display : PlayableCard3D) -> void :
 func _on_card_position_changed(card : Card, immediate : bool = false) -> void :
 	if !card.is_in_hand and card != player.get_draw_pile_top_card() and card != last_played_card :
 		if cards[card] != null : _destroy_card_display(card)
-		print("DESTROYING " + card.card_name)
 		return
 	if cards[card] == null : 
 		_create_card_display(card)
@@ -155,7 +154,6 @@ func _update_card_position(card : Card, immediate : bool) -> void :
 
 func _on_card_played(card : Card) -> void :
 	if cards[card] == null :
-		printerr("TRYING TO PLAY A CARD THAT'S NOT INSTANTIATED")
 		return
 	var card_display = cards[card]
 	if card_display.tween : 
