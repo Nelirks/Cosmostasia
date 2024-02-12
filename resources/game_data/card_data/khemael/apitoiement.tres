@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cd1skh5bc2oq8"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cd1skh5bc2oq8"]
 
+[ext_resource type="Texture2D" uid="uid://mnwlrosam6r" path="res://resources/sprites/card_sprites/khemael/apitoiement_place.png" id="1_fxb7k"]
 [ext_resource type="Script" path="res://scripts/data/cards/khemael/apitoiement.gd" id="1_k4bpc"]
 
 [resource]
@@ -13,3 +14,4 @@ quote = ""
 cost = 1
 targetting = 1
 cardType = 1
+card_texture = ExtResource("1_fxb7k")

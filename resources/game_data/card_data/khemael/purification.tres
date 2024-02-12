@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dm6wt0gdxt35p"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dm6wt0gdxt35p"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/khemael/purification.gd" id="1_nhc23"]
+[ext_resource type="Texture2D" uid="uid://41f4jlag1dgv" path="res://resources/sprites/card_sprites/khemael/carte_purification.png" id="1_o86j8"]
 
 [resource]
 script = ExtResource("1_nhc23")
@@ -11,3 +12,4 @@ quote = ""
 cost = 2
 targetting = 1
 cardType = 1
+card_texture = ExtResource("1_o86j8")
