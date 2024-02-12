@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d0s3ys5hr2t3t"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d0s3ys5hr2t3t"]
 
+[ext_resource type="Texture2D" uid="uid://dpxi2v1xbpq1p" path="res://resources/sprites/card_sprites/brunhilde/carte_cri_de_guerre.png" id="1_3pveu"]
 [ext_resource type="Script" path="res://scripts/data/cards/brunhilde/cri_de_guerre.gd" id="1_04jwi"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = ""
 cost = 1
 targetting = 3
 cardType = 1
+card_texture = ExtResource("1_3pveu")

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dg2x2sjf2jk7b"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dg2x2sjf2jk7b"]
 
+[ext_resource type="Texture2D" uid="uid://dvi0epe7jxgej" path="res://resources/sprites/card_sprites/brunhilde/carte_aura_protection.png" id="1_5knhp"]
 [ext_resource type="Script" path="res://scripts/data/cards/brunhilde/aura_protectrice.gd" id="1_mvai1"]
 
 [resource]
@@ -13,3 +14,4 @@ quote = ""
 cost = 2
 targetting = 1
 cardType = 1
+card_texture = ExtResource("1_5knhp")
