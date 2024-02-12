@@ -193,7 +193,7 @@ mesh_lod_threshold = 0.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D2"]
 transform = Transform3D(-0.44679, -0.851525, 0.274378, 0.10902, 0.252584, 0.961414, -0.887972, 0.459462, -0.0200187, -0.00811005, 2.18535, -0.01301)
 light_color = Color(0.207843, 0.396078, 0.92549, 1)
-light_energy = 0.125
+light_energy = 0.17
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 shadow_bias = 1.0
@@ -209,8 +209,8 @@ directional_shadow_max_distance = 20.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Node3D2"]
 transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.84328e-08, 0.104617, -0.992695, -0.0601077, 0.13996, 6.6143, -0.10045)
-light_color = Color(0.901961, 0.776471, 0.901961, 1)
-light_energy = 0.279
+light_color = Color(1, 0.764706, 0.741176, 1)
+light_energy = 0.1
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 1.0
@@ -224,18 +224,27 @@ omni_shadow_mode = 0
 [node name="OmniLight3D2" type="OmniLight3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43065, 4.1291, -1.27137)
 light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38318, 4.11926, -1.25717)
 light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
 distance_fade_begin = 2.5
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39948, 4.1306, 1.24203)
 light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42432, 4.16006, 1.26361)
 light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -0.79229, 0.610145, 0, -0.610145, -0.79229, 0, 7.59735, 0)
+light_color = Color(0.737255, 0.862745, 1, 1)
+light_energy = 0.05
 
 [connection signal="timeout" from="Node3D/Timer" to="Node3D" method="_on_timer_timeout"]
