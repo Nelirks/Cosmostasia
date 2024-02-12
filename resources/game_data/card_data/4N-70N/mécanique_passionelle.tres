@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dy6mmlkugr216"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dy6mmlkugr216"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/4n_70n/mecanique_passionnelle.gd" id="1_i7olt"]
+[ext_resource type="Texture2D" uid="uid://bacpqumqkhdvk" path="res://resources/sprites/card_sprites/4N70N/carte_mecanique_passionnelle.png" id="1_wy1xb"]
 
 [resource]
 script = ExtResource("1_i7olt")
@@ -15,3 +16,4 @@ quote = "Acharné à sa tache, 4N-70N fera tout ce qui est en son pouvoir pour r
 cost = 2
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_wy1xb")
