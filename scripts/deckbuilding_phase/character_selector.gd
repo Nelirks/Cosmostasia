@@ -15,7 +15,7 @@ func set_text(text : String) -> void :
 	%CharacterName.text = text
 
 func set_flip(flip : bool) -> void :
-	(%Background as TextureRect).flip_h = flip
+	(%Background as TextureRect).flip_v = flip
 	(%CharacterName as Label).horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT if flip else HORIZONTAL_ALIGNMENT_RIGHT
 
 
