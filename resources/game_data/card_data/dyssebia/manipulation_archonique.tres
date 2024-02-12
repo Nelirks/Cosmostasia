@@ -7,7 +7,7 @@
 script = ExtResource("1_52hlp")
 base_damage = 15
 bonus_damage = 15
-card_name = "Manipulation Archonique"
+card_name = "Puissance Archonique"
 description = "Inflige 15 dégâts à la cible
 Les dégâts sont doublés si Dyssebia possède de l'armure"
 quote = ""

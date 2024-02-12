@@ -18,12 +18,12 @@ content = Array[int]([3, 0, 0, 3, 4])
 [sub_resource type="Resource" id="Resource_odttm"]
 script = ExtResource("6_jfo4l")
 preset_name = "Fourrure blindée"
-content = Array[int]([2, 3, 3, 0, 2])
+content = Array[int]([3, 2, 3, 0, 2])
 
 [sub_resource type="Resource" id="Resource_perfy"]
 script = ExtResource("6_jfo4l")
 preset_name = "Calme trompeur"
-content = Array[int]([0, 4, 3, 3, 0])
+content = Array[int]([0, 2, 4, 4, 0])
 
 [resource]
 script = ExtResource("1_35mvq")

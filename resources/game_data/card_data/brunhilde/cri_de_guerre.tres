@@ -6,7 +6,7 @@
 script = ExtResource("1_04jwi")
 defense_up_duration = 1
 card_name = "Cri de guerre"
-description = "Augmente la défense des alliés pendant 1 tour"
+description = "!S!Fortifie!S! des alliés pendant 1 tour"
 quote = ""
 cost = 1
 targetting = 3

@@ -13,12 +13,12 @@
 [sub_resource type="Resource" id="Resource_sa78h"]
 script = ExtResource("6_bbe6k")
 preset_name = "Incarnation de la Faveur"
-content = Array[int]([5, 0, 3, 0, 2])
+content = Array[int]([3, 2, 3, 0, 2])
 
 [sub_resource type="Resource" id="Resource_827in"]
 script = ExtResource("6_bbe6k")
 preset_name = "Incarnation du Préjudice"
-content = Array[int]([0, 5, 0, 3, 2])
+content = Array[int]([2, 3, 0, 3, 2])
 
 [sub_resource type="Resource" id="Resource_iiw8k"]
 script = ExtResource("6_bbe6k")

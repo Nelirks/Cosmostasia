@@ -7,7 +7,7 @@
 script = ExtResource("1_2cb0p")
 damage = 7
 attack_down_duration = 1
-card_name = "Sacrifice (?)"
+card_name = "Faible !"
 description = "Réduit l'attaque de la cible pendant 1 tour et lui inflige 7 dégâts pour chaque effet négatif l'affectant."
 quote = ""
 cost = 1
