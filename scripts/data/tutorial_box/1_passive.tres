@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://d1xav6ulrjk1g"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_pyqvm"]
+
+[resource]
+script = ExtResource("1_pyqvm")
+tutorial_name = "1_passive"
+text = "Chaque personnage possède un passif, que vous pouvez lire en laissant votre souris survolez sa carte"

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_8em0g")
 tutorial_name = "0_welcome"
-text = "Bienvenue dans Cosmostasia"
+text = "Bienvenue dans cosmostasia. Dans ce jeu de carte, formez une équipe de trois personnage pour éliminer l'équipe adverse. La sélection de vos personnages ce fait simultanément avec l'adversaire.Seléctionnait le personnage de votre choix parmis 3, et recommencez l'opération 3 fois."

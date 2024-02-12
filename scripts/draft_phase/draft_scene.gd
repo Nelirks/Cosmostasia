@@ -34,9 +34,8 @@ func _ready():
 	connect_signals()
 	
 	#tutorial trigger
-	var screen_middle:Vector2 = Vector2($BackgroundLayer/TextureRect.size.x/2,
-	$BackgroundLayer/TextureRect.size.y/2)
-	TutorialGlobal.trigger_tutorial("0_welcome",self,screen_middle)
+	TutorialGlobal.trigger_tutorial("0_welcome",self)
+	TutorialGlobal.trigger_tutorial("1_passive",self)
 	
 	if NetworkManager.is_host :
 		pick_character_choices()
