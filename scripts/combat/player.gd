@@ -88,6 +88,7 @@ func can_play_card(card : Card, target : Character) -> bool :
 func play_card(card : Card, target : Character) -> void :
 	if !can_play_card(card, target) : return
 	current_energy -= card.cost
+	card.card_played.emit()
 	card.apply_effects(target)
 	discard_card(_hand.find(card))
 

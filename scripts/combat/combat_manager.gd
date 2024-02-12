@@ -42,7 +42,7 @@ func query_end_turn() -> void :
 		if ((multiplayer.get_remote_sender_id() == 0) == is_player_turn()) :
 			_apply_end_turn.rpc()
 		else :
-			push_error("Cannot end turn while not current turn")
+			printerr("Cannot end turn while not current turn")
 	else :
 		query_end_turn.rpc()
 

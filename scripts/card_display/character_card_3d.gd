@@ -13,9 +13,12 @@ var character : Character :
 	get :
 		return _front_side.character if _front_side != null else null
 
-func set_overlay(material : Material) :
-	if _front_side == null : return
-	_front_side.set_overlay(material)
+func play_overlay(overlay : PackedScene, source) -> void :
+	_front_side.play_overlay(overlay, source)
+
+func stop_overlay(source) -> void :
+	_front_side.stop_overlay(source)
+
 
 func _ready():
 	visible = character != null

@@ -2,6 +2,7 @@ extends Node
 class_name HandDisplay
 
 signal card_selected(card : Card)
+signal request_vfx(vfx : CombatVFX, source : Character, target : Character)
 
 @export var is_player : bool
 
@@ -12,7 +13,7 @@ signal card_selected(card : Card)
 
 @onready var card_positions : Array[Marker3D] = [$DrawPile, $PreparedCard, $MiddleCard, $MiracleCard, $DrawPile]
 
-@export var selected_card_overlay_material : Material
+@export var selected_card_fx : PackedScene
 
 var info_popup : InfoPopup :
 	set(value) :
@@ -31,35 +32,55 @@ var cards : Dictionary
 var selected_card : PlayableCard3D = null :
 	set(value) : 
 		if selected_card != null :
-			selected_card.set_overlay(null)
+			selected_card.overlay = null
 		selected_card = value
 		if selected_card != null : 
-			selected_card.set_overlay(selected_card_overlay_material)
+			selected_card.overlay = selected_card_fx.instantiate()
 			card_selected.emit(selected_card.card)
 		card_selected.emit(selected_card.card if selected_card != null else null)
 
 var hovered_card : PlayableCard3D = null
+var last_played_card : Card
+
+@export var played_card_visibility_duration : float
 
 func _ready():
 	for card in player.get_all_cards() : 
-		_instantiate_card(card)
-	player.card_created.connect(_instantiate_card)
+		_register_card(card)
+	player.card_created.connect(_register_card)
 	player.card_destroyed.connect(_destroy_card)
 	player.draw_pile_top_updated.connect(_draw_pile_top_updated)
 
-func _instantiate_card(card : Card) :
-	var card_display = preload("res://scenes/card_display/playable_card_3d.tscn").instantiate()
-	add_child(card_display)
-	cards[card] = card_display
-	card_display.card = card
-	if !is_player : 
-		card_display.flip(true, 0.0)
-	card_display.card.position_changed.connect(_on_card_position_changed.bind(card_display))
-	_on_card_position_changed(card_display, true)
+func _register_card(card : Card) -> void :
+	cards[card] = null
+	card.position_changed.connect(_on_card_position_changed.bind(card))
+	card.card_played.connect(_on_card_played.bind(card))
+	
+	if card.is_in_hand or card == player.get_draw_pile_top_card() :
+		_create_card_display(card)
+		_update_card_position(card, true)
 
 func _destroy_card(card : Card) :
-	cards[card].queue_free()
+	if cards[card] != null : _destroy_card_display(card)
 	cards.erase(card)
+
+func _display_card_count() -> void :
+	var card_count = 0
+	for key in cards.keys() :
+		if cards[key] != null : card_count += 1
+	print("DESTROYED CARD, " + str(card_count) + " REMAINING")
+
+func _create_card_display(card : Card) -> void :
+	cards[card] = preload("res://scenes/card_display/playable_card_3d.tscn").instantiate()
+	add_child(cards[card])
+	cards[card].card = card
+	_display_card_count()
+	
+func _destroy_card_display(card : Card) -> void :
+	if cards[card].tween : cards[card].tween.kill()
+	cards[card].queue_free()
+	cards[card] = null
+	_display_card_count()
 
 func _connect_mouse_signals(card_display : PlayableCard3D) -> void :
 	if card_display.mouse_clicked.is_connected(_on_card_clicked) : return
@@ -98,8 +119,20 @@ func _on_card_mouse_exited(card_display : PlayableCard3D) -> void :
 		card_display.tween.parallel().tween_method(card_display.set_z_rotation, card_display.rotation.z, 0, card_zoom_in_duration)
 	hovered_card = null
 
-func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool = false) -> void :
-	card_display.rotates_on_hover = card_display.card.is_in_hand
+func _on_card_position_changed(card : Card, immediate : bool = false) -> void :
+	if !card.is_in_hand and card != player.get_draw_pile_top_card() and card != last_played_card :
+		if cards[card] != null : _destroy_card_display(card)
+		print("DESTROYING " + card.card_name)
+		return
+	if cards[card] == null : 
+		_create_card_display(card)
+		_update_card_position(card, true)
+	else :
+		_update_card_position(card, immediate)
+
+func _update_card_position(card : Card, immediate : bool) -> void :
+	var card_display = cards[card]
+	if card == last_played_card : return
 	
 	if immediate : 
 		card_display.position = card_positions[card_display.card.position].position
@@ -113,16 +146,38 @@ func _on_card_position_changed(card_display : PlayableCard3D, immediate : bool =
 		card_display.tween = create_tween()
 		card_display.tween.tween_property(card_display, "position", card_positions[card_display.card.position].position, card_move_duration)
 		card_display.tween.parallel().tween_property(card_display, "scale", card_positions[card_display.card.position].scale, card_move_duration)
-		card_display.tween.tween_callback(_connect_mouse_signals.bind(card_display) if card_display.card.is_in_hand else _disconnect_mouse_signals.bind(card_display))
-	
-	card_display.visible = card_display.card.is_in_hand or card_display.card == player.get_draw_pile_top_card()
+		if card_display.card.is_in_hand : card_display.tween.tween_callback(_connect_mouse_signals.bind(card_display))
 	
 	if is_player :
 		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_duration)
+	else :
+		card_display.flip(!card_display.card.is_in_hand or !card_display.card.revealed, 0)
+
+func _on_card_played(card : Card) -> void :
+	if cards[card] == null :
+		printerr("TRYING TO PLAY A CARD THAT'S NOT INSTANTIATED")
+		return
+	var card_display = cards[card]
+	if card_display.tween : 
+		card_display.tween.kill()
+	if last_played_card != null and cards[last_played_card] != null: 
+		_destroy_card_display(last_played_card)
+	last_played_card = card
+	_disconnect_mouse_signals(card_display)
+	card_display.tween = create_tween()
+	card_display.tween.tween_property(card_display, "position", $PlayedCard.position, card_move_duration)
+	card_display.tween.parallel().tween_property(card_display, "scale", $PlayedCard.scale, card_move_duration)
+	if !is_player : 
+		card_display.tween.parallel().tween_method(card_display.set_z_rotation, card_display.rotation.z, PI, card_move_duration)
+		card_display.tween.parallel().tween_method(card_display.set_y_rotation, card_display.rotation.y, 0, card_move_duration)
+	card_display.tween.tween_interval(played_card_visibility_duration)
+	card_display.tween.tween_callback(_destroy_card_display.bind(card))
 
 func _draw_pile_top_updated() -> void : 
 	if !player.get_draw_pile_top_card() : return
-	cards[player.get_draw_pile_top_card()].visible = true
+	if cards[player.get_draw_pile_top_card()] == null : 
+		_create_card_display(player.get_draw_pile_top_card())
+		_update_card_position(player.get_draw_pile_top_card(), true)
 
 func deselect_card() -> void :
 	selected_card = null
@@ -131,3 +186,6 @@ func _display_info_popup():
 	info_popup = preload("res://scenes/info_popup/info_popup.tscn").instantiate()
 	info_popup.add_string(hovered_card.card.description, false)
 	info_popup.set_target_rect(hovered_card.get_rect())
+
+func on_card_vfx_request(vfx : CombatVFX, source : Character, target : Character) -> void :
+	request_vfx.emit(vfx, source, target)

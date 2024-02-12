@@ -1,6 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c2p3hm62digx0"]
-
-[ext_resource type="Shader" uid="uid://cam55e5be0f6e" path="res://vfx/gray_filter/gray_filter_shader.tres" id="1_fok17"]
-
-[resource]
-shader = ExtResource("1_fok17")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dndrh64lp266q"]
+
+[ext_resource type="Shader" uid="uid://c23wmvy6qaf4s" path="res://vfx/selected_character_shine/shine_shader.tres" id="1_vcvuf"]
+[ext_resource type="Texture2D" uid="uid://ds7jh15tnlpxm" path="res://vfx/selected_character_shine/shine_shape.png" id="2_yoeal"]
+[ext_resource type="Script" path="res://scripts/vfx/animated_overlay_vfx.gd" id="3_g65yq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ahau"]
+shader = ExtResource("1_vcvuf")
+shader_parameter/ShineModulate = Color(1, 1, 1, 1)
+shader_parameter/ElapsedTime = 0.0
+shader_parameter/ShineSpeed = 2.0
+shader_parameter/InactiveRatio = 2.0
+shader_parameter/ShineIntensity = 0.2
+shader_parameter/ShineShape = ExtResource("2_yoeal")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xukep"]
+
+[node name="selected_shine_fx" type="TextureRect"]
+material = SubResource("ShaderMaterial_3ahau")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1420.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xukep")
+script = ExtResource("3_g65yq")
+parameter_name = "ElapsedTime"

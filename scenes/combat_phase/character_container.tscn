@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dypqama8wixgp"]
 
 [ext_resource type="Script" path="res://scripts/combat/character_container.gd" id="1_vbnqj"]
+[ext_resource type="PackedScene" path="res://vfx/target_highlight/ally_target_fx.tscn" id="2_dd4sg"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_dm1yn"]
-[ext_resource type="Material" uid="uid://4ufhwl1h3pb" path="res://vfx/target_highlight/ally_target_material.tres" id="2_kq6h8"]
-[ext_resource type="Material" uid="uid://4bihdc3epp6j" path="res://vfx/target_highlight/enemy_target_material.tres" id="3_nhggh"]
+[ext_resource type="PackedScene" path="res://vfx/target_highlight/enemy_target_fx.tscn" id="3_orwev"]
 
 [node name="CharacterContainer" type="Node3D"]
 script = ExtResource("1_vbnqj")
-player_character_targetable_material = ExtResource("2_kq6h8")
-opponent_character_targetable_material = ExtResource("3_nhggh")
+player_character_targetable_fx = ExtResource("2_dd4sg")
+opponent_character_targetable_fx = ExtResource("3_orwev")
 
 [node name="PlayerCharacters" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5yqy2dbx4mn8"]
+
+[ext_resource type="Shader" uid="uid://cudt01drrbgt8" path="res://vfx/target_highlight/target_highlight_shader.tres" id="1_orfik"]
+[ext_resource type="Script" path="res://scripts/vfx/overlay_vfx.gd" id="2_hyang"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kp7ou"]
+shader = ExtResource("1_orfik")
+shader_parameter/BorderColor = Color(1, 0.584314, 0, 1)
+shader_parameter/ShineColor = Color(1, 0, 0, 1)
+shader_parameter/FrontTrailLength = 0.05
+shader_parameter/TimeFactor = 0.5
+shader_parameter/TextureSize = Vector2(500, 850)
+shader_parameter/BackTrailLength = 0.2
+shader_parameter/LineWidth = 10.0
+shader_parameter/OutFade = 0.05
+shader_parameter/InFade = 0.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vwxgr"]
+
+[node name="enemy_target_fx" type="TextureRect"]
+material = SubResource("ShaderMaterial_kp7ou")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1420.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_vwxgr")
+script = ExtResource("2_hyang")

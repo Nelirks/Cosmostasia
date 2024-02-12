@@ -8,6 +8,7 @@ enum Targetting { ANY, ALLY, OPPONENT, NO_TARGET }
 signal position_changed()
 signal cost_updated()
 signal revealed_applied()
+signal card_played()
 
 @export var card_name : String
 @export_multiline var description : String
@@ -33,10 +34,7 @@ var revealed : bool = false :
 	set(value) :
 		revealed = value
 		if revealed :
-			print("CARD REVEALED")
 			revealed_applied.emit()
-			if !position_changed.is_connected(_reset_reveal) :
-				position_changed.connect(_reset_reveal)
 
 var is_in_hand : bool :
 	get :
@@ -60,12 +58,8 @@ func can_target(target : Character) -> bool :
 	return false
 
 func _on_position_set() -> void :
-	pass
+	if position == Position.DISCARD_PILE or position == Position.DRAW_PILE :
+		revealed = false
 
 func _add_effect(effect : Effect) -> void :
 	GameManager.combat.add_effect(effect)
-
-func _reset_reveal() :
-	if position == Position.DISCARD_PILE or position == Position.DRAW_PILE :
-		revealed = false
-		revealed_applied.disconnect(_reset_reveal)

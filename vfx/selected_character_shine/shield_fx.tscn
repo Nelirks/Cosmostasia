@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://drirtmvoqeth4"]
+
+[ext_resource type="Shader" path="res://vfx/selected_character_shine/shine_shader.tres" id="1_eojsi"]
+[ext_resource type="Texture2D" uid="uid://ds7jh15tnlpxm" path="res://vfx/selected_character_shine/shine_shape.png" id="2_tfyvd"]
+[ext_resource type="Script" path="res://scripts/vfx/animated_overlay_vfx.gd" id="3_t0vlp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kg8ft"]
+shader = ExtResource("1_eojsi")
+shader_parameter/ShineModulate = Color(0.67451, 0.305882, 0.776471, 1)
+shader_parameter/ElapsedTime = 0.0
+shader_parameter/ShineSpeed = 2.0
+shader_parameter/InactiveRatio = null
+shader_parameter/ShineIntensity = 0.8
+shader_parameter/ShineShape = ExtResource("2_tfyvd")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xphny"]
+
+[node name="shield_fx" type="TextureRect"]
+material = SubResource("ShaderMaterial_kg8ft")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xphny")
+script = ExtResource("3_t0vlp")
+duration = 1.0
+parameter_name = "ElapsedTime"
