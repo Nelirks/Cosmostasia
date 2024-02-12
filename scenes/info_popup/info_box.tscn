@@ -1,10 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccb7ibyqs8les"]
+[gd_scene load_steps=5 format=3 uid="uid://ccb7ibyqs8les"]
 
 [ext_resource type="Script" path="res://scripts/info_popup/info_box.gd" id="1_u1s45"]
+[ext_resource type="Texture2D" uid="uid://dyacqhp584nof" path="res://Sprites/ui_icons/cadre fond.png" id="1_urg3l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdp50"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 18.0
+content_margin_bottom = 14.0
+texture = ExtResource("1_urg3l")
+texture_margin_left = 60.0
+texture_margin_top = 60.0
+texture_margin_right = 60.0
+texture_margin_bottom = 60.0
+
+[sub_resource type="Theme" id="Theme_ht5k1"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_hdp50")
 
 [node name="InfoBox" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 440.0
+offset_bottom = 249.0
+theme = SubResource("Theme_ht5k1")
 script = ExtResource("1_u1s45")
 
 [node name="Label" type="RichTextLabel" parent="."]
