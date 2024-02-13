@@ -1,77 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdby3tlko6pkc"]
+[gd_scene load_steps=8 format=3 uid="uid://bdby3tlko6pkc"]
 
 [ext_resource type="Script" path="res://scripts/combat/combat_scene.gd" id="1_t5omj"]
 [ext_resource type="PackedScene" uid="uid://3uv7ywrnc8jk" path="res://scenes/combat_phase/hand_display.tscn" id="3_0g7ao"]
 [ext_resource type="PackedScene" uid="uid://dypqama8wixgp" path="res://scenes/combat_phase/character_container.tscn" id="4_m72q4"]
 [ext_resource type="PackedScene" uid="uid://dr8a6crxdqvbe" path="res://scenes/3d_environment/3d_board_scene.tscn" id="4_vhcko"]
-[ext_resource type="PackedScene" uid="uid://bg630as0akep4" path="res://scenes/vfx_chloe/vfx slash.tscn" id="6_jotsf"]
 [ext_resource type="Script" path="res://scripts/mouse_click_area.gd" id="6_kni6t"]
-[ext_resource type="Shader" uid="uid://motap2owosjo" path="res://scenes/vfx_chloe/vfx slash.tres" id="7_qn55s"]
-[ext_resource type="Texture2D" uid="uid://c5d3y77x3o7ik" path="res://scenes/vfx_chloe/sparks5.png" id="8_ofjja"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mkcl4"]
 viewport_path = NodePath("ArenaBackground/SubViewport")
 
-[sub_resource type="Environment" id="Environment_frmt4"]
-ssr_fade_in = 23.638
-ssr_fade_out = 0.0583146
-ssr_depth_tolerance = 128.0
-ssao_radius = 16.0
-ssao_intensity = 16.0
-ssao_detail = 5.0
-ssao_horizon = 1.0
-ssao_light_affect = 1.0
-ssao_ao_channel_affect = 1.0
-glow_enabled = true
-glow_intensity = 0.5
-glow_strength = 0.7
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7usn"]
-resource_local_to_scene = true
-render_priority = 0
-shader = ExtResource("7_qn55s")
-shader_parameter/Color = Color(14.2, 3.55, 0, 1)
-shader_parameter/FloatParameter = -0.255
-shader_parameter/FloatParameter2 = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q55yn"]
-transparency = 1
-blend_mode = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("8_ofjja")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vn47t"]
-emission_shape = 3
-emission_box_extents = Vector3(1, 0.2, 0)
-direction = Vector3(0, 1, 0)
-spread = 40.0
-gravity = Vector3(0, -2, 0)
-initial_velocity_min = 5.0
-initial_velocity_max = 5.0
-angular_velocity_min = 720.0
-angular_velocity_max = 1440.0
-linear_accel_min = 1.0
-linear_accel_max = 1.0
-damping_max = 5.0
-angle_min = 720.0
-angle_max = 720.0
-scale_min = 0.1
-scale_max = 0.2
-color = Color(5.33, 3.55, 1, 1)
-turbulence_enabled = true
-turbulence_noise_strength = 2.86
-turbulence_noise_scale = 2.8
-turbulence_noise_speed_random = 1.0
-turbulence_influence_min = 0.0
-turbulence_influence_max = 1.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_fgsco"]
+[sub_resource type="Environment" id="Environment_bfeis"]
+background_mode = 3
 
 [node name="CombatScene" type="Node3D"]
 script = ExtResource("1_t5omj")
@@ -106,7 +45,7 @@ size = Vector2i(1920, 1080)
 unique_name_in_owner = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_frmt4")
+environment = SubResource("Environment_bfeis")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -132,21 +71,6 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Fin du tour"
 
-[node name="vfx slash" parent="." instance=ExtResource("6_jotsf")]
-transform = Transform3D(1.38, 0, 0, 0, 0.935, 0, 0, 0, 1, 0, -0.195, 0)
-
-[node name="Slash1" parent="vfx slash" index="0"]
-surface_material_override/0 = SubResource("ShaderMaterial_n7usn")
-
-[node name="GPUParticles3D" parent="vfx slash" index="2"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 2.11988, 1.491)
-visible = false
-material_override = SubResource("StandardMaterial3D_q55yn")
-amount = 150
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_vn47t")
-draw_pass_1 = SubResource("QuadMesh_fgsco")
-
 [connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
 [connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
 [connection signal="request_vfx" from="CharacterContainer" to="." method="play_vfx"]
@@ -154,5 +78,3 @@ draw_pass_1 = SubResource("QuadMesh_fgsco")
 [connection signal="gui_input" from="CanvasLayer/TargetlessPlayArea" to="CanvasLayer/TargetlessPlayArea" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/EndTurnButton" to="PlayerHand" method="deselect_card"]
-
-[editable path="vfx slash"]
