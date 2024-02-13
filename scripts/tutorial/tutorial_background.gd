@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 const t_popup = preload("res://scenes/tutorial/tutorial_popup.tscn")
 

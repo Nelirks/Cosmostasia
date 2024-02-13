@@ -17,14 +17,14 @@ func _ready():
 		#J'ai pas trouvé mieux 
 		#quand on tente de passer tutos.tab directement il veut pas car la variable est de type "res://scripts/tutorial.gd" au lieu de tutorial
 
-func play_tutorial(tutorial:tutorial_data,scene:Node):
+func play_tutorial(tutorial:tutorial_data):
 	var back = t_background.instantiate()
 	back.init(tutorial)
-	scene.get_node("Foreground").add_child(back)
-	#get_tree().get_root().add_child(back)
+	#scene.get_node("Foreground").add_child(back)
+	get_tree().get_root().add_child(back)
 
-func trigger_tutorial(tutorial_id:String,scene:Node):
-	current_scene = scene
+func trigger_tutorial(tutorial_id:String):
+	#current_scene = scene
 	for data in tutorial_datas:
 		if data.tutorial_name == tutorial_id and !data.used:
 			data.used = true
@@ -33,11 +33,11 @@ func trigger_tutorial(tutorial_id:String,scene:Node):
 				in_queue.append(data)
 			else:
 				is_active = true
-				play_tutorial(data,scene)
+				play_tutorial(data)
 				
 func next():
 	if in_queue.is_empty():
 		is_active = false
 	else:
-		play_tutorial(in_queue.pop_front(),current_scene)
+		play_tutorial(in_queue.pop_front())
 
