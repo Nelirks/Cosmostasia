@@ -14,3 +14,8 @@ func post_event(id) -> void :
 func post_event_deferred(id, delay : float) -> void :
 	await get_tree().create_timer(delay).timeout
 	Wwise.post_event_id(id, self)
+
+func quit_wwise() :
+	Wwise.unregister_game_obj(self)
+	$InitBankLoader.free()
+	$MainBankLoader.free()

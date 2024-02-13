@@ -36,6 +36,7 @@ func _on_play_button_pressed():
 
 func _on_quit_button_pressed():
 	_handle_opponent_button.rpc(ButtonPressed.QUIT)
+	AudioManager.quit_wwise()
 	%PlayButton.self_modulate = Color.DIM_GRAY
 	%PlayButton.disabled = true
 	%QuitButton.self_modulate = Color.DIM_GRAY
