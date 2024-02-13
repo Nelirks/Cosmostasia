@@ -170,7 +170,7 @@ theme_override_font_sizes/font_size = 40
 disabled = true
 text = "Valider"
 
-[node name="ForegroundLayer" type="CanvasLayer" parent="."]
+[node name="Foreground" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="BackgroundLayer/SubmitButton" to="." method="_on_choice_submitted"]

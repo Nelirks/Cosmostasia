@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://bglw5yb0dg46k"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_ar1va"]
+
+[resource]
+script = ExtResource("1_ar1va")
+tutorial_name = "7_armor"
+text = "La carte que vous venez d'utilisez donne de l'armure. L'armure sera consommée avant vos PVs lorsque vous subissez une attaque. L'armure disparait entièrement au début de votre prochain tour."

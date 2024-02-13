@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="tutorial_tab" load_steps=11 format=3 uid="uid://dukkk2dposnhs"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_tab.gd" id="1_t0pek"]
+[ext_resource type="Resource" uid="uid://8waec6y42h6b" path="res://scripts/data/tutorial_box/0_welcome.tres" id="2_apqty"]
+[ext_resource type="Resource" uid="uid://d1xav6ulrjk1g" path="res://scripts/data/tutorial_box/1_passive.tres" id="3_p1rns"]
+[ext_resource type="Resource" uid="uid://b38hy5q8dnxef" path="res://scripts/data/tutorial_box/2_cardeffect.tres" id="4_2o4kl"]
+[ext_resource type="Resource" uid="uid://drhm7v18pj7oh" path="res://scripts/data/tutorial_box/3_cardtype.tres" id="5_r1v48"]
+[ext_resource type="Resource" uid="uid://bg850018vqp03" path="res://scripts/data/tutorial_box/4_energy.tres" id="6_62ng7"]
+[ext_resource type="Resource" uid="uid://b48oas1mioc78" path="res://scripts/data/tutorial_box/5_draw.tres" id="7_vendv"]
+[ext_resource type="Resource" uid="uid://b6rniuoxvhbcb" path="res://scripts/data/tutorial_box/6_cardselect.tres" id="8_lche3"]
+[ext_resource type="Resource" uid="uid://bglw5yb0dg46k" path="res://scripts/data/tutorial_box/7_armor.tres" id="9_oc0hh"]
+[ext_resource type="Resource" uid="uid://db36pm6fp1a4i" path="res://scripts/data/tutorial_box/8_status.tres" id="10_h66o0"]
+
+[resource]
+script = ExtResource("1_t0pek")
+tab = Array[Resource("res://scripts/tutorial/tutorial_data.gd")]([ExtResource("2_apqty"), ExtResource("3_p1rns"), ExtResource("4_2o4kl"), ExtResource("5_r1v48"), ExtResource("6_62ng7"), ExtResource("7_vendv"), ExtResource("8_lche3"), ExtResource("9_oc0hh"), ExtResource("10_h66o0")])

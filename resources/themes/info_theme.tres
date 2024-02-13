@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cam01syv8nbs6"]
+
+[ext_resource type="Texture2D" uid="uid://dyacqhp584nof" path="res://Sprites/ui_icons/cadre fond.png" id="1_oh72p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdp50"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 18.0
+content_margin_bottom = 14.0
+texture = ExtResource("1_oh72p")
+texture_margin_left = 60.0
+texture_margin_top = 60.0
+texture_margin_right = 60.0
+texture_margin_bottom = 60.0
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_hdp50")

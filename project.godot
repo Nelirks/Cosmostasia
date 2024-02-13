@@ -22,6 +22,7 @@ GameManager="*res://scenes/game_management/game_manager.tscn"
 NetworkManager="*res://scenes/network/network_manager.tscn"
 DescriptionHandler="*res://scenes/info_popup/description_handler.tscn"
 AudioManager="*res://scenes/audio/audio_manager.tscn"
+TutorialGlobal="*res://scripts/tutorial/tutorial_global.gd"
 
 [display]
 

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://b6rniuoxvhbcb"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_042t7"]
+
+[resource]
+script = ExtResource("1_042t7")
+tutorial_name = "6_cardselect"
+text = "Vous pouvez désormais selectionner un deck pour chacun de vos personnages.Chaque personnage possède 5 cartes différentes qui formeront un deck de 10 cartes (pour un total de 30 cartes avec 3 personnages). "

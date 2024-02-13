@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://b48oas1mioc78"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_cqdgx"]
+
+[resource]
+script = ExtResource("1_cqdgx")
+tutorial_name = "5_draw"
+text = "Une carte utilisée est défaussée et instantanément remplacée par une autre. Vous avez toujours 3 cartes dans la main, selon le personnage, la position dans la main peut ajouter un effets supplémentaires. Si votre pioche se vide, la défausse est mélangé et reremplit la pioche"

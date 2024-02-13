@@ -23,7 +23,7 @@ var info_popup : InfoPopup :
 		if info_popup != null : info_popup.queue_free()
 		info_popup = value
 		if info_popup != null :
-			%ForegroundLayer.add_child(info_popup)
+			%Foreground.add_child(info_popup)
 
 var waiting_for_opponent : bool = false
 
@@ -32,6 +32,11 @@ func _ready():
 	opponent_picks.append_array(%OpponentDraft.get_children())
 	player_picks.append_array(%PlayerDraft.get_children())
 	connect_signals()
+	
+	#tutorial trigger
+	TutorialGlobal.trigger_tutorial("0_welcome")
+	TutorialGlobal.trigger_tutorial("1_passive")
+	
 	if NetworkManager.is_host :
 		pick_character_choices()
 

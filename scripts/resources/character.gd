@@ -81,6 +81,7 @@ func check_game_state() -> void:
 		player.remove_cards(self)
 
 func apply_armor(amount : int) -> void :
+	TutorialGlobal.trigger_tutorial("7_armor")
 	_armor += amount
 
 func remove_armor() -> void :
