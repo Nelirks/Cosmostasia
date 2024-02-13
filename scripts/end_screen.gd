@@ -25,12 +25,19 @@ func _handle_opponent_button(button : ButtonPressed) -> void :
 			%PlayButton.disabled = true
 
 func _on_play_button_pressed():
-	_handle_opponent_button.rpc(ButtonPressed.PLAY)
-	player_choice = ButtonPressed.PLAY
-	if opponent_choice == ButtonPressed.PLAY : 
+	if NetworkManager.is_multiplayer :
+		_handle_opponent_button.rpc(ButtonPressed.PLAY)
+		player_choice = ButtonPressed.PLAY
+		if opponent_choice == ButtonPressed.PLAY : 
+			GameManager.set_game_state(GameManager.GameState.DRAFT)
+	else : 
 		GameManager.set_game_state(GameManager.GameState.DRAFT)
 
 
 func _on_quit_button_pressed():
 	_handle_opponent_button.rpc(ButtonPressed.QUIT)
+	%PlayButton.self_modulate = Color.DIM_GRAY
+	%PlayButton.disabled = true
+	%QuitButton.self_modulate = Color.DIM_GRAY
+	%QuitButton.disabled = true
 	get_tree().quit()
