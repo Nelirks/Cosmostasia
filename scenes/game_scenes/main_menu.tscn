@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
-[ext_resource type="Texture2D" uid="uid://wkrj77x1klld" path="res://resources/sprites/main_menu/bouton_menu_simon.png" id="2_h12ev"]
+[ext_resource type="Texture2D" uid="uid://d0sbl3hsxa6qk" path="res://resources/sprites/main_menu/bouton_jouer_simon.png" id="3_56qr8"]
 [ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="5_k7rl3"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8flb"]
@@ -53,6 +53,7 @@ texture = ExtResource("1_uw676")
 expand_mode = 1
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Background"]
+visible = false
 position = Vector2(-22, 869)
 amount = 1000
 process_material = SubResource("ParticleProcessMaterial_u8flb")
@@ -70,7 +71,7 @@ offset_right = 850.0
 offset_bottom = -30.0
 grow_vertical = 0
 pivot_offset = Vector2(256, 81)
-texture_normal = ExtResource("2_h12ev")
+texture_normal = ExtResource("3_56qr8")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -107,7 +108,7 @@ offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(255, 81)
-texture_normal = ExtResource("2_h12ev")
+texture_normal = ExtResource("3_56qr8")
 ignore_texture_size = true
 stretch_mode = 0
 
