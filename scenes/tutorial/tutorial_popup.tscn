@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg221f2bri6vr"]
+[gd_scene load_steps=3 format=3 uid="uid://bg221f2bri6vr"]
 
+[ext_resource type="Theme" uid="uid://cam01syv8nbs6" path="res://resources/themes/info_theme.tres" id="1_ft8tx"]
 [ext_resource type="Script" path="res://scripts/tutorial/tutorial_popup.gd" id="1_vdl0q"]
 
 [node name="Tutorial Popup" type="PanelContainer"]
@@ -13,12 +14,13 @@ anchor_bottom = 0.5
 offset_left = -401.0
 offset_top = -20.0
 offset_right = 403.0
-offset_bottom = 20.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(127, 20)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_ft8tx")
 script = ExtResource("1_vdl0q")
 
 [node name="TextTutoriel" type="RichTextLabel" parent="."]
