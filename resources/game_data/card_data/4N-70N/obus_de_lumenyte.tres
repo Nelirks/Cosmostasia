@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dj6ghs6cfd1ms"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dj6ghs6cfd1ms"]
 
+[ext_resource type="Texture2D" uid="uid://b2uf4mt4r1wd0" path="res://resources/sprites/card_sprites/4N70N/carte_obus_de_lumenyte.png" id="1_5jqt1"]
 [ext_resource type="Script" path="res://scripts/data/cards/4n_70n/obus_de_lumenyte.gd" id="1_81ytq"]
 
 [resource]
@@ -12,3 +13,4 @@ quote = "Soteria construisit sa gloire sur la lumènyte, mais ce fut également 
 cost = 1
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_5jqt1")

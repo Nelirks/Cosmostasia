@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bcse20kxf0p4g"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bcse20kxf0p4g"]
 
 [ext_resource type="Script" path="res://scripts/data/status_effects/feather_status.gd" id="1_ji7ua"]
+[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_qs0a7"]
 
 [resource]
 script = ExtResource("1_ji7ua")
@@ -9,3 +10,4 @@ type = 2
 display_names = Array[String](["Faveur"])
 description = "!S!Faveur!S!
 Réduit de 20% les dégâts subis par les alliés de Khemaël"
+icon = ExtResource("1_qs0a7")

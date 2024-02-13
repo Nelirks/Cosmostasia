@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dsogtomgjayee"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dsogtomgjayee"]
 
 [ext_resource type="Script" path="res://scripts/data/passive_effects/ciol_passive.gd" id="1_34cyj"]
+[ext_resource type="Texture2D" uid="uid://c0e2ly5iy88sy" path="res://resources/sprites/status_icons/Passifciol.png" id="1_l0clw"]
 
 [resource]
 script = ExtResource("1_34cyj")
@@ -8,4 +9,6 @@ base_max_feathers = 2
 additional_feather_cd = 2.0
 id = "ciol_passive"
 type = 2
+display_names = Array[String]([])
 description = "Lorsque Cïol inflige des dégâts à un adversaire, il lui pose une plume. Jusqu'à 2 plumes peuvent être posées, et cette limite augmente tous les 2 tours."
+icon = ExtResource("1_l0clw")

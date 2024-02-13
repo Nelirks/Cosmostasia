@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://camve644h21rq"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://camve644h21rq"]
 
+[ext_resource type="Texture2D" uid="uid://3elaeo8esycr" path="res://resources/sprites/card_sprites/4N70N/carte_analyse_de_cible.png" id="1_0f2lu"]
 [ext_resource type="Script" path="res://scripts/data/cards/4n_70n/analyse_de_cible.gd" id="1_unc1k"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = "Capacité d'analyse et puissance de frappe, le pinnacle de la technolog
 cost = 1
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_0f2lu")

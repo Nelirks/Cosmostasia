@@ -52,7 +52,13 @@ func get_rect() -> Rect2 :
 
 func flip(flipped : bool = true, duration : float = 0.0) -> void :
 	if duration < 0.001 :
-		rotation = Vector3(0, PI if flipped else 0, 0)
+		set_y_rotation(PI if flipped else 0)
 	else :
 		var rotation_tween = create_tween()
-		rotation_tween.tween_property(self, "rotation", Vector3(0, PI if flipped else 0, 0), duration)
+		rotation_tween.tween_method(set_y_rotation, rotation.y, PI if flipped else 0, duration)
+
+func set_y_rotation(y_rotation : float) -> void :
+	rotation = Vector3(rotation.x, y_rotation, rotation.z)
+
+func set_z_rotation(z_rotation : float) -> void :
+	rotation = Vector3(rotation.x, rotation.y, z_rotation)

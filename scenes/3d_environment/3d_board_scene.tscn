@@ -6,28 +6,50 @@
 [ext_resource type="Texture2D" uid="uid://whbaf0j7lnyi" path="res://resources/3d_asset/particle/Flare00.PNG" id="4_oqe55"]
 
 [sub_resource type="Environment" id="Environment_b6jo1"]
-ssao_radius = 1.05
-ssao_intensity = 2.68
-ssao_horizon = 0.0
+ambient_light_energy = 0.0
+ssr_fade_in = 1.94941
+ssr_fade_out = 11.6348
+ssr_depth_tolerance = 128.0
+ssao_enabled = true
+ssao_radius = 1.69
+ssao_intensity = 3.58
+ssao_power = 1.5529
+ssao_horizon = 0.08
+ssao_sharpness = 1.0
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
 ssil_enabled = true
-ssil_radius = 2.32
-ssil_intensity = 6.5
-ssil_sharpness = 1.0
-ssil_normal_rejection = 0.67
+ssil_radius = 6.07
+ssil_intensity = 3.87
+ssil_sharpness = 0.08
+sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_bounce_feedback = 1.99
 glow_enabled = true
 glow_levels/1 = 4.0
-glow_levels/2 = 1.0
-glow_levels/6 = 0.13
-glow_levels/7 = 0.25
-glow_intensity = 0.1
-glow_bloom = 0.1
+glow_levels/3 = 0.0
+glow_levels/4 = 1.0
+glow_levels/6 = 4.0
+glow_levels/7 = 1.0
+glow_normalized = true
+glow_intensity = 1.0
+glow_strength = 0.9
 glow_blend_mode = 0
-glow_hdr_threshold = 0.5
+glow_hdr_threshold = 4.0
 glow_hdr_scale = 1.55
+fog_light_energy = 0.35
+fog_density = 0.0
+fog_sky_affect = 0.0
+fog_height = -1024.0
+fog_height_density = 16.0
+volumetric_fog_density = 0.1
+volumetric_fog_emission = Color(1, 0, 0, 1)
+volumetric_fog_anisotropy = 0.29
+volumetric_fog_length = 708.12
+volumetric_fog_detail_spread = 6.0
 adjustment_enabled = true
-adjustment_contrast = 1.23
+adjustment_contrast = 1.42
+adjustment_saturation = 1.2
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_kvrus"]
 
@@ -64,6 +86,7 @@ material = SubResource("StandardMaterial3D_vslyc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0265618, 11.5703, 0.0629888)
+current = true
 fov = 70.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -77,58 +100,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.693017, 0.0986309, 0, -0.0986309, 0.6930
 is_player = true
 
 [node name="EnemyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(0.7, 0, 0, 0, 0.693017, -0.0986309, 0, 0.0986309, 0.693017, -6.151, 3.54, -4.381)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42432, 4.16006, 1.26361)
-light_color = Color(0.752941, 0.494118, 0.0235294, 1)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00633097, -0.0309558, -2.53498)
-light_color = Color(0.752941, 0.494118, 0.0235294, 1)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8075, -0.0408025, -2.52078)
-light_color = Color(0.752941, 0.494118, 0.0235294, 1)
-distance_fade_begin = 2.5
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="OmniLight3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8238, -0.0294576, -0.0215808)
-light_color = Color(0.752941, 0.494118, 0.0235294, 1)
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="OmniLight3D"]
-transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.81877e-08, 0.104617, -0.992695, -0.0601077, 7.56428, 2.45424, -1.36406)
-light_color = Color(0.901961, 0.776471, 0.901961, 1)
-light_energy = 0.279
-shadow_bias = 1.0
-shadow_normal_bias = 0.0
-shadow_blur = 1.06
-distance_fade_enabled = true
-omni_range = 10.33
-omni_attenuation = 0.233257
-omni_shadow_mode = 0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="OmniLight3D"]
-transform = Transform3D(-0.44679, -0.851525, 0.274378, 0.10902, 0.252584, 0.961414, -0.887972, 0.459463, -0.0200186, 7.41621, -1.97471, -1.27662)
-light_color = Color(0.317647, 0, 0.635294, 1)
-light_energy = 0.229
-light_indirect_energy = 0.0
-shadow_bias = 1.0
-shadow_normal_bias = 10.0
-shadow_blur = 0.0
-directional_shadow_split_1 = 1.0
-directional_shadow_split_2 = 1.0
-directional_shadow_split_3 = 1.0
-directional_shadow_fade_start = 1.0
-directional_shadow_max_distance = 20.0
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.082, 0)
-update_mode = 1
-box_projection = true
-interior = true
-enable_shadows = true
-mesh_lod_threshold = 0.0
+transform = Transform3D(-0.7, -8.62259e-09, -6.05855e-08, 0, 0.693017, -0.0986309, 6.11959e-08, -0.0986309, -0.693017, -6.151, 3.54, -4.381)
 
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("dusts")]
 script = ExtResource("4_6wkjx")
@@ -207,5 +179,72 @@ draw_pass_1 = SubResource("QuadMesh_a8eda")
 [node name="Timer" type="Timer" parent="Node3D"]
 wait_time = 4.0
 autostart = true
+
+[node name="Node3D2" type="Node3D" parent="."]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.082, 0)
+update_mode = 1
+box_projection = true
+interior = true
+enable_shadows = true
+mesh_lod_threshold = 0.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D2"]
+transform = Transform3D(-0.44679, -0.851525, 0.274378, 0.10902, 0.252584, 0.961414, -0.887972, 0.459462, -0.0200187, -0.00811005, 2.18535, -0.01301)
+light_color = Color(0.207843, 0.396078, 0.92549, 1)
+light_energy = 0.17
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+shadow_bias = 1.0
+shadow_normal_bias = 10.0
+shadow_transmittance_bias = -16.0
+shadow_opacity = 0.0
+shadow_blur = 0.0
+directional_shadow_split_1 = 1.0
+directional_shadow_split_2 = 1.0
+directional_shadow_split_3 = 1.0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 20.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Node3D2"]
+transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.84328e-08, 0.104617, -0.992695, -0.0601077, 0.13996, 6.6143, -0.10045)
+light_color = Color(1, 0.764706, 0.741176, 1)
+light_energy = 0.1
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+shadow_bias = 1.0
+shadow_normal_bias = 0.0
+shadow_blur = 1.06
+omni_range = 10.33
+omni_attenuation = 0.233257
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43065, 4.1291, -1.27137)
+light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38318, 4.11926, -1.25717)
+light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
+distance_fade_begin = 2.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39948, 4.1306, 1.24203)
+light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42432, 4.16006, 1.26361)
+light_color = Color(0.752941, 0.356863, 0.0235294, 1)
+light_energy = 1.3
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, -0.79229, 0.610145, 0, -0.610145, -0.79229, 0, 7.59735, 0)
+light_color = Color(0.737255, 0.862745, 1, 1)
+light_energy = 0.05
 
 [connection signal="timeout" from="Node3D/Timer" to="Node3D" method="_on_timer_timeout"]

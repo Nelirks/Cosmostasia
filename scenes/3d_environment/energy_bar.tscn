@@ -44,3 +44,9 @@ cast_shadow = 0
 
 [node name="Ligne" parent="." index="10"]
 cast_shadow = 0
+
+[node name="EnergyUpdateTimer" type="Timer" parent="." index="11"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="EnergyUpdateTimer" to="." method="_update_display"]

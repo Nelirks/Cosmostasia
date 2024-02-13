@@ -1,14 +1,16 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://csp4b0skrhi5x"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://csp4b0skrhi5x"]
 
+[ext_resource type="Texture2D" uid="uid://ca0r2m3pqim3l" path="res://resources/sprites/card_sprites/4N70N/carte_boucle_de_programme_4n.png" id="1_se7cq"]
 [ext_resource type="Script" path="res://scripts/data/cards/4n_70n/boucle_de_programme.gd" id="1_trnru"]
 
 [resource]
 script = ExtResource("1_trnru")
 armor = 10
-stacks = 5
+stacks = 3
 card_name = "Boucle de programme"
 description = "Octroie 10 d'armure et 3 effets !S!Boucle de programme!S! à 4N-70N"
 quote = "\"Mes amis, je me rappellerai toujours de vous\""
 cost = 2
 targetting = 3
 cardType = 1
+card_texture = ExtResource("1_se7cq")

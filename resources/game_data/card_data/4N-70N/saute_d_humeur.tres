@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3kfo5iva4hku"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d3kfo5iva4hku"]
 
+[ext_resource type="Texture2D" uid="uid://c3jd6lvrbquju" path="res://resources/sprites/card_sprites/4N70N/carte_saute_d_humeur.png" id="1_1cc2y"]
 [ext_resource type="Script" path="res://scripts/data/cards/4n_70n/saute_d_humeur.gd" id="1_203jw"]
 
 [resource]
@@ -14,3 +15,4 @@ quote = "La joie de la victoire, la tristesse d'une perte et la colère face à 
 cost = 3
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_1cc2y")

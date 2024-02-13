@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c7re4abtbr14h"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c7re4abtbr14h"]
 
+[ext_resource type="Texture2D" uid="uid://buxh333l2e804" path="res://resources/sprites/status_icons/Augdegatinflige.png" id="1_aexer"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/attack_mult_status.gd" id="1_dge5i"]
 
 [resource]
@@ -10,3 +11,4 @@ type = 0
 display_names = Array[String](["Renforce", "Renforcé"])
 description = "!S!Renforcé!S!
 Augmente les dégâts infligés de 20%"
+icon = ExtResource("1_aexer")

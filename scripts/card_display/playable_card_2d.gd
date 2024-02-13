@@ -11,6 +11,15 @@ var card: Card:
 			update_card_infos()
 			connect_signals()
 
+var overlay : OverlayVFX :
+	set(value) :
+		if overlay != null : overlay.queue_free()
+		overlay = value
+		if overlay != null :
+			add_child(overlay)
+			overlay.size = size
+			overlay.position = Vector2.ZERO
+
 func connect_signals() -> void :
 	card.cost_updated.connect(update_cost)
 
@@ -47,6 +56,8 @@ func update_card_infos():
 	update_description()
 	update_texture()
 
-func set_overlay(overlay_material : Material) -> void :
-	%Overlay.visible = overlay_material != null
-	%Overlay.material = overlay_material
+func use_text_color(use : bool) -> void :
+	if use : 
+		%CardDescription.text = DescriptionHandler.develop_tags(card.description)
+	else :
+		%CardDescription.text = card.description.replace("!S!", "").replace("!K!", "")

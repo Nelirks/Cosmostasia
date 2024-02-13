@@ -1,16 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c0h1mf6ha37jo"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c0h1mf6ha37jo"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/khemael/ascension.gd" id="1_88yna"]
+[ext_resource type="Texture2D" uid="uid://lf21tg2af1qn" path="res://resources/sprites/card_sprites/khemael/carte_ascension.png" id="1_166bm"]
 
 [resource]
 script = ExtResource("1_88yna")
-damage = 80
-heal = 80
-stacks_threshold = 6
+damage_per_stack = 12
+heal_per_stack = 12
 card_name = "Ascension"
-description = "Dépense 6 !S!Préjudice!S! pour infliger 80 dégâts à la cible.
-Dépense 6 !S!Faveur!S! pour soigner 80 points de vie de la cible."
+description = "Dépense le !S!Préjudice!S! et la !S!Faveur!S!.
+Inflige 12 dégâts à la cible par !S!Préjudice!S! ou soigne 12 PV par !S!Faveur!S! dépensés."
 quote = ""
 cost = 3
 targetting = 0
 cardType = 0
+card_texture = ExtResource("1_166bm")

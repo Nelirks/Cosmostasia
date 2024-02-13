@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cil2s23lcelf"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cil2s23lcelf"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/brunhilde/instinct_maternel.gd" id="1_ut2kl"]
+[ext_resource type="Texture2D" uid="uid://bgv8ljk2sx3sa" path="res://resources/sprites/card_sprites/brunhilde/carte_instinct_maternel.png" id="1_uuhse"]
 
 [resource]
 script = ExtResource("1_ut2kl")
@@ -12,3 +13,4 @@ quote = ""
 cost = 1
 targetting = 3
 cardType = 1
+card_texture = ExtResource("1_uuhse")

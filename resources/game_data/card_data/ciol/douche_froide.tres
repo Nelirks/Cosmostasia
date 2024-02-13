@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ciqrwk2cuwcdm"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ciqrwk2cuwcdm"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/ciol/douche_froide.gd" id="1_51smf"]
+[ext_resource type="Texture2D" uid="uid://b5gic14t6qj1f" path="res://resources/sprites/card_sprites/ciol/douche froide.png" id="1_rp2xa"]
 
 [resource]
 script = ExtResource("1_51smf")
@@ -11,3 +12,4 @@ quote = ""
 cost = 1
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_rp2xa")

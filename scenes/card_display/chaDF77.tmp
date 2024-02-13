@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://pj3okss4lgka"]
+
+[ext_resource type="Script" path="res://scripts/card_display/character_card_2d.gd" id="1_ng47k"]
+[ext_resource type="Material" uid="uid://c2p3hm62digx0" path="res://vfx/gray_filter/gray_filter_material.tres" id="2_1i6vt"]
+[ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="2_5ykcr"]
+[ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="3_d3qix"]
+[ext_resource type="PackedScene" path="res://scenes/card_display/health_bar.tscn" id="4_tthbh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cmb2i"]
+
+[node name="CharacterCard2D" type="Control"]
+custom_minimum_size = Vector2(500, 850)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1420.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ng47k")
+death_material = ExtResource("2_1i6vt")
+
+[node name="CharacterSprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5ykcr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 673.0
+offset_right = 500.0
+offset_bottom = 731.0
+theme = ExtResource("3_d3qix")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "LISIRMEE"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="HealthBar" parent="." instance=ExtResource("4_tthbh")]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 731.358
+offset_right = 1826.0
+offset_bottom = 1164.36
+scale = Vector2(0.274, 0.274)
+
+[node name="FXOverlay" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_cmb2i")
+
+[node name="StatusEffectDisplays" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 480.0
+offset_top = 20.0
+offset_right = 520.0
+offset_bottom = 830.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

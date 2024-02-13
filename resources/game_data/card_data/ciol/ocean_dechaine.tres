@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b1brdy5mk38mv"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b1brdy5mk38mv"]
 
+[ext_resource type="Texture2D" uid="uid://bleqg5fk4ii3m" path="res://resources/sprites/card_sprites/ciol/océan déchainé.png" id="1_nmit0"]
 [ext_resource type="Script" path="res://scripts/data/cards/ciol/ocean_dechaine.gd" id="1_sa38l"]
 
 [resource]
@@ -13,3 +14,4 @@ quote = ""
 cost = 3
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_nmit0")

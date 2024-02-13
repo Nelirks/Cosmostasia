@@ -1,12 +1,16 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://4cbsj7uh5qlm"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://4cbsj7uh5qlm"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/lord_reece/abandonne_felon.gd" id="1_ubibg"]
+[ext_resource type="Texture2D" uid="uid://difv3dmi4i8dp" path="res://resources/sprites/card_sprites/lord reece/abandonne, félon.png" id="1_yg7qu"]
 
 [resource]
 script = ExtResource("1_ubibg")
+energy_regen = 1
 card_name = "Abandonne, félon"
-description = "Défausse la carte Miracle adverse"
+description = "Défausse la carte Miracle adverse.
+!K!Préparé!K! : Rend 1 énergie."
 quote = ""
 cost = 1
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_yg7qu")

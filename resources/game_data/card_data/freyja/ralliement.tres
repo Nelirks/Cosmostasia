@@ -7,7 +7,7 @@
 script = ExtResource("1_j4c63")
 attack_buff_duration = 2
 card_name = "Ralliement"
-description = "Augmente l’attaque de l’équipe pendant 2 tour"
+description = "!S!Renforce!S! les alliés pendant 2 tours."
 quote = ""
 cost = 2
 targetting = 3

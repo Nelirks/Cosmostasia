@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ct3glu6jegukd"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ct3glu6jegukd"]
 
+[ext_resource type="Texture2D" uid="uid://qsvvectoy30y" path="res://resources/sprites/card_sprites/Lisirmee/brume int.png" id="1_8ksts"]
 [ext_resource type="Script" path="res://scripts/data/cards/lisirmee/brume.gd" id="1_hnrfm"]
 
 [resource]
@@ -14,3 +15,4 @@ quote = "\"Coucou, je suis cachée\""
 cost = 2
 targetting = 2
 cardType = 2
+card_texture = ExtResource("1_8ksts")

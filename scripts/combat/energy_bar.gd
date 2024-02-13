@@ -10,19 +10,29 @@ const ENERGY_EMPTY = preload("res://resources/3d_asset/materials/energy_empty.tr
 @onready var b4:MeshInstance3D = $Barre4
 @onready var b5:MeshInstance3D = $Barre5
 
-var energy:int = 0
+@onready var update_timer : Timer = $EnergyUpdateTimer
 
+var curr_energy : int = 0
+var target_energy : int = 0
 var energy_bar
 
+var updating:bool = false
+
 func change_energy(energy_value:int):
-	if energy >= energy_value:
-		for i in range(4,-1,-1):
-			_energy_switch(i,i < energy_value)
-	else:
-		for i in range(5):
-			_energy_switch(i,i < energy_value)
-			await get_tree().create_timer(0.2).timeout 
-	energy = energy_value
+	update_timer.stop()
+	target_energy = energy_value
+	_update_display()
+
+func _update_display() -> void :
+	if curr_energy == target_energy : return
+	
+	if curr_energy < target_energy : 
+		curr_energy += 1
+		_energy_switch(curr_energy - 1, true)
+	else : 
+		_energy_switch(curr_energy - 1, false)
+		curr_energy -= 1
+	update_timer.start()
 
 func _energy_switch(mesh_to_switch:int, state:bool):
 	if state:

@@ -1,14 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d1uboma06p1qy"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d1uboma06p1qy"]
 
+[ext_resource type="Texture2D" uid="uid://djycpqrgsv7jb" path="res://resources/sprites/card_sprites/Lisirmee/vol imprévisible int.png" id="1_ixwrf"]
 [ext_resource type="Script" path="res://scripts/data/cards/lisirmee/vol_imprevisible.gd" id="1_x3pp4"]
 
 [resource]
 script = ExtResource("1_x3pp4")
 stealth_stacks = 1
 card_name = "Vol imprévisible"
-description = "Contre la prochaine carte joué par l'adversaire
-Défausse les cartes adjacentes à Vol Imprévisible."
+description = "Octroie Furtivité à Lisirmee. Défausse les cartes adjacentes."
 quote = "Le coeur d'une Fae n'appartient qu'à elle même"
-cost = 2
+cost = 1
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_ixwrf")

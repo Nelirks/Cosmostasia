@@ -4,6 +4,10 @@ extends StatusEffect
 @export var joy_energy_regen : int
 @export var sadness_damage_mult : float
 
+@export var anger_icon : Texture
+@export var joy_icon : Texture
+@export var sadness_icon : Texture
+
 enum Emotion { ANGER, JOY, SADNESS, NONE }
 var emotion : Emotion
 
@@ -34,3 +38,14 @@ func set_emotion(card_position : int) :
 		energy_regen_modification += joy_energy_regen
 	if energy_regen_modification != 0 :
 		_add_effect(RegenEnergyEffect.new(energy_regen_modification, false, owner, owner.player))
+	status_updated.emit()
+
+func get_texture() -> Texture :
+	match emotion :
+		Emotion.ANGER :
+			return anger_icon
+		Emotion.JOY :
+			return joy_icon
+		Emotion.SADNESS :
+			return sadness_icon
+	return null

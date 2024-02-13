@@ -17,6 +17,7 @@ func apply_effects(target : Character) -> void :
 			_add_effect(DamageEffect.new(base_damage, character, target))
 
 func _on_position_set() -> void :
+	super._on_position_set()
 	match position :
 		Position.PREPARED_SLOT :
 			cost = prepared_cost
@@ -24,3 +25,4 @@ func _on_position_set() -> void :
 			cost = miracle_cost
 		_ :
 			cost = base_cost
+

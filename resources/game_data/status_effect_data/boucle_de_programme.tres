@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://df5uebufqgdiw"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://df5uebufqgdiw"]
 
 [ext_resource type="Script" path="res://scripts/data/status_effects/boucle_de_programme_status.gd" id="1_755ff"]
+[ext_resource type="Texture2D" uid="uid://xl7xp8md55kr" path="res://resources/sprites/status_icons/Boucleprogramme.png" id="1_bfam2"]
 
 [resource]
 script = ExtResource("1_755ff")
@@ -10,3 +11,4 @@ type = 0
 display_names = Array[String](["Boucle de programme"])
 description = "!S!Boucle de programme!S!
 Jouer des cartes n'altère pas l'émotion de 4N-70N et lui confère 5 armure"
+icon = ExtResource("1_bfam2")

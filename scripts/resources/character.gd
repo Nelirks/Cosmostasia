@@ -14,6 +14,10 @@ class_name Character
 
 signal hp_changed()
 signal armor_changed()
+signal status_added(status : StatusEffect)
+signal status_removed(status : StatusEffect)
+signal overlay_request(overlay : PackedScene)
+signal combat_vfx_request(vfx : PackedScene, target : Character)
 
 var player : Player
 
@@ -86,12 +90,14 @@ func remove_armor() -> void :
 func add_status(status : StatusEffect) -> void :
 	_statuses.append(status)
 	status.owner = self
+	status_added.emit(status)
 	status.on_apply()
 
 func remove_status(status : StatusEffect) -> void :
 	var index = _statuses.find(status)
 	if index != -1 : 
 		_statuses[index].on_remove()
+		status_removed.emit(_statuses[index])
 		_statuses.remove_at(index)
 
 func remove_status_by_id(id : String) -> void :
@@ -99,6 +105,7 @@ func remove_status_by_id(id : String) -> void :
 	while i < _statuses.size() :
 		if _statuses[i].id == id :
 			_statuses[i].on_remove()
+			status_removed.emit(_statuses[i])
 			_statuses.remove_at(i)
 		else : i += 1
 
@@ -130,3 +137,11 @@ func instantiate() -> Character :
 	var copy : Character = self.duplicate(true)
 	copy.setup()
 	return copy
+
+
+
+func play_overlay(overlay : PackedScene) -> void :
+	overlay_request.emit(overlay)
+
+func play_combat_vfx(vfx : PackedScene, target : Character) -> void :
+	combat_vfx_request.emit(vfx, target)

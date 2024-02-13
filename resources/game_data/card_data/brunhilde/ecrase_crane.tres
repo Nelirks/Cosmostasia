@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cm5wub1s4yuau"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cm5wub1s4yuau"]
 
+[ext_resource type="Texture2D" uid="uid://cxafgcbjg1ink" path="res://resources/sprites/card_sprites/brunhilde/carte_ecrase_crane.png" id="1_14ifd"]
 [ext_resource type="Script" path="res://scripts/data/cards/brunhilde/ecrase_crane.gd" id="1_nykhp"]
 
 [resource]
@@ -11,3 +12,4 @@ quote = ""
 cost = 3
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_14ifd")

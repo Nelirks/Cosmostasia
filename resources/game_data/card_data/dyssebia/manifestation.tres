@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bioohk78calll"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bioohk78calll"]
 
+[ext_resource type="Texture2D" uid="uid://dcpt5myyd7unx" path="res://resources/sprites/card_sprites/dyssebia/Manifestation.png" id="1_6pvns"]
 [ext_resource type="Script" path="res://scripts/data/cards/dyssebia/manifestation.gd" id="1_453io"]
 
 [resource]
@@ -7,8 +8,9 @@ script = ExtResource("1_453io")
 armor = 10
 provoke_stacks = 1
 card_name = "Manifestation"
-description = "Octroie 10 d'armure et !S!Provocation!S! à Dyssebia"
+description = "Octroie 10 d'armure et !S!Provocation!S! à Dyssebia."
 quote = "Le rôle de Dyssebia est avant tout un sacrifice de soi"
 cost = 1
-targetting = 1
+targetting = 3
 cardType = 1
+card_texture = ExtResource("1_6pvns")

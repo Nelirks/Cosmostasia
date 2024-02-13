@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://16qcwwrft76s"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://16qcwwrft76s"]
 
 [ext_resource type="Script" path="res://scripts/data/status_effects/defense_mult_status.gd" id="1_kpeb4"]
+[ext_resource type="Texture2D" uid="uid://cus8hohtc4bhx" path="res://resources/sprites/status_icons/Reddegatsubis.png" id="1_v16xd"]
 
 [resource]
 script = ExtResource("1_kpeb4")
@@ -10,3 +11,4 @@ type = 0
 display_names = Array[String](["Fortifié", "Fortifie"])
 description = "!S!Fortifié!S!
 Réduit les dégâts subis de 20%"
+icon = ExtResource("1_v16xd")

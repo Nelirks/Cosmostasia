@@ -12,4 +12,5 @@ func _init(amount : int, source : Character, target : Character) :
 
 func apply() -> void :
 	target.heal(amount)
+	target.play_overlay(preload("res://vfx/selected_character_shine/heal_fx.tscn"))
 	is_done = true

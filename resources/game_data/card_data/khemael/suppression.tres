@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b21ps7mg66r6y"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b21ps7mg66r6y"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/khemael/suppression.gd" id="1_j262x"]
+[ext_resource type="Texture2D" uid="uid://trv6lagrl88" path="res://resources/sprites/card_sprites/khemael/carte_suppression.png" id="1_xkymq"]
 
 [resource]
 script = ExtResource("1_j262x")
@@ -11,3 +12,4 @@ quote = ""
 cost = 2
 targetting = 2
 cardType = 0
+card_texture = ExtResource("1_xkymq")

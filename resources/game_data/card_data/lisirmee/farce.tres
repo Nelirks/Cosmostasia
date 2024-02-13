@@ -1,14 +1,16 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bypbb3w21qms7"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bypbb3w21qms7"]
 
 [ext_resource type="Script" path="res://scripts/data/cards/lisirmee/farce.gd" id="1_pdifk"]
+[ext_resource type="Texture2D" uid="uid://2vrkipp8kcxb" path="res://resources/sprites/card_sprites/Lisirmee/farce int.png" id="1_qg4ts"]
 
 [resource]
 script = ExtResource("1_pdifk")
 energy_regen = 1
 card_name = "Farce"
 description = "Défausse la main
-!K!Miracle!K! : Rend 1 d'énergie"
+!K!Miracle!K! : Rend 1 énergie"
 quote = "Pas une personne de la cour féérique n'a réussi à échapper aux blagues de mauvais goût de Lisirmée"
 cost = 1
 targetting = 3
 cardType = 2
+card_texture = ExtResource("1_qg4ts")

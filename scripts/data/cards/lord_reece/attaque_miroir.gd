@@ -1,9 +1,8 @@
 extends Card
 
-func apply_effects(target : Character) -> void :
-	_add_effect(DamageEffect.new(character.get_status("lord_reece_passive").damage_taken, character, target))
+@export var base_damage : int
+@export var damage_increase : int
 
-func can_target(target : Character) -> bool :
-	if !character.has_status("lord_reece_passive") or character.get_status("lord_reece_passive").damage_taken == 0 :
-		return false
-	return super.can_target(target)
+func apply_effects(target : Character) -> void :
+	var damage_increased : bool = character.get_status("lord_reece_passive").took_damage_last_turn
+	_add_effect(DamageEffect.new(base_damage + (damage_increase if damage_increased else 0), character, target))
