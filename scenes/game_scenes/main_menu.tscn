@@ -1,10 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=9 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
 [ext_resource type="Texture2D" uid="uid://wkrj77x1klld" path="res://resources/sprites/main_menu/bouton_menu_simon.png" id="2_h12ev"]
 [ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="5_k7rl3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8flb"]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 50.0
+particle_flag_disable_z = true
+direction = Vector3(50, 0, 0)
+spread = 180.0
+gravity = Vector3(100, -30, -1.245)
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+scale_min = 2.0
+scale_max = 4.0
+color = Color(0.78125, 0.691406, 0.519531, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
 font = ExtResource("1_ovrrf")
@@ -32,6 +51,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_uw676")
 expand_mode = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Background"]
+position = Vector2(-22, 869)
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_u8flb")
+lifetime = 3.5
 
 [node name="HostButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
