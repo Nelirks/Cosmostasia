@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://be6yq67toc837"]
 
+[ext_resource type="Texture2D" uid="uid://cftbeo0c8ew4s" path="res://resources/sprites/status_icons/Reddegatinflige.png" id="1_ayktp"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/attack_mult_status.gd" id="1_dd215"]
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_yg8ud"]
 
 [resource]
 script = ExtResource("1_dd215")
@@ -11,4 +11,4 @@ type = 1
 display_names = Array[String](["Affaiblit", "Affaibli"])
 description = "!S!Affaibli!S!
 Réduit les dégâts infligés de 20%"
-icon = ExtResource("1_yg8ud")
+icon = ExtResource("1_ayktp")

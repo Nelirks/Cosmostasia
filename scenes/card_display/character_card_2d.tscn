@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://pj3okss4lgka"]
+[gd_scene load_steps=10 format=3 uid="uid://pj3okss4lgka"]
 
 [ext_resource type="Script" path="res://scripts/card_display/character_card_2d.gd" id="1_ng47k"]
 [ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="2_5ykcr"]
 [ext_resource type="PackedScene" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_cofke"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="3_d3qix"]
-[ext_resource type="PackedScene" uid="uid://dxk15ixtypw0n" path="res://scenes/card_display/health_bar.tscn" id="4_tthbh"]
+[ext_resource type="PackedScene" path="res://scenes/card_display/health_bar.tscn" id="4_tthbh"]
 [ext_resource type="Texture2D" uid="uid://0auv1yf56unj" path="res://Sprites/ui_icons/angle popup.png" id="6_c6u63"]
 [ext_resource type="Texture2D" uid="uid://bwccl0v846lop" path="res://Sprites/ui_icons/border3 popup.png" id="7_7gclk"]
 [ext_resource type="Texture2D" uid="uid://unsaj4yknwrd" path="res://Sprites/ui_icons/border1 popup.png" id="8_6kfux"]
@@ -65,7 +65,7 @@ scale = Vector2(0.274, 0.274)
 [node name="StatusEffectDisplays" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 440.0
+offset_left = 360.0
 offset_top = 20.0
 offset_right = 500.0
 offset_bottom = 830.0

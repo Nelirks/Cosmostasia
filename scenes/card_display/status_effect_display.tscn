@@ -1,40 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://16jmn4su4wql"]
+[gd_scene load_steps=3 format=3 uid="uid://dr4jmwo2ldtbr"]
 
 [ext_resource type="Script" path="res://scripts/card_display/status_effect_display.gd" id="1_ubeuq"]
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="2_s05rw"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="3_18sti"]
 
 [node name="StatusEffectDisplay" type="Control"]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(140, 140)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1860.0
-offset_bottom = -1020.0
+offset_right = -1780.0
+offset_bottom = -940.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ubeuq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_s05rw")
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 140.0
+expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 120.0
+offset_bottom = 130.0
 theme = ExtResource("3_18sti")
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 2
 vertical_alignment = 2

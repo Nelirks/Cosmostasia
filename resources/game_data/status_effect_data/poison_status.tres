@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b68cg6crofxy0"]
 
+[ext_resource type="Texture2D" uid="uid://byx62na6ck1fs" path="res://resources/sprites/status_icons/Poison 2.png" id="1_7lsig"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/poison_status.gd" id="1_14hvl"]
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_tlqqo"]
 
 [resource]
 script = ExtResource("1_14hvl")
@@ -11,4 +11,4 @@ type = 1
 display_names = Array[String](["Poison", "Empoisonne"])
 description = "!S!Poison!S!
 Inflige 15 dégâts au début du tour"
-icon = ExtResource("1_tlqqo")
+icon = ExtResource("1_7lsig")

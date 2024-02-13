@@ -1,12 +1,18 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cag60rwhhges"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://cag60rwhhges"]
 
 [ext_resource type="Script" path="res://scripts/data/passive_effects/4n_70n_passive.gd" id="1_e0fwu"]
+[ext_resource type="Texture2D" uid="uid://oijvgx0duedn" path="res://resources/sprites/status_icons/Passif4Ncolere.png" id="1_i6uxm"]
+[ext_resource type="Texture2D" uid="uid://brpt702aw6sy4" path="res://resources/sprites/status_icons/Passif4Njoie.png" id="2_m3000"]
+[ext_resource type="Texture2D" uid="uid://cosl8rekiy3dy" path="res://resources/sprites/status_icons/Passif4Ntristesse.png" id="3_6qrfo"]
 
 [resource]
 script = ExtResource("1_e0fwu")
 anger_damage_mult = 1.2
 joy_energy_regen = 1
 sadness_damage_mult = 0.8
+anger_icon = ExtResource("1_i6uxm")
+joy_icon = ExtResource("2_m3000")
+sadness_icon = ExtResource("3_6qrfo")
 id = "4n_70n_passive"
 type = 2
 display_names = Array[String]([])

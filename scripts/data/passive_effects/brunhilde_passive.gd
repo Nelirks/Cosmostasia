@@ -12,6 +12,7 @@ func on_apply() -> void :
 func on_effect_resolution(effect : Effect) -> void :
 	if effect is CardPlayNotifierEffect :
 		active = owner.current_health <= hp_threshold
+		status_updated.emit()
 	if not active : return
 	var damage_effect : DamageEffect = effect as DamageEffect
 	if damage_effect != null :
@@ -19,3 +20,7 @@ func on_effect_resolution(effect : Effect) -> void :
 			damage_effect.add_damage_multiplier(damage_received_multiplier)
 		if damage_effect.source == owner : 
 			damage_effect.add_damage_multiplier(damage_dealt_multiplier)
+
+func get_texture() -> Texture :
+	if active : return icon
+	else : return null

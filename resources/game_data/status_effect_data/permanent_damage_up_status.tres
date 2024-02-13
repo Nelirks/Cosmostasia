@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b6nrfwrc1iksi"]
 
+[ext_resource type="Texture2D" uid="uid://cmbcyr4dg102r" path="res://resources/sprites/status_icons/Analysedecible.png" id="1_0xrtf"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/permanent_damage_up_status.gd" id="1_51p2p"]
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_r3ome"]
 
 [resource]
 script = ExtResource("1_51p2p")
@@ -10,4 +10,4 @@ type = 2
 display_names = Array[String](["Analyse de cible", "Cible analysée"])
 description = "!S!Cible Analysée!S!
 Augmente définitivement les dégâts infligés."
-icon = ExtResource("1_r3ome")
+icon = ExtResource("1_0xrtf")
