@@ -34,8 +34,8 @@ func _ready():
 	connect_signals()
 	
 	#tutorial trigger
-	TutorialGlobal.trigger_tutorial("0_welcome",self)
-	TutorialGlobal.trigger_tutorial("1_passive",self)
+	TutorialGlobal.trigger_tutorial("0_welcome")
+	TutorialGlobal.trigger_tutorial("1_passive")
 	
 	if NetworkManager.is_host :
 		pick_character_choices()

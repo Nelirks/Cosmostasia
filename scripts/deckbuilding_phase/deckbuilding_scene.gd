@@ -95,6 +95,10 @@ func _ready():
 		card_tweens.append(null)
 		card_displays[i].mouse_entered.connect(on_playable_card_mouse_entered.bind(i))
 		card_displays[i].mouse_exited.connect(on_playable_card_mouse_exited.bind(i))
+		
+	TutorialGlobal.trigger_tutorial("6_cardselect")
+	TutorialGlobal.trigger_tutorial("2_cardeffect")
+	TutorialGlobal.trigger_tutorial("3_cardtype")
 
 func on_ally_character_selected(char_index : int) -> void :
 	selected_character_index = char_index

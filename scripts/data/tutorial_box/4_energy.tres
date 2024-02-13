@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://bg850018vqp03"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_66m37"]
+
+[resource]
+script = ExtResource("1_66m37")
+tutorial_name = "4_energy"
+text = "Au début de chaque tour, votre énergie se régénère de 3, pour un maximum de 5. Pour utiliser des cartes, vous devez dépenser le coût associé."

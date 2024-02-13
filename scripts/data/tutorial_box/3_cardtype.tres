@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://drhm7v18pj7oh"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_qdvrv"]
+
+[resource]
+script = ExtResource("1_qdvrv")
+tutorial_name = "3_cardtype"
+text = "Les cartes existent en 3 type: Attaque, Défense et Stratégie, le type d'une carte est montré par sa forme recto et verso."
