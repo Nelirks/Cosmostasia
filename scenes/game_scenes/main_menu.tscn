@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=8 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
@@ -9,6 +9,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
 font = ExtResource("1_ovrrf")
 font_size = 65
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2bgt"]
+font = ExtResource("1_ovrrf")
+font_size = 70
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -205,7 +209,40 @@ text = "Retour"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="WaitingBackground" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.384314, 0.384314, 1)
+
+[node name="Label" type="Label" parent="WaitingBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "En attente d'un autre joueur..."
+label_settings = SubResource("LabelSettings_c2bgt")
+
+[connection signal="button_down" from="HostButton" to="." method="_on_host_button_button_down"]
+[connection signal="button_up" from="HostButton" to="." method="_on_host_button_button_up"]
 [connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="button_down" from="JoinButton" to="." method="_on_join_button_button_down"]
+[connection signal="button_up" from="JoinButton" to="." method="_on_join_button_button_up"]
 [connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="button_down" from="SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_up" from="SettingsButton" to="." method="_on_settings_button_button_up"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="SettingsBackground/Button" to="." method="_on_button_pressed"]
