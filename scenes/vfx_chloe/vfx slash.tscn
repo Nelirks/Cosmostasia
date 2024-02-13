@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bg630as0akep4"]
 
-[ext_resource type="Script" path="res://scripts/vfx/combat_vfx.gd" id="1_1pi5g"]
+[ext_resource type="Script" path="res://scenes/vfx_chloe/vfx_slash.gd" id="1_n1icw"]
 [ext_resource type="ArrayMesh" uid="uid://dyokwehn1mik5" path="res://scenes/vfx_chloe/slash1.obj" id="2_1t71v"]
 [ext_resource type="Shader" uid="uid://motap2owosjo" path="res://scenes/vfx_chloe/vfx slash.tres" id="2_nqgjs"]
 
@@ -89,9 +89,10 @@ _data = {
 }
 
 [node name="vfx slash" type="Node3D" node_paths=PackedStringArray("animator")]
-script = ExtResource("1_1pi5g")
+script = ExtResource("1_n1icw")
 animator = NodePath("Animator")
 animation_name = "Slash"
+lifetime = 1.0
 
 [node name="Slash1" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 1, 0)

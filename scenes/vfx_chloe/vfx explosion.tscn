@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dk66obetwat81"]
+[gd_scene load_steps=27 format=3 uid="uid://cd5wi4qr2r4nw"]
 
 [ext_resource type="Texture2D" uid="uid://c4nifpgmed1uo" path="res://scenes/vfx_chloe/sparks2.png" id="1_c50c5"]
+[ext_resource type="Script" path="res://scenes/vfx_chloe/vfx_explosion.gd" id="1_cpdb6"]
 [ext_resource type="Texture2D" uid="uid://cyjypnowbehrm" path="res://scenes/vfx_chloe/flare.jpeg" id="2_ptdw8"]
 [ext_resource type="Texture2D" uid="uid://b46xo0mqww6n3" path="res://scenes/vfx_chloe/circle2.png" id="2_vjnmx"]
 
@@ -170,7 +171,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_2y10p"]
 resource_name = "hit "
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -210,13 +210,18 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ppbu"]
 _data = {
-"RESET": SubResource("Animation_1eafi"),
-"hit ": SubResource("Animation_2y10p")
+"Hit": SubResource("Animation_2y10p"),
+"RESET": SubResource("Animation_1eafi")
 }
 
-[node name="vfx explosion" type="Node3D"]
+[node name="vfx explosion" type="Node3D" node_paths=PackedStringArray("animator")]
+script = ExtResource("1_cpdb6")
+animator = NodePath("hit")
+animation_name = "Hit"
+lifetime = 1.0
 
 [node name="Sparks" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 material_override = SubResource("StandardMaterial3D_ojw6h")
 cast_shadow = 0
 emitting = false

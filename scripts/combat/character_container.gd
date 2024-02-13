@@ -60,14 +60,14 @@ func on_card_selected(card : Card) -> void :
 			opponent_character.stop_overlay(self)
 
 func play_vfx(vfx_scene : PackedScene, target : Character, source : CharacterCard3D) :
-	request_vfx.emit(vfx_scene, get_character_global_position(target), source.global_position)
+	request_vfx.emit(vfx_scene, source, get_character_card(target))
 
-func get_character_global_position(character : Character) -> Vector3 :
-	if character == null : return Vector3.ZERO
+func get_character_card(character : Character) -> CharacterCard3D :
+	if character == null : return null
 	for player_char in player_characters :
 		if player_char.character == character :
-			return player_char.global_position
+			return player_char
 	for opponent_char in opponent_characters :
 		if opponent_char.character == character :
-			return opponent_char.global_position
-	return Vector3.ZERO
+			return opponent_char
+	return null

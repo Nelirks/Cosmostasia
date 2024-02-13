@@ -3,9 +3,11 @@ class_name CombatVFX
 
 @export var animator : AnimationPlayer
 @export var animation_name : String
+@export var lifetime : float
 
 func _ready():
 	animator.play(animation_name)
+	get_tree().create_timer(lifetime).timeout.connect(queue_free)
 
-func set_context(source_position : Vector3, target_position : Vector3) :
+func set_context(source_position : CharacterCard3D, target_position : CharacterCard3D) :
 	position = Vector3.ZERO
