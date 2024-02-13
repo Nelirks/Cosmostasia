@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://h4s54ikk4al3"]
+[gd_scene load_steps=8 format=3 uid="uid://h4s54ikk4al3"]
 
 [ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
 [ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
 [ext_resource type="PackedScene" uid="uid://de5liyxp8abgh" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_fonv4"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_pls58"]
 [ext_resource type="PackedScene" uid="uid://bk6wi08lvjkh0" path="res://scenes/deckbuilding_phase/character_selector.tscn" id="4_foq0m"]
+[ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/ui_icons/fond menu.png" id="5_08omn"]
 
 [sub_resource type="Environment" id="Environment_gmyqr"]
 background_mode = 3
@@ -67,6 +68,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="FondMenu" type="Sprite2D" parent="Background/BackgroundColor"]
+position = Vector2(960, 540)
+texture = ExtResource("5_08omn")
 
 [node name="PresetSelector" type="VBoxContainer" parent="Background"]
 unique_name_in_owner = true

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="11_e4pc0"]
 [ext_resource type="PackedScene" uid="uid://dndrh64lp266q" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="11_gi04u"]
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
-[ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/fond menu.png" id="14_tno1k"]
+[ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/ui_icons/fond menu.png" id="14_tno1k"]
 [ext_resource type="Texture2D" uid="uid://cbgk1dfxbghqh" path="res://Sprites/ui_icons/UI draft smoke.png" id="15_1he6s"]
 [ext_resource type="Texture2D" uid="uid://duy7wb6j6ywg5" path="res://Sprites/ui_icons/UI draft barre rouge.png" id="16_lshbp"]
 [ext_resource type="Texture2D" uid="uid://cuim3yanukfq6" path="res://Sprites/ui_icons/UI draft barre violet 2.png" id="17_40nrv"]

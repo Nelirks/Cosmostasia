@@ -43,11 +43,10 @@ curve = SubResource("Curve_i7fj5")
 lifetime_randomness = 0.4
 emission_shape = 1
 emission_sphere_radius = 0.01
-direction = Vector3(1, 1, 1)
+direction = Vector3(0.5, 0.5, 0.5)
 spread = 180.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = -2.0
-initial_velocity_max = 10.0
+initial_velocity_max = 4.0
 angular_velocity_min = 720.0
 angular_velocity_max = 1440.0
 radial_accel_min = -2.0
@@ -94,8 +93,8 @@ curve = SubResource("Curve_f46s0")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_okaqb"]
 gravity = Vector3(0, 0, 0)
-scale_min = 2.75
-scale_max = 2.75
+scale_min = 1.5
+scale_max = 1.5
 scale_curve = SubResource("CurveTexture_j120g")
 color = Color(4.73, 1.18, 0, 1)
 
@@ -123,12 +122,52 @@ curve = SubResource("Curve_l77io")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jofpv"]
 gravity = Vector3(0, 0, 0)
-scale_min = 6.0
-scale_max = 7.0
+scale_min = 3.0
+scale_max = 4.0
 scale_curve = SubResource("CurveTexture_j0tns")
 color = Color(1.78, 1, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_o2tff"]
+
+[sub_resource type="Animation" id="Animation_2y10p"]
+resource_name = "hit "
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sparks:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparks/flash:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparks/circle:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_1eafi"]
 length = 0.001
@@ -165,47 +204,8 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_2y10p"]
-resource_name = "hit "
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sparks:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sparks/flash:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sparks/circle:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ppbu"]
@@ -227,7 +227,6 @@ cast_shadow = 0
 emitting = false
 amount = 200
 lifetime = 2.0
-one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 trail_lifetime = 9.98
