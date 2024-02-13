@@ -19,7 +19,7 @@ func _init(damage : int, source : Character, target : Character, _damage_type : 
 
 func apply() -> void :
 	target.take_damage(source, damage * multiplier, _damage_type == DamageType.DIRECT)
-	source.play_combat_vfx(preload("res://scenes/vfx_chloe/vfx explosion.tscn"), target)
+	if _damage_type == DamageType.DIRECT : source.play_combat_vfx(preload("res://scenes/vfx_chloe/vfx explosion.tscn"), target)
 	is_done = true
 
 func add_fixed_damage(amount : int, apply_if_indirect : bool = false) -> void :
