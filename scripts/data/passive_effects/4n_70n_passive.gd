@@ -30,7 +30,7 @@ func on_effect_resolution(effect : Effect) -> void :
 
 func set_emotion(card_position : int) :
 	var energy_regen_modification = 0
-	if owner.has_status("boucle_de_programme") : return
+	if owner.has_status("boucle_de_programme") and owner.get_status("boucle_de_programme").active : return
 	if emotion == Emotion.JOY : 
 		energy_regen_modification -= joy_energy_regen
 	emotion = card_position
