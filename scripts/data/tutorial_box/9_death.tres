@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="tutorial_data" load_steps=2 format=3 uid="uid://0plpfcepudmo"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_data.gd" id="1_l6mr0"]
+
+[resource]
+script = ExtResource("1_l6mr0")
+tutorial_name = "9_death"
+text = "Un personnage est mort, mais tout n'est pas encore fini !
+Les cartes du personnage sont supprimés du jeu. "
