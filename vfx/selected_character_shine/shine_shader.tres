@@ -51,6 +51,7 @@ parameter_name = "ShineModulate"
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0), 2, 1e-05]
 type = 4
 function = 2
+condition = 1
 
 [sub_resource type="VisualShaderNodeSwitch" id="VisualShaderNodeSwitch_cvcay"]
 
@@ -148,7 +149,7 @@ void fragment() {
 	vec3 n_in23p1 = vec3(0.00000, 0.00000, 0.00000);
 	{
 		bvec3 _bv = greaterThan(n_out20p0, n_in23p1);
-		n_out23p0 = all(_bv);
+		n_out23p0 = any(_bv);
 	}
 
 
@@ -169,7 +170,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-51.3493, -90.7195)
+graph_offset = Vector2(-43.8182, -21)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(960, -80)
