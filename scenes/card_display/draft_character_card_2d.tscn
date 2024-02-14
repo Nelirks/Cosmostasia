@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0c442aplvhel"]
+
+[ext_resource type="Script" path="res://scripts/card_display/character_card_2d.gd" id="1_3bk4c"]
+[ext_resource type="PackedScene" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_v461r"]
+[ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="3_d3hi3"]
+[ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="4_xmc62"]
+[ext_resource type="PackedScene" path="res://scenes/card_display/health_bar.tscn" id="5_jn7om"]
+[ext_resource type="Texture2D" uid="uid://0auv1yf56unj" path="res://Sprites/ui_icons/angle popup.png" id="6_361yu"]
+[ext_resource type="Texture2D" uid="uid://bwccl0v846lop" path="res://Sprites/ui_icons/border3 popup.png" id="7_dhxth"]
+[ext_resource type="Texture2D" uid="uid://unsaj4yknwrd" path="res://Sprites/ui_icons/border1 popup.png" id="8_y26ls"]
+[ext_resource type="Texture2D" uid="uid://c1wlmxglgkvhp" path="res://Sprites/ui_icons/border2 popup.png" id="9_qqh2a"]
+
+[node name="CharacterCard2D" type="Control"]
+custom_minimum_size = Vector2(548, 898)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 540.0
+offset_bottom = 890.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_3bk4c")
+death_fx = ExtResource("2_v461r")
+is_combat_display = false
+
+[node name="CharacterSprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 850)
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 524.0
+offset_bottom = 874.0
+texture = ExtResource("3_d3hi3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatusEffectDisplays" type="VBoxContainer" parent="CharacterSprite"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 360.0
+offset_top = 20.0
+offset_right = 500.0
+offset_bottom = 830.0
+
+[node name="CharacterName" type="Label" parent="CharacterSprite"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 673.0
+offset_right = 500.0
+offset_bottom = 731.0
+theme = ExtResource("4_xmc62")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "LISIRMEE"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="HealthBar" parent="CharacterSprite" instance=ExtResource("5_jn7om")]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 731.358
+offset_right = 1826.0
+offset_bottom = 1164.36
+scale = Vector2(0.274, 0.274)
+
+[node name="Cadre" type="Node2D" parent="."]
+position = Vector2(24, 24)
+
+[node name="AnglePopup" type="Sprite2D" parent="Cadre"]
+position = Vector2(446, 0)
+texture = ExtResource("6_361yu")
+
+[node name="Border3Popup" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(-264, 0)
+texture = ExtResource("7_dhxth")
+
+[node name="Border3Popup2" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(-130, 0)
+rotation = -3.14159
+texture = ExtResource("7_dhxth")
+
+[node name="AnglePopup2" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(-390, 0)
+rotation = -3.14159
+texture = ExtResource("6_361yu")
+
+[node name="AnglePopup" type="Sprite2D" parent="Cadre/AnglePopup"]
+position = Vector2(0, 846)
+texture = ExtResource("6_361yu")
+
+[node name="Border3Popup" type="Sprite2D" parent="Cadre/AnglePopup/AnglePopup"]
+position = Vector2(-264, 0)
+texture = ExtResource("7_dhxth")
+
+[node name="Border3Popup2" type="Sprite2D" parent="Cadre/AnglePopup/AnglePopup"]
+position = Vector2(-130, 0)
+rotation = -3.14159
+texture = ExtResource("7_dhxth")
+
+[node name="AnglePopup2" type="Sprite2D" parent="Cadre/AnglePopup/AnglePopup"]
+position = Vector2(-390, 0)
+rotation = -3.14159
+texture = ExtResource("6_361yu")
+
+[node name="AnglePopup3" type="Sprite2D" parent="Cadre"]
+position = Vector2(0, 56)
+rotation = -1.57079
+texture = ExtResource("6_361yu")
+
+[node name="AnglePopup4" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-730, 0.00162152)
+rotation = 3.14159
+texture = ExtResource("6_361yu")
+
+[node name="Border1Popup" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-169, 0.000375394)
+texture = ExtResource("8_y26ls")
+
+[node name="Border2Popup2" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-365, 0.000810762)
+rotation = 3.14159
+texture = ExtResource("9_qqh2a")
+
+[node name="Border1Popup2" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-563, -0.998749)
+rotation = 3.14159
+texture = ExtResource("8_y26ls")
+
+[node name="AnglePopup3" type="Sprite2D" parent="Cadre/AnglePopup3"]
+position = Vector2(-1.99884, 501)
+texture = ExtResource("6_361yu")
+
+[node name="AnglePopup4" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-730, 0.00162152)
+rotation = 3.14159
+texture = ExtResource("6_361yu")
+
+[node name="Border1Popup" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-169, 0.000375394)
+texture = ExtResource("8_y26ls")
+
+[node name="Border2Popup2" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-365, 0.000810762)
+rotation = 3.14159
+texture = ExtResource("9_qqh2a")
+
+[node name="Border1Popup2" type="Sprite2D" parent="Cadre/AnglePopup3/AnglePopup3"]
+position = Vector2(-563, -0.998749)
+rotation = 3.14159
+texture = ExtResource("8_y26ls")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
