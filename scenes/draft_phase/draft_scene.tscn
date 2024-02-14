@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=20 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -10,9 +10,10 @@
 [ext_resource type="Resource" uid="uid://cbx4earrm7weg" path="res://resources/game_data/character_data/lisirmee.tres" id="8_uyypb"]
 [ext_resource type="Resource" uid="uid://bnbwwa2tu5cah" path="res://resources/game_data/character_data/lord_reece.tres" id="9_nmjhl"]
 [ext_resource type="Resource" uid="uid://c0di50xd7b14v" path="res://resources/game_data/character_data/timothy_laveak.tres" id="10_c3o3b"]
-[ext_resource type="PackedScene" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="11_gi04u"]
+[ext_resource type="PackedScene" uid="uid://dndrh64lp266q" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="11_gi04u"]
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
 [ext_resource type="PackedScene" uid="uid://c60cxj8ci0f26" path="res://scenes/card_display/draft_character_card_3d.tscn" id="13_5um8g"]
+[ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/ui_icons/fond menu.png" id="14_grg7o"]
 [ext_resource type="Texture2D" uid="uid://cbgk1dfxbghqh" path="res://Sprites/ui_icons/UI draft smoke.png" id="15_1he6s"]
 [ext_resource type="Texture2D" uid="uid://duy7wb6j6ywg5" path="res://Sprites/ui_icons/UI draft barre rouge.png" id="16_lshbp"]
 [ext_resource type="Texture2D" uid="uid://cuim3yanukfq6" path="res://Sprites/ui_icons/UI draft barre violet 2.png" id="17_40nrv"]
@@ -80,6 +81,7 @@ environment = SubResource("Environment_48764")
 
 [node name="FondMenu" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
+texture = ExtResource("14_grg7o")
 
 [node name="UiDraftSmoke" type="Sprite2D" parent="."]
 position = Vector2(960, 540)

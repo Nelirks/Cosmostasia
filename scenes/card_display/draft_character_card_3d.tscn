@@ -21,6 +21,7 @@ texture = SubResource("ViewportTexture_52mie")
 texture = SubResource("ViewportTexture_l2cdp")
 
 [node name="FrontViewport" parent="." index="1"]
+transparent_bg = true
 size = Vector2i(548, 898)
 
 [node name="DraftCharacterCard" parent="FrontViewport" index="0" instance=ExtResource("3_f787y")]
