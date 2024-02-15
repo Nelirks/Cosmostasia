@@ -81,6 +81,143 @@
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
+				<Folder Name="Game" ID="{CBD58D24-14F7-4D94-834B-1C86F73529D8}" ShortID="534510699">
+					<ChildrenList>
+						<Sound Name="COSMOSTASIA_DRAW_1" ID="{4BDCC20C-5E0A-4E58-9713-BE982F9C666B}" ShortID="836678755">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2259FA76-2C83-4996-9298-FDC3176C11E2}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_DRAW_1" ID="{665F3A4C-F214-4E6D-A5CA-C00ACCD496CA}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_DRAW_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="973321562"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_DRAW_1" ID="{665F3A4C-F214-4E6D-A5CA-C00ACCD496CA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="COSMOSTASIA_TURN_END_1" ID="{F6552B85-FE7B-40D7-B633-3EA0C4BBB990}" ShortID="789471856">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_TURN_END_1" ID="{889010EE-49B7-42E6-9CE1-8980491BD58F}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_TURN_END_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="630097709"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_TURN_END_1" ID="{889010EE-49B7-42E6-9CE1-8980491BD58F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="COSMOSTASIA_ZOOM_IN_1" ID="{80A72E33-A066-4B81-A543-260AD25F449E}" ShortID="742327353">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{16170818-35B7-4BBC-B313-89F6F282BEBE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_ZOOM_IN_1" ID="{8C323CC8-768F-45CB-A610-4B5D5F346C99}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_ZOOM_IN_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="269332726"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_ZOOM_IN_1" ID="{8C323CC8-768F-45CB-A610-4B5D5F346C99}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="COSMOSTASIA_ZOOM_OUT_1" ID="{B699C8D6-6E50-48B6-88BD-AE1F4316B22D}" ShortID="962489345">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5424DBD9-391B-43FF-A126-5277838B0247}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_ZOOM_OUT_1" ID="{D2144593-8626-4748-B742-B7E53C8CA3CB}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_ZOOM_OUT_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="350632908"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_ZOOM_OUT_1" ID="{D2144593-8626-4748-B742-B7E53C8CA3CB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
