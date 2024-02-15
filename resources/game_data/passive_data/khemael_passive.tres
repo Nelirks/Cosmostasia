@@ -1,11 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bynkjy6ml44xk"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bynkjy6ml44xk"]
 
 [ext_resource type="Script" path="res://scripts/data/passive_effects/khemael_passive.gd" id="1_cijyf"]
+[ext_resource type="Texture2D" uid="uid://du7lcectjg5b2" path="res://resources/sprites/status_icons/Faveur.png" id="1_giaew"]
+[ext_resource type="Texture2D" uid="uid://dvlqw3l42w3hs" path="res://resources/sprites/status_icons/Préjudice.png" id="2_nhqto"]
 
 [resource]
 script = ExtResource("1_cijyf")
 prejudice_multiplier = 1.2
 faveur_multiplier = 0.8
+faveur_icon = ExtResource("1_giaew")
+prejudice_icon = ExtResource("2_nhqto")
 id = "khemael_passive"
 type = 2
 display_names = Array[String]([])
