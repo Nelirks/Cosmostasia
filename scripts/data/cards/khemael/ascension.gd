@@ -11,6 +11,7 @@ func apply_effects(target : Character) -> void :
 	character.get_status("khemael_passive").stacks = 0
 
 func can_target(target : Character) -> bool :
+	if target == null : return
 	if !character.has_status("khemael_passive") or character.get_status("khemael_passive").stacks == 0 : return true
 	if character.get_status("khemael_passive").state == 0 :
 		return character.player == target.player

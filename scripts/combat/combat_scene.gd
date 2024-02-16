@@ -8,7 +8,7 @@ func _ready():
 
 func _on_character_clicked(is_host : bool, index : int) -> void :
 	if player_hand.selected_card == null : return
-	if player_hand.selected_card.card.targetting == Card.Targetting.NO_TARGET : return
+	if !player_hand.selected_card.card.can_target(GameManager.get_player(is_host).get_character(index)) : return
 	if player_hand.selected_card.card.position == Card.Position.DISCARD_PILE :
 		printerr("ATTEMPT TO PLAY " + player_hand.selected_card.card.card_name + " FROM DISCARD")
 		return
@@ -17,7 +17,7 @@ func _on_character_clicked(is_host : bool, index : int) -> void :
 
 func _on_targetless_play_area_clicked() -> void :
 	if player_hand.selected_card == null : return
-	if player_hand.selected_card.card.targetting != Card.Targetting.NO_TARGET : return
+	if !player_hand.selected_card.card.can_target(null) : return
 	if player_hand.selected_card.card.position == Card.Position.DISCARD_PILE :
 		printerr("ATTEMPT TO PLAY " + player_hand.selected_card.card.card_name + " FROM DISCARD")
 		return
