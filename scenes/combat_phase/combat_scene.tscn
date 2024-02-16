@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dr8a6crxdqvbe" path="res://scenes/3d_environment/3d_board_scene.tscn" id="4_vhcko"]
 [ext_resource type="Script" path="res://scripts/mouse_click_area.gd" id="6_kni6t"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mkcl4"]
-viewport_path = NodePath("ArenaBackground/SubViewport")
-
 [sub_resource type="Environment" id="Environment_bfeis"]
 background_mode = 3
+glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mkcl4"]
+viewport_path = NodePath("ArenaBackground/SubViewport")
 
 [node name="CombatScene" type="Node3D"]
 script = ExtResource("1_t5omj")
@@ -19,6 +20,9 @@ script = ExtResource("1_t5omj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 current = true
 fov = 40.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bfeis")
 
 [node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
 unique_name_in_owner = true
@@ -44,9 +48,6 @@ size = Vector2i(1920, 1080)
 [node name="3dBoardScene" parent="ArenaBackground/SubViewport" instance=ExtResource("4_vhcko")]
 unique_name_in_owner = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bfeis")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TargetlessPlayArea" type="Control" parent="CanvasLayer"]
@@ -70,6 +71,9 @@ offset_bottom = 37.5
 grow_horizontal = 0
 grow_vertical = 2
 text = "Fin du tour"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_energy = 0.05
 
 [connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
 [connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
