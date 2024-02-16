@@ -8,7 +8,7 @@ func apply_effects(target : Character) -> void :
 	_add_effect(ApplyStatusEffect.new(stunned_status.duplicate(), character, target))
 
 func can_target(target : Character) -> bool :
-	if target == null : return false
+	if target == null or target.is_dead : return false
 	if target.player == character.player : return false
 	for enemy in target.get_allies(false, false) :
 		if enemy.current_health < target.current_health : return false
