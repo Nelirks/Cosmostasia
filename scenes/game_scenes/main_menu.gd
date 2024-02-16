@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	NetworkManager.connection_done.connect(_start_game)
 	%WaitingBackground.visible = false
+	_start_game()
 	
 func _on_host_button_pressed():
 	if OS.has_feature("solo") : _start_game()
