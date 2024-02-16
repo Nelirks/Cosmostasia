@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="UserProjectSettings" SchemaVersion="119">
+	<UserProjectSettingsInfo>
+		<UserProjectSettings Name="" ID="{519BB82D-9823-4561-9448-4C6F772701A3}">
+			<PropertyList>
+				<Property Name="Event Action List\{20CB179B-C49E-4597-A3E7-5E84B53E9B21}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{70545BF4-EC4B-4BBD-8BDE-23B6BC791F92}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{9483B18D-838B-4C98-ACF5-6F333DA3AA31}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{B5235C39-D94E-411A-B90C-5BFD3DB7BA91}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{BB4C738F-A164-4061-94A4-BC52455E4158}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{C5635B51-43A3-4C8F-8EF2-F51CDE443E08}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{E6B9377B-4DE7-4F96-9611-F3A2CF84984E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{E838C059-A3F7-4419-B519-D6B9C32988FD}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{EF1C4FCD-0853-4104-8C57-94558FCA48F5}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value=""/>
+				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
+				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
+				<Property Name="MeterView\MeterMode1Viewpoint1" Type="int32" Value="2"/>
+				<Property Name="MeterView\MeterMode1Viewpoint2" Type="int32" Value="3"/>
+				<Property Name="MeterView\MeterMode1Viewpoint3" Type="int32" Value="0"/>
+				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>
+			</PropertyList>
+		</UserProjectSettings>
+	</UserProjectSettingsInfo>
+</WwiseDocument>

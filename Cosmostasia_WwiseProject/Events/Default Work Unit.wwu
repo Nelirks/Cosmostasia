@@ -5,15 +5,55 @@
 			<ChildrenList>
 				<Folder Name="Cards" ID="{44827B9F-BD12-46EA-AEDF-4B2C19C04020}" ShortID="492584585">
 					<ChildrenList>
-						<Event Name="Card_Draw" ID="{20CB179B-C49E-4597-A3E7-5E84B53E9B21}"/>
+						<Event Name="Card_Draw" ID="{20CB179B-C49E-4597-A3E7-5E84B53E9B21}">
+							<ChildrenList>
+								<Action Name="" ID="{94BE7D84-F8EE-4861-8080-05162B2EC7E6}" ShortID="1057615322">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_DRAW_1" ID="{4BDCC20C-5E0A-4E58-9713-BE982F9C666B}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Card_Use" ID="{BB4C738F-A164-4061-94A4-BC52455E4158}"/>
-						<Event Name="Card_Buff" ID="{CE442781-DE48-470A-8435-9AA6F4F1FDBC}"/>
-						<Event Name="Card_Debuff" ID="{B5235C39-D94E-411A-B90C-5BFD3DB7BA91}"/>
+						<Event Name="Card_ZoomIn" ID="{EF1C4FCD-0853-4104-8C57-94558FCA48F5}">
+							<ChildrenList>
+								<Action Name="" ID="{40834E3B-EB19-463D-BFA7-661941CE4862}" ShortID="907728735">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_ZOOM_IN_1" ID="{80A72E33-A066-4B81-A543-260AD25F449E}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Card_ZoomOut" ID="{E838C059-A3F7-4419-B519-D6B9C32988FD}">
+							<ChildrenList>
+								<Action Name="" ID="{942F4931-5F8D-4BEB-B7EB-0CE0FB7DF147}" ShortID="598450101">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_ZOOM_OUT_1" ID="{B699C8D6-6E50-48B6-88BD-AE1F4316B22D}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Global" ID="{6F5B7FF8-4765-4A39-9924-C37FA815B083}" ShortID="812698388">
 					<ChildrenList>
-						<Event Name="End_Turn" ID="{9483B18D-838B-4C98-ACF5-6F333DA3AA31}"/>
+						<Event Name="End_Turn" ID="{9483B18D-838B-4C98-ACF5-6F333DA3AA31}">
+							<ChildrenList>
+								<Action Name="" ID="{F846F03E-5AD2-4863-83B1-6A75552DE9CF}" ShortID="972281999">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_TURN_END_1" ID="{F6552B85-FE7B-40D7-B633-3EA0C4BBB990}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Start_Turn" ID="{C5635B51-43A3-4C8F-8EF2-F51CDE443E08}"/>
 						<Event Name="Victory" ID="{70545BF4-EC4B-4BBD-8BDE-23B6BC791F92}"/>
 						<Event Name="Defeat" ID="{1973323C-E5EF-4538-BC14-5D6A56252D0D}"/>
