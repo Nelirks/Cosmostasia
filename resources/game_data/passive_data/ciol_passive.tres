@@ -10,5 +10,5 @@ additional_feather_cd = 2.0
 id = "ciol_passive"
 type = 2
 display_names = Array[String]([])
-description = "Lorsque Cïol inflige des dégâts à un adversaire, il lui pose une plume. Jusqu'à 2 plumes peuvent être posées, et cette limite augmente tous les 2 tours."
+description = "Lorsque Cïol inflige des dégâts à un adversaire, il lui pose une !S!Plume!S!. Jusqu'à 2 plumes peuvent être posées, et cette limite augmente tous les 2 tours."
 icon = ExtResource("1_l0clw")
