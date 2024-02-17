@@ -14,8 +14,10 @@ func can_target(target : Character) -> bool :
 	if target == null or target.is_dead : return false
 	if !character.has_status("khemael_passive") or character.get_status("khemael_passive").stacks == 0 : return true
 	if character.get_status("khemael_passive").state == 0 :
-		return character.player == target.player
+		targetting = Targetting.ALLY
+		return super.can_target(target)
 	elif character.get_status("khemael_passive").state == 1 :
-		return character.player != target.player
+		targetting = Targetting.OPPONENT
+		return super.can_target(target)
 	else : 
 		return true
