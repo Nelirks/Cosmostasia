@@ -2,6 +2,7 @@ extends Card3D
 class_name PlayableCard3D
 
 @export var card_backs : Array[Texture]
+@export var backside_dissolve_material : ShaderMaterial
 
 var card : Card :  
 	set(value) : 
@@ -20,3 +21,13 @@ var overlay : OverlayVFX :
 
 func use_text_color(use : bool) -> void :
 	_front_side.use_text_color(use)
+
+func dissolve(duration : float) -> void :
+	if abs(rotation.y - PI) < 0.001 : 
+		_front_side.visible = false
+		_back_side.material = backside_dissolve_material
+		var tween = create_tween()
+		tween.tween_method(func(value) : backside_dissolve_material.set_shader_parameter("Progress", value), 0.0, 1.0, duration)
+	else : 
+		_back_side.visible = false
+		_front_side.dissolve(duration)

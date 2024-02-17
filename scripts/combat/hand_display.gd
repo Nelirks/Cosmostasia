@@ -11,6 +11,8 @@ signal request_vfx(vfx : CombatVFX, source : Character, target : Character)
 @export var card_zoom_in_duration : float
 @export var card_zoom_out_duration : float
 
+@export var dissolve_duration : float
+
 @onready var card_positions : Array[Marker3D] = [$DrawPile, $PreparedCard, $MiddleCard, $MiracleCard, $DrawPile]
 
 @export var selected_card_fx : PackedScene
@@ -65,22 +67,21 @@ func _destroy_card(card : Card) :
 	if cards[card] != null : _destroy_card_display(card)
 	cards.erase(card)
 
-func _display_card_count() -> void :
-	var card_count = 0
-	for key in cards.keys() :
-		if cards[key] != null : card_count += 1
-
 func _create_card_display(card : Card) -> void :
 	cards[card] = preload("res://scenes/card_display/playable_card_3d.tscn").instantiate()
 	add_child(cards[card])
 	cards[card].card = card
-	_display_card_count()
 	
-func _destroy_card_display(card : Card) -> void :
-	if cards[card].tween : cards[card].tween.kill()
-	cards[card].queue_free()
-	cards[card] = null
-	_display_card_count()
+func _destroy_card_display(card : Card, immediate : bool = false) -> void :
+	if cards[card] == null : return
+	if immediate : 
+		if cards[card].tween : cards[card].tween.kill()
+		cards[card].queue_free()
+		cards[card] = null
+	else :
+		cards[card].dissolve(dissolve_duration)
+		await get_tree().create_timer(dissolve_duration).timeout
+		_destroy_card_display(card, true)
 
 func _connect_mouse_signals(card_display : PlayableCard3D) -> void :
 	if card_display.mouse_clicked.is_connected(_on_card_clicked) : return

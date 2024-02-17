@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj0uhxr2myve4"]
+[gd_scene load_steps=10 format=3 uid="uid://dj0uhxr2myve4"]
 
 [ext_resource type="Script" path="res://scripts/card_display/playable_card_2d.gd" id="1_phwa5"]
 [ext_resource type="Texture2D" uid="uid://luineddffjx0" path="res://resources/sprites/card_sprites/card_borders/attack_card_border.png" id="2_dqbaq"]
 [ext_resource type="Texture2D" uid="uid://bl03nomp665uc" path="res://resources/sprites/card_sprites/card_borders/defense_card_border.png" id="3_xpd05"]
 [ext_resource type="Texture2D" uid="uid://dypnsvk1x5d1d" path="res://resources/sprites/card_sprites/card_borders/strategy_card_border.png" id="4_nk6xh"]
+[ext_resource type="Shader" uid="uid://d0xcs1wwuh2ng" path="res://resources/VFX/dissolve.res" id="5_8ypua"]
+[ext_resource type="Shader" uid="uid://bp7dfoepjp1dk" path="res://resources/VFX/text_dissolve.res" id="6_3vswa"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="6_7klli"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ut15s"]
+shader = ExtResource("5_8ypua")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wedfn"]
+shader = ExtResource("6_3vswa")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
 
 [node name="PlayableCard2D" type="Control"]
 layout_mode = 3
@@ -13,24 +25,41 @@ offset_right = 500.0
 offset_bottom = 750.0
 script = ExtResource("1_phwa5")
 borders = Array[Texture]([ExtResource("2_dqbaq"), ExtResource("3_xpd05"), ExtResource("4_nk6xh")])
+texture_dissolve_material = SubResource("ShaderMaterial_ut15s")
+text_dissolve_material = SubResource("ShaderMaterial_wedfn")
 
-[node name="CardSprite" type="TextureRect" parent="."]
+[node name="TextureArea" type="Control" parent="."]
 unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 750.0
+
+[node name="CardSprite" type="TextureRect" parent="TextureArea"]
+unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 750.0
 expand_mode = 1
 
-[node name="CardBorders" type="TextureRect" parent="."]
+[node name="CardBorders" type="TextureRect" parent="TextureArea"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 750.0
 texture = ExtResource("2_dqbaq")
 expand_mode = 1
 
-[node name="CardName" type="Label" parent="CardBorders"]
+[node name="TextArea" type="Control" parent="."]
 unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 750.0
+
+[node name="CardName" type="Label" parent="TextArea"]
+unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -46,8 +75,9 @@ text = "Title"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardCost" type="Label" parent="CardBorders"]
+[node name="CardCost" type="Label" parent="TextArea"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 1
 offset_left = 34.0
 offset_top = 10.0
@@ -60,8 +90,9 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardCharacter" type="Label" parent="CardBorders"]
+[node name="CardCharacter" type="Label" parent="TextArea"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,24 +111,27 @@ text = "Character"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CardBorders"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextArea"]
+use_parent_material = true
 layout_mode = 0
 offset_left = 30.0
 offset_top = 547.0
 offset_right = 467.0
-offset_bottom = 713.0
+offset_bottom = 725.0
 
-[node name="CardDescription" type="RichTextLabel" parent="CardBorders/VBoxContainer"]
+[node name="CardDescription" type="RichTextLabel" parent="TextArea/VBoxContainer"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 2
 theme = ExtResource("6_7klli")
 bbcode_enabled = true
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+text = "AAAAAAAAAA[color=#ff0000]AAAAAAAAAAAA[/color]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 "
 fit_content = true
 
-[node name="CardFlavorText" type="RichTextLabel" parent="CardBorders/VBoxContainer"]
+[node name="CardFlavorText" type="RichTextLabel" parent="TextArea/VBoxContainer"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 2
 theme = ExtResource("6_7klli")
 theme_override_font_sizes/normal_font_size = 16

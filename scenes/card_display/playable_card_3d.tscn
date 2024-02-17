@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://k0oglaj047sl"]
+[gd_scene load_steps=12 format=3 uid="uid://k0oglaj047sl"]
 
 [ext_resource type="PackedScene" uid="uid://c2nvantogdhxk" path="res://scenes/card_display/card_3d.tscn" id="1_5i2ox"]
 [ext_resource type="Script" path="res://scripts/card_display/playable_card_3d.gd" id="2_f6glg"]
 [ext_resource type="Texture2D" uid="uid://cdrufljcn17v2" path="res://resources/sprites/card_sprites/card_backs/card_back_attack.png" id="3_sou4i"]
 [ext_resource type="Texture2D" uid="uid://ly4ss0avyrcv" path="res://resources/sprites/card_sprites/card_backs/card_back_defense.png" id="4_6k0uw"]
 [ext_resource type="Texture2D" uid="uid://dg45exlko2n30" path="res://resources/sprites/card_sprites/card_backs/card_back_strategy.png" id="5_67rnw"]
+[ext_resource type="Shader" uid="uid://d0xcs1wwuh2ng" path="res://resources/VFX/dissolve.res" id="6_8amrx"]
 [ext_resource type="PackedScene" uid="uid://dj0uhxr2myve4" path="res://scenes/card_display/playable_card_2d.tscn" id="6_ch5my"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tmch0"]
+shader = ExtResource("6_8amrx")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dnx3m"]
 viewport_path = NodePath("FrontViewport")
@@ -19,6 +25,7 @@ size = Vector3(5, 7.5, 0.2)
 [node name="Card3D" instance=ExtResource("1_5i2ox")]
 script = ExtResource("2_f6glg")
 card_backs = Array[Texture]([ExtResource("3_sou4i"), ExtResource("4_6k0uw"), ExtResource("5_67rnw")])
+backside_dissolve_material = SubResource("ShaderMaterial_tmch0")
 
 [node name="FrontSide" parent="CardDisplay" index="0"]
 texture = SubResource("ViewportTexture_dnx3m")
@@ -27,11 +34,13 @@ texture = SubResource("ViewportTexture_dnx3m")
 texture = SubResource("ViewportTexture_8j6qx")
 
 [node name="FrontViewport" parent="." index="1"]
+transparent_bg = true
 size = Vector2i(500, 750)
 
 [node name="PlayableCard2D" parent="FrontViewport" index="0" instance=ExtResource("6_ch5my")]
 
 [node name="BackViewport" parent="." index="2"]
+transparent_bg = true
 size = Vector2i(500, 750)
 
 [node name="TextureRect" type="TextureRect" parent="BackViewport" index="0"]

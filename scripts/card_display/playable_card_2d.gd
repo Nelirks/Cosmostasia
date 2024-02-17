@@ -3,6 +3,9 @@ class_name PlayableCard2D
 
 @export var borders : Array[Texture]
 
+@export var texture_dissolve_material : ShaderMaterial
+@export var text_dissolve_material : ShaderMaterial
+
 var card: Card:
 	set(value):
 		if card != null : disconnect_signals()
@@ -61,3 +64,21 @@ func use_text_color(use : bool) -> void :
 		%CardDescription.text = DescriptionHandler.develop_tags(card.description)
 	else :
 		%CardDescription.text = card.description.replace("!S!", "").replace("!K!", "")
+
+func dissolve(duration : float) -> void :
+	%TextureArea.material = texture_dissolve_material
+	%TextArea.material = text_dissolve_material
+	var dissolve_tween : Tween = create_tween()
+	
+	dissolve_tween.tween_method(set_dissolve_progress, 0.0, 1.0, duration)
+	dissolve_tween.tween_interval(0.5)
+	dissolve_tween.tween_callback(reset_dissolve)
+
+func set_dissolve_progress(value : float) -> void :
+	texture_dissolve_material.set_shader_parameter("Progress", value)
+	text_dissolve_material.set_shader_parameter("Progress", value)
+
+func reset_dissolve() -> void :
+	%TextureArea.material = null
+	%TextArea.material = null
+	set_dissolve_progress(0)
