@@ -13,9 +13,12 @@ func _init(removes_positives : bool, removes_negatives : bool, source : Characte
 	self.target = target
 
 func apply() -> void :
+	var remove_queue : Array[StatusEffect]
 	for status in target._statuses : 
 		if status.type == StatusEffect.StatusType.POSITIVE and removes_positives :
-			target.remove_status(status)
+			remove_queue.append(status)
 		if status.type == StatusEffect.StatusType.NEGATIVE and removes_negatives :
-			target.remove_status(status)
+			remove_queue.append(status)
+	for status in remove_queue :
+		target.remove_status(status)
 	is_done = true
