@@ -12,18 +12,11 @@ var state : State = State.FAVEUR
 
 func on_effect_resolution(effect : Effect) -> void :
 	if effect is CardPlayNotifierEffect and effect.card.character == owner :
+		if effect.card.card_name == "Ascension" : return
 		if effect.target != null and effect.target.player == owner.player :
-			if state == State.PREJUDICE and stacks > 0 :
-				stacks -= 1
-			else : 
-				state = State.FAVEUR
-				stacks += 1
+			add_faveur_stack()
 		else :
-			if state == State.FAVEUR and stacks > 0 :
-				stacks -= 1
-			else :
-				state = State.PREJUDICE
-				stacks += 1
+			add_prejudice_stack()
 		return
 	var damage_effect : DamageEffect = effect as DamageEffect
 	if damage_effect != null :
@@ -31,6 +24,20 @@ func on_effect_resolution(effect : Effect) -> void :
 			damage_effect.add_damage_multiplier(prejudice_multiplier)
 		elif damage_effect.target != owner and damage_effect.target.player == owner.player and state == State.FAVEUR and stacks > 0 :
 			damage_effect.add_damage_multiplier(faveur_multiplier)
+
+func add_prejudice_stack() -> void : 
+	if state == State.FAVEUR and stacks > 0 :
+		stacks -= 1
+	else :
+		state = State.PREJUDICE
+		stacks += 1
+
+func add_faveur_stack() -> void :
+	if state == State.PREJUDICE and stacks > 0 :
+		stacks -= 1
+	else : 
+		state = State.FAVEUR
+		stacks += 1
 
 func _on_stacks_changed() -> void : 
 	status_updated.emit()
