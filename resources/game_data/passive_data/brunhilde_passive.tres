@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bksiir404i7n5"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bksiir404i7n5"]
 
 [ext_resource type="Script" path="res://scripts/data/passive_effects/brunhilde_passive.gd" id="1_bbt48"]
 [ext_resource type="Texture2D" uid="uid://creyccddwyoyj" path="res://resources/sprites/status_icons/Passifbrunhilde.png" id="1_e17fx"]
+[ext_resource type="Resource" uid="uid://pwebxljbe7jp" path="res://resources/game_data/status_effect_data/provoke_status_effect.tres" id="2_4agn1"]
 
 [resource]
 script = ExtResource("1_bbt48")
-hp_threshold = 30
-damage_dealt_multiplier = 1.4
-damage_received_multiplier = 0.6
+hp_threshold = 80
+provoke_status = ExtResource("2_4agn1")
 id = "brunhilde_passive"
 type = 2
-display_names = null
-description = "En dessous de 30 points de vie, réduit les dégâts subis de 40% et augmente les dégâts infligés de 40%."
+display_names = Array[String]([])
+description = "Au début du combat et de chaque tour allié, si Brunhilde n'a pas provocation et a plus de 80PV, elle s'octroie !S!Provocation!S!"
 icon = ExtResource("1_e17fx")
