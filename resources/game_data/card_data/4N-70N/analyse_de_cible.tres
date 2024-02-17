@@ -7,7 +7,7 @@
 script = ExtResource("1_unc1k")
 stacks = 3
 card_name = "Analyse de cible"
-description = "Augmente de 3 les dégâts de 4N-70N de façon permanente "
+description = "Octroie 3 degrés d'!S!Analyse de cible!S! à 4N-70N"
 quote = "Capacité d'analyse et puissance de frappe, le pinnacle de la technologie Sotérienne"
 cost = 1
 targetting = 3

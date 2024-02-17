@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccb7ibyqs8les"]
 
-[ext_resource type="Theme" uid="uid://cam01syv8nbs6" path="res://resources/themes/info_theme.tres" id="1_sycqy"]
+[ext_resource type="Theme" uid="uid://clk3jgns3nwcg" path="res://resources/themes/info_theme.tres" id="1_sycqy"]
 [ext_resource type="Script" path="res://scripts/info_popup/info_box.gd" id="1_u1s45"]
 
 [node name="InfoBox" type="PanelContainer"]

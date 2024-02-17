@@ -20,7 +20,9 @@ var character : Character :
 		if character != null :
 			(%CharacterSprite as TextureRect).texture = character.character_texture
 			(%CharacterName as Label).text = character.character_name
-			if is_combat_display and character.passive != null : _on_status_added(character.passive)
+			if is_combat_display : 
+				for status in character._statuses :
+					_on_status_added(status)
 			connect_signals()
 
 var status_displays : Dictionary

@@ -9,5 +9,6 @@ id = "permanent_damage_up"
 type = 2
 display_names = Array[String](["Analyse de cible", "Cible analysée"])
 description = "!S!Cible Analysée!S!
-Augmente définitivement les dégâts infligés."
+Augmente définitivement les dégâts infligés.
+Ne peut pas être retiré."
 icon = ExtResource("1_0xrtf")

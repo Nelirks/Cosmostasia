@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bg221f2bri6vr"]
 
-[ext_resource type="Theme" uid="uid://clk3jgns3nwcg" path="res://resources/themes/info_theme.tres" id="1_ft8tx"]
+[ext_resource type="Theme" uid="uid://cam01syv8nbs6" path="res://resources/themes/info_theme.tres" id="1_ft8tx"]
 [ext_resource type="Script" path="res://scripts/tutorial/tutorial_popup.gd" id="1_vdl0q"]
 
 [node name="Tutorial Popup" type="PanelContainer"]
@@ -20,19 +20,16 @@ grow_vertical = 2
 pivot_offset = Vector2(127, 20)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 2
 theme = ExtResource("1_ft8tx")
 script = ExtResource("1_vdl0q")
 
 [node name="TextTutoriel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-mouse_filter = 2
 fit_content = true
 scroll_active = false
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 2
 flat = true
 

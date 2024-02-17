@@ -1,25 +1,21 @@
 extends StatusEffect
 
-var active : bool
 @export var hp_threshold : int
-@export var damage_dealt_multiplier : float
-@export var damage_received_multiplier : float
+@export var provoke_status : StatusEffect
 
-func on_apply() -> void :
-	active = false
-	super.on_apply()
+var is_first_turn : bool = true
+var active : bool = true
 
 func on_effect_resolution(effect : Effect) -> void :
 	if effect is CardPlayNotifierEffect :
-		active = owner.current_health <= hp_threshold
+		active = owner.current_health >= hp_threshold
 		status_updated.emit()
-	if not active : return
-	var damage_effect : DamageEffect = effect as DamageEffect
-	if damage_effect != null :
-		if damage_effect.target == owner :
-			damage_effect.add_damage_multiplier(damage_received_multiplier)
-		if damage_effect.source == owner : 
-			damage_effect.add_damage_multiplier(damage_dealt_multiplier)
+		return
+	if effect is StartTurnNotifierEffect :
+		if effect.player != owner.player and !is_first_turn : return
+		is_first_turn = false
+		if active and !owner.has_status(provoke_status.id) :
+			_add_effect(ApplyStatusEffect.new(provoke_status.duplicate().set_stacks(1), owner, owner))
 
 func get_texture() -> Texture :
 	if active : return icon
