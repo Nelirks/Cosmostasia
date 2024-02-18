@@ -19,7 +19,7 @@ func on_effect_resolution(effect : Effect) -> void :
 		if cards_played[0] and cards_played[1] and cards_played[2] :
 			cards_played = [false, false, false]
 			for target in owner.get_enemies() :
-				_add_effect(DamageEffect.new(damage, owner, target))
+				_add_effect(DamageEffect.new(damage, owner, target, DamageEffect.DamageType.DIRECT, false))
 				owner.play_combat_vfx(preload("res://scenes/vfx_chloe/vfx slash.tscn"), null)
 		status_updated.emit()
 
