@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=9 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="3_bfxwx"]
+[ext_resource type="Texture2D" uid="uid://g1ogwbqgksqf" path="res://Sprites/ui_icons/flag_full.png" id="5_ag2fi"]
 [ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="5_k7rl3"]
+[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="6_fgwmi"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8flb"]
 lifetime_randomness = 0.3
@@ -23,6 +25,10 @@ radial_accel_max = 100.0
 scale_min = 2.0
 scale_max = 4.0
 color = Color(0.78125, 0.691406, 0.519531, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h83qk"]
+font = ExtResource("6_fgwmi")
+font_size = 54
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -93,6 +99,39 @@ offset_bottom = 94.0
 grow_horizontal = 0
 pivot_offset = Vector2(31, 32)
 texture_normal = ExtResource("5_k7rl3")
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -5.0
+offset_top = -124.0
+offset_right = 151.25
+offset_bottom = 626.0
+grow_horizontal = 0
+rotation = 1.5708
+pivot_offset = Vector2(62, 300)
+texture_normal = ExtResource("5_ag2fi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.1239
+offset_top = 228.0
+offset_right = 139.876
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+text = "Crédits"
+label_settings = SubResource("LabelSettings_h83qk")
 
 [node name="SettingsBackground" type="ColorRect" parent="."]
 unique_name_in_owner = true
