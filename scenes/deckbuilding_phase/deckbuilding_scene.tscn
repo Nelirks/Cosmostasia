@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://h4s54ikk4al3"]
+[gd_scene load_steps=10 format=3 uid="uid://h4s54ikk4al3"]
 
 [ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
 [ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
-[ext_resource type="PackedScene" uid="uid://de5liyxp8abgh" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_fonv4"]
+[ext_resource type="PackedScene" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_fonv4"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_pls58"]
 [ext_resource type="PackedScene" uid="uid://bk6wi08lvjkh0" path="res://scenes/deckbuilding_phase/character_selector.tscn" id="4_foq0m"]
 [ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/ui_icons/fond menu.png" id="5_08omn"]
+[ext_resource type="PackedScene" uid="uid://c4qmo33q344c6" path="res://scenes/deckbuilding_phase/preset_selector.tscn" id="6_ccmsj"]
+[ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="6_s3k44"]
 
 [sub_resource type="Environment" id="Environment_gmyqr"]
 background_mode = 3
@@ -22,10 +24,11 @@ card_zoom_out_duration = 0.25
 
 [node name="CharacterDisplay" parent="." instance=ExtResource("2_pls58")]
 unique_name_in_owner = true
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 7.75, 0)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 8, 0)
 
 [node name="CardArea" type="Node3D" parent="."]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Card1" parent="CardArea" instance=ExtResource("1_npbdc")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16, -5.5, 0)
@@ -46,6 +49,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 16, -5.5, 0)
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 projection = 1
+current = true
 size = 30.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -77,30 +81,25 @@ texture = ExtResource("5_08omn")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1100.0
-offset_right = 1350.0
-offset_bottom = 233.0
+offset_top = 100.0
+offset_right = 1400.0
+offset_bottom = 348.0
 
-[node name="Preset1" type="Button" parent="Background/PresetSelector"]
-custom_minimum_size = Vector2(250, 75)
+[node name="PresetSelector1" parent="Background/PresetSelector" instance=ExtResource("6_ccmsj")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
 
-[node name="Preset2" type="Button" parent="Background/PresetSelector"]
-custom_minimum_size = Vector2(250, 75)
+[node name="PresetSelector2" parent="Background/PresetSelector" instance=ExtResource("6_ccmsj")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
 
-[node name="Preset3" type="Button" parent="Background/PresetSelector"]
-custom_minimum_size = Vector2(250, 75)
+[node name="PresetSelector3" parent="Background/PresetSelector" instance=ExtResource("6_ccmsj")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
 
 [node name="CardCounts" type="HBoxContainer" parent="Background"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_top = 930.0
+offset_top = 900.0
 offset_right = 1920.0
-offset_bottom = 990.0
+offset_bottom = 960.0
 alignment = 1
 
 [node name="CardCount1" type="Label" parent="Background/CardCounts"]
@@ -143,20 +142,20 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayButton" type="Button" parent="Background"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -75.0
-offset_right = 150.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-text = "Jouer"
+[node name="SubmitButton" parent="Background" instance=ExtResource("6_s3k44")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 772.0
+offset_top = 950.0
+offset_right = 1147.0
+offset_bottom = 1062.5
+grow_vertical = 1
+
+[node name="Label" parent="Background/SubmitButton" index="0"]
+text = "Suivant"
 
 [node name="CharacterSelectors" type="Control" parent="Background"]
 anchors_preset = 0
@@ -205,10 +204,10 @@ unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="CharacterDisplay" to="." method="on_character_card_hovered"]
 [connection signal="mouse_exited" from="CharacterDisplay" to="." method="close_info_popup"]
-[connection signal="pressed" from="Background/PresetSelector/Preset1" to="." method="on_preset_selected" binds= [0]]
-[connection signal="pressed" from="Background/PresetSelector/Preset2" to="." method="on_preset_selected" binds= [1]]
-[connection signal="pressed" from="Background/PresetSelector/Preset3" to="." method="on_preset_selected" binds= [2]]
-[connection signal="pressed" from="Background/PlayButton" to="." method="_on_apply"]
+[connection signal="pressed" from="Background/PresetSelector/PresetSelector1" to="." method="on_preset_selected" binds= [0]]
+[connection signal="pressed" from="Background/PresetSelector/PresetSelector2" to="." method="on_preset_selected" binds= [1]]
+[connection signal="pressed" from="Background/PresetSelector/PresetSelector3" to="." method="on_preset_selected" binds= [2]]
+[connection signal="pressed" from="Background/SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector" to="." method="on_ally_character_selected" binds= [0]]
 [connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector2" to="." method="on_ally_character_selected" binds= [1]]
 [connection signal="clicked" from="Background/CharacterSelectors/PlayerCharacterSelector/CharacterSelector3" to="." method="on_ally_character_selected" binds= [2]]
@@ -218,3 +217,5 @@ unique_name_in_owner = true
 [connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector2" to="." method="close_info_popup"]
 [connection signal="hover_entered" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector3" to="." method="on_opponent_character_hovered" binds= [2]]
 [connection signal="hover_exited" from="Background/CharacterSelectors/OpponentCharacterSelector/CharacterSelector3" to="." method="close_info_popup"]
+
+[editable path="Background/SubmitButton"]

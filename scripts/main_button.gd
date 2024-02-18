@@ -7,10 +7,3 @@ func enable(state : bool) -> void :
 
 func set_text(str : String) -> void :
 	$Label.text = str
-
-
-func _on_button_down():
-	scale = Vector2(0.9, 0.9)
-
-func _on_button_up():
-	scale = Vector2.ONE

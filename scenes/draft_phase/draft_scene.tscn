@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=21 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://duy7wb6j6ywg5" path="res://Sprites/ui_icons/UI draft barre rouge.png" id="16_lshbp"]
 [ext_resource type="Texture2D" uid="uid://cuim3yanukfq6" path="res://Sprites/ui_icons/UI draft barre violet 2.png" id="17_40nrv"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="18_h2vva"]
+[ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="19_p5f0v"]
 
 [sub_resource type="Environment" id="Environment_48764"]
 background_mode = 3
@@ -152,25 +153,26 @@ text = "Équipe adverse"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SubmitButton" type="Button" parent="BackgroundLayer"]
+[node name="SubmitButton" parent="BackgroundLayer" instance=ExtResource("19_p5f0v")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -31.5
-offset_top = -31.0
-offset_right = 31.5
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 40
-disabled = true
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 772.0
+offset_top = 950.0
+offset_right = 1147.0
+offset_bottom = 1062.5
+grow_vertical = 1
+
+[node name="Label" parent="BackgroundLayer/SubmitButton" index="0"]
+offset_left = -102.0
+offset_right = 102.0
 text = "Valider"
 
 [node name="Foreground" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="BackgroundLayer/SubmitButton" to="." method="_on_choice_submitted"]
+
+[editable path="BackgroundLayer/SubmitButton"]

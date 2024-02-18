@@ -16,7 +16,7 @@ var info_popup : InfoPopup :
 
 var player_character_selectors : Array[CharacterSelector]
 var opponent_character_selectors : Array[CharacterSelector]
-var preset_selectors : Array[Button]
+var preset_selectors : Array[PresetSelector]
 var character_display : CharacterCard3D
 var card_displays : Array[PlayableCard3D]
 var card_amount_displays : Array[Label]
@@ -26,10 +26,12 @@ var selected_character_index : int :
 		selected_character_index = value
 		character_display.character = selected_character
 		for i in range(3) : 
-			preset_selectors[i].text = selected_character.deck_presets[i].preset_name
+			preset_selectors[i].set_text(selected_character.deck_presets[i].preset_name)
+			preset_selectors[i].selected = selected_presets[selected_character_index] == i
 		for i in range(5) : 
 			card_displays[i].card = selected_character.card_pool[i]
 		update_card_counts()
+		if selected_character_index == 2 : state = DeckbuildingState.READY
 
 @export var card_zoom_position_offset : Vector3
 @export var card_zoom_scale : Vector3
@@ -46,6 +48,23 @@ var selected_character : Character :
 		return GameManager.player.get_character(selected_character_index)
 
 var selected_presets : Array[int] = [0, 0, 0]
+
+enum DeckbuildingState { BROWSING, READY, SUBMITTED}
+var state : DeckbuildingState :
+	set(value) :
+		state = value
+		match state :
+			DeckbuildingState.BROWSING :
+				%SubmitButton.enable(true)
+				%SubmitButton.set_text("Suivant")
+			DeckbuildingState.READY :
+				%SubmitButton.enable(true)
+				%SubmitButton.set_text("Jouer")
+			DeckbuildingState.SUBMITTED :
+				%SubmitButton.enable(false)
+				%SubmitButton.set_text("En attente")
+				for selector in preset_selectors :
+					selector.disabled = true
 
 @rpc("any_peer", "call_remote", "reliable")
 func notify_preset_choice(presets : Array) -> void : 
@@ -69,12 +88,6 @@ func apply_presets(host_presets : Array, client_presets : Array) -> void :
 		client.get_character(char_index).use_preset(client_presets[char_index])
 		
 	GameManager.set_game_state(GameManager.GameState.COMBAT)
-
-func _on_apply() -> void:
-	if NetworkManager.is_host : 
-		notify_preset_choice(selected_presets)
-	else :
-		notify_preset_choice.rpc(selected_presets)
 
 func _ready():
 	player_character_selectors.append_array(%PlayerCharacterSelector.get_children())
@@ -136,6 +149,8 @@ func close_info_popup() -> void :
 
 func on_preset_selected(preset_index : int) -> void :
 	selected_presets[selected_character_index] = preset_index
+	for i in range(3) :
+		preset_selectors[i].selected = preset_index == i
 	update_card_counts()
 
 func update_card_counts() -> void :
@@ -144,3 +159,17 @@ func update_card_counts() -> void :
 		card_displays[i].overlay = unselected_card_fx.instantiate() if amount == 0 else null
 		card_displays[i].use_text_color(amount != 0)
 		card_amount_displays[i].text = str(amount)
+
+
+func _on_submit_button_pressed():
+	match state :
+		DeckbuildingState.BROWSING : 
+			selected_character_index += 1
+			return
+		DeckbuildingState.READY :
+			if NetworkManager.is_host : 
+				notify_preset_choice(selected_presets)
+			else :
+				notify_preset_choice.rpc(selected_presets)
+			state = DeckbuildingState.SUBMITTED
+			return

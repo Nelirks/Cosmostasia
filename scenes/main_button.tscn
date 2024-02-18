@@ -6,15 +6,16 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
 font = ExtResource("2_slb3p")
-font_size = 65
+font_size = 40
 
 [node name="Button" type="TextureButton"]
+custom_minimum_size = Vector2(375, 112.5)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -1080.0
-offset_right = 500.0
-offset_bottom = -930.0
+offset_right = 375.0
+offset_bottom = -967.5
 grow_vertical = 0
 pivot_offset = Vector2(256, 81)
 texture_normal = ExtResource("1_2361w")
@@ -35,11 +36,6 @@ offset_right = 78.5
 offset_bottom = 39.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "
-"
 label_settings = SubResource("LabelSettings_gbn1r")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="button_down" from="." to="." method="_on_button_down"]
-[connection signal="button_up" from="." to="." method="_on_button_up"]

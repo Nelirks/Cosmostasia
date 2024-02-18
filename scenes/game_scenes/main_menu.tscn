@@ -62,10 +62,10 @@ layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
 anchor_bottom = 0.0
-offset_left = 350.0
-offset_top = 900.0
-offset_right = 850.0
-offset_bottom = 1050.0
+offset_left = 472.0
+offset_top = 950.0
+offset_right = 847.0
+offset_bottom = 1062.5
 grow_vertical = 1
 
 [node name="Label" parent="HostButton" index="0"]
@@ -77,10 +77,10 @@ layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
 anchor_bottom = 0.0
-offset_left = 1070.0
-offset_top = 900.0
-offset_right = 1570.0
-offset_bottom = 1050.0
+offset_left = 1072.0
+offset_top = 950.0
+offset_right = 1447.0
+offset_bottom = 1062.5
 grow_vertical = 1
 
 [node name="Label" parent="JoinButton" index="0"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4qmo33q344c6"]
+
+[ext_resource type="Texture2D" uid="uid://bayb6qa8pbrnr" path="res://resources/sprites/ui_elements/character_selector_deselected.png" id="1_mbvok"]
+[ext_resource type="Script" path="res://scripts/deckbuilding_phase/preset_selector.gd" id="1_snand"]
+[ext_resource type="Texture2D" uid="uid://dwnornsy4viba" path="res://resources/sprites/ui_elements/character_selector_selected.png" id="3_ui3ud"]
+[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="4_nx7qv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
+font = ExtResource("4_nx7qv")
+font_size = 20
+
+[node name="preset_selector" type="TextureButton"]
+custom_minimum_size = Vector2(300, 80)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1618.0
+offset_bottom = -1000.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_mbvok")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("1_snand")
+selected_texture = ExtResource("3_ui3ud")
+unselected_texture = ExtResource("1_mbvok")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -13.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_gbn1r")
+horizontal_alignment = 1
+vertical_alignment = 1

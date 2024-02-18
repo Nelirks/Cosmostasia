@@ -28,6 +28,7 @@ var info_popup : InfoPopup :
 var waiting_for_opponent : bool = false
 
 func _ready():
+	%SubmitButton.enable(false)
 	player_choices.append_array(%PlayerChoices.get_children())
 	opponent_picks.append_array(%OpponentDraft.get_children())
 	player_picks.append_array(%PlayerDraft.get_children())
@@ -128,9 +129,11 @@ func apply_choices(host_char : int, client_char : int) -> void :
 	client_picks.append(client_char)
 	GameManager.get_player(true).add_character(character_pool[host_char].instantiate())
 	GameManager.get_player(false).add_character(character_pool[client_char].instantiate())
-	display_picks()
 	if GameManager.player.get_characters().size() == 3 :
 		GameManager.set_game_state(GameManager.GameState.DECKBUILDING)
+	else : 
+		display_picks()
+		%SubmitButton.set_text("Valider")
 
 func display_choices() -> void :
 	for i in range(cur_choices.size()) :
@@ -147,7 +150,7 @@ func display_picks() -> void :
 func _on_choice_selected(choice_index : int) -> void :
 	if waiting_for_opponent : return
 	selected_choice = choice_index
-	%SubmitButton.disabled = false
+	%SubmitButton.enable(true)
 	for i in range(player_choices.size()) :
 		if i != choice_index : player_choices[i].stop_overlay(self)
 	player_choices[choice_index].play_overlay(selected_character_fx, self)
@@ -156,7 +159,8 @@ func _on_choice_selected(choice_index : int) -> void :
 func _on_choice_submitted() -> void : 
 	if selected_choice == -1 : return
 	waiting_for_opponent = true
-	%SubmitButton.disabled = true
+	%SubmitButton.enable(false)
+	%SubmitButton.set_text("En attente")
 	if NetworkManager.is_host : 
 		notify_choice(cur_choices[selected_choice])
 	else :
