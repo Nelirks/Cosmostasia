@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=6 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
-[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_ovrrf"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
-[ext_resource type="Texture2D" uid="uid://d0sbl3hsxa6qk" path="res://resources/sprites/main_menu/bouton_jouer_simon.png" id="3_56qr8"]
+[ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="3_bfxwx"]
 [ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="5_k7rl3"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8flb"]
@@ -24,14 +23,6 @@ radial_accel_max = 100.0
 scale_min = 2.0
 scale_max = 4.0
 color = Color(0.78125, 0.691406, 0.519531, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
-font = ExtResource("1_ovrrf")
-font_size = 65
-
-[sub_resource type="LabelSettings" id="LabelSettings_c2bgt"]
-font = ExtResource("1_ovrrf")
-font_size = 70
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -59,76 +50,35 @@ amount = 1000
 process_material = SubResource("ParticleProcessMaterial_u8flb")
 lifetime = 3.5
 
-[node name="HostButton" type="TextureButton" parent="."]
+[node name="HostButton" parent="." instance=ExtResource("3_bfxwx")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
 offset_left = 350.0
-offset_top = -180.0
+offset_top = 900.0
 offset_right = 850.0
-offset_bottom = -30.0
-grow_vertical = 0
-pivot_offset = Vector2(256, 81)
-texture_normal = ExtResource("3_56qr8")
-ignore_texture_size = true
-stretch_mode = 0
+offset_bottom = 1050.0
+grow_vertical = 1
 
-[node name="Label" type="Label" parent="HostButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.5
-offset_top = -39.5
-offset_right = 78.5
-offset_bottom = 39.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Host"
-label_settings = SubResource("LabelSettings_gbn1r")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label" parent="HostButton" index="0"]
+text = "Héberger"
 
-[node name="JoinButton" type="TextureButton" parent="."]
+[node name="JoinButton" parent="." instance=ExtResource("3_bfxwx")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -850.0
-offset_top = -180.0
-offset_right = -350.0
-offset_bottom = -30.0
-grow_horizontal = 0
-grow_vertical = 0
-pivot_offset = Vector2(255, 81)
-texture_normal = ExtResource("3_56qr8")
-ignore_texture_size = true
-stretch_mode = 0
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 1070.0
+offset_top = 900.0
+offset_right = 1570.0
+offset_bottom = 1050.0
+grow_vertical = 1
 
-[node name="Label" type="Label" parent="JoinButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -78.5
-offset_top = -39.5
-offset_right = 78.5
-offset_bottom = 39.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Join"
-label_settings = SubResource("LabelSettings_gbn1r")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label" parent="JoinButton" index="0"]
+text = "Rejoindre"
 
 [node name="SettingsButton" type="TextureButton" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -235,40 +185,12 @@ text = "Retour"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WaitingBackground" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.384314, 0.384314, 0.384314, 1)
-
-[node name="Label" type="Label" parent="WaitingBackground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "En attente d'un autre joueur..."
-label_settings = SubResource("LabelSettings_c2bgt")
-
-[connection signal="button_down" from="HostButton" to="." method="_on_host_button_button_down"]
-[connection signal="button_up" from="HostButton" to="." method="_on_host_button_button_up"]
 [connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
-[connection signal="button_down" from="JoinButton" to="." method="_on_join_button_button_down"]
-[connection signal="button_up" from="JoinButton" to="." method="_on_join_button_button_up"]
 [connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
 [connection signal="button_down" from="SettingsButton" to="." method="_on_settings_button_button_down"]
 [connection signal="button_up" from="SettingsButton" to="." method="_on_settings_button_button_up"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="SettingsBackground/Button" to="." method="_on_button_pressed"]
+
+[editable path="HostButton"]
+[editable path="JoinButton"]
