@@ -105,9 +105,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
 
 [node name="Fire" parent="BrasierESE" index="0" instance=ExtResource("2_ym8s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+is_player_side = true
 
 [node name="Fire" parent="BrasierWSW" index="0" instance=ExtResource("2_ym8s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
+is_player_side = true
 
 [node name="PillarsSW" parent="." index="7"]
 surface_material_override/0 = ExtResource("8_ush36")
