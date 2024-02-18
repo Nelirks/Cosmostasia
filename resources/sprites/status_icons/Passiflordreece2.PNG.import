@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwl7owb5sttah"
-path="res://.godot/imported/plumes.PNG-419b3a04560305127e1a39fb22f6c979.ctex"
+uid="uid://cs5txe83kbigx"
+path="res://.godot/imported/Passiflordreece2.PNG-74c6708f9b58571d6590338373e4eb42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/status_icons/plumes.PNG"
-dest_files=["res://.godot/imported/plumes.PNG-419b3a04560305127e1a39fb22f6c979.ctex"]
+source_file="res://resources/sprites/status_icons/Passiflordreece2.PNG"
+dest_files=["res://.godot/imported/Passiflordreece2.PNG-74c6708f9b58571d6590338373e4eb42.ctex"]
 
 [params]
 

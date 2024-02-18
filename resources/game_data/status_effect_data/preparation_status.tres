@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://djd70t8r8fxpv"]
 
 [ext_resource type="Script" path="res://scripts/data/status_effects/preparation_status_effect.gd" id="1_afs51"]
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_twi1c"]
+[ext_resource type="Texture2D" uid="uid://c8838au0qeh64" path="res://resources/sprites/status_icons/Preparation.png" id="1_wgiim"]
 
 [resource]
 script = ExtResource("1_afs51")
@@ -11,4 +11,4 @@ type = 0
 display_names = Array[String](["Préparation"])
 description = "!S!Préparation!S!
 Augmente les dégâts de 50% après un tour"
-icon = ExtResource("1_twi1c")
+icon = ExtResource("1_wgiim")

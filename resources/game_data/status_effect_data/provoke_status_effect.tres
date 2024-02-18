@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://pwebxljbe7jp"]
 
 [ext_resource type="Script" path="res://scripts/data/status_effects/provoke_status_effect.gd" id="1_ho5l0"]
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_wmpnr"]
+[ext_resource type="Texture2D" uid="uid://c8u3mbvxtp8hp" path="res://resources/sprites/status_icons/Provocation.png" id="1_wdlc3"]
 
 [resource]
 script = ExtResource("1_ho5l0")
@@ -10,4 +10,4 @@ type = 0
 display_names = Array[String](["Provocation"])
 description = "!S!Provocation!S!
 Force les adversaires à attaquer ce personnage"
-icon = ExtResource("1_wmpnr")
+icon = ExtResource("1_wdlc3")

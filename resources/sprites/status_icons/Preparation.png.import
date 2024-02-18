@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwl7owb5sttah"
-path="res://.godot/imported/plumes.PNG-419b3a04560305127e1a39fb22f6c979.ctex"
+uid="uid://c8838au0qeh64"
+path="res://.godot/imported/Preparation.png-b79e5bdd6d53b84fc8c0a5104e9cb1c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/status_icons/plumes.PNG"
-dest_files=["res://.godot/imported/plumes.PNG-419b3a04560305127e1a39fb22f6c979.ctex"]
+source_file="res://resources/sprites/status_icons/Preparation.png"
+dest_files=["res://.godot/imported/Preparation.png-b79e5bdd6d53b84fc8c0a5104e9cb1c2.ctex"]
 
 [params]
 

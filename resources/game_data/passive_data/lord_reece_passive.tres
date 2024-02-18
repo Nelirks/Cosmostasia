@@ -1,10 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bxtqbv65hysla"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bxtqbv65hysla"]
 
+[ext_resource type="Texture2D" uid="uid://cs5txe83kbigx" path="res://resources/sprites/status_icons/Passiflordreece2.PNG" id="1_1gupc"]
 [ext_resource type="Script" path="res://scripts/data/passive_effects/lord_reece_passive.gd" id="1_ehlbs"]
+[ext_resource type="Texture2D" uid="uid://c555n33up84wm" path="res://resources/sprites/status_icons/Passiflordreece1.PNG" id="2_upiqt"]
 
 [resource]
 script = ExtResource("1_ehlbs")
 heal_amount = 10
+hurt_icon = ExtResource("1_1gupc")
+safe_icon = ExtResource("2_upiqt")
 id = "lord_reece_passive"
 type = 2
+display_names = Array[String]([])
 description = "Au début de son tour et s'il n'a pas subi de dégâts au tour précédent, se soigne de 10 PV."

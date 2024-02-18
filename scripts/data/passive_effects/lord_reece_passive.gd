@@ -2,12 +2,15 @@ extends StatusEffect
 
 @export var heal_amount : int
 
+@export var hurt_icon : Texture
+@export var safe_icon : Texture
+
 var took_damage_last_turn : bool
 
 func on_damage_taken(source : Character, amount : int) -> void :
 	if source == null or source.player == owner.player : return
 	took_damage_last_turn = true
-	
+	status_updated.emit()
 
 func on_effect_resolution(effect : Effect) -> void :
 	if effect is StartTurnNotifierEffect and effect.player == owner.player and !took_damage_last_turn :
@@ -15,3 +18,7 @@ func on_effect_resolution(effect : Effect) -> void :
 
 func end_turn() -> void :
 	took_damage_last_turn = false
+	status_updated.emit()
+
+func get_texture() -> Texture : 
+	return hurt_icon if took_damage_last_turn else safe_icon
