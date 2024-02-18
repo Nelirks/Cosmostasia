@@ -73,12 +73,13 @@ func _create_card_display(card : Card) -> void :
 	cards[card].card = card
 	
 func _destroy_card_display(card : Card, immediate : bool = false) -> void :
-	if cards[card] == null : return
+	if card == null or !cards.has(card) or cards[card] == null : return
 	if immediate : 
 		if cards[card].tween : cards[card].tween.kill()
 		cards[card].queue_free()
 		cards[card] = null
 	else :
+		cards[card].position.z -= 0.01
 		cards[card].dissolve(dissolve_duration)
 		await get_tree().create_timer(dissolve_duration).timeout
 		_destroy_card_display(card, true)
