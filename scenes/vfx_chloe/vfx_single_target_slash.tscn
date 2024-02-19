@@ -95,7 +95,7 @@ animation_name = "Slash"
 lifetime = 1.0
 
 [node name="Slash1" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.633927, 5.49712e-08, -0.995126, 1.35946, -3.50205e-08, -0.464035, -9.32769e-08, -0.884, -4.34983e-08, 0, 0, 1)
+transform = Transform3D(0.438745, 0.202828, -1.01931, 1.33421, 0.257389, 0.386734, 0.526665, -0.821017, -0.130574, 0, 0, 1)
 mesh = ExtResource("2_gnx8n")
 surface_material_override/0 = SubResource("ShaderMaterial_0gt78")
 
