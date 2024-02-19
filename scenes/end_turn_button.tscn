@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://lpnhcjsvs3n5"]
+
+[ext_resource type="Texture2D" uid="uid://tclqfu61py6f" path="res://resources/sprites/ui_elements/end_turn_enabled.png" id="1_rocot"]
+[ext_resource type="Script" path="res://scripts/end_turn_button.gd" id="2_grukf"]
+[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="2_l1ltx"]
+[ext_resource type="Texture2D" uid="uid://cnx8kjtfoq8p5" path="res://resources/sprites/ui_elements/end_turn_disabled.png" id="3_16te2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvrp6"]
+font = ExtResource("2_l1ltx")
+font_size = 30
+
+[node name="EndTurnButton" type="TextureButton"]
+offset_right = 235.0
+offset_bottom = 111.0
+texture_normal = ExtResource("1_rocot")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_grukf")
+active_turn_button_texture = ExtResource("1_rocot")
+inactive_turn_button_texture = ExtResource("3_16te2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tour suivant"
+label_settings = SubResource("LabelSettings_rvrp6")
+horizontal_alignment = 1
+vertical_alignment = 1
