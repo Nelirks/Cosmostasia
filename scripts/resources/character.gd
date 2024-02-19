@@ -78,6 +78,8 @@ func heal(amount : int) -> void :
 func check_game_state() -> void:
 	if current_health <= 0 :
 		is_dead = true
+		for i in range(_statuses.size()-1, -1, -1) :
+			_statuses.remove_at(i)
 		player.remove_cards(self)
 
 func apply_armor(amount : int) -> void :
@@ -137,8 +139,6 @@ func instantiate() -> Character :
 	var copy : Character = self.duplicate(true)
 	copy.setup()
 	return copy
-
-
 
 func play_overlay(overlay : PackedScene) -> void :
 	overlay_request.emit(overlay)
