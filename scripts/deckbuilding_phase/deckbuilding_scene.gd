@@ -112,6 +112,7 @@ func _ready():
 	TutorialGlobal.trigger_tutorial("3_cardtype")
 
 func on_ally_character_selected(char_index : int) -> void :
+	AudioManager.post_event(AK.EVENTS.DRAFT_VALIDATE_BUTTON)
 	selected_character_index = char_index
 
 func on_opponent_character_hovered(char_index : int) -> void :
@@ -123,6 +124,7 @@ func on_character_card_hovered() -> void :
 	info_popup = info_popup_scene.instantiate()
 	info_popup.add_string(character_display.character.character_quote)
 	info_popup.set_target_rect(character_display.get_rect())
+	AudioManager.post_event(AK.EVENTS.DRAFT_HOVER_CARD)
 
 func on_playable_card_mouse_entered(card_index : int) -> void :
 	if card_displays[card_index].tween != null : card_displays[card_index].tween.kill()
@@ -131,6 +133,7 @@ func on_playable_card_mouse_entered(card_index : int) -> void :
 	card_displays[card_index].tween.tween_property(card_displays[card_index], "position", card_base_positions[card_index] + card_zoom_position_offset, card_zoom_in_duration)
 	card_displays[card_index].tween.parallel().tween_property(card_displays[card_index], "scale", card_zoom_scale, card_zoom_in_duration)
 	card_displays[card_index].tween.tween_callback(display_card_info_popup.bind(card_index))
+	AudioManager.post_event(AK.EVENTS.DRAFT_HOVER_CARD)
 
 func on_playable_card_mouse_exited(card_index : int) -> void :
 	close_info_popup()
@@ -152,6 +155,7 @@ func on_preset_selected(preset_index : int) -> void :
 	for i in range(3) :
 		preset_selectors[i].selected = preset_index == i
 	update_card_counts()
+	AudioManager.post_event(AK.EVENTS.DRAFT_CLICK_CARD)
 
 func update_card_counts() -> void :
 	for i in range(5) : 
@@ -162,6 +166,7 @@ func update_card_counts() -> void :
 
 
 func _on_submit_button_pressed():
+	AudioManager.post_event(AK.EVENTS.DRAFT_VALIDATE_BUTTON)
 	match state :
 		DeckbuildingState.BROWSING : 
 			selected_character_index += 1

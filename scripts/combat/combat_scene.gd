@@ -31,6 +31,7 @@ func _unhandled_input(event):
 		($PlayerHand as HandDisplay).deselect_card()
 
 func _on_end_turn_button_pressed():
+	AudioManager.post_event(AK.EVENTS.END_TURN)
 	GameManager.combat.query_end_turn()
 
 func play_vfx(vfx_scene : PackedScene, source : CharacterCard3D, target : CharacterCard3D) -> void :

@@ -2,50 +2,50 @@ class_name AK
 
 class EVENTS:
 
-	const BUTTON_CLICK = 814543256
-	const START_COMBATMUSIC = 5298891
-	const SWITCH_PHASE03 = 1342751926
-	const END_COMBATMUSIC = 878153172
-	const CARD_BUFF = 2145643165
-	const START_TURN = 3790030967
-	const DRAFT_HOVER_CARD = 1258815674
-	const CARD_DEBUFF = 3760597508
-	const START_MAINMENUMUSIC = 2387187289
-	const CARD_USE = 659043495
-	const TAKE_DAMAGE = 3020609900
-	const CARD_DRAW = 4136169396
-	const STOP_MUSIC = 2837384057
-	const SWITCH_PHASE02 = 1342751927
-	const START_MUSIC = 540993415
-	const END_TURN = 731380034
+	const VICTORY = 2716678721
 	const BUTTON_HOVER = 1701177942
 	const DEFEAT = 1593864692
-	const VICTORY = 2716678721
-	const DRAFT_CLICK_CARD = 3103125184
+	const CARD_ZOOMOUT = 3576548833
+	const END_TURN = 731380034
+	const STOP_MUSIC = 2837384057
+	const START_MAINMENUMUSIC = 2387187289
+	const END_COMBATMUSIC = 878153172
+	const SWITCH_PHASE03 = 1342751926
 	const DRAFT_VALIDATE_BUTTON = 3560549638
+	const DRAFT_CLICK_CARD = 3103125184
+	const BUTTON_CLICK = 814543256
+	const CARD_USE = 659043495
+	const SWITCH_PHASE02 = 1342751927
+	const TAKE_DAMAGE = 3020609900
+	const CARD_ZOOMIN = 1461912510
+	const DRAFT_HOVER_CARD = 1258815674
+	const START_COMBATMUSIC = 5298891
+	const CARD_DRAW = 4136169396
+	const START_TURN = 3790030967
+	const START_MUSIC = 540993415
 
 	const _dict = {
-		"Button_Click": BUTTON_CLICK,
-		"Start_CombatMusic": START_COMBATMUSIC,
-		"Switch_Phase03": SWITCH_PHASE03,
-		"End_CombatMusic": END_COMBATMUSIC,
-		"Card_Buff": CARD_BUFF,
-		"Start_Turn": START_TURN,
-		"Draft_Hover_Card": DRAFT_HOVER_CARD,
-		"Card_Debuff": CARD_DEBUFF,
-		"Start_MainMenuMusic": START_MAINMENUMUSIC,
-		"Card_Use": CARD_USE,
-		"Take_Damage": TAKE_DAMAGE,
-		"Card_Draw": CARD_DRAW,
-		"Stop_Music": STOP_MUSIC,
-		"Switch_Phase02": SWITCH_PHASE02,
-		"Start_Music": START_MUSIC,
-		"End_Turn": END_TURN,
+		"Victory": VICTORY,
 		"Button_Hover": BUTTON_HOVER,
 		"Defeat": DEFEAT,
-		"Victory": VICTORY,
+		"Card_ZoomOut": CARD_ZOOMOUT,
+		"End_Turn": END_TURN,
+		"Stop_Music": STOP_MUSIC,
+		"Start_MainMenuMusic": START_MAINMENUMUSIC,
+		"End_CombatMusic": END_COMBATMUSIC,
+		"Switch_Phase03": SWITCH_PHASE03,
+		"Draft_Validate_Button": DRAFT_VALIDATE_BUTTON,
 		"Draft_Click_Card": DRAFT_CLICK_CARD,
-		"Draft_Validate_Button": DRAFT_VALIDATE_BUTTON
+		"Button_Click": BUTTON_CLICK,
+		"Card_Use": CARD_USE,
+		"Switch_Phase02": SWITCH_PHASE02,
+		"Take_Damage": TAKE_DAMAGE,
+		"Card_ZoomIn": CARD_ZOOMIN,
+		"Draft_Hover_Card": DRAFT_HOVER_CARD,
+		"Start_CombatMusic": START_COMBATMUSIC,
+		"Card_Draw": CARD_DRAW,
+		"Start_Turn": START_TURN,
+		"Start_Music": START_MUSIC
 	}
 
 class STATES:
@@ -54,22 +54,22 @@ class STATES:
 		const GROUP = 1021618141
 
 		class STATE:
-			const PHASE04 = 1169953706
 			const NONE = 748895195
-			const PHASE03 = 1169953709
-			const MAINMENU = 3604647259
 			const PHASE02 = 1169953708
+			const PHASE03 = 1169953709
+			const PHASE04 = 1169953706
+			const MAINMENU = 3604647259
 			const PHASE01 = 1169953711
 
 	const _dict = {
 		"MusicState": {
 			"GROUP": 1021618141,
 			"STATE": {
-				"Phase04": 1169953706,
 				"None": 748895195,
-				"Phase03": 1169953709,
-				"MainMenu": 3604647259,
 				"Phase02": 1169953708,
+				"Phase03": 1169953709,
+				"Phase04": 1169953706,
+				"MainMenu": 3604647259,
 				"Phase01": 1169953711
 			}
 		}
