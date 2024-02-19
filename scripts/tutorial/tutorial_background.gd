@@ -10,4 +10,5 @@ func init(data:tutorial_data):
 
 
 func _on_panel_pressed():
+	TutorialGlobal.next()
 	queue_free()
