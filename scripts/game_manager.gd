@@ -3,7 +3,8 @@ extends Node
 var rng : RandomNumberGenerator
 var _draft_scene : PackedScene = preload("res://scenes/draft_phase/draft_scene.tscn")
 var _deckbuilding_scene : PackedScene = preload("res://scenes/deckbuilding_phase/deckbuilding_scene.tscn")
-var _combat_scene : PackedScene = preload("res://scenes/combat_phase/combat_scene.tscn")
+var _combat_scene_path = "res://scenes/combat_phase/combat_scene.tscn"
+var _combat_scene : PackedScene
 var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
 @onready var combat : CombatManager = $CombatManager
 
@@ -17,6 +18,7 @@ var opponent : Player
 signal send_message(message : String)
 
 func _ready() -> void:
+	ResourceLoader.load_threaded_request(_combat_scene_path)
 	NetworkManager.connection_done.connect(_on_network_connection)
 
 func _init() :
@@ -67,6 +69,8 @@ func _on_state_synced(state : GameState) -> void :
 				sync_rng()
 			get_tree().change_scene_to_packed(_deckbuilding_scene)
 		GameState.COMBAT :
+			if _combat_scene == null :
+				_combat_scene = ResourceLoader.load_threaded_get(_combat_scene_path)
 			get_tree().change_scene_to_packed(_combat_scene)
 			if NetworkManager.is_host : 
 				sync_rng()
