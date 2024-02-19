@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://0a53wbhllftg"]
+
+[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="1_d4gbj"]
+
+[resource]
+font = ExtResource("1_d4gbj")
+font_size = 30
+font_color = Color(1, 1, 0, 1)

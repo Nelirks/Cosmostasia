@@ -1,10 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdpdaokt24jyd"]
 
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_l73no"]
-[ext_resource type="Gradient" uid="uid://5oobqi0fgwks" path="res://resources/sprites/main_menu/black_gradient.tres" id="2_134a1"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qlkkq"]
-gradient = ExtResource("2_134a1")
+[ext_resource type="LabelSettings" uid="uid://0a53wbhllftg" path="res://title_label.tres" id="2_giuo1"]
+[ext_resource type="LabelSettings" uid="uid://jwwhhoeeh1th" path="res://name_label.tres" id="3_a763q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,11 +22,371 @@ grow_vertical = 2
 texture = ExtResource("1_l73no")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_qlkkq")
+color = Color(0.117647, 0.117647, 0.117647, 0.576471)
+
+[node name="Raphael Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -390.0
+offset_right = 400.0
+offset_bottom = -351.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lead Developer / Game Design"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Raphael Name" type="Label" parent="Raphael Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Raphaël Lesbros"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChloeB Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -290.0
+offset_right = 400.0
+offset_bottom = -251.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lead Artist / VFX Artist / Game Design"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChloeB Name" type="Label" parent="ChloeB Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Chloé Bigot"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eleque Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -190.0
+offset_right = 400.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lead Game Design / Narrative Design / 3D Artist / Developer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eleque Name" type="Label" parent="Eleque Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Eleque Gioan"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Simon Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -90.0
+offset_right = 400.0
+offset_bottom = -50.9999
+grow_horizontal = 2
+grow_vertical = 2
+text = "Developer / UX Designer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Simon Name" type="Label" parent="Simon Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Simon Gosse"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChloeM Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 10.0
+offset_right = 400.0
+offset_bottom = 49.0001
+grow_horizontal = 2
+grow_vertical = 2
+text = "2D Artist"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChloeM Name" type="Label" parent="ChloeM Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Chloé Marin"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eliott Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 110.0
+offset_right = 400.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2D Artist / UI Designer / Game Design"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eliott Name" type="Label" parent="Eliott Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Eliott Bouchonnet"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaraM Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 210.0
+offset_right = 400.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2D Artist / UI Designer / Game Design"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaraM Name" type="Label" parent="ClaraM Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Clara Mocerino"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bastien Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 310.0
+offset_right = 400.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sound Designer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bastien Name" type="Label" parent="Bastien Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Bastien Okonski"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaraA Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 410.0
+offset_right = 400.0
+offset_bottom = 449.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sound Designer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaraA Name" type="Label" parent="ClaraA Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Clara Arcelon"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaraA Title2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 510.0
+offset_right = 400.0
+offset_bottom = 549.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sound Designer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaraA Name" type="Label" parent="ClaraA Title2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 6.0
+offset_right = 400.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Clara Arcelon"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
