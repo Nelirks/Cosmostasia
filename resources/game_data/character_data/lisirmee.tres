@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d1uboma06p1qy" path="res://resources/game_data/card_data/lisirmee/vol_imprévisible.tres" id="5_x7p4l"]
 [ext_resource type="Texture2D" uid="uid://tb63oimat1w0" path="res://resources/sprites/character_sprites/Lisirmee.png" id="6_57mh1"]
 [ext_resource type="Script" path="res://scripts/resources/deck_preset.gd" id="6_k4vo1"]
-[ext_resource type="Resource" path="res://resources/game_data/passive_data/lisirmee_passive.tres" id="8_uyypj"]
+[ext_resource type="Resource" uid="uid://rs2gjltcofhg" path="res://resources/game_data/passive_data/lisirmee_passive.tres" id="8_uyypj"]
 
 [sub_resource type="Resource" id="Resource_w3gip"]
 script = ExtResource("6_k4vo1")

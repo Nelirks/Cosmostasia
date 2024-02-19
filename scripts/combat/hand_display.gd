@@ -65,6 +65,7 @@ func _register_card(card : Card) -> void :
 func _destroy_card(card : Card) :
 	if last_played_card == card : last_played_card = null
 	if cards[card] != null : _destroy_card_display(card)
+	await get_tree().create_timer(dissolve_duration + 0.1).timeout
 	cards.erase(card)
 
 func _create_card_display(card : Card) -> void :
