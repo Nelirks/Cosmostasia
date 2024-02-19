@@ -94,17 +94,16 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ym31t"]
 resource_name = "Slash"
-length = 0.52
-loop_mode = 1
+length = 0.46
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Slash1:surface_material_override/0:shader_parameter/FloatParameter")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.36, 0.5),
+"times": PackedFloat32Array(0, 0.22, 0.44),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.25, 0.155, 0.67]
@@ -116,7 +115,7 @@ tracks/1/path = NodePath("Slash1:surface_material_override/0:shader_parameter/Fl
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.52),
+"times": PackedFloat32Array(0, 0.13, 0.46),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.065, 0.1, 0.406]
@@ -142,7 +141,7 @@ tracks/3/path = NodePath("Slash1/GPUParticles3D:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.09, 0.48),
+"times": PackedFloat32Array(0.09, 0.46),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
