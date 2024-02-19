@@ -1,5 +1,7 @@
 extends Control
 
+@export var wait_panel_fade_in_duration : float
+
 func _ready():
 	NetworkManager.connection_done.connect(_start_game)
 	
@@ -7,14 +9,16 @@ func _on_host_button_pressed():
 	if OS.has_feature("solo") : _start_game()
 	else : 
 		NetworkManager.create_server((%PortEdit as TextEdit).text)
-		%HostButton.enable(false)
+		%HostButton.visible = false
 		%JoinButton.visible = false
+		display_wait_panel()
 	
 func _on_join_button_pressed():
 	if OS.has_feature("solo") : _start_game()
 	else : 
 		NetworkManager.create_client((%IPEdit as TextEdit).text, (%PortEdit as TextEdit).text)
-		%JoinButton.enable(false)
+		display_wait_panel()
+		%JoinButton.visible = false
 		%HostButton.visible = false
 
 func _on_settings_button_pressed():
@@ -25,3 +29,10 @@ func _on_button_pressed():
 
 func _start_game() -> void :
 	GameManager.set_game_state(GameManager.GameState.DRAFT)
+
+
+func display_wait_panel() -> void :
+	$WaitPanel.visible = true
+	$WaitPanel.self_modulate = Color(1, 1, 1, 0)
+	var tween : Tween = create_tween()
+	tween.tween_property($WaitPanel, "self_modulate", Color(1, 1, 1, 1), wait_panel_fade_in_duration)

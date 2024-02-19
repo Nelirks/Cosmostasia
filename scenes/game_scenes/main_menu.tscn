@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=11 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
@@ -30,6 +30,13 @@ color = Color(0.78125, 0.691406, 0.519531, 1)
 font = ExtResource("6_fgwmi")
 font_size = 54
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgtj5"]
+bg_color = Color(0, 0, 0, 0.72549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_41b56"]
+font = ExtResource("6_fgwmi")
+font_size = 80
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -38,6 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ooml6")
+wait_panel_fade_in_duration = 0.75
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -221,6 +229,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 53
 text = "Retour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaitPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgtj5")
+
+[node name="Label" type="Label" parent="WaitPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "En attente de l'adversaire..."
+label_settings = SubResource("LabelSettings_41b56")
 horizontal_alignment = 1
 vertical_alignment = 1
 
