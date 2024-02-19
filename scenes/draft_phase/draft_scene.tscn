@@ -50,12 +50,15 @@ unique_name_in_owner = true
 
 [node name="CharacterCard3D" parent="Board/PlayerChoices" instance=ExtResource("13_5um8g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0, 0)
+rotation_angle = 0.55
 
 [node name="CharacterCard3D2" parent="Board/PlayerChoices" instance=ExtResource("13_5um8g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+rotation_angle = 0.55
 
 [node name="CharacterCard3D3" parent="Board/PlayerChoices" instance=ExtResource("13_5um8g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0, 0)
+rotation_angle = 0.55
 
 [node name="PlayerDraft" type="Node3D" parent="Board"]
 unique_name_in_owner = true

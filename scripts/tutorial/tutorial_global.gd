@@ -40,4 +40,8 @@ func next():
 		is_active = false
 	else:
 		play_tutorial(in_queue.pop_front())
+		
+func restart():
+	for data in tutorial_datas:
+		data.used = false
 

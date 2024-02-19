@@ -19,8 +19,9 @@ var hovered : bool = false
 var tween : Tween
 
 func _on_mouse_entered():
-	hovered = true
-	mouse_entered.emit()
+	if !TutorialGlobal.is_active:
+		hovered = true
+		mouse_entered.emit()
 
 func _on_mouse_exited():
 	hovered = false

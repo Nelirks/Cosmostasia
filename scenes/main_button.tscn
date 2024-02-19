@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbn1r"]
 font = ExtResource("2_slb3p")
-font_size = 40
+font_size = 46
 
 [node name="Button" type="TextureButton"]
 custom_minimum_size = Vector2(375, 112.5)

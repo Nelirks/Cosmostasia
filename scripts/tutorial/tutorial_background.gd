@@ -7,3 +7,7 @@ func init(data:tutorial_data):
 	popup.init(data.text)
 	add_child(popup)
 
+
+
+func _on_panel_pressed():
+	queue_free()

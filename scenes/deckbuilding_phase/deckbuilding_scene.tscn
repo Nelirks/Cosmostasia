@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/deckbuilding_phase/deckbuilding_scene.gd" id="1_dd58v"]
 [ext_resource type="PackedScene" uid="uid://k0oglaj047sl" path="res://scenes/card_display/playable_card_3d.tscn" id="1_npbdc"]
-[ext_resource type="PackedScene" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_fonv4"]
+[ext_resource type="PackedScene" uid="uid://de5liyxp8abgh" path="res://vfx/gray_filter/gray_filter_fx.tscn" id="2_fonv4"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_pls58"]
 [ext_resource type="PackedScene" uid="uid://bk6wi08lvjkh0" path="res://scenes/deckbuilding_phase/character_selector.tscn" id="4_foq0m"]
 [ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/ui_icons/fond menu.png" id="5_08omn"]
@@ -24,7 +24,7 @@ card_zoom_out_duration = 0.25
 
 [node name="CharacterDisplay" parent="." instance=ExtResource("2_pls58")]
 unique_name_in_owner = true
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 8, 0)
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -5.76588, 8.40924, 0)
 
 [node name="CardArea" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -80,10 +80,11 @@ texture = ExtResource("5_08omn")
 [node name="PresetSelector" type="VBoxContainer" parent="Background"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1100.0
-offset_top = 100.0
-offset_right = 1400.0
-offset_bottom = 348.0
+offset_left = 946.0
+offset_top = 89.0
+offset_right = 1346.0
+offset_bottom = 337.0
+scale = Vector2(1.1, 1.1)
 
 [node name="PresetSelector1" parent="Background/PresetSelector" instance=ExtResource("6_ccmsj")]
 layout_mode = 2
@@ -165,9 +166,10 @@ offset_bottom = 40.0
 [node name="PlayerCharacterSelector" type="VBoxContainer" parent="Background/CharacterSelectors"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -200.0
-offset_right = 300.0
-offset_bottom = 316.0
+offset_left = -129.02
+offset_top = 50.0
+offset_right = 370.98
+offset_bottom = 366.0
 theme_override_constants/separation = 8
 
 [node name="CharacterSelector" parent="Background/CharacterSelectors/PlayerCharacterSelector" instance=ExtResource("4_foq0m")]
@@ -183,8 +185,9 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1547.0
+offset_top = 50.0
 offset_right = 2047.0
-offset_bottom = 316.0
+offset_bottom = 366.0
 theme_override_constants/separation = 8
 
 [node name="CharacterSelector" parent="Background/CharacterSelectors/OpponentCharacterSelector" instance=ExtResource("4_foq0m")]
