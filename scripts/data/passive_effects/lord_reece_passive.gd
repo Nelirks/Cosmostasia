@@ -12,8 +12,8 @@ func on_damage_taken(source : Character, amount : int) -> void :
 	took_damage_last_turn = true
 	status_updated.emit()
 
-func on_effect_resolution(effect : Effect) -> void :
-	if effect is StartTurnNotifierEffect and effect.player == owner.player and !took_damage_last_turn :
+func start_turn() -> void :
+	if !took_damage_last_turn :
 		_add_effect(HealEffect.new(heal_amount, owner, owner))
 
 func end_turn() -> void :
