@@ -1,6 +1,7 @@
 extends Control
 
 @export var wait_panel_fade_in_duration : float
+var credits_scene = preload("res://scenes/game_scenes/credits_scene.tscn")
 
 func _ready():
 	NetworkManager.connection_done.connect(_start_game)
@@ -36,3 +37,7 @@ func display_wait_panel() -> void :
 	$WaitPanel.self_modulate = Color(1, 1, 1, 0)
 	var tween : Tween = create_tween()
 	tween.tween_property($WaitPanel, "self_modulate", Color(1, 1, 1, 1), wait_panel_fade_in_duration)
+
+
+func _on_credits_button_pressed():
+	get_tree().change_scene_to_packed(credits_scene)
