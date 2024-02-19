@@ -1,11 +1,14 @@
 extends Node
 class_name CombatManager
 
+signal turn_set()
+
 enum Turn { HOST, CLIENT }
 var _current_turn : Turn :
 	set (value) :
 		get_player_by_turn(true).end_turn()
 		_current_turn = value
+		turn_set.emit()
 		get_player_by_turn(true).start_turn()
 
 ## Stores pending effects, in queue order. Effects will resolve as soon as the previous one is done resolving.
