@@ -28,7 +28,7 @@ color = Color(0.78125, 0.691406, 0.519531, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h83qk"]
 font = ExtResource("6_fgwmi")
-font_size = 54
+font_size = 34
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgtj5"]
 bg_color = Color(0, 0, 0, 0.72549)
@@ -113,10 +113,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -5.0
-offset_top = -124.0
-offset_right = 151.25
-offset_bottom = 626.0
+offset_left = -198.0
+offset_top = -89.0
+offset_right = -119.875
+offset_bottom = 286.0
 grow_horizontal = 0
 rotation = 1.5708
 pivot_offset = Vector2(62, 300)
@@ -131,15 +131,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.1239
-offset_top = 228.0
-offset_right = 139.876
-offset_bottom = 294.0
+offset_left = -35.0624
+offset_top = 150.5
+offset_right = 140.938
+offset_bottom = 216.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.5708
 text = "Crédits"
 label_settings = SubResource("LabelSettings_h83qk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsBackground" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -259,6 +261,7 @@ vertical_alignment = 1
 [connection signal="button_down" from="SettingsButton" to="." method="_on_settings_button_button_down"]
 [connection signal="button_up" from="SettingsButton" to="." method="_on_settings_button_button_up"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="SettingsBackground/Button" to="." method="_on_button_pressed"]
 
 [editable path="HostButton"]
