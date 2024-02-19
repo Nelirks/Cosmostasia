@@ -2,6 +2,9 @@
 extends Control
 class_name CharacterSelector
 
+@export var selected_texture : Texture
+@export var unselected_texture : Texture
+
 signal hover_entered()
 signal hover_exited()
 signal clicked()
@@ -24,11 +27,12 @@ func _on_gui_input(event):
 	if mouse_event and mouse_event.pressed and mouse_event.button_index == MOUSE_BUTTON_LEFT :
 		clicked.emit()
 
-
-
 func _on_mouse_entered():
 	hover_entered.emit()
 
 
 func _on_mouse_exited():
 	hover_exited.emit()
+
+func set_active(active : bool) -> void :
+	%Background.texture = selected_texture if active else unselected_texture

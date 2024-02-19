@@ -26,6 +26,7 @@ var selected_character_index : int :
 		selected_character_index = value
 		character_display.character = selected_character
 		for i in range(3) : 
+			player_character_selectors[i].set_active(selected_character_index == i)
 			preset_selectors[i].set_text(selected_character.deck_presets[i].preset_name)
 			preset_selectors[i].selected = selected_presets[selected_character_index] == i
 		for i in range(5) : 
