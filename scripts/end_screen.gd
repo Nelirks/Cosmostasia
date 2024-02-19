@@ -12,6 +12,8 @@ func _ready() -> void:
 	if is_defeat and is_victory : (%Result as RichTextLabel).text = "Égalité"
 	elif is_victory : (%Result as Label).text = "Victoire"
 	elif is_defeat : (%Result as Label).text = "Défaite"
+	
+	TutorialGlobal.restart()
 
 @rpc("any_peer", "call_remote", "reliable")
 func _handle_opponent_button(button : ButtonPressed) -> void :
