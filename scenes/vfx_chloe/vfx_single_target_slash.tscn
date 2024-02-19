@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7gfkcxqjrafk"]
+[gd_scene load_steps=14 format=3 uid="uid://b7gfkcxqjrafk"]
 
 [ext_resource type="Script" path="res://scenes/vfx_chloe/vfx_single_target_slash.gd" id="1_yufxn"]
 [ext_resource type="ArrayMesh" uid="uid://dyokwehn1mik5" path="res://scenes/vfx_chloe/slash1.obj" id="2_gnx8n"]
 [ext_resource type="Shader" uid="uid://motap2owosjo" path="res://scenes/vfx_chloe/vfx slash.tres" id="3_slgu5"]
+[ext_resource type="Texture2D" uid="uid://dhnydcv65i8pm" path="res://scenes/vfx_chloe/sparks4.png" id="4_cj742"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gt78"]
 resource_local_to_scene = true
@@ -12,8 +13,48 @@ shader_parameter/Color = Color(25.44, 1.18, 0.32, 1)
 shader_parameter/FloatParameter = -0.255
 shader_parameter/FloatParameter2 = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0vwh"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(12.43, 1.18, 1, 1)
+albedo_texture = ExtResource("4_cj742")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Curve" id="Curve_l26a2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_t8twx"]
+curve = SubResource("Curve_l26a2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vaybd"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(6, 12, 0)
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+tangential_accel_max = 80.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 0.1
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_t8twx")
+color = Color(0, 0, 0, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vbb0x"]
+
 [sub_resource type="Animation" id="Animation_r63nu"]
 length = 0.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,10 +79,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Slash1/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ym31t"]
 resource_name = "Slash"
 length = 0.52
+loop_mode = 1
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -81,6 +135,18 @@ tracks/2/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Slash1/GPUParticles3D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.09, 0.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fcbcn"]
 _data = {
@@ -95,9 +161,19 @@ animation_name = "Slash"
 lifetime = 1.0
 
 [node name="Slash1" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.633927, 5.49712e-08, -0.995126, 1.35946, -3.50205e-08, -0.464035, -9.32769e-08, -0.884, -4.34983e-08, 0, 0, 1)
+transform = Transform3D(-0.589914, 0.323643, -0.926035, 1.35946, -3.50205e-08, -0.464035, -0.232088, -0.822625, -0.364327, 0.369495, 0, 1)
 mesh = ExtResource("2_gnx8n")
 surface_material_override/0 = SubResource("ShaderMaterial_0gt78")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Slash1"]
+transform = Transform3D(-0.262184, 0.604205, -0.10315, 0.414153, -2.57165e-08, -1.05268, -0.768108, -0.384898, -0.302193, -1.4873, 1.42178, 0.481957)
+visible = false
+material_override = SubResource("StandardMaterial3D_g0vwh")
+amount = 60
+lifetime = 0.2
+trail_lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_vaybd")
+draw_pass_1 = SubResource("QuadMesh_vbb0x")
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 libraries = {
