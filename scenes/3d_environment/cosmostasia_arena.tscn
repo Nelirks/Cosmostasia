@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://eol4pewfnn2i"]
+[gd_scene load_steps=21 format=3 uid="uid://eol4pewfnn2i"]
 
 [ext_resource type="PackedScene" uid="uid://emghds38qvyh" path="res://resources/3d_asset/models/Cosmostasia_Arena1.glb" id="1_vacrf"]
 [ext_resource type="PackedScene" uid="uid://d28025g3hs2au" path="res://scenes/3d_environment/fire.tscn" id="2_ym8s6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cumhe6c8tlgj8" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_NormalDX.jpg" id="4_jun5n"]
 [ext_resource type="Texture2D" uid="uid://der6cld3xvbha" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_Roughness.jpg" id="5_011jo"]
 [ext_resource type="Texture2D" uid="uid://dxt3vt5y7nk1m" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_AmbientOcclusion.jpg" id="6_w37fj"]
+[ext_resource type="Texture2D" uid="uid://dmhgcbdjrm8kr" path="res://resources/3d_asset/materials/stone.jpg" id="7_bt8ub"]
 [ext_resource type="Material" uid="uid://dqc8v8exbni80" path="res://resources/3d_asset/materials/stone.tres" id="8_ush36"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ut3v3"]
@@ -90,12 +91,16 @@ roughness_texture = SubResource("CompressedTexture2D_fsbu3")
 normal_enabled = true
 normal_texture = SubResource("CompressedTexture2D_8wewn")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d4t7"]
+albedo_texture = ExtResource("7_bt8ub")
+
 [node name="Cosmostasia_Arena1" instance=ExtResource("1_vacrf")]
 
 [node name="MainArena" parent="." index="0"]
 surface_material_override/0 = ExtResource("3_nsj8x")
 surface_material_override/1 = SubResource("ShaderMaterial_gm065")
 surface_material_override/2 = SubResource("StandardMaterial3D_01os8")
+surface_material_override/5 = SubResource("StandardMaterial3D_2d4t7")
 
 [node name="Fire" parent="BrasierENE" index="0" instance=ExtResource("2_ym8s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505712, 0)
