@@ -139,7 +139,7 @@ func _on_card_position_changed(card : Card, immediate : bool = false) -> void :
 
 func _update_card_position(card : Card, immediate : bool) -> void :
 	var card_display = cards[card]
-	if card == last_played_card : return
+	if card == last_played_card or cards[card].card.position == Card.Position.DISCARD_PILE : return
 	
 	if immediate : 
 		card_display.position = card_positions[card_display.card.position].position
