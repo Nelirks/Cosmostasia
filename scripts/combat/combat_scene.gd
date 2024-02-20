@@ -5,6 +5,7 @@ extends Node3D
 
 func _ready():
 	AudioManager.post_event(AK.EVENTS.START_COMBATMUSIC)
+	GameManager.combat.combat_end.connect(_on_combat_end)
 
 func _on_character_clicked(is_host : bool, index : int) -> void :
 	if player_hand.selected_card == null : return
@@ -38,3 +39,13 @@ func play_vfx(vfx_scene : PackedScene, source : CharacterCard3D, target : Charac
 	var vfx : CombatVFX = vfx_scene.instantiate()
 	add_child(vfx)
 	vfx.set_context(source, target)
+
+func _on_combat_end() -> void : 
+	recursive_queue_free(self)
+	GameManager.set_game_state.call_deferred(GameManager.GameState.GAME_END)
+
+func recursive_queue_free(node : Node) -> void :
+	for child in node.get_children() :
+		node.remove_child(child)
+		recursive_queue_free(child)
+	node.queue_free()
