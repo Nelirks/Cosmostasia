@@ -6,7 +6,7 @@
 layer = 10
 script = ExtResource("1_7xdud")
 
-[node name="Panel" type="Button" parent="."]
+[node name="Panel" type="Panel" parent="."]
 clip_contents = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -21,5 +21,3 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[connection signal="pressed" from="Panel" to="." method="_on_panel_pressed"]
