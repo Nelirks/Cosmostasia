@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="3_bfxwx"]
+[ext_resource type="Texture2D" uid="uid://wqcaakds5mdy" path="res://Sprites/ui_icons/engrenagesplusieurs.png" id="4_bxmn2"]
 [ext_resource type="Texture2D" uid="uid://g1ogwbqgksqf" path="res://Sprites/ui_icons/flag_full.png" id="5_ag2fi"]
-[ext_resource type="Texture2D" uid="uid://bug1y2qokvppi" path="res://resources/sprites/ui_elements/cog.png" id="5_k7rl3"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="6_fgwmi"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8flb"]
@@ -71,9 +71,9 @@ anchors_preset = 0
 anchor_top = 0.0
 anchor_bottom = 0.0
 offset_left = 472.0
-offset_top = 950.0
+offset_top = 925.0
 offset_right = 847.0
-offset_bottom = 1062.5
+offset_bottom = 1037.5
 grow_vertical = 1
 
 [node name="Label" parent="HostButton" index="0"]
@@ -86,39 +86,40 @@ anchors_preset = 0
 anchor_top = 0.0
 anchor_bottom = 0.0
 offset_left = 1072.0
-offset_top = 950.0
+offset_top = 925.0
 offset_right = 1447.0
-offset_bottom = 1062.5
+offset_bottom = 1037.5
 grow_vertical = 1
 
 [node name="Label" parent="JoinButton" index="0"]
 text = "Rejoindre"
 
 [node name="SettingsButton" type="TextureButton" parent="."]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -120.0
-offset_top = 30.0
-offset_right = -56.0
-offset_bottom = 94.0
+offset_left = -223.0
+offset_top = 9.0
+offset_right = 581.0
+offset_bottom = 874.0
 grow_horizontal = 0
+scale = Vector2(0.19, 0.19)
 pivot_offset = Vector2(31, 32)
-texture_normal = ExtResource("5_k7rl3")
+texture_normal = ExtResource("4_bxmn2")
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -198.0
-offset_top = -89.0
-offset_right = -119.875
-offset_bottom = 286.0
+offset_left = -250.0
+offset_top = 37.0
+offset_right = -171.875
+offset_bottom = 412.0
 grow_horizontal = 0
 rotation = 1.5708
+scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(62, 300)
 texture_normal = ExtResource("5_ag2fi")
 ignore_texture_size = true
