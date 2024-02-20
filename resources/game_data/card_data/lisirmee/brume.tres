@@ -10,8 +10,8 @@ attack_down_duration = 2
 card_name = "Brume"
 description = "Réduit l'attaque de la cible pendant 2 tour
 !K!Miracle!K! : !S!Empoisonne!S! la cible pendant 2 tour
-!K!Préparé!K! : cible tous les adversaires"
-quote = "\"Coucou, je suis cachée\""
+!K!Préparé!K! : Cible tous les adversaires"
+quote = ""
 cost = 2
 targetting = 2
 cardType = 2
