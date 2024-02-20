@@ -70,7 +70,7 @@ func refill_hand() -> void :
 			AudioManager.post_event(AK.EVENTS.CARD_DRAW)
 			if _draw_pile.size() == 0 :
 				shuffle_draw_pile(true)
-			else : draw_pile_top_updated.emit()
+			draw_pile_top_updated.emit()
 		else :
 			index += 1
 		iteration += 1
