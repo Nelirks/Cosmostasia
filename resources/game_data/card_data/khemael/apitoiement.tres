@@ -10,7 +10,7 @@ bonus_armor = 10
 card_name = "Apitoiement"
 description = "Octroie 15 d'armure au personnage allié ciblé
 En octroie 10 supplémentaire si la cible a moins de la moitié de sa vie."
-quote = ""
+quote = "C'est la pitié qui a ouvert les yeux de Khemaël"
 cost = 1
 targetting = 1
 cardType = 1

@@ -10,7 +10,7 @@ energy_regen = 1
 card_name = "Surcharge"
 description = "Octroie 20 d'armure à Timothy
 Augmente la recharge de 1"
-quote = ""
+quote = "Qu'est ce qu'il y a de mal à un petit overclock?"
 cost = 2
 targetting = 3
 cardType = 1

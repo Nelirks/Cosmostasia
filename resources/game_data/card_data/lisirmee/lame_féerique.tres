@@ -15,7 +15,7 @@ card_name = "Lame féerique"
 description = "Inflige 30 dégâts à la cible
 !K!Miracle!K! : Réduit les dégâts de 10 et le coût de 1
 !K!Préparé!K! : Augmente les dégâts de 10 et le coût de 1"
-quote = "\"Il n'y a rien de mieux pour commencer la journée que d'observer la vie quitter les yeux d'une personne\""
+quote = ""
 cost = 2
 targetting = 2
 cardType = 0

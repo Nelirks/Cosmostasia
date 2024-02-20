@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cumhe6c8tlgj8" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_NormalDX.jpg" id="4_jun5n"]
 [ext_resource type="Texture2D" uid="uid://der6cld3xvbha" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_Roughness.jpg" id="5_011jo"]
 [ext_resource type="Texture2D" uid="uid://dxt3vt5y7nk1m" path="res://resources/3d_asset/textures/sand/Ground033_1K-JPG_AmbientOcclusion.jpg" id="6_w37fj"]
-[ext_resource type="Texture2D" uid="uid://dmhgcbdjrm8kr" path="res://resources/3d_asset/materials/stone.jpg" id="7_bt8ub"]
+[ext_resource type="Texture2D" uid="uid://bku3x106w3nuy" path="res://resources/3d_asset/materials/stone3.jpg" id="7_4vjih"]
 [ext_resource type="Material" uid="uid://dqc8v8exbni80" path="res://resources/3d_asset/materials/stone.tres" id="8_ush36"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ut3v3"]
@@ -92,7 +92,8 @@ normal_enabled = true
 normal_texture = SubResource("CompressedTexture2D_8wewn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d4t7"]
-albedo_texture = ExtResource("7_bt8ub")
+albedo_texture = ExtResource("7_4vjih")
+uv1_scale = Vector3(10, 10, 10)
 
 [node name="Cosmostasia_Arena1" instance=ExtResource("1_vacrf")]
 
