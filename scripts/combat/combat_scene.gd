@@ -6,6 +6,10 @@ extends Node3D
 func _ready():
 	AudioManager.post_event(AK.EVENTS.START_COMBATMUSIC)
 	GameManager.combat.combat_end.connect(_on_combat_end)
+	var fade_in_tween : Tween = create_tween()
+	var fade_in_base_modulate = %FadeInTexture.self_modulate
+	fade_in_tween.tween_property(%FadeInTexture, "self_modulate", Color(fade_in_base_modulate.r, fade_in_base_modulate.g, fade_in_base_modulate.b, 0), 1)
+	fade_in_tween.tween_callback(%FadeInTexture.queue_free)
 
 func _on_character_clicked(is_host : bool, index : int) -> void :
 	if player_hand.selected_card == null : return

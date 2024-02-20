@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_washf")
 tutorial_name = "2_cardeffect"
-text = "Les cartes ont des effets divers détaillés dans leur description. 
-Chaque carte est jouée par le personnage la possédant. 
+text = "Les cartes ont des effets divers détaillés dans leur description. Chaque carte est jouée par le personnage la possédant. 
+
 Le coût en énergie est affiché en haut à gauche"

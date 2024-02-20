@@ -5,6 +5,7 @@ var credits_scene = preload("res://scenes/game_scenes/credits_scene.tscn")
 
 func _ready():
 	NetworkManager.connection_done.connect(_start_game)
+	_start_game()
 	
 func _on_host_button_pressed():
 	if OS.has_feature("solo") : _start_game()

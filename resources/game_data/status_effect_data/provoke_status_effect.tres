@@ -9,5 +9,5 @@ id = "provoke"
 type = 0
 display_names = Array[String](["Provocation"])
 description = "!S!Provocation!S!
-Force les adversaires à attaquer ce personnage"
+La prochaine carte adverse ciblant un allié doit cibler ce personnage si possible"
 icon = ExtResource("1_wdlc3")

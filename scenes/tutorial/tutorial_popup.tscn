@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg221f2bri6vr"]
+[gd_scene load_steps=4 format=3 uid="uid://bg221f2bri6vr"]
 
 [ext_resource type="Theme" uid="uid://clk3jgns3nwcg" path="res://resources/themes/info_theme.tres" id="1_ft8tx"]
 [ext_resource type="Script" path="res://scripts/tutorial/tutorial_popup.gd" id="1_vdl0q"]
+[ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="3_7ydol"]
 
 [node name="Tutorial Popup" type="PanelContainer"]
 clip_contents = true
@@ -11,9 +12,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -401.0
+offset_left = -500.0
 offset_top = -20.0
-offset_right = 403.0
+offset_right = 500.0
 offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -28,6 +29,9 @@ script = ExtResource("1_vdl0q")
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("3_7ydol")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 22
 fit_content = true
 scroll_active = false
 

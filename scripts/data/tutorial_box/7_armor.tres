@@ -5,4 +5,6 @@
 [resource]
 script = ExtResource("1_ar1va")
 tutorial_name = "7_armor"
-text = "Un personnage vient de gagner de l'armure. L'armure sera consommée avant ses PVs lorsque des dégâts lui seront infligés. L'armure disparait entièrement au début du prochain tour du personnage."
+text = "Un personnage vient de gagner de l'armure. L'armure sera consommée avant ses PVs lorsque des dégâts lui seront infligés. 
+
+L'armure disparait entièrement au début du prochain tour du personnage."
