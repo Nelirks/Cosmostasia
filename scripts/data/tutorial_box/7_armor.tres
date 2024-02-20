@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_ar1va")
 tutorial_name = "7_armor"
-text = "La carte que vous venez d'utilisez donne de l'armure. L'armure sera consommée avant vos PVs lorsque vous subissez une attaque. L'armure disparait entièrement au début de votre prochain tour."
+text = "Un personnage vient de gagner de l'armure. L'armure sera consommée avant vos PVs lorsque vous subissez une attaque. L'armure disparait entièrement au début du prochain tour du personnage."
