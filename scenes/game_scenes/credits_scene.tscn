@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdpdaokt24jyd"]
+[gd_scene load_steps=7 format=3 uid="uid://cdpdaokt24jyd"]
 
+[ext_resource type="Script" path="res://scripts/credits_scene.gd" id="1_2f22g"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_l73no"]
 [ext_resource type="LabelSettings" uid="uid://0a53wbhllftg" path="res://title_label.tres" id="2_giuo1"]
 [ext_resource type="LabelSettings" uid="uid://jwwhhoeeh1th" path="res://name_label.tres" id="3_a763q"]
+[ext_resource type="Texture2D" uid="uid://b15mv85h4kpfv" path="res://resources/sprites/main_menu/bouton_retour.png" id="5_r0rww"]
+[ext_resource type="Texture2D" uid="uid://0bu4dx0hnsdl" path="res://resources/sprites/main_menu/bouton_retour_fonce.png" id="6_mcbib"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2f22g")
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 layout_mode = 1
@@ -37,9 +41,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 50.0
-offset_top = -250.0
+offset_top = -240.0
 offset_right = 850.0
-offset_bottom = -211.0
+offset_bottom = -200.0
 grow_vertical = 2
 text = "Lead Developer / Game Designer / Narrative Designer"
 label_settings = ExtResource("2_giuo1")
@@ -54,9 +58,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -84.0
+offset_top = -9.0
 offset_right = 400.0
-offset_bottom = -39.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Raphaël Lesbros"
@@ -70,9 +74,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 50.0
-offset_top = -130.0
+offset_top = -140.0
 offset_right = 850.0
-offset_bottom = -52.0
+offset_bottom = -60.0
 grow_vertical = 2
 text = "Lead 2D Artist / VFX Artist / Tech Artist / UI Designer /
  Game Designer"
@@ -88,112 +92,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -123.0
+offset_top = -10.0
 offset_right = 400.0
-offset_bottom = -78.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Chloé Bigot"
-label_settings = ExtResource("3_a763q")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Eleque Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 1070.0
-offset_top = -250.0
-offset_right = 1870.0
-offset_bottom = -172.0
-grow_vertical = 2
-text = "Lead Game Design / Lead Narrative Designer / 3D Artist / 
-Developer"
-label_settings = ExtResource("2_giuo1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Eleque Name" type="Label" parent="Eleque Title"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -123.0
-offset_right = 400.0
-offset_bottom = -78.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Eleque Gioan"
-label_settings = ExtResource("3_a763q")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Simon Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_top = 130.0
-offset_right = 850.0
-offset_bottom = 169.0
-grow_vertical = 2
-text = "Developer / UX Designer"
-label_settings = ExtResource("2_giuo1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Simon Name" type="Label" parent="Simon Title"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -84.0
-offset_right = 400.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Simon Gosse"
-label_settings = ExtResource("3_a763q")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ChloeM Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_top = 240.0
-offset_right = 850.0
-offset_bottom = 279.0
-grow_vertical = 2
-text = "2D Artist"
-label_settings = ExtResource("2_giuo1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ChloeM Name" type="Label" parent="ChloeM Title"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -84.0
-offset_right = 400.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Chloé Marin"
 label_settings = ExtResource("3_a763q")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -206,9 +110,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -1870.0
-offset_top = 20.0
+offset_top = -10.0
 offset_right = -1070.0
-offset_bottom = 59.0
+offset_bottom = 30.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "2D Artist / UI Designer / Game Designer"
@@ -224,12 +128,112 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -84.0
+offset_top = -10.0
 offset_right = 400.0
-offset_bottom = -39.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Eliott Bouchonnet"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Simon Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = 90.0
+offset_right = 850.0
+offset_bottom = 130.0
+grow_vertical = 2
+text = "Developer / UX Designer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Simon Name" type="Label" parent="Simon Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -10.0
+offset_right = 400.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Simon Gosse"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChloeM Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = 190.0
+offset_right = 850.0
+offset_bottom = 230.0
+grow_vertical = 2
+text = "2D Artist"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChloeM Name" type="Label" parent="ChloeM Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -10.0
+offset_right = 400.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Chloé Marin"
+label_settings = ExtResource("3_a763q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eleque Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1070.0
+offset_top = -240.0
+offset_right = 1870.0
+offset_bottom = -160.0
+grow_vertical = 2
+text = "Lead Game Design / Lead Narrative Designer / 3D Artist / 
+Developer"
+label_settings = ExtResource("2_giuo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eleque Name" type="Label" parent="Eleque Title"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -10.0
+offset_right = 400.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Eleque Gioan"
 label_settings = ExtResource("3_a763q")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -244,7 +248,7 @@ anchor_bottom = 0.5
 offset_left = -850.0
 offset_top = -100.0
 offset_right = -50.0
-offset_bottom = -61.0
+offset_bottom = -60.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "2D Artist / UI Designer / Game Designer"
@@ -260,9 +264,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -84.0
+offset_top = -10.0
 offset_right = 400.0
-offset_bottom = -39.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Clara Mocerino"
@@ -278,9 +282,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -850.0
-offset_top = 20.0
+offset_top = -10.0
 offset_right = -50.0
-offset_bottom = 59.0
+offset_bottom = 30.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Sound Designer"
@@ -296,9 +300,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -84.0
+offset_top = -10.0
 offset_right = 400.0
-offset_bottom = -39.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Bastien Okonski"
@@ -314,9 +318,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -850.0
-offset_top = 130.0
+offset_top = 90.0
 offset_right = -50.0
-offset_bottom = 169.0
+offset_bottom = 130.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Compositrice"
@@ -332,9 +336,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -84.0
+offset_top = -10.0
 offset_right = 400.0
-offset_bottom = -39.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Clara Arcelon"
@@ -350,9 +354,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -850.0
-offset_top = 240.0
+offset_top = 190.0
 offset_right = -50.0
-offset_bottom = 279.0
+offset_bottom = 230.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Sound Designer"
@@ -368,12 +372,25 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -84.0
+offset_top = -10.0
 offset_right = 400.0
-offset_bottom = -39.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Feathers Crow"
 label_settings = ExtResource("3_a763q")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 150.0
+texture_normal = ExtResource("5_r0rww")
+texture_pressed = ExtResource("6_mcbib")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
