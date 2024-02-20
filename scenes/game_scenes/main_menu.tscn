@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://co0fkt8tskm3n"]
+[gd_scene load_steps=12 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
 [ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wqcaakds5mdy" path="res://Sprites/ui_icons/engrenagesplusieurs.png" id="4_bxmn2"]
 [ext_resource type="Texture2D" uid="uid://g1ogwbqgksqf" path="res://Sprites/ui_icons/flag_full.png" id="5_ag2fi"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="6_fgwmi"]
+[ext_resource type="PackedScene" uid="uid://cdpdaokt24jyd" path="res://scenes/game_scenes/credits_scene.tscn" id="7_k8lxy"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8flb"]
 lifetime_randomness = 0.3
@@ -256,6 +257,11 @@ text = "En attente de l'adversaire..."
 label_settings = SubResource("LabelSettings_41b56")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Credits" parent="." instance=ExtResource("7_k8lxy")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
