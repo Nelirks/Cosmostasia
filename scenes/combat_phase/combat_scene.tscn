@@ -69,16 +69,16 @@ offset_bottom = 590.998
 
 [node name="PlayerEnergyBar" parent="CanvasLayer" instance=ExtResource("8_eetoo")]
 offset_left = 1345.0
-offset_top = 900.0
+offset_top = 890.0
 offset_right = -175.0
-offset_bottom = -47.0
+offset_bottom = -57.0
 is_player = true
 
 [node name="OpponentEnergyBar" parent="CanvasLayer" instance=ExtResource("8_eetoo")]
 offset_left = 575.0
-offset_top = 180.0
+offset_top = 190.0
 offset_right = -945.0
-offset_bottom = -767.0
+offset_bottom = -757.0
 rotation = 3.14159
 
 [node name="FadeInTexture" type="TextureRect" parent="CanvasLayer"]
