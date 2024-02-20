@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=9 format=3 uid="uid://dr8a6crxdqvbe"]
 
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_yl1qs"]
-[ext_resource type="PackedScene" uid="uid://bdk4y6k8373jy" path="res://scenes/3d_environment/energy_bar.tscn" id="2_k37cc"]
 [ext_resource type="Script" path="res://scenes/3d_environment/dust0.gd" id="4_6wkjx"]
 [ext_resource type="Texture2D" uid="uid://whbaf0j7lnyi" path="res://resources/3d_asset/particle/Flare00.PNG" id="4_oqe55"]
 
@@ -94,13 +93,6 @@ environment = SubResource("Environment_b6jo1")
 camera_attributes = SubResource("CameraAttributesPractical_kvrus")
 
 [node name="Cosmostasia_Arena1" parent="." instance=ExtResource("1_yl1qs")]
-
-[node name="EnergyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(0.7, 0, 0, 0, 0.693017, 0.0986309, 0, -0.0986309, 0.693017, 6.151, 3.54, 4.381)
-is_player = true
-
-[node name="EnemyBar" parent="." instance=ExtResource("2_k37cc")]
-transform = Transform3D(-0.7, -8.62259e-09, -6.05855e-08, 0, 0.693017, -0.0986309, 6.11959e-08, -0.0986309, -0.693017, -6.151, 3.54, -4.381)
 
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("dusts")]
 script = ExtResource("4_6wkjx")
