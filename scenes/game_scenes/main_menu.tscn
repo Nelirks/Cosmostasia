@@ -101,14 +101,16 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -198.0
-offset_top = 164.0
-offset_right = -37.0001
-offset_bottom = 337.0
+offset_left = -117.0
+offset_top = 168.0
+offset_right = -16.9998
+offset_bottom = 268.0
 grow_horizontal = 0
 rotation = -6.28319
-pivot_offset = Vector2(31, 32)
+pivot_offset = Vector2(50.3162, 50.5651)
 texture_normal = ExtResource("4_bxmn2")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 1
