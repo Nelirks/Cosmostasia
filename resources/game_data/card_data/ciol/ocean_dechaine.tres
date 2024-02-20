@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b1brdy5mk38mv"]
 
-[ext_resource type="Texture2D" uid="uid://bleqg5fk4ii3m" path="res://resources/sprites/card_sprites/ciol/océan déchainé.png" id="1_nmit0"]
+[ext_resource type="Texture2D" uid="uid://i3d4dupu2f5d" path="res://resources/sprites/card_sprites/ciol/océan déchainé.png" id="1_nmit0"]
 [ext_resource type="Script" path="res://scripts/data/cards/ciol/ocean_dechaine.gd" id="1_sa38l"]
 
 [resource]
@@ -10,7 +10,7 @@ feather_damage = 10
 card_name = "Océan Déchainé"
 description = "Inflige 10 dégâts à la cible, puis inflige 10 dégâts par !S!plume!S! portée à tous les porteurs de plumes.
 Supprime les plumes"
-quote = ""
+quote = "\"Dansons, jusqu'à ce les eaux vous emportent\""
 cost = 3
 targetting = 2
 cardType = 0

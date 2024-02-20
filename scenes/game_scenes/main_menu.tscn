@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://co0fkt8tskm3n"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_menu.gd" id="1_ooml6"]
-[ext_resource type="Texture2D" uid="uid://0ynow7dx11v8" path="res://resources/sprites/main_menu/kakemonov3-2.png" id="1_uw676"]
+[ext_resource type="Texture2D" uid="uid://diieer6pppuhl" path="res://Sprites/ui_icons/youpi.png" id="2_g7py4"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="3_bfxwx"]
 [ext_resource type="Texture2D" uid="uid://wqcaakds5mdy" path="res://Sprites/ui_icons/engrenagesplusieurs.png" id="4_bxmn2"]
 [ext_resource type="Texture2D" uid="uid://g1ogwbqgksqf" path="res://Sprites/ui_icons/flag_full.png" id="5_ag2fi"]
@@ -54,7 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_uw676")
+texture = ExtResource("2_g7py4")
 expand_mode = 1
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Background"]
@@ -95,16 +95,17 @@ grow_vertical = 1
 text = "Rejoindre"
 
 [node name="SettingsButton" type="TextureButton" parent="."]
+modulate = Color(0.67451, 0.458824, 1, 1)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -223.0
-offset_top = 9.0
-offset_right = 581.0
-offset_bottom = 874.0
+offset_left = -198.0
+offset_top = 164.0
+offset_right = -37.0001
+offset_bottom = 337.0
 grow_horizontal = 0
-scale = Vector2(0.19, 0.19)
+rotation = -6.28319
 pivot_offset = Vector2(31, 32)
 texture_normal = ExtResource("4_bxmn2")
 
@@ -113,13 +114,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -250.0
-offset_top = 37.0
-offset_right = -171.875
-offset_bottom = 412.0
+offset_left = -296.0
+offset_top = -179.0
+offset_right = -217.875
+offset_bottom = 196.0
 grow_horizontal = 0
 rotation = 1.5708
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.4, 1.4)
 pivot_offset = Vector2(62, 300)
 texture_normal = ExtResource("5_ag2fi")
 ignore_texture_size = true

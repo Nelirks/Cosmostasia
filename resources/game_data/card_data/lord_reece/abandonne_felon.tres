@@ -9,7 +9,7 @@ energy_regen = 1
 card_name = "Abandonne, félon"
 description = "Défausse la carte Miracle adverse.
 !K!Préparé!K! : Rend 1 énergie."
-quote = ""
+quote = "\"Cet espoir qui t'animes, tu devrais y renoncer\""
 cost = 1
 targetting = 3
 cardType = 2
