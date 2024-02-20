@@ -5,4 +5,6 @@
 [resource]
 script = ExtResource("1_cqdgx")
 tutorial_name = "5_draw"
-text = "Une carte utilisée est défaussée et instantanément remplacée par une autre. Vous avez toujours 3 cartes dans la main, selon le personnage, la position dans la main peut ajouter un effets supplémentaires. Si votre pioche se vide, la défausse est mélangé et reremplit la pioche"
+text = "Une carte utilisée est défaussée et instantanément remplacée par une autre. Vous avez toujours 3 cartes dans la main, selon le personnage, la position dans la main peut ajouter un effets supplémentaires. 
+
+Si votre pioche se vide, la défausse est mélangé et reremplit la pioche."
