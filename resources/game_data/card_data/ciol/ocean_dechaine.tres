@@ -10,7 +10,7 @@ feather_damage = 10
 card_name = "Océan Déchainé"
 description = "Inflige 10 dégâts à la cible, puis inflige 10 dégâts par !S!plume!S! portée à tous les porteurs de plumes.
 Supprime les plumes"
-quote = "\"Dansez avec moi, dansez jusqu'à ce les eaux vous emportent\""
+quote = "\"Dansons, jusqu'à ce les eaux vous emportent\""
 cost = 3
 targetting = 2
 cardType = 0
