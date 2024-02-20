@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://ikuv8rdeaaoa"]
+
+[ext_resource type="Texture2D" uid="uid://dpnohln6r3lxy" path="res://resources/sprites/ui_elements/energy_bar/energy_bar_0.png" id="1_011n6"]
+[ext_resource type="Script" path="res://scripts/combat/energy_bar.gd" id="1_vlq4j"]
+[ext_resource type="Texture2D" uid="uid://beoiec7fqy7y3" path="res://resources/sprites/ui_elements/energy_bar/energy_bar_1.png" id="3_3kqjv"]
+[ext_resource type="Texture2D" uid="uid://57s206f4tha5" path="res://resources/sprites/ui_elements/energy_bar/energy_bar_2.png" id="4_v3qca"]
+[ext_resource type="Texture2D" uid="uid://c4ius0iofc1gn" path="res://resources/sprites/ui_elements/energy_bar/energy_bar_3.png" id="5_v73cq"]
+[ext_resource type="Texture2D" uid="uid://dqomas4qi1vd0" path="res://resources/sprites/ui_elements/energy_bar/energy_bar_4.png" id="6_cm4o5"]
+[ext_resource type="Texture2D" uid="uid://dns4s3gn1ji8a" path="res://resources/sprites/ui_elements/energy_bar/energy_bar_5.png" id="7_c6l60"]
+
+[node name="EnergyBar" type="TextureRect"]
+custom_minimum_size = Vector2(400, 133)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1520.0
+offset_bottom = -947.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_011n6")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("1_vlq4j")
+energy_textures = Array[Texture]([ExtResource("1_011n6"), ExtResource("3_3kqjv"), ExtResource("4_v3qca"), ExtResource("5_v73cq"), ExtResource("6_cm4o5"), ExtResource("7_c6l60")])
+
+[node name="EnergyUpdateTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="EnergyUpdateTimer" to="." method="_update_display"]

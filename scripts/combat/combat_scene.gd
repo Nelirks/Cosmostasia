@@ -6,6 +6,7 @@ extends Node3D
 func _ready():
 	AudioManager.post_event(AK.EVENTS.START_COMBATMUSIC)
 	GameManager.combat.combat_end.connect(_on_combat_end)
+	%FadeInTexture.visible = true
 	var fade_in_tween : Tween = create_tween()
 	var fade_in_base_modulate = %FadeInTexture.self_modulate
 	fade_in_tween.tween_property(%FadeInTexture, "self_modulate", Color(fade_in_base_modulate.r, fade_in_base_modulate.g, fade_in_base_modulate.b, 0), 1)
