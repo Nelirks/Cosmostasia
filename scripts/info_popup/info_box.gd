@@ -1,4 +1,4 @@
-extends Node
+extends Control
 class_name InfoBox
 
 var text : String :
@@ -6,3 +6,6 @@ var text : String :
 		%Label.text = value
 	get :
 		return %Label.text
+
+func get_height() -> int :
+	return 32 + (%Label as RichTextLabel).get_content_height()

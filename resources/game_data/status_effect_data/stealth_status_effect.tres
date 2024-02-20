@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cf274w0i425tr"]
 
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_mjr03"]
+[ext_resource type="Texture2D" uid="uid://cn8lhj2lo6ukq" path="res://resources/sprites/status_icons/Furtivite.png" id="1_6axov"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/provoke_status_effect.gd" id="1_wd4ue"]
 
 [resource]
@@ -9,5 +9,5 @@ id = "stealth"
 type = 0
 display_names = Array[String](["Furtivité"])
 description = "!S!Furtivité!S!
-Empêche les adversaires d'attaquer ce personnage"
-icon = ExtResource("1_mjr03")
+La prochaine carte adverse ciblant un allié doit cibler un autre personnage si possible"
+icon = ExtResource("1_6axov")

@@ -70,7 +70,7 @@ func refill_hand() -> void :
 			AudioManager.post_event(AK.EVENTS.CARD_DRAW)
 			if _draw_pile.size() == 0 :
 				shuffle_draw_pile(true)
-			else : draw_pile_top_updated.emit()
+			draw_pile_top_updated.emit()
 		else :
 			index += 1
 		iteration += 1
@@ -81,6 +81,7 @@ func refill_hand() -> void :
 			_hand[card_index].position = card_index + 1
 
 func can_play_card(card : Card, target : Character) -> bool :
+	if !GameManager.combat.get_player_by_turn(true) == card.character.player : return false
 	if card.cost > current_energy : return false
 	if card.character.has_status("stunned") : return false
 	if !card.can_target(target) : return false

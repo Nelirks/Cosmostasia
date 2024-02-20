@@ -2,6 +2,7 @@ extends Node
 class_name CombatManager
 
 signal turn_set()
+signal combat_end()
 
 enum Turn { HOST, CLIENT }
 var _current_turn : Turn :
@@ -155,7 +156,7 @@ func _check_game_state() -> void :
 func _check_victory() -> void :
 	if get_player_by_turn(true).get_characters().size() == 0 or get_player_by_turn(false).get_characters().size() == 0 :
 		action_queue = []
-		GameManager.set_game_state(GameManager.GameState.GAME_END)
+		combat_end.emit()
 
 func emit_effect_resolution(effect : Effect) -> void :
 	for char in get_player_by_turn(true).get_characters() :

@@ -123,7 +123,7 @@ func on_opponent_character_hovered(char_index : int) -> void :
 
 func on_character_card_hovered() -> void :
 	info_popup = info_popup_scene.instantiate()
-	info_popup.add_string(character_display.character.character_quote)
+	info_popup.add_string(character_display.character.passive.description)
 	info_popup.set_target_rect(character_display.get_rect())
 	AudioManager.post_event(AK.EVENTS.DRAFT_HOVER_CARD)
 

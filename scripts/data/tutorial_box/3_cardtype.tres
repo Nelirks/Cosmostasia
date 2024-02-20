@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_qdvrv")
 tutorial_name = "3_cardtype"
-text = "Les cartes existent en 3 type: Attaque, Défense et Stratégie, le type d'une carte est montré par sa forme recto et verso."
+text = "Les cartes existent en 3 types : Attaque, Défense et Stratégie, le type d'une carte est montré par sa forme recto et verso."

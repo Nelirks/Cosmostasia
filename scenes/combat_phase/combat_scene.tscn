@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdby3tlko6pkc"]
+[gd_scene load_steps=10 format=3 uid="uid://bdby3tlko6pkc"]
 
 [ext_resource type="Script" path="res://scripts/combat/combat_scene.gd" id="1_t5omj"]
 [ext_resource type="PackedScene" uid="uid://3uv7ywrnc8jk" path="res://scenes/combat_phase/hand_display.tscn" id="3_0g7ao"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr8a6crxdqvbe" path="res://scenes/3d_environment/3d_board_scene.tscn" id="4_vhcko"]
 [ext_resource type="PackedScene" uid="uid://lpnhcjsvs3n5" path="res://scenes/end_turn_button.tscn" id="6_22q0x"]
 [ext_resource type="Script" path="res://scripts/mouse_click_area.gd" id="6_kni6t"]
+[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="7_s64sb"]
 
 [sub_resource type="Environment" id="Environment_bfeis"]
 background_mode = 3
@@ -64,6 +65,13 @@ offset_left = 1650.0
 offset_top = 480.0
 offset_right = 1885.0
 offset_bottom = 590.998
+
+[node name="FadeInTexture" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+self_modulate = Color(0.152941, 0.152941, 0.152941, 1)
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_s64sb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 light_energy = 0.05

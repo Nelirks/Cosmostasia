@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_weba6")
 tutorial_name = "8_status"
-text = "Vous venez de subir un effet de statut, vous pouvez passer la souris sur votre personnage pour avoir plus d'information."
+text = "Un personnage vient de subir un effet de statut, vous pouvez passer la souris sur ce personnage pour avoir plus d'information."

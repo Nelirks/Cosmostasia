@@ -10,7 +10,7 @@ bonus_damage = 10
 card_name = "Cruauté"
 description = "Inflige 15 dégâts au personnage adverse ciblé
 En inflige 10 supplémentaires si la cible a moins de la moitié de sa vie."
-quote = ""
+quote = "La force du dévoreur, retourné contre lui"
 cost = 1
 targetting = 2
 cardType = 0
