@@ -81,6 +81,7 @@ func refill_hand() -> void :
 			_hand[card_index].position = card_index + 1
 
 func can_play_card(card : Card, target : Character) -> bool :
+	if !GameManager.combat.get_player_by_turn(true) == card.character.player : return false
 	if card.cost > current_energy : return false
 	if card.character.has_status("stunned") : return false
 	if !card.can_target(target) : return false
