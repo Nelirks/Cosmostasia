@@ -40,4 +40,4 @@ func display_wait_panel() -> void :
 
 
 func _on_credits_button_pressed():
-	get_tree().change_scene_to_packed(credits_scene)
+	%Credits.visible = true
