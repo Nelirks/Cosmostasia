@@ -24,7 +24,7 @@ func on_effect_resolution(effect : Effect) -> void :
 		status_updated.emit()
 
 func get_texture() -> Texture :
-	var result : Image = background
+	var result : Image = background.duplicate()
 	var image_rect = Rect2(Vector2.ZERO, result.get_size())
 	result.blend_rect(grey_elements, image_rect, Vector2.ZERO)
 	if cards_played[0] : result.blend_rect(prepared_icon, image_rect, Vector2.ZERO)
