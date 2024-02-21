@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://3uv7ywrnc8jk"]
+[gd_scene load_steps=5 format=3 uid="uid://3uv7ywrnc8jk"]
 
 [ext_resource type="Script" path="res://scripts/combat/hand_display.gd" id="1_iq6b1"]
 [ext_resource type="PackedScene" uid="uid://dndrh64lp266q" path="res://vfx/selected_character_shine/selected_shine_fx.tscn" id="2_8aok0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_000ce"]
+albedo_color = Color(0.105882, 0.0705882, 0.121569, 1)
+emission_enabled = true
+emission = Color(0.105882, 0.0705882, 0.121569, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a3nr4"]
+material = SubResource("StandardMaterial3D_000ce")
+size = Vector3(3.75, 5.6, 2)
 
 [node name="hand_display" type="Node3D"]
 script = ExtResource("1_iq6b1")
@@ -28,3 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15, 10, 0)
 
 [node name="InfoPopupContainer" type="CanvasLayer" parent="."]
+
+[node name="DrawPileCube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3.5, -1)
+mesh = SubResource("BoxMesh_a3nr4")

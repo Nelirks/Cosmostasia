@@ -159,6 +159,8 @@ func _update_card_position(card : Card, immediate : bool) -> void :
 		card_display.flip(!card_display.card.is_in_hand, 0 if immediate else card_move_duration)
 	else :
 		card_display.flip(!card_display.card.is_in_hand or !card_display.card.revealed, 0)
+	
+	card_display.rotates_on_hover =  card != player.get_draw_pile_top_card()
 
 func _on_card_played(card : Card) -> void :
 	if cards[card] == null :
