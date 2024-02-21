@@ -67,20 +67,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [-0.065, 0.1, 0.406]
 }
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.52),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fcbcn"]
 _data = {

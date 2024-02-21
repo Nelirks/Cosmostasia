@@ -44,6 +44,7 @@ func play_vfx(vfx_scene : PackedScene, source : CharacterCard3D, target : Charac
 	var vfx : CombatVFX = vfx_scene.instantiate()
 	add_child(vfx)
 	vfx.set_context(source, target)
+	vfx.play()
 
 func _on_combat_end() -> void : 
 	var end_game_overlay = preload("res://scenes/combat_phase/end_game_overlay.tscn").instantiate()

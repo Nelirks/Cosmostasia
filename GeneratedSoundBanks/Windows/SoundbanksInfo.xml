@@ -162,7 +162,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{5C59ABC7-126B-F0AE-D14D-C792DB1968BC}">
+		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{5EAB2ECD-57C5-61D6-D1B7-221CCF84F6C9}">
 			<ShortName>Soundbank</ShortName>
 			<Path>Soundbank.bnk</Path>
 			<Media>
@@ -177,6 +177,10 @@
 				<File Id="94078221" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>COSMOSTASIA_SELECTION_1.wav</ShortName>
 					<CachePath>SFX/COSMOSTASIA_SELECTION_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="232061810" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>COSMOSTASIA_DISSOLVE.wav</ShortName>
+					<CachePath>SFX/COSMOSTASIA_DISSOLVE_818F3B66.wem</CachePath>
 				</File>
 				<File Id="262915043" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Combat_1.2_115bpm_4-4_L16M_P0.wav</ShortName>
@@ -222,6 +226,14 @@
 					<ShortName>Cosmostasia_Combat_Phase04.wav</ShortName>
 					<CachePath>SFX/Cosmostasia_Combat_Phase04_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="758173038" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>COSMOSTASIA_HIT_2.wav</ShortName>
+					<CachePath>SFX/COSMOSTASIA_HIT_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="795817382" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>COSMOSTASIA_HIT_1.wav</ShortName>
+					<CachePath>SFX/COSMOSTASIA_HIT_1_818F3B66.wem</CachePath>
+				</File>
 				<File Id="973321562" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>COSMOSTASIA_DRAW_1.wav</ShortName>
 					<CachePath>SFX/COSMOSTASIA_DRAW_1_818F3B66.wem</CachePath>
@@ -230,12 +242,26 @@
 			<Events>
 				<Event Id="814543256" Name="Button_Click"/>
 				<Event Id="1701177942" Name="Button_Hover"/>
+				<Event Id="3137653395" Name="Card_Dissolve">
+					<MediaRefs>
+						<MediaRef Id="232061810"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4136169396" Name="Card_Draw">
 					<MediaRefs>
 						<MediaRef Id="973321562"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="659043495" Name="Card_Use"/>
+				<Event Id="4192997571" Name="Card_Multi_Hit">
+					<MediaRefs>
+						<MediaRef Id="758173038"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1438394416" Name="Card_Single_Hit">
+					<MediaRefs>
+						<MediaRef Id="795817382"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1461912510" Name="Card_ZoomIn">
 					<MediaRefs>
 						<MediaRef Id="269332726"/>
@@ -348,5 +374,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7879334A-331B-6FE9-199A-FB1ACA58B39E}</FileHash>
+	<FileHash>{C2C3F7E3-88AA-3A0E-A76C-99EC72FED891}</FileHash>
 </SoundBanksInfo>

@@ -80,6 +80,7 @@ func _destroy_card_display(card : Card, immediate : bool = false) -> void :
 		cards[card].queue_free()
 		cards[card] = null
 	else :
+		AudioManager.post_event(AK.EVENTS.CARD_DISSOLVE)
 		cards[card].position.z -= 0.01
 		cards[card].dissolve(dissolve_duration)
 		await get_tree().create_timer(dissolve_duration).timeout

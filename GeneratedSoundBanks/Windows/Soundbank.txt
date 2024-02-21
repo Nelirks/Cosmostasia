@@ -1,13 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
 	5298891	Start_CombatMusic			\Default Work Unit\Music\Start_CombatMusic	
 	540993415	Start_Music			\Default Work Unit\Music\Start_Music	
-	659043495	Card_Use			\Default Work Unit\Cards\Card_Use	
 	731380034	End_Turn			\Default Work Unit\Global\End_Turn	
 	814543256	Button_Click			\Default Work Unit\UI\Button_Click	
 	878153172	End_CombatMusic			\Default Work Unit\Music\End_CombatMusic	
 	1258815674	Draft_Hover_Card			\Default Work Unit\Draft\Draft_Hover_Card	
 	1342751926	Switch_Phase03			\Default Work Unit\Music\Switch_Phase03	
 	1342751927	Switch_Phase02			\Default Work Unit\Music\Switch_Phase02	
+	1438394416	Card_Single_Hit			\Default Work Unit\Cards\Card_Single_Hit	
 	1461912510	Card_ZoomIn			\Default Work Unit\Cards\Card_ZoomIn	
 	1593864692	Defeat			\Default Work Unit\Global\Defeat	
 	1701177942	Button_Hover			\Default Work Unit\UI\Button_Hover	
@@ -16,10 +16,12 @@ Event	ID	Name			Wwise Object Path	Notes
 	2837384057	Stop_Music			\Default Work Unit\Music\Stop_Music	
 	3020609900	Take_Damage			\Default Work Unit\Global\Take_Damage	
 	3103125184	Draft_Click_Card			\Default Work Unit\Draft\Draft_Click_Card	
+	3137653395	Card_Dissolve			\Default Work Unit\Cards\Card_Dissolve	
 	3560549638	Draft_Validate_Button			\Default Work Unit\Draft\Draft_Validate_Button	
 	3576548833	Card_ZoomOut			\Default Work Unit\Cards\Card_ZoomOut	
 	3790030967	Start_Turn			\Default Work Unit\Global\Start_Turn	
 	4136169396	Card_Draw			\Default Work Unit\Cards\Card_Draw	
+	4192997571	Card_Multi_Hit			\Default Work Unit\Cards\Card_Multi_Hit	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	1021618141	MusicState			\Default Work Unit\MusicState	
@@ -36,6 +38,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1542609	Combat_1_1_115bpm_4-4_L30M_P6M	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Combat_1.1_115bpm_4-4_L30M_P6M_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\Phase 01\Cosmostasia_Combat_Phase01_A\Combat_1_1_115bpm_4-4_L30M_P6M		12020964
 	85081764	Cosmostasia_Combat_Phase03_B	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Cosmostasia_Combat_Phase03_B_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\Phase 03\Cosmostasia_Combat_Phase03_B\Cosmostasia_Combat_Phase03_B		8835484
 	94078221	COSMOSTASIA_SELECTION_1	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_SELECTION_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Draft\COSMOSTASIA_SELECTION_1		230876
+	232061810	COSMOSTASIA_DISSOLVE	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_DISSOLVE_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\COSMOSTASIA_DISSOLVE		378460
 	262915043	Combat_1_2_115bpm_4-4_L16M_P0	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Combat_1.2_115bpm_4-4_L16M_P0_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\Phase 01\Cosmostasia_Combat_Phase01_B\Combat_1_2_115bpm_4-4_L16M_P0		6411228
 	269332726	COSMOSTASIA_ZOOM_IN_1	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_ZOOM_IN_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\COSMOSTASIA_ZOOM_IN_1		93284
 	328152302	Cosmostasia_Combat_Phase02	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Cosmostasia_Combat_Phase02_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\Phase 02\Cosmostasia_Combat_Phase02\Cosmostasia_Combat_Phase02		17670824
@@ -47,5 +50,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	712586612	Cosmostasia_MainMenu	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Cosmostasia_MainMenu_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\Main Menu\Cosmostasia_MainMenu\Cosmostasia_MainMenu		37124380
 	716968653	COSMOSTASIA_SURVOL_1	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_SURVOL_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Draft\COSMOSTASIA_SURVOL_1		97016
 	738309539	Cosmostasia_Combat_Phase04	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\Cosmostasia_Combat_Phase04_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\Phase 04\Cosmostasia_Combat_Phase04\Cosmostasia_Combat_Phase04		1472700
+	758173038	COSMOSTASIA_MULTI_HIT	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_HIT_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\COSMOSTASIA_MULTI_HIT		106012
+	795817382	COSMOSTASIA_SINGLE_HIT	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_HIT_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\COSMOSTASIA_SINGLE_HIT		89752
 	973321562	COSMOSTASIA_DRAW_1	C:\Users\rapha\Documents\GitHub\Cosmostasia\Cosmostasia_WwiseProject\.cache\Windows\SFX\COSMOSTASIA_DRAW_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game\COSMOSTASIA_DRAW_1		99428
 

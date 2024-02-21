@@ -5,7 +5,7 @@ class_name CombatVFX
 @export var animation_name : String
 @export var lifetime : float
 
-func _ready():
+func play():
 	animator.play(animation_name)
 	get_tree().create_timer(lifetime).timeout.connect(queue_free)
 
