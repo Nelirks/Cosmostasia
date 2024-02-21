@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_hkalm"]
 script = ExtResource("6_kpovl")
 preset_name = "Aller et retour"
-content = Array[int]([4, 0, 4, 0, 2])
+content = Array[int]([4, 0, 3, 0, 3])
 
 [sub_resource type="Resource" id="Resource_0sjhs"]
 script = ExtResource("6_kpovl")
