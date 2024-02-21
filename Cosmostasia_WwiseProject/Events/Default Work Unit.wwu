@@ -16,7 +16,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Card_Use" ID="{BB4C738F-A164-4061-94A4-BC52455E4158}"/>
+						<Event Name="Card_Single_Hit" ID="{BB4C738F-A164-4061-94A4-BC52455E4158}">
+							<ChildrenList>
+								<Action Name="" ID="{CE9BF030-2138-4499-8E24-EA7966FA673E}" ShortID="725525034">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_SINGLE_HIT" ID="{B2F89E57-1A0E-4E0C-9E7F-4500143D4F7F}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Card_ZoomIn" ID="{EF1C4FCD-0853-4104-8C57-94558FCA48F5}">
 							<ChildrenList>
 								<Action Name="" ID="{40834E3B-EB19-463D-BFA7-661941CE4862}" ShortID="907728735">
@@ -34,6 +44,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="COSMOSTASIA_ZOOM_OUT_1" ID="{B699C8D6-6E50-48B6-88BD-AE1F4316B22D}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Card_Multi_Hit" ID="{17DEEBAF-2114-4810-8818-94EF5586C776}">
+							<ChildrenList>
+								<Action Name="" ID="{917308D1-FCCB-45E2-92A4-BD143E59D6E3}" ShortID="25132928">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_MULTI_HIT" ID="{0F4A2EB7-9F9E-4FB3-A016-17331790FCF9}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Card_Dissolve" ID="{AAA8EA8F-E8F1-4B54-964F-B26AE884A37B}">
+							<ChildrenList>
+								<Action Name="" ID="{D82041C6-4B7C-488A-BBE1-9B28A84261D1}" ShortID="136719742">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="COSMOSTASIA_DISSOLVE" ID="{B0795E5C-9565-451B-B457-26E163FBEAC7}" WorkUnitID="{0822B3A2-B4EA-4EBF-BBCA-5885446E15E0}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

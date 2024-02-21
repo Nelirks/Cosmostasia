@@ -216,6 +216,72 @@
 								<ActiveSource Name="COSMOSTASIA_ZOOM_OUT_1" ID="{D2144593-8626-4748-B742-B7E53C8CA3CB}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="COSMOSTASIA_SINGLE_HIT" ID="{B2F89E57-1A0E-4E0C-9E7F-4500143D4F7F}" ShortID="191191406">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_HIT_1" ID="{7A209E22-5464-4E6C-9AD5-4B86EA37CB87}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_HIT_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="795817382"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_HIT_1" ID="{7A209E22-5464-4E6C-9AD5-4B86EA37CB87}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="COSMOSTASIA_MULTI_HIT" ID="{0F4A2EB7-9F9E-4FB3-A016-17331790FCF9}" ShortID="1016705393">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_HIT_2" ID="{10596F61-3F39-4B91-82E9-299A91958ED7}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_HIT_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="758173038"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_HIT_2" ID="{10596F61-3F39-4B91-82E9-299A91958ED7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="COSMOSTASIA_DISSOLVE" ID="{B0795E5C-9565-451B-B457-26E163FBEAC7}" ShortID="34600796">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55764799-8311-49C8-BF0C-D4F4A50E0AB4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C6B2B606-1445-463E-9C89-9B08A6DFEA9B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="COSMOSTASIA_DISSOLVE" ID="{F872A0CA-8C0B-4E96-881E-53B3BD49819D}">
+									<Language>SFX</Language>
+									<AudioFile>COSMOSTASIA_DISSOLVE.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="232061810"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="COSMOSTASIA_DISSOLVE" ID="{F872A0CA-8C0B-4E96-881E-53B3BD49819D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
