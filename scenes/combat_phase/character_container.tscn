@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://dypqama8wixgp"]
+[gd_scene load_steps=12 format=3 uid="uid://dypqama8wixgp"]
 
 [ext_resource type="Script" path="res://scripts/combat/character_container.gd" id="1_vbnqj"]
 [ext_resource type="PackedScene" uid="uid://bp4yvmfatlukc" path="res://vfx/target_highlight/ally_target_fx.tscn" id="2_dd4sg"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_dm1yn"]
 [ext_resource type="PackedScene" uid="uid://c5yqy2dbx4mn8" path="res://vfx/target_highlight/enemy_target_fx.tscn" id="3_orwev"]
+[ext_resource type="Shader" uid="uid://d0xcs1wwuh2ng" path="res://resources/VFX/dissolve.res" id="5_n5fwn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bxxm"]
+resource_local_to_scene = true
+shader = ExtResource("5_n5fwn")
+shader_parameter/Progress = 0.0
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mv6ul"]
+resource_local_to_scene = true
+shader = ExtResource("5_n5fwn")
+shader_parameter/Progress = 0.0
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5e4p"]
+resource_local_to_scene = true
+shader = ExtResource("5_n5fwn")
+shader_parameter/Progress = 0.0
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hamf"]
+resource_local_to_scene = true
+shader = ExtResource("5_n5fwn")
+shader_parameter/Progress = 0.0
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ainbw"]
+resource_local_to_scene = true
+shader = ExtResource("5_n5fwn")
+shader_parameter/Progress = 0.0
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fr6ip"]
+resource_local_to_scene = true
+shader = ExtResource("5_n5fwn")
+shader_parameter/Progress = 0.0
+shader_parameter/ColorMargin = 0.15
 
 [node name="CharacterContainer" type="Node3D"]
 script = ExtResource("1_vbnqj")
@@ -15,14 +52,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
 
 [node name="PlayerCharacter1" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -5.5, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_3bxxm")
 is_combat_display = true
 
 [node name="PlayerCharacter2" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_mv6ul")
 is_combat_display = true
 
 [node name="PlayerCharacter3" parent="PlayerCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5.5, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_w5e4p")
 is_combat_display = true
 
 [node name="OpponentCharacters" type="Node3D" parent="."]
@@ -30,14 +70,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 
 [node name="OpponentCharacter1" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -5.5, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_2hamf")
 is_combat_display = true
 
 [node name="OpponentCharacter2" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_ainbw")
 is_combat_display = true
 
 [node name="OpponentCharacter3" parent="OpponentCharacters" instance=ExtResource("2_dm1yn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5.5, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_fr6ip")
 is_combat_display = true
 
 [node name="InfoPopupContainer" type="CanvasLayer" parent="."]

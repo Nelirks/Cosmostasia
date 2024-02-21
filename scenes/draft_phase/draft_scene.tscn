@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=31 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -21,37 +21,55 @@
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="18_h2vva"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="19_p5f0v"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1pmn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dng3"]
 resource_local_to_scene = true
 shader = ExtResource("14_jdevd")
 shader_parameter/Progress = null
 shader_parameter/ColorMargin = 0.15
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tb4fl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chxs8"]
 resource_local_to_scene = true
 shader = ExtResource("14_jdevd")
 shader_parameter/Progress = null
 shader_parameter/ColorMargin = 0.15
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7x47"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_181yw"]
 resource_local_to_scene = true
 shader = ExtResource("14_jdevd")
 shader_parameter/Progress = null
 shader_parameter/ColorMargin = 0.15
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lhg4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q5fmu"]
 resource_local_to_scene = true
 shader = ExtResource("14_jdevd")
 shader_parameter/Progress = null
 shader_parameter/ColorMargin = 0.15
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q4csy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bajdu"]
 resource_local_to_scene = true
 shader = ExtResource("14_jdevd")
 shader_parameter/Progress = null
 shader_parameter/ColorMargin = 0.15
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4qxf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyppb"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwpyx"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fa0p6"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qs3s"]
 resource_local_to_scene = true
 shader = ExtResource("14_jdevd")
 shader_parameter/Progress = null
@@ -75,29 +93,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
 
 [node name="Pick1" parent="Board/OpponentDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 6, 0)
-dissolve_material = SubResource("ShaderMaterial_j1pmn")
+dissolve_material = SubResource("ShaderMaterial_2dng3")
 
 [node name="Pick2" parent="Board/OpponentDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 0)
-dissolve_material = SubResource("ShaderMaterial_tb4fl")
+dissolve_material = SubResource("ShaderMaterial_chxs8")
 
 [node name="Pick3" parent="Board/OpponentDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -10, 0)
-dissolve_material = SubResource("ShaderMaterial_o7x47")
+dissolve_material = SubResource("ShaderMaterial_181yw")
 
 [node name="PlayerChoices" type="Node3D" parent="Board"]
 unique_name_in_owner = true
 
 [node name="CharacterCard3D" parent="Board/PlayerChoices" instance=ExtResource("13_5um8g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_q5fmu")
 rotation_angle = 0.55
 
 [node name="CharacterCard3D2" parent="Board/PlayerChoices" instance=ExtResource("13_5um8g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_bajdu")
 rotation_angle = 0.55
 
 [node name="CharacterCard3D3" parent="Board/PlayerChoices" instance=ExtResource("13_5um8g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0, 0)
+dissolve_material = SubResource("ShaderMaterial_uyppb")
 rotation_angle = 0.55
 
 [node name="PlayerDraft" type="Node3D" parent="Board"]
@@ -106,15 +127,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
 
 [node name="Pick1" parent="Board/PlayerDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 6, 0)
-dissolve_material = SubResource("ShaderMaterial_6lhg4")
+dissolve_material = SubResource("ShaderMaterial_rwpyx")
 
 [node name="Pick2" parent="Board/PlayerDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 0)
-dissolve_material = SubResource("ShaderMaterial_q4csy")
+dissolve_material = SubResource("ShaderMaterial_fa0p6")
 
 [node name="Pick3" parent="Board/PlayerDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -10, 0)
-dissolve_material = SubResource("ShaderMaterial_i4qxf")
+dissolve_material = SubResource("ShaderMaterial_5qs3s")
 
 [node name="Camera3D" type="Camera3D" parent="Board"]
 unique_name_in_owner = true

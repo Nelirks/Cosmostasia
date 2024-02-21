@@ -7,6 +7,15 @@ var opponent_choice : ButtonPressed
 signal replay_requested()
 signal quit_requested()
 
+@export var win_one_shot_vfx : PackedScene
+@export var win_one_shot_duration : float
+@export var win_continuous_vfx : PackedScene
+@export var win_continuous_delay : float
+@export var lose_one_shot_vfx : PackedScene
+@export var lose_one_shot_duration : float
+@export var lose_continuous_vfx : PackedScene
+@export var lose_continuous_delay : float
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioManager.post_event_deferred(AK.EVENTS.START_MAINMENUMUSIC, 10.0)
@@ -15,8 +24,23 @@ func _ready() -> void:
 	$VictoryIcon.visible = is_victory
 	$DefeatIcon.visible = !is_victory
 	if is_victory and is_defeat : $VictoryIcon/Label.text = "Égalité"
-	if is_victory and !is_defeat : add_child(preload("res://scenes/vfx_chloe/vfx fin.tscn").instantiate())
 	
+	if is_victory :
+		if win_one_shot_vfx != null : 
+			var win_os_vfx : Node3D = win_one_shot_vfx.instantiate()
+			add_child(win_os_vfx)
+			get_tree().create_timer(win_one_shot_duration).timeout.connect(func() : win_os_vfx.queue_free())
+		if win_continuous_vfx != null :
+			get_tree().create_timer(win_continuous_delay).timeout.connect(func() : add_child(win_continuous_vfx.instantiate()))
+	
+	else :
+		if lose_one_shot_vfx != null :
+			var lose_os_vfx : Node3D = lose_one_shot_vfx.instantiate()
+			add_child(lose_os_vfx)
+			get_tree().create_timer(lose_one_shot_duration).timeout.connect(func() : lose_os_vfx.queue_free())
+		if lose_continuous_vfx != null :
+			get_tree().create_timer(lose_continuous_delay).timeout.connect(func() : add_child(lose_continuous_vfx.instantiate()))
+
 	TutorialGlobal.restart()
 
 @rpc("any_peer", "call_remote", "reliable")

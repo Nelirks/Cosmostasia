@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx5fsddyni5wy"]
+[gd_scene load_steps=10 format=3 uid="uid://bx5fsddyni5wy"]
 
 [ext_resource type="Script" path="res://scripts/end_game_overlay.gd" id="1_j4e20"]
 [ext_resource type="Texture2D" uid="uid://cgbbggo0bkowg" path="res://resources/sprites/ui_elements/victory.png" id="2_umc2j"]
+[ext_resource type="PackedScene" uid="uid://cw2e0yluj6qfr" path="res://scenes/vfx_chloe/vfx victoire.tscn" id="2_y4r3m"]
+[ext_resource type="PackedScene" uid="uid://7lx40lfuxioo" path="res://scenes/vfx_chloe/vfx fin.tscn" id="3_cmjcs"]
 [ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="3_sljkr"]
 [ext_resource type="Texture2D" uid="uid://coct2vf3ynlbg" path="res://resources/sprites/ui_elements/defeat.png" id="4_44v7i"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="4_kfuwq"]
+[ext_resource type="PackedScene" uid="uid://qvwdkslei785" path="res://scenes/vfx_chloe/vfx defaite.tscn" id="4_opn0l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rwl88"]
 font = ExtResource("3_sljkr")
@@ -18,6 +21,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j4e20")
+win_one_shot_vfx = ExtResource("2_y4r3m")
+win_one_shot_duration = 2.0
+win_continuous_vfx = ExtResource("3_cmjcs")
+win_continuous_delay = 1.5
+lose_one_shot_vfx = ExtResource("4_opn0l")
+lose_one_shot_duration = 2.0
 
 [node name="VictoryIcon" type="TextureRect" parent="."]
 layout_mode = 0

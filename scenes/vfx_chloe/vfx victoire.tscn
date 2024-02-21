@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm3ioqryvp60l"]
+[gd_scene load_steps=8 format=3 uid="uid://cw2e0yluj6qfr"]
 
 [ext_resource type="Texture2D" uid="uid://cyjypnowbehrm" path="res://scenes/vfx_chloe/flare.jpeg" id="1_g83mw"]
+[ext_resource type="Script" path="res://scenes/vfx_chloe/vfx_starter.gd" id="1_rtq2o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo7wu"]
 transparency = 1
@@ -50,6 +51,7 @@ section_segments = 2
 
 [node name="vfx victoire" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_rtq2o")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_jo7wu")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=12 format=3 uid="uid://dr8a6crxdqvbe"]
 
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_yl1qs"]
 [ext_resource type="Script" path="res://scenes/3d_environment/dust0.gd" id="4_6wkjx"]
 [ext_resource type="Texture2D" uid="uid://whbaf0j7lnyi" path="res://resources/3d_asset/particle/Flare00.PNG" id="4_oqe55"]
+[ext_resource type="Script" path="res://scripts/combat/draw_pile_cube.gd" id="4_vndu7"]
 
 [sub_resource type="Environment" id="Environment_b6jo1"]
 ambient_light_energy = 0.0
@@ -336,9 +337,12 @@ light_energy = 0.15
 [node name="PlayerDrawPileCube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15, 2.85, 3.825)
 mesh = SubResource("BoxMesh_d6bt8")
+script = ExtResource("4_vndu7")
+is_player = true
 
 [node name="OpponentDrawPileCube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.085, 2.85, -3.685)
 mesh = SubResource("BoxMesh_d6bt8")
+script = ExtResource("4_vndu7")
 
 [connection signal="timeout" from="Node3D/Timer" to="Node3D" method="_on_timer_timeout"]

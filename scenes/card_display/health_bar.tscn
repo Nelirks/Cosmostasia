@@ -19,11 +19,13 @@ grow_vertical = 2
 script = ExtResource("1_4yxh2")
 
 [node name="HealthArea" type="Control" parent="."]
+use_parent_material = true
 anchors_preset = 0
 offset_right = 1826.0
 offset_bottom = 339.0
 
 [node name="HealthBackground" type="TextureRect" parent="HealthArea"]
+use_parent_material = true
 layout_mode = 0
 offset_right = 1826.0
 offset_bottom = 339.0
@@ -31,6 +33,7 @@ texture = ExtResource("1_jio84")
 
 [node name="HealthFill" type="TextureRect" parent="HealthArea"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 0
 offset_right = 1826.0
 offset_bottom = 324.0
@@ -40,6 +43,7 @@ stretch_mode = 1
 
 [node name="Label" type="Label" parent="HealthArea"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +59,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ArmorArea" type="Control" parent="."]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 0
 offset_left = 162.5
@@ -63,6 +68,7 @@ offset_right = 1663.5
 offset_bottom = 433.0
 
 [node name="ArmorBackgroung" type="TextureRect" parent="ArmorArea"]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -80,6 +86,7 @@ stretch_mode = 1
 
 [node name="ArmorFill" type="TextureRect" parent="ArmorArea"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
