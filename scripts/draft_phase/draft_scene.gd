@@ -1,5 +1,7 @@
 extends Node
 
+var synced = false
+
 @export var character_pool : Array[Character]
 @export_range(0.0, 1.0, 0.05) var reduced_pick_chance : float
 
@@ -38,8 +40,20 @@ func _ready():
 	TutorialGlobal.trigger_tutorial("0_welcome")
 	TutorialGlobal.trigger_tutorial("1_passive")
 	
-	if NetworkManager.is_host :
-		pick_character_choices()
+	if NetworkManager.is_host : 
+		check_client_ready.rpc()
+	else :
+		on_client_ready.rpc()
+
+@rpc("call_remote", "authority", "reliable")
+func check_client_ready() -> void :
+	on_client_ready.rpc()
+
+@rpc("call_remote", "any_peer", "reliable")
+func on_client_ready() -> void :
+	if synced == true : return
+	synced = true
+	pick_character_choices()
 
 func connect_signals() -> void :
 	for i in range(3) :
@@ -88,6 +102,7 @@ func get_random_character(excluded_chars : Array[int], reduced_chance_chars : Ar
 	return 0
 
 func pick_character_choices() -> void :
+	print("ALED")
 	var host_draft : Array[int]
 	var client_draft : Array[int]
 	
@@ -101,7 +116,7 @@ func pick_character_choices() -> void :
 	else : 
 		client_choice = client_draft[GameManager.rng.randi_range(0, client_draft.size() - 1)]
 
-@rpc("authority", "call_remote")
+@rpc("authority", "call_remote", "reliable")
 func set_choices(char_indexes : Array) -> void :
 	selected_choice = -1
 	waiting_for_opponent = false
@@ -109,7 +124,7 @@ func set_choices(char_indexes : Array) -> void :
 	cur_choices.append_array(char_indexes)
 	display_choices()
 
-@rpc("any_peer", "call_remote")
+@rpc("any_peer", "call_remote", "reliable")
 func notify_choice(char_index : int) -> void :
 	if multiplayer.get_remote_sender_id() == 0 :
 		host_choice = char_index
@@ -123,7 +138,7 @@ func notify_choice(char_index : int) -> void :
 		
 		pick_character_choices()
 
-@rpc("authority", "call_local")
+@rpc("authority", "call_local", "reliable")
 func apply_choices(host_char : int, client_char : int) -> void :
 	host_picks.append(host_char)
 	client_picks.append(client_char)
