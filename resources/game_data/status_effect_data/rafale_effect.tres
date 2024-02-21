@@ -1,6 +1,5 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dibqu1nd8n3o4"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dibqu1nd8n3o4"]
 
-[ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="1_fs8v7"]
 [ext_resource type="Script" path="res://scripts/data/status_effects/rafale_status.gd" id="1_lgfy0"]
 
 [resource]
@@ -10,4 +9,3 @@ type = 0
 display_names = Array[String](["Rafale"])
 description = "!S!Rafale!S!
 Augmente les dégâts infligés par Tir en Rafale ce tour"
-icon = ExtResource("1_fs8v7")
