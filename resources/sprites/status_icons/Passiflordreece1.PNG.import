@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c555n33up84wm"
-path="res://.godot/imported/Passiflordreece1.png-2ea9e429353bae39190f049c879e1f39.ctex"
+path="res://.godot/imported/Passiflordreece1.PNG-b56250edab17af2fcc0706e46238fdbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/status_icons/Passiflordreece1.png"
-dest_files=["res://.godot/imported/Passiflordreece1.png-2ea9e429353bae39190f049c879e1f39.ctex"]
+source_file="res://resources/sprites/status_icons/Passiflordreece1.PNG"
+dest_files=["res://.godot/imported/Passiflordreece1.PNG-b56250edab17af2fcc0706e46238fdbd.ctex"]
 
 [params]
 
