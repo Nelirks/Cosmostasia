@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bom16axg3g2ju"]
+
+[ext_resource type="Texture2D" uid="uid://cyjypnowbehrm" path="res://scenes/vfx_chloe/flare.jpeg" id="1_1l3ey"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo7wu"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(7.1, 1.18, 0, 1)
+albedo_texture = ExtResource("1_1l3ey")
+heightmap_scale = 16.0
+grow_amount = 13.559
+point_size = 3.1
+use_particle_trails = true
+
+[sub_resource type="Curve" id="Curve_bxxqm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.490566, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_j47r4"]
+curve = SubResource("Curve_bxxqm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f25fd"]
+lifetime_randomness = 0.5
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 5.0
+emission_ring_inner_radius = 1.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -40.0
+radial_accel_max = -20.0
+tangential_accel_min = 20.0
+tangential_accel_max = 40.0
+damping_min = 10.0
+damping_max = 20.0
+scale_min = 0.01
+scale_max = 0.04
+scale_curve = SubResource("CurveTexture_j47r4")
+turbulence_noise_strength = 5.08
+turbulence_noise_scale = 8.24
+turbulence_initial_displacement_min = -7.0
+turbulence_initial_displacement_max = -7.0
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_jvhov"]
+size = 4.0
+sections = 4
+section_segments = 2
+
+[node name="vfx defaite" type="Node3D"]
+transform = Transform3D(0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, -0.965926, -4.2222e-08, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_jo7wu")
+emitting = false
+amount = 600
+lifetime = 2.2
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 60
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_f25fd")
+draw_pass_1 = SubResource("RibbonTrailMesh_jvhov")
