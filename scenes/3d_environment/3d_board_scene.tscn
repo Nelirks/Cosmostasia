@@ -6,12 +6,13 @@
 
 [sub_resource type="Environment" id="Environment_b6jo1"]
 ambient_light_energy = 0.0
+ssr_enabled = true
 ssr_fade_in = 1.94941
 ssr_fade_out = 11.6348
 ssr_depth_tolerance = 128.0
 ssao_enabled = true
-ssao_radius = 1.69
-ssao_intensity = 3.58
+ssao_radius = 2.79
+ssao_intensity = 2.64
 ssao_power = 1.5529
 ssao_horizon = 0.08
 ssao_sharpness = 1.0
@@ -24,6 +25,7 @@ ssil_sharpness = 0.08
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_bounce_feedback = 1.99
+sdfgi_energy = 0.67
 glow_enabled = true
 glow_levels/1 = 4.0
 glow_levels/3 = 0.0
@@ -271,8 +273,8 @@ mesh_lod_threshold = 0.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(-0.44679, -0.851525, 0.274378, 0.10902, 0.252584, 0.961414, -0.887972, 0.459462, -0.0200187, -0.00811005, 2.18535, -0.01301)
-light_color = Color(0.603922, 0.439216, 0.917647, 1)
-light_energy = 0.289
+light_color = Color(0.494118, 0.517647, 0.760784, 1)
+light_energy = 0.3
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 shadow_bias = 1.0
@@ -287,7 +289,8 @@ directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 20.0
 
 [node name="center" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.84328e-08, 0.104617, -0.992695, -0.0601077, 0.13996, 6.6143, -0.10045)
+transform = Transform3D(0.00629966, -0.0597767, 0.998192, -0.994493, -0.104806, -1.82148e-08, 0.104617, -0.992695, -0.0601077, 0.13996, 6.6143, -0.10045)
+visible = false
 light_color = Color(1, 0.764706, 0.741176, 1)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -327,8 +330,8 @@ light_energy = 1.3
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.79229, 0.610145, 0, -0.610145, -0.79229, 0, 7.59735, 0)
-light_color = Color(0.678431, 0.741176, 0.741176, 1)
-light_energy = 0.1
+light_color = Color(0, 0.372549, 0.690196, 1)
+light_energy = 0.15
 
 [node name="PlayerDrawPileCube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15, 2.85, 3.825)
