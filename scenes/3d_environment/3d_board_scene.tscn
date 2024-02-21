@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr8a6crxdqvbe"]
+[gd_scene load_steps=11 format=3 uid="uid://dr8a6crxdqvbe"]
 
 [ext_resource type="PackedScene" uid="uid://eol4pewfnn2i" path="res://scenes/3d_environment/cosmostasia_arena.tscn" id="1_yl1qs"]
 [ext_resource type="Script" path="res://scenes/3d_environment/dust0.gd" id="4_6wkjx"]
@@ -80,6 +80,13 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_a8eda"]
 material = SubResource("StandardMaterial3D_vslyc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_000ce"]
+albedo_color = Color(0.431373, 0.329412, 0.466667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d6bt8"]
+material = SubResource("StandardMaterial3D_000ce")
+size = Vector3(1.475, 1, 2.225)
 
 [node name="3dBoardScene" type="Node3D"]
 
@@ -322,5 +329,13 @@ light_energy = 1.3
 transform = Transform3D(1, 0, 0, 0, -0.79229, 0.610145, 0, -0.610145, -0.79229, 0, 7.59735, 0)
 light_color = Color(0.678431, 0.741176, 0.741176, 1)
 light_energy = 0.1
+
+[node name="PlayerDrawPileCube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15, 2.85, 3.825)
+mesh = SubResource("BoxMesh_d6bt8")
+
+[node name="OpponentDrawPileCube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.085, 2.85, -3.685)
+mesh = SubResource("BoxMesh_d6bt8")
 
 [connection signal="timeout" from="Node3D/Timer" to="Node3D" method="_on_timer_timeout"]
