@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource("1_203jw")
-damage = 15
-armor = 15
+damage = 20
+armor = 20
 energy_regen = 1
 card_name = "Saute d'humeur"
-description = "Inflige 15 dégâts à la cible, octroie 15 d'armure à 4N-70N
+description = "Inflige 20 dégâts à la cible, octroie 20 d'armure à 4N-70N
 Augmente la recharge de 1"
 quote = "La joie de la victoire, la tristesse d'une perte et la colère face à sa propre impuissance"
 cost = 3

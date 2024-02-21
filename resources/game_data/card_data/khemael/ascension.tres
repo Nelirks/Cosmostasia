@@ -8,8 +8,8 @@ script = ExtResource("1_88yna")
 damage_per_stack = 12
 heal_per_stack = 12
 card_name = "Ascension"
-description = "Dépense le !S!Préjudice!S! et la !S!Faveur!S!.
-Inflige 12 dégâts à la cible par !S!Préjudice!S! ou soigne 12 PV par !S!Faveur!S! dépensés."
+description = "Dépense le !S!Préjudice!S! et la !S!Faveur!S!
+Inflige 12 dégâts à la cible par !S!Préjudice!S! ou soigne 12 PV par !S!Faveur!S! dépensés"
 quote = "\"Contemplez l'ardeur de mon âme\""
 cost = 3
 targetting = 0

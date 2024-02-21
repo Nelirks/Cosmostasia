@@ -6,8 +6,12 @@
 [resource]
 script = ExtResource("1_nykhp")
 damage = 40
+damage_increase = 10
+hp_threshold = 40
 card_name = "Écrase crâne"
-description = "Inflige 40 de dégâts à une cible"
+description = "Inflige 40 de dégâts à une cible
+En inflige 10 supplémentaires si Brunhilde a 40PV ou moins
+"
 quote = "Brunhilde à la tête sur ses épaules, contrairement à ses adversaires..."
 cost = 3
 targetting = 2

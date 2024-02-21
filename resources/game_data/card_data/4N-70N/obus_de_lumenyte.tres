@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_81ytq")
-damage = 10
+damage = 8
 hit_count = 2
 card_name = "Obus de Luményte"
-description = "Effectue deux attaques infligeant 10 dégâts à la cible"
+description = "Effectue deux attaques infligeant 8 dégâts à la cible"
 quote = "Soteria construisit sa gloire sur la lumènyte, mais ce fut également son déclin"
 cost = 1
 targetting = 2

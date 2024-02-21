@@ -8,7 +8,7 @@ script = ExtResource("1_mvai1")
 regen_reduction = 1
 armor = 20
 card_name = "Aura protectrice"
-description = "Octroie 20 d'armure à un personnage ciblé.
+description = "Octroie 20 d'armure à un personnage ciblé
 Réduit la recharge de l'adversaire de 1"
 quote = ""
 cost = 2

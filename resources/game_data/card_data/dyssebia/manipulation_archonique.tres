@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource("1_52hlp")
 base_damage = 15
-bonus_damage = 15
+bonus_damage = 10
 card_name = "Puissance Archonique"
 description = "Inflige 15 dégâts à la cible
-Les dégâts sont doublés si Dyssebia possède de l'armure"
+En inflige 10 supplémentaires si Dyssebia possède de l'armure"
 quote = "L'espoir qui fait vivre Ceteras sera utilisé pour sa chute"
 cost = 1
 targetting = 2

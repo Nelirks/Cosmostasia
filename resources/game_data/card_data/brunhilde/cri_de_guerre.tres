@@ -6,8 +6,12 @@
 [resource]
 script = ExtResource("1_04jwi")
 defense_up_duration = 1
+hp_threshold = 40
+armor = 10
 card_name = "Cri de guerre"
-description = "!S!Fortifie!S! les alliés pendant 1 tour"
+description = "!S!Fortifie!S! les alliés pendant 1 tour
+S'octroie 10 armure si Brunhilde a 40PV ou moins
+"
 quote = "Elevée dans une arène, la cosmostasie ne sera surement qu'une formalité pour Brunhilde"
 cost = 1
 targetting = 3

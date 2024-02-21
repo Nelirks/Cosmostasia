@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_gc6io"]
 script = ExtResource("6_70no3")
 preset_name = "Assassinat discret"
-content = Array[int]([2, 4, 0, 0, 4])
+content = Array[int]([3, 4, 0, 3, 0])
 
 [sub_resource type="Resource" id="Resource_aqh55"]
 script = ExtResource("6_70no3")

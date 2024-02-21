@@ -7,8 +7,8 @@
 script = ExtResource("1_70sux")
 damage = 10
 card_name = "Danse erratique"
-description = "Inflige 10 dégâts à la cible.
-Si elle n'était pas marquée par une !S!plume!S!, répète cet effet sur une cible aléatoire."
+description = "Inflige 10 dégâts à la cible
+Si elle n'était pas marquée par une !S!plume!S!, répète cet effet sur une cible aléatoire"
 quote = ""
 cost = 2
 targetting = 2

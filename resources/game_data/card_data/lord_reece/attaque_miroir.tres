@@ -8,8 +8,8 @@ script = ExtResource("1_bnwqi")
 base_damage = 20
 damage_increase = 20
 card_name = "Attaque miroir"
-description = "Inflige 20 dégâts à la cible. 
-En inflige 20 supplémentaires si Lord Reece a subi des dégâts au tour précédent."
+description = "Inflige 20 dégâts à la cible
+En inflige 20 supplémentaires si Lord Reece a subi des dégâts au tour précédent"
 quote = ""
 cost = 2
 targetting = 2
