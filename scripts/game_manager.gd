@@ -5,7 +5,6 @@ var _draft_scene : PackedScene = preload("res://scenes/draft_phase/draft_scene.t
 var _deckbuilding_scene : PackedScene = preload("res://scenes/deckbuilding_phase/deckbuilding_scene.tscn")
 var _combat_scene_path = "res://scenes/combat_phase/combat_scene.tscn"
 var _combat_scene : PackedScene
-var _end_screen_scene : PackedScene = preload("res://scenes/game_scenes/end_screen.tscn")
 @onready var combat : CombatManager = $CombatManager
 
 enum GameState { NONE, DRAFT, DECKBUILDING, COMBAT, GAME_END }
@@ -75,8 +74,6 @@ func _on_state_synced(state : GameState) -> void :
 			if NetworkManager.is_host : 
 				sync_rng()
 				combat.start_game.rpc()
-		GameState.GAME_END : 
-			get_tree().change_scene_to_packed(_end_screen_scene)
 
 func get_player(is_host : bool) -> Player:
 	if is_host and NetworkManager.is_host or !is_host and !NetworkManager.is_host :
