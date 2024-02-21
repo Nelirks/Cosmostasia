@@ -6,6 +6,11 @@
 				<MusicSwitchContainer Name="OST" ID="{B54407A8-B73B-49E1-8962-E3C709687D4D}" ShortID="31070412">
 					<PropertyList>
 						<Property Name="ContinuePlay" Type="bool" Value="False"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion" CompanyID="4095" PluginID="65535" PluginType="15">
