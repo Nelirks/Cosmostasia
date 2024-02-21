@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_61sws")
-base_damage = 20
+base_damage = 15
 feather_damage = 10
 card_name = "Plume scélérate"
-description = "Inflige 20 dégâts à la cible
+description = "Inflige 15 dégâts à la cible
 Si celle ci est marquée par une !S!plume!S!, les dégâts sont augmentés de 10"
 quote = ""
 cost = 1
