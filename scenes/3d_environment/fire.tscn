@@ -42,11 +42,11 @@ curve = SubResource("Curve_31052")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gmip3"]
 emission_shape = 1
 emission_sphere_radius = 0.1
+angle_min = -360.0
+angle_max = 360.0
 gravity = Vector3(0, 5, 0)
 damping_min = 0.5
 damping_max = 1.0
-angle_min = -360.0
-angle_max = 360.0
 scale_min = 0.33
 scale_max = 0.75
 scale_curve = SubResource("CurveTexture_bcia5")
@@ -90,11 +90,11 @@ curve = SubResource("Curve_3kgwg")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t44gj"]
 emission_shape = 1
 emission_sphere_radius = 0.1
+angle_min = -360.0
+angle_max = 360.0
 gravity = Vector3(0, 2.5, 0)
 damping_min = 0.5
 damping_max = 1.0
-angle_min = -360.0
-angle_max = 360.0
 scale_min = 0.16
 scale_max = 0.38
 scale_curve = SubResource("CurveTexture_68n2o")

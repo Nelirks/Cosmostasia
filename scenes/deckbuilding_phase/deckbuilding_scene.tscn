@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4qmo33q344c6" path="res://scenes/deckbuilding_phase/preset_selector.tscn" id="6_ccmsj"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="6_s3k44"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hct8s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e63fs"]
 resource_local_to_scene = true
 shader = ExtResource("4_rt5k0")
 shader_parameter/Progress = 0.0
@@ -32,7 +32,7 @@ card_zoom_out_duration = 0.25
 [node name="CharacterDisplay" parent="." instance=ExtResource("2_pls58")]
 unique_name_in_owner = true
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -5.76588, 8.40924, 0)
-dissolve_material = SubResource("ShaderMaterial_hct8s")
+dissolve_material = SubResource("ShaderMaterial_e63fs")
 
 [node name="CardArea" type="Node3D" parent="."]
 unique_name_in_owner = true

@@ -102,7 +102,6 @@ func get_random_character(excluded_chars : Array[int], reduced_chance_chars : Ar
 	return 0
 
 func pick_character_choices() -> void :
-	print("ALED")
 	var host_draft : Array[int]
 	var client_draft : Array[int]
 	

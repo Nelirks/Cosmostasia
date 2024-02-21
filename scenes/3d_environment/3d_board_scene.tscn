@@ -57,15 +57,15 @@ adjustment_saturation = 1.2
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xt3a"]
 lifetime_randomness = 1.0
+angle_max = 360.0
 direction = Vector3(1, 1, 0)
-gravity = Vector3(0, 1, 0)
 initial_velocity_min = 0.1
 initial_velocity_max = 0.2
 angular_velocity_min = 30.0
 angular_velocity_max = 50.0
+gravity = Vector3(0, 1, 0)
 linear_accel_min = 0.1
 linear_accel_max = 0.5
-angle_max = 360.0
 scale_min = 0.1
 scale_max = 0.3
 
