@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx5fsddyni5wy"]
+
+[ext_resource type="Script" path="res://scripts/end_game_overlay.gd" id="1_j4e20"]
+[ext_resource type="Texture2D" uid="uid://cgbbggo0bkowg" path="res://resources/sprites/ui_elements/victory.png" id="2_umc2j"]
+[ext_resource type="FontFile" uid="uid://bu4o5o8xwlky" path="res://fonts/Alice/Alice-Regular.ttf" id="3_sljkr"]
+[ext_resource type="Texture2D" uid="uid://coct2vf3ynlbg" path="res://resources/sprites/ui_elements/defeat.png" id="4_44v7i"]
+[ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="4_kfuwq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rwl88"]
+font = ExtResource("3_sljkr")
+font_size = 100
+
+[node name="EndOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4e20")
+
+[node name="VictoryIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 375.0
+offset_right = 1335.0
+offset_bottom = 706.0
+texture = ExtResource("2_umc2j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VictoryIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Victoire"
+label_settings = SubResource("LabelSettings_rwl88")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefeatIcon" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 585.0
+offset_top = 375.0
+offset_right = 1335.0
+offset_bottom = 706.0
+texture = ExtResource("4_44v7i")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="DefeatIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Défaite
+"
+label_settings = SubResource("LabelSettings_rwl88")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" parent="." instance=ExtResource("4_kfuwq")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 350.0
+offset_top = 900.0
+offset_right = 725.0
+offset_bottom = 1012.5
+grow_vertical = 1
+
+[node name="Label" parent="PlayButton" index="0"]
+text = "Rejouer"
+
+[node name="QuitButton" parent="." instance=ExtResource("4_kfuwq")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 1245.0
+offset_top = 900.0
+offset_right = 1620.0
+offset_bottom = 1012.5
+grow_vertical = 1
+
+[node name="Label" parent="QuitButton" index="0"]
+text = "Quitter"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+
+[editable path="PlayButton"]
+[editable path="QuitButton"]

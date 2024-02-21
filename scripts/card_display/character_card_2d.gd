@@ -45,7 +45,9 @@ func disconnect_signals() -> void :
 func on_character_hp_changed() -> void :
 	if is_combat_display :
 		%HealthBar.display_full(maxi(character.current_health, 0), character.max_health, character._armor)
-		if character.current_health <= 0 : play_overlay(death_fx, self)
+		if character.current_health <= 0 : 
+			play_overlay(death_fx, self)
+			%StatusEffectDisplays.visible = false
 	else : 
 		%HealthBar.display_max_health(character.max_health)
 

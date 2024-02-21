@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dypqama8wixgp"]
 
 [ext_resource type="Script" path="res://scripts/combat/character_container.gd" id="1_vbnqj"]
-[ext_resource type="PackedScene" path="res://vfx/target_highlight/ally_target_fx.tscn" id="2_dd4sg"]
+[ext_resource type="PackedScene" uid="uid://bp4yvmfatlukc" path="res://vfx/target_highlight/ally_target_fx.tscn" id="2_dd4sg"]
 [ext_resource type="PackedScene" uid="uid://dedijqnpjre4k" path="res://scenes/card_display/character_card_3d.tscn" id="2_dm1yn"]
-[ext_resource type="PackedScene" path="res://vfx/target_highlight/enemy_target_fx.tscn" id="3_orwev"]
+[ext_resource type="PackedScene" uid="uid://c5yqy2dbx4mn8" path="res://vfx/target_highlight/enemy_target_fx.tscn" id="3_orwev"]
 
 [node name="CharacterContainer" type="Node3D"]
 script = ExtResource("1_vbnqj")

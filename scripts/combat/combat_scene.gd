@@ -46,8 +46,19 @@ func play_vfx(vfx_scene : PackedScene, source : CharacterCard3D, target : Charac
 	vfx.set_context(source, target)
 
 func _on_combat_end() -> void : 
+	var end_game_overlay = preload("res://scenes/combat_phase/end_game_overlay.tscn").instantiate()
+	$CharacterContainer.dissolve_dead_characters()
+	$CanvasLayer.add_child(end_game_overlay)
+	end_game_overlay.replay_requested.connect(_on_replay_request)
+	end_game_overlay.quit_requested.connect(_on_quit_request)
+
+func _on_replay_request() -> void : 
 	recursive_queue_free(self)
-	GameManager.set_game_state.call_deferred(GameManager.GameState.GAME_END)
+	GameManager.set_game_state(GameManager.GameState.DRAFT)
+
+func _on_quit_request() -> void :
+	recursive_queue_free(self)
+	get_tree().quit()
 
 func recursive_queue_free(node : Node) -> void :
 	for child in node.get_children() :

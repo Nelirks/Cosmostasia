@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c60cxj8ci0f26"]
+[gd_scene load_steps=8 format=3 uid="uid://c60cxj8ci0f26"]
 
 [ext_resource type="PackedScene" uid="uid://c2nvantogdhxk" path="res://scenes/card_display/card_3d.tscn" id="1_8wkpg"]
 [ext_resource type="Script" path="res://scripts/card_display/character_card_3d.gd" id="2_sdcws"]
+[ext_resource type="Shader" uid="uid://d0xcs1wwuh2ng" path="res://resources/VFX/dissolve.res" id="3_2tcj4"]
 [ext_resource type="PackedScene" uid="uid://d0c442aplvhel" path="res://scenes/card_display/draft_character_card_2d.tscn" id="3_f787y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50p2e"]
+resource_local_to_scene = true
+shader = ExtResource("3_2tcj4")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_52mie"]
 viewport_path = NodePath("FrontViewport")
@@ -12,6 +19,8 @@ viewport_path = NodePath("BackViewport")
 
 [node name="CharacterCard3D" instance=ExtResource("1_8wkpg")]
 script = ExtResource("2_sdcws")
+dissolve_material = SubResource("ShaderMaterial_50p2e")
+dissolve_duration = 1.0
 is_combat_display = false
 
 [node name="FrontSide" parent="CardDisplay" index="0"]
@@ -25,3 +34,6 @@ transparent_bg = true
 size = Vector2i(560, 905)
 
 [node name="DraftCharacterCard" parent="FrontViewport" index="0" instance=ExtResource("3_f787y")]
+
+[node name="BackViewport" parent="." index="2"]
+transparent_bg = true

@@ -77,3 +77,11 @@ func get_character_card(character : Character) -> CharacterCard3D :
 		if opponent_char.character == character :
 			return opponent_char
 	return null
+
+func dissolve_dead_characters() -> void :
+	for character_display in player_characters :
+		if character_display.character.is_dead :
+			character_display.dissolve()
+	for character_display in opponent_characters :
+		if character_display.character.is_dead :
+			character_display.dissolve()

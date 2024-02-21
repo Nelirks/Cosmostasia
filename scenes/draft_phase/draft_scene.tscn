@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://7us7wtfyl5lk"]
+[gd_scene load_steps=28 format=3 uid="uid://7us7wtfyl5lk"]
 
 [ext_resource type="Script" path="res://scripts/draft_phase/draft_scene.gd" id="1_3n8hg"]
 [ext_resource type="Resource" uid="uid://b5d4civj0vkuu" path="res://resources/game_data/character_data/4N-70N.tres" id="2_3aehv"]
@@ -14,11 +14,48 @@
 [ext_resource type="PackedScene" uid="uid://dcw5bjov475wu" path="res://scenes/info_popup/info_popup.tscn" id="12_e0qrm"]
 [ext_resource type="PackedScene" uid="uid://c60cxj8ci0f26" path="res://scenes/card_display/draft_character_card_3d.tscn" id="13_5um8g"]
 [ext_resource type="Texture2D" uid="uid://bbntw4moi7wju" path="res://Sprites/ui_icons/fond menu.png" id="14_grg7o"]
+[ext_resource type="Shader" uid="uid://d0xcs1wwuh2ng" path="res://resources/VFX/dissolve.res" id="14_jdevd"]
 [ext_resource type="Texture2D" uid="uid://cbgk1dfxbghqh" path="res://Sprites/ui_icons/UI draft smoke.png" id="15_1he6s"]
 [ext_resource type="Texture2D" uid="uid://duy7wb6j6ywg5" path="res://Sprites/ui_icons/UI draft barre rouge.png" id="16_lshbp"]
 [ext_resource type="Texture2D" uid="uid://cuim3yanukfq6" path="res://Sprites/ui_icons/UI draft barre violet 2.png" id="17_40nrv"]
 [ext_resource type="Theme" uid="uid://37pqr2vuomlp" path="res://resources/themes/text_theme.tres" id="18_h2vva"]
 [ext_resource type="PackedScene" uid="uid://cq5f7l0xs6ulq" path="res://scenes/main_button.tscn" id="19_p5f0v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1pmn"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tb4fl"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7x47"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lhg4"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q4csy"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4qxf"]
+resource_local_to_scene = true
+shader = ExtResource("14_jdevd")
+shader_parameter/Progress = null
+shader_parameter/ColorMargin = 0.15
 
 [sub_resource type="Environment" id="Environment_48764"]
 background_mode = 3
@@ -38,12 +75,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
 
 [node name="Pick1" parent="Board/OpponentDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 6, 0)
+dissolve_material = SubResource("ShaderMaterial_j1pmn")
 
 [node name="Pick2" parent="Board/OpponentDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 0)
+dissolve_material = SubResource("ShaderMaterial_tb4fl")
 
 [node name="Pick3" parent="Board/OpponentDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -10, 0)
+dissolve_material = SubResource("ShaderMaterial_o7x47")
 
 [node name="PlayerChoices" type="Node3D" parent="Board"]
 unique_name_in_owner = true
@@ -66,12 +106,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
 
 [node name="Pick1" parent="Board/PlayerDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 6, 0)
+dissolve_material = SubResource("ShaderMaterial_6lhg4")
 
 [node name="Pick2" parent="Board/PlayerDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -2, 0)
+dissolve_material = SubResource("ShaderMaterial_q4csy")
 
 [node name="Pick3" parent="Board/PlayerDraft" instance=ExtResource("13_5um8g")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -10, 0)
+dissolve_material = SubResource("ShaderMaterial_i4qxf")
 
 [node name="Camera3D" type="Camera3D" parent="Board"]
 unique_name_in_owner = true
