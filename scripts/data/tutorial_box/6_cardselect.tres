@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_042t7")
 tutorial_name = "6_cardselect"
-text = "Vous pouvez désormais selectionner un deck pour chacun de vos personnages. Chaque personnage possède 5 cartes différentes qui formeront un deck de 10 cartes (pour un total de 30 cartes avec 3 personnages). "
+text = "Vous pouvez désormais sélectionner un deck pour chacun de vos personnages. Chaque personnage possède 5 cartes différentes qui formeront un deck de 10 cartes (pour un total de 30 cartes avec 3 personnages). "

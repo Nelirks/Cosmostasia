@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_pyqvm")
 tutorial_name = "1_passive"
-text = "Chaque personnage possède un passif, que vous pouvez lire en laissant votre souris survoler sa carte"
+text = "Chaque personnage possède un passif, que vous pouvez lire en laissant votre souris survoler sa carte."
