@@ -62,7 +62,7 @@ func _on_state_synced(state : GameState) -> void :
 				sync_rng()
 			player = Player.new(NetworkManager.is_host)
 			opponent = Player.new(not NetworkManager.is_host)
-			get_tree().change_scene_to_packed(_draft_scene)
+			get_tree().change_scene_to_packed.call_deferred(_draft_scene)
 		GameState.DECKBUILDING : 
 			if NetworkManager.is_host :
 				sync_rng()
