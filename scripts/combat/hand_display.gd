@@ -107,7 +107,7 @@ func _on_card_mouse_entered(card_display : PlayableCard3D) -> void :
 	card_display.tween = create_tween()
 	card_display.tween.tween_interval(card_zoom_in_delay)
 	card_display.tween.tween_callback(AudioManager.post_event.bind(AK.EVENTS.CARD_ZOOMIN))
-	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 5.5, 0.5), card_zoom_in_duration)
+	card_display.tween.tween_property(hovered_card, "position", Vector3(card_positions[card_display.card.position].position.x, 6, 0.5), card_zoom_in_duration)
 	card_display.tween.parallel().tween_property(hovered_card, "scale", Vector3(2.1, 2.1, 2.1), card_zoom_in_duration)
 	if is_player : card_display.tween.tween_callback(_display_info_popup)
 	if !is_player and card_display.card.revealed :
