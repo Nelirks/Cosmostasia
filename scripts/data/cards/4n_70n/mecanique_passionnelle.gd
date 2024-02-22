@@ -9,7 +9,8 @@ func apply_effects(target : Character) -> void :
 	match emotion :
 		0 : 
 			for enemy in character.get_enemies() :
-				_add_effect(DamageEffect.new(damage, character, enemy))
+				_add_effect(DamageEffect.new(damage, character, enemy, DamageEffect.DamageType.DIRECT, false))
+			character.play_combat_vfx(preload("res://scenes/vfx_chloe/vfx slash.tscn"), null)
 		1 : 
 			_add_effect(RegenEnergyEffect.new(energy_gain, true, character, character.player))
 		2 :
