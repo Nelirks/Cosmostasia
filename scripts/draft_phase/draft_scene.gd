@@ -40,10 +40,13 @@ func _ready():
 	TutorialGlobal.trigger_tutorial("0_welcome")
 	TutorialGlobal.trigger_tutorial("1_passive")
 	
-	if NetworkManager.is_host : 
-		check_client_ready.rpc()
-	else :
-		on_client_ready.rpc()
+	if !NetworkManager.is_multiplayer :
+		pick_character_choices()
+	else :	
+		if NetworkManager.is_host : 
+			check_client_ready.rpc()
+		else :
+			on_client_ready.rpc()
 
 @rpc("call_remote", "authority", "reliable")
 func check_client_ready() -> void :
