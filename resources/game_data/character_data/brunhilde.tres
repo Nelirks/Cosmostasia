@@ -28,7 +28,7 @@ content = Array[int]([0, 2, 4, 4, 0])
 [resource]
 script = ExtResource("1_35mvq")
 character_name = "Brunhilde"
-character_quote = "Une mère ourse avec des prothèse steam. Brunhilde peut aisément encaisser de nombreuses attaques puis riposter avec de lourdes attaques "
+character_quote = "Une mère ourse avec des prothèses steam. Brunhilde peut aisément encaisser de nombreuses attaques puis riposter avec de lourdes attaques "
 character_texture = ExtResource("6_g2uxo")
 max_health = 110
 card_pool = Array[Resource("res://scripts/resources/card.gd")]([ExtResource("1_o8dg8"), ExtResource("2_lm6ua"), ExtResource("3_ylnef"), ExtResource("4_tb3el"), ExtResource("5_3l406")])

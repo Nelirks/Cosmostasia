@@ -1,13 +1,13 @@
 extends Card
 
 @export var damage_per_stack : int
-@export var heal_per_stack : int
+@export var armor_per_stack : int
 
 func apply_effects(target : Character) -> void :
 	if target.player != character.player : 
 		_add_effect(DamageEffect.new(damage_per_stack * character.get_status("khemael_passive").stacks, character, target))
 	else : 
-		_add_effect(HealEffect.new(heal_per_stack * character.get_status("khemael_passive").stacks, character, target))
+		_add_effect(ApplyArmorEffect.new(armor_per_stack * character.get_status("khemael_passive").stacks, character, target))
 	character.get_status("khemael_passive").stacks = 0
 
 func can_target(target : Character) -> bool :

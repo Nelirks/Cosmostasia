@@ -1,7 +1,7 @@
 extends Card
 
 @export var damage : int
-@export var heal : int
+@export var armor : int
 
 func apply_effects(target : Character) -> void :
 	var target_ally : Character
@@ -10,4 +10,4 @@ func apply_effects(target : Character) -> void :
 			target_ally = ally
 	
 	_add_effect(DamageEffect.new(damage, character, target))
-	_add_effect(HealEffect.new(heal, character, target_ally))
+	_add_effect(ApplyArmorEffect.new(armor, character, target_ally))
