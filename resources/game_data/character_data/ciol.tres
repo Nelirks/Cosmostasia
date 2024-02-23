@@ -23,7 +23,7 @@ content = Array[int]([0, 4, 0, 2, 4])
 [sub_resource type="Resource" id="Resource_uxten"]
 script = ExtResource("6_kpovl")
 preset_name = "Distribution de plumes"
-content = Array[int]([3, 2, 2, 3, 0])
+content = Array[int]([3, 3, 2, 2, 0])
 
 [resource]
 script = ExtResource("1_oe6yv")
