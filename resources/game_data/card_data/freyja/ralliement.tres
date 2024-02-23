@@ -7,7 +7,7 @@
 script = ExtResource("1_j4c63")
 attack_buff_duration = 1
 card_name = "Ralliement"
-description = "!S!Renforce!S! les alliés pendant 1 tours"
+description = "!S!Renforce!S! les alliés pendant 1 tour"
 quote = "Une guerre ne se gagne pas seule"
 cost = 1
 targetting = 3
