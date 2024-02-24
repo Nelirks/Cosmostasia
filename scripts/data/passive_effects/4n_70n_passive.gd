@@ -19,6 +19,10 @@ var emotion_lock : bool = false
 func on_apply():
 	emotion = Emotion.NONE
 
+func on_remove() -> void :
+	if emotion == Emotion.JOY :
+		_add_effect(RegenEnergyEffect.new(-1, false, owner, owner.player))
+
 func on_effect_resolution(effect : Effect) -> void :
 	match emotion :
 		Emotion.ANGER :
