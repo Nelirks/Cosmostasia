@@ -13,8 +13,8 @@ base_damage = 30
 prepared_damage = 40
 card_name = "Lame féerique"
 description = "Inflige 30 dégâts à la cible
-!K!Miracle!K! : Réduit les dégâts de 10 et le coût de 1
-!K!Préparé!K! : Augmente les dégâts de 10 et le coût de 1"
+!K!Miracle!K! : Réduit les dégâts de 10 et le coût à 1
+!K!Préparé!K! : Augmente les dégâts de 10 et le coût à 3"
 quote = ""
 cost = 2
 targetting = 2
