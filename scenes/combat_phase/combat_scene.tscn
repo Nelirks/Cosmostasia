@@ -9,39 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://csadrbq2b2p6f" path="res://resources/sprites/ui_elements/white_pixel.png" id="7_s64sb"]
 [ext_resource type="PackedScene" uid="uid://ikuv8rdeaaoa" path="res://scenes/combat_phase/energy_bar.tscn" id="8_eetoo"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_mkcl4"]
+viewport_path = NodePath("ArenaBackground/SubViewport")
+
 [sub_resource type="Environment" id="Environment_bfeis"]
 background_mode = 3
 glow_enabled = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mkcl4"]
-viewport_path = NodePath("ArenaBackground/SubViewport")
-
 [node name="CombatScene" type="Node3D"]
 script = ExtResource("1_t5omj")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-current = true
-fov = 40.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bfeis")
-
-[node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
-unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -6.5, 0)
-is_player = true
-
-[node name="OpponentHand" parent="." instance=ExtResource("3_0g7ao")]
-unique_name_in_owner = true
-transform = Transform3D(-0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 0, 6.5, 0)
-
-[node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
-
 [node name="ArenaBackground" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = SubResource("ViewportTexture_mkcl4")
 
 [node name="SubViewport" type="SubViewport" parent="ArenaBackground"]
@@ -89,12 +69,32 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("7_s64sb")
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+current = true
+fov = 40.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bfeis")
+
+[node name="PlayerHand" parent="." instance=ExtResource("3_0g7ao")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -6.5, 0)
+is_player = true
+
+[node name="OpponentHand" parent="." instance=ExtResource("3_0g7ao")]
+unique_name_in_owner = true
+transform = Transform3D(-0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 0, 6.5, 0)
+
+[node name="CharacterContainer" parent="." instance=ExtResource("4_m72q4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 light_energy = 0.05
 
-[connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
-[connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
-[connection signal="request_vfx" from="CharacterContainer" to="." method="play_vfx"]
 [connection signal="clicked" from="CanvasLayer/TargetlessPlayArea" to="." method="_on_targetless_play_area_clicked"]
 [connection signal="gui_input" from="CanvasLayer/TargetlessPlayArea" to="CanvasLayer/TargetlessPlayArea" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="card_selected" from="PlayerHand" to="CharacterContainer" method="on_card_selected"]
+[connection signal="character_clicked" from="CharacterContainer" to="." method="_on_character_clicked"]
+[connection signal="request_vfx" from="CharacterContainer" to="." method="play_vfx"]
