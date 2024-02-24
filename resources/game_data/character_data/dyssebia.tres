@@ -17,7 +17,7 @@ content = Array[int]([2, 4, 0, 0, 4])
 
 [sub_resource type="Resource" id="Resource_2jtyn"]
 script = ExtResource("6_8hqve")
-preset_name = "Bouclier Radiant"
+preset_name = "Bouclier radiant"
 content = Array[int]([0, 3, 4, 3, 0])
 
 [sub_resource type="Resource" id="Resource_4ca23"]
