@@ -185,7 +185,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 36)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "127.0.0.1"
+text = "169.254.19.181"
 placeholder_text = "IP ADRESS"
 
 [node name="ServerPortSetting" type="HSplitContainer" parent="SettingsBackground"]
