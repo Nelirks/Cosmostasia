@@ -9,9 +9,10 @@ damage = 20
 energy_gain = 3
 armor = 25
 card_name = "Mécanique Passionelle"
-description = "Colère: Inflige 20 dégâts à tous les adversaires
-Joie: Restaure 3 point d'énergie
-Tristesse: Octroie 25 d'armure à 4N-70N"
+description = "Consomme l'émotion de 4N-70N :
+Colère : Inflige 20 dégâts à tous les adversaires
+Joie : Restaure 3 point d'énergie
+Tristesse : Octroie 25 d'armure à 4N-70N"
 quote = ""
 cost = 2
 targetting = 3

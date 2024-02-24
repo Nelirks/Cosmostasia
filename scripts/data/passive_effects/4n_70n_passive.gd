@@ -9,7 +9,12 @@ extends StatusEffect
 @export var sadness_icon : Texture
 
 enum Emotion { ANGER, JOY, SADNESS, NONE }
-var emotion : Emotion
+var emotion : Emotion :
+	set(value) : 
+		emotion = value
+		status_updated.emit()
+
+var emotion_lock : bool = false
 
 func on_apply():
 	emotion = Emotion.NONE
@@ -29,6 +34,9 @@ func on_effect_resolution(effect : Effect) -> void :
 		set_emotion((effect as CardPlayNotifierEffect).card_position)
 
 func set_emotion(card_position : int) :
+	if emotion_lock :
+		emotion_lock = false
+		return
 	var energy_regen_modification = 0
 	if owner.has_status("boucle_de_programme") and owner.get_status("boucle_de_programme").active : return
 	if emotion == Emotion.JOY : 
@@ -38,7 +46,6 @@ func set_emotion(card_position : int) :
 		energy_regen_modification += joy_energy_regen
 	if energy_regen_modification != 0 :
 		_add_effect(RegenEnergyEffect.new(energy_regen_modification, false, owner, owner.player))
-	status_updated.emit()
 
 func get_texture() -> Texture :
 	match emotion :
@@ -49,3 +56,9 @@ func get_texture() -> Texture :
 		Emotion.SADNESS :
 			return sadness_icon
 	return null
+
+func reset_emotion_from_card() -> void :
+	if emotion == Emotion.JOY :
+		_add_effect(RegenEnergyEffect.new(-1, false, owner, owner.player))
+	emotion = Emotion.NONE
+	emotion_lock = true

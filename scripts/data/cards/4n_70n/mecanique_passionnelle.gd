@@ -5,7 +5,10 @@ extends Card
 @export var armor : int
 
 func apply_effects(target : Character) -> void :
+	
 	var emotion : int = character.get_status("4n_70n_passive").emotion if character.has_status("4n_70n_passive") else -1
+	if !character.has_status("boucle_de_programme") : character.get_status("4n_70n_passive").reset_emotion_from_card()
+	
 	match emotion :
 		0 : 
 			for enemy in character.get_enemies() :
