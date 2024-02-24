@@ -76,15 +76,15 @@ func _create_card_display(card : Card) -> void :
 func _destroy_card_display(card : Card, immediate : bool = false) -> void :
 	if card == null or !cards.has(card) or cards[card] == null : return
 	if immediate : 
-		if cards[card].tween : cards[card].tween.kill()
 		cards[card].queue_free()
-		cards[card] = null
 	else :
+		var card_display = cards[card]
 		AudioManager.post_event(AK.EVENTS.CARD_DISSOLVE)
-		cards[card].position.z -= 0.01
-		cards[card].dissolve(dissolve_duration)
+		card_display.position.z -= 0.01
+		card_display.dissolve(dissolve_duration)
 		await get_tree().create_timer(dissolve_duration).timeout
-		_destroy_card_display(card, true)
+		card_display.queue_free()
+	cards[card] = null
 
 func _connect_mouse_signals(card_display : PlayableCard3D) -> void :
 	if card_display.mouse_clicked.is_connected(_on_card_clicked) : return
