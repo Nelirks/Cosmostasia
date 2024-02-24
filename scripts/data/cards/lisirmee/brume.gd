@@ -8,9 +8,16 @@ var attack_down_status : StackableStatusEffect = preload("res://resources/game_d
 
 func apply_effects(target : Character) -> void :
 	if position == Position.PREPARED_SLOT :
-		for enemy in target.get_allies() :
+		for enemy in character.get_enemies() :
 			_add_effect(ApplyStatusEffect.new(attack_down_status.duplicate().set_stacks(attack_down_duration), character, enemy))
 	else :
 		_add_effect(ApplyStatusEffect.new(attack_down_status.duplicate().set_stacks(attack_down_duration), character, target))
 	if position == Position.MIRACLE_SLOT :
 		_add_effect(ApplyStatusEffect.new(poison_status.duplicate().set_stacks(poison_duration), character, target))
+
+func can_target(target : Character) -> bool :
+	if position == Position.PREPARED_SLOT : 
+		targetting = Targetting.NO_TARGET
+	else :
+		targetting = Targetting.OPPONENT
+	return super.can_target(target)
