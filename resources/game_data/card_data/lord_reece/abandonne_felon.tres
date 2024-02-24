@@ -5,10 +5,9 @@
 
 [resource]
 script = ExtResource("1_ubibg")
-energy_regen = 1
 card_name = "Abandonne, félon"
-description = "Défausse la carte Miracle adverse
-!K!Préparé!K! : S'octroie !S!Provocation!S!"
+description = "S'octroie !S!Provocation!S!
+!K!Préparé!K! : Défausse la carte Miracle adverse"
 quote = "\"Cet espoir qui t'animes, tu devrais y renoncer\""
 cost = 1
 targetting = 3
