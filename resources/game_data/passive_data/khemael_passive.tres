@@ -13,4 +13,5 @@ prejudice_icon = ExtResource("2_nhqto")
 id = "khemael_passive"
 type = 2
 display_names = Array[String]([])
-description = "Khemaël gagne un degré de !S!Préjudice!S! lorsqu'elle cible un ennemi, et un degré de !S!Faveur!S! lorsqu'elle cible un allié."
+description = "Khemaël gagne un degré de !S!Préjudice!S! lorsqu'elle cible un ennemi, et un degré de !S!Faveur!S! lorsqu'elle cible un allié.
+Si elle possède déjà l'effet opposé, réduit ses degrés de 1 à la place."
