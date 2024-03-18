@@ -8,4 +8,4 @@ id = "4n_joy"
 type = 2
 display_names = Array[String](["Joie"])
 description = "!S!Joie!S!
-Augmente la recharge de 1"
+Augmente la recharge de 1 à chaque tour"

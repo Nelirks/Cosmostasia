@@ -8,4 +8,4 @@ id = "prejudice"
 type = 2
 display_names = Array[String](["Préjudice"])
 description = "!S!Préjudice!S!
-Inflige 20% de dégâts supplémentaires"
+Augmente les dégâts infligés de 20%"

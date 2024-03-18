@@ -7,7 +7,7 @@
 script = ExtResource("1_nhc23")
 armor = 25
 card_name = "Purification"
-description = "Retire tous les effets négatifs du personnage allié ciblé, puis lui octroie 25 d'armure"
+description = "Retire tous les effets négatifs de l'allié ciblé, puis lui octroie 25 d'armure"
 quote = "\"Ne perdez pas de vue la lumière de la victoire\""
 cost = 2
 targetting = 1

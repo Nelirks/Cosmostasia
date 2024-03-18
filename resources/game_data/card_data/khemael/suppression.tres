@@ -7,7 +7,7 @@
 script = ExtResource("1_j262x")
 damage = 25
 card_name = "Suppression"
-description = "Retire tous les effets positifs du personnage adverse ciblé, puis lui inflige 25 dégâts"
+description = "Retire tous les effets positifs de la cible, puis lui inflige 25 dégâts"
 quote = "Pour tuer le dévoreur, il faudra d'abord neutraliser ses défenses"
 cost = 2
 targetting = 2

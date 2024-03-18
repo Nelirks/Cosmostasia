@@ -10,5 +10,5 @@ id = "boucle_de_programme"
 type = 0
 display_names = Array[String](["Boucle de programme"])
 description = "!S!Boucle de programme!S!
-Jouer des cartes n'altère pas l'émotion de 4N-70N et lui confère 5 armure"
+Jouer des cartes n'altère pas l'émotion de 4N-70N et lui octroie 5 d'armure"
 icon = ExtResource("1_bfam2")

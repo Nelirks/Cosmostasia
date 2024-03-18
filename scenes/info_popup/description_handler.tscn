@@ -26,6 +26,8 @@ keyword_descriptions = {
 "Miracle": "!K!Miracle!K!
 S'active si la carte est à gauche dans la main",
 "Préparé": "!K!Préparé!K!
+S'active si la carte est à droite dans la main",
+"Préparée": "!K!Préparé!K!
 S'active si la carte est à droite dans la main"
 }
 status_color = Color(1, 0.4, 0, 1)

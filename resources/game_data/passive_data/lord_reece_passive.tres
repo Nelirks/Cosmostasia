@@ -12,4 +12,4 @@ safe_icon = ExtResource("2_upiqt")
 id = "lord_reece_passive"
 type = 2
 display_names = Array[String]([])
-description = "Au début de son tour et s'il n'a pas subi de dégâts au tour précédent, se soigne de 10 PV."
+description = "Au début de son tour et s'il n'a pas subi de dégâts au tour précédent, Lord Reece se soigne de 10 PV."

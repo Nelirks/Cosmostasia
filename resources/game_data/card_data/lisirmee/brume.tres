@@ -8,7 +8,7 @@ script = ExtResource("1_hnrfm")
 poison_duration = 2
 attack_down_duration = 2
 card_name = "Brume"
-description = "Réduit l'attaque de la cible pendant 2 tour
+description = "!Affaiblit! la cible pendant 2 tour
 !K!Miracle!K! : !S!Empoisonne!S! la cible pendant 2 tour
 !K!Préparé!K! : Cible tous les adversaires"
 quote = ""

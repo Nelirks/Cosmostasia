@@ -8,7 +8,8 @@ script = ExtResource("1_6wtqh")
 damage = 15
 damage_increase = 5
 card_name = "Tir en rafale"
-description = "Inflige 15 dégats à la cible, les dégâts sont augmentés de 5 pour chaque tir en rafale joué ce tour-ci"
+description = "Inflige 15 dégats à la cible
+En inflige 5 supplémentaires pour chaque Tir en rafale joué ce tour"
 quote = ""
 cost = 1
 targetting = 2
