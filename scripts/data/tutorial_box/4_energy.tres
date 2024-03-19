@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_66m37")
 tutorial_name = "4_energy"
-text = "Au début de chaque tour, votre énergie se régénère de 3, pour un maximum de 5. Pour utiliser des cartes, vous devez dépenser le coût associé."
+text = "Au début de chaque tour, votre énergie se recharge de 3, pour un maximum de 5. Pour utiliser des cartes, vous devez dépenser le coût associé."

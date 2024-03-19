@@ -8,7 +8,7 @@ script = ExtResource("1_k4bpc")
 base_armor = 15
 bonus_armor = 10
 card_name = "Apitoiement"
-description = "Octroie 15 d'armure au personnage allié ciblé
+description = "Octroie 15 d'armure à l'allié ciblé
 En octroie 10 supplémentaire si la cible a moins de la moitié de sa vie"
 quote = "C'est la pitié qui a ouvert les yeux de Khemaël"
 cost = 1

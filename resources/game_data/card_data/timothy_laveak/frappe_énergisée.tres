@@ -9,7 +9,7 @@ damage = 25
 armor = 20
 card_name = "Frappe Énergisée"
 description = "Inflige 25 dégâts à la cible
-Si il reste de l'énergie, octroie 20 d'armure à Timothy"
+Si il reste de l'énergie, s'octroie 20 d'armure"
 quote = "Connu en tant que source d'énergie sans limite, la luménite fait également d'excellentes armes"
 cost = 2
 targetting = 2

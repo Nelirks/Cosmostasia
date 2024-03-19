@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/data/passive_effects/lisirmee_passive.gd" id="1_5aqj8"]
 [ext_resource type="Image" uid="uid://chuok64jiq3bi" path="res://resources/sprites/status_icons/Passiflisirmee.png" id="1_l73pn"]
 [ext_resource type="Image" uid="uid://c3qy0uwccs7c6" path="res://resources/sprites/status_icons/Passiflisirmeegris.PNG" id="2_wno03"]
-[ext_resource type="Image" uid="uid://3rn78sr5u4ul" path="res://resources/sprites/status_icons/Passiflisirmee2 2.PNG" id="3_koyfo"]
+[ext_resource type="Image" uid="uid://3rn78sr5u4ul" path="res://resources/sprites/status_icons/Passiflisirmee2.png" id="3_koyfo"]
 [ext_resource type="Image" uid="uid://byb5i2crxlvl4" path="res://resources/sprites/status_icons/Passiflisirmee3.png" id="4_hcnr6"]
 [ext_resource type="Image" uid="uid://dhyifs6t31tfn" path="res://resources/sprites/status_icons/Passiflisirmee1.png" id="5_mw4tq"]
 
@@ -18,4 +18,4 @@ prepared_icon = ExtResource("5_mw4tq")
 id = "lisirmee_passive"
 type = 2
 display_names = Array[String]([])
-description = "Après avoir joué une carte à chaque emplacement de sa main, inflige 10 dégâts à tous les ennemis."
+description = "Après avoir joué une de ses cartes à chaque emplacement dans la main, Lisirmee inflige 10 dégâts à tous les ennemis."

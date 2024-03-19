@@ -8,7 +8,7 @@ script = ExtResource("1_hklpy")
 armor = 20
 energy_regen = 1
 card_name = "Surcharge"
-description = "Octroie 20 d'armure à Timothy
+description = "S'octroie 20 d'armure
 Augmente la recharge de 1"
 quote = "Qu'est ce qu'il y a de mal à un petit overclock?"
 cost = 2
